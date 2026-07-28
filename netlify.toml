@@ -1,13 +1,14 @@
 [build]
   publish = "."
 
-[[redirects]]
-  from = "/"
-  to = "/guide.html"
-  status = 200
-  force = true
+# المدخل هو index.html (منصّة الأدلة العامة)
 
 [[redirects]]
   from = "/الدليل"
   to = "/guide.html"
+  status = 302
+
+[[redirects]]
+  from = "/التعريفي"
+  to = "/intro-guide.html"
   status = 302

@@ -1,50 +1,258 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="دليل معلمة غرس القيم — وحدة الليل والنهار"
-    />
-    <meta http-equiv="refresh" content="0; url=guide.html" />
-    <title>دليل معلمة غرس القيم</title>
-    <link rel="icon" href="brand/logo-ghars.webp" />
-    <style>
-      @font-face {
-        font-family: "AlAwwal";
-        src: url("assets/fonts/AlAwwal-Regular.woff2") format("woff2");
-        font-display: swap;
-      }
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="منصّة منهج غرس القيم للطفولة — الدليل التعريفي والتشغيلي وأدلة الوحدات التكاملية لمرحلة التمهيدي." />
+<title>منهج غرس القيم — منصّة الأدلة</title>
+<link rel="icon" href="brand/logo-ghars.webp" />
+<link rel="preload" href="assets/fonts/AlAwwal-Regular.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/AlAwwal-Bold.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" />
+<style>
+  @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+  @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
 
-      * {
-        box-sizing: border-box;
-      }
+  :root{
+    --navy:#003E45; --teal:#006B69; --green:#2D7A4B; --gold:#C79A3B; --gold-2:#C8A200;
+    --ink:#123A3E; --muted:#5c6b6b; --cream:#FFF7E8; --paper:#fffdf8; --line:#e7dcc4;
+    --night-1:#0D0D2B; --night-2:#1C1C4A; --night-3:#2D3A8C;
+    --shadow:0 22px 52px rgba(16,45,54,.16); --shadow-sm:0 8px 24px rgba(16,45,54,.10);
+    --head:'AlAwwal','Amiri',serif; --body:'Noto Naskh Arabic','Tahoma',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body); color:var(--ink); line-height:1.9;
+    background:
+      radial-gradient(circle at 88% -5%,rgba(199,154,59,.14),transparent 34%),
+      radial-gradient(circle at 5% 6%,rgba(45,122,75,.10),transparent 30%),
+      var(--cream);
+    min-height:100vh; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 18px 60px}
 
-      body {
-        min-height: 100vh;
-        margin: 0;
-        display: grid;
-        place-items: center;
-        background: #fff7e8;
-        color: #003e45;
-        font-family: "AlAwwal", Tahoma, Arial, sans-serif;
-      }
+  /* ===== Hero ===== */
+  .hero{
+    position:relative; overflow:hidden; color:#fff;
+    margin:0 0 26px; padding:38px 0 32px;
+    border-radius:0 0 36px 36px;
+    background:
+      radial-gradient(circle at 12% 20%,rgba(199,154,59,.36),transparent 30%),
+      radial-gradient(circle at 80% 10%,rgba(126,163,72,.24),transparent 30%),
+      linear-gradient(135deg,var(--navy) 0%,var(--teal) 54%,var(--green) 100%);
+    box-shadow:var(--shadow); isolation:isolate;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;opacity:.6;
+    background:
+      linear-gradient(135deg,rgba(255,252,245,.08) 25%,transparent 25%) 0 0/36px 36px,
+      linear-gradient(225deg,rgba(255,252,245,.06) 25%,transparent 25%) 0 0/36px 36px;
+  }
+  .hero > *{position:relative;z-index:1}
+  .hero-inner{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 34px}
+  .hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+  .brand-pill{
+    display:inline-flex;align-items:center;gap:11px;
+    background:rgba(255,252,245,.12);border:1px solid rgba(230,200,121,.5);
+    padding:8px 14px 8px 10px;border-radius:999px;backdrop-filter:blur(3px);
+  }
+  .brand-pill img{width:44px;height:44px;border-radius:50%;object-fit:cover;background:#fff;padding:2px}
+  .brand-pill b{font-family:var(--head);font-size:17px;color:#fff;letter-spacing:.3px}
+  .brand-pill span{display:block;font-size:11px;color:rgba(255,255,255,.72)}
+  .stage-badge{
+    background:rgba(200,162,0,.18);border:1px solid var(--gold);color:#f4e3b3;
+    border-radius:10px;padding:8px 14px;font-size:12.5px;font-weight:700;text-align:center;line-height:1.6
+  }
+  .hero-title{font-family:var(--head);font-size:clamp(30px,6vw,46px);line-height:1.25;margin:20px 0 6px;color:#fff}
+  .hero-title .accent{color:var(--gold)}
+  .hero-sub{font-size:clamp(13px,2.4vw,15.5px);color:rgba(255,255,255,.82);max-width:640px}
+  .hero-points{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .hero-points span{
+    display:inline-flex;align-items:center;gap:6px;font-size:12px;
+    background:rgba(255,252,245,.10);border:1px solid rgba(255,252,245,.18);
+    padding:6px 12px;border-radius:999px;color:rgba(255,255,255,.9)
+  }
 
-      a {
-        border-radius: 999px;
-        background: #006b69;
-        color: #fff;
-        padding: 0.85rem 1.35rem;
-        text-decoration: none;
-        font-weight: 700;
-      }
-    </style>
-  </head>
-  <body>
-    <a href="guide.html">فتح دليل معلمة غرس القيم</a>
-    <script>
-      window.location.replace("guide.html");
-    </script>
-  </body>
+  /* ===== Section heads ===== */
+  .sec-head{display:flex;align-items:center;gap:12px;margin:34px 4px 16px}
+  .sec-head .bar{width:5px;height:26px;border-radius:4px;background:linear-gradient(var(--gold),var(--green))}
+  .sec-head h2{font-family:var(--head);font-size:24px;color:var(--navy)}
+  .sec-head p{font-size:12.5px;color:var(--muted);margin-top:2px}
+
+  /* ===== General guide band ===== */
+  .general{
+    position:relative;overflow:hidden;
+    display:grid;grid-template-columns:1.5fr .9fr;gap:22px;align-items:center;
+    background:var(--paper);border:1.5px solid var(--gold);
+    border-radius:24px;padding:26px 28px;box-shadow:var(--shadow-sm);
+  }
+  .general::before{
+    content:"";position:absolute;inset:0;z-index:0;opacity:.5;pointer-events:none;
+    background:radial-gradient(circle at 95% 8%,rgba(199,154,59,.13),transparent 40%)
+  }
+  .general > *{position:relative;z-index:1}
+  .gtag{
+    display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;letter-spacing:.4px;
+    color:#8a5e21;background:rgba(199,154,59,.14);border:1px solid rgba(199,154,59,.4);
+    padding:5px 12px;border-radius:999px;margin-bottom:12px
+  }
+  .general h3{font-family:var(--head);font-size:27px;color:var(--navy);margin-bottom:8px}
+  .general p{font-size:13.5px;color:#3f5350;margin-bottom:16px;max-width:56ch}
+  .chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}
+  .chips i{font-style:normal;font-size:11.5px;color:var(--teal);background:#eaf4f2;border:1px solid #cfe6e1;padding:4px 11px;border-radius:999px}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+    font-family:var(--head);font-size:16px;font-weight:700;
+    background:linear-gradient(135deg,var(--teal),var(--green));color:#fff;
+    padding:12px 26px;border-radius:999px;box-shadow:0 10px 22px rgba(0,107,105,.28);
+    transition:transform .16s ease,box-shadow .16s ease
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(0,107,105,.34)}
+  .btn .ar{transition:transform .16s ease}
+  .btn:hover .ar{transform:translateX(-4px)}
+  .general-art{
+    display:grid;place-items:center;min-height:150px;border-radius:18px;
+    background:radial-gradient(circle at 50% 30%,rgba(45,122,75,.1),transparent 60%),#f4efe1;
+    border:1px dashed var(--line)
+  }
+  .general-art img{width:118px;height:118px;object-fit:contain;filter:drop-shadow(0 8px 16px rgba(0,0,0,.12))}
+
+  /* ===== Units grid ===== */
+  .units{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:18px}
+  .unit{
+    position:relative;overflow:hidden;text-decoration:none;color:inherit;
+    background:var(--paper);border:1px solid var(--line);border-radius:20px;
+    box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease;display:flex;flex-direction:column
+  }
+  .unit:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .unit-cap{
+    position:relative;overflow:hidden;height:120px;display:flex;align-items:flex-end;padding:14px 16px;
+    background:radial-gradient(circle at 80% 20%,rgba(200,162,0,.28),transparent 42%),
+      linear-gradient(135deg,var(--night-1) 0%,var(--night-2) 55%,var(--night-3) 100%)
+  }
+  .unit-cap::before{content:"🌙 ⭐ ✨";position:absolute;top:10px;right:14px;font-size:13px;opacity:.55;letter-spacing:5px}
+  .unit-cap img{position:absolute;left:-6px;bottom:-14px;width:104px;opacity:.9;filter:drop-shadow(0 6px 12px rgba(0,0,0,.35))}
+  .unit-cap .u-order{font-size:11px;color:#f0d98a;font-weight:700;background:rgba(200,162,0,.2);border:1px solid rgba(200,162,0,.5);padding:3px 10px;border-radius:999px}
+  .unit-body{padding:16px 18px 18px}
+  .unit-body h3{font-family:var(--head);font-size:21px;color:var(--navy);margin-bottom:5px}
+  .unit-body p{font-size:12.5px;color:var(--muted);margin-bottom:14px;min-height:44px}
+  .unit-open{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:13.5px;color:var(--teal)}
+  .unit-dots{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}
+  .unit-dots i{width:14px;height:14px;border-radius:50%;display:inline-block}
+
+  .unit.soon{opacity:.62;pointer-events:none;filter:saturate(.6)}
+  .unit.soon .unit-cap{background:linear-gradient(135deg,#3a4a4a,#556)}
+  .unit.soon .unit-open{color:var(--muted)}
+  .soon-badge{position:absolute;top:12px;left:12px;z-index:2;background:#fff;border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px}
+
+  /* ===== Footer ===== */
+  .foot{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:12px;line-height:2}
+  .foot img{width:34px;vertical-align:middle;margin-inline-start:6px;opacity:.8}
+
+  @media(max-width:720px){
+    .general{grid-template-columns:1fr}
+    .general-art{display:none}
+    .hero{border-radius:0 0 26px 26px;padding:30px 0 26px;margin:0 0 22px}
+    .hero-inner{padding:0 20px}
+    .wrap{padding:0 14px 48px}
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+   <div class="hero-inner">
+    <div class="hero-top">
+      <div class="brand-pill">
+        <img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم" />
+        <b>نادي غرس القيم للطفولة<span>غرس الإيمان والقيم والمهارات</span></b>
+      </div>
+      <div class="stage-badge">مرحلة التمهيدي<br />المنهج التكاملي للقيم</div>
+    </div>
+    <h1 class="hero-title">منصّة <span class="accent">منهج غرس القيم</span></h1>
+    <p class="hero-sub">مدخل موحّد لأدلة المعلمة: يبدأ بالدليل التعريفي والتشغيلي الذي يشرح فلسفة المنهج وطريقة تشغيله، ثم أدلة الوحدات التكاملية جاهزة للتطبيق داخل الروضة.</p>
+    <div class="hero-points">
+      <span>◆ منظومة الوحي</span>
+      <span>◆ سبع مواد تكاملية</span>
+      <span>◆ أركان ومراكز تطبيقية</span>
+      <span>◆ تقويم ومتابعة</span>
+    </div>
+   </div>
+  </header>
+
+  <main class="wrap">
+    <!-- General guide (top band) -->
+    <div class="sec-head">
+      <span class="bar"></span>
+      <div><h2>الدليل العام للمنهج</h2><p>مرجع شامل لا يخص وحدة بعينها — افهمي المنهج قبل الدخول إلى الوحدات.</p></div>
+    </div>
+
+    <section class="general">
+      <div>
+        <span class="gtag">★ دليل عام · يُقرأ أولًا</span>
+        <h3>الدليل التعريفي والتشغيلي</h3>
+        <p>يعرّف فلسفة منهج غرس القيم ومنظومة الوحي التي يقوم عليها، ومكوّناته السبعة، وبنية اللقاء التعليمي، والأركان والمراكز، والمخطط الدراسي، وطريقة التقويم والمتابعة — ليكون بوصلة المعلمة قبل تنفيذ أي وحدة.</p>
+        <div class="chips">
+          <i>ابدئي من هنا</i><i>الرؤية والمنظومة</i><i>مكوّنات المنهج</i><i>خريطة المواد</i><i>المخطط الدراسي</i><i>اللياقة البدنية</i>
+        </div>
+        <a class="btn" href="intro-guide.html">افتحي الدليل التعريفي <span class="ar">←</span></a>
+      </div>
+      <div class="general-art">
+        <img src="brand/seedling.webp" alt="غرس القيم" />
+      </div>
+    </section>
+
+    <!-- Units -->
+    <div class="sec-head">
+      <span class="bar"></span>
+      <div><h2>أدلة الوحدات التكاملية</h2><p>كل وحدة دليل مستقل بدروسها ومهامها وأركانها، مبني على الدليل العام.</p></div>
+    </div>
+
+    <section class="units">
+      <a class="unit" href="guide.html">
+        <div class="unit-cap">
+          <img src="brand/crescent.webp" alt="" aria-hidden="true" />
+          <span class="u-order">الوحدة الأولى</span>
+        </div>
+        <div class="unit-body">
+          <h3>وحدة الليل والنهار</h3>
+          <div class="unit-dots">
+            <i style="background:#C05000"></i><i style="background:#1A7A4C"></i><i style="background:#5B2D8E"></i><i style="background:#0A6677"></i><i style="background:#7A4A00"></i><i style="background:#1B4D7E"></i><i style="background:#8B0000"></i>
+          </div>
+          <p>خمسة أيام تعليمية + يوم ختامي، تربط آيات الليل والنهار بالمواد السبع والأركان التطبيقية.</p>
+          <span class="unit-open">افتحي دليل الوحدة ←</span>
+        </div>
+      </a>
+
+      <div class="unit soon">
+        <span class="soon-badge">قريبًا</span>
+        <div class="unit-cap"><span class="u-order">الوحدة الثانية</span></div>
+        <div class="unit-body">
+          <h3>وحدة قادمة</h3>
+          <div class="unit-dots"><i style="background:#c9c3b6"></i><i style="background:#c9c3b6"></i><i style="background:#c9c3b6"></i></div>
+          <p>تُضاف بعد اعتماد بنائها بنفس هوية الدليل وطريقته.</p>
+          <span class="unit-open">قيد الإعداد</span>
+        </div>
+      </div>
+
+      <div class="unit soon">
+        <span class="soon-badge">قريبًا</span>
+        <div class="unit-cap"><span class="u-order">الوحدة الثالثة</span></div>
+        <div class="unit-body">
+          <h3>وحدة قادمة</h3>
+          <div class="unit-dots"><i style="background:#c9c3b6"></i><i style="background:#c9c3b6"></i><i style="background:#c9c3b6"></i></div>
+          <p>تُضاف بعد اعتماد بنائها بنفس هوية الدليل وطريقته.</p>
+          <span class="unit-open">قيد الإعداد</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div>منهج غرس القيم للطفولة — وقفٌ تعليمي لخدمة الطفولة المبكرة</div>
+      <img src="brand/waqf-seal.webp" alt="ختم الوقف" />
+    </footer>
+  </main>
+</body>
 </html>
