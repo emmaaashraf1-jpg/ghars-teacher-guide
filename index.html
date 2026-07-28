@@ -167,6 +167,16 @@
   .dc-site{font-size:12px;color:var(--teal);text-decoration:none}
   .dc-site:hover{text-decoration:underline}
 
+  /* شريط الهوية — صور حقيقية مدمجة كطابع بصري (بلا مسميات) */
+  .gq-identity-band{position:relative;margin:26px 0 6px;border-radius:20px;overflow:hidden;display:grid;grid-template-columns:repeat(6,1fr);box-shadow:0 12px 30px rgba(16,45,54,.14)}
+  .gq-identity-band .t{position:relative;aspect-ratio:1/1;overflow:hidden}
+  .gq-identity-band img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.72) contrast(1.02);transition:transform .5s ease}
+  .gq-identity-band:hover img{transform:scale(1.05)}
+  .gq-identity-band::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(120deg,rgba(0,62,69,.80),rgba(0,107,105,.52) 48%,rgba(45,122,75,.74))}
+  .gq-identity-band::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;box-shadow:inset 0 0 70px rgba(0,40,45,.55);border-radius:20px}
+  .gq-identity-cap{position:absolute;z-index:4;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;color:#fff;font-family:var(--head);font-size:clamp(18px,3.4vw,26px);letter-spacing:.5px;text-shadow:0 3px 14px rgba(0,0,0,.5)}
+  @media(max-width:640px){.gq-identity-band{grid-template-columns:repeat(4,1fr)}}
+
   @media(max-width:720px){
     .general{grid-template-columns:1fr}
     .general-art{display:none}
@@ -198,6 +208,22 @@
   </header>
 
   <main class="wrap">
+    <section class="gq-identity-band" aria-label="من داخل روضة غرس القيم">
+      <div class="t"><img src="assets/gallery/photo-04.jpg" alt="" loading="lazy"></div>
+      <div class="t"><img src="assets/gallery/photo-02.jpg" alt="" loading="lazy"></div>
+      <div class="t"><img src="assets/gallery/photo-08.jpg" alt="" loading="lazy"></div>
+      <div class="t"><img src="assets/gallery/photo-14.jpg" alt="" loading="lazy"></div>
+      <div class="t"><img src="assets/gallery/photo-09.jpg" alt="" loading="lazy"></div>
+      <div class="t"><img src="assets/gallery/photo-05.jpg" alt="" loading="lazy"></div>
+      <div class="t"><img src="assets/gallery/photo-10.jpg" alt="" loading="lazy"></div>
+      <div class="t"><img src="assets/gallery/photo-13.jpg" alt="" loading="lazy"></div>
+      <div class="t"><img src="assets/gallery/photo-11.jpg" alt="" loading="lazy"></div>
+      <div class="t"><img src="assets/gallery/photo-06.jpg" alt="" loading="lazy"></div>
+      <div class="t"><img src="assets/gallery/photo-12.jpg" alt="" loading="lazy"></div>
+      <div class="t"><img src="assets/gallery/photo-15.jpg" alt="" loading="lazy"></div>
+      <span class="gq-identity-cap">من داخل روضة غرس القيم</span>
+    </section>
+
     <!-- General guide (top band) -->
     <div class="sec-head">
       <span class="bar"></span>
