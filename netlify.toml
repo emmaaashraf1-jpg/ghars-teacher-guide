@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/"
+  to = "/guide.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/الدليل"
+  to = "/guide.html"
+  status = 302

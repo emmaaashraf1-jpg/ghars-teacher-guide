@@ -1,0 +1,34 @@
+{
+  "target": "/workspace/sites/ghars-teacher-guide/netlify-lite-20260727",
+  "beforeBytes": 54830521,
+  "afterBytes": 48567432,
+  "savedBytes": 6263089,
+  "imageCount": 0,
+  "repairedImageCount": 0,
+  "cornerCardsOptimized": true,
+  "cornerCardCount": 0,
+  "videoLiteOptimized": true,
+  "liteVideoCount": 3,
+  "videoCount": 0,
+  "imageChanges": [],
+  "repairedImageChanges": [],
+  "cornerCardChanges": [],
+  "videoChanges": [],
+  "liteVideoChanges": [
+    {
+      "file": "assets/video_008_cfcf4810def7d59f.mp4",
+      "before": 3398187,
+      "after": 1107560
+    },
+    {
+      "file": "assets/video_020_8881286748f78d38.mp4",
+      "before": 3462150,
+      "after": 1386269
+    },
+    {
+      "file": "assets/video_029_01f3e74fd57efd7e.mp4",
+      "before": 3662400,
+      "after": 1765819
+    }
+  ]
+}

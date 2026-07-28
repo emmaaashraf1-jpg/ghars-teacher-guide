@@ -1,0 +1,1649 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>اليوم الختامي · برنامج وحدة الليل والنهار</title>
+    <style>
+      @font-face {
+        font-family: "AlAwwal";
+        src: url("assets/AlAwwal-Regular.woff2") format("woff2");
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "AlAwwal";
+        src: url("assets/AlAwwal-Bold.woff2") format("woff2");
+        font-weight: 700 950;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Saudi";
+        src: url("assets/Saudi-Regular.woff2") format("woff2");
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Saudi";
+        src: url("assets/Saudi-Bold.woff2") format("woff2");
+        font-weight: 700 950;
+        font-display: swap;
+      }
+
+      :root {
+        --teal: #006b69;
+        --deep: #003e45;
+        --green: #2d7a4b;
+        --gold: #c79a3b;
+        --brown: #6b3f22;
+        --cream: #fff7e8;
+        --paper: #fffdf8;
+        --ink: #17373b;
+        --muted: #6c665b;
+        --line: #e8dcc9;
+        --lavender: #8660a8;
+        --orange: #d8662a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 0;
+        margin: 0;
+        background: #fff;
+        color: var(--ink);
+        font-family: "AlAwwal", Tahoma, Arial, sans-serif;
+        line-height: 1.9;
+      }
+
+      body {
+        padding: 0 0 24px;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .program {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        background: #fff;
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 128px;
+        gap: 24px;
+        align-items: center;
+        padding: 34px clamp(20px, 5vw, 58px);
+        color: #fff;
+        background:
+          radial-gradient(circle at 12% 22%, rgb(199 154 59 / 24%), transparent 17rem),
+          linear-gradient(135deg, var(--deep), var(--teal));
+        border-bottom: 5px solid var(--gold);
+        overflow: hidden;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto -90px -130px auto;
+        width: 330px;
+        height: 330px;
+        border: 1px solid rgb(255 255 255 / 14%);
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 28px rgb(255 255 255 / 4%),
+          0 0 0 62px rgb(255 255 255 / 3%);
+      }
+
+      .hero-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        margin-bottom: 8px;
+        padding: 5px 11px;
+        color: #fff6dd;
+        background: rgb(255 255 255 / 11%);
+        border: 1px solid rgb(255 255 255 / 24%);
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .hero h1 {
+        margin: 0;
+        color: #fff;
+        font-family: "Saudi", "AlAwwal", sans-serif;
+        font-size: clamp(30px, 4vw, 50px);
+        line-height: 1.35;
+      }
+
+      .hero p {
+        max-width: 780px;
+        margin: 9px 0 0;
+        color: #eaf7f4;
+        font-size: 15px;
+        line-height: 2;
+      }
+
+      .hero-icon {
+        position: relative;
+        z-index: 1;
+        width: 118px;
+        height: 118px;
+        display: grid;
+        place-items: center;
+        padding: 16px;
+        background: #fffaf0;
+        border: 2px solid rgb(199 154 59 / 72%);
+        border-radius: 28px;
+        box-shadow: 0 18px 36px rgb(0 0 0 / 18%);
+      }
+
+      .hero-icon img {
+        width: 88px;
+        height: 88px;
+        object-fit: contain;
+      }
+
+      .section {
+        padding: 28px clamp(18px, 4.6vw, 54px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .section:last-child {
+        border-bottom: 0;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0 0 17px;
+      }
+
+      .section-head img {
+        width: 42px;
+        height: 42px;
+        object-fit: contain;
+      }
+
+      .section-head h2 {
+        margin: 0;
+        color: var(--deep);
+        font-family: "Saudi", "AlAwwal", sans-serif;
+        font-size: clamp(23px, 3vw, 32px);
+        line-height: 1.45;
+      }
+
+      .section-head p {
+        margin: 2px 0 0;
+        color: var(--muted);
+        font-size: 12.5px;
+      }
+
+      .central-path {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .central-step {
+        position: relative;
+        min-width: 0;
+        padding: 14px 15px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-top: 4px solid var(--teal);
+        border-radius: 12px;
+      }
+
+      .central-step:nth-child(2) {
+        border-top-color: var(--gold);
+      }
+
+      .central-step:nth-child(3) {
+        border-top-color: var(--green);
+      }
+
+      .central-step:nth-child(4) {
+        border-top-color: var(--lavender);
+      }
+
+      .central-step b {
+        display: block;
+        color: var(--deep);
+        font-size: 15px;
+      }
+
+      .central-step span {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.8;
+      }
+
+      .unit-meaning {
+        margin-top: 14px;
+        padding: 14px 17px;
+        background: var(--cream);
+        border-right: 6px solid var(--gold);
+        border-radius: 10px;
+        color: var(--brown);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .subjects {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 22px;
+      }
+
+      .subject {
+        --c: var(--teal);
+        display: grid;
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .subject img {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+      }
+
+      .subject b {
+        display: block;
+        color: var(--c);
+        font-size: 14px;
+      }
+
+      .subject p {
+        margin: 2px 0 0;
+        color: #44595c;
+        font-size: 12.4px;
+        line-height: 1.85;
+      }
+
+      .faith-guard {
+        background:
+          linear-gradient(90deg, rgb(45 122 75 / 8%), transparent),
+          #fff;
+      }
+
+      .guard-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 22px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .guard-list li {
+        position: relative;
+        padding: 10px 42px 10px 0;
+        border-bottom: 1px solid var(--line);
+        color: #30484c;
+        font-size: 12.5px;
+      }
+
+      .guard-list li::before {
+        content: "✓";
+        position: absolute;
+        top: 10px;
+        right: 0;
+        width: 29px;
+        height: 29px;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        background: var(--green);
+        border-radius: 9px;
+        font-weight: 950;
+      }
+
+      .warning {
+        margin-top: 14px;
+        padding: 13px 16px;
+        color: #713f14;
+        background: #fff7ed;
+        border: 1px solid #f0d3b1;
+        border-right: 6px solid #d8662a;
+        border-radius: 10px;
+        font-size: 12.5px;
+        font-weight: 800;
+      }
+
+      .preparation-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .prep {
+        padding: 13px 14px;
+        border-bottom: 3px solid var(--gold);
+        background: #fffcf5;
+      }
+
+      .prep b {
+        display: block;
+        color: var(--deep);
+        margin-bottom: 4px;
+      }
+
+      .prep p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .schedule {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+      }
+
+      .schedule th,
+      .schedule td {
+        padding: 10px 12px;
+        text-align: right;
+        vertical-align: top;
+        border-bottom: 1px solid var(--line);
+        font-size: 12px;
+      }
+
+      .schedule th {
+        color: #fff;
+        background: var(--deep);
+      }
+
+      .schedule tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .schedule strong {
+        color: var(--deep);
+      }
+
+      .station-note {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 12.5px;
+      }
+
+      .stations {
+        display: grid;
+        gap: 18px;
+      }
+
+      .station {
+        --c: var(--teal);
+        --soft: #eef8f6;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-right: 7px solid var(--c);
+        border-radius: 14px;
+      }
+
+      .station-head {
+        display: grid;
+        grid-template-columns: 64px minmax(0, 1fr) auto;
+        gap: 13px;
+        align-items: center;
+        padding: 14px 16px;
+        background: linear-gradient(90deg, var(--soft), #fff);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .station-icon {
+        width: 58px;
+        height: 58px;
+        object-fit: contain;
+      }
+
+      .station-head h3 {
+        margin: 0;
+        color: var(--c);
+        font-family: "Saudi", "AlAwwal", sans-serif;
+        font-size: 23px;
+        line-height: 1.45;
+      }
+
+      .station-head p {
+        margin: 2px 0 0;
+        color: var(--muted);
+        font-size: 11.8px;
+      }
+
+      .station-tag {
+        padding: 5px 10px;
+        color: var(--c);
+        background: #fff;
+        border: 1px solid color-mix(in srgb, var(--c) 38%, #fff);
+        border-radius: 999px;
+        font-size: 10.5px;
+        font-weight: 900;
+        white-space: nowrap;
+      }
+
+      .station-body {
+        display: grid;
+        grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.28fr);
+        gap: 18px;
+        padding: 16px;
+      }
+
+      .card-order {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+        align-content: start;
+      }
+
+      .card-order figure {
+        min-width: 0;
+        margin: 0;
+        padding: 7px;
+        background: #fffcf5;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+      }
+
+      .card-order img {
+        width: 100%;
+        aspect-ratio: 0.72;
+        display: block;
+        object-fit: contain;
+        background: #fff;
+        border-radius: 7px;
+      }
+
+      .card-order figcaption {
+        margin-top: 5px;
+        color: var(--muted);
+        text-align: center;
+        font-size: 10.5px;
+        line-height: 1.55;
+      }
+
+      .activity-card {
+        min-height: 100%;
+        display: grid;
+        place-items: center;
+        align-content: center;
+        padding: 12px;
+        text-align: center;
+        background: var(--soft);
+        border-radius: 7px;
+      }
+
+      .activity-card img {
+        width: 62px;
+        height: 62px;
+        margin-bottom: 7px;
+        object-fit: contain;
+        background: transparent;
+      }
+
+      .activity-card strong {
+        display: block;
+        color: var(--c);
+        font-size: 13px;
+      }
+
+      .activity-card small {
+        display: block;
+        color: var(--muted);
+        font-size: 10.5px;
+        line-height: 1.65;
+      }
+
+      .station-details {
+        min-width: 0;
+      }
+
+      .station-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px 15px;
+      }
+
+      .field {
+        min-width: 0;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 12px;
+        line-height: 1.85;
+      }
+
+      .field.wide {
+        grid-column: 1 / -1;
+      }
+
+      .field b {
+        display: block;
+        color: var(--c);
+        margin-bottom: 2px;
+      }
+
+      .field ul,
+      .field ol {
+        margin: 3px 0 0;
+        padding-right: 20px;
+      }
+
+      .evidence {
+        margin-top: 10px;
+        padding: 10px 12px;
+        color: #2d5d42;
+        background: #f0f8f2;
+        border-right: 5px solid var(--green);
+        border-radius: 9px;
+        font-size: 11.8px;
+      }
+
+      .station-warning {
+        margin-top: 9px;
+        padding: 10px 12px;
+        color: #714417;
+        background: #fff8e8;
+        border-right: 5px solid var(--gold);
+        border-radius: 9px;
+        font-size: 11.8px;
+        font-weight: 750;
+      }
+
+      .assessment-wrap {
+        overflow-x: auto;
+      }
+
+      .assessment {
+        width: 100%;
+        min-width: 760px;
+        border-collapse: collapse;
+        border: 1px solid var(--line);
+      }
+
+      .assessment th,
+      .assessment td {
+        padding: 10px 11px;
+        text-align: right;
+        vertical-align: top;
+        border: 1px solid var(--line);
+        font-size: 11.6px;
+        line-height: 1.8;
+      }
+
+      .assessment th {
+        color: #fff;
+        background: var(--deep);
+      }
+
+      .assessment td:first-child {
+        width: 145px;
+        color: var(--deep);
+        font-weight: 900;
+      }
+
+      .levels {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 13px;
+      }
+
+      .level {
+        padding: 10px 12px;
+        border-top: 4px solid var(--green);
+        background: #fff;
+        box-shadow: inset 0 0 0 1px var(--line);
+        border-radius: 10px;
+        font-size: 11.5px;
+      }
+
+      .level:nth-child(2) {
+        border-top-color: var(--gold);
+      }
+
+      .level:nth-child(3) {
+        border-top-color: var(--orange);
+      }
+
+      .level b {
+        display: block;
+        color: var(--deep);
+      }
+
+      .closing {
+        background:
+          radial-gradient(circle at 10% 10%, rgb(199 154 59 / 10%), transparent 18rem),
+          #fffdf8;
+      }
+
+      .closing-flow {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .closing-step {
+        padding: 13px 14px;
+        border-bottom: 3px solid var(--teal);
+        background: #fff;
+      }
+
+      .closing-step b {
+        display: block;
+        color: var(--deep);
+      }
+
+      .closing-step p {
+        margin: 3px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .kafara {
+        margin-top: 18px;
+        padding: 18px 22px;
+        color: #fff;
+        text-align: center;
+        background: linear-gradient(135deg, var(--deep), var(--green));
+        border-bottom: 4px solid var(--gold);
+        border-radius: 14px;
+      }
+
+      .kafara b {
+        display: block;
+        margin-bottom: 7px;
+        color: #ffe8ae;
+        font-size: 12px;
+      }
+
+      .kafara p {
+        margin: 0;
+        color: #fff;
+        font-family: "Saudi", "AlAwwal", sans-serif;
+        font-size: clamp(20px, 3vw, 28px);
+        line-height: 2;
+      }
+
+      @media (max-width: 880px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .hero-icon {
+          width: 88px;
+          height: 88px;
+          grid-row: 1;
+        }
+        .hero-icon img {
+          width: 62px;
+          height: 62px;
+        }
+        .central-path,
+        .preparation-grid,
+        .closing-flow {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .station-body {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .subjects,
+        .guard-list,
+        .central-path,
+        .preparation-grid,
+        .station-grid,
+        .closing-flow,
+        .levels {
+          grid-template-columns: 1fr;
+        }
+        .station-head {
+          grid-template-columns: 54px minmax(0, 1fr);
+        }
+        .station-tag {
+          grid-column: 1 / -1;
+          justify-self: start;
+        }
+        .field.wide {
+          grid-column: 1;
+        }
+      }
+
+      @media print {
+        body {
+          padding: 0;
+        }
+        .hero {
+          color: #17373b;
+          background: #fff;
+          border: 1px solid var(--line);
+        }
+        .hero h1,
+        .hero p,
+        .hero-kicker {
+          color: #17373b;
+        }
+        .station,
+        .subject,
+        .prep,
+        .closing-step {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="program">
+      <header class="hero">
+        <div>
+          <span class="hero-kicker">اليوم الختامي · مراجعة تطبيقية لا درس جديد</span>
+          <h1>برنامج وحدة الليل والنهار</h1>
+          <p>
+            يوم تطبيقي جامع ينتقل فيه الأطفال بين الأركان؛ ليسترجعوا معاني
+            المواد السبع، ويطبقوها في مواقف محسوسة، ثم يعبروا عن أثرها في
+            معرفتهم بالله وشكرهم وطاعتهم.
+          </p>
+        </div>
+        <div class="hero-icon">
+          <img src="brand/crescent.webp" alt="" />
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="section-head">
+          <img src="brand/seedling.webp" alt="" />
+          <div>
+            <h2>الهدف الناظم لليوم</h2>
+            <p>المسار الذي يحكم جميع المحطات والأسئلة والتقويم.</p>
+          </div>
+        </div>
+        <div class="central-path">
+          <div class="central-step">
+            <b>ألاحظ</b>
+            <span>آيات الله ونعمه في الليل والنهار والشمس والقمر.</span>
+          </div>
+          <div class="central-step">
+            <b>أتفكّر</b>
+            <span>في خلقها وتسخيرها ونظامها وما تدل عليه من عظمة الخالق.</span>
+          </div>
+          <div class="central-step">
+            <b>أعرف وأعظّم</b>
+            <span>الله بأسمائه ووحيه، وأميز الخالق عن المخلوق والسبب.</span>
+          </div>
+          <div class="central-step">
+            <b>أشكر وأعبد</b>
+            <span>بالذكر والطاعة والإحسان والاقتداء والعمل النافع.</span>
+          </div>
+        </div>
+        <div class="unit-meaning">
+          المعنى المركزي الجامع: الله وحده خلق الليل والنهار والشمس والقمر
+          وسخّرها بحكمته؛ فأتفكّر في آياته، وأشكره على نعمه، وأعمر وقتي بما
+          يحبه.
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <img src="brand/compass.webp" alt="" />
+          <div>
+            <h2>المعاني التي يجب أن تظهر في المراجعة</h2>
+            <p>لا يكتمل اليوم بمجرد المرور على الأدوات؛ بل بظهور هذه المعاني في أداء الطفل.</p>
+          </div>
+        </div>
+        <div class="subjects">
+          <article class="subject" style="--c:#006B69">
+            <img src="brand/material-allamni.png" alt="" />
+            <div>
+              <b>علّمني ربي</b>
+              <p>
+                الليل والنهار والشمس والقمر آيات عظيمة مخلوقة مسخّرة؛ والنهار
+                للعمل النافع، والليل للسكن وفيه أعمال يحبها الله.
+              </p>
+            </div>
+          </article>
+          <article class="subject" style="--c:#2D7A4B">
+            <img src="brand/material-kitabi.png" alt="" />
+            <div>
+              <b>كتابي المنير</b>
+              <p>
+                النعمة ابتلاء تستوجب الشكر والإحسان، والضيق يواجه بالصبر،
+                والدنيا وقت العمل قبل الندم، والقلب يطمئن بطاعة الله.
+              </p>
+            </div>
+          </article>
+          <article class="subject" style="--c:#8660A8">
+            <img src="brand/material-uhibbuka.png" alt="" />
+            <div>
+              <b>أحبك ربي</b>
+              <p>
+                الله هو الوهاب الغني الشافي الغفور العزيز؛ منه النعم والشفاء
+                والعزة والمغفرة، والعبد مفتقر إليه.
+              </p>
+            </div>
+          </article>
+          <article class="subject" style="--c:#6B3F22">
+            <img src="brand/material-rasuli.png" alt="" />
+            <div>
+              <b>قال رسولي</b>
+              <p>
+                كل نعمة أصبحت بالعبد فمن الله وحده؛ فيحمده ويشكره بقلبه
+                ولسانه وعمله.
+              </p>
+            </div>
+          </article>
+          <article class="subject" style="--c:#7EA348">
+            <img src="brand/material-adab.png" alt="" />
+            <div>
+              <b>أدب واقتداء</b>
+              <p>
+                نقتدي بالنبي ﷺ في آداب المساء، ونأخذ بالأسباب المشروعة،
+                والحفظ من الله وحده.
+              </p>
+            </div>
+          </article>
+          <article class="subject" style="--c:#003E45">
+            <img src="brand/material-lisani.png" alt="" />
+            <div>
+              <b>لساني عربي</b>
+              <p>
+                الفتحة والكسرة والضمة تغيّر صوت الحرف؛ وإتقان العربية يعين على
+                قراءة كلام الله قراءة صحيحة.
+              </p>
+            </div>
+          </article>
+          <article class="subject" style="--c:#D8662A">
+            <img src="brand/material-maharati.png" alt="" />
+            <div>
+              <b>مهاراتي</b>
+              <p>
+                الأعداد 10 و11 و12 تدل على كميات محددة؛ والعد الصحيح يحتاج
+                ترتيبًا ومطابقة وتحققًا.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section faith-guard">
+        <div class="section-head">
+          <img src="brand/waqf-seal.webp" alt="" />
+          <div>
+            <h2>ضوابط عقدية ومنهجية حاكمة</h2>
+            <p>تقرأها المعلمة قبل التجهيز، وتراجع بها كل محطة قبل فتحها للأطفال.</p>
+          </div>
+        </div>
+        <ul class="guard-list">
+          <li>
+            الله وحده الخالق المدبّر؛ والشمس والقمر والليل والنهار مخلوقات
+            وآيات مسخّرة لا تملك نفعًا ولا ضرًا استقلالًا.
+          </li>
+          <li>
+            تُعظّم الشمس بوصفها آية عظيمة؛ فلا تمثل بمصباح أو كشاف أو كرة
+            صغيرة، ولا تجعل تجربة الضوء والظل بديلًا عنها.
+          </li>
+          <li>
+            لا يشخّص الطفل الشمس أو القمر، ولا يتقمص دورهما، ولا تنسب أحداث
+            الكون إلى الطبيعة أو المصادفة.
+          </li>
+          <li>
+            تُحفظ الآيات والأحاديث وأسماء الله في بطاقات مكرّمة مرتفعة، ولا
+            توضع على الأرض أو داخل أدوات اللعب أو في سباقات.
+          </li>
+          <li>
+            تُنسب النعم والشفاء والحفظ والتوفيق إلى الله؛ والطبيب والدواء
+            وإغلاق الباب وسائر الأعمال أسباب سخّرها الله.
+          </li>
+          <li>
+            تستخدم صورًا واقعية صحيحة للمشاهد الكونية، ويكون رصد الشمس آمنًا
+            من غير نظر مباشر إليها.
+          </li>
+          <li>
+            تكون المنافسة ـ إن وجدت ـ تعاونًا على الإتقان، ولا تربط الفوز
+            بقيمة الطفل أو صلاحه؛ ويقال: «وفّقه الله وأحسن العمل».
+          </li>
+          <li>
+            يظل الركن مساحة تطبيق ولعب حر موجّه بالبيئة؛ تراقب المعلمة الأثر
+            وتوجّه بالسؤال، ولا تحوّله إلى حصة تلقين جديدة.
+          </li>
+        </ul>
+        <div class="warning">
+          قاعدة البطاقات في كل ركن: توضع بطاقة «قوانين الركن» أولًا، ثم بطاقة
+          النشاط. ويُختم جواز المرور بختم رمز الركن فقط، دون آية أو حديث أو
+          اسم من أسماء الله.
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <img src="brand/lavender.webp" alt="" />
+          <div>
+            <h2>التهيئة والتجهيز</h2>
+            <p>إعداد البيئة قبل حضور الأطفال حتى يبقى وقت البرنامج للتطبيق والملاحظة.</p>
+          </div>
+        </div>
+        <div class="preparation-grid">
+          <div class="prep">
+            <b>المجموعات</b>
+            <p>
+              تقسيم الأطفال إلى أربع مجموعات صغيرة متوازنة، ولكل مجموعة رمز
+              لوني لا يحمل معنى شرعيًا.
+            </p>
+          </div>
+          <div class="prep">
+            <b>جواز المراجعة</b>
+            <p>
+              بطاقة فيها أيقونات الأركان الثمانية ومكان لملاحظة المعلمة،
+              ويستخدم ختم الركن فقط.
+            </p>
+          </div>
+          <div class="prep">
+            <b>ترتيب البطاقات</b>
+            <p>
+              بطاقة القوانين أمام الطفل عند مدخل الركن، تليها بطاقة النشاط
+              والأدوات المرتبة في صينية مستقلة.
+            </p>
+          </div>
+          <div class="prep">
+            <b>المواد الشرعية</b>
+            <p>
+              المصحف وبطاقات الاعتقاد والحديث على حامل مرتفع، وتبقى تحت نظر
+              المعلمة ولا تدخل في المناولة الحرة.
+            </p>
+          </div>
+          <div class="prep">
+            <b>التقويم</b>
+            <p>
+              نسخة واحدة من قائمة الرصد لكل مجموعة، مع رموز: مستقل، بمساندة،
+              يحتاج متابعة.
+            </p>
+          </div>
+          <div class="prep">
+            <b>الانتقال</b>
+            <p>
+              مسار واضح بين الأركان، ودقيقة هادئة لإعادة الأدوات إلى موضعها
+              قبل الانتقال.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <img src="brand/crescent.webp" alt="" />
+          <div>
+            <h2>توزيع اليوم المقترح</h2>
+            <p>يمكن تمديد الزمن أو تقليله وفق عدد الأطفال، مع الحفاظ على دورة التطبيق كاملة.</p>
+          </div>
+        </div>
+        <table class="schedule">
+          <thead>
+            <tr>
+              <th>المرحلة</th>
+              <th>الزمن</th>
+              <th>التنفيذ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>افتتاح جامع</strong></td>
+              <td>15 دقيقة</td>
+              <td>
+                تحية وآداب المجلس، استرجاع سؤال الوحدة، بيان أن اليوم مراجعة
+                لما علّمنا الله، وشرح جواز المرور وقوانين الانتقال.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>الدورة الأولى</strong></td>
+              <td>4 × 12 دقيقة</td>
+              <td>
+                أربع محطات، وبين المحطات دقيقتان للترتيب والانتقال الهادئ.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>استراحة</strong></td>
+              <td>15 دقيقة</td>
+              <td>
+                ماء ووجبة وحركة هادئة، مع تذكير عملي بنعمة الطعام وعدم
+                الإسراف.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>الدورة الثانية</strong></td>
+              <td>4 × 12 دقيقة</td>
+              <td>المحطات الأربع المتبقية بالطريقة نفسها.</td>
+            </tr>
+            <tr>
+              <td><strong>معرض الأثر</strong></td>
+              <td>15 دقيقة</td>
+              <td>
+                عرض مختارات من البناء واللغة واللوحة، ويربط كل طفل أثره بمعنى
+                واحد تعلمه.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>تقويم وإغلاق</strong></td>
+              <td>10 دقائق</td>
+              <td>
+                أسئلة جامعة، توثيق الملاحظات، إعادة المعاني إلى عبودية الله،
+                ثم كفارة المجلس.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <img src="brand/compass.webp" alt="" />
+          <div>
+            <h2>محطات الأركان التطبيقية</h2>
+            <p>كل محطة تراجع أكثر من درس، وتنتج دليل أداء يمكن للمعلمة رصده.</p>
+          </div>
+        </div>
+        <p class="station-note">
+          يقرأ ترتيب كل محطة من اليمين: بطاقة قوانين الركن أولًا، ثم بطاقة
+          النشاط أو بطاقة التنفيذ الخاصة باليوم الختامي.
+        </p>
+
+        <div class="stations">
+          <article class="station" style="--c:#B66A16;--soft:#FFF6E8">
+            <header class="station-head">
+              <img class="station-icon" src="brand/corner-discover.png" alt="" />
+              <div>
+                <h3>خريطة الآيات المسخّرة</h3>
+                <p>ركن أكتشف ما حولي · علّمني ربي: الليل والنهار، الشمس، القمر</p>
+              </div>
+              <span class="station-tag">ملاحظة · تصنيف · ترتيب</span>
+            </header>
+            <div class="station-body">
+              <div class="card-order">
+                <figure>
+                  <img src="assets/gq_corner_rules_discover.webp" alt="بطاقة قوانين ركن أكتشف ما حولي" />
+                  <figcaption>١ · بطاقة قوانين الركن</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/corner-cards/allamni-02-sun-reflection-stations.webp" alt="بطاقة محطات التفكر في الشمس" />
+                  <figcaption>٢ · بطاقة النشاط المرجعية</figcaption>
+                </figure>
+              </div>
+              <div class="station-details">
+                <div class="station-grid">
+                  <div class="field wide">
+                    <b>المعنى المركزي</b>
+                    خلق الله الليل والنهار والشمس والقمر، وسخّرها بنظام عظيم؛
+                    فيتفكر الطفل في الآيات ليعظّم خالقها ويشكره.
+                  </div>
+                  <div class="field">
+                    <b>الأدوات</b>
+                    صور واقعية لليل والنهار والشمس ومنازل القمر، شريط تعاقب،
+                    تقويم قمري، عدسات بلا توجيه للشمس.
+                  </div>
+                  <div class="field">
+                    <b>استراتيجية التعلّم</b>
+                    محطات الملاحظة، التصنيف، التسلسل، الحوار الإيماني الموجّه.
+                  </div>
+                  <div class="field wide">
+                    <b>خطوات التنفيذ</b>
+                    <ol>
+                      <li>يصنف الطفل صور الليل والنهار ويذكر دليل التصنيف.</li>
+                      <li>يتأمل صورة حقيقية للشمس ويذكر منفعة أنعم الله بها.</li>
+                      <li>يرتب صورًا مبسطة لمنازل القمر.</li>
+                      <li>يصل الصور بجملة جامعة: «كلها آيات خلقها الله وسخّرها».</li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="evidence">
+                  دليل التقويم: يصنف ثلاث صور صحيحة، ويرتب تسلسلًا واحدًا، وينسب
+                  الخلق والتسخير إلى الله.
+                </div>
+                <div class="station-warning">
+                  لا مصباح، ولا كشاف، ولا كرة تمثل الشمس، ولا نظر مباشر إلى
+                  قرصها.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="station" style="--c:#2D7A4B;--soft:#EAF5EE">
+            <header class="station-head">
+              <img class="station-icon" src="brand/corner-read.png" alt="" />
+              <div>
+                <h3>خريطة سورة الفجر</h3>
+                <p>ركن أقرأ لأتعلم · كتابي المنير: المعاني الأربعة والمراجعة</p>
+              </div>
+              <span class="station-tag">تلاوة · استرجاع · ربط</span>
+            </header>
+            <div class="station-body">
+              <div class="card-order">
+                <figure>
+                  <img src="assets/gq_corner_rules_read.webp" alt="بطاقة قوانين ركن أقرأ لأتعلم" />
+                  <figcaption>١ · بطاقة قوانين الركن</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/corner-cards/kitabi-05-surah-al-fajr-map.webp" alt="بطاقة خريطة سورة الفجر" />
+                  <figcaption>٢ · بطاقة النشاط المرجعية</figcaption>
+                </figure>
+              </div>
+              <div class="station-details">
+                <div class="station-grid">
+                  <div class="field wide">
+                    <b>المعنى المركزي</b>
+                    توجه سورة الفجر إلى الشكر والصبر والإحسان والاستعداد لليوم
+                    الآخر وطلب طمأنينة القلب بطاعة الله.
+                  </div>
+                  <div class="field">
+                    <b>الأدوات</b>
+                    مصحف على حامل، بطاقات عناوين: شكر وصبر، إحسان، عمل قبل
+                    الندم، نفس مطمئنة.
+                  </div>
+                  <div class="field">
+                    <b>استراتيجية التعلّم</b>
+                    الاسترجاع، الخريطة المفاهيمية، التسميع المتدرج، الربط
+                    بالسلوك.
+                  </div>
+                  <div class="field wide">
+                    <b>خطوات التنفيذ</b>
+                    <ol>
+                      <li>تقرأ المعلمة مقدارًا من السورة ويعظم الأطفال الاستماع.</li>
+                      <li>يختار الطفل عنوان المعنى المناسب للمقطع.</li>
+                      <li>يذكر سلوكًا يطبق به المعنى.</li>
+                      <li>يسمع مقدارًا يناسب قدرته وتصحح المعلمة بلطف.</li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="evidence">
+                  دليل التقويم: يربط ثلاثة معانٍ بمواضعها العامة، ويذكر أثرًا
+                  سلوكيًا واحدًا، ويحافظ على أدب القرآن.
+                </div>
+                <div class="station-warning">
+                  الترتيب لعناوين المعاني، لا لقصاصات الآيات؛ ويبقى القرآن على
+                  الحامل ولا يدخل في اللعب.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="station" style="--c:#8660A8;--soft:#F3ECF8">
+            <header class="station-head">
+              <img class="station-icon" src="brand/corner-play.png" alt="" />
+              <div>
+                <h3>الموقف والاسم والعبادة</h3>
+                <p>ركن أدرك وأستمتع · أحبك ربي + مواقف كتابي المنير</p>
+              </div>
+              <span class="station-tag">تمييز · قرار · تطبيق</span>
+            </header>
+            <div class="station-body">
+              <div class="card-order">
+                <figure>
+                  <img src="assets/gq_corner_rules_play.webp" alt="بطاقة قوانين ركن أدرك وأستمتع" />
+                  <figcaption>١ · بطاقة قوانين الركن</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/corner-cards/uhibbuka-meaning-of-al-aziz.webp" alt="بطاقة أتعرف معنى اسم الله العزيز" />
+                  <figcaption>٢ · بطاقة النشاط المرجعية</figcaption>
+                </figure>
+              </div>
+              <div class="station-details">
+                <div class="station-grid">
+                  <div class="field wide">
+                    <b>المعنى المركزي</b>
+                    أعرف الله بأسمائه، ثم أعبده بمقتضاها: أشكره على هبته،
+                    أفتقر إليه، أطلب منه الشفاء والمغفرة والعزة، وأحسن العمل.
+                  </div>
+                  <div class="field">
+                    <b>الأدوات</b>
+                    بطاقات مواقف، لوحة خيارات تعبدية، بطاقات الاعتقاد على حامل
+                    مرتفع.
+                  </div>
+                  <div class="field">
+                    <b>استراتيجية التعلّم</b>
+                    حل المواقف، المقارنة، اختيار الاستجابة مع تعليل بسيط.
+                  </div>
+                  <div class="field wide">
+                    <b>خطوات التنفيذ</b>
+                    <ol>
+                      <li>تقرأ المعلمة موقف نعمة أو مرض أو خطأ أو قوة.</li>
+                      <li>يختار الطفل العبادة المناسبة: شكر، دعاء، استغفار، طاعة.</li>
+                      <li>تربط المعلمة الموقف باسم الله المناسب دون تحويل الاسم إلى قطعة لعب.</li>
+                      <li>يطبق الطفل جملة صحيحة في موقف جديد.</li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="evidence">
+                  دليل التقويم: يربط موقفين بعبادة صحيحة، ويميز العزة بالطاعة
+                  من الكبر.
+                </div>
+                <div class="station-warning">
+                  أسماء الله لا توضع على الأرض ولا تدخل في المطابقة الحرة؛
+                  تعرضها المعلمة على حامل مكرّم.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="station" style="--c:#7EA348;--soft:#F1F7E8">
+            <header class="station-head">
+              <img class="station-icon" src="brand/corner-home.png" alt="" />
+              <div>
+                <h3>بيتي في النهار والمساء</h3>
+                <p>ركن المسكن · أعمال النهار والليل + آداب المساء</p>
+              </div>
+              <span class="station-tag">روتين · اقتداء · ترتيب</span>
+            </header>
+            <div class="station-body">
+              <div class="card-order">
+                <figure>
+                  <img src="assets/gq_corner_rules_home.webp" alt="بطاقة قوانين ركن المسكن" />
+                  <figcaption>١ · بطاقة قوانين الركن</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/corner-cards/adab-evening-remember-close-door.webp" alt="بطاقة أذكر الله وأغلق الباب" />
+                  <figcaption>٢ · بطاقة النشاط المرجعية</figcaption>
+                </figure>
+              </div>
+              <div class="station-details">
+                <div class="station-grid">
+                  <div class="field wide">
+                    <b>المعنى المركزي</b>
+                    أشكر الله على الوقت بأن أعمر النهار بالعمل النافع، وأستقبل
+                    الليل بالسكن والذكر والطاعة والاقتداء بالنبي ﷺ.
+                  </div>
+                  <div class="field">
+                    <b>الأدوات</b>
+                    بطاقات روتين، باب كرتوني، إناء بغطاء، مفتاح مصباح كهربائي
+                    آمن، أدوات منزلية.
+                  </div>
+                  <div class="field">
+                    <b>استراتيجية التعلّم</b>
+                    التسلسل المصور، لعب الدور، النمذجة، التصحيح بالممارسة.
+                  </div>
+                  <div class="field wide">
+                    <b>خطوات التنفيذ</b>
+                    <ol>
+                      <li>يفرز الطفل أعمال النهار وأعمال الليل.</li>
+                      <li>يرتب روتين المساء: ذكر، إغلاق، تغطية، إطفاء آمن، استعداد للنوم.</li>
+                      <li>يمثل العمل مع ذكر اسم الله حيث ورد.</li>
+                      <li>يقرر: نفعل السنة، والله وحده هو الحافظ.</li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="evidence">
+                  دليل التقويم: يرتب أربع خطوات، ويطبق اثنتين، وينسب الحفظ إلى
+                  الله مع فهم دور السبب.
+                </div>
+                <div class="station-warning">
+                  لا نار ولا شموع، ولا يقال إن الباب أو الغطاء يحفظان استقلالًا.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="station" style="--c:#6B3F22;--soft:#F7EFE5">
+            <header class="station-head">
+              <img class="station-icon" src="brand/corner-shop.png" alt="" />
+              <div>
+                <h3>متجر النعم والأمانة</h3>
+                <p>ركن الدكان · قال رسولي + الإحسان + الأعداد 10–12</p>
+              </div>
+              <span class="station-tag">شكر · عد · أمانة</span>
+            </header>
+            <div class="station-body">
+              <div class="card-order">
+                <figure>
+                  <img src="assets/gq_corner_rules_shop.webp" alt="بطاقة قوانين ركن الدكان" />
+                  <figcaption>١ · بطاقة قوانين الركن</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/corner-cards/uhibbuka-trustworthiness-shop.webp" alt="بطاقة أؤدي الأمانة في الدكان" />
+                  <figcaption>٢ · بطاقة النشاط المرجعية</figcaption>
+                </figure>
+              </div>
+              <div class="station-details">
+                <div class="station-grid">
+                  <div class="field wide">
+                    <b>المعنى المركزي</b>
+                    النعم من الله وحده، ومن شكرها الأمانة وعدم الإسراف والإحسان
+                    إلى المحتاج وحسن استعمال المال.
+                  </div>
+                  <div class="field">
+                    <b>الأدوات</b>
+                    سلع لعب، سلال، نقود رمزية بلا نصوص شرعية، بطاقات الأعداد
+                    10–12، صور نعم.
+                  </div>
+                  <div class="field">
+                    <b>استراتيجية التعلّم</b>
+                    لعب الدور الوظيفي، حل المشكلة، العد بالمحسوس، اتخاذ القرار.
+                  </div>
+                  <div class="field wide">
+                    <b>خطوات التنفيذ</b>
+                    <ol>
+                      <li>يعد الطفل 10 أو 11 أو 12 قطعة بحسب البطاقة.</li>
+                      <li>يؤدي دور البائع أو المشتري بأمانة وألفاظ مهذبة.</li>
+                      <li>يختار شيئًا لسلة إحسان دون إسراف.</li>
+                      <li>يسمي نعمة ويقرر: «أنعم الله بها علينا، فله الحمد والشكر».</li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="evidence">
+                  دليل التقويم: يطابق كمية بعددها، ويحافظ على الأمانة، ويذكر
+                  صورة عملية للشكر.
+                </div>
+                <div class="station-warning">
+                  نص ذكر «ما أصبح بي من نعمة» يبقى في بطاقة المعلمة ولا يطبع
+                  على النقود أو السلع.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="station" style="--c:#D8662A;--soft:#FFF1E8">
+            <header class="station-head">
+              <img class="station-icon" src="brand/corner-build.png" alt="" />
+              <div>
+                <h3>أبني يومًا معمورًا بالطاعة</h3>
+                <p>ركن ساحة البناء · مهاراتي + أعمال الوقت + اسم الله العزيز</p>
+              </div>
+              <span class="station-tag">بناء · تخطيط · تعاون</span>
+            </header>
+            <div class="station-body">
+              <div class="card-order">
+                <figure>
+                  <img src="assets/gq_corner_rules_build.webp" alt="بطاقة قوانين ساحة البناء" />
+                  <figcaption>١ · بطاقة قوانين الركن</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/corner-cards/maharati-build-add-one.webp" alt="بطاقة أبني وأزيد واحدًا" />
+                  <figcaption>٢ · بطاقة النشاط المرجعية</figcaption>
+                </figure>
+              </div>
+              <div class="station-details">
+                <div class="station-grid">
+                  <div class="field wide">
+                    <b>المعنى المركزي</b>
+                    وهبنا الله القدرة والعقل؛ فنستعملهما في بناء نافع، وننظم
+                    وقتنا بالطاعة، ونتعاون بلا كبر.
+                  </div>
+                  <div class="field">
+                    <b>الأدوات</b>
+                    12 مكعبًا لكل مجموعة، بطاقات أعمال، شريط صباح ومساء، قاعدة
+                    بناء.
+                  </div>
+                  <div class="field">
+                    <b>استراتيجية التعلّم</b>
+                    البناء التعاوني، التخطيط، العد، حل المشكلة.
+                  </div>
+                  <div class="field wide">
+                    <b>خطوات التنفيذ</b>
+                    <ol>
+                      <li>تبني المجموعة مسارًا من 12 مكعبًا وتتحقق من العدد.</li>
+                      <li>تضع بطاقات عمل نافع على أجزاء المسار.</li>
+                      <li>تتعاون لإصلاح جزء غير ثابت.</li>
+                      <li>يذكر كل طفل كيف يستعمل قوته في الخير مستعينًا بالله.</li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="evidence">
+                  دليل التقويم: يبني كمية صحيحة، ويقترح عملًا نافعًا، ويتعاون
+                  من غير استعلاء.
+                </div>
+                <div class="station-warning">
+                  يقال: «وفّقكم الله فأحسنتم استعمال ما وهبكم»، ولا تنسب
+                  النتيجة إلى قوة الطفل وحدها.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="station" style="--c:#003E45;--soft:#EAF4F5">
+            <header class="station-head">
+              <img class="station-icon" src="brand/corner-sand.png" alt="" />
+              <div>
+                <h3>أثر الحركة والعدد</h3>
+                <p>ساحة الرمل · لساني عربي + تثبيت الأعداد</p>
+              </div>
+              <span class="station-tag">حسّي · صوتي · تحقّق</span>
+            </header>
+            <div class="station-body">
+              <div class="card-order">
+                <figure>
+                  <img src="assets/gq_corner_rules_sand.webp" alt="بطاقة قوانين ساحة الرمل" />
+                  <figcaption>١ · بطاقة قوانين الركن</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/corner-cards/lisani-01-touch-shape-vowel.webp" alt="بطاقة ألمس الحركة وأشكلها" />
+                  <figcaption>٢ · بطاقة النشاط المرجعية</figcaption>
+                </figure>
+              </div>
+              <div class="station-details">
+                <div class="station-grid">
+                  <div class="field wide">
+                    <b>المعنى المركزي</b>
+                    أضبط الحركة لأقرأ العربية قراءة صحيحة، وأرسم العدد ثم
+                    أتحقق منه بكمية؛ وقد وهبني الله السمع واليد والعقل للتعلم.
+                  </div>
+                  <div class="field">
+                    <b>الأدوات</b>
+                    صواني رمل نظيف، بطاقات حروف، نماذج الحركات، بطاقات الأعداد،
+                    معدودات كبيرة.
+                  </div>
+                  <div class="field">
+                    <b>استراتيجية التعلّم</b>
+                    التعلّم متعدد الحواس، التمييز السمعي، المطابقة.
+                  </div>
+                  <div class="field wide">
+                    <b>خطوات التنفيذ</b>
+                    <ol>
+                      <li>يسمع الطفل حرفًا مفتوحًا أو مكسورًا أو مضمومًا.</li>
+                      <li>يرسم الحرف والحركة في موضعها.</li>
+                      <li>يرسم عددًا من 10–12 ويضع بجانبه كمية مطابقة.</li>
+                      <li>يمسح الرمل ويرتب الأدوات شكرًا للنعمة.</li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="evidence">
+                  دليل التقويم: يميز الحركات الثلاث، ويضع اثنتين في موضعهما،
+                  ويطابق عددًا بكمية.
+                </div>
+                <div class="station-warning">
+                  لا تكتب آيات أو أحاديث أو أسماء الله في الرمل، وتقتصر
+                  المناولة على الحروف والكلمات التعليمية المباحة.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="station" style="--c:#C79A3B;--soft:#FFF8E8">
+            <header class="station-head">
+              <img class="station-icon" src="brand/corner-art.png" alt="" />
+              <div>
+                <h3>غرسة الشكر والعمل</h3>
+                <p>ركن فنوني الجميلة · خلاصة وجدانية وسلوكية للوحدة</p>
+              </div>
+              <span class="station-tag">تعبير · اختيار · أثر</span>
+            </header>
+            <div class="station-body">
+              <div class="card-order">
+                <figure>
+                  <img src="assets/gq_corner_rules_art.webp" alt="بطاقة قوانين ركن فنوني الجميلة" />
+                  <figcaption>١ · بطاقة قوانين الركن</figcaption>
+                </figure>
+                <figure>
+                  <div class="activity-card">
+                    <img src="brand/seedling.webp" alt="" />
+                    <strong>بطاقة غرسة الشكر والعمل</strong>
+                    <small>بطاقة تنفيذ خاصة باليوم الختامي</small>
+                  </div>
+                  <figcaption>٢ · بطاقة النشاط</figcaption>
+                </figure>
+              </div>
+              <div class="station-details">
+                <div class="station-grid">
+                  <div class="field wide">
+                    <b>المعنى المركزي</b>
+                    لا يقف التعلم عند الإعجاب بالآيات؛ بل يثمر تعظيمًا لله،
+                    وشكرًا للنعمة، وعملًا صالحًا يظهر في اليوم والليلة.
+                  </div>
+                  <div class="field">
+                    <b>الأدوات</b>
+                    لوحة غرسة كبيرة، أوراق شجر ورقية، ألوان الوحدة، صور أفعال
+                    نافعة، لاصق.
+                  </div>
+                  <div class="field">
+                    <b>استراتيجية التعلّم</b>
+                    التعبير الفني الموجّه، الاختيار، الربط بين النعمة والعمل.
+                  </div>
+                  <div class="field wide">
+                    <b>خطوات التنفيذ</b>
+                    <ol>
+                      <li>يختار الطفل ورقة تمثل نعمة تعلمها في الوحدة.</li>
+                      <li>يملي على المعلمة جملة تنسب النعمة إلى الله.</li>
+                      <li>يضيف صورة عمل يشكر به هذه النعمة.</li>
+                      <li>يثبت الورقة في غرسة الصف ويشرح اختياره.</li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="evidence">
+                  دليل التقويم: يذكر نعمة من الله، ويربطها بفعل شكر واقعي،
+                  ويعرض أثره بعبارة مفهومة.
+                </div>
+                <div class="station-warning">
+                  لا تكتب آيات أو أسماء الله على خامات تُرمى، ولا يرسم الطفل
+                  الشمس بوصفها جسمًا صغيرًا بديلًا عن الآية العظيمة.
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <img src="brand/waqf-seal.webp" alt="" />
+          <div>
+            <h2>مصفوفة التقويم الختامي</h2>
+            <p>ترصد المعلمة الأداء أثناء اللعب، ولا تعيد اختبارًا لفظيًا طويلًا بعد انتهاء المحطات.</p>
+          </div>
+        </div>
+        <div class="assessment-wrap">
+          <table class="assessment">
+            <thead>
+              <tr>
+                <th>المادة</th>
+                <th>مؤشر الأداء المشاهد</th>
+                <th>أين يظهر؟</th>
+                <th>سؤال تحقق قصير</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>علّمني ربي</td>
+                <td>ينسب خلق الآيات وتسخيرها إلى الله، ويميز أعمال النهار والليل.</td>
+                <td>أكتشف ما حولي · المسكن</td>
+                <td>من خلق الشمس والقمر؟ وكيف أشكر نعمة الوقت؟</td>
+              </tr>
+              <tr>
+                <td>كتابي المنير</td>
+                <td>يربط معاني السورة بالشكر والصبر والإحسان والعمل وطمأنينة القلب.</td>
+                <td>أقرأ لأتعلم · أدرك وأستمتع</td>
+                <td>ماذا أفعل عند النعمة؟ وما العمل الذي أقدمه اليوم؟</td>
+              </tr>
+              <tr>
+                <td>أحبك ربي</td>
+                <td>يربط أسماء الله المدروسة بعبادة صحيحة دون نسبة الأثر للسبب.</td>
+                <td>أدرك وأستمتع · ساحة البناء</td>
+                <td>ممن أطلب الشفاء والمغفرة والعزة؟</td>
+              </tr>
+              <tr>
+                <td>قال رسولي</td>
+                <td>ينسب النعمة إلى الله ويردد الذكر أو معناه في موضعه.</td>
+                <td>الدكان · الإغلاق</td>
+                <td>ممن أصبحت بك هذه النعمة؟</td>
+              </tr>
+              <tr>
+                <td>أدب واقتداء</td>
+                <td>يرتب آداب المساء ويطبقها مع فهم أن الحفظ من الله.</td>
+                <td>المسكن</td>
+                <td>ماذا نفعل عند إغلاق الباب؟ ومن الحافظ؟</td>
+              </tr>
+              <tr>
+                <td>لساني عربي</td>
+                <td>يميز الفتحة والكسرة والضمة صوتًا وموضعًا، ويقرأ كلمة بسيطة.</td>
+                <td>ساحة الرمل · أقرأ لأتعلم</td>
+                <td>ما الحركة؟ أين توضع؟ وكيف تغيّر الصوت؟</td>
+              </tr>
+              <tr>
+                <td>مهاراتي</td>
+                <td>يبني أو يطابق كميات 10 و11 و12 ويتحقق بإعادة العد.</td>
+                <td>الدكان · ساحة البناء · الرمل</td>
+                <td>كيف عرفت أن هذه الكمية اثنا عشر؟</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="levels">
+          <div class="level">
+            <b>مستقل</b>
+            يؤدي المؤشر ويشرح معناه بعبارة مناسبة دون تذكير مباشر.
+          </div>
+          <div class="level">
+            <b>بمساندة</b>
+            يؤديه بعد سؤال موجّه أو نموذج واحد من المعلمة.
+          </div>
+          <div class="level">
+            <b>يحتاج متابعة</b>
+            لا يزال يخلط في المعنى أو المهارة، فيعاد له تطبيق قصير في الأسبوع التالي.
+          </div>
+        </div>
+      </section>
+
+      <section class="section closing">
+        <div class="section-head">
+          <img src="brand/lamp.webp" alt="" />
+          <div>
+            <h2>الإغلاق الجامع</h2>
+            <p>إعادة الأعمال المحسوسة إلى المعنى التعبدي قبل مغادرة البرنامج.</p>
+          </div>
+        </div>
+        <div class="closing-flow">
+          <div class="closing-step">
+            <b>أثر رأيته</b>
+            <p>يختار الطفل أثرًا من ركن ويقول: ماذا فعلت؟</p>
+          </div>
+          <div class="closing-step">
+            <b>معنى تعلمته</b>
+            <p>تسأله المعلمة: ماذا عرفت عن الله أو آياته أو نعمه؟</p>
+          </div>
+          <div class="closing-step">
+            <b>عمل سأحافظ عليه</b>
+            <p>يذكر الطفل عمل شكر أو طاعة أو أدبًا نبويًا راجيًا توفيق الله.</p>
+          </div>
+        </div>
+        <div class="kafara">
+          <b>يُختتم المجلس بالسنة الثابتة</b>
+          <p>
+            سبحانك اللهم وبحمدك، أشهد أن لا إله إلا أنت، أستغفرك وأتوب إليك.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"E:/مناهج غرس القيم/Claudee ai - غرس القيم/ملفات ومواد الدليل/نهائي/الملفات النهائية-موقع دليل المعلمة/ghars-teacher-guide-netlify-lite \\(1\\)\" && find . -maxdepth 2 -type f \\\\\\( -iname \"*todo*\" -o -iname \"*plan*\" -o -iname \"*تطوير*\" -o -iname \"*note*\" -o -iname \"*خطة*\" -o -iname \"*.md\" \\\\\\) 2>/dev/null; echo \"---PARENT DIR---\"; ls -la \"..\" 2>/dev/null)"
+    ]
+  }
+}

@@ -1,0 +1,1127 @@
+/*
+ * Ghars teacher guide — interface consolidation v7
+ * One stable visual system, three explicit navigation levels, and material-led lessons.
+ */
+
+:root {
+  --gq-v7-top: 64px;
+  --gq-v7-unit-nav: 122px;
+  --gq-v7-day-nav: 64px;
+  --gq-v7-subject-nav: 58px;
+  --gq-v7-tool-safe: 92px;
+  --gq-v7-deep: #003e45;
+  --gq-v7-teal: #006b69;
+  --gq-v7-green: #2d7a4b;
+  --gq-v7-gold: #c79a3b;
+  --gq-v7-brown: #6b3f22;
+  --gq-v7-cream: #fff7e8;
+  --gq-v7-paper: #fffdf8;
+  --gq-v7-soft: #f6f2e9;
+  --gq-v7-line: #e4dac8;
+  --gq-v7-ink: #16383b;
+  --gq-v7-muted: #5f6b67;
+  --gq-v7-shadow: 0 8px 22px rgb(0 62 69 / 8%);
+}
+
+html {
+  background: var(--gq-v7-cream) !important;
+  scroll-padding-top: calc(
+    var(--gq-v7-top) + var(--gq-v7-unit-nav) + var(--gq-v7-day-nav) + 12px
+  ) !important;
+}
+
+body.gq-app {
+  min-height: 100%;
+  padding: var(--gq-v7-top) 0 0 !important;
+  padding-bottom: calc(
+    var(--gq-v7-tool-safe) + env(safe-area-inset-bottom, 0px)
+  ) !important;
+  background: var(--gq-v7-cream) !important;
+  color: var(--gq-v7-ink) !important;
+}
+
+body.gq-app::before {
+  display: none !important;
+}
+
+/* Reserve the top bar from the first paint and prevent the late layout shift. */
+#gq-top {
+  position: fixed !important;
+  inset: 0 0 auto !important;
+  z-index: 1300 !important;
+  width: 100% !important;
+  height: var(--gq-v7-top) !important;
+  padding: 0 clamp(12px, 2vw, 26px) !important;
+  background: var(--gq-v7-deep) !important;
+  border: 0 !important;
+  border-bottom: 3px solid var(--gq-v7-gold) !important;
+  box-shadow: 0 5px 18px rgb(0 62 69 / 16%) !important;
+}
+
+#gq-top .burger,
+#gq-side,
+#gq-scrim,
+#gq-progress,
+#gq-simple-start,
+.gq-secondary-nav {
+  display: none !important;
+}
+
+#gq-top .brand .m {
+  box-shadow: none !important;
+}
+
+#gq-top .tb,
+#gq-top .search input {
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+
+/* A full-width reading canvas replaces the sidebar/dashboard composition. */
+body.gq-app .guide {
+  position: relative !important;
+  z-index: 1 !important;
+  width: min(100%, 1440px) !important;
+  max-width: 1440px !important;
+  margin: 0 auto 36px !important;
+  background: #fff !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+/* Cover: one composition, not a card containing more cards. */
+.guide > .hdr.gq-pro-cover {
+  min-height: 300px !important;
+  display: grid !important;
+  grid-template-columns: minmax(180px, 220px) minmax(0, 1fr) !important;
+  grid-template-areas:
+    "logo main"
+    "summary summary" !important;
+  gap: 20px 34px !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 34px clamp(24px, 4vw, 56px) 24px !important;
+  color: var(--gq-v7-ink) !important;
+  background:
+    linear-gradient(90deg, rgb(45 122 75 / 7%), transparent 44%),
+    var(--gq-v7-paper) !important;
+  border: 0 !important;
+  border-top: 7px solid var(--gq-v7-green) !important;
+  border-bottom: 1px solid var(--gq-v7-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+.guide > .hdr.gq-pro-cover::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: auto auto -112px -76px !important;
+  width: 260px !important;
+  height: 260px !important;
+  border: 1px solid rgb(199 154 59 / 24%) !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  box-shadow:
+    0 0 0 28px rgb(199 154 59 / 4%),
+    0 0 0 58px rgb(45 122 75 / 3%) !important;
+  opacity: 1 !important;
+}
+
+.guide > .hdr.gq-pro-cover::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 30px auto 30px 0 !important;
+  width: 4px !important;
+  height: auto !important;
+  background: var(--gq-v7-gold) !important;
+  border: 0 !important;
+  opacity: 1 !important;
+}
+
+.guide > .hdr.gq-pro-cover .official-unit-logo.gq-cover-logo-panel {
+  grid-area: logo !important;
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  padding: 10px 22px 10px 0 !important;
+  color: var(--gq-v7-deep) !important;
+  text-align: center !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-right: 1px solid var(--gq-v7-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.guide > .hdr.gq-pro-cover .official-unit-logo.gq-cover-logo-panel img {
+  width: 106px !important;
+  height: 106px !important;
+  margin: 0 auto 5px !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.guide > .hdr.gq-pro-cover .official-unit-logo.gq-cover-logo-panel span {
+  color: var(--gq-v7-deep) !important;
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+}
+
+.guide > .hdr.gq-pro-cover .official-unit-logo.gq-cover-logo-panel small {
+  color: var(--gq-v7-brown) !important;
+  font-size: 11px !important;
+}
+
+.guide > .hdr.gq-pro-cover .hdr-left.gq-cover-main {
+  grid-area: main !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  padding: 0 !important;
+}
+
+.guide > .hdr.gq-pro-cover .gq-hdr-brand {
+  display: none !important;
+}
+
+.guide > .hdr.gq-pro-cover .hdr-sup {
+  display: flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--gq-v7-green) !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+}
+
+.guide > .hdr.gq-pro-cover .hdr-sup::before {
+  content: "" !important;
+  width: 30px !important;
+  height: 3px !important;
+  background: var(--gq-v7-gold) !important;
+  border-radius: 99px !important;
+}
+
+.guide > .hdr.gq-pro-cover .hdr-title {
+  margin: 0 !important;
+  max-width: 900px !important;
+  color: var(--gq-v7-deep) !important;
+  text-shadow: none !important;
+}
+
+.guide > .hdr.gq-pro-cover .hdr-title span {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--gq-v7-deep) !important;
+  -webkit-text-fill-color: var(--gq-v7-deep) !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-size: clamp(38px, 5vw, 62px) !important;
+  line-height: 1.25 !important;
+}
+
+.guide > .hdr.gq-pro-cover .hdr-title small {
+  display: block !important;
+  margin: 2px 0 0 !important;
+  color: var(--gq-v7-brown) !important;
+  -webkit-text-fill-color: var(--gq-v7-brown) !important;
+  font-size: clamp(18px, 2vw, 25px) !important;
+  line-height: 1.55 !important;
+}
+
+.guide > .hdr.gq-pro-cover .hdr-sub {
+  max-width: 900px !important;
+  margin: 0 !important;
+  color: var(--gq-v7-muted) !important;
+  font-size: 14px !important;
+  line-height: 1.9 !important;
+}
+
+.guide > .hdr.gq-pro-cover .gq-cover-points {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  margin: 9px 0 0 !important;
+  padding-top: 12px !important;
+  border-top: 1px solid var(--gq-v7-line) !important;
+}
+
+.guide > .hdr.gq-pro-cover .gq-cover-point {
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 14px !important;
+  color: var(--gq-v7-ink) !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-inline-start: 1px solid var(--gq-v7-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.guide > .hdr.gq-pro-cover .gq-cover-point:first-child {
+  padding-inline-start: 0 !important;
+  border-inline-start: 0 !important;
+}
+
+.guide > .hdr.gq-pro-cover .gq-cover-point strong {
+  color: var(--gq-v7-teal) !important;
+  font-size: 12.5px !important;
+}
+
+.guide > .hdr.gq-pro-cover .gq-cover-point span {
+  color: var(--gq-v7-muted) !important;
+  font-size: 11.5px !important;
+}
+
+.guide > .hdr.gq-pro-cover .hdr-right.gq-cover-summary {
+  grid-area: summary !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  display: grid !important;
+  grid-template-columns: 160px minmax(0, 1.1fr) minmax(0, 1fr) !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 11px 0 !important;
+  color: var(--gq-v7-ink) !important;
+  background: var(--gq-v7-soft) !important;
+  border: 0 !important;
+  border-top: 1px solid var(--gq-v7-line) !important;
+  border-bottom: 1px solid var(--gq-v7-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.guide > .hdr.gq-pro-cover .hdr-right.gq-cover-summary > * {
+  min-height: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 5px 16px !important;
+  color: var(--gq-v7-ink) !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-inline-start: 1px solid var(--gq-v7-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.guide > .hdr.gq-pro-cover .hdr-right.gq-cover-summary > :first-child {
+  border-inline-start: 0 !important;
+}
+
+.guide > .hdr.gq-pro-cover .gq-cover-side-title {
+  color: var(--gq-v7-brown) !important;
+  font-size: 13px !important;
+}
+
+.guide > .hdr.gq-pro-cover .unit-badge {
+  color: var(--gq-v7-deep) !important;
+  font-size: 13px !important;
+}
+
+.guide > .hdr.gq-pro-cover .gq-cover-side-meta {
+  color: var(--gq-v7-muted) !important;
+  font-size: 12px !important;
+}
+
+.guide > .hdr.gq-pro-cover .subjects-row,
+.gq-identity-cover-ribbon,
+.gq-brand-hero,
+.gq-command-center {
+  display: none !important;
+}
+
+/* Two explicit, separate rails replace the sidebar. */
+body.gq-app .tabs-main,
+body.gq-app .tabs-days {
+  position: sticky !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  height: var(--gq-v7-unit-nav) !important;
+  min-height: var(--gq-v7-unit-nav) !important;
+  margin: 0 !important;
+  padding: 8px clamp(10px, 2vw, 22px) !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: 0 5px 16px rgb(0 62 69 / 8%) !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgb(199 154 59 / 56%) transparent !important;
+  overscroll-behavior-x: contain !important;
+  cursor: grab !important;
+}
+
+body.gq-app .tabs-main.gq-rail-dragging,
+body.gq-app .tabs-days.gq-rail-dragging,
+body.gq-app .subject-tabs.gq-rail-dragging {
+  cursor: grabbing !important;
+  user-select: none !important;
+  scroll-behavior: auto !important;
+}
+
+body.gq-app .tabs-main::-webkit-scrollbar,
+body.gq-app .tabs-days::-webkit-scrollbar,
+body.gq-app .subject-tabs::-webkit-scrollbar {
+  display: block !important;
+  height: 7px !important;
+}
+
+body.gq-app .tabs-main::-webkit-scrollbar-thumb,
+body.gq-app .tabs-days::-webkit-scrollbar-thumb {
+  background: rgb(199 154 59 / 52%) !important;
+  border-radius: 99px !important;
+}
+
+body.gq-app .tabs-main {
+  top: var(--gq-v7-top) !important;
+  z-index: 115 !important;
+  color: var(--gq-v7-ink) !important;
+  background: var(--gq-v7-paper) !important;
+  border-bottom: 1px solid var(--gq-v7-line) !important;
+}
+
+body.gq-app .tabs-days {
+  top: calc(var(--gq-v7-top) + var(--gq-v7-unit-nav)) !important;
+  z-index: 110 !important;
+  height: var(--gq-v7-day-nav) !important;
+  min-height: var(--gq-v7-day-nav) !important;
+  background: var(--gq-v7-deep) !important;
+  border-bottom: 3px solid var(--gq-v7-gold) !important;
+}
+
+body.gq-app .tabs-main::before,
+body.gq-app .tabs-days::before {
+  position: sticky !important;
+  inset-inline-start: 0 !important;
+  z-index: 3 !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 118px !important;
+  min-height: 42px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 7px 14px !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  font-size: 12px !important;
+  font-weight: 950 !important;
+}
+
+body.gq-app .tabs-main::before {
+  color: #fff !important;
+  background: var(--gq-v7-teal) !important;
+  border: 1px solid var(--gq-v7-teal) !important;
+}
+
+body.gq-app .tabs-days::before {
+  color: var(--gq-v7-brown) !important;
+  background: var(--gq-v7-cream) !important;
+  border: 1px solid var(--gq-v7-gold) !important;
+}
+
+body.gq-app .tabs-main .tab,
+body.gq-app .tabs-days .tab {
+  position: relative !important;
+  flex: 0 0 auto !important;
+  min-height: 42px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  margin: 0 !important;
+  padding: 8px 14px !important;
+  border-radius: 10px !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  line-height: 1.55 !important;
+  cursor: pointer !important;
+  transition:
+    transform 0.14s ease,
+    background-color 0.14s ease,
+    border-color 0.14s ease !important;
+}
+
+body.gq-app .tabs-main .tab {
+  color: #29413d !important;
+  background: #fff !important;
+  border: 1px solid #dcd2bf !important;
+  box-shadow: inset 0 -2px 0 #eee5d6 !important;
+}
+
+body.gq-app .tabs-main .tab:hover {
+  color: var(--gq-v7-deep) !important;
+  background: #f2f8f5 !important;
+  border-color: rgb(0 107 105 / 42%) !important;
+  transform: translateY(-1px) !important;
+}
+
+body.gq-app .tabs-main .tab.active,
+body.gq-app .tabs-main .tab[aria-selected="true"] {
+  color: #fff !important;
+  background: var(--gq-v7-teal) !important;
+  border-color: var(--gq-v7-teal) !important;
+  box-shadow: inset 0 -3px 0 var(--gq-v7-gold) !important;
+}
+
+body.gq-app .tabs-days .tab {
+  color: #fff !important;
+  background: rgb(255 255 255 / 8%) !important;
+  border: 1px solid rgb(255 255 255 / 28%) !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+body.gq-app .tabs-days .tab:hover {
+  color: #fff !important;
+  background: rgb(255 255 255 / 16%) !important;
+  border-color: rgb(255 255 255 / 56%) !important;
+  transform: translateY(-1px) !important;
+}
+
+body.gq-app .tabs-days .tab.active,
+body.gq-app .tabs-days .tab[aria-selected="true"] {
+  color: var(--gq-v7-deep) !important;
+  background: var(--gq-v7-cream) !important;
+  border-color: var(--gq-v7-gold) !important;
+  box-shadow: inset 0 -3px 0 var(--gq-v7-gold) !important;
+}
+
+body.gq-app .tabs-main .tab::before,
+body.gq-app .tabs-days .tab::before {
+  content: "" !important;
+  width: 7px !important;
+  height: 7px !important;
+  flex: 0 0 7px !important;
+  margin: 0 !important;
+  border-radius: 50% !important;
+  background: currentColor !important;
+  opacity: 0.38 !important;
+}
+
+body.gq-app .tabs-main .tab.active::before,
+body.gq-app .tabs-days .tab.active::before {
+  background: var(--gq-v7-gold) !important;
+  opacity: 1 !important;
+}
+
+/* متابعة الوحدة مقسمة إلى صفين ثابتين وواضحين بدل شريط طويل واحد. */
+body.gq-app .tabs-main {
+  display: grid !important;
+  grid-template-columns: 138px minmax(0, 1fr) !important;
+  align-items: stretch !important;
+  gap: 10px !important;
+  height: auto !important;
+  min-height: 116px !important;
+  padding: 9px clamp(10px, 2vw, 22px) !important;
+  overflow: visible !important;
+  cursor: default !important;
+}
+
+body.gq-app .tabs-main::before {
+  content: none !important;
+  display: none !important;
+}
+
+body.gq-app .gq-unit-nav-title {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 0 !important;
+  padding: 10px 12px !important;
+  color: #fff !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, var(--gq-v7-deep), var(--gq-v7-teal)) !important;
+  border: 1px solid var(--gq-v7-teal) !important;
+  border-radius: 11px !important;
+  box-shadow: inset 0 -3px 0 var(--gq-v7-gold) !important;
+  font-size: 13px !important;
+  font-weight: 950 !important;
+  line-height: 1.55 !important;
+}
+
+body.gq-app .gq-unit-nav-stack {
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-rows: repeat(2, minmax(44px, auto)) !important;
+  gap: 7px !important;
+}
+
+body.gq-app .gq-unit-nav-row {
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: stretch !important;
+  gap: 7px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 0 0 3px !important;
+  overscroll-behavior-x: contain !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgb(0 107 105 / 42%) transparent !important;
+  cursor: grab !important;
+}
+
+body.gq-app .gq-unit-nav-row.gq-rail-dragging {
+  cursor: grabbing !important;
+  user-select: none !important;
+}
+
+body.gq-app .gq-unit-nav-row::-webkit-scrollbar {
+  display: block !important;
+  height: 5px !important;
+}
+
+body.gq-app .gq-unit-nav-row::-webkit-scrollbar-thumb {
+  background: rgb(0 107 105 / 38%) !important;
+  border-radius: 99px !important;
+}
+
+body.gq-app .gq-unit-nav-row-label {
+  position: sticky !important;
+  inset-inline-start: 0 !important;
+  z-index: 3 !important;
+  flex: 0 0 112px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 42px !important;
+  padding: 6px 9px !important;
+  color: var(--gq-v7-brown) !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  background: var(--gq-v7-cream) !important;
+  border: 1px solid rgb(199 154 59 / 52%) !important;
+  border-radius: 9px !important;
+  font-size: 10.8px !important;
+  font-weight: 900 !important;
+  line-height: 1.45 !important;
+}
+
+body.gq-app .gq-unit-nav-row .tab {
+  flex: 1 1 148px !important;
+  min-width: 142px !important;
+  min-height: 42px !important;
+  height: auto !important;
+  padding: 7px 10px !important;
+  white-space: normal !important;
+}
+
+body.gq-app .tabs .tab:focus-visible,
+body.gq-app .subject-tab:focus-visible {
+  outline: 3px solid var(--gq-v7-gold) !important;
+  outline-offset: 2px !important;
+}
+
+/* Pages are flat reading surfaces; cards remain only where they carry a distinct item. */
+body.gq-app .panel {
+  min-height: 0 !important;
+  padding: clamp(20px, 3vw, 36px) clamp(16px, 4vw, 54px) 30px !important;
+  color: var(--gq-v7-ink) !important;
+  background: #fff !important;
+  overflow: visible !important;
+}
+
+body.gq-app .panel > :last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+body.gq-app .gq-usage-hero,
+body.gq-app .gq-map-hero,
+body.gq-app .phil-card,
+body.gq-app .corner-hero {
+  color: var(--gq-v7-ink) !important;
+  background: var(--gq-v7-soft) !important;
+  border: 0 !important;
+  border-right: 5px solid var(--gq-v7-teal) !important;
+  border-radius: 0 14px 14px 0 !important;
+  box-shadow: none !important;
+}
+
+body.gq-app .gq-usage-hero *,
+body.gq-app .gq-map-hero *,
+body.gq-app .phil-card *,
+body.gq-app .corner-hero * {
+  color: inherit !important;
+  text-shadow: none !important;
+}
+
+body.gq-app .gq-usage-card,
+body.gq-app .gq-fast-box,
+body.gq-app .gq-weekly-prep,
+body.gq-app .day-objectives-card,
+body.gq-app .day-mini-card,
+body.gq-app .thread-card,
+body.gq-app .subj-card,
+body.gq-app .gq-map-principle {
+  background: #fff !important;
+  border: 1px solid var(--gq-v7-line) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+
+body.gq-app .gq-fast-panel,
+body.gq-app .gq-usage-grid,
+body.gq-app .thread-grid,
+body.gq-app .subj-grid {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Day pages: one header, one lesson surface, one material tab rail. */
+body.gq-app .day-integrated {
+  padding: 0 0 24px !important;
+  background: #fff !important;
+}
+
+body.gq-app .day-hero {
+  margin: 0 !important;
+  padding: 22px clamp(18px, 4vw, 52px) !important;
+  color: #fff !important;
+  background: var(--gq-v7-deep) !important;
+  border: 0 !important;
+  border-bottom: 4px solid var(--gq-v7-gold) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+body.gq-app .day-hero::before {
+  display: none !important;
+}
+
+body.gq-app .day-hero *,
+body.gq-app .day-hero-title,
+body.gq-app .day-hero-sub {
+  color: #fff !important;
+}
+
+body.gq-app .day-badge {
+  background: transparent !important;
+  border: 1px solid rgb(255 255 255 / 42%) !important;
+  border-radius: 12px !important;
+}
+
+body.gq-app .day-badge .num {
+  color: var(--gq-v7-cream) !important;
+}
+
+body.gq-app .day-focus,
+body.gq-app .day-lesson-count {
+  color: #fff !important;
+  background: rgb(255 255 255 / 10%) !important;
+  border: 1px solid rgb(255 255 255 / 30%) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+body.gq-app .day-objectives-card {
+  margin: 0 !important;
+  padding: 18px clamp(18px, 4vw, 52px) !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--gq-v7-line) !important;
+  border-radius: 0 !important;
+}
+
+body.gq-app .day-objective {
+  background: transparent !important;
+  border: 0 !important;
+  border-inline-start: 3px solid var(--gq-v7-gold) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+body.gq-app .day-subject-layout {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #fff !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+body.gq-app .subject-tabs {
+  position: sticky !important;
+  top: calc(
+    var(--gq-v7-top) + var(--gq-v7-unit-nav) + var(--gq-v7-day-nav)
+  ) !important;
+  z-index: 105 !important;
+  min-height: var(--gq-v7-subject-nav) !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 8px clamp(10px, 3vw, 34px) !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  background: #fff !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--gq-v7-line) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 5px 14px rgb(0 62 69 / 8%) !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgb(0 107 105 / 42%) transparent !important;
+  overscroll-behavior-x: contain !important;
+  cursor: grab !important;
+}
+
+body.gq-app .subject-tabs::-webkit-scrollbar-thumb {
+  background: rgb(0 107 105 / 38%) !important;
+  border-radius: 99px !important;
+}
+
+body.gq-app .subject-tabs .subject-tab {
+  --subject-on: #fff;
+  position: relative !important;
+  flex: 0 0 auto !important;
+  min-height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 8px 13px !important;
+  color: var(--gq-v7-ink) !important;
+  background: #fff !important;
+  border: 1px solid #ddd5c7 !important;
+  border-right: 4px solid var(--subject-color, var(--gq-v7-gold)) !important;
+  border-radius: 9px !important;
+  box-shadow: inset 0 -2px 0 #f0ebe2 !important;
+  font-size: 12px !important;
+  font-weight: 850 !important;
+  cursor: pointer !important;
+}
+
+body.gq-app .subject-tabs .subject-tab::before {
+  content: "" !important;
+  width: 27px !important;
+  height: 27px !important;
+  flex: 0 0 27px !important;
+  margin-inline-end: 7px !important;
+  border-radius: 0 !important;
+  background: var(--subject-icon) center / contain no-repeat !important;
+  opacity: 1 !important;
+}
+
+body.gq-app .subject-tabs .subject-tab:hover {
+  color: var(--subject-color, var(--gq-v7-deep)) !important;
+  background: #fcfaf6 !important;
+  border-color: var(--subject-color, var(--gq-v7-gold)) !important;
+}
+
+body.gq-app .subject-tabs .subject-tab.active,
+body.gq-app .subject-tabs .subject-tab[aria-selected="true"] {
+  color: var(--subject-on, #fff) !important;
+  background: var(--subject-color, var(--gq-v7-teal)) !important;
+  border-color: var(--subject-color, var(--gq-v7-teal)) !important;
+  box-shadow: none !important;
+}
+
+body.gq-app .subject-tabs .subject-tab.active::before {
+  background: var(--subject-icon) center / contain no-repeat !important;
+  filter: drop-shadow(0 1px 1px rgb(255 255 255 / 45%)) !important;
+}
+
+/* Material colors must win over the older day-based palette. */
+body.gq-app .subject-tab[onclick*="'kitabi"] {
+  --subject-color: #2d7a4b !important;
+  --subject-on: #fff !important;
+  --subject-icon: url("brand/material-kitabi.png") !important;
+}
+
+body.gq-app .subject-tab[onclick*="'elm"] {
+  --subject-color: #006b69 !important;
+  --subject-on: #fff !important;
+  --subject-icon: url("brand/material-allamni.png") !important;
+}
+
+body.gq-app .subject-tab[onclick*="'ohb"] {
+  --subject-color: #8660a8 !important;
+  --subject-on: #fff !important;
+  --subject-icon: url("brand/material-uhibbuka.png") !important;
+}
+
+body.gq-app .subject-tab[onclick*="'rasul"] {
+  --subject-color: #6b3f22 !important;
+  --subject-on: #fff !important;
+  --subject-icon: url("brand/material-rasuli.png") !important;
+}
+
+body.gq-app .subject-tab[onclick*="'adab"] {
+  --subject-color: #7ea348 !important;
+  --subject-on: #17351e !important;
+  --subject-icon: url("brand/material-adab.png") !important;
+}
+
+body.gq-app .subject-tab[onclick*="'lisan"] {
+  --subject-color: #003e45 !important;
+  --subject-on: #fff !important;
+  --subject-icon: url("brand/material-lisani.png") !important;
+}
+
+body.gq-app .subject-tab[onclick*="'maharati"] {
+  --subject-color: #d8662a !important;
+  --subject-on: #fff !important;
+  --subject-icon: url("brand/material-maharati.png") !important;
+}
+
+body.gq-app .subject-tab[onclick*="'language-center"] {
+  --subject-color: #0f6e7c !important;
+  --subject-on: #fff !important;
+  --subject-icon: url("brand/material-lisani.png") !important;
+}
+
+body.gq-app .subject-tab[onclick*="'math-center"] {
+  --subject-color: #a83f24 !important;
+  --subject-on: #fff !important;
+  --subject-icon: url("brand/material-maharati.png") !important;
+}
+
+body.gq-app .subject-tab[onclick*="'movement"] {
+  --subject-color: #9a741f !important;
+  --subject-on: #fff !important;
+  --subject-icon: url("brand/seedling.webp") !important;
+}
+
+body.gq-app .subject-panels {
+  margin: 0 !important;
+  padding: 22px clamp(12px, 3vw, 42px) 0 !important;
+  background: #fff !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+body.gq-app .subject-panel,
+body.gq-app .lesson-embed-wrap,
+body.gq-app .lesson-frame,
+body.gq-app .kitabi-frame,
+body.gq-app .ahbuki-frame,
+body.gq-app .lisan-frame,
+body.gq-app .maharati-frame,
+body.gq-app .rasul-frame,
+body.gq-app .adab-frame {
+  min-height: 0 !important;
+  height: auto;
+  max-height: none !important;
+  background: #fff !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+body.gq-app .lesson-embed-head {
+  display: none !important;
+}
+
+body.gq-app .gq-nav-lesson {
+  margin: 0 0 16px !important;
+  padding: 10px 0 !important;
+  color: var(--gq-v7-deep) !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--gq-v7-line) !important;
+  border-radius: 0 !important;
+}
+
+body.gq-app .gq-nav-lesson button {
+  color: var(--gq-v7-deep) !important;
+  background: #fff !important;
+  border: 1px solid var(--gq-v7-line) !important;
+  border-radius: 9px !important;
+}
+
+/* Remove accidental trailing space after the final meaningful block. */
+body.gq-app .panel.active,
+body.gq-app .subject-panel.active,
+body.gq-app .subject-panels,
+body.gq-app .lesson-embed-wrap {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+body.gq-app .panel.active::after,
+body.gq-app .subject-panel.active::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* يظل آخر سطر في كل صفحة قابلًا للقراءة فوق شريط أدوات المعلمة العائم. */
+body.gq-app .guide {
+  margin-bottom: 0 !important;
+}
+
+body.gq-app.gq-teacher-reading {
+  padding-bottom: 0 !important;
+}
+
+@media (max-width: 920px) {
+  :root {
+    --gq-v7-unit-nav: 124px;
+    --gq-v7-day-nav: 60px;
+    --gq-v7-subject-nav: 56px;
+  }
+
+  .guide > .hdr.gq-pro-cover {
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "logo"
+      "main"
+      "summary" !important;
+    gap: 16px !important;
+    padding: 24px 20px 20px !important;
+  }
+
+  .guide > .hdr.gq-pro-cover .official-unit-logo.gq-cover-logo-panel {
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    padding: 0 0 14px !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--gq-v7-line) !important;
+    text-align: right !important;
+  }
+
+  .guide > .hdr.gq-pro-cover .official-unit-logo.gq-cover-logo-panel img {
+    width: 70px !important;
+    height: 70px !important;
+    margin: 0 0 0 10px !important;
+  }
+
+  .guide > .hdr.gq-pro-cover .hdr-right.gq-cover-summary {
+    grid-template-columns: 1fr !important;
+  }
+
+  .guide > .hdr.gq-pro-cover .hdr-right.gq-cover-summary > * {
+    border-inline-start: 0 !important;
+    border-top: 1px solid var(--gq-v7-line) !important;
+  }
+
+  .guide > .hdr.gq-pro-cover .hdr-right.gq-cover-summary > :first-child {
+    border-top: 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gq-v7-top: 60px;
+    --gq-v7-unit-nav: 166px;
+    --gq-v7-day-nav: 58px;
+    --gq-v7-subject-nav: 54px;
+  }
+
+  #gq-top .search input {
+    width: 108px !important;
+  }
+
+  .guide > .hdr.gq-pro-cover .gq-cover-points {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .guide > .hdr.gq-pro-cover .gq-cover-point {
+    padding: 7px 0 !important;
+    border-inline-start: 0 !important;
+    border-top: 1px solid var(--gq-v7-line) !important;
+  }
+
+  .guide > .hdr.gq-pro-cover .gq-cover-point:first-child {
+    border-top: 0 !important;
+  }
+
+  body.gq-app .tabs-days::before {
+    min-width: 96px !important;
+    padding-inline: 10px !important;
+  }
+
+  body.gq-app .tabs-main {
+    grid-template-columns: 1fr !important;
+    gap: 7px !important;
+    min-height: 158px !important;
+    padding: 7px !important;
+  }
+
+  body.gq-app .gq-unit-nav-title {
+    min-height: 34px !important;
+    padding: 5px 10px !important;
+  }
+
+  body.gq-app .gq-unit-nav-stack {
+    grid-template-rows: repeat(2, minmax(45px, auto)) !important;
+  }
+
+  body.gq-app .gq-unit-nav-row-label {
+    flex-basis: 104px !important;
+  }
+
+  body.gq-app .tabs-main .tab,
+  body.gq-app .tabs-days .tab,
+  body.gq-app .subject-tabs .subject-tab {
+    font-size: 11.5px !important;
+  }
+
+  body.gq-app .panel {
+    padding-inline: 14px !important;
+  }
+
+  body.gq-app .subject-panels {
+    padding-inline: 8px !important;
+  }
+}
+
+@media print {
+  body.gq-app {
+    padding-top: 0 !important;
+    background: #fff !important;
+  }
+
+  #gq-top,
+  body.gq-app .tabs-main,
+  body.gq-app .tabs-days,
+  body.gq-app .subject-tabs {
+    display: none !important;
+  }
+
+  body.gq-app {
+    padding-bottom: 0 !important;
+  }
+
+  body.gq-app .guide {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .guide > .hdr.gq-pro-cover {
+    border: 1px solid var(--gq-v7-line) !important;
+  }
+}

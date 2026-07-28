@@ -1,0 +1,6 @@
+Ghars Al-Qiyam Teacher Guide
+Netlify-ready package
+Unit: Night and Day
+Package date: 2026-07-27
+Source version: 11
+Optimization: Netlify Lite 2026-07-27
