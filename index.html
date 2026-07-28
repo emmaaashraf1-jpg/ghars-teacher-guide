@@ -177,6 +177,21 @@
   .gq-identity-cap{position:absolute;z-index:4;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;color:#fff;font-family:var(--head);font-size:clamp(18px,3.4vw,26px);letter-spacing:.5px;text-shadow:0 3px 14px rgba(0,0,0,.5)}
   @media(max-width:640px){.gq-identity-band{grid-template-columns:repeat(4,1fr)}}
 
+  /* ===== حركات احترافية دقيقة ===== */
+  @keyframes heroDrift{from{transform:translate(-4%,-2%) scale(1)}to{transform:translate(6%,4%) scale(1.06)}}
+  .hero::after{content:"";position:absolute;inset:-25%;z-index:0;pointer-events:none;background:radial-gradient(circle at 32% 42%,rgba(199,154,59,.16),transparent 45%);animation:heroDrift 15s ease-in-out infinite alternate}
+  .brand-pill img{transition:transform .5s ease}
+  .brand-pill:hover img{transform:rotate(-6deg) scale(1.06)}
+  .hero-points span{transition:transform .2s ease,background .2s ease}
+  .hero-points span:hover{transform:translateY(-2px);background:rgba(255,252,245,.18)}
+  .gq-reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+  .gq-reveal.is-in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .hero::after{animation:none}
+    .gq-reveal{opacity:1 !important;transform:none !important}
+    *{transition:none !important;animation:none !important}
+  }
+
   @media(max-width:720px){
     .general{grid-template-columns:1fr}
     .general-art{display:none}
@@ -303,5 +318,23 @@
       <div>نادي غرس القيم لضيافة الأطفال · جميع الحقوق محفوظة © 2026</div>
     </footer>
   </main>
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce) return;
+  var targets = [].slice.call(document.querySelectorAll('.sec-head, .general, .unit, .gq-identity-band, .dev-credit, .foot'));
+  targets.forEach(function(el){ el.classList.add('gq-reveal'); });
+  [].slice.call(document.querySelectorAll('.units .unit')).forEach(function(el,i){ el.style.transitionDelay=(i*0.08)+'s'; });
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
+    targets.forEach(function(el){ io.observe(el); });
+  } else { targets.forEach(function(el){ el.classList.add('is-in'); }); }
+  var hero = [].slice.call(document.querySelectorAll('.brand-pill,.stage-badge,.hero-title,.hero-sub,.hero-points'));
+  hero.forEach(function(el,i){ el.style.opacity='0'; el.style.transform='translateY(16px)'; el.style.transition='opacity .7s cubic-bezier(.22,.61,.36,1) '+(i*0.09)+'s, transform .7s cubic-bezier(.22,.61,.36,1) '+(i*0.09)+'s'; });
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ hero.forEach(function(el){ el.style.opacity='1'; el.style.transform='none'; }); }); });
+})();
+</script>
 </body>
 </html>
