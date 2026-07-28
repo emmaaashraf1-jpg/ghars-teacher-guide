@@ -62755,4 +62755,23 @@ body.gq-app .tabs-days .tab.active{
   var n=0, iv=setInterval(function(){ n++; fix(); if(n>30) clearInterval(iv); }, 1000);
 })();
 </script>
+<script id="gq-kfara-order-fix">
+(function(){
+  function fixDoc(d){
+    try{
+      d.querySelectorAll('.kfara-merged-card').forEach(function(k){
+        var n=k.nextElementSibling;
+        while(n){
+          if(n.classList && n.classList.contains('gq-merged-activity-section')){ n.parentNode.insertBefore(k, n.nextSibling); break; }
+          n=n.nextElementSibling;
+        }
+      });
+    }catch(e){}
+  }
+  function run(){ document.querySelectorAll('iframe').forEach(function(fr){ try{ var d=fr.contentDocument; if(d&&d.body) fixDoc(d); }catch(e){} }); }
+  if(document.readyState!=='loading') run(); else document.addEventListener('DOMContentLoaded', run);
+  document.addEventListener('click', function(){ setTimeout(run,400); setTimeout(run,1400); }, true);
+  var n=0, iv=setInterval(function(){ n++; run(); if(n>30) clearInterval(iv); }, 1000);
+})();
+</script>
 </body></html>
