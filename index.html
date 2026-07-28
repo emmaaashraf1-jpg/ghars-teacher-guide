@@ -149,8 +149,23 @@
   .soon-badge{position:absolute;top:12px;left:12px;z-index:2;background:#fff;border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px}
 
   /* ===== Footer ===== */
-  .foot{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:12px;line-height:2}
+  .foot{margin-top:18px;padding-top:16px;text-align:center;color:var(--muted);font-size:12px;line-height:2}
   .foot img{width:34px;vertical-align:middle;margin-inline-start:6px;opacity:.8}
+
+  /* إسناد التطوير — شركة حضارة */
+  .dev-credit{
+    margin-top:44px;padding:28px 22px 24px;border-top:1px solid var(--line);
+    display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;
+    background:linear-gradient(180deg,transparent,rgba(45,122,75,.05));border-radius:22px 22px 0 0;
+  }
+  .dc-label{font-size:12px;color:var(--muted);letter-spacing:.4px}
+  .dc-logo{display:inline-block;line-height:0}
+  .dc-logo img{width:118px;height:auto;filter:drop-shadow(0 8px 18px rgba(0,0,0,.12));transition:transform .2s ease}
+  .dc-logo:hover img{transform:scale(1.05)}
+  .dc-name{font-family:var(--head);font-size:17px;color:#1e5631;text-decoration:none;font-weight:700;line-height:1.5}
+  .dc-name:hover{text-decoration:underline}
+  .dc-site{font-size:12px;color:var(--teal);text-decoration:none}
+  .dc-site:hover{text-decoration:underline}
 
   @media(max-width:720px){
     .general{grid-template-columns:1fr}
@@ -247,6 +262,15 @@
           <span class="unit-open">قيد الإعداد</span>
         </div>
       </div>
+    </section>
+
+    <section class="dev-credit">
+      <span class="dc-label">تطوير وإخراج الدليل الرقمي</span>
+      <a class="dc-logo" href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener">
+        <img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية" />
+      </a>
+      <a class="dc-name" href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener">شركة حضارة للاستشارات التربوية والتعليمية</a>
+      <a class="dc-site" href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener">www.hadarah-consulting.com</a>
     </section>
 
     <footer class="foot">
