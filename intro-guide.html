@@ -459,6 +459,15 @@ radial-gradient(circle at 80% 20%,rgba(255,255,255,.18),transparent 25%);overflo
 </style>
 </head>
 <body>
+<style id="gq-animations-v1">
+@keyframes gqFade{from{opacity:0}to{opacity:1}}
+@keyframes gqPanelIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.cover{animation:gqFade .9s both}
+.page.active{animation:gqPanelIn .5s cubic-bezier(.22,.61,.36,1)}
+.tab{transition:transform .15s ease}
+.tab:hover{transform:translateY(-1px)}
+@media (prefers-reduced-motion: reduce){.cover,.page.active{animation:none !important}.tab{transition:none !important}}
+</style>
 <div class="gq-platform-crumb"><a href="index.html">منصّة غرس القيم</a><span>›</span>الدليل العام<span>›</span>الدليل التعريفي والتشغيلي</div>
 <main class="book" id="book">
 <div class="topline"></div>
