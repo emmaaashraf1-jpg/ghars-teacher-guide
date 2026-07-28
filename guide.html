@@ -62702,4 +62702,27 @@ body.gq-app .tabs-days .tab.active{
   document.addEventListener('click', function(e){ var t=e.target.closest&&e.target.closest('[data-tab-target="program"]'); if(t) setTimeout(watch,300); }, true);
 })();
 </script>
+<script id="gq-lisani-signal-video">
+(function(){
+  var VID='assets/gq_signal_lisani.mp4';
+  function fix(){
+    document.querySelectorAll('iframe').forEach(function(fr){
+      var t=(fr.getAttribute('title')||''); if(t.indexOf('لساني')<0) return;
+      try{ var d=fr.contentDocument; if(!d) return;
+        d.querySelectorAll('video').forEach(function(v){
+          var so=v.querySelector('source');
+          var cur=((v.getAttribute('src')||(so?so.getAttribute('src'):'')||'')).trim();
+          if(cur) return;
+          if(so){ so.setAttribute('src',VID); if(!so.getAttribute('type')) so.setAttribute('type','video/mp4'); }
+          else{ var s=d.createElement('source'); s.setAttribute('src',VID); s.setAttribute('type','video/mp4'); v.appendChild(s); }
+          try{ v.load(); }catch(e){}
+        });
+      }catch(e){}
+    });
+  }
+  if(document.readyState!=='loading') fix(); else document.addEventListener('DOMContentLoaded', fix);
+  document.addEventListener('click', function(){ setTimeout(fix,500); setTimeout(fix,1500); }, true);
+  var n=0, iv=setInterval(function(){ n++; fix(); if(n>30) clearInterval(iv); }, 1000);
+})();
+</script>
 </body></html>
