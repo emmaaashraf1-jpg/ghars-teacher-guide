@@ -217,9 +217,9 @@
 <div aria-label="دروس الوحدة" class="tabs tabs-days" data-nav-label="دروس الوحدة" contenteditable="false">
 <button class="tab day-tab" data-tab-target="d1" onclick="showTab('d1',this)">اليوم الأول · مفهوم الليل والنهار</button>
 <button class="tab day-tab" data-tab-target="d2" onclick="showTab('d2',this)">اليوم الثاني · الشمس</button>
-<button class="tab day-tab" data-tab-target="d3" onclick="showTab('d3',this)">اليوم الثالث · أعمال النهار</button>
+<button class="tab day-tab" data-tab-target="d3" onclick="showTab('d3',this)">اليوم الثالث · أعمال يحبها الله في النهار</button>
 <button class="tab day-tab" data-tab-target="d4" onclick="showTab('d4',this)">اليوم الرابع · القمر</button>
-<button class="tab day-tab" data-tab-target="d5" onclick="showTab('d5',this)">اليوم الخامس · أعمال الليل</button>
+<button class="tab day-tab" data-tab-target="d5" onclick="showTab('d5',this)">اليوم الخامس · أعمال يحبها الله في الليل</button>
 <button class="tab day-tab unit-program-tab" data-tab-target="program" onclick="showTab('program',this)">اليوم الختامي · برنامج الوحدة</button>
 </div>
 <!-- ═══ TAB 0: USAGE GUIDE ═══ -->
@@ -62668,21 +62668,34 @@ body.gq-app .tabs-days .tab.active{
 <div class="gq-copyright" style="text-align:center;padding:12px 18px 24px;font-family:'Noto Naskh Arabic',Tahoma,sans-serif;font-size:12.5px;color:#5c6b6b;letter-spacing:.2px">نادي غرس القيم لضيافة الأطفال · جميع الحقوق محفوظة © 2026</div>
 <script id="gq-program-cardwidth-fix">
 (function(){
-  var CSS='.card-order{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))!important;gap:14px!important}'+
+  var CSS='.card-order{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))!important;gap:14px!important}'+
           '.activity-card{width:auto!important;max-width:none!important}'+
-          '.tools,.activity-tools-list ul{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))!important}';
+          '.tools,.activity-tools-list ul{grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr))!important}'+
+          '.levels{grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr))!important}';
+  function smartFix(d){
+    try{ var W=d.defaultView;
+      d.querySelectorAll('*').forEach(function(el){
+        var cs=W.getComputedStyle(el);
+        if(cs.display==='grid' && el.children.length>=2){
+          var narrow=false, kids=el.children;
+          for(var i=0;i<kids.length;i++){ var r=kids[i].getBoundingClientRect(); var t=(kids[i].textContent||'').trim(); if(r.width>28 && r.width<215 && t.length>22){ narrow=true; break; } }
+          if(narrow){ el.style.setProperty('grid-template-columns','repeat(auto-fit,minmax(min(100%,240px),1fr))','important'); el.style.setProperty('gap','12px','important'); }
+        }
+        var fs=parseFloat(cs.fontSize);
+        if(fs && fs<12 && el.children.length===0 && (el.textContent||'').trim().length>8){ el.style.setProperty('font-size','12.5px','important'); }
+      });
+    }catch(e){}
+  }
   function inject(fr){
     try{ var d=fr.contentDocument; if(!d||!d.body) return false;
-      if(d.getElementById('gq-prog-cardfix')) return true;
-      var st=d.createElement('style'); st.id='gq-prog-cardfix'; st.textContent=CSS;
-      (d.head||d.documentElement).appendChild(st); return true;
+      if(!d.getElementById('gq-prog-cardfix')){ var st=d.createElement('style'); st.id='gq-prog-cardfix'; st.textContent=CSS; (d.head||d.documentElement).appendChild(st); }
+      smartFix(d); return true;
     }catch(e){ return false; }
   }
   function watch(){
     var fr=document.querySelector('.program-unit-frame'); if(!fr) return;
-    fr.style.width='100%'; fr.style.maxWidth='100%';
-    if(inject(fr)) return;
-    fr.addEventListener('load', function(){ inject(fr); });
+    if(inject(fr)){ setTimeout(function(){ inject(fr); }, 700); return; }
+    fr.addEventListener('load', function(){ inject(fr); setTimeout(function(){ inject(fr); }, 700); });
     var n=0, iv=setInterval(function(){ n++; if(inject(fr)||n>40) clearInterval(iv); }, 250);
   }
   if(document.readyState!=='loading') watch(); else document.addEventListener('DOMContentLoaded', watch);
