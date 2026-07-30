@@ -146,7 +146,8 @@ body.gq-app .gq-unit-nav-title{display:flex !important;width:100% !important;jus
 body.gq-app .gq-unit-nav-stack{display:flex !important;flex-direction:column !important;gap:12px !important;width:100% !important;grid-template-columns:none !important}
 body.gq-app .gq-unit-nav-row{display:flex !important;flex-wrap:wrap !important;align-items:center;gap:7px !important;width:100% !important;overflow:visible !important}
 body.gq-app .gq-unit-nav-row-label{position:static !important;flex:1 1 100% !important;width:100% !important;max-width:none !important;margin:0 0 3px !important;text-align:right;font-weight:700;inset:auto !important;right:auto !important}
-body.gq-app .tabs-days{display:flex !important;flex-wrap:wrap !important;overflow:visible !important;gap:7px !important;justify-content:center}
+/* صفّ الأيام sticky بارتفاع ثابت: يبقى سطرًا واحدًا بتمرير أفقي حتى لا تفيض التبويبات وتتراكب على المحتوى */
+body.gq-app .tabs-days{display:flex !important;flex-wrap:nowrap !important;overflow-x:auto !important;overflow-y:hidden !important;gap:7px !important;justify-content:flex-start !important}
 </style>
 </head>
 <body class="gq-app gq-teacher gq-ghars-identity-v5 gq-experience-v4 gq-horizontal-nav-v7">
