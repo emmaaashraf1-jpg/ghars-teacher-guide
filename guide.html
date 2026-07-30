@@ -150,7 +150,7 @@ body.gq-app .gq-unit-nav-row-label{position:static !important;flex:1 1 100% !imp
 body.gq-app .tabs-days{display:flex !important;flex-wrap:nowrap !important;overflow-x:auto !important;overflow-y:hidden !important;gap:7px !important;justify-content:flex-start !important}
 /* إصلاح تباين صناديق الأبطال ذات الخلفية الداكنة: كانت عناوينها/فقراتها بألوان داكنة (فيروزي/بنفسجي) على خلفية داكنة فتختفي.
    نجعل العناوين والفقرات المباشرة فاتحة فقط — دون مسّ الرقائق والأزرار الداخلية (لها خلفيات فاتحة ونصها داكن سليم). */
-body.gq-app :is(.gq-usage-hero,.gq-tracker-hero,.motion-hero,.gq-map-hero) :is(h1,h2,h3,h4,h5,h6,p):not(button *):not(a *){color:#FFF7E8 !important}
+body.gq-app :is(.gq-usage-hero,.gq-tracker-hero,.motion-hero,.gq-map-hero) :is(h1,h2,h3,h4,h5,h6,p,[class*=kicker],[class*=eyebrow]):not(button *):not(a *){color:#FFF7E8 !important}
 </style>
 </head>
 <body class="gq-app gq-teacher gq-ghars-identity-v5 gq-experience-v4 gq-horizontal-nav-v7">
@@ -62703,28 +62703,6 @@ body.gq-app .tabs-days .tab.active{
 </script>
 <script src="gq-redesign-v7.js?v=10.1" defer></script>
 <script src="lesson-blueprints-v10.js?v=10.1" defer></script>
-<script id="gq-hero-contrast-fix">
-/* تصحيح تباين نصوص صناديق الأبطال حسب خلفيتها الفعلية:
-   نص على خلفية داكنة => فاتح، نص على خلفية فاتحة => داكن. لا يمسّ الرقائق/الأزرار ذات الخلفية الفاتحة (تُقاس خلفيتها فتبقى سليمة). */
-(function(){
-  function lumStr(c){var m=(c||'').match(/[\d.]+/g);if(!m)return 1;var a=[+m[0],+m[1],+m[2]].map(function(v){v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);});return 0.2126*a[0]+0.7152*a[1]+0.0722*a[2];}
-  function effBgLum(el){var e=el;while(e&&e.nodeType===1){var cs=getComputedStyle(e);var m=(cs.backgroundColor||'').match(/[\d.]+/g);if(m&&(m.length<4||parseFloat(m[3])>=0.6))return lumStr(cs.backgroundColor);if(cs.backgroundImage&&cs.backgroundImage!=='none')return 0.08;e=e.parentElement;}return 1;}
-  function fix(){
-    document.querySelectorAll('.gq-usage-hero,.gq-tracker-hero,.motion-hero,.gq-map-hero').forEach(function(hero){
-      hero.querySelectorAll('h1,h2,h3,h4,h5,h6,p,span,b,strong,em,li,div,a').forEach(function(el){
-        if(el.getAttribute('data-gqcfix'))return;
-        var hasText=[].some.call(el.childNodes,function(n){return n.nodeType===3&&n.textContent.trim().length>0;});
-        if(!hasText)return;
-        var bg=effBgLum(el),tl=lumStr(getComputedStyle(el).color);
-        var hi=Math.max(bg,tl),lo=Math.min(bg,tl);
-        if((hi+0.05)/(lo+0.05)<3.2){el.style.setProperty('color',bg>0.4?'#123437':'#FFF7E8','important');el.setAttribute('data-gqcfix','1');}
-      });
-    });
-  }
-  if(document.readyState!=='loading')fix();else document.addEventListener('DOMContentLoaded',fix);
-  window.addEventListener('load',function(){fix();setTimeout(fix,600);setTimeout(fix,1600);});
-})();
-</script>
 <div class="gq-hadarah-credit" style="text-align:center;padding:22px 18px 26px;border-top:1px solid #e7dcc4;background:linear-gradient(180deg,transparent,rgba(45,122,75,.05));font-family:'Noto Naskh Arabic',Tahoma,sans-serif">
 <div style="font-size:12px;color:#5c6b6b;letter-spacing:.4px;margin-bottom:10px">إعداد وتطوير وإخراج دليل المعلمة</div>
 <a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="display:inline-block;line-height:0"><img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية" style="width:96px;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.12))"></a>
