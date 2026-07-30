@@ -680,6 +680,9 @@
       "}" +
       "body.gq-premium-lesson .tabs .gq-blueprint-tab{display:inline-flex!important;align-items:center!important;gap:7px!important}" +
       "body.gq-premium-lesson .gq-blueprint-tab img{width:24px!important;height:24px!important;object-fit:contain!important;border:0!important;box-shadow:none!important;background:transparent!important}" +
+      /* حذف أيقونة البُرعم القديمة (gq-tab-icon) في التبويبات التي تحمل أيقونة المادة الجديدة (gq-field-icon) — تبقى الجديدة فقط */
+      "body.gq-premium-lesson .tabs .tab:has(.gq-field-icon) .gq-tab-icon{display:none!important}" +
+      ".tabs .tab:has(.gq-field-icon) .gq-tab-icon{display:none!important}" +
       "body.gq-premium-lesson .gq-blueprint-panel{padding:18px!important;background:#fff!important}" +
       "body.gq-premium-lesson .gq-blueprint-panel .gq-plan-card{margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important;background:#fff!important}" +
       "body.gq-premium-lesson .gq-blueprint-panel .gq-plan-head{display:flex!important;align-items:center!important;gap:12px!important;padding:4px 0 14px!important;background:#fff!important;border:0!important;border-bottom:2px solid var(--gq-bp-color)!important}" +
