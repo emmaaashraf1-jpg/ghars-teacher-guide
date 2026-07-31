@@ -145,6 +145,19 @@
 
   .unit.soon{opacity:.62;pointer-events:none;filter:saturate(.6)}
   .unit.soon .unit-cap{background:linear-gradient(135deg,#3a4a4a,#556)}
+  /* خلفية «وحدة الليل والنهار» الاحترافية: تدرّج من الليل (هلال + نجوم يسارًا) إلى النهار (شمس + نور يمينًا) */
+  .unit:not(.soon) .unit-cap{
+    background:
+      radial-gradient(circle at 85% 30%, rgba(255,236,180,.95) 0 7px, rgba(255,214,110,.9) 7px 12px, rgba(255,214,110,0) 34%),
+      radial-gradient(1.7px 1.7px at 9% 28%, #fff, transparent 60%),
+      radial-gradient(1.5px 1.5px at 19% 52%, rgba(255,255,255,.95), transparent 60%),
+      radial-gradient(1.3px 1.3px at 29% 24%, rgba(255,255,255,.9), transparent 60%),
+      radial-gradient(1.6px 1.6px at 15% 70%, rgba(255,255,255,.85), transparent 60%),
+      radial-gradient(1.2px 1.2px at 25% 80%, rgba(255,255,255,.75), transparent 60%),
+      radial-gradient(1.2px 1.2px at 37% 62%, rgba(255,255,255,.7), transparent 60%),
+      linear-gradient(90deg,#0a1130 0%,#172248 25%,#384a86 45%,#8f7440 62%,#d3ab57 80%,#f3dc9c 100%) !important;
+  }
+  .unit:not(.soon) .unit-cap::before{content:"" !important}
   .unit.soon .unit-open{color:var(--muted)}
   .soon-badge{position:absolute;top:12px;left:12px;z-index:2;background:#fff;border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px}
 
