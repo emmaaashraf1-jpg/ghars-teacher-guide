@@ -20,7 +20,7 @@ centers:
   - مركز اللغة
   - مركز الرياضيات
 built_guide: guide.html
-live_url: https://emmaaashraf1-jpg.github.io/ghars-teacher-guide-netlify-lite-1-/guide.html
+live_url: https://emmaaashraf1-jpg.github.io/ghars-teacher-guide/guide.html
 source_version: 1
 source_date: 2026-07-28
 ---
