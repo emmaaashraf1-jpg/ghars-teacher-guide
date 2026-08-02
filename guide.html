@@ -62689,12 +62689,24 @@ body.gq-app .tabs-days .tab.active{
 </script>
 <link rel="stylesheet" href="gq-redesign-v7.css?v=10.1" data-cascade="final">
 <style id="gq-readability-v1">
-/* راحة قراءة المعلمة — تكبير معتدل للنصوص القرائية دون تغيير التخطيط (2026-08-01) */
-body.gq-app .belief-text{font-size:16px!important;line-height:2.25!important}
-body.gq-app .thread-text,body.gq-app .fitness-body,body.gq-app .motion-card-body,body.gq-app .motion-sub,body.gq-app .gq-center-body,body.gq-app .screen-philosophy-note,body.gq-app .day-hero-sub,body.gq-app .subj-topic{font-size:14.5px!important;line-height:1.95!important}
-body.gq-app .panel p,body.gq-app .panel li{font-size:14.5px!important;line-height:1.95!important}
-body.gq-app .panel td,body.gq-app .panel th{font-size:14px!important}
+/* راحة قراءة المعلمة — تكبير شامل بمُخصِّص عالٍ ليغلب القواعد القائمة (2026-08-01) */
+html body.gq-app .guide.guide p,html body.gq-app .guide.guide li,html body.gq-app .guide.guide td,html body.gq-app .guide.guide th,html body.gq-app .guide.guide dd,html body.gq-app .guide.guide dt{font-size:15.5px!important;line-height:2!important}
+html body.gq-app .guide.guide .belief-text{font-size:16.5px!important;line-height:2.25!important}
+html body.gq-app .guide.guide [class*="-text"],html body.gq-app .guide.guide [class*="-body"],html body.gq-app .guide.guide [class*="-desc"],html body.gq-app .guide.guide [class*="-note"],html body.gq-app .guide.guide [class*="-sub"],html body.gq-app .guide.guide [class*="-copy"],html body.gq-app .guide.guide [class*="-lead"],html body.gq-app .guide.guide [class*="-summary"],html body.gq-app .guide.guide [class*="-topic"],html body.gq-app .guide.guide [class*="-name"]{font-size:15.5px!important}
+/* التبويبات (المواد والأيام) — تخصيص عالٍ */
+html body.gq-app .subject-tab.subject-tab.subject-tab,html body.gq-app .subject-tab-copy.subject-tab-copy,html body.gq-app .subj-name.subj-name,html body.gq-app .subj-topic.subj-topic,html body.gq-app .tabs-days .tab.tab,html body.gq-app .tabs-main .tab.tab,html body.gq-app .day-tab.day-tab,html body.gq-app .subject-map-tab.subject-map-tab,html body.gq-app .day-hero-sub.day-hero-sub,html body.gq-app .thread-text.thread-text{font-size:15px!important;line-height:1.8!important}
 </style>
+<script id="gq-readability-lessons-v1">
+(function(){
+  var CSS='html,body{font-size:15.5px!important}'+
+          'p,li,td,th,dd,dt,figcaption,blockquote,label,.note,.desc,.text,.body,.lead,.hint,.cue,.par,.sub,.copy,.summary{font-size:15.5px!important;line-height:1.9!important}'+
+          'small,.small,.tiny,.mini,.label,.tag,.badge,.chip{font-size:13.5px!important}';
+  function bump(f){try{var d=f.contentDocument||(f.contentWindow&&f.contentWindow.document);if(!d||!d.body)return;if(!d.getElementById('gq-rd-lesson')){var s=d.createElement('style');s.id='gq-rd-lesson';s.textContent=CSS;(d.head||d.documentElement).appendChild(s);}}catch(e){}}
+  function run(){document.querySelectorAll('iframe').forEach(bump);if(typeof resizeAllLessonFrames==='function'){resizeAllLessonFrames();}}
+  window.addEventListener('load',function(){setTimeout(run,300);setTimeout(run,1200);setTimeout(run,2500);});
+  document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('iframe').forEach(function(f){f.addEventListener('load',function(){bump(f);if(typeof resizeAllLessonFrames==='function'){resizeAllLessonFrames();}});});});
+})();
+</script>
 <style id="gq-font-bump-v1">body.gq-app .guide{font-size:14px}body.gq-app .panel{font-size:13.8px;line-height:1.95}body.gq-app .panel p,body.gq-app .panel li,body.gq-app .subj-content,body.gq-app .link-item,body.gq-app .corner-card-b,body.gq-app .week-table td{font-size:13.5px!important}body.gq-app .panel h2{font-size:19px!important}body.gq-app .panel h3{font-size:16px!important}body.gq-app .subject-tab img.gq-tab-icon{display:none!important}body.gq-app .subject-tabs{justify-content:center!important}body.gq-app .subject-tabs .subject-tab{flex:1 1 0!important;flex-grow:1!important;flex-basis:0!important;max-width:260px!important;justify-content:center!important}</style>
 <script id="gq-fout-reveal">/* إظهار المحتوى دفعةً واحدة بعد جاهزية ورقة إعادة التصميم وDOM (لمنع وميض التصميم القديم) — لا ينقل CSS. حواجز أمان: load + مهلة 4ث */
 (function(){var h=document.documentElement,done=false;function reveal(){if(done)return;done=true;h.classList.add('gq-ready');}var cssReady=false,domReady=(document.readyState!=='loading');function maybe(){if(cssReady&&domReady){if(window.requestAnimationFrame){requestAnimationFrame(reveal);}else{reveal();}}}var ls=[].slice.call(document.querySelectorAll('link[rel="stylesheet"]')).filter(function(l){return l.href.indexOf('gq-redesign-v7.css')>-1;});var css=ls.length?ls[ls.length-1]:null;function cssDone(){cssReady=true;maybe();}if(css){var ok=false;try{ok=!!css.sheet;}catch(e){}if(ok){cssReady=true;}else{css.addEventListener('load',cssDone);css.addEventListener('error',cssDone);}}else{cssReady=true;}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){domReady=true;maybe();});}maybe();window.addEventListener('load',reveal);setTimeout(reveal,4000);})();</script>
