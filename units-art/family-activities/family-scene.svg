@@ -1,0 +1,85 @@
+<svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="رسم عائلة مجتمعة بلا ملامح وجه">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#FFF9EE"/><stop offset="1" stop-color="#FBEFD8"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="38%" r="60%">
+    <stop offset="0" stop-color="#FDEFC9" stop-opacity=".9"/><stop offset="1" stop-color="#FDEFC9" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#EBD9A8" stop-opacity=".55"/><stop offset="1" stop-color="#EBD9A8" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="dad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3F8F84"/><stop offset="1" stop-color="#2F7466"/></linearGradient>
+  <linearGradient id="mom" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CE909B"/><stop offset="1" stop-color="#B0737F"/></linearGradient>
+  <linearGradient id="momv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8A5A63"/><stop offset="1" stop-color="#6E464E"/></linearGradient>
+  <linearGradient id="boy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E5A552"/><stop offset="1" stop-color="#CE8B3B"/></linearGradient>
+  <linearGradient id="girl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9FB9CB"/><stop offset="1" stop-color="#7E9AAE"/></linearGradient>
+  <linearGradient id="girlh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#AEC6D6"/><stop offset="1" stop-color="#8FAABC"/></linearGradient>
+</defs>
+
+<!-- خلفية -->
+<rect x="0" y="0" width="700" height="460" fill="url(#bg)"/>
+<ellipse cx="350" cy="180" rx="330" ry="200" fill="url(#glow)"/>
+<g opacity=".5" fill="none" stroke="#E7C77E" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M92 120l40-30 40 30v46h-80z"/><path d="M132 90V74"/>
+  <path d="M556 108l34-26 34 26v40h-68z"/>
+</g>
+<path d="M566 150c3-5 11-2 11 4 0 5-11 12-11 12s-11-7-11-12c0-6 8-9 11-4Z" fill="#EBB9A0" opacity=".7"/>
+<path d="M120 172c2.4-4 9-1.6 9 3.4 0 4.2-9 9.6-9 9.6s-9-5.4-9-9.6c0-5 6.6-7.4 9-3.4Z" fill="#EBB9A0" opacity=".6"/>
+<ellipse cx="350" cy="416" rx="300" ry="34" fill="url(#floor)"/>
+
+<!-- ====== الأب ====== -->
+<g>
+  <ellipse cx="176" cy="420" rx="70" ry="12" fill="#C9A96A" opacity=".22"/>
+  <path d="M150 200c0-16 12-28 26-28s26 12 26 28l10 176c0 8-8 12-16 12h-40c-8 0-16-4-16-12z" fill="url(#dad)"/>
+  <path d="M152 210c-16 10-26 34-28 60l14 6c6-24 16-44 28-52z" fill="url(#dad)"/>
+  <path d="M200 210c16 10 26 34 28 60l-14 6c-6-24-16-44-28-52z" fill="url(#dad)"/>
+  <circle cx="138" cy="272" r="8" fill="#E7C39E"/><circle cx="214" cy="272" r="8" fill="#E7C39E"/>
+  <rect x="158" y="384" width="16" height="20" rx="6" fill="#6E4A2E"/>
+  <rect x="178" y="384" width="16" height="20" rx="6" fill="#6E4A2E"/>
+  <rect x="168" y="152" width="16" height="24" rx="7" fill="#E7C39E"/>
+  <circle cx="176" cy="138" r="25" fill="#EAD0B0"/>
+  <path d="M153 132a23 19 0 0 1 46 0z" fill="#F2ECDC" stroke="#E0D6BE" stroke-width="2"/>
+</g>
+
+<!-- ====== الأم ====== -->
+<g>
+  <ellipse cx="300" cy="424" rx="82" ry="12" fill="#C9A96A" opacity=".22"/>
+  <!-- الفستان -->
+  <path d="M268 212 C 268 192, 282 180, 300 180 C 318 180, 332 192, 332 212 L 348 402 C 349 410, 342 414, 334 414 L 266 414 C 258 414, 251 410, 252 402 Z" fill="url(#momv)"/>
+  <path d="M270 216 C 254 226, 245 252, 244 278 l 13 4 c 5 -22 13 -40 26 -50 z" fill="url(#momv)"/>
+  <path d="M330 216 C 346 226, 355 252, 356 278 l -13 4 c -5 -22 -13 -40 -26 -50 z" fill="url(#momv)"/>
+  <circle cx="248" cy="286" r="8" fill="#E7C39E"/><circle cx="352" cy="286" r="8" fill="#E7C39E"/>
+  <rect x="288" y="400" width="12" height="14" rx="5" fill="#5A3E2A"/>
+  <rect x="300" y="400" width="12" height="14" rx="5" fill="#5A3E2A"/>
+  <!-- وجه سادة بلا ملامح -->
+  <ellipse cx="300" cy="146" rx="24" ry="29" fill="#EAD0B0"/>
+  <!-- حجاب ناعم يحيط بالوجه (فتحة بيضوية) -->
+  <path fill-rule="evenodd" fill="url(#mom)" d="M300 98 C 342 98, 356 138, 350 186 C 349 196, 346 206, 342 216 L 258 216 C 254 206, 251 196, 250 186 C 244 138, 258 98, 300 98 Z M300 122 C 285 122, 276 135, 276 152 C 276 170, 287 181, 300 181 C 313 181, 324 170, 324 152 C 324 135, 315 122, 300 122 Z"/>
+</g>
+
+<!-- ====== الابن ====== -->
+<g>
+  <ellipse cx="430" cy="426" rx="52" ry="10" fill="#C9A96A" opacity=".22"/>
+  <path d="M410 288c0-12 9-20 20-20s20 8 20 20l8 108c1 7-6 11-12 11h-32c-6 0-13-4-12-11z" fill="url(#boy)"/>
+  <rect x="416" y="360" width="12" height="40" rx="5" fill="#5E7C8B"/>
+  <rect x="432" y="360" width="12" height="40" rx="5" fill="#5E7C8B"/>
+  <rect x="418" y="396" width="14" height="12" rx="5" fill="#4A3524"/>
+  <rect x="430" y="396" width="14" height="12" rx="5" fill="#4A3524"/>
+  <path d="M414 296c-11 6-18 22-19 40l11 3c4-16 10-30 18-36z" fill="url(#boy)"/>
+  <path d="M446 296c11 6 18 22 19 40l-11 3c-4-16-10-30-18-36z" fill="url(#boy)"/>
+  <rect x="424" y="254" width="12" height="18" rx="5" fill="#E7C39E"/>
+  <circle cx="430" cy="244" r="19" fill="#EAD0B0"/>
+  <path d="M412 242a19 15 0 0 1 36 0c-6-3-11-4-18-4s-12 1-18 4Z" fill="#5A3E2A"/>
+</g>
+
+<!-- ====== الابنة ====== -->
+<g>
+  <ellipse cx="530" cy="428" rx="46" ry="9" fill="#C9A96A" opacity=".22"/>
+  <path d="M514 300 C 514 289, 522 282, 531 282 C 540 282, 548 289, 548 300 L 556 396 C 557 403, 550 407, 544 407 L 518 407 C 512 407, 505 403, 506 396 Z" fill="url(#girl)"/>
+  <rect x="521" y="393" width="11" height="12" rx="5" fill="#5A3E2A"/>
+  <rect x="531" y="393" width="11" height="12" rx="5" fill="#5A3E2A"/>
+  <ellipse cx="531" cy="284" rx="16" ry="19" fill="#EAD0B0"/>
+  <path fill-rule="evenodd" fill="url(#girlh)" d="M531 254 C 559 254, 568 280, 564 312 C 563 320, 561 326, 558 334 L 504 334 C 501 326, 499 320, 498 312 C 494 280, 503 254, 531 254 Z M531 270 C 521 270, 515 279, 515 290 C 515 301, 522 308, 531 308 C 540 308, 547 301, 547 290 C 547 279, 541 270, 531 270 Z"/>
+</g>
+</svg>

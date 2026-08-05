@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>أميز الفارغ والممتلئ وأقارن السعة · مهاراتي · وحدة العائلة</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;   /* خط العناوين */
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif; /* خط المتن */
+  --t1:#5c1010; --t2:#8B0000; --grn:#8B0000;
+  --gold:#C79A3B; --gold2:#C8A200; --cream:#FFF7E8;
+  --ink:#1e2b2a; --muted:#7a5a5a;
+  --elm:#8B0000; --elm-soft:#FFECEC;
+  --line:#e8dfd0; --card:#fff;
+  --shadow:0 8px 26px rgba(92,16,16,.08);
+  --shadow-sm:0 3px 12px rgba(92,16,16,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:var(--fb);
+  color:var(--ink);line-height:1.95;font-size:16.5px;
+  background:
+    radial-gradient(1200px 520px at 82% -12%,#fdf1f1 0,transparent 60%),
+    linear-gradient(#fbf7ee,#f4eddd);
+}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 60px}
+b,strong{font-weight:700}
+/* العناوين فقط بخط AlAwwal */
+.cover h1,.c-badge,.c-unit,.sec-head h2,.flow-card h3,.lbl,.taq h3,.ci .term,
+.adab .h,.par .h,.corner .h h4,.story .h,.refblock .h,.dua .x,.dua .l,
+table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd)}
+
+/* ===== الغلاف ===== */
+.cover{position:relative;overflow:hidden;border-radius:26px;color:#fff;box-shadow:var(--shadow);min-height:200px}
+.cover-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.cover::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg,rgba(139,0,0,.91),rgba(178,58,58,.78) 52%,rgba(178,58,58,.87))}
+.cover::after{content:"";position:absolute;inset:0;z-index:1;opacity:.07;pointer-events:none;
+  background:radial-gradient(circle at 88% 18%,#fff 0 2px,transparent 3px) 0 0/34px 34px}
+.cover-main{position:relative;z-index:2;padding:28px 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cover-l{flex:1 1 60%;min-width:240px}
+.cover-r{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.c-badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:999px;padding:6px 15px;font-weight:700;font-size:15px;margin-bottom:12px}
+.cover h1{font-size:33px;line-height:1.42;font-weight:700;margin-bottom:10px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+.c-meta{font-size:15px;color:#fbe6e6;line-height:1.9}
+.c-unit{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:14px;
+  padding:12px 16px;font-weight:700;font-size:16px;line-height:1.6}
+.c-dur{color:#eec4c4;font-size:14.5px}
+
+/* ===== شريط التبويبات ===== */
+.tabs{position:sticky;top:0;z-index:40;display:flex;flex-wrap:wrap;gap:8px;
+  margin:16px 0 24px;padding:10px;background:rgba(255,251,242,.94);backdrop-filter:blur(6px);
+  border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 14px rgba(92,16,16,.05)}
+.tab{background:#fff;border:1px solid var(--line);color:var(--t2);border-radius:999px;
+  padding:8px 15px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s}
+.tab:hover{background:var(--elm-soft);border-color:var(--elm);color:var(--elm)}
+.tab.active{background:var(--elm);border-color:var(--elm);color:#fff;box-shadow:0 4px 12px rgba(178,58,58,.28)}
+.tab.gold{background:var(--gold);border-color:var(--gold);color:#3a2a06}
+.tab.gold.active{background:var(--gold2);border-color:var(--gold2);color:#241a00}
+
+/* ===== نظام اللوحات ===== */
+.panel{display:none;animation:fade .25s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ===== مكوّنات ===== */
+.sec-head{display:flex;align-items:center;gap:12px;margin:26px 0 15px}
+.sec-head .num{flex:none;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+  background:var(--elm);color:#fff;font-size:18px;box-shadow:0 4px 12px rgba(178,58,58,.28)}
+.sec-head .num.grn{background:var(--grn)}.sec-head .num.gold{background:var(--gold);color:#3a2a06}
+.sec-head h2{font-size:22px;color:var(--t1);font-weight:700}
+.sec-head .rule{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.first{margin-top:6px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow-sm)}
+.grid{display:grid;gap:15px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){.g2,.g3{grid-template-columns:1fr}.cover h1{font-size:27px}}
+.lbl{color:var(--t1);font-weight:700;font-size:16px;border-bottom:2px solid var(--gold);display:inline-block;padding-bottom:3px;margin-bottom:12px}
+
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border-radius:999px;padding:6px 13px;font-size:15px;border:1px solid var(--line);background:#fff}
+.chip.v{background:#fff7e8;border-color:#ebd9a8;color:#8a6410}
+.chip.c{background:var(--elm-soft);border-color:#f2cccc;color:#4a0d0d}
+
+/* مسار البدء */
+.flow-card{border-radius:14px;padding:15px 18px;margin-bottom:12px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.flow-card.sig{border-inline-start:5px solid var(--elm)}
+.flow-card.law{border-inline-start:5px solid var(--gold)}
+.flow-card.rev{border-inline-start:5px solid var(--grn)}
+.flow-card.belief{border-inline-start:5px solid var(--t1)}
+.flow-card.belief h3{color:var(--t1);font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.belief-text{background:var(--elm-soft);border:1px solid #f2cccc;border-radius:12px;padding:13px 16px;color:#4a0d0d;font-size:16px;line-height:2;font-weight:600}
+.flow-card h3{font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.flow-card.sig h3{color:var(--elm)}.flow-card.law h3{color:#8a6410}.flow-card.rev h3{color:var(--grn)}
+.greet{background:var(--elm-soft);border-radius:10px;padding:10px 14px;color:#4a0d0d;font-weight:700;margin-bottom:10px}
+.linkbtn{display:inline-block;background:var(--t2);color:#fff;border-radius:999px;padding:8px 16px;font-weight:700;text-decoration:none;font-size:15px;margin:6px 0}
+.law-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+@media(max-width:600px){.law-grid{grid-template-columns:1fr}}
+.law-grid > div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 13px;font-size:15px}
+.law-grid small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+
+/* الشريط الجانبي/الأهداف */
+.two{display:grid;grid-template-columns:.9fr 1.4fr;gap:16px;align-items:start}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.obj{margin-bottom:8px;display:flex;gap:9px;align-items:flex-start}
+.obj .n{flex:none;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;color:#fff;font-size:13.5px;background:var(--elm)}
+.obj .n.o{background:var(--gold);color:#3a2a06}.obj .n.g{background:var(--grn)}.obj .n.p{background:#7a5cc0}
+.obj span.t{font-size:15.5px;line-height:1.8}
+.mini{font-size:15px;line-height:1.8;color:var(--ink)}
+.mini .src{color:var(--muted);font-size:13.5px}
+
+/* سير اللقاء */
+.flow{position:relative;padding-inline-start:26px}
+.flow::before{content:"";position:absolute;inset-inline-start:8px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--elm),var(--gold))}
+.step{position:relative;margin-bottom:14px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 17px;box-shadow:var(--shadow-sm)}
+.step::before{content:"";position:absolute;inset-inline-start:-24px;top:17px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--elm)}
+.step b.k{color:var(--elm)}
+
+.story{background:#fff8ec;border:1px solid #ebd9a8;border-radius:16px;padding:0;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:6px}
+.story .h{background:linear-gradient(90deg,var(--gold),#b98a2a);color:#fff;padding:11px 18px;font-weight:700;font-size:16px}
+.story .h span{font-weight:400;opacity:.9;font-size:13.5px}
+.story .b{padding:14px 18px}
+.story .b p{margin-bottom:8px}
+
+/* التغذية الراجعة */
+.feedback{border-inline-start:5px solid var(--grn)}
+.feedback h3{color:var(--grn);font-size:16px;margin-bottom:8px}
+.feedback ol{margin-inline-start:20px;font-size:16px;line-height:2}
+.note{color:var(--muted);font-size:14.5px;margin-top:8px}
+
+/* اختيارات الأنشطة */
+.actbar{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#3a2a06;border-radius:14px 14px 0 0;font-weight:700;padding:11px;text-align:center;margin-top:8px}
+.actgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;overflow:hidden}
+@media(max-width:600px){.actgrid{grid-template-columns:1fr}}
+.actgrid > div{padding:13px 16px;border:1px solid #f0e8da;font-size:15px;line-height:1.85}
+.actgrid .t{color:var(--t1);font-weight:700;display:block;margin-bottom:5px}
+.actgrid .bd{color:var(--elm);font-weight:700}
+
+/* كفارة */
+.dua{text-align:center;background:linear-gradient(135deg,var(--t1),var(--grn));color:#fff;border-radius:18px;padding:24px;box-shadow:var(--shadow);margin-top:16px}
+.dua .l{color:var(--gold);font-size:15px;letter-spacing:.5px;margin-bottom:6px}
+.dua .x{font-size:21px;line-height:2}
+
+/* info bar */
+.info{background:var(--elm-soft);border:1px solid #f2cccc;color:#4a0d0d;border-radius:12px;padding:11px 15px;font-size:15.5px;font-weight:600;margin-bottom:14px}
+
+/* التقويم */
+.taq{border-top:4px solid var(--elm)}
+.taq.t{border-top-color:var(--gold2)}.taq.n{border-top-color:var(--grn)}
+.taq h3{font-size:16px;font-weight:700;margin-bottom:10px}
+.taq.q h3{color:var(--elm)}.taq.t h3{color:#b0851a}.taq.n h3{color:var(--grn)}
+.taq ul{list-style:none}
+.taq li{display:flex;gap:8px;align-items:flex-start;margin-bottom:7px;font-size:15.5px;line-height:1.8}
+.taq li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:9px}
+
+/* con-grid (قيم/مفاهيم/مؤشرات) */
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.cg{grid-template-columns:1fr}}
+.ci{background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 14px}
+.ci .term{color:var(--elm);font-weight:700;font-size:15.5px;margin-bottom:3px}
+.ci .def{font-size:15px;line-height:1.8}
+.steps{list-style:none;margin-top:6px}
+.steps li{display:flex;gap:9px;margin-bottom:7px;font-size:15.5px;line-height:1.85}
+.steps li::before{content:"•";color:var(--gold);font-weight:900;font-size:18px;line-height:1.2}
+.cardgold{border-top:4px solid var(--gold)}
+.cardpurple{border-top:4px solid #7a5cc0}
+.cardblue{border-top:4px solid var(--t2)}
+.card > .lbl.gold{border-color:var(--gold)}
+
+/* الآداب */
+.adab{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:14px;background:#fff}
+.adab .h{background:linear-gradient(90deg,var(--elm),#5c1010);color:#fff;padding:11px 16px;font-weight:700;font-size:16px}
+.adab .b{padding:14px 16px}
+.adab .row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:15.5px;line-height:1.8}
+.tag{flex:none;border-radius:8px;font-weight:700;font-size:13.5px;padding:3px 11px;color:#fff}
+.tag.s{background:#c46b2e}.tag.r{background:var(--t2)}.tag.v{background:var(--grn)}
+.adab .link{background:#fff7e8;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;font-size:15px;padding:8px 12px;margin-top:6px}
+
+/* تحضيرات ولي الأمر */
+.par{margin-bottom:12px}
+.par .h{color:var(--t1);font-weight:700;font-size:16.5px;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.hs{display:flex;gap:9px;align-items:flex-start;margin-bottom:6px;font-size:15.5px;line-height:1.8}
+.hs .n{flex:none;width:22px;height:22px;border-radius:50%;background:var(--elm);color:#fff;display:grid;place-items:center;font-size:13.5px}
+.after{background:#fdf1f1;border:1px solid #eec4c4;border-radius:9px;padding:6px 12px;margin-top:5px;font-size:14.5px;color:#6e1414;font-style:italic}
+.pq{background:var(--elm-soft);border-radius:10px;color:#4a0d0d;padding:8px 12px;margin:5px 0;font-size:15px;font-weight:600}
+.msg{border-inline-start:5px solid var(--grn);font-size:15.5px;line-height:1.95}
+.msg .l{color:var(--grn);font-weight:700;margin-bottom:6px}
+
+/* الحصيلة */
+table.voc{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:4px}
+table.voc th{background:var(--elm);color:#fff;font-size:15px;padding:10px 12px;text-align:start}
+table.voc td{font-size:15px;line-height:1.8;padding:10px 12px;border-top:1px solid var(--line)}
+table.voc .w{color:var(--elm);font-weight:700}
+
+/* المراجع */
+.refblock{margin-bottom:14px}
+.refblock .h{color:var(--t1);font-weight:700;font-size:16px;margin-bottom:4px}
+.refblock .sub{color:var(--muted);font-size:14.5px;margin-bottom:8px}
+.refitem{display:flex;gap:10px;align-items:flex-start;border-bottom:1px dashed var(--line);padding:10px 0}
+.rbadge{flex:none;border-radius:999px;font-size:12.5px;font-weight:700;padding:3px 10px;color:#fff}
+.rbadge.q{background:var(--grn)}.rbadge.t{background:var(--t2)}.rbadge.p{background:#7a5cc0}.rbadge.d{background:#546e7a}
+.refitem .tt{font-size:15.5px;font-weight:700}
+.refitem .dd{color:var(--muted);font-size:14.5px}
+.reflink{color:var(--t2);font-size:14.5px;text-decoration:underline;margin-inline-end:8px}
+
+/* الأركان */
+.chero h2{margin-bottom:6px}
+.chero p{color:var(--muted);font-size:15.5px}
+.caution{background:#fff7e8;border:1px dashed #ebd9a8;border-radius:12px;padding:11px 15px;color:#8a6410;font-size:15px;margin:12px 0}
+.corner{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:16px;background:#fff}
+.corner .h{padding:13px 18px;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.corner .h .k{background:rgba(255,255,255,.2);border-radius:999px;padding:4px 13px;font-size:14.5px}
+.corner .h h4{font-size:17px}
+.corner .b{padding:16px 18px}
+.cfield{margin-bottom:10px}
+.cfield b{color:var(--elm);font-size:15px;display:block;margin-bottom:2px}
+.cfield p,.cfield li{font-size:15px;line-height:1.8}
+.cfield ol{margin-inline-start:20px}
+.faith{background:#fff7e8;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;padding:10px 14px;margin-top:8px;font-size:15px}
+
+.foot{text-align:center;color:var(--muted);font-size:14.5px;margin-top:34px}
+/* ==== إثراء الدليل ==== */
+.sig-video{margin:10px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#4a0d0d}
+.sig-video video{display:block;width:100%;max-height:300px;background:#000}
+.sig-video .cap{background:var(--elm-soft);color:#4a0d0d;font-size:13.5px;padding:8px 12px}
+.plan-wrap{overflow-x:auto}
+table.plan{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+table.plan th{background:var(--t2);color:#fff;font-size:14.5px;padding:9px 12px;text-align:start}
+table.plan td{font-size:14.5px;padding:9px 12px;border-top:1px solid var(--line);line-height:1.7}
+table.plan td:first-child{font-weight:700;color:var(--t1);white-space:nowrap}
+table.plan td.z{color:var(--gold2);font-weight:700;white-space:nowrap;text-align:center}
+table.plan tr.tot td{background:#fff7e8;font-weight:700;color:#8a6410}
+.central{background:linear-gradient(135deg,#5c1010,#8B0000);color:#fff;border-radius:14px;padding:14px 18px;margin:6px 0 2px;box-shadow:var(--shadow-sm)}
+.central b{color:#ffe9b8;display:block;margin-bottom:3px}
+.cues{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.cue{border:2px dashed #cdbf9e;background:#fffdf6;border-radius:14px;padding:14px;text-align:center}
+.cue .ic{font-size:30px;display:block;margin-bottom:6px}
+.cue .t{font-weight:700;color:var(--t1);font-size:14.5px;display:block}
+.cue .d{color:var(--muted);font-size:13px;display:block;margin-top:2px}
+.cue .tag{display:inline-block;margin-top:7px;background:var(--elm-soft);color:#4a0d0d;border-radius:999px;padding:2px 10px;font-size:12px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.gitem{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow-sm)}
+.gitem .imgwrap{background:#f6f1e6;height:180px;overflow:hidden}
+.gitem img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.gitem .cap{padding:9px 12px;font-size:14px;font-weight:700;color:var(--t1);text-align:center}
+.gitem .cap small{display:block;color:var(--muted);font-weight:400;font-size:12.5px;margin-top:2px}
+.step-media{margin:9px auto 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;max-width:330px;box-shadow:var(--shadow-sm)}
+.step-media img{display:block;width:100%;height:auto}
+.step-media .cap{background:var(--elm-soft);color:#4a0d0d;font-size:12.5px;padding:5px 10px;text-align:center}
+.actful{border-inline-start:5px solid var(--gold);margin-top:8px}
+.actful h3{color:#8a6410;font-size:17px;margin-bottom:10px}
+.actful .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px}
+@media(max-width:600px){.actful .row2{grid-template-columns:1fr}}
+.miniblock b{color:var(--elm);display:block;margin-bottom:3px;font-size:14.5px}
+.actful ol{margin-inline-start:20px;font-size:15px;line-height:1.95}
+.actful .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px;margin-top:8px}
+.actful .opt{background:#fdf4f4;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;line-height:1.7}
+.actful .opt b{color:var(--t2)}
+ol.qa{list-style:none;margin-inline-start:0}
+ol.qa li{margin-bottom:12px}
+ol.qa .q{font-weight:700;color:var(--t1);font-size:15.5px}
+ol.qa .a{display:block;margin-top:3px;background:#fdf1f1;border-inline-start:3px solid var(--grn);border-radius:8px;padding:7px 12px;font-size:14.5px;color:#6e1414;line-height:1.8}
+ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;color:var(--grn)}
+.strat{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 13px;margin-bottom:8px}
+.strat .k{flex:none;background:var(--elm-soft);color:#4a0d0d;border-radius:8px;padding:4px 11px;font-size:13.5px;font-weight:700;white-space:nowrap}
+.strat .v{font-size:14.5px;line-height:1.8}
+.means{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.means .m{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;border-top:4px solid var(--elm)}
+.means .m.s2{border-top-color:var(--gold2)}.means .m.s3{border-top-color:var(--grn)}.means .m.s4{border-top-color:#7a5cc0}
+.means .m h4{color:var(--t1);font-size:15px;margin-bottom:6px}
+.means .m .i{font-size:13.5px;line-height:1.7;color:var(--ink);display:block;padding-inline-start:12px;position:relative}
+.means .m .i::before{content:"•";color:var(--gold);position:absolute;inset-inline-start:0}
+/* تخطيط: شريط «حول الدرس» جانبي مصغّر + سير اللقاء أوسع */
+.les{display:grid;grid-template-columns:minmax(190px,0.72fr) 1.9fr;gap:16px;align-items:start;margin-top:6px}
+.objgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:600px){.objgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.objgrid{grid-template-columns:1fr}}
+.objgrid .lbl{font-size:13px;margin-bottom:8px;padding-bottom:2px}
+.objgrid .obj{margin-bottom:5px;gap:7px}
+.objgrid .obj .n{width:19px;height:19px;font-size:11.5px;border-radius:6px}
+.objgrid .obj span.t{font-size:13.5px;line-height:1.6}
+@media(max-width:560px){.les{grid-template-columns:1fr}}
+.side .card{padding:12px 14px;margin-bottom:12px}
+.side .card:last-child{margin-bottom:0}
+.side .lbl{font-size:14px;margin-bottom:9px}
+.side .chip{font-size:12.5px;padding:5px 10px}
+.side .mini{font-size:13.5px}
+.side .mini .src{font-size:12px}
+.side-title{font-family:var(--fd);font-weight:700;color:#4a0d0d;font-size:15px;background:var(--elm-soft);border:1px solid #f2cccc;border-radius:10px;padding:7px 12px;margin-bottom:12px;text-align:center}
+/* أهداف اللقاء داخل الشريط الجانبي: عمود واحد يمنع الفيضان */
+.side .objgrid{grid-template-columns:1fr!important;gap:10px}
+.side .objgrid>div{min-width:0}
+.side .objgrid .obj span.t{font-size:13px;line-height:1.7;word-break:break-word}
+/* ورقة التدريس السريعة (٣ مراحل · خطوات مرجعية) */
+.quick-sheet{margin:16px 0;background:linear-gradient(180deg,#fffdf8,#fdf4f4);border:1px solid rgba(139,0,0,.20);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden}
+.quick-sheet .qs-head{background:linear-gradient(90deg,var(--t1),var(--t2));color:#fff;padding:12px 16px;font-family:var(--fd);font-weight:700;font-size:15.5px}
+.quick-sheet .qs-phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;padding:14px}
+.quick-sheet .qs-phase{background:#fff;border:1px solid rgba(139,0,0,.14);border-top:4px solid var(--t2);border-radius:14px;padding:11px 13px}
+.quick-sheet .qs-ph-h{display:flex;align-items:center;gap:7px;color:var(--t1);font-family:var(--fd);font-weight:700;font-size:14px;margin-bottom:8px;flex-wrap:wrap}
+.quick-sheet .qs-n{width:26px;height:26px;border-radius:8px;background:var(--t2);color:#fff;display:grid;place-items:center;font-size:14px;flex:0 0 auto}
+.quick-sheet .qs-min{margin-inline-start:auto;background:var(--elm-soft);color:var(--t2);border-radius:999px;padding:2px 10px;font-size:11.5px;font-weight:700}
+.quick-sheet .qs-phase ul{margin:0;padding-inline-start:18px}
+.quick-sheet .qs-phase li{font-size:12.5px;line-height:1.8;margin-bottom:4px}
+.quick-sheet .qs-phase li::marker{color:var(--t2)}
+.quick-sheet .qs-home{margin:0 14px;background:#fbf3e3;border:1px solid #eccf94;border-radius:12px;padding:9px 12px;font-size:12.5px;color:#7a5a10;line-height:1.75}
+.quick-sheet .qs-note{margin:12px 14px 14px;padding:9px 12px;border-radius:12px;background:#fff;border:1px dashed rgba(139,0,0,.35);color:var(--muted);font-size:12px;line-height:1.75}
+.mainflow .sec-head{margin-top:0}
+.mainflow .flow{padding-inline-start:24px}
+/* ==== تحسينات حديثة هادئة + شعار ==== */
+.gq-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:120;background:linear-gradient(90deg,var(--gold),var(--elm));transition:width .12s ease-out}
+.gq-top{position:fixed;bottom:22px;inset-inline-start:22px;width:46px;height:46px;border-radius:50%;background:var(--elm);color:#fff;border:0;cursor:pointer;display:grid;place-items:center;font-size:22px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(8px);transition:.25s;z-index:110}
+.gq-top.show{opacity:1;pointer-events:auto;transform:none}
+.gq-lb{position:fixed;inset:0;background:rgba(74,13,13,.88);display:none;place-items:center;z-index:200;padding:26px;cursor:zoom-out}
+.gq-lb.open{display:grid}
+.gq-lb figure{margin:0;text-align:center;max-width:96vw}
+.gq-lb img{max-width:96vw;max-height:86vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5);background:#fff}
+.gq-lb .cap{color:#fff;font-size:15px;margin-top:10px;font-family:var(--fd)}
+.gq-lb .close{position:absolute;top:16px;inset-inline-start:18px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:20px;cursor:pointer}
+.gitem img,.step-media img{cursor:zoom-in}
+.gitem .imgwrap{position:relative}
+.gitem .imgwrap::after{content:"";position:absolute;bottom:6px;inset-inline-end:6px;width:30px;height:30px;background:url('brand/seedling.webp') center/contain no-repeat;opacity:.9;filter:drop-shadow(0 1px 2px rgba(0,0,0,.25));pointer-events:none}
+.copy-btn{margin-inline-start:8px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);color:inherit;border-radius:8px;padding:3px 10px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:var(--fb);vertical-align:middle}
+.copy-btn:hover{background:rgba(255,255,255,.3)}
+.copy-btn.copied{background:#b23a3a;border-color:#b23a3a;color:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== الغلاف ===== -->
+  <div class="cover">
+    <div class="cover-photo" style="background-image:url('units-art/unit-family.jpg')"></div>
+    <div class="cover-main">
+      <div class="cover-l">
+        <span class="c-badge">مادة: مهاراتي · مجلس الرياضيات والتفكير</span>
+        <h1>وحدة العائلة — اللقاء الثاني<br/>أميز الفارغ والممتلئ وأقارن السعة</h1>
+        <div class="c-meta">المرحلة: تمهيدي (5–6 سنوات) · المجلس: مجلس الرياضيات والتفكير · اليوم: الأربعاء</div>
+      </div>
+      <div class="cover-r">
+        <div class="c-unit" style="background:#fff;padding:8px 10px;display:grid;place-items:center"><img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة" style="display:block;width:88px;height:88px;object-fit:contain"/></div>
+        <div class="c-dur">المدة: نصف ساعة</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== التبويبات ===== -->
+  <div class="tabs">
+    <button class="tab active" data-p="p1">دليل الدرس كامل</button>
+    <button class="tab" data-p="p2">التكامل اليومي</button>
+    <button class="tab" data-p="p3">التقويم</button>
+    <button class="tab" data-p="p4">الآداب الصفية</button>
+    <button class="tab" data-p="p5">تحضيرات ولي الأمر</button>
+    <button class="tab" data-p="p6">القيم والمفاهيم والاستراتيجيات</button>
+    <button class="tab" data-p="p7">الحصيلة اللغوية</button>
+    <button class="tab" data-p="p8">مراجع إثرائية</button>
+    <button class="tab gold" data-p="p9">الأركان التطبيقية</button>
+  </div>
+
+  <!-- ══════════ 1) دليل الدرس ══════════ -->
+  <div class="panel active" id="p1">
+
+    <div class="quick-sheet">
+      <div class="qs-head">📋 ورقة التدريس السريعة — خطوات اللقاء أثناء الدرس</div>
+      <div class="qs-phases">
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">①</span> بداية اللقاء <span class="qs-min">٩ د</span></div>
+          <ul>
+            <li>إشارة بدء اللقاء: فيديو إشارة مهاراتي وآية عدّة الشهور، ثم جواب الإشارة.</li>
+            <li>آداب اللقاء: تذكير الأطفال بقوانين الفصل الخمسة.</li>
+            <li>مراجعة سريعة: العدد ١٤ · كبير/صغير · خفيف/ثقيل · كوبان فارغ وممتلئ.</li>
+          </ul>
+        </div>
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">②</span> بناء وسير اللقاء <span class="qs-min">١٤ د</span></div>
+          <ul>
+            <li>قصة فرح: بناء مفهومَي الفارغ والممتلئ، ثم التمييز والتصنيف.</li>
+            <li>النقل ومقدّمة السعة: مقدار ما يحتويه الوعاء.</li>
+            <li>القياس بوحدة واحدة والمقارنة العادلة، ثم الربط الإيماني المنضبط.</li>
+          </ul>
+        </div>
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">③</span> إغلاق وتقويم <span class="qs-min">٧ د</span></div>
+          <ul>
+            <li>النشاط المصاحب: «مختبر أوعية المسكن».</li>
+            <li>أسئلة التقويم: الفارغ والممتلئ · معنى السعة · لماذا الكوب نفسه؟</li>
+            <li>دعاء كفارة المجلس وختام اللقاء.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="qs-home">🏠 <strong>ربط الأسرة:</strong> يقارن الطفل مع أسرته سعة وعاءين في المطبخ بالكوب نفسه، ويصف الفارغ والممتلئ، ويحافظ على نعمة الماء دون إسراف.</div>
+      <div class="qs-note">ورقةٌ مرجعية سريعة أثناء الدرس — الخطوات فقط دون الأهداف والزيادات؛ والنصّ الكامل في تبويب «دليل الدرس كامل».</div>
+    </div>
+
+    <div class="sec-head"><div class="num">🧭</div><h2>مسار بداية اللقاء</h2><div class="rule"></div></div>
+    <div class="flow-card sig">
+      <h3>🔢 إشارة بدء اللقاء — مهاراتي</h3>
+      <div class="greet">السلام عليكم ورحمة الله وبركاته يا طلاب العلم المباركين. <strong>نستمع الآن إلى إشارة بدء اللقاء لنعرف ماذا سيكون لقاؤنا.</strong></div>
+      <p><strong>منهجية الإشارة:</strong> تبدأ المعلمة بتحية الإسلام، ثم تدعو الأطفال للاستماع <strong>دون أن تُسمّي اللقاء</strong>؛ فيستمعون إلى <strong>إشارة مهاراتي</strong> ويتعرّفون على لقائهم بأنفسهم — فيرتبط كلّ لقاء بإشارته في أذهانهم — ثم <strong>تؤكّد المعلمة:</strong> «نعم، لقاؤنا الآن هو لقاء مهاراتي، نتعلّم فيه الأعداد والمفاهيم الرياضية بالملاحظة والتجربة».</p>
+      <p style="margin-top:8px"><strong>آية الإشارة:</strong> ﴿إِنَّ عِدَّةَ الشُّهُورِ عِندَ اللَّهِ اثْنَا عَشَرَ شَهْرًا فِي كِتَابِ اللَّهِ﴾ [التوبة: ٣٦]. المعنى الميسّر: ذكر الله في الآية عدد الشهور، وفي مهاراتي نتعلّم الأرقام والعدّ والترتيب والمفاهيم.</p>
+      <div class="sig-video"><video controls preload="metadata" src="assets/video_033_b6b8486b75ca59fc.mp4">متصفحك لا يدعم تشغيل الفيديو.</video><div class="cap">▶ فيديو إشارة بدء لقاء مهاراتي — تستعين به المعلمة ولا تجعله بديلًا عن الحوار والمحسوس</div></div>
+      <div class="greet"><strong>جواب الإشارة:</strong> «لقاؤنا مهاراتي، نتعلم فيه الأعداد والمفاهيم الرياضية بالملاحظة والتجربة».</div>
+      <p style="margin-top:8px"><strong>تمهيد اليوم:</strong> تعلمنا أن الرياضيات ليست أعدادًا فقط؛ بل نتعلم فيها أوصافًا تساعدنا على فهم الأشياء، مثل كبير وصغير، وخفيف وثقيل، واليوم نتعلم وصفين جديدين هما الفارغ والممتلئ، ونقيس السعة بطريقة بسيطة.</p>
+    </div>
+    <div class="flow-card law">
+      <h3>📜 قوانين الفصل</h3>
+      <div class="law-grid">
+        <div>🌿 <b>أحافظ على نظافة فصلي</b><small>إماطة الأذى عن الطريق صدقة.</small></div>
+        <div>👂 <b>أستمع وأنصت</b><small>فلا أقاطع الآخرين.</small></div>
+        <div>🤲 <b>أحفظ لساني ويدي</b><small>المسلم من سلم المسلمون من لسانه ويده.</small></div>
+        <div>🪑 <b>أجلس جلسة صحيحة</b><small>في المساحة المخصصة لي.</small></div>
+        <div>✋ <b>أرفع يدي للمشاركة</b><small>السؤال للجميع والإجابة لمن تختاره المعلمة.</small></div>
+      </div>
+    </div>
+    <div class="flow-card rev">
+      <h3>↺ مراجعة سريعة</h3>
+      <p>تعرض المعلمة <strong>بطاقة ١٤</strong> وتسأل: ما اسم هذا العدد؟ وكيف نبنيه من عشرة وأربعة؟ ثم يعيد الأطفال <strong>ترتيب البطاقات من ١١ إلى ١٤</strong>. وتعرض شيئين كبيرًا وصغيرًا، ثم خفيفًا وثقيلًا. وأخيرًا تعرض <strong>كوبين متماثلين: أحدهما فارغ والآخر فيه ماء</strong> حتى علامة آمنة، وتسأل: ماذا تلاحظون؟</p>
+    </div>
+
+    <div class="les">
+      <aside class="side">
+        <div class="side-title">📎 حول الدرس</div>
+        <div class="card">
+          <div class="lbl">أهداف اللقاء</div>
+          <div class="objgrid">
+            <div>
+              <div class="lbl">وجدانية</div>
+              <div class="obj"><span class="n o">١</span><span class="t">أن يشكر الطفل الله على نعمة الماء والغذاء</span></div>
+              <div class="obj"><span class="n o">٢</span><span class="t">أن يحافظ على النعمة والأدوات ويتجنب الإسراف</span></div>
+            </div>
+            <div>
+              <div class="lbl">معرفية</div>
+              <div class="obj"><span class="n">١</span><span class="t">أن يميز الطفل الوعاء الفارغ من المادة والممتلئ حتى العلامة، ويشرح أن السعة مقدار ما يسعه الوعاء</span></div>
+            </div>
+            <div>
+              <div class="lbl">مهارية</div>
+              <div class="obj"><span class="n g">١</span><span class="t">أن يصنف أوعية إلى فارغة وممتلئة، وينقل محتوى بأمان، ويقارن سعة وعاءين بالكوب نفسه</span></div>
+            </div>
+            <div>
+              <div class="lbl">إجرائية</div>
+              <div class="obj"><span class="n p">١</span><span class="t">يصف وعاءين، ويختار الأداة الصحيحة للمقارنة</span></div>
+              <div class="obj"><span class="n p">٢</span><span class="t">يشرح لماذا يجب أن نستخدم الكوب نفسه في القياس</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="lbl">المفردات</div>
+          <div class="chips">
+            <span class="chip c">سعة</span><span class="chip c">وعاء</span><span class="chip c">فارغ من</span><span class="chip c">ممتلئ</span><span class="chip c">علامة الامتلاء</span><span class="chip c">يسع</span><span class="chip c">أكثر</span><span class="chip c">أقل</span><span class="chip c">أنقل</span><span class="chip c">أسكب</span><span class="chip c">أقيس</span><span class="chip c">وحدة واحدة</span><span class="chip c">أقارن</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="lbl">📖 إشارة المادة</div>
+          <div class="mini">﴿إِنَّ عِدَّةَ الشُّهُورِ عِندَ اللَّهِ اثْنَا عَشَرَ شَهْرًا فِي كِتَابِ اللَّهِ﴾ <span class="src">[التوبة: ٣٦]</span></div>
+          <div class="mini" style="margin-top:8px">﴿إِنَّ اللَّهَ لَا يَظْلِمُ مِثْقَالَ ذَرَّةٍ ۖ وَإِن تَكُ حَسَنَةً يُضَاعِفْهَا﴾ <span class="src">[النساء: ٤٠]</span></div>
+        </div>
+        <div class="card">
+          <div class="lbl">المواد المساعدة</div>
+          <div class="mini">🥛 كوبان متماثلان · زجاجة حليب تمثيلية</div>
+          <div class="mini">💧 أوعية بلاستيكية شفافة مختلفة السعة</div>
+          <div class="mini">📏 كوب قياس صغير موحد · صينية عميقة · منشفة</div>
+          <div class="mini">🧺 سلتان وحقيبتان · بطاقتا «فارغ» و«ممتلئ»</div>
+        </div>
+        <div class="card">
+          <div class="lbl">ترابط المواد</div>
+          <div class="chips">
+            <span class="chip v">كتابي المنير</span><span class="chip v">علّمني ربي</span><span class="chip v">لساني</span><span class="chip v">ركن المسكن</span><span class="chip v">ركن الدكان</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="mainflow">
+        <div class="sec-head first"><div class="num">☀</div><h2>سير اللقاء</h2><div class="rule"></div></div>
+        <div class="flow">
+          <div class="step"><b class="k">المرحلة الأولى — القصة وبناء المفهوم:</b> تحكي المعلمة قصة فرح: استيقظت فرح وأرادت شرب الحليب، فذهبت إلى المطبخ ورجّت الزجاجة فلم تجد فيها حليبًا، فقالت: الزجاجة فارغة من الحليب. فملأت الأم كوبها بقدر مناسب، فقالت فرح: الآن الكوب ممتلئ بالحليب، الحمد لله الذي رزقني هذا الحليب.</div>
+          <div class="step"><b class="k">التمييز والتصنيف:</b> تعرض المعلمة سلة فيها أغراض وأخرى بلا أغراض، وكوبًا فيه ماء وآخر بلا ماء، وحقيبة فيها أدوات وأخرى فارغة. وتثبّت التعريف الميسر: فارغ من المادة التي نبحث عنها؛ لا يوجد منها داخله. وممتلئ؛ وصلت المادة إلى العلامة التي حددناها دون فيضان. ثم يصنّف الأطفال الأشياء تحت عنواني «فارغ» و«ممتلئ» ويذكرون ما امتلأ به الوعاء: ماء أو أدوات أو ألعاب.</div>
+          <div class="step"><b class="k">النقل ومقدمة السعة:</b> تنقل المعلمة محتوى وعاء ممتلئ إلى وعاء فارغ داخل صينية، ثم تسأل: ماذا تغيّر؟ صار الأول فارغًا من الماء، وصار الثاني ممتلئًا أو فيه ماء بحسب سعته. ثم تقدّم كلمة السعة: السعة هي مقدار ما يمكن أن يحتويه الوعاء، وقد يحتاج وعاء إلى أكواب صغيرة أكثر من وعاء آخر.</div>
+          <div class="step"><b class="k">المعنى المركزي:</b> الوعاء فارغ من الماء عندما لا يكون فيه ماء، وممتلئ عندما بلغ الماء علامة الامتلاء الآمنة. أما السعة فهي مقدار ما يمكن أن يحتويه الوعاء، ونقارنها باستخدام الوحدة نفسها كل مرة (الكوب نفسه حتى العلامة نفسها).</div>
+          <div class="step"><b class="k">❓ تصحيح فهم الطفل:</b> لا نحكم على السعة بهيئة الوعاء أو طوله؛ فقد يكون الوعاء طويلًا ضيّقًا فيسع أقلّ من وعاءٍ قصير واسع. لذلك نقيس بالمادة نفسها والكوب نفسه حتى العلامة نفسها، ونتحقّق بالعدّ لا بالنظر السريع. والتنبؤ فكرةٌ نختبرها لا نجاحًا أو إخفاقًا؛ والتعلّم توفيقٌ من الله ثم بالممارسة، فلا نقارن بين الأطفال. <b class="k">ولا نمثّل الميزان أو الصحيفة أو القلب بأوعية تجربة السعة المحسوسة.</b></div>
+          <div class="step"><b class="k">المرحلة الثانية — القياس والمقارنة:</b> تضع المعلمة وعاءين شفافين مختلفين داخل صينية، وترسم على كل منهما علامة امتلاء آمنة، وتدعو الأطفال إلى التنبؤ: أي الوعاءين يسع ماء أكثر؟ وتوضح أن التنبؤ فكرة نختبرها وليس نجاحًا أو إخفاقًا.</div>
+          <div class="step"><b class="k">القياس بوحدة واحدة:</b> تملأ الوعاء الأول بكوب صغير واحد في كل مرة، ويعدّ الأطفال عدد الأكواب حتى العلامة، ثم تفرغ الماء وتقيس الوعاء الثاني بالكوب نفسه وبالمقدار نفسه حتى علامته. ثم تقارن: الوعاء الذي احتاج أكوابًا أكثر له سعة أكبر في هذه المقارنة. وتعيد الجملة: للمقارنة العادلة نستخدم المادة نفسها، والكوب نفسه، ونملأ إلى العلامة المحددة.</div>
+          <div class="step"><b class="k">الربط الإيماني المنضبط:</b> ﴿إِنَّ اللَّهَ لَا يَظْلِمُ مِثْقَالَ ذَرَّةٍ ۖ وَإِن تَكُ حَسَنَةً يُضَاعِفْهَا وَيُؤْتِ مِن لَّدُنْهُ أَجْرًا عَظِيمًا﴾ [النساء: ٤٠]. تبسّط المعلمة: الله كامل العدل ولا يضيع الحسنة بل يضاعفها، فنسأله أن يوفقنا للأعمال الصالحة وأن يثقّل موازيننا بالحسنات. <b class="k">وهذا معنى إيماني مستقل؛ فلا نمثّل الصحيفة أو الميزان أو القلب بأوعية تجربة السعة.</b></div>
+          <div class="step"><b class="k">جملة اللقاء الختامية:</b> «الحمد لله الذي علّمنا؛ أميز الفارغ والممتلئ، وأقارن السعة باستخدام الكوب نفسه، وأحافظ على نعمة الماء».</div>
+        </div>
+        <div class="story">
+          <div class="h">🔢 وقفة تعلّم: فارغ وممتلئ وسعة <span>(تثبّتها المعلمة بالمحسوس لا بالحفظ)</span></div>
+          <div class="b">
+            <p><strong>تنبيه علمي:</strong> «فارغ» و«ممتلئ» يصفان حالة الوعاء، أما «السعة» فتعني مقدار ما يمكن أن يحتويه. ولا تكفي هيئة الوعاء أو طوله للحكم؛ لذلك نستخدم المادة نفسها والوحدة نفسها وخط امتلاء محددًا.</p>
+            <p><strong>تنبيه عقدي:</strong> الربط بعدل الله ومضاعفة الحسنة معنًى إيماني مستقل نذكره بالآية، ولا نمثّل الميزان أو الصحيفة أو القلب بأوعية تجربة السعة المحسوسة.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-head"><div class="num gold">✂️</div><h2>النشاط المصاحب</h2><div class="rule"></div></div>
+    <div class="card actful">
+      <h3>مختبر أوعية المسكن</h3>
+      <div class="row2">
+        <div class="miniblock"><b>الهدف</b>أن يطبّق الطفل التصنيف والنقل، ثم يقارن سعة وعاءين باستخدام وحدة واحدة تحت إشراف المعلمة.</div>
+        <div class="miniblock"><b>الأدوات</b>صحنان أو سلتان · كرات قماشية أو إسفنجية كبيرة · وعاءان بلاستيكيان شفافان · كوب صغير موحد · ماء قليل · صينية عميقة · منشفة · بطاقتا «فارغ» و«ممتلئ».</div>
+      </div>
+      <div class="miniblock"><b>التهيئة</b>تعرض المعلمة صحنين وتقول: اجعل أحدهما ممتلئًا بالكرات إلى العلامة، واترك الآخر فارغًا منها؛ ثم سنقارن وعاءين بالماء.</div>
+      <div class="miniblock" style="margin-top:8px"><b>خطوات التنفيذ</b></div>
+      <ol>
+        <li>يضع الطفل الكرات في الصحن الأول حتى العلامة ويضع بطاقة «ممتلئ»، ثم يضع بطاقة «فارغ» بجانب الصحن الآخر.</li>
+        <li>ينقل بعض الكرات من الممتلئ إلى الفارغ، ويصف التغيّر بكلمتي فارغ وممتلئ أو «فيه أكثر/أقل».</li>
+        <li>ينتقل مع المعلمة إلى الصينية المائية، ويتنبأ أي الوعاءين يسع أكثر.</li>
+        <li>يملأ الوعاء الأول بالكوب الصغير نفسه ويعدّ الوحدات، ثم يكرر مع الوعاء الثاني.</li>
+        <li>يضع بطاقة «سعته أكبر» بجانب الوعاء الذي احتاج وحدات أكثر، ويقول كيف عرف.</li>
+        <li>يساعد في إعادة الماء إلى الإناء وتجفيف الصينية وترتيب الأدوات؛ شكرًا لله وحفاظًا على النعمة.</li>
+      </ol>
+      <div class="miniblock" style="margin-top:8px"><b>أسئلة أثناء النشاط</b></div>
+      <div class="opts">
+        <div class="opt">ممَّ كان الوعاء فارغًا؟ متى نسميه ممتلئًا؟</div>
+        <div class="opt">أيهما احتاج أكوابًا أكثر؟</div>
+        <div class="opt">لماذا استخدمنا الكوب نفسه في المقارنة؟</div>
+      </div>
+      <div class="miniblock" style="margin-top:10px"><b>اختيارات المعلمة حسب حاجة الطفل</b></div>
+      <div class="opts">
+        <div class="opt"><b>الخجول:</b> يضع بطاقتي فارغ وممتلئ أو يسجّل عدد الأكواب بدل السكب أمام المجموعة.</div>
+        <div class="opt"><b>يحتاج دعمًا:</b> يبدأ بوعاءين متماثلين أحدهما فارغ والآخر ممتلئ، ثم ينتقل إلى النقل دون مقارنة عددية.</div>
+        <div class="opt"><b>السريع:</b> يفسّر لماذا لا تكون المقارنة عادلة بكوبين مختلفين، ثم يعيدها بوحدة واحدة.</div>
+        <div class="opt"><b>كثير الحركة:</b> يتولى وضع الأوعية داخل الصينية، ونقل بطاقة القياس بعد كل كوب، ثم يجفّف موضع العمل.</div>
+        <div class="opt"><b>يتحسس من الماء:</b> يستخدم أوعية محكمة شفافة جاهزة للتصنيف، أو يقيس بكرات كبيرة متماثلة مع بيان أن المقارنة تقريبية.</div>
+      </div>
+      <div class="central" style="margin-top:12px;background:linear-gradient(135deg,#5c1010,#8B0000)"><b>🤲 الجملة الختامية</b>اللهم بارك لنا فيما رزقتنا، وأعنا على شكر نعمك وعدم الإسراف.</div>
+    </div>
+
+    <div class="actbar">★ اختيارات الأنشطة الإضافية ★</div>
+    <div class="actgrid">
+      <div><span class="t">تلبية الاحتياجات الفردية</span><span class="bd">يحتاج دعمًا:</span> يبدأ بوعاءين متماثلين فارغ وممتلئ. <span class="bd">الخجول:</span> يسجّل عدد الأكواب أو يضع البطاقات بدل السكب أمام المجموعة. <span class="bd">النشيط:</span> ينقل بطاقة القياس بعد كل كوب ويجفّف موضع العمل.</div>
+      <div><span class="t">الربط بالمواد الأخرى</span><span class="bd">كتابي المنير:</span> شكر الله على نعمة الماء والغذاء. <span class="bd">علّمني ربي:</span> الله المنعم الرزّاق. <span class="bd">لساني:</span> نطق أوصاف السعة: فارغ · ممتلئ · يسع أكثر · أقل.</div>
+      <div><span class="t">التوسيع والإثراء</span><span class="bd">بيتي:</span> مع إشراف بالغ يقارن وعاءين بلاستيكيين بكوب واحد وماء قليل، ثم يجفّف المكان. <span class="bd">فني:</span> تلوين بطاقتي «فارغ» و«ممتلئ».</div>
+      <div><span class="t">اقتراحات للتكرار</span> مراجعة كوبين فارغ وممتلئ ومقارنة سعتهما بوحدة واحدة ٣ دقائق في مطلع اللقاء التالي قبل الدرس الجديد.</div>
+    </div>
+
+    <div class="dua">
+      <div class="l">كفارة المجلس · خاتمة اللقاء</div>
+      <div class="x">سبحانك اللهم وبحمدك، أشهد أن لا إله إلا أنت، أستغفرك وأتوب إليك.</div>
+    </div>
+  </div>
+
+  <!-- ══════════ 2) التكامل اليومي ══════════ -->
+  <div class="panel" id="p2">
+    <div class="sec-head first"><div class="num">🔗</div><h2>العلاقة التكاملية لهذا اللقاء</h2><div class="rule"></div></div>
+    <div class="card cardblue">
+      <div class="mini" style="font-size:16px"><b style="color:var(--t1)">الفكرة الناظمة لليوم:</b> في المسكن أوعية متعددة نحفظ بها نعم الله ونستخدمها بقدر الحاجة دون إسراف.</div>
+      <div class="mini" style="font-size:16px;margin-top:8px"><b style="color:var(--t1)">سؤال اليوم:</b> كيف أعرف أي وعاء في مطبخ المسكن يسع أكثر؟</div>
+      <div class="mini" style="font-size:16px;margin-top:8px"><b style="color:var(--t1)">هذا اللقاء:</b> 🔢 مهاراتي — أميز الفارغ والممتلئ وأقارن السعة.</div>
+    </div>
+    <div class="card" style="margin-top:15px">
+      <div class="lbl">فكرة للربط السريع</div>
+      <p class="mini" style="font-size:15.5px">خدمة اللقاء للفكرة: يطبّق الطفل المفهوم على أكواب وسلال وحقائب وزجاجات مألوفة، ويفهم أن اختيار الوعاء يناسب ما نريد حفظه. وفي <strong>ركن المسكن</strong> يختار الطفل وعاءً مناسبًا لمجموعة أدوات تمثيلية، ثم يصفه قبل التعبئة وبعدها.</p>
+    </div>
+    <div class="card" style="margin-top:15px">
+      <div class="lbl">الربط بركن الدكان</div>
+      <p class="mini" style="font-size:15.5px">توضع عربة تسوق تمثيلية فارغة وأخرى ممتلئة بعبوات خفيفة آمنة، فيصف الطفل حالتهما ثم ينقل عنصرًا واحدًا ويصف ما تغيّر (صارت هذه أقل امتلاءً وتلك أكثر).</p>
+    </div>
+  </div>
+
+  <!-- ══════════ 3) التقويم ══════════ -->
+  <div class="panel" id="p3">
+    <div class="info">📊 التقويم في منهج غرس القيم ثلاثي المراحل — يرصد الطفل قبل الدرس وأثناءه وبعده.</div>
+    <div class="grid g3">
+      <div class="card taq q"><h3>◐ التقويم القبلي</h3><ul>
+        <li>ماذا تلاحظ داخل كل كوب؟</li><li>أي السلتين لا توجد فيها ألعاب؟</li><li>هل يكفي أن يكون الوعاء طويلًا لنقول إنه يسع أكثر؟ كيف نتحقق؟</li>
+      </ul></div>
+      <div class="card taq t"><h3>◑ التقويم التكويني</h3><ul>
+        <li>يصنّف أشياء محسوسة تحت «فارغ» و«ممتلئ»</li><li>ينقل محتوى بين وعاءين دون تعمّد الهدر</li>
+        <li>يتنبأ أي الوعاءين يسع أكثر قبل القياس</li><li>يستخدم الكوب نفسه في كل مرة للمقارنة</li>
+      </ul></div>
+      <div class="card taq n"><h3>● التقويم النهائي</h3><ul>
+        <li>يميز وعاءً فارغًا من المادة وآخر ممتلئًا حتى العلامة</li><li>يشرح أن السعة مقدار ما يحتويه الوعاء</li>
+        <li>يقارن وعاءين بالكوب نفسه وخط امتلاء محدد</li><li><b>المعيار: يحدد الوعاء الأكبر سعة اعتمادًا على عدد الوحدات لا على شكله وحده</b></li>
+      </ul></div>
+    </div>
+    <div class="sec-head"><div class="num grn">★</div><h2>مؤشرات النجاح</h2><div class="rule"></div></div>
+    <div class="cg">
+      <div class="ci"><div class="term">المؤشر المعرفي</div><div class="def">يميز الفارغ من الممتلئ، ويشرح أن السعة مقدار ما يمكن أن يحتويه الوعاء.</div></div>
+      <div class="ci"><div class="term">المؤشر المهاري</div><div class="def">يصنّف ثلاثة أمثلة محسوسة على الأقل، وينقل محتوى بين وعاءين دون هدر.</div></div>
+      <div class="ci"><div class="term">المؤشر الوجداني</div><div class="def">يشكر الله على نعمة الماء والغذاء، ويحافظ على النعمة ويتجنب الإسراف.</div></div>
+      <div class="ci"><div class="term">المؤشر التطبيقي</div><div class="def">يقارن وعاءين بالكوب نفسه، ويستخدم كلمتي فارغ وممتلئ في جملة صحيحة.</div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 4) الآداب الصفية ══════════ -->
+  <div class="panel" id="p4">
+    <div class="info">🌿 الآداب الصفية لحظات تربوية ذهبية — تبدأ المعلمة كل فكرة بآية أو نص حديث، ولا يعلو صوتها على النص الشرعي. الحزم مع الهدوء دائمًا.</div>
+    <div class="card cardblue" style="margin-bottom:14px">
+      <div class="lbl">آداب المعلمة — مقدمة الرعاية</div>
+      <ul class="steps">
+        <li>تبدأ بالبسملة والحمدلة والدعاء: «اللهم علّمنا ما ينفعنا وانفعنا بما علّمتنا».</li>
+        <li>تنطلق كل فكرة بآية أو نص حديث شريف.</li>
+        <li>الحزم مع الهدوء — فلا يعلو صوت المعلمة على النص الشرعي.</li>
+      </ul>
+      <div class="lbl" style="margin-top:12px;font-size:15px">آداب الطفل في لقاء مهاراتي</div>
+      <ul class="steps">
+        <li>أحسن الاستماع للمعلمة وأرفع يدي قبل الحديث.</li><li>أنتظر دوري وأعدّ بهدوء دون مزاحمة.</li><li>أحافظ على البطاقات والأدوات وأعيدها إلى مكانها.</li>
+      </ul>
+    </div>
+
+    <div class="adab"><div class="h">١ · أحسن الاستماع وأرفع يدي</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>قاطع طفل شرح المعلمة أو أجاب دون أن يرفع يده.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«نحسن الاستماع للمعلمة، ونرفع أيدينا قبل الحديث؛ فالإنصات أدب. هيا نرفع أيدينا معًا. جزاك الله خيرًا».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>الإنصات — احترام دور الآخرين.</span></div>
+      <div class="link">ربط بالدرس: الملاحظة الجيدة تبدأ بالإنصات قبل التصنيف والقياس.</div>
+    </div></div>
+    <div class="adab"><div class="h">٢ · أنتظر دوري وأعدّ بهدوء</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>زاحم طفل غيره ليعدّ الأكواب أو ينقل الماء أولًا.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«ننتظر دورنا ونعدّ بهدوء دون مزاحمة؛ فلكل واحد منا دور. سيأتي دورك بإذن الله. أحسنت الصبر».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>الصبر — انتظار الدور.</span></div>
+      <div class="link">ربط بالدرس: العدّ الصحيح للوحدات يحتاج هدوءًا وانتظارًا.</div>
+    </div></div>
+    <div class="adab"><div class="h">٣ · أحافظ على البطاقات والأدوات</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>عبث طفل بالأوعية والبطاقات أو لم يُعِدها إلى مكانها.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«نحافظ على الأدوات ونعيدها إلى مكانها؛ فهي نعمة تعيننا على التعلم. هيا نرتّبها معًا. بارك الله فيك».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>المحافظة على النعمة — الترتيب.</span></div>
+      <div class="link">ربط بالدرس: نستخدم الكوب والوعاء بعناية ونعيدهما بعد القياس.</div>
+    </div></div>
+    <div class="adab"><div class="h">٤ · أتحقق قبل الإجابة وأتقبل التصحيح</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>أجاب طفل بالنظر السريع دون عدّ، ثم رفض التصحيح.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«نتحقق قبل الإجابة بالعدّ، ونتقبل التصحيح برفق؛ فالخطأ باب للتعلم. هيا نعدّ معًا للتأكد. أحسنت».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>الدقة — تقبّل التصحيح.</span></div>
+      <div class="link">ربط بالدرس: لا نحكم بالشكل وحده، بل نتحقق بعدّ الوحدات.</div>
+    </div></div>
+    <div class="adab"><div class="h">٥ · لا أتذوق مواد التجربة وأخبر المعلمة إذا انسكب الماء</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>قرّب طفل الكرات أو الماء إلى فمه، أو انسكب الماء ولم يخبر أحدًا.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«لا نتذوق مواد التجربة، وإذا انسكب الماء نخبر المعلمة فورًا لنزيله؛ حفاظًا على سلامتنا. جزاك الله خيرًا على انتباهك».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>السلامة — الأمانة والانتباه.</span></div>
+      <div class="link">ربط بالدرس: الماء قليل غير للشرب، ونزيل الانسكاب فورًا لمنع الانزلاق.</div>
+    </div></div>
+  </div>
+
+  <!-- ══════════ 5) تحضيرات ولي الأمر ══════════ -->
+  <div class="panel" id="p5">
+    <div class="info">🌱 القيمة تترسّخ حين تُعاش في البيت كما تُتعلَّم في الفصل — هذه التهيئات يُطبّقها ولي الأمر قبل الدرس وبعده.</div>
+    <div class="card par"><div class="h">❤️ ١ · تهيئة وجدانية</div>
+      <div class="hs"><span class="n">أ</span><span>يُحدّث ولي الأمر طفله عن نعمة الله بالماء والغذاء والأوعية التي نحفظ فيها الأشياء، وأننا نشكر الله ولا نسرف.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يقول له: «أنعم الله علينا بالماء والحليب، فنحمده ونحافظ على النعمة».</span></div>
+      <div class="after">← يربط الطفل بين الدرس وشكر الله في حياته الفعلية.</div>
+    </div>
+    <div class="card par"><div class="h">📖 ٢ · تهيئة معرفية</div>
+      <div class="hs"><span class="n">أ</span><span>يذكّره بمعنى فارغ وممتلئ: فارغ من المادة لا يوجد منها داخله، وممتلئ وصلت المادة إلى العلامة.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يسأله بلطف: «هل يكفي أن يكون الوعاء طويلًا لنقول إنه يسع أكثر؟ كيف نتحقق؟»</span></div>
+      <div class="after">← يرسّخ المفهوم قبل سماعه في الصف.</div>
+    </div>
+    <div class="card par"><div class="h">💧 ٣ · تهيئة حسية عملية</div>
+      <div class="hs"><span class="n">أ</span><span>مع إشراف بالغ، يقارن الطفل في حوض المطبخ أو الحمام وعاءين بلاستيكيين باستخدام كوب واحد وماء قليل.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يعدّان معًا عدد الأكواب لكل وعاء حتى العلامة، ثم يجففان المكان. لا تُستخدم أوعية زجاجية أو سوائل ساخنة.</span></div>
+      <div class="after">← يعيش الطفل معنى السعة واقعيًا قبل عرضه في الصف.</div>
+    </div>
+    <div class="card par"><div class="h">🧺 ٤ · تهيئة عملية بسيطة</div>
+      <div class="hs"><span class="n">أ</span><span>يجهّز مع الطفل بطاقتين صغيرتين مكتوب عليهما «فارغ» و«ممتلئ» ليستعملهما في التصنيف بالبيت.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يصنّف الطفل بعض العلب والأكواب في المطبخ تحت البطاقتين مع بيان ممّ امتلأ الوعاء.</span></div>
+      <div class="after">← مشاركة الأسرة تعطي الطفل حافزًا للمشاركة أمام زملائه.</div>
+    </div>
+    <div class="card par"><div class="h">🥛 ٥ · تهيئة سلوكية</div>
+      <div class="hs"><span class="n">أ</span><span>يشجّع طفله على استخدام الماء بقدر الحاجة دون إسراف، وإغلاق الصنبور بعد الاستعمال.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يذكّره: النعمة تُحفظ بالشكر وحسن الاستخدام، ونحمد الله على ما رزقنا.</span></div>
+      <div class="after">← يصبح السلوك اليومي نفسه جزءًا من الدرس.</div>
+    </div>
+    <div class="card par"><div class="h">🤝 ٦ · تهيئة تعاونية أسرية</div>
+      <p class="mini" style="font-size:15.5px">يعدّ الطفل مع أسرته أوعية المطبخ، ويرتّبها، وتقول له عند مساعدته: «الحمد لله الذي علّمك وبارك في عملك». فيتعلّم أن العناية بالنعمة عمل نتعاون فيه في البيت.</p>
+      <div class="after">← يزرع التعاون الأسري وشكر النعمة في وجدان الطفل.</div>
+    </div>
+    <div class="card par"><div class="h">💬 أسئلة تطرحها على طفلك</div>
+      <div class="pq">متى نقول إن الوعاء فارغ؟ (لا يوجد فيه المادة التي نبحث عنها)</div>
+      <div class="pq">متى نقول إنه ممتلئ؟ (وصلت المادة إلى العلامة)</div>
+      <div class="pq">ما معنى سعة الوعاء؟ (مقدار ما يمكن أن يحتويه)</div>
+      <div class="pq">كيف نعرف أي وعاء يسع أكثر؟ (نقيس بالكوب نفسه ونعدّ الأكواب)</div>
+      <div class="pq">لماذا نستخدم الكوب نفسه؟ (لتكون المقارنة عادلة)</div>
+    </div>
+    <div class="card msg">
+      <div class="l">📨 نص رسالة جاهزة لولي الأمر (واتساب) <button class="copy-btn" data-copy=".msg">📋 نسخ الرسالة</button></div>
+      بسم الله الرحمن الرحيم 🔢<br/>السلام عليكم ورحمة الله وبركاته<br/><br/>
+      تعلّم طفلكم الكريم اليوم في مادة <strong>«مهاراتي»</strong> كيف <strong>يميز الفارغ والممتلئ ويقارن السعة</strong>: الوعاء فارغ من المادة عندما لا يوجد منها داخله، وممتلئ عندما تبلغ المادة العلامة، والسعة مقدار ما يحتويه الوعاء، ونقارنها بالكوب نفسه حتى العلامة نفسها.<br/><br/>
+      💡 <strong>نشاط بيتي:</strong> مع إشرافكم، قارنوا مع طفلكم وعاءين بلاستيكيين بكوب واحد وماء قليل، وعدّوا عدد الأكواب لكل وعاء، ثم جففوا المكان. ✨<br/><br/>
+      🌿 جزاكم الله خيرًا على شراككم في تربية أبنائكم — فريق نادي غرس القيم
+    </div>
+  </div>
+
+  <!-- ══════════ 6) القيم والمفاهيم ══════════ -->
+  <div class="panel" id="p6">
+    <div class="sec-head first"><div class="num gold">💎</div><h2>القيم الأساسية للدرس</h2><div class="rule"></div></div>
+    <div class="cg">
+      <div class="ci"><div class="term">شكر النعمة</div><div class="def">حمد الله على نعمة الماء والغذاء والعلم، واستخدام النعمة بقدر الحاجة.</div></div>
+      <div class="ci"><div class="term">عدم الإسراف</div><div class="def">استعمال الماء والأدوات بقدر الحاجة، والمحافظة عليها وعدم هدرها.</div></div>
+      <div class="ci"><div class="term">الدقة والملاحظة</div><div class="def">التحقق بالعدّ والقياس لا بالنظر السريع، واستخدام الوحدة نفسها.</div></div>
+      <div class="ci"><div class="term">الأمانة والسلامة</div><div class="def">عدم تذوق مواد التجربة، وإخبار المعلمة فورًا إذا انسكب الماء.</div></div>
+    </div>
+    <div class="card" style="margin-bottom:16px">
+      <div class="lbl">❓ كيف تغرس المعلمة القيم أثناء الدرس؟</div>
+      <ul class="steps">
+        <li>تربط الماء والغذاء بنعمة الله: «رزقنا الله الماء فنشكره ولا نسرف».</li>
+        <li>تنمذج القياس الدقيق بالكوب نفسه، وتثني على من يتحقق بالعدّ.</li>
+        <li>تُثني على من يحافظ على الأدوات ويعيدها إلى مكانها.</li>
+        <li>تذكّر الربط الإيماني المستقل بعدل الله ومضاعفة الحسنة دون تمثيله بأوعية التجربة.</li>
+      </ul>
+    </div>
+    <div class="sec-head"><div class="num p" style="background:#7a5cc0">🧠</div><h2>المفاهيم الأساسية</h2><div class="rule"></div></div>
+    <div class="cg">
+      <div class="ci"><div class="term">فارغ</div><div class="def">الوعاء لا يوجد فيه من المادة التي نبحث عنها شيء.</div></div>
+      <div class="ci"><div class="term">ممتلئ</div><div class="def">وصلت المادة إلى العلامة التي حددناها دون فيضان.</div></div>
+      <div class="ci"><div class="term">السعة</div><div class="def">مقدار ما يمكن أن يحتويه الوعاء، ونقارنها بالوحدة نفسها كل مرة.</div></div>
+      <div class="ci"><div class="term">القياس بوحدة واحدة</div><div class="def">نملأ الوعاء بالكوب نفسه حتى العلامة، ونعدّ عدد الأكواب للمقارنة العادلة.</div></div>
+    </div>
+    <div class="sec-head"><div class="num">⚙️</div><h2>الاستراتيجيات التعليمية</h2><div class="rule"></div></div>
+    <div class="card">
+      <div class="strat"><span class="k">القصة</span><span class="v">قصة فرح والحليب لبناء معنى فارغ وممتلئ في سياق قريب من الطفل.</span></div>
+      <div class="strat"><span class="k">المثير المحسوس</span><span class="v">عرض أوعية وسلال وأكواب فارغة وممتلئة للملاحظة البصرية.</span></div>
+      <div class="strat"><span class="k">التصنيف والتنبؤ</span><span class="v">تصنيف الأشياء تحت فارغ وممتلئ، والتنبؤ بأي وعاء يسع أكثر قبل القياس.</span></div>
+      <div class="strat"><span class="k">القياس بوحدة غير معيارية</span><span class="v">استخدام الكوب نفسه حتى العلامة، وعدّ الوحدات للمقارنة العادلة.</span></div>
+      <div class="strat"><span class="k">التقويم بالملاحظة</span><span class="v">رصد وصف الطفل واختياره للأداة وتفسيره للنتيجة أثناء العمل.</span></div>
+    </div>
+
+    <div class="sec-head"><div class="num gold">🎯</div><h2>الأساليب العشرة</h2><div class="rule"></div></div>
+    <div class="cg">
+      <div class="ci"><div class="term">١ · المناقشة الهادفة</div><div class="def">أسئلة مباشرة: متى نقول فارغ؟ متى ممتلئ؟ أيهما يسع أكثر؟</div></div>
+      <div class="ci"><div class="term">٢ · العصف الذهني</div><div class="def">استدعاء ما يعرفه الطفل عن أوعية المطبخ قبل عرض المفهوم.</div></div>
+      <div class="ci"><div class="term">٣ · الترديد الجماعي</div><div class="def">«نقيس بالكوب نفسه حتى العلامة نفسها».</div></div>
+      <div class="ci"><div class="term">٤ · العرض البصري</div><div class="def">كوبان وأوعية شفافة وبطاقتا فارغ وممتلئ على صينية واضحة.</div></div>
+      <div class="ci"><div class="term">٥ · السكب الموجّه</div><div class="def">نقل الماء داخل صينية بإشراف مباشر مع ضبط الكمية.</div></div>
+      <div class="ci"><div class="term">٦ · النشاط العملي</div><div class="def">مختبر أوعية المسكن: تصنيف ونقل ومقارنة سعة.</div></div>
+      <div class="ci"><div class="term">٧ · التنظيم بالدور</div><div class="def">تناوب الأطفال على القياس والعدّ ونقل بطاقة النتيجة.</div></div>
+      <div class="ci"><div class="term">٨ · التعزيز الإيجابي</div><div class="def">جزاكِ الله خيرًا · بارك الله فيك · أحسنت التحقق بالعدّ.</div></div>
+      <div class="ci"><div class="term">٩ · التصنيف</div><div class="def">فرز الأشياء تحت عنواني فارغ وممتلئ مع بيان مادة الامتلاء.</div></div>
+      <div class="ci"><div class="term">١٠ · التقويم بالملاحظة</div><div class="def">متابعة استخدام الطفل للمفردات ودقة مقارنته للسعة.</div></div>
+    </div>
+
+    <div class="sec-head"><div class="num grn">🎨</div><h2>الوسائل</h2><div class="rule"></div></div>
+    <div class="means">
+      <div class="m"><h4>مرئية</h4><span class="i">كوبان متماثلان وأوعية بلاستيكية شفافة مختلفة السعة</span><span class="i">بطاقتا «فارغ» و«ممتلئ»</span><span class="i">سلتان وحقيبتان وزجاجة حليب تمثيلية</span></div>
+      <div class="m s2"><h4>سمعية</h4><span class="i">إشارة بدء لقاء مهاراتي (فيديو الإشارة)</span><span class="i">ترديد أوصاف السعة: فارغ · ممتلئ · يسع أكثر</span></div>
+      <div class="m s3"><h4>عملية (Hands-on)</h4><span class="i">القياس بالكوب الموحد داخل صينية عميقة</span><span class="i">نقل الماء والكرات بين الأوعية</span><span class="i">تصنيف الأشياء تحت فارغ وممتلئ</span></div>
+      <div class="m s4"><h4>قيمية (شرعية)</h4><span class="i">شكر الله على نعمة الماء والغذاء</span><span class="i">عدم الإسراف والمحافظة على النعمة</span><span class="i">تعزيز شرعي: بارك الله فيك</span></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 7) الحصيلة اللغوية ══════════ -->
+  <div class="panel" id="p7">
+    <div class="info">📝 الحصيلة اللغوية تُعزّز الفهم وتُنمّي القدرة على التعبير — تُستخدَم بشكل طبيعي أثناء الدرس.</div>
+    <div class="card"><div class="lbl">الكلمات الأساسية في الدرس</div>
+      <table class="voc"><thead><tr><th style="width:22%">الكلمة</th><th>بيان المعنى</th></tr></thead><tbody>
+        <tr><td><span class="w">فارغ من</span></td><td>الوعاء لا يوجد فيه من المادة التي نبحث عنها شيء.</td></tr>
+        <tr><td><span class="w">ممتلئ</span></td><td>وصلت المادة إلى علامة الامتلاء التي حددناها دون فيضان.</td></tr>
+        <tr><td><span class="w">علامة الامتلاء</span></td><td>خط نرسمه على الوعاء نتوقف عنده عند التعبئة.</td></tr>
+        <tr><td><span class="w">يسع</span></td><td>يحتوي ويستوعب؛ الوعاء يسع مقدارًا من الماء.</td></tr>
+        <tr><td><span class="w">أنقل / أسكب</span></td><td>أفرغ المحتوى من وعاء إلى آخر بهدوء دون هدر.</td></tr>
+        <tr><td><span class="w">أقارن</span></td><td>أنظر في نتيجتين لأعرف أيهما أكثر أو أقل.</td></tr>
+      </tbody></table>
+    </div>
+    <div class="card" style="margin-top:15px"><div class="lbl">المصطلحات الأساسية</div>
+      <table class="voc"><thead><tr><th style="width:22%">المصطلح</th><th>بيان المعنى</th></tr></thead><tbody>
+        <tr><td><span class="w">السعة</span></td><td>مقدار ما يمكن أن يحتويه الوعاء، ونقيسها بوحدة واحدة.</td></tr>
+        <tr><td><span class="w">وحدة واحدة</span></td><td>الكوب نفسه الذي نملأ به في كل مرة حتى تكون المقارنة عادلة.</td></tr>
+        <tr><td><span class="w">أقيس</span></td><td>أعرف مقدار السعة بعدّ عدد الأكواب حتى العلامة.</td></tr>
+        <tr><td><span class="w">أكثر / أقل</span></td><td>الوعاء الذي احتاج أكوابًا أكثر سعته أكبر، والأقل أصغر.</td></tr>
+      </tbody></table>
+    </div>
+    <div class="card cardgold" style="margin-top:15px"><div class="lbl gold">💡 كيف تستخدم المعلمة هذه الحصيلة؟</div>
+      <ul class="steps">
+        <li>تُدرج الكلمات بشكل طبيعي في شرحها دون توقف مفاجئ.</li>
+        <li>تستخدم الكلمة في جملة واضحة: «هذا الوعاء <strong>سعته أكبر</strong> لأنه احتاج أكوابًا أكثر».</li>
+        <li>تكرّر الكلمات في سياقات مختلفة لتثبيتها.</li>
+        <li>تُشجّع الأطفال على استخدامها وتثني عليهم.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════ 8) المراجع ══════════ -->
+  <div class="panel" id="p8">
+    <div class="card refblock">
+      <div class="h">📖 إشارة المادة والربط الإيماني — القرآن الكريم</div>
+      <div class="sub">لضبط نصّ الآيات ومعناها قبل اللقاء</div>
+      <div class="refitem"><span class="rbadge q">قرآن</span><div><div class="tt">سورة التوبة (٣٦): إشارة مادة مهاراتي — عدّة الشهور</div><div class="dd">مشروع المصحف الإلكتروني بجامعة الملك سعود — لضبط النص والتلاوة.</div><a class="reflink" href="https://quran.ksu.edu.sa/" target="_blank">quran.ksu.edu.sa</a></div></div>
+      <div class="refitem"><span class="rbadge q">قرآن</span><div><div class="tt">سورة النساء (٤٠): عدل الله ومضاعفة الحسنة</div><div class="dd">مشروع المصحف الإلكتروني بجامعة الملك سعود — معنى إيماني مستقل لا يُمثَّل بأوعية التجربة.</div><a class="reflink" href="https://quran.ksu.edu.sa/" target="_blank">quran.ksu.edu.sa</a></div></div>
+    </div>
+    <div class="card refblock">
+      <div class="h">📕 مراجع تربوية ومنهجية</div>
+      <div class="sub">مصادر إعداد اللقاء وطرائق تدريس الرياضيات في الطفولة المبكرة</div>
+      <div class="refitem"><span class="rbadge p">تربية</span><div><div class="tt">NAEYC وNCTM: الرياضيات في الطفولة المبكرة</div><div class="dd">الخبرة المحسوسة والقياس واللعب والتقويم المستمر.</div><a class="reflink" href="https://www.nctm.org/" target="_blank">nctm.org</a></div></div>
+      <div class="refitem"><span class="rbadge p">تربية</span><div><div class="tt">NCTM: Mathematics in Early Childhood Learning</div><div class="dd">التعلم بالمحسوس ثم المصور ثم الرمز.</div></div></div>
+    </div>
+    <div class="card refblock">
+      <div class="h">📜 مواد اللقاء المعتمدة</div>
+      <div class="refitem"><span class="rbadge t">فيديو</span><div><div class="tt">إشارة بدء لقاء مهاراتي (فيديو الإشارة)</div><div class="dd">يُعرض في مطلع اللقاء علامةً لبدء مجلس الرياضيات والتفكير.</div></div></div>
+      <div class="refitem"><span class="rbadge p">تربية</span><div><div class="tt">التحضير الأساسي الأول: «مفهوم السعة (ممتلئ وفارغ)»</div><div class="dd">إعداد المعلمة مها محفوظ.</div></div></div>
+      <div class="refitem"><span class="rbadge p">تربية</span><div><div class="tt">التحضير الأساسي الثاني: «قياس السعة - الرقم 14» — اللقاء الثاني</div><div class="dd">إعداد المعلمة حنان هشام.</div></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 9) الأركان ══════════ -->
+  <div class="panel" id="p9">
+    <div class="sec-head first chero"><div class="num gold">▣</div><h2>وقت الأركان التطبيقية</h2><div class="rule"></div></div>
+    <div class="chero"><p style="margin-bottom:6px">الأركان وقت تعلّم تطبيقي مستقل عن شرح الدرس. أمام المعلمة <strong>ركنان مقترحان تختار بينهما</strong> (أو تنفّذهما معًا) بحسب جاهزية البيئة، وتربط النشاط بمعنى مركزي واحد من الدرس: أصف حالة الوعاء ثم أقيس سعته بوحدة واحدة وأحافظ على النعمة.</p></div>
+    <div class="caution"><strong>ضابط منهجي:</strong> التجربة داخل صينية وتحت إشراف مباشر. تُستخدم أوعية بلاستيكية فقط، وكمية ماء قليلة غير مخصصة للشرب، وتُزال الانسكابات فورًا لمنع الانزلاق. والله هو المنعم بالماء والغذاء والعلم؛ <strong>ولا تُستخدم التجربة لتمثيل القلب أو الصحيفة أو الميزان أو أي أمر غيبي.</strong></div>
+
+    <div class="corner">
+      <div class="h" style="background:linear-gradient(90deg,#5c1010,#8B0000)"><h4>أصنّف الفارغ والممتلئ وأقيس السعة</h4><span class="k">🔎 ركن أكتشف ما حولي</span></div>
+      <div class="b">
+        <div class="cfield"><b>الأدوات والوسائل التعليمية</b><p>أوعية بلاستيكية شفافة بأحجام مختلفة، علامة امتلاء آمنة، كوب قياس موحّد، صينية عميقة، ماء قليل غير مخصص للشرب، منشفة، بطاقتا «فارغ» و«ممتلئ»، بطاقات النتيجة (أكثر · أقل)، وبطاقتا «قوانين الركن» و«جواز المرور».</p></div>
+        <div class="cfield"><b>قوانين الركن</b><p>التجربة داخل الصينية فقط · تحريك الماء برفق دون سكب خارج الصينية · انتظار الدور · مسح أي انسكاب فورًا وإعادة الأدوات إلى مكانها.</p></div>
+        <div class="cfield"><b>اللعب الحرّ في الركن</b><p>يسكب الأطفال الماء بين الأوعية ويلاحظون الفارغ والممتلئ، ويجرّبون الأحجام المختلفة بحرّية ومرح دون تكليف؛ فالركن مساحة لعب لا حلقة علم.</p></div>
+        <div class="cfield"><b>النشاط التطبيقي السريع</b><p><em>تستقطع المعلمة نحو ٥–٧ دقائق لتطبيق سريع على الفكرة المركزية للدرس: <strong>أصف حالة الوعاء (فارغ/ممتلئ)، ثم أقيس سعته بالكوب نفسه حتى العلامة نفسها.</strong></em></p><ol>
+          <li>يصنّف الطفل وعاءً فارغًا وآخر ممتلئًا ويسمّي حالة كلٍّ منهما.</li>
+          <li>يختار وعاءين ويتنبأ: أيّهما يسع ماءً أكثر؟</li>
+          <li>يملأ كلًّا بالكوب نفسه حتى العلامة، ويعدّ عدد الأكواب.</li>
+          <li>يقارن العددين ويضع بطاقة النتيجة: «هذا يسع أكثر»، ثم يعيد الماء وينظّف مكانه.</li>
+        </ol></div>
+        <div class="cfield"><b>هدف الركن</b><p>تثبيت مفردات فارغ وممتلئ والسعة، وإدراك أن المقارنة العادلة تكون بوحدة قياس واحدة تتكرر (الكوب نفسه حتى العلامة نفسها).</p></div>
+        <div class="cfield"><b>دور المعلمة</b><p>تُتيح اللعب الحرّ أولًا، ثم تضبط كمية الماء ووحدة القياس وخط الامتلاء، وتطلب تفسير النتيجة، وتسجّل استخدام الطفل للمفردات.</p></div>
+        <div class="cfield"><b>خصوصية عقدية وتربوية</b><p>الله هو المنعم بالماء والغذاء والعلم؛ نحمده ونستخدم النعمة بقدر الحاجة. لا تُستخدم التجربة لتمثيل القلب أو الصحيفة أو الميزان أو أي أمر غيبي، ولا يُقارن الأطفال؛ فالتعلّم توفيق من الله.</p></div>
+        <div class="cfield"><b>مناسب للفئة العمرية</b><p>كمية ماء قليلة وأوعية خفيفة سهلة الإمساك وخطوات قصيرة، مع طفل أو مجموعة صغيرة تحت إشراف مباشر، والتجربة داخل صينية.</p></div>
+        <div class="cfield"><b>المخرج</b><p>يصنّف الطفل الوعاء (فارغ/ممتلئ) ويقارن سعتين بوحدة واحدة مع تفسير بسيط لنتيجته.</p></div>
+        <div class="cfield"><b>نموذج تطبيقي للركن</b>
+          <div class="gallery" style="margin-top:6px"><div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;font-size:52px;background:var(--elm-soft)">🥤</div><div class="cap">أوعية القياس والكوب الموحّد<small>يقيس الطفل السعة بالكوب نفسه حتى العلامة</small></div></div></div>
+        </div>
+        <div class="faith">الجملة الختامية: الحمد لله الذي علّمنا؛ أميز الفارغ والممتلئ، وأقارن السعة، وأحافظ على نعمة الماء.</div>
+      </div>
+    </div>
+
+    <div class="corner">
+      <div class="h" style="background:linear-gradient(90deg,#8B0000,#a83232)"><h4>أختار وعاءً مناسبًا لأدوات بيتي وأصف حالته</h4><span class="k">🏠 ركن المسكن</span></div>
+      <div class="b">
+        <div class="cfield"><b>الأدوات والوسائل التعليمية</b><p>أوعية وسلال وحقائب من أحجام مختلفة، أدوات منزلية تمثيلية آمنة كبيرة، بطاقتا «فارغ» و«ممتلئ»، وبطاقتا «قوانين الركن» و«جواز المرور».</p></div>
+        <div class="cfield"><b>قوانين الركن</b><p>البقاء في مساحة الركن · المحافظة على الأدوات · انتظار الدور · إعادة كل أداة إلى مكانها بعد اللعب.</p></div>
+        <div class="cfield"><b>اللعب الحرّ في الركن</b><p>يستكشف الأطفال الأوعية والسلال ويعبّئونها ويفرغونها، ويمثّلون ترتيب أدوات البيت بحرّية ومرح دون تكليف؛ فالركن مساحة لعب لا حلقة علم.</p></div>
+        <div class="cfield"><b>النشاط التطبيقي السريع</b><p><em>تستقطع المعلمة دقائق يسيرة لنقل الفكرة المركزية إلى موقف منزلي: <strong>أختار الوعاء المناسب، وأصف حالته قبل التعبئة وبعدها.</strong></em></p><ol>
+          <li>يختار الطفل وعاءً مناسبًا لمجموعة الأدوات التي يريد حفظها.</li>
+          <li>يصف الوعاء قبل التعبئة: «فارغ من الأدوات».</li>
+          <li>يعبّئ الأدوات ثم يصفه: «ممتلئ أو فيه أكثر»، ويلاحظ أن الوعاء الأكبر يسع أكثر.</li>
+          <li>يعيد الأدوات ويرتّب مكانه.</li>
+        </ol></div>
+        <div class="cfield"><b>هدف الركن</b><p>نقل مفهوم السعة إلى واقع المسكن: أيّ وعاء يناسب ما نريد حفظه، وربطه بوصف الحالة فارغ وممتلئ.</p></div>
+        <div class="cfield"><b>دور المعلمة</b><p>تُتيح اللعب الحرّ، ثم تتابع وصف الطفل قبل التعبئة وبعدها، وتشجّع اختيار الوعاء المناسب، وتعزّز المحافظة على النعمة.</p></div>
+        <div class="cfield"><b>خصوصية عقدية وتربوية</b><p>نستخدم نعمة الأوعية بقدر الحاجة دون إسراف، ونشكر الله على ما رزقنا؛ دون تمثيل أي أمر غيبي بالأوعية، ولا مقارنة بين الأطفال فالتعلّم توفيق من الله.</p></div>
+        <div class="cfield"><b>مناسب للفئة العمرية</b><p>أدوات آمنة كبيرة غير قابلة للابتلاع وخطوات قصيرة، مع طفل أو مجموعة صغيرة في كل دورة.</p></div>
+        <div class="cfield"><b>المخرج</b><p>يختار الطفل وعاءً مناسبًا ويصف حالته بكلمتي فارغ وممتلئ.</p></div>
+        <div class="cfield"><b>نموذج تطبيقي للركن</b>
+          <div class="gallery" style="margin-top:6px"><div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;font-size:52px;background:var(--elm-soft)">🧺</div><div class="cap">أوعية وسلال بأحجام مختلفة<small>يختار الطفل الوعاء المناسب ويصف حالته</small></div></div></div>
+        </div>
+        <div class="faith">الجملة الختامية: الحمد لله الذي علّمنا اختيار ما ينفعنا، والمحافظة على نعمه.</div>
+      </div>
+    </div>
+</div>
+
+  <div class="foot">وحدة العائلة · مهاراتي · اللقاء الثاني — أميز الفارغ والممتلئ وأقارن السعة · نادي غرس القيم لضيافة الأطفال</div>
+</div>
+
+<script>
+(function(){
+  var doc=document, root=doc.documentElement, body=doc.body;
+  var pb=doc.createElement('div'); pb.className='gq-progress'; body.appendChild(pb);
+  var top=doc.createElement('button'); top.className='gq-top'; top.setAttribute('aria-label','العودة للأعلى'); top.textContent='↑'; body.appendChild(top);
+  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function onScroll(){ var sc=window.pageYOffset||root.scrollTop, max=(root.scrollHeight-root.clientHeight)||1; pb.style.width=Math.min(100,sc/max*100)+'%'; if(sc>320){top.classList.add('show');}else{top.classList.remove('show');} }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var lb=doc.createElement('div'); lb.className='gq-lb'; lb.innerHTML='<button class="close" aria-label="اغلاق">✕</button><figure><img alt=""/><figcaption class="cap"></figcaption></figure>'; body.appendChild(lb);
+  var lbImg=lb.querySelector('img'), lbCap=lb.querySelector('.cap');
+  function closeLb(){lb.classList.remove('open'); lbImg.removeAttribute('src');}
+  lb.addEventListener('click',function(e){ if(e.target===lb||e.target.classList.contains('close')) closeLb(); });
+  doc.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLb(); });
+  doc.querySelectorAll('.gitem img, .step-media img').forEach(function(im){
+    im.addEventListener('click',function(){ var cap='', box=im.closest('.gitem')||im.closest('.step-media'); if(box){var c=box.querySelector('.cap'); if(c) cap=c.textContent;} lbImg.src=im.currentSrc||im.src; lbCap.textContent=cap; lb.classList.add('open'); });
+  });
+  var tabs=[].slice.call(doc.querySelectorAll('.tab'));
+  var KEY='gq-fam-tab-'+(doc.title||'l');
+  function activate(btn,save,scroll){ tabs.forEach(function(t){t.classList.remove('active');}); doc.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');}); btn.classList.add('active'); var p=doc.getElementById(btn.dataset.p); if(p) p.classList.add('active'); if(save){ try{localStorage.setItem(KEY,btn.dataset.p);}catch(e){} } if(scroll){ window.scrollTo({top:0,behavior:'smooth'}); } }
+  tabs.forEach(function(btn,i){ btn.setAttribute('tabindex','0'); btn.addEventListener('click',function(){ activate(btn,true,true); }); btn.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ e.preventDefault(); var dir=(e.key==='ArrowLeft')?1:-1, ni=(i+dir+tabs.length)%tabs.length; tabs[ni].focus(); activate(tabs[ni],true,false); } }); });
+  try{ var saved=localStorage.getItem(KEY); if(saved){ var b=doc.querySelector('.tab[data-p="'+saved+'"]'); if(b) activate(b,false,false); } }catch(e){}
+  function fallback(txt,cb){ var ta=doc.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0'; body.appendChild(ta); ta.select(); try{doc.execCommand('copy');}catch(e){} body.removeChild(ta); cb(); }
+  doc.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){ var target=doc.querySelector(btn.getAttribute('data-copy')); if(!target) return; var clone=target.cloneNode(true); clone.querySelectorAll('.l,.copy-btn').forEach(function(n){n.remove();}); var txt=(clone.innerText||clone.textContent||'').replace(/\n{3,}/g,'\n\n').trim(); function done(){ var o=btn.getAttribute('data-lbl'); if(!o){o=btn.textContent; btn.setAttribute('data-lbl',o);} btn.textContent='✓ نُسخ'; btn.classList.add('copied'); setTimeout(function(){ btn.textContent=o; btn.classList.remove('copied'); },1500); } if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done).catch(function(){fallback(txt,done);}); } else { fallback(txt,done); } });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>مركز اللغة · لقاء تطبيقي ١ · أكتشف حرف ث · وحدة العائلة</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45; --t2:#0d6e6e; --soft:#E6F4F5; --soft2:#F2FAF9;
+  --gold:#C79A3B; --cream:#FFF7E8;
+  --ink:#1e2b2a; --muted:#5f6f6c; --line:#e6ded0; --card:#fff;
+  --shadow:0 6px 20px rgba(0,50,55,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.95;font-size:16px;
+  background:linear-gradient(#fbf9f3,#f6f0e6);padding:22px 16px 60px}
+.wrap{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+b,strong{font-weight:700}
+h1,h2,h3,.c-badge,.c-unit{font-family:var(--fd)}
+
+/* ===== الغلاف (بأسلوب دروس العائلة) ===== */
+.cover{position:relative;overflow:hidden;border-radius:22px;color:#fff;box-shadow:var(--shadow);min-height:190px}
+.cover-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.cover::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg,rgba(0,62,69,.92),rgba(13,110,110,.80) 52%,rgba(13,110,110,.88))}
+.cover::after{content:"";position:absolute;inset:0;z-index:1;opacity:.07;pointer-events:none;
+  background:radial-gradient(circle at 88% 18%,#fff 0 2px,transparent 3px) 0 0/34px 34px}
+.cover-main{position:relative;z-index:2;padding:26px 28px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cover-l{flex:1 1 60%;min-width:240px}
+.cover-r{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.c-badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:999px;padding:6px 15px;font-weight:700;font-size:14px;margin-bottom:11px}
+.cover h1{font-size:29px;line-height:1.42;font-weight:700;margin-bottom:10px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+.c-meta{font-size:14px;color:#dcf3ef;line-height:1.85}
+.c-unit{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:12px 16px;font-weight:700;font-size:15px;line-height:1.6}
+.c-dur{color:#bfe6e0;font-size:14px}
+
+/* ===== رقائق المعنى ===== */
+.mc-chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.mc-chip{background:var(--soft2);border:1px solid var(--line);border-radius:16px;padding:13px 15px;font-size:14px;line-height:1.85}
+.mc-chip strong{display:block;color:var(--t1);font-weight:700;margin-bottom:3px;font-family:var(--fd);font-size:15px}
+
+/* ===== أقسام وبطاقات ===== */
+.mc-block{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow)}
+.mc-block>h2{color:var(--t1);font-size:18px;font-weight:700;margin-bottom:12px;
+  padding-inline-start:12px;border-inline-start:4px solid var(--t2)}
+.mc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px}
+.mc-card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--t2);
+  border-radius:16px;padding:15px 17px;box-shadow:var(--shadow)}
+.mc-card h3{color:var(--t1);font-size:15.5px;font-weight:700;margin-bottom:9px}
+.mc-card.wide{grid-column:1/-1}
+.mc-card ul,.mc-card ol{margin:0;padding-inline-start:20px}
+.mc-card li{margin-bottom:5px;font-size:14px;line-height:1.9}
+.mc-card li::marker{color:var(--t2)}
+
+/* ===== معاينة أوراق العمل ===== */
+.mc-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px}
+.mc-fig{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.mc-fig img{display:block;width:100%;height:240px;object-fit:contain;background:var(--soft2);padding:8px}
+.mc-fig figcaption{padding:9px 12px;font-size:13px;font-weight:700;color:var(--ink);background:#fff;border-top:1px solid var(--line)}
+.mc-fig a{text-decoration:none;color:inherit}
+
+/* ===== ملفات مساعِدة ===== */
+.mc-res{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));gap:10px}
+.mc-res a{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;
+  padding:11px 14px;background:var(--soft2);border:1px solid var(--line);border-inline-start:4px solid var(--t2);
+  border-radius:13px;color:var(--ink);text-decoration:none;font-size:13.5px;font-weight:700}
+.mc-res a::after{content:"فتح ↗";color:#fff;background:var(--t2);border-radius:999px;padding:4px 11px;font-size:11px;white-space:nowrap}
+
+/* ===== تنبيه ===== */
+.mc-note{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);
+  border-radius:16px;padding:14px 17px;font-size:14px;line-height:1.95;color:#5b4412}
+.mc-note strong{color:#7a5a12}
+@media(max-width:640px){.mc-cover{flex-direction:column;text-align:center}.mc-cover h1{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="cover-photo" style="background-image:url('units-art/unit-family.jpg')"></div>
+    <div class="cover-main">
+      <div class="cover-l">
+        <span class="c-badge">مركز اللغة · لقاء تطبيقي · ٣٠ دقيقة</span>
+        <h1>وحدة العائلة — مركز اللغة<br/>كشّاف الثاء ومسار النقاط الثلاث</h1>
+        <div class="c-meta">المرحلة: تمهيدي (5–6 سنوات) · الدرس المرتبط: لساني عربي — اللقاء الأول (أتعرّف حرف ث) · تنظيم: ٤–٦ أطفال</div>
+      </div>
+      <div class="cover-r">
+        <div class="c-unit" style="background:#fff;padding:8px 10px;display:grid;place-items:center"><img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة" style="display:block;width:88px;height:88px;object-fit:contain"/></div>
+        <div class="c-dur">المدة: ٣٠ دقيقة</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="mc-chips">
+    <div class="mc-chip"><strong>المعنى المركزي</strong>اللغة العربية باب لفهم القرآن؛ ينتقل الطفل من المشاهدة مع المعلمة إلى أداء عملي: يبحث عن ث بنفسه، ويبني شكله، ويضع نقاطه الثلاث، ويطابقه بكلمة الدرس.</div>
+    <div class="mc-chip"><strong>الركن الداعم</strong>ركن أقرأ لأتعلّم في درس لساني، وركن المسكن لربط ث بكلمة «ثَوْب» ومكان حفظ الثياب.</div>
+    <div class="mc-chip"><strong>المثير</strong>تعرض المعلمة بطاقة ث وتسأل: ما العلامة التي تخبرنا أنه حرف ث؟ فينتبه الأطفال إلى النقاط الثلاث فوقه.</div>
+    <div class="mc-chip"><strong>التقويم</strong>يختار الطفل ث من بطاقات جديدة لم يلمسها، ويضع نقاطه الثلاث، ويطابقه بكلمة «ثَوْب»؛ مع توثيق درجة الاستقلال لا تحويله إلى اختبار.</div>
+  </section>
+
+  <section class="mc-block">
+    <h2>معاينة من أوراق العمل والأنشطة</h2>
+    <div class="mc-gallery">
+      <figure class="mc-fig"><a href="assets/gq_center_lugha_kashaf.pdf" target="_blank" rel="noopener"><img src="assets/worksheet_previews/gq_prev_lugha_tamyeez.jpg" alt="تمييز الحرف المطلوب" loading="lazy"/><figcaption>تمييز الحرف المطلوب — اكتشاف الحرف بالكشّاف</figcaption></a></figure>
+      <figure class="mc-fig"><a href="assets/gq_center_lugha_writing.pdf" target="_blank" rel="noopener"><img src="assets/worksheet_previews/gq_prev_lugha_writing.jpg" alt="أنشطة تدريب على كتابة الأحرف" loading="lazy"/><figcaption>أنشطة تدريب على كتابة الأحرف الهجائية</figcaption></a></figure>
+    </div>
+  </section>
+
+  <section class="mc-grid">
+    <div class="mc-card"><h3>الأهداف ونواتج التعلّم</h3><ul><li>الهدف الإجرائي: يحدّد الطفل حرف ث بين ب وت في أربع محاولات من خمس.</li><li>ينطق ثَ قريبًا من النموذج أو يردّد بعد نموذج واحد.</li><li>يبني شكل الحرف مع ثلاث نقاط فوقه، ثم يتتبّعه مرة واحدة في الاتجاه الصحيح.</li><li>يطابق ث بكلمة «ثَوْب» ويشير إلى الحرف الأول.</li></ul></div>
+    <div class="mc-card"><h3>خطوات النشاط · ٦ مراحل</h3><ol><li>استدعاء التعلّم (٣د): بطاقة ث ثم «ثاء — ثَ»، والإشارة إلى أول «ثَوْب».</li><li>كشّاف الثاء (٧د): يحرّك الكشّاف حتى يظهر حرف، فيقول «ثاء» أو «ليس ث» بحسب النقاط.</li><li>أبني الثاء (١٠د): يصفّ قطع الجسم، ويضع ٣ قطع للنقاط ويعدّها.</li><li>مطابقة وتتبّع (٦د): يختار ث بين ث وب وت، ويطابقها بـ«ثَوْب» ثم يتتبّعها مرّة.</li><li>تقويم هادئ (٢د): استجابة «ثاء — ثَ — ثوب» وتوثيق الاستقلال.</li><li>إعادة الأدوات (٢د): فرز القطع ومسح البطاقات.</li></ol></div>
+    <div class="mc-card wide"><h3>الأدوات والكميات</h3><ul><li>لوح كشف ورقي لكل طفلين: ملف شفّاف وورقة سوداء وكشّاف ورقي أبيض (بلا مصباح حقيقي)، وشبكة ١٢ حرفًا: ٥ صور ث و٧ مشتّتات من ب وت.</li><li>بطاقة كبيرة لمسار ث بنقطة بداية وسهم، و١٢–١٨ كرة وبرية أو أقراص لباد لجسم الحرف، مع ٣ قطع بلون مختلف للنقاط في طبق مستقل.</li><li>بطاقات ث·ب·ت وبطاقة مصوّرة «ثَوْب»، وبطاقة تتبّع مغلّفة وقلم قابل للمسح وقطعة قماش، وبطاقة ملاحظة المعلمة.</li></ul></div>
+    <div class="mc-card wide"><h3>المؤشّرات والتوثيق</h3><ul><li>يختار ث بين ب وت بالنقاط الثلاث · ينطق ثَ قريبًا من النموذج · يضع ٣ نقاط فوق الجسم · يطابق ث بكلمة «ثَوْب» · يتتبّع المسار في اتجاهه الصحيح.</li><li><b>رمز التوثيق:</b> م = مستقل، ت = بتلميح، س = بمساعدة مباشرة. يُسجَّل مرّة واحدة بعد التطبيق الفردي، ولا يتحوّل المركز إلى اختبار.</li></ul></div>
+    <div class="mc-card wide"><h3>التمايز حسب حاجة الطفل</h3><ul><li><b>يحتاج دعمًا:</b> بطاقة ث كبيرة مع ب وت فقط، وثلاث دوائر لمواضع النقاط، والتتبّع بالإصبع قبل القلم.</li><li><b>متقن:</b> يبحث عن جميع صور ث ويشرح الفرق بينها وبين ب وت بعدد النقاط، ثم يكتب محاولة حرّة واحدة.</li><li><b>حاجة حركية:</b> ينقل قطع الجسم إلى المسار قطعةً قطعة ثم يعيد فرزها.</li><li><b>يتردّد في النطق:</b> يُقبل منه الاختيار والإشارة، ثم يردّد الصوت مع المعلمة بلا إلزام أمام زملائه.</li></ul></div>
+  </section>
+
+  <section class="mc-block">
+    <h2>ملفات مساعدة للمعلمة</h2>
+    <div class="mc-res">
+      <a href="assets/gq_center_lugha_kashaf.pdf" target="_blank" rel="noopener">اكتشاف الحرف بالكشّاف</a>
+      <a href="assets/gq_center_lugha_writing.pdf" target="_blank" rel="noopener">كتابة الأحرف الهجائية</a>
+      <a href="assets/gq_center_lugha_ta_tha.pdf" target="_blank" rel="noopener">بطاقات الحرفين ت · ث</a>
+    </div>
+  </section>
+
+  <div class="mc-note"><strong>تنبيه منهجي:</strong> يُقدَّم التدريب بوصفه ضبطًا للّسان لخدمة القراءة الصحيحة لا كلعبة صوتية منفصلة عن المعنى؛ فلا تُستخدم آيات أو أحاديث للتجريب الصوتي داخل المركز، ولا مقارنة بين خطوط الأطفال، مع الهدوء والتصحيح اللطيف. المركز فترة تطبيقية مستقلّة بعد الدرس، لا يحلّ محلّه ولا يقدّم مفهومًا جديدًا.</div>
+
+</div>
+</body>
+</html>

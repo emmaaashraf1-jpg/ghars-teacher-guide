@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>وحدة العائلة · دليل المعلمة · غرس القيم</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45; --t2:#006B69; --grn:#2D7A4B;
+  --gold:#C79A3B; --gold2:#C8A200; --cream:#FFF7E8;
+  --ink:#1e2b2a; --muted:#5f6f6c;
+  --elm:#0E7C86; --elm-soft:#E6F4F5;
+  --line:#e8dfd0; --card:#fff;
+  --shadow:0 8px 26px rgba(0,50,55,.08);
+  --shadow-sm:0 3px 12px rgba(0,50,55,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.9;font-size:16px;
+  background:radial-gradient(1200px 520px at 82% -12%,#eef8f6 0,transparent 60%),linear-gradient(#fbf7ee,#f4eddd)}
+b,strong{font-weight:700}
+h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
+.wrap{max-width:1080px;margin:0 auto;padding:18px 14px 70px}
+
+/* ===== الغلاف ===== */
+.hero{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:18px;isolation:isolate}
+.hero-photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;transform:scale(1.02)}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg,rgba(0,62,69,.93),rgba(0,107,105,.86) 60%,rgba(14,124,134,.82))}
+.hero-in{position:relative;z-index:2;padding:34px 30px 30px;color:#fff;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.hero-badge-logo{flex:0 0 auto;width:104px;height:104px;border-radius:22px;background:#fff;
+  border:1px solid rgba(255,255,255,.65);display:grid;place-items:center;padding:9px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.hero-badge-logo img{width:100%;height:100%;object-fit:contain}
+.hero-txt{flex:1;min-width:260px}
+.hero-kicker{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);
+  border-radius:999px;padding:5px 14px;font-size:12.5px;font-weight:700;margin-bottom:10px;color:#fff}
+.hero-title{font-size:34px;line-height:1.4;margin-bottom:8px;color:#fff}
+.hero-sub{font-size:14px;opacity:.94;line-height:1.9;max-width:820px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hero-chips span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;padding:5px 12px;font-size:12px;color:#fff}
+
+/* ===== تبويبات الأيام ===== */
+.daytabs{display:flex;flex-wrap:wrap;gap:10px;background:var(--card);border:1px solid var(--line);
+  border-radius:18px;padding:12px;box-shadow:var(--shadow-sm);margin-bottom:16px;position:sticky;top:8px;z-index:20}
+.daytab{flex:1 1 auto;min-width:150px;cursor:pointer;border:1px solid var(--line);background:#fff;
+  border-radius:13px;padding:11px 13px;text-align:start;transition:.18s;display:flex;flex-direction:column;gap:3px}
+.daytab .d-n{font-size:12.5px;color:var(--t2);font-weight:700}
+.daytab .d-t{font-size:15px;font-weight:700;color:var(--ink)}
+.daytab:hover{border-color:var(--t2);transform:translateY(-1px)}
+.daytab.active{background:linear-gradient(135deg,var(--t1),var(--t2));border-color:var(--t1);box-shadow:0 8px 22px rgba(0,62,69,.24)}
+.daytab.active .d-n,.daytab.active .d-t{color:#fff}
+
+/* ===== لوحة اليوم ===== */
+.daypanel{display:none}
+.daypanel.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* ===== تبويبات المواد داخل اليوم ===== */
+.subtabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:10px;box-shadow:var(--shadow-sm)}
+.subtab{cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;
+  font-size:13.5px;font-weight:700;color:#4a5a58;font-family:var(--fb);transition:.15s;white-space:nowrap}
+.subtab:hover{border-color:var(--sc,#006B69);color:var(--sc,#006B69)}
+.subtab.active{background:var(--sc,#006B69);border-color:var(--sc,#006B69);color:#fff}
+.subpanel{display:none}
+.subpanel.active{display:block;animation:fade .2s ease}
+
+.day-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);
+  border-inline-start:6px solid var(--sc,var(--t2));border-radius:16px;padding:13px 18px;box-shadow:var(--shadow-sm);margin-bottom:12px}
+.day-head .subj{background:var(--sc,var(--t2));color:#fff;border-radius:999px;padding:6px 14px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.day-head h2{font-size:19px;color:var(--t1);flex:1;min-width:160px}
+.day-head .open{margin-inline-start:auto;text-decoration:none;background:var(--sc,var(--t1));color:#fff;border-radius:10px;
+  padding:9px 15px;font-size:13px;font-weight:700;white-space:nowrap;transition:.18s;filter:saturate(1)}
+.day-head .open:hover{opacity:.9}
+.frame-wrap{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:var(--shadow);margin-bottom:8px}
+.frame-wrap iframe{display:block;width:100%;border:0;background:#fff;min-height:900px}
+.frame-load{padding:60px 20px;text-align:center;color:var(--muted);font-size:15px}
+.frame-load .sp{display:inline-block;width:30px;height:30px;border:3px solid var(--elm-soft);border-top-color:var(--t2);
+  border-radius:50%;animation:spin .8s linear infinite;margin-bottom:12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.foot{margin-top:26px;text-align:center;color:var(--muted);font-size:13px;border-top:1px dashed var(--line);padding-top:16px}
+
+/* العودة للأعلى */
+.gq-top{position:fixed;inset-inline-end:18px;bottom:18px;width:46px;height:46px;border-radius:50%;border:0;
+  background:var(--t2);color:#fff;font-size:20px;cursor:pointer;box-shadow:0 8px 22px rgba(0,62,69,.3);
+  opacity:0;pointer-events:none;transition:.25s;z-index:40}
+.gq-top.show{opacity:1;pointer-events:auto}
+
+@media(max-width:700px){
+  .hero-title{font-size:26px}.hero-in{padding:24px 18px}
+  .daytab{min-width:calc(50% - 5px)}
+  .day-head .open{margin-inline-start:0;width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== الغلاف ===== -->
+  <div class="hero">
+    <div class="hero-photo" style="background-image:url('units-art/unit-family.jpg')"></div>
+    <div class="hero-in">
+      <div class="hero-badge-logo">
+        <img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة" onerror="this.style.display='none'"/>
+      </div>
+      <div class="hero-txt">
+        <span class="hero-kicker">الأسبوع الحادي عشر · جمادى الأولى · المرحلة التمهيدية</span>
+        <h1 class="hero-title">وحدة العائلة</h1>
+        <div class="hero-sub">وحدة متكاملة تغرس محبة العائلة وآدابها وبرّ الوالدين. تضمّ سبع موادّ — <b>علّمني ربي · كتابي المنير · قال رسولي · أحبك ربي · أدب واقتداء · لساني عربي · مهاراتي</b> — إضافةً إلى <b>مركزَي اللغة والرياضيات</b> التطبيقيَّين. اختاري اليوم، ثم المادة لعرض دليل لقائها كاملًا.</div>
+        <div class="hero-chips">
+          <span>☀ ٥ أيام</span><span>📚 ٧ مواد + مركزان</span><span>🏡 ركن المسكن</span><span>⏱️ ٣٠ دقيقة/لقاء</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== تبويبات الأيام ===== -->
+  <div class="daytabs" role="tablist">
+    <button class="daytab active" data-d="1"><span class="d-n">الأحد · اليوم الأول</span><span class="d-t">مفهوم العائلة</span></button>
+    <button class="daytab" data-d="2"><span class="d-n">الاثنين · اليوم الثاني</span><span class="d-t">آداب التعامل</span></button>
+    <button class="daytab" data-d="3"><span class="d-n">الثلاثاء · اليوم الثالث</span><span class="d-t">برّ الوالدين</span></button>
+    <button class="daytab" data-d="4"><span class="d-n">الأربعاء · اليوم الرابع</span><span class="d-t">مسؤوليات الأفراد</span></button>
+    <button class="daytab" data-d="5"><span class="d-n">الخميس · اليوم الخامس</span><span class="d-t">عائلة النبي ﷺ</span></button>
+  </div>
+
+  <!-- ═══════════ اليوم الأول · الأحد ═══════════ -->
+  <div class="daypanel active" id="d1">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#006B69">علّمني ربي</button>
+      <button class="subtab" data-s="2" style="--sc:#2D7A4B">كتابي المنير</button>
+      <button class="subtab" data-s="3" style="--sc:#6B3F22">قال رسولي</button>
+      <button class="subtab" data-s="4" style="--sc:#55702B">أدب واقتداء</button>
+      <button class="subtab" data-s="5" style="--sc:#0d6e6e">لساني عربي</button>
+      <button class="subtab" data-s="6" style="--sc:#0e7c86">مركز اللغة</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>مفهوم العائلة</h2><a class="open" href="family-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — مفهوم العائلة" data-src="family-lesson1.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الانفطار · اللقاء الأول</h2><a class="open" href="kitabi-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الانفطار ١" data-src="kitabi-lesson1.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#6B3F22"><span class="subj">قال رسولي</span><h2>حديث من خصال الإيمان</h2><a class="open" href="qal-rasuli-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="قال رسولي — خصال الإيمان ١" data-src="qal-rasuli-lesson1.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="4"><div class="day-head" style="--sc:#55702B"><span class="subj">أدب واقتداء</span><h2>آداب الاستئذان · اللقاء الأول</h2><a class="open" href="adab-iqtida-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="أدب واقتداء — الاستئذان ١" data-src="adab-iqtida-lesson1.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="5"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>أتعرّف حرف ث وصوته</h2><a class="open" href="lisani-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — حرف ث" data-src="lisani-lesson1.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="6"><div class="day-head" style="--sc:#0e7c86"><span class="subj">مركز اللغة</span><h2>كشّاف الثاء ومسار النقاط الثلاث</h2><a class="open" href="markaz-lugha-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل المركز…</div><iframe title="مركز اللغة — كشّاف الثاء" data-src="markaz-lugha-lesson1.html" loading="lazy"></iframe></div></div>
+  </div>
+
+  <!-- ═══════════ اليوم الثاني · الاثنين ═══════════ -->
+  <div class="daypanel" id="d2">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#006B69">علّمني ربي</button>
+      <button class="subtab" data-s="2" style="--sc:#2D7A4B">كتابي المنير</button>
+      <button class="subtab" data-s="3" style="--sc:#55702B">أدب واقتداء</button>
+      <button class="subtab" data-s="4" style="--sc:#0d6e6e">لساني عربي</button>
+      <button class="subtab" data-s="5" style="--sc:#0e7c86">مركز اللغة</button>
+      <button class="subtab" data-s="6" style="--sc:#8B0000">مهاراتي</button>
+      <button class="subtab" data-s="7" style="--sc:#a83232">مركز الرياضيات</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>آداب التعامل مع أفراد العائلة</h2><a class="open" href="family-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — آداب التعامل" data-src="family-lesson2.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الانفطار · اللقاء الثاني</h2><a class="open" href="kitabi-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الانفطار ٢" data-src="kitabi-lesson2.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#55702B"><span class="subj">أدب واقتداء</span><h2>آداب الاستئذان · اللقاء الثاني</h2><a class="open" href="adab-iqtida-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="أدب واقتداء — الاستئذان ٢" data-src="adab-iqtida-lesson2.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="4"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>أراجع حرف ث وأميّز مواضعه</h2><a class="open" href="lisani-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — مواضع ث" data-src="lisani-lesson2.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="5"><div class="day-head" style="--sc:#0e7c86"><span class="subj">مركز اللغة</span><h2>أصطاد حرف ث وأحدّد موضعه</h2><a class="open" href="markaz-lugha-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل المركز…</div><iframe title="مركز اللغة — أصطاد ث" data-src="markaz-lugha-lesson2.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="6"><div class="day-head" style="--sc:#8B0000"><span class="subj">مهاراتي</span><h2>أتعرّف العدد أربعة عشر</h2><a class="open" href="maharati-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="مهاراتي — العدد ١٤" data-src="maharati-lesson1.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="7"><div class="day-head" style="--sc:#a83232"><span class="subj">مركز الرياضيات</span><h2>مسار الأربعة عشر: أرتّب وأبحث وأبني</h2><a class="open" href="markaz-math-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل المركز…</div><iframe title="مركز الرياضيات — مسار الأربعة عشر" data-src="markaz-math-lesson1.html" loading="lazy"></iframe></div></div>
+  </div>
+
+  <!-- ═══════════ اليوم الثالث · الثلاثاء ═══════════ -->
+  <div class="daypanel" id="d3">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#006B69">علّمني ربي</button>
+      <button class="subtab" data-s="2" style="--sc:#2D7A4B">كتابي المنير</button>
+      <button class="subtab" data-s="3" style="--sc:#8660A8">أحبك ربي</button>
+      <button class="subtab" data-s="4" style="--sc:#0d6e6e">لساني عربي</button>
+      <button class="subtab" data-s="5" style="--sc:#0e7c86">مركز اللغة</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>برّ الوالدين</h2><a class="open" href="family-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — برّ الوالدين" data-src="family-lesson3.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الانفطار · اللقاء الثالث</h2><a class="open" href="kitabi-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الانفطار ٣" data-src="kitabi-lesson3.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#8660A8"><span class="subj">أحبك ربي</span><h2>الله البصير يراني ويرى عملي</h2><a class="open" href="ohb-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="أحبك ربي — البصير" data-src="ohb-lesson3.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="4"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>أتعرّف حرف و وصوته</h2><a class="open" href="lisani-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — حرف و" data-src="lisani-lesson3.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="5"><div class="day-head" style="--sc:#0e7c86"><span class="subj">مركز اللغة</span><h2>أكتشف حرف و وأرسم مساره</h2><a class="open" href="markaz-lugha-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل المركز…</div><iframe title="مركز اللغة — مسار الواو" data-src="markaz-lugha-lesson3.html" loading="lazy"></iframe></div></div>
+  </div>
+
+  <!-- ═══════════ اليوم الرابع · الأربعاء ═══════════ -->
+  <div class="daypanel" id="d4">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#006B69">علّمني ربي</button>
+      <button class="subtab" data-s="2" style="--sc:#2D7A4B">كتابي المنير</button>
+      <button class="subtab" data-s="3" style="--sc:#0d6e6e">لساني عربي</button>
+      <button class="subtab" data-s="4" style="--sc:#0e7c86">مركز اللغة</button>
+      <button class="subtab" data-s="5" style="--sc:#8B0000">مهاراتي</button>
+      <button class="subtab" data-s="6" style="--sc:#a83232">مركز الرياضيات</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>مسؤوليات أفراد العائلة</h2><a class="open" href="family-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — مسؤوليات الأفراد" data-src="family-lesson4.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الانفطار · اللقاء الرابع</h2><a class="open" href="kitabi-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الانفطار ٤" data-src="kitabi-lesson4.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>أتعرّف مواضع حرف و</h2><a class="open" href="lisani-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — مواضع و" data-src="lisani-lesson4.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="4"><div class="day-head" style="--sc:#0e7c86"><span class="subj">مركز اللغة</span><h2>أرتّب مواضع الواو</h2><a class="open" href="markaz-lugha-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل المركز…</div><iframe title="مركز اللغة — مواضع الواو" data-src="markaz-lugha-lesson4.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="5"><div class="day-head" style="--sc:#8B0000"><span class="subj">مهاراتي</span><h2>أميّز الفارغ والممتلئ وأقارن السعة</h2><a class="open" href="maharati-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="مهاراتي — السعة" data-src="maharati-lesson2.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="6"><div class="day-head" style="--sc:#a83232"><span class="subj">مركز الرياضيات</span><h2>مختبر أوعية المسكن</h2><a class="open" href="markaz-math-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل المركز…</div><iframe title="مركز الرياضيات — مختبر الأوعية" data-src="markaz-math-lesson2.html" loading="lazy"></iframe></div></div>
+  </div>
+
+  <!-- ═══════════ اليوم الخامس · الخميس ═══════════ -->
+  <div class="daypanel" id="d5">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#006B69">علّمني ربي</button>
+      <button class="subtab" data-s="2" style="--sc:#2D7A4B">كتابي المنير</button>
+      <button class="subtab" data-s="3" style="--sc:#6B3F22">قال رسولي</button>
+      <button class="subtab" data-s="4" style="--sc:#8660A8">أحبك ربي</button>
+      <button class="subtab" data-s="5" style="--sc:#0d6e6e">لساني عربي</button>
+      <button class="subtab" data-s="6" style="--sc:#0e7c86">مركز اللغة</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>عائلة النبي ﷺ</h2><a class="open" href="family-lesson5.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — عائلة النبي ﷺ" data-src="family-lesson5.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الانفطار · اللقاء الخامس</h2><a class="open" href="kitabi-lesson5.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الانفطار ٥" data-src="kitabi-lesson5.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#6B3F22"><span class="subj">قال رسولي</span><h2>أفهم خصال الإيمان الثلاث</h2><a class="open" href="qal-rasuli-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="قال رسولي — خصال الإيمان ٢" data-src="qal-rasuli-lesson2.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="4"><div class="day-head" style="--sc:#8660A8"><span class="subj">أحبك ربي</span><h2>بائعة اللبن — أصدق وإن لم يرَني الناس</h2><a class="open" href="ohb-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="أحبك ربي — بائعة اللبن" data-src="ohb-lesson4.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="5"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>أتعرّف حرف ش وصوته</h2><a class="open" href="lisani-lesson5.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — حرف ش" data-src="lisani-lesson5.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="6"><div class="day-head" style="--sc:#0e7c86"><span class="subj">مركز اللغة</span><h2>أميّز حرف ش وأبني نقاطه</h2><a class="open" href="markaz-lugha-lesson5.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل المركز…</div><iframe title="مركز اللغة — حرف ش" data-src="markaz-lugha-lesson5.html" loading="lazy"></iframe></div></div>
+  </div>
+
+  <div class="foot">وحدة العائلة · دليل معلمة غرس القيم لضيافة الأطفال — سبع مواد ومركزان تطبيقيان · الأسبوع الحادي عشر (جمادى الأولى)</div>
+</div>
+
+<button class="gq-top" aria-label="العودة للأعلى">↑</button>
+
+<script>
+(function(){
+  var doc=document, root=doc.documentElement;
+  var KEY='gq-family-day';
+
+  function fit(fr){ try{ var d=fr.contentWindow.document; var h=Math.max(d.body.scrollHeight, d.documentElement.scrollHeight); if(h>200){ fr.style.height=h+'px'; } }catch(e){} }
+
+  function loadFrame(sp){
+    if(!sp) return;
+    var fr=sp.querySelector('iframe'), load=sp.querySelector('.frame-load');
+    if(!fr || fr.getAttribute('src')) return;              // already loaded
+    fr.addEventListener('load',function(){
+      if(load) load.style.display='none';
+      fit(fr);
+      try{
+        var bd=fr.contentWindow.document.body;
+        if('ResizeObserver' in window){ new ResizeObserver(function(){ fit(fr); }).observe(bd); }
+        else { setInterval(function(){ fit(fr); }, 800); }
+        fr.contentWindow.document.addEventListener('click',function(){ setTimeout(function(){ fit(fr); },60); });
+      }catch(e){}
+      var t=0, iv=setInterval(function(){ fit(fr); if(++t>10) clearInterval(iv); }, 500);
+    });
+    fr.setAttribute('src', fr.getAttribute('data-src'));
+  }
+
+  function selectSub(panel, s){
+    panel.querySelectorAll('.subtab').forEach(function(t){ t.classList.toggle('active', t.dataset.s===s); });
+    panel.querySelectorAll('.subpanel').forEach(function(p){ p.classList.toggle('active', p.dataset.s===s); });
+    loadFrame(panel.querySelector('.subpanel.active'));
+  }
+
+  var daytabs=[].slice.call(doc.querySelectorAll('.daytab'));
+  var daypanels=[].slice.call(doc.querySelectorAll('.daypanel'));
+
+  function activateDay(d,save){
+    daytabs.forEach(function(t){ t.classList.toggle('active', t.dataset.d===d); });
+    daypanels.forEach(function(p){ p.classList.toggle('active', p.id==='d'+d); });
+    var panel=doc.getElementById('d'+d);
+    if(panel){ var cur=panel.querySelector('.subtab.active')||panel.querySelector('.subtab'); if(cur) selectSub(panel, cur.dataset.s); }
+    if(save){ try{ localStorage.setItem(KEY,d); }catch(e){} }
+  }
+
+  // ربط تبويبات المواد داخل كل يوم
+  daypanels.forEach(function(panel){
+    panel.querySelectorAll('.subtab').forEach(function(t){
+      t.addEventListener('click',function(){ selectSub(panel, t.dataset.s); });
+    });
+  });
+
+  // ربط تبويبات الأيام
+  daytabs.forEach(function(t,i){
+    t.addEventListener('click',function(){ activateDay(t.dataset.d,true); window.scrollTo({top:0,behavior:'smooth'}); });
+    t.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ e.preventDefault(); var dir=(e.key==='ArrowLeft')?1:-1, ni=(i+dir+daytabs.length)%daytabs.length; daytabs[ni].focus(); activateDay(daytabs[ni].dataset.d,true); } });
+  });
+
+  var start='1';
+  try{ var s=localStorage.getItem(KEY); if(s && doc.getElementById('d'+s)) start=s; }catch(e){}
+  activateDay(start,false);
+
+  var top=doc.querySelector('.gq-top');
+  top.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+  window.addEventListener('scroll',function(){ var sc=window.pageYOffset||root.scrollTop; if(sc>320) top.classList.add('show'); else top.classList.remove('show'); },{passive:true});
+})();
+</script>
+</body>
+</html>

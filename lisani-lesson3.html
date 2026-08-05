@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>أتعرف حرف و وصوته بالفتح · لساني عربي · وحدة العائلة</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;   /* خط العناوين */
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif; /* خط المتن */
+  --t1:#003E45; --t2:#0d6e6e; --grn:#0d6e6e;
+  --gold:#C79A3B; --gold2:#C8A200; --cream:#FFF7E8;
+  --ink:#1e2b2a; --muted:#5f6f6c;
+  --elm:#0d6e6e; --elm-soft:#E6F4F5;
+  --line:#e8dfd0; --card:#fff;
+  --shadow:0 8px 26px rgba(0,50,55,.08);
+  --shadow-sm:0 3px 12px rgba(0,50,55,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:var(--fb);
+  color:var(--ink);line-height:1.95;font-size:16.5px;
+  background:
+    radial-gradient(1200px 520px at 82% -12%,#eef8f6 0,transparent 60%),
+    linear-gradient(#fbf7ee,#f4eddd);
+}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 60px}
+b,strong{font-weight:700}
+/* العناوين فقط بخط AlAwwal */
+.cover h1,.c-badge,.c-unit,.sec-head h2,.flow-card h3,.lbl,.taq h3,.ci .term,
+.adab .h,.par .h,.corner .h h4,.story .h,.refblock .h,.dua .x,.dua .l,
+table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd)}
+
+/* ===== الغلاف ===== */
+.cover{position:relative;overflow:hidden;border-radius:26px;color:#fff;box-shadow:var(--shadow);min-height:200px}
+.cover-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.cover::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg,rgba(0,62,69,.91),rgba(13,110,110,.78) 52%,rgba(13,110,110,.87))}
+.cover::after{content:"";position:absolute;inset:0;z-index:1;opacity:.07;pointer-events:none;
+  background:radial-gradient(circle at 88% 18%,#fff 0 2px,transparent 3px) 0 0/34px 34px}
+.cover-main{position:relative;z-index:2;padding:28px 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cover-l{flex:1 1 60%;min-width:240px}
+.cover-r{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.c-badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:999px;padding:6px 15px;font-weight:700;font-size:15px;margin-bottom:12px}
+.cover h1{font-size:33px;line-height:1.42;font-weight:700;margin-bottom:10px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+.c-meta{font-size:15px;color:#dcf3ef;line-height:1.9}
+.c-unit{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:14px;
+  padding:12px 16px;font-weight:700;font-size:16px;line-height:1.6}
+.c-dur{color:#bfe6e0;font-size:14.5px}
+
+/* ===== شريط التبويبات ===== */
+.tabs{position:sticky;top:0;z-index:40;display:flex;flex-wrap:wrap;gap:8px;
+  margin:16px 0 24px;padding:10px;background:rgba(255,251,242,.94);backdrop-filter:blur(6px);
+  border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 14px rgba(0,50,55,.05)}
+.tab{background:#fff;border:1px solid var(--line);color:var(--t2);border-radius:999px;
+  padding:8px 15px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s}
+.tab:hover{background:var(--elm-soft);border-color:var(--elm);color:var(--elm)}
+.tab.active{background:var(--elm);border-color:var(--elm);color:#fff;box-shadow:0 4px 12px rgba(13,110,110,.28)}
+.tab.gold{background:var(--gold);border-color:var(--gold);color:#3a2a06}
+.tab.gold.active{background:var(--gold2);border-color:var(--gold2);color:#241a00}
+
+/* ===== نظام اللوحات ===== */
+.panel{display:none;animation:fade .25s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ===== مكوّنات ===== */
+.sec-head{display:flex;align-items:center;gap:12px;margin:26px 0 15px}
+.sec-head .num{flex:none;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+  background:var(--elm);color:#fff;font-size:18px;box-shadow:0 4px 12px rgba(13,110,110,.28)}
+.sec-head .num.grn{background:var(--grn)}.sec-head .num.gold{background:var(--gold);color:#3a2a06}
+.sec-head h2{font-size:22px;color:var(--t1);font-weight:700}
+.sec-head .rule{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.first{margin-top:6px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow-sm)}
+.grid{display:grid;gap:15px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){.g2,.g3{grid-template-columns:1fr}.cover h1{font-size:27px}}
+.lbl{color:var(--t1);font-weight:700;font-size:16px;border-bottom:2px solid var(--gold);display:inline-block;padding-bottom:3px;margin-bottom:12px}
+
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border-radius:999px;padding:6px 13px;font-size:15px;border:1px solid var(--line);background:#fff}
+.chip.v{background:#fff7e8;border-color:#ebd9a8;color:#8a6410}
+.chip.c{background:var(--elm-soft);border-color:#c8e6e6;color:#063a3e}
+
+/* مسار البدء */
+.flow-card{border-radius:14px;padding:15px 18px;margin-bottom:12px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.flow-card.sig{border-inline-start:5px solid var(--elm)}
+.flow-card.law{border-inline-start:5px solid var(--gold)}
+.flow-card.rev{border-inline-start:5px solid var(--grn)}
+.flow-card.belief{border-inline-start:5px solid var(--t1)}
+.flow-card.belief h3{color:var(--t1);font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.belief-text{background:var(--elm-soft);border:1px solid #c8e6e6;border-radius:12px;padding:13px 16px;color:#063a3e;font-size:16px;line-height:2;font-weight:600}
+.flow-card h3{font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.flow-card.sig h3{color:var(--elm)}.flow-card.law h3{color:#8a6410}.flow-card.rev h3{color:var(--grn)}
+.greet{background:var(--elm-soft);border-radius:10px;padding:10px 14px;color:#063a3e;font-weight:700;margin-bottom:10px}
+.linkbtn{display:inline-block;background:var(--t2);color:#fff;border-radius:999px;padding:8px 16px;font-weight:700;text-decoration:none;font-size:15px;margin:6px 0}
+.law-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+@media(max-width:600px){.law-grid{grid-template-columns:1fr}}
+.law-grid > div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 13px;font-size:15px}
+.law-grid small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+
+/* الشريط الجانبي/الأهداف */
+.two{display:grid;grid-template-columns:.9fr 1.4fr;gap:16px;align-items:start}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.obj{margin-bottom:8px;display:flex;gap:9px;align-items:flex-start}
+.obj .n{flex:none;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;color:#fff;font-size:13.5px;background:var(--elm)}
+.obj .n.o{background:var(--gold);color:#3a2a06}.obj .n.g{background:var(--grn)}.obj .n.p{background:#7a5cc0}
+.obj span.t{font-size:15.5px;line-height:1.8}
+.mini{font-size:15px;line-height:1.8;color:var(--ink)}
+.mini .src{color:var(--muted);font-size:13.5px}
+
+/* سير اللقاء */
+.flow{position:relative;padding-inline-start:26px}
+.flow::before{content:"";position:absolute;inset-inline-start:8px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--elm),var(--gold))}
+.step{position:relative;margin-bottom:14px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 17px;box-shadow:var(--shadow-sm)}
+.step::before{content:"";position:absolute;inset-inline-start:-24px;top:17px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--elm)}
+.step b.k{color:var(--elm)}
+
+.story{background:#fff8ec;border:1px solid #ebd9a8;border-radius:16px;padding:0;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:6px}
+.story .h{background:linear-gradient(90deg,var(--gold),#b98a2a);color:#fff;padding:11px 18px;font-weight:700;font-size:16px}
+.story .h span{font-weight:400;opacity:.9;font-size:13.5px}
+.story .b{padding:14px 18px}
+.story .b p{margin-bottom:8px}
+
+/* التغذية الراجعة */
+.feedback{border-inline-start:5px solid var(--grn)}
+.feedback h3{color:var(--grn);font-size:16px;margin-bottom:8px}
+.feedback ol{margin-inline-start:20px;font-size:16px;line-height:2}
+.note{color:var(--muted);font-size:14.5px;margin-top:8px}
+
+/* اختيارات الأنشطة */
+.actbar{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#3a2a06;border-radius:14px 14px 0 0;font-weight:700;padding:11px;text-align:center;margin-top:8px}
+.actgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;overflow:hidden}
+@media(max-width:600px){.actgrid{grid-template-columns:1fr}}
+.actgrid > div{padding:13px 16px;border:1px solid #f0e8da;font-size:15px;line-height:1.85}
+.actgrid .t{color:var(--t1);font-weight:700;display:block;margin-bottom:5px}
+.actgrid .bd{color:var(--elm);font-weight:700}
+
+/* كفارة */
+.dua{text-align:center;background:linear-gradient(135deg,var(--t1),var(--grn));color:#fff;border-radius:18px;padding:24px;box-shadow:var(--shadow);margin-top:16px}
+.dua .l{color:var(--gold);font-size:15px;letter-spacing:.5px;margin-bottom:6px}
+.dua .x{font-size:21px;line-height:2}
+
+/* info bar */
+.info{background:var(--elm-soft);border:1px solid #c8e6e6;color:#063a3e;border-radius:12px;padding:11px 15px;font-size:15.5px;font-weight:600;margin-bottom:14px}
+
+/* التقويم */
+.taq{border-top:4px solid var(--elm)}
+.taq.t{border-top-color:var(--gold2)}.taq.n{border-top-color:var(--grn)}
+.taq h3{font-size:16px;font-weight:700;margin-bottom:10px}
+.taq.q h3{color:var(--elm)}.taq.t h3{color:#b0851a}.taq.n h3{color:var(--grn)}
+.taq ul{list-style:none}
+.taq li{display:flex;gap:8px;align-items:flex-start;margin-bottom:7px;font-size:15.5px;line-height:1.8}
+.taq li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:9px}
+
+/* con-grid (قيم/مفاهيم/مؤشرات) */
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.cg{grid-template-columns:1fr}}
+.ci{background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 14px}
+.ci .term{color:var(--elm);font-weight:700;font-size:15.5px;margin-bottom:3px}
+.ci .def{font-size:15px;line-height:1.8}
+.steps{list-style:none;margin-top:6px}
+.steps li{display:flex;gap:9px;margin-bottom:7px;font-size:15.5px;line-height:1.85}
+.steps li::before{content:"•";color:var(--gold);font-weight:900;font-size:18px;line-height:1.2}
+.cardgold{border-top:4px solid var(--gold)}
+.cardpurple{border-top:4px solid #7a5cc0}
+.cardblue{border-top:4px solid var(--t2)}
+.card > .lbl.gold{border-color:var(--gold)}
+
+/* الآداب */
+.adab{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:14px;background:#fff}
+.adab .h{background:linear-gradient(90deg,var(--elm),#003E45);color:#fff;padding:11px 16px;font-weight:700;font-size:16px}
+.adab .b{padding:14px 16px}
+.adab .row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:15.5px;line-height:1.8}
+.tag{flex:none;border-radius:8px;font-weight:700;font-size:13.5px;padding:3px 11px;color:#fff}
+.tag.s{background:#c46b2e}.tag.r{background:var(--t2)}.tag.v{background:var(--grn)}
+.adab .link{background:#fff7e8;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;font-size:15px;padding:8px 12px;margin-top:6px}
+
+/* تحضيرات ولي الأمر */
+.par{margin-bottom:12px}
+.par .h{color:var(--t1);font-weight:700;font-size:16.5px;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.hs{display:flex;gap:9px;align-items:flex-start;margin-bottom:6px;font-size:15.5px;line-height:1.8}
+.hs .n{flex:none;width:22px;height:22px;border-radius:50%;background:var(--elm);color:#fff;display:grid;place-items:center;font-size:13.5px}
+.after{background:#f2faf5;border:1px solid #bfe0cd;border-radius:9px;padding:6px 12px;margin-top:5px;font-size:14.5px;color:#0A5030;font-style:italic}
+.pq{background:var(--elm-soft);border-radius:10px;color:#063a3e;padding:8px 12px;margin:5px 0;font-size:15px;font-weight:600}
+.msg{border-inline-start:5px solid var(--grn);font-size:15.5px;line-height:1.95}
+.msg .l{color:var(--grn);font-weight:700;margin-bottom:6px}
+
+/* الحصيلة */
+table.voc{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:4px}
+table.voc th{background:var(--elm);color:#fff;font-size:15px;padding:10px 12px;text-align:start}
+table.voc td{font-size:15px;line-height:1.8;padding:10px 12px;border-top:1px solid var(--line)}
+table.voc .w{color:var(--elm);font-weight:700}
+
+/* المراجع */
+.refblock{margin-bottom:14px}
+.refblock .h{color:var(--t1);font-weight:700;font-size:16px;margin-bottom:4px}
+.refblock .sub{color:var(--muted);font-size:14.5px;margin-bottom:8px}
+.refitem{display:flex;gap:10px;align-items:flex-start;border-bottom:1px dashed var(--line);padding:10px 0}
+.rbadge{flex:none;border-radius:999px;font-size:12.5px;font-weight:700;padding:3px 10px;color:#fff}
+.rbadge.q{background:var(--grn)}.rbadge.t{background:var(--t2)}.rbadge.p{background:#7a5cc0}.rbadge.d{background:#546e7a}
+.refitem .tt{font-size:15.5px;font-weight:700}
+.refitem .dd{color:var(--muted);font-size:14.5px}
+.reflink{color:var(--t2);font-size:14.5px;text-decoration:underline;margin-inline-end:8px}
+
+/* الأركان */
+.chero h2{margin-bottom:6px}
+.chero p{color:var(--muted);font-size:15.5px}
+.caution{background:#fff7e8;border:1px dashed #ebd9a8;border-radius:12px;padding:11px 15px;color:#8a6410;font-size:15px;margin:12px 0}
+.corner{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:16px;background:#fff}
+.corner .h{padding:13px 18px;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.corner .h .k{background:rgba(255,255,255,.2);border-radius:999px;padding:4px 13px;font-size:14.5px}
+.corner .h h4{font-size:17px}
+.corner .b{padding:16px 18px}
+.cfield{margin-bottom:10px}
+.cfield b{color:var(--elm);font-size:15px;display:block;margin-bottom:2px}
+.cfield p,.cfield li{font-size:15px;line-height:1.8}
+.cfield ol{margin-inline-start:20px}
+.faith{background:#fff7e8;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;padding:10px 14px;margin-top:8px;font-size:15px}
+
+.foot{text-align:center;color:var(--muted);font-size:14.5px;margin-top:34px}
+/* ==== إثراء الدليل ==== */
+.sig-video{margin:10px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#06302f}
+.sig-video video{display:block;width:100%;max-height:300px;background:#000}
+.sig-video .cap{background:var(--elm-soft);color:#063a3e;font-size:13.5px;padding:8px 12px}
+.plan-wrap{overflow-x:auto}
+table.plan{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+table.plan th{background:var(--t2);color:#fff;font-size:14.5px;padding:9px 12px;text-align:start}
+table.plan td{font-size:14.5px;padding:9px 12px;border-top:1px solid var(--line);line-height:1.7}
+table.plan td:first-child{font-weight:700;color:var(--t1);white-space:nowrap}
+table.plan td.z{color:var(--gold2);font-weight:700;white-space:nowrap;text-align:center}
+table.plan tr.tot td{background:#fff7e8;font-weight:700;color:#8a6410}
+.central{background:linear-gradient(135deg,#003E45,#0d6e6e);color:#fff;border-radius:14px;padding:14px 18px;margin:6px 0 2px;box-shadow:var(--shadow-sm)}
+.central b{color:#ffe9b8;display:block;margin-bottom:3px}
+.cues{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.cue{border:2px dashed #cdbf9e;background:#fffdf6;border-radius:14px;padding:14px;text-align:center}
+.cue .ic{font-size:30px;display:block;margin-bottom:6px}
+.cue .t{font-weight:700;color:var(--t1);font-size:14.5px;display:block}
+.cue .d{color:var(--muted);font-size:13px;display:block;margin-top:2px}
+.cue .tag{display:inline-block;margin-top:7px;background:var(--elm-soft);color:#063a3e;border-radius:999px;padding:2px 10px;font-size:12px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.gitem{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow-sm)}
+.gitem .imgwrap{background:#f6f1e6;height:180px;overflow:hidden}
+.gitem img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.gitem .cap{padding:9px 12px;font-size:14px;font-weight:700;color:var(--t1);text-align:center}
+.gitem .cap small{display:block;color:var(--muted);font-weight:400;font-size:12.5px;margin-top:2px}
+.step-media{margin:9px auto 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;max-width:330px;box-shadow:var(--shadow-sm)}
+.step-media img{display:block;width:100%;height:auto}
+.step-media .cap{background:var(--elm-soft);color:#063a3e;font-size:12.5px;padding:5px 10px;text-align:center}
+.actful{border-inline-start:5px solid var(--gold);margin-top:8px}
+.actful h3{color:#8a6410;font-size:17px;margin-bottom:10px}
+.actful .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px}
+@media(max-width:600px){.actful .row2{grid-template-columns:1fr}}
+.miniblock b{color:var(--elm);display:block;margin-bottom:3px;font-size:14.5px}
+.actful ol{margin-inline-start:20px;font-size:15px;line-height:1.95}
+.actful .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px;margin-top:8px}
+.actful .opt{background:#f7fbfa;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;line-height:1.7}
+.actful .opt b{color:var(--t2)}
+ol.qa{list-style:none;margin-inline-start:0}
+ol.qa li{margin-bottom:12px}
+ol.qa .q{font-weight:700;color:var(--t1);font-size:15.5px}
+ol.qa .a{display:block;margin-top:3px;background:#f2faf5;border-inline-start:3px solid var(--grn);border-radius:8px;padding:7px 12px;font-size:14.5px;color:#12563a;line-height:1.8}
+ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;color:var(--grn)}
+.strat{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 13px;margin-bottom:8px}
+.strat .k{flex:none;background:var(--elm-soft);color:#063a3e;border-radius:8px;padding:4px 11px;font-size:13.5px;font-weight:700;white-space:nowrap}
+.strat .v{font-size:14.5px;line-height:1.8}
+.means{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.means .m{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;border-top:4px solid var(--elm)}
+.means .m.s2{border-top-color:var(--gold2)}.means .m.s3{border-top-color:var(--grn)}.means .m.s4{border-top-color:#7a5cc0}
+.means .m h4{color:var(--t1);font-size:15px;margin-bottom:6px}
+.means .m .i{font-size:13.5px;line-height:1.7;color:var(--ink);display:block;padding-inline-start:12px;position:relative}
+.means .m .i::before{content:"•";color:var(--gold);position:absolute;inset-inline-start:0}
+/* تخطيط: شريط «حول الدرس» جانبي مصغّر + سير اللقاء أوسع */
+.les{display:grid;grid-template-columns:minmax(190px,0.72fr) 1.9fr;gap:16px;align-items:start;margin-top:6px}
+.objgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:600px){.objgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.objgrid{grid-template-columns:1fr}}
+.objgrid .lbl{font-size:13px;margin-bottom:8px;padding-bottom:2px}
+.objgrid .obj{margin-bottom:5px;gap:7px}
+.objgrid .obj .n{width:19px;height:19px;font-size:11.5px;border-radius:6px}
+.objgrid .obj span.t{font-size:13.5px;line-height:1.6}
+@media(max-width:560px){.les{grid-template-columns:1fr}}
+.side .card{padding:12px 14px;margin-bottom:12px}
+.side .card:last-child{margin-bottom:0}
+.side .lbl{font-size:14px;margin-bottom:9px}
+.side .chip{font-size:12.5px;padding:5px 10px}
+.side .mini{font-size:13.5px}
+.side .mini .src{font-size:12px}
+.side-title{font-family:var(--fd);font-weight:700;color:#063a3e;font-size:15px;background:var(--elm-soft);border:1px solid #c8e6e6;border-radius:10px;padding:7px 12px;margin-bottom:12px;text-align:center}
+/* أهداف اللقاء داخل الشريط الجانبي: عمود واحد يمنع الفيضان */
+.side .objgrid{grid-template-columns:1fr!important;gap:10px}
+.side .objgrid>div{min-width:0}
+.side .objgrid .obj span.t{font-size:13px;line-height:1.7;word-break:break-word}
+/* ورقة التدريس السريعة (٣ مراحل · خطوات مرجعية) */
+.quick-sheet{margin:16px 0;background:linear-gradient(180deg,#fffdf8,#f1fbfa);border:1px solid rgba(13,110,110,.20);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden}
+.quick-sheet .qs-head{background:linear-gradient(90deg,var(--t1),var(--t2));color:#fff;padding:12px 16px;font-family:var(--fd);font-weight:700;font-size:15.5px}
+.quick-sheet .qs-phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;padding:14px}
+.quick-sheet .qs-phase{background:#fff;border:1px solid rgba(13,110,110,.14);border-top:4px solid var(--t2);border-radius:14px;padding:11px 13px}
+.quick-sheet .qs-ph-h{display:flex;align-items:center;gap:7px;color:var(--t1);font-family:var(--fd);font-weight:700;font-size:14px;margin-bottom:8px;flex-wrap:wrap}
+.quick-sheet .qs-n{width:26px;height:26px;border-radius:8px;background:var(--t2);color:#fff;display:grid;place-items:center;font-size:14px;flex:0 0 auto}
+.quick-sheet .qs-min{margin-inline-start:auto;background:var(--elm-soft);color:var(--t2);border-radius:999px;padding:2px 10px;font-size:11.5px;font-weight:700}
+.quick-sheet .qs-phase ul{margin:0;padding-inline-start:18px}
+.quick-sheet .qs-phase li{font-size:12.5px;line-height:1.8;margin-bottom:4px}
+.quick-sheet .qs-phase li::marker{color:var(--t2)}
+.quick-sheet .qs-home{margin:0 14px;background:#fbf3e3;border:1px solid #eccf94;border-radius:12px;padding:9px 12px;font-size:12.5px;color:#7a5a10;line-height:1.75}
+.quick-sheet .qs-note{margin:12px 14px 14px;padding:9px 12px;border-radius:12px;background:#fff;border:1px dashed rgba(13,110,110,.35);color:var(--muted);font-size:12px;line-height:1.75}
+.mainflow .sec-head{margin-top:0}
+.mainflow .flow{padding-inline-start:24px}
+/* ==== تحسينات حديثة هادئة + شعار ==== */
+.gq-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:120;background:linear-gradient(90deg,var(--gold),var(--elm));transition:width .12s ease-out}
+.gq-top{position:fixed;bottom:22px;inset-inline-start:22px;width:46px;height:46px;border-radius:50%;background:var(--elm);color:#fff;border:0;cursor:pointer;display:grid;place-items:center;font-size:22px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(8px);transition:.25s;z-index:110}
+.gq-top.show{opacity:1;pointer-events:auto;transform:none}
+.gq-lb{position:fixed;inset:0;background:rgba(8,28,30,.88);display:none;place-items:center;z-index:200;padding:26px;cursor:zoom-out}
+.gq-lb.open{display:grid}
+.gq-lb figure{margin:0;text-align:center;max-width:96vw}
+.gq-lb img{max-width:96vw;max-height:86vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5);background:#fff}
+.gq-lb .cap{color:#fff;font-size:15px;margin-top:10px;font-family:var(--fd)}
+.gq-lb .close{position:absolute;top:16px;inset-inline-start:18px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:20px;cursor:pointer}
+.gitem img,.step-media img{cursor:zoom-in}
+.gitem .imgwrap{position:relative}
+.gitem .imgwrap::after{content:"";position:absolute;bottom:6px;inset-inline-end:6px;width:30px;height:30px;background:url('brand/seedling.webp') center/contain no-repeat;opacity:.9;filter:drop-shadow(0 1px 2px rgba(0,0,0,.25));pointer-events:none}
+.copy-btn{margin-inline-start:8px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);color:inherit;border-radius:8px;padding:3px 10px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:var(--fb);vertical-align:middle}
+.copy-btn:hover{background:rgba(255,255,255,.3)}
+.copy-btn.copied{background:#2e9e5b;border-color:#2e9e5b;color:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== الغلاف ===== -->
+  <div class="cover">
+    <div class="cover-photo" style="background-image:url('units-art/unit-family.jpg')"></div>
+    <div class="cover-main">
+      <div class="cover-l">
+        <span class="c-badge">مادة: لساني عربي · مجلس الحرف والقراءة</span>
+        <h1>وحدة العائلة — اللقاء الثالث<br/>أتعرف حرف و وصوته بالفتح</h1>
+        <div class="c-meta">المرحلة: تمهيدي (5–6 سنوات) · المجلس: لقاء لساني عربي — مجلس الحرف والقراءة · اليوم: الثلاثاء</div>
+      </div>
+      <div class="cover-r">
+        <div class="c-unit" style="background:#fff;padding:8px 10px;display:grid;place-items:center"><img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة" style="display:block;width:88px;height:88px;object-fit:contain"/></div>
+        <div class="c-dur">المدة: نصف ساعة</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== التبويبات ===== -->
+  <div class="tabs">
+    <button class="tab active" data-p="p1">دليل الدرس كامل</button>
+    <button class="tab" data-p="p2">التكامل اليومي</button>
+    <button class="tab" data-p="p3">التقويم</button>
+    <button class="tab" data-p="p4">الآداب الصفية</button>
+    <button class="tab" data-p="p5">تحضيرات ولي الأمر</button>
+    <button class="tab" data-p="p6">القيم والمفاهيم والاستراتيجيات</button>
+    <button class="tab" data-p="p7">الحصيلة اللغوية</button>
+    <button class="tab" data-p="p8">مراجع إثرائية</button>
+    <button class="tab gold" data-p="p9">الأركان التطبيقية</button>
+  </div>
+
+  <!-- ══════════ 1) دليل الدرس ══════════ -->
+  <div class="panel active" id="p1">
+
+    <div class="sec-head first"><div class="num">🧭</div><h2>مسار بداية اللقاء</h2><div class="rule"></div></div>
+    <div class="flow-card sig">
+      <h3>📖 إشارة بدء اللقاء — لساني عربي</h3>
+      <div class="greet">السلام عليكم ورحمة الله وبركاته يا أحباب العربية. <strong>نستمع الآن إلى إشارة بدء اللقاء لنعرف ماذا سيكون لقاؤنا.</strong></div>
+      <p><strong>منهجية الإشارة:</strong> تبدأ المعلمة بتحية الإسلام، ثم تدعو الأطفال للاستماع <strong>دون أن تُسمّي اللقاء</strong>؛ فيستمعون إلى إشارة «لساني عربي» (آيات الشعراء في الفيديو) <strong>ويتعرّفون على لقائهم بأنفسهم</strong> — فيرتبط كلّ لقاء بإشارته في أذهانهم — ثم <strong>تؤكّد المعلمة:</strong> «نعم، لقاؤنا الآن هو لقاء لساني عربي، نتعلّم فيه حروف لغتنا لنقرأ كلام الله ونُحسن النطق»، فيتهيّؤون للجلوس والإنصات، مع التركيز على ﴿بِلِسَانٍ عَرَبِيٍّ مُبِينٍ﴾.</p>
+      <div class="belief-text" style="font-weight:700;text-align:center">﴿وَإِنَّهُ لَتَنْزِيلُ رَبِّ الْعَالَمِينَ ۝ نَزَلَ بِهِ الرُّوحُ الْأَمِينُ ۝ عَلَىٰ قَلْبِكَ لِتَكُونَ مِنَ الْمُنْذِرِينَ ۝ بِلِسَانٍ عَرَبِيٍّ مُبِينٍ﴾ <span style="font-weight:400;font-size:14px">[الشعراء: ١٩٢–١٩٥]</span></div>
+      <div class="sig-video"><video controls preload="metadata" src="assets/gq_signal_lisani.mp4">متصفحك لا يدعم تشغيل الفيديو.</video><div class="cap">▶ فيديو إشارة بدء لقاء لساني عربي</div></div>
+      <p style="margin-top:8px"><strong>المعنى الميسّر:</strong> أنزل الله القرآن بلسان عربي واضح؛ فنحب العربية ونتعلّم حروفها لتعيننا — بتوفيق الله — على قراءة كلامه وفهمه.</p>
+      <div class="greet"><strong>جواب الإشارة:</strong> «لقاؤنا لساني عربي؛ نتعلم حروف لغتنا العربية لنقرأ كلام الله ونحسن النطق».</div>
+      <div class="caution" style="margin:10px 0 0"><strong>ضبط شرعي:</strong> ورد في بعض المواد تعبير «العربية لغة أهل الجنة»، ولا يثبت في ذلك حديث صحيح؛ فلا يُقرَّر للأطفال. والمعنى الثابت المعتمد أن القرآن نزل بلسان عربي مبين.</div>
+    </div>
+    <div class="flow-card belief">
+      <h3>🕊️ الاعتقاد — القرآن كلام الله بلسان عربي مبين</h3>
+      <p style="margin-bottom:10px">أصلٌ ثابتٌ في لقاءات لساني عربي؛ تعرض المعلمة هذه البطاقة ويردّدها الأطفال معها.</p>
+      <div class="belief-text">القرآن كلام الله تعالى، أنزله بلسان عربي مبين؛ فنُعظّم كلام الله، ونحب لغته، ونسأل الله أن يعلّمنا وينفعنا بما نتعلّم.</div>
+      <p style="margin-top:10px"><strong>الدليل:</strong> ﴿بِلِسَانٍ عَرَبِيٍّ مُبِينٍ﴾ [الشعراء: ١٩٥].</p>
+    </div>
+    <div class="flow-card law">
+      <h3>📜 قوانين الفصل</h3>
+      <div class="law-grid">
+        <div>🌿 <b>أحافظ على نظافة فصلي</b><small>إماطة الأذى عن الطريق صدقة.</small></div>
+        <div>👂 <b>أستمع وأنصت</b><small>فلا أقاطع الآخرين.</small></div>
+        <div>🤲 <b>أحفظ لساني ويدي</b><small>المسلم من سلم المسلمون من لسانه ويده.</small></div>
+        <div>🪑 <b>أجلس جلسة صحيحة</b><small>في المساحة المخصصة لي.</small></div>
+        <div>✋ <b>أرفع يدي للمشاركة</b><small>السؤال للجميع والإجابة لمن تختاره المعلمة.</small></div>
+      </div>
+    </div>
+    <div class="flow-card rev">
+      <h3>↺ مراجعة سريعة</h3>
+      <p>تراجع المعلمة مع الأطفال حرف الأمس بإيجاز: <strong>ما الحرف الذي راجعناه أمس؟</strong> (حرف ث). <strong>أين يمكن أن يأتي ث في الكلمة؟</strong> (في أولها ووسطها وآخرها). <strong>أشيروا إلى ث في كلمة ثوب</strong>، ثم ننتقل إلى حرف جديد.</p>
+    </div>
+
+    <div class="quick-sheet">
+      <div class="qs-head">📋 ورقة التدريس السريعة — خطوات اللقاء أثناء الدرس</div>
+      <div class="qs-phases">
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">①</span> تهيئة وبداية اللقاء <span class="qs-min">٨ د</span></div>
+          <ul>
+            <li>إشارة بدء اللقاء: الاستماع إلى إشارة لساني عربي، ثم جواب الإشارة.</li>
+            <li>قوانين الفصل وآداب مجلس الحرف والقراءة والنطق.</li>
+            <li>بطاقة الاعتقاد: القرآن كلام الله بلسان عربي مبين.</li>
+            <li>مراجعة سريعة لحرف الأمس وصوته بلا اختبار مرهق.</li>
+          </ul>
+        </div>
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">②</span> بناء وسير اللقاء <span class="qs-min">١٤ د</span></div>
+          <ul>
+            <li>سماع كلمة «وَرَقَة» من آية الأنعام ٥٩ واكتشاف حرف و والصوت وَ.</li>
+            <li>بطاقة الحرف: الاسم «واو» · الصوت «وَ» · شكله بلا نقطة (رأس وذيل).</li>
+            <li>نمذجة الكتابة والتتبّع في الهواء وعلى البطاقة والسبورة.</li>
+            <li>التمييز البصري بين و و ز و ر، والواو لا تتّصل بما بعدها.</li>
+          </ul>
+        </div>
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">③</span> إغلاق وتقويم <span class="qs-min">٨ د</span></div>
+          <ul>
+            <li>النشاط المصاحب: «ورقات الواو في حديقة الكلمات» (فرز ومطابقة ونطق).</li>
+            <li>أسئلة التقويم: اسم الحرف · صوته وَ · أنه بلا نقطة.</li>
+            <li>دعاء كفارة المجلس وختام اللقاء.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="qs-home">🏠 <strong>ربط الأسرة:</strong> يلاحظ الطفل مع أسرته ورقة ساقطة في مكان آمن ويقول: الله يعلمها، ثم يتتبّع الحرف مرة واحدة قائلًا: واو — وَ — وَرَقَة.</div>
+      <div class="qs-note">ورقةٌ مرجعية سريعة أثناء الدرس — الخطوات فقط دون الأهداف والزيادات؛ والنصّ الكامل في تبويب «دليل الدرس كامل».</div>
+    </div>
+
+    <div class="les">
+      <aside class="side">
+        <div class="side-title">📎 حول الدرس</div>
+        <div class="card">
+          <div class="lbl">أهداف اللقاء</div>
+          <div class="objgrid">
+            <div>
+              <div class="lbl">وجدانية</div>
+              <div class="obj"><span class="n o">١</span><span class="t">أن يستشعر الطفل سعة علم الله وإحاطته بكل ورقة تسقط</span></div>
+              <div class="obj"><span class="n o">٢</span><span class="t">أن يتأمّل خلق الله باحترام، ويرفق بالنبات فلا يُتلفه</span></div>
+            </div>
+            <div>
+              <div class="lbl">معرفية</div>
+              <div class="obj"><span class="n">١</span><span class="t">أن يسمّي الطفل حرف واو، ويذكر كلمة تبدأ به مثل «وَرَقَة»</span></div>
+            </div>
+            <div>
+              <div class="lbl">مهارية</div>
+              <div class="obj"><span class="n g">١</span><span class="t">أن ينطق الطفل صوت وَ، ويميّز و بصريًا، ويتتبّع شكله ثم يكتبه وفق قدرته</span></div>
+            </div>
+            <div>
+              <div class="lbl">إجرائية</div>
+              <div class="obj"><span class="n p">١</span><span class="t">يختار حرف و من أحرف مشتّتة، وينطق وَ، ويشير إلى الحرف الأول في كلمة وَرَقَة</span></div>
+              <div class="obj"><span class="n p">٢</span><span class="t">يتتبّع شكل الواو ويكتب محاولة مناسبة لمرحلته</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="lbl">المفردات</div>
+          <div class="chips">
+            <span class="chip c">واو</span><span class="chip c">وَ</span><span class="chip c">وَرَقَة</span><span class="chip c">وَرْدَة</span><span class="chip c">وَتَد</span><span class="chip c">تسقط</span><span class="chip c">يعلمها</span><span class="chip c">رأس</span><span class="chip c">ذيل</span><span class="chip c">سطر</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="lbl">🔤 بطاقة حرف و</div>
+          <div class="mini" style="text-align:center;font-family:var(--fd);color:var(--t1);font-size:56px;font-weight:700;line-height:1.1;margin-bottom:6px">وَ</div>
+          <div class="mini" style="text-align:center;font-size:15px;margin-bottom:8px">اسمه <b>واو</b> · صوته اليوم <b>وَ</b> · كلمته <b>وَرَقَة</b></div>
+          <div class="belief-text" style="font-size:15px">شكله <b>و</b> بلا نقطة: رأس مستدير فوق السطر، وذيل ينزل أسفله. والواو <b>لا تتّصل بما بعدها</b>، وتتّصل بما قبلها فقط.</div>
+          <div class="mini" style="text-align:center;font-size:26px;font-family:var(--fd);color:var(--t2);font-weight:700;margin-top:8px">وَرَقَة · وَرْدَة · وَتَد</div>
+        </div>
+        <div class="card">
+          <div class="lbl">المواد المساعدة</div>
+          <div class="mini">🔤 بطاقة حرف و وبطاقة كلمة «وَرَقَة»</div>
+          <div class="mini">• بطاقة آية الأنعام ٥٩ · بطاقات ورد · صورة ورقة شجر</div>
+          <div class="mini">• أوراق ساقطة نظيفة عند توافرها · أحرف مشتّتة</div>
+          <div class="mini">• سبورة · صينية تتبّع · ورقة عمل</div>
+        </div>
+        <div class="card">
+          <div class="lbl">ترابط المواد</div>
+          <div class="chips">
+            <span class="chip v">علّمني ربي</span><span class="chip v">كتابي المنير</span><span class="chip v">أدب واقتداء</span><span class="chip v">قال رسولي</span><span class="chip v">أحبك ربي</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="mainflow">
+        <div class="sec-head first"><div class="num">☀</div><h2>سير اللقاء</h2><div class="rule"></div></div>
+        <div class="flow">
+          <div class="step"><b class="k">المرحلة الأولى — البناء:</b> تنفّذ المعلمة إشارة المادة وتراجع الحروف السابقة، ثم تقول: سنتعرّف على الحرف الجديد من كلمة وردت في آية عظيمة.</div>
+          <div class="step"><b class="k">مدخل الآية:</b> تقرأ ﴿وَعِنْدَهُ مَفَاتِحُ الْغَيْبِ لَا يَعْلَمُهَا إِلَّا هُوَ ... وَمَا تَسْقُطُ مِنْ وَرَقَةٍ إِلَّا يَعْلَمُهَا﴾ [الأنعام: ٥٩]، وتطلب من الأطفال رفع أيديهم عند سماع كلمة «وَرَقَة»، ثم تعرض صورة الورقة أو ورقة ساقطة نظيفة.</div>
+          <div class="step"><b class="k">التفكّر في علم الله:</b> تسأل: هل نستطيع عدّ كل أوراق الأشجار في العالم؟ ثم تؤكّد: لا نستطيع، أما الله فيعلمها كلها، ويعلم كل ورقة تسقط؛ سبحانه العليم.</div>
+          <div class="step"><b class="k">استخراج الكلمة:</b> تضع بطاقات الورد على اللوحة، وتثبّت وسطها بطاقة «وَرَقَة» بخط واضح، ثم تقرؤها ببطء: وَ-رَ-قَة، وتسأل: ما الصوت الذي بدأت به؟ ثم تبرز وَ.</div>
+          <div class="step"><b class="k">كشف الحرف:</b> تكشف البطاقة: اسمه <b>واو</b>، وهذا شكله <b>و</b>، وصوته اليوم <b>وَ</b>. يردّد الأطفال جماعيًا ثم أفرادًا بحسب الاستعداد.</div>
+          <div class="step"><b class="k">المعنى المركزي:</b> اسم الحرف «واو»، وصوته اليوم مع الفتحة «وَ»؛ وشكله <b>و</b> بلا نقطة، ونربطه بكلمة «وَرَقَة» المألوفة. نتعلّم الحرف لنقرأ به كلام الله ونُحسن النطق، لا لمجرّد حفظ شكله.</div>
+          <div class="step"><b class="k">❓ تصحيح فهم الطفل:</b> نفرّق بين اسم الحرف «واو» وصوته «وَ». والواو قد تأتي أحيانًا حرف وصل أو حرف مدّ في كلمات مثل «نور»، لكنّنا اليوم نتعلّم صوتها الساكن مع الفتحة «وَ» فقط دون خلط، ويؤجَّل التفصيل إلى موضعه. وننطقها من مخرجها من غير أن نحوّلها إلى صوت آخر كالراء أو الزاي.</div>
+          <div class="step"><b class="k">المرحلة الثانية — التثبيت والتطبيق:</b> تنمذج المعلمة كتابة و وفق كراسة الخط: رأس صغير مستدير فوق السطر، ثم ذيل منحنٍ ينزل أسفل السطر، من غير إضافة نقطة.</div>
+          <div class="step"><b class="k">التتبّع والكتابة:</b> يتتبّع الأطفال و في الهواء وعلى بطاقة بارزة، ثم يكتبونه محاولة قصيرة على اللوح.</div>
+          <div class="step"><b class="k">التمييز البصري:</b> تعرض المعلمة بطاقات: وَرَقَة، وَرْدَة، وَتَد؛ وتقرؤها، ثم يضع الطفل و بجوار الكلمات التي تبدأ به، ويميّز و من ز و ر مع التركيز على عدم وجود نقطة فوق الواو.</div>
+          <div class="step"><b class="k">المراجعة الجماعية:</b> تراجع المجموعة الجملة: واو - وَ - وَرَقَة، ثم يحلّ الأطفال الجزء المناسب من ورقة العمل.
+            <div class="opts" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px">
+              <div class="opt" style="background:#f7fbfa;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14.5px"><b>كلمة ١:</b> وَرَقَة — تبدأ بحرف و.</div>
+              <div class="opt" style="background:#f7fbfa;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14.5px"><b>كلمة ٢:</b> وَرْدَة — تبدأ بحرف و.</div>
+              <div class="opt" style="background:#f7fbfa;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14.5px"><b>كلمة ٣:</b> وَتَد — تبدأ بحرف و.</div>
+              <div class="opt" style="background:#f7fbfa;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14.5px"><b>علامة فارقة:</b> الواو بلا نقطة، ولا تتّصل بما بعدها.</div>
+            </div>
+          </div>
+          <div class="step"><b class="k">جملة اللقاء الختامية:</b> الله يعلم كل ورقة تسقط، وقد تعلّمت حرف الواو: وَ في وَرَقَة.</div>
+        </div>
+        <div class="story">
+          <div class="h">🕊️ تنبيه منهجي: تثبيت اسم الحرف وصوته وَ فقط <span>(دون خلط بين الواو المفتوحة وواو المدّ)</span></div>
+          <div class="b">
+            <p>في هذا اللقاء يثبت اسم الحرف وصوته وَ فقط. لا يُخلط على الطفل بين صوت الواو مع الفتحة وبين الواو حرف المدّ في كلمات مثل «نور»؛ ويؤجَّل التفصيل إلى موضعه في الخطة.</p>
+            <p><strong>ضابط تربوي:</strong> لا تُقطف أوراق حيّة لأجل النشاط إذا أمكن استخدام أوراق ساقطة أو صور؛ رفقًا بالنبات. ولا يُقال إن التجربة «تثبت» إحاطة علم الله؛ فالآية هي الخبر الحق، والملاحظة تعين الطفل على التفكّر في كثرة الأوراق وعجزنا عن إحاطة العلم بها. وتُعرَّف صفة الواو أنها تتّصل بما قبلها فقط ولا تتّصل بالحرف الذي يليها.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-head"><div class="num">🖼️</div><h2>الوسائل والصور المعروضة في اللقاء</h2><div class="rule"></div></div>
+    <div class="gallery">
+      <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;font-size:46px;font-family:var(--fd);color:var(--t1);background:var(--elm-soft)">وَ</div><div class="cap">بطاقة حرف و<small>الاسم والصوت والشكل</small></div></div>
+      <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;font-size:30px;font-family:var(--fd);color:var(--t2);background:var(--elm-soft)">وَرَقَة</div><div class="cap">بطاقة كلمة «وَرَقَة»<small>وبطاقات وَرْدَة ووَتَد</small></div></div>
+      <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;font-size:46px;background:var(--elm-soft)">🍃</div><div class="cap">صورة ورقة شجر وأوراق ساقطة<small>نظيفة مأمونة أو صور</small></div></div>
+      <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;font-size:46px;background:var(--elm-soft)">📖</div><div class="cap">بطاقة آية الأنعام ٥٩<small>وبطاقات الورد</small></div></div>
+    </div>
+
+    <div class="sec-head"><div class="num gold">✂️</div><h2>النشاط المصاحب</h2><div class="rule"></div></div>
+    <div class="card actful">
+      <h3>ورقات الواو في حديقة الكلمات</h3>
+      <div class="row2">
+        <div class="miniblock"><b>الهدف</b>تثبيت شكل و وصوته وَ، وربطه بكلمات تبدأ به مع إبقاء معنى الآية حاضرًا.</div>
+        <div class="miniblock"><b>الأدوات</b>ورقات ورقية أو طبيعية ساقطة · بطاقات و وحروف مشتّتة · بطاقات كلمات مصوّرة تبدأ بواو · لوحة على هيئة حديقة · سلة فرز.</div>
+      </div>
+      <div class="miniblock"><b>التهيئة</b>توزَّع الورقات على طاولة لا على الأرض لتفادي الانزلاق، وتوضع الكلمات في مواضع واضحة. ولا يُطلب من الطفل قطف أيّ جزء من النبات.</div>
+      <div class="miniblock" style="margin-top:8px"><b>خطوات التنفيذ</b></div>
+      <ol>
+        <li>يختار الطفل ورقة واحدة ويلاحظ شكلها ولونها دون ادّعاء معرفة عدد أوراق الأشجار.</li>
+        <li>يقلبها فيجد حرفًا؛ فإن كان و يضعها في حديقة الواو، وإن كان حرفًا آخر يضعها في سلة المراجعة.</li>
+        <li>يطابق و بكلمة وَرَقَة، ثم ينطق: وَ، ويختار كلمة أخرى تبدأ به.</li>
+        <li>يتتبّع الحرف بإصبعه على بطاقة الورقة.</li>
+        <li>تجمع المجموعة الورقات بهدوء وتقول: الله يعلمها كلها.</li>
+      </ol>
+      <div class="miniblock" style="margin-top:8px"><b>أسئلة أثناء النشاط (التغذية الراجعة)</b></div>
+      <div class="opts">
+        <div class="opt">ما اسم الحرف؟ (واو)</div>
+        <div class="opt">هل فوقه نقطة؟ (لا، الواو بلا نقطة)</div>
+        <div class="opt">ما الصوت الأول في وَرَقَة؟ (وَ)</div>
+        <div class="opt">من يعلم كل ورقة تسقط؟ (الله العليم)</div>
+      </div>
+      <div class="miniblock" style="margin-top:10px"><b>اختيارات المعلمة حسب حاجة الطفل</b></div>
+      <div class="opts">
+        <div class="opt"><b>الخجول:</b> يطابق و بورقة الكلمة، وينطق مع مجموعة صغيرة.</div>
+        <div class="opt"><b>السريع:</b> يميّز و من ز و ر، ويذكر كلمة جديدة تبدأ بواو.</div>
+        <div class="opt"><b>كثير الحركة:</b> يتولّى توزيع الورقات وجمعها ببطء، ثم يثبّت الكلمات على اللوحة.</div>
+      </div>
+      <div class="central" style="margin-top:12px;background:linear-gradient(135deg,#003E45,#0d6e6e)"><b>🤲 الجملة الختامية للنشاط</b>سبحان الله العليم، اللهم علّمنا وانفعنا بما علّمتنا. <span style="display:block;font-size:13px;opacity:.85;margin-top:4px">(صياغة تعليمية وليست حديثًا مأثورًا)</span></div>
+    </div>
+
+    <div class="actbar">★ اختيارات الأنشطة الإضافية ★</div>
+    <div class="actgrid">
+      <div><span class="t">تلبية الاحتياجات الفردية</span><span class="bd">الخجول:</span> يطابق و بورقة الكلمة وينطق مع مجموعة صغيرة. <span class="bd">السريع:</span> يميّز و من ز و ر ويذكر كلمة جديدة بواو. <span class="bd">كثير الحركة:</span> يوزّع الورقات ويجمعها ببطء ثم يثبّت الكلمات على اللوحة.</div>
+      <div><span class="t">الربط بالمواد الأخرى</span><span class="bd">علّمني ربي:</span> تعظيم علم الله وإحاطته. <span class="bd">كتابي المنير:</span> ربط الحرف بكلمات القرآن. <span class="bd">أدب واقتداء:</span> الرفق بالنبات وعدم إتلافه.</div>
+      <div><span class="t">التوسيع والإثراء</span><span class="bd">بيتي:</span> يلاحظ الطفل مع أسرته ورقة ساقطة في مكان آمن ويقول: الله يعلمها، وهذه كلمة وَرَقَة تبدأ بواو. <span class="bd">فني:</span> تتبّع حرف و وتلوين بطاقته وبطاقة كلمة «وَرَقَة» (بلا صور ذوات أرواح).</div>
+      <div><span class="t">اقتراحات للتكرار</span> مراجعة حرف و واسمه وصوته وَ ٣ دقائق في مطلع اللقاء التالي قبل الانتقال إلى مواضع الحرف.</div>
+    </div>
+
+    <div class="dua">
+      <div class="l">كفارة المجلس · خاتمة اللقاء</div>
+      <div class="x">سبحانك اللهم وبحمدك، أشهد أن لا إله إلا أنت، أستغفرك وأتوب إليك.</div>
+    </div>
+  </div>
+
+  <!-- ══════════ 2) التكامل اليومي ══════════ -->
+  <div class="panel" id="p2">
+    <div class="sec-head first"><div class="num">🔗</div><h2>العلاقة التكاملية لهذا اللقاء</h2><div class="rule"></div></div>
+    <div class="card cardblue">
+      <div class="mini" style="font-size:16px"><b style="color:var(--t1)">الفكرة الناظمة لليوم:</b> نتفكّر مع عائلتنا في خلق الله، ونسمّي ما نراه بكلمات عربية واضحة.</div>
+      <div class="mini" style="font-size:16px;margin-top:8px"><b style="color:var(--t1)">سؤال اليوم:</b> ماذا تعلّمنا الآية عن علم الله عندما تسقط ورقة؟</div>
+      <div class="mini" style="font-size:16px;margin-top:8px"><b style="color:var(--t1)">هذا اللقاء:</b> 📖 لساني عربي — أتعرف حرف و وصوته بالفتح.</div>
+    </div>
+    <div class="card" style="margin-top:15px">
+      <div class="lbl">فكرة للربط السريع</div>
+      <p class="mini" style="font-size:15.5px">خدمة اللقاء للفكرة: يجمع اللقاء بين بناء الحرف وتعظيم علم الله، فلا تصبح الورقة مجرد صورة لا معنى لها. وفي ركن أقرأ لأتعلّم يلاحظ الطفل ورقة ساقطة ثم يضع بطاقة و بجوار اسمها. مشاركة ولي الأمر: يلاحظ الطفل مع أسرته ورقة ساقطة في مكان آمن، ويقول: الله يعلمها، وهذه كلمة وَرَقَة تبدأ بواو.</p>
+    </div>
+  </div>
+
+  <!-- ══════════ 3) التقويم ══════════ -->
+  <div class="panel" id="p3">
+    <div class="info">📊 التقويم في منهج غرس القيم ثلاثي المراحل — يرصد الطفل قبل الدرس وأثناءه وبعده.</div>
+    <div class="grid g3">
+      <div class="card taq q"><h3>◐ التقويم القبلي</h3><ul>
+        <li>ما الحرف الذي يبدأ به صوت وَ؟</li><li>هل تعرف كلمة تبدأ بواو؟</li><li>هل يشبه و حرف ز أم يختلف عنه؟</li>
+      </ul></div>
+      <div class="card taq t"><h3>◑ التقويم التكويني</h3><ul>
+        <li>يختار و من أحرف مشتّتة</li><li>هل ينطق وَ قريبًا من النموذج؟</li>
+        <li>هل يشير إلى الحرف الأول في كلمة وَرَقَة؟</li><li>هل يميّز أن الواو بلا نقطة؟</li>
+      </ul></div>
+      <div class="card taq n"><h3>● التقويم النهائي</h3><ul>
+        <li>يسمّي الحرف واو وينطق وَ قريبًا من النموذج</li><li>يحدّد و في أول كلمة وَرَقَة ويميّز أنها بلا نقطة</li>
+        <li>يذكر أن الله يعلم كل ورقة تسقط</li><li><b>المعيار: يتتبّع الحرف ويكتب محاولة مناسبة لمرحلته</b></li>
+      </ul></div>
+    </div>
+    <div class="sec-head"><div class="num grn">★</div><h2>مؤشرات النجاح</h2><div class="rule"></div></div>
+    <div class="cg">
+      <div class="ci"><div class="term">المؤشر المعرفي</div><div class="def">يسمّي الحرف واو ويذكر كلمة تبدأ به، ويعرف أن صوته اليوم وَ.</div></div>
+      <div class="ci"><div class="term">المؤشر المهاري</div><div class="def">ينطق وَ قريبًا من النموذج، ويميّز و بصريًا، ويتتبّع شكله ويكتب محاولة مناسبة.</div></div>
+      <div class="ci"><div class="term">المؤشر الوجداني</div><div class="def">يستشعر سعة علم الله، ويذكر أن الله يعلم كل ورقة تسقط.</div></div>
+      <div class="ci"><div class="term">المؤشر التطبيقي</div><div class="def">يحدّد و في أول كلمة وَرَقَة، ويميّز أن الواو بلا نقطة ولا تتّصل بما بعدها.</div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 4) الآداب الصفية ══════════ -->
+  <div class="panel" id="p4">
+    <div class="info">🌿 الآداب الصفية لحظات تربوية ذهبية — تبدأ المعلمة كل فكرة بآية أو نص حديث، ولا يعلو صوتها على النص الشرعي. الحزم مع الهدوء دائمًا.</div>
+    <div class="card cardblue" style="margin-bottom:14px">
+      <div class="lbl">آداب المعلمة — مقدمة الرعاية</div>
+      <ul class="steps">
+        <li>تبدأ بالبسملة والحمدلة والدعاء: «اللهم علّمنا ما ينفعنا وانفعنا بما علّمتنا».</li>
+        <li>تنطلق كل فكرة بآية أو نص حديث شريف.</li>
+        <li>الحزم مع الهدوء — فلا يعلو صوت المعلمة على النص الشرعي.</li>
+      </ul>
+      <div class="lbl" style="margin-top:12px;font-size:15px">آداب الطفل في مجلس الحرف والقراءة</div>
+      <ul class="steps">
+        <li>أجلس بسكينة وأحسن الاستماع إلى الآية والكلمة.</li><li>أنظر إلى فم المعلمة وبطاقة الحرف عند تعلّم الصوت، من غير اقتراب يزعجها، وأنتظر دوري في النطق والكتابة والتتبّع.</li><li>أنطق بهدوء، ولا أسخر من نطق زميلي أو أقارنه بنفسي، وأحافظ على بطاقات الحروف واللوحة وأدوات الركن.</li>
+      </ul>
+    </div>
+
+    <div class="adab"><div class="h">١ · توقير الآية وبطاقة الحرف</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>عبث طفل ببطاقة الحرف أو آية الأنعام وألقاها على الأرض.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«بطاقة الآية والحرف نكرّمها ولا نلقيها؛ فيها كلام الله وحروف لغته. نرفعها برفق ونضعها في مكانها بأدب».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>تعظيم كلام الله — المحافظة على بطاقات الحرف والآية.</span></div>
+      <div class="link">ربط بالدرس: بطاقة الحرف مدخل لحب العربية وقراءة كلام الله.</div>
+    </div></div>
+    <div class="adab"><div class="h">٢ · النطق بأدب ووضوح دون سخرية</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>سخر طفل من نطق زميله لصوت وَ أو قارنه بنفسه.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«كلّنا نتعلّم النطق، ولا نسخر من نطق زميلنا. نشجّع بعضنا برفق، ونقول الصوت معًا: وَ. جزاك الله خيرًا».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>الرفق بالزميل — الأدب في النطق.</span></div>
+      <div class="link">ربط بالدرس: النطق الجماعي لصوت وَ قبل النطق الفردي.</div>
+    </div></div>
+    <div class="adab"><div class="h">٣ · حسن الاستماع والنظر إلى بطاقة الحرف</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>تحدّث طفل مع زميله أثناء عرض صوت الحرف وشكله.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«حين نتعلّم صوت الحرف ننظر إلى فم المعلمة وبطاقة الحرف وننصت؛ لنتعلّم النطق الصحيح. جزاك الله خيرًا».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>حسن الاستماع — الإنصات عند تعلّم الصوت.</span></div>
+      <div class="link">ربط بالدرس: نتابع نطق وَ وكتابة الواو بإنصات.</div>
+    </div></div>
+    <div class="adab"><div class="h">٤ · السكينة والوقار في الجلوس</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>تحرّك طفل كثيرًا واقترب من المعلمة اقترابًا يزعجها أثناء الشرح.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«نجلس بسكينة في مساحتنا وننظر من مكاننا إلى بطاقة الحرف. اجلس هادئًا يا بطل، وسيأتي دورك في التتبّع».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>السكينة — الوقار في مجلس القراءة.</span></div>
+      <div class="link">ربط بالدرس: من قوانين الفصل «أجلس جلسة صحيحة» و«أستمع وأنصت».</div>
+    </div></div>
+    <div class="adab"><div class="h">٥ · الانتظار وضبط النفس في النشاط</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>أراد طفل أن يجمع كل ورقات الواو قبل أن يأتي دوره في حديقة الكلمات.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«انتظر دورك يا بطل، لكلٍّ منّا ورقة يجد حرفها ويفرزها. حسن الانتظار من أدب المجلس. جزاك الله خيرًا».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>ضبط النفس — أدب الدور — احترام المجموعة.</span></div>
+      <div class="link">ربط بالدرس: نشاط «ورقات الواو» يتناوب فيه الأطفال.</div>
+    </div></div>
+  </div>
+
+  <!-- ══════════ 5) تحضيرات ولي الأمر ══════════ -->
+  <div class="panel" id="p5">
+    <div class="info">🌱 القيمة تترسّخ حين تُعاش في البيت كما تُتعلَّم في الفصل — هذه التهيئات يُطبّقها ولي الأمر قبل الدرس وبعده.</div>
+    <div class="card par"><div class="h">❤️ ١ · تهيئة وجدانية</div>
+      <div class="hs"><span class="n">أ</span><span>يُحدّث ولي الأمر طفله عن سعة علم الله، وأن الله يعلم كل ورقة تسقط من كل شجرة؛ فيتأمّل خلقه بمحبة واحترام.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يقول له عند رؤية شجرة أو أوراق: «الله يعلمها كلها، سبحانه العليم».</span></div>
+      <div class="after">← يربط الطفل بين معنى الآية وحبّ التعلّم بلغته العربية.</div>
+    </div>
+    <div class="card par"><div class="h">📖 ٢ · تهيئة معرفية</div>
+      <div class="hs"><span class="n">أ</span><span>يذكّره أن القرآن نزل بلسان عربي مبين، ونتعلّم حروف العربية لتعيننا على قراءته.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يسأله بلطف: «بأي صوت تبدأ كلمة وَرَقَة؟» ويشير معه إلى حرف و.</span></div>
+      <div class="after">← يرسّخ اسم الحرف وصوته قبل عرضه في الصف.</div>
+    </div>
+    <div class="card par"><div class="h">🔤 ٣ · تهيئة لغوية بالنطق</div>
+      <div class="hs"><span class="n">أ</span><span>ينطق معه صوت وَ بهدوء، ويذكران كلمات تبدأ به: وَرَقَة، وَرْدَة، وَتَد.</span></div>
+      <div class="hs"><span class="n">ب</span><span>ينبّهه أن الواو بلا نقطة، وأنها لا تتّصل بالحرف الذي يليها.</span></div>
+      <div class="after">← يعيش الطفل صوت الحرف وشكله قبل عرضه في الصف.</div>
+    </div>
+    <div class="card par"><div class="h">✍️ ٤ · تهيئة كتابية</div>
+      <div class="hs"><span class="n">أ</span><span>يتتبّع معه شكل و مرة واحدة بإصبعه: رأس مستدير فوق السطر وذيل ينزل أسفله، من غير تكليف كتابي طويل.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يشجّعه على المحاولة برفق، ولا يقارن خطّه بغيره.</span></div>
+      <div class="after">← يصبح تتبّع الحرف عادة هادئة ممتعة.</div>
+    </div>
+    <div class="card par"><div class="h">🍃 ٥ · تهيئة بالرفق بالنبات</div>
+      <div class="hs"><span class="n">أ</span><span>يلاحظ الطفل مع أسرته ورقة ساقطة في مكان آمن، ويقول: الله يعلمها، وهذه كلمة وَرَقَة تبدأ بواو.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يعلّمه ألّا يقطف أوراقًا حيّة، ويكتفي بالأوراق الساقطة أو الصور.</span></div>
+      <div class="after">← يزرع الرفق بالنبات والتفكّر في خلق الله.</div>
+    </div>
+    <div class="card par"><div class="h">🤝 ٦ · تهيئة تعاونية أسرية</div>
+      <p class="mini" style="font-size:15.5px">يبحث الطفل مع أسرته عن كلمة تبدأ بواو في محيط البيت (وَرَقَة، وَرْدَة)، ويتتبّع الحرف مرة واحدة، ثم يخبر المعلمة بما وجد.</p>
+      <div class="after">← يزرع التعاون الأسري وحب العربية في وجدان الطفل.</div>
+    </div>
+    <div class="card par"><div class="h">💬 أسئلة تطرحها على طفلك</div>
+      <div class="pq">ما اسم الحرف الذي تعلّمته اليوم؟ (واو)</div>
+      <div class="pq">ما صوته مع الفتحة؟ (وَ)</div>
+      <div class="pq">اذكر كلمة تبدأ بواو. (وَرَقَة، وَرْدَة، وَتَد)</div>
+      <div class="pq">هل فوق الواو نقطة؟ (لا، الواو بلا نقطة)</div>
+      <div class="pq">من يعلم كل ورقة تسقط؟ (الله العليم)</div>
+    </div>
+    <div class="card msg">
+      <div class="l">📨 نص رسالة جاهزة لولي الأمر (واتساب) <button class="copy-btn" data-copy=".msg">📋 نسخ الرسالة</button></div>
+      بسم الله الرحمن الرحيم 📖<br/>السلام عليكم ورحمة الله وبركاته<br/><br/>
+      تعلّم طفلكم الكريم اليوم في مادة <strong>«لساني عربي»</strong> حرف <strong>«الواو»</strong>: اسمه واو، وصوته مع الفتحة <strong>وَ</strong>، وكلمته <strong>وَرَقَة</strong>، وشكله <strong>و</strong> بلا نقطة. وقد تأمّلنا سعة علم الله الذي يعلم كل ورقة تسقط.<br/><br/>
+      💡 <strong>نشاط بيتي:</strong> لاحظوا مع طفلكم ورقة ساقطة في مكان آمن وقولوا: «الله يعلمها، وهذه كلمة وَرَقَة تبدأ بواو»، وتتبّعوا معه الحرف مرة واحدة برفق. 🍃<br/><br/>
+      🌿 جزاكم الله خيرًا على شراككم في تربية أبنائكم — فريق نادي غرس القيم
+    </div>
+  </div>
+
+  <!-- ══════════ 6) القيم والمفاهيم ══════════ -->
+  <div class="panel" id="p6">
+    <div class="sec-head first"><div class="num gold">💎</div><h2>القيم الأساسية للدرس</h2><div class="rule"></div></div>
+    <div class="cg">
+      <div class="ci"><div class="term">تعظيم علم الله والتفكّر</div><div class="def">استحضار سعة علم الله وإحاطته بكل ورقة تسقط، والتأمّل في خلقه.</div></div>
+      <div class="ci"><div class="term">حب العربية</div><div class="def">محبة لغة القرآن وتعلّم حروفها لتعيننا — بتوفيق الله — على قراءة كلامه.</div></div>
+      <div class="ci"><div class="term">الرفق بالنبات والدقة</div><div class="def">التأمّل في الأوراق دون إتلاف النبات، والدقة في نطق الحرف وكتابته.</div></div>
+      <div class="ci"><div class="term">شكر الله والمثابرة</div><div class="def">شكر الله على نعمة العقل واللسان، والمثابرة في تعلّم الحرف وكتابته.</div></div>
+    </div>
+    <div class="card" style="margin-bottom:16px">
+      <div class="lbl">❓ كيف تغرس المعلمة القيم أثناء الدرس؟</div>
+      <ul class="steps">
+        <li>تدخل إلى الحرف من آية الأنعام ٥٩، فتربط تعلّم الحرف بتعظيم علم الله.</li>
+        <li>تثبّت اسم الحرف وصوته وَ فقط، دون خلطٍ بينه وبين واو المدّ.</li>
+        <li>تنمذج النطق والكتابة برفق، ولا تُحرج الطفل ولا تقارن خطّه بغيره.</li>
+        <li>تحفظ رفق الطفل بالنبات: أوراق ساقطة أو صور، لا قطف لأوراق حيّة.</li>
+      </ul>
+    </div>
+    <div class="sec-head"><div class="num p" style="background:#7a5cc0">🧠</div><h2>المفاهيم الأساسية</h2><div class="rule"></div></div>
+    <div class="cg">
+      <div class="ci"><div class="term">واو</div><div class="def">اسم الحرف؛ صوته اليوم مع الفتحة وَ، وشكله و بلا نقطة، له رأس مستدير وذيل ينزل أسفل السطر.</div></div>
+      <div class="ci"><div class="term">اتصال الواو</div><div class="def">الواو تتّصل بما قبلها فقط، ولا تتّصل بالحرف الذي يليها.</div></div>
+      <div class="ci"><div class="term">الصوت المستهدف وَ</div><div class="def">صوت الواو مع الفتحة كما في وَرَقَة، ويُميَّز عن واو المدّ في مثل «نور».</div></div>
+      <div class="ci"><div class="term">علم الله وإحاطته</div><div class="def">الله يعلم كل ورقة تسقط، ولا يخفى عليه شيء؛ سبحانه العليم.</div></div>
+    </div>
+    <div class="sec-head"><div class="num">⚙️</div><h2>الاستراتيجيات التعليمية</h2><div class="rule"></div></div>
+    <div class="card">
+      <div class="strat"><span class="k">الورد والتأمل</span><span class="v">مدخل الآية وبطاقات الورد وصورة الورقة للتفكّر في علم الله قبل استخراج الحرف.</span></div>
+      <div class="strat"><span class="k">الاستماع الانتقائي</span><span class="v">رفع اليد عند سماع كلمة «وَرَقَة» في الآية.</span></div>
+      <div class="strat"><span class="k">النمذجة الصوتية والتتبّع</span><span class="v">تنمذج المعلمة نطق وَ وكتابة و، ويتتبّعه الأطفال في الهواء وعلى البطاقة.</span></div>
+      <div class="strat"><span class="k">البطاقات والتصنيف</span><span class="v">فرز الكلمات التي تبدأ بواو، وتمييز و من ز و ر.</span></div>
+      <div class="strat"><span class="k">الكتابة في الهواء</span><span class="v">رسم شكل الواو بحركة كبيرة قبل الكتابة على اللوح.</span></div>
+    </div>
+
+    <div class="sec-head"><div class="num gold">🎯</div><h2>الأساليب العشرة</h2><div class="rule"></div></div>
+    <div class="cg">
+      <div class="ci"><div class="term">١ · المناقشة الهادفة</div><div class="def">أسئلة تقرّب المعنى: ما الصوت الأول في وَرَقَة؟ من يعلم كل ورقة تسقط؟</div></div>
+      <div class="ci"><div class="term">٢ · العصف الذهني</div><div class="def">استدعاء كلمات يعرفها الطفل تبدأ بواو.</div></div>
+      <div class="ci"><div class="term">٣ · الترديد الجماعي</div><div class="def">«واو - وَ - وَرَقَة» جماعيًا ثم أفرادًا بحسب الاستعداد.</div></div>
+      <div class="ci"><div class="term">٤ · العرض البصري</div><div class="def">بطاقة الحرف وبطاقة الكلمة والآية وبطاقات الورد على لوحة واضحة.</div></div>
+      <div class="ci"><div class="term">٥ · الاكتشاف البصري</div><div class="def">يكتشف الطفل حرف و في أول الكلمة، ويميّز أنه بلا نقطة.</div></div>
+      <div class="ci"><div class="term">٦ · النشاط العملي</div><div class="def">فرز ورقات الواو في حديقة الكلمات والمطابقة بكلمة وَرَقَة.</div></div>
+      <div class="ci"><div class="term">٧ · التنظيم بالدور</div><div class="def">تناوب الأطفال على اختيار الورقة وفرزها مع الانتظار.</div></div>
+      <div class="ci"><div class="term">٨ · التعزيز الإيجابي</div><div class="def">جزاكِ الله خيرًا · بارك الله فيك · أحسنتَ النطق.</div></div>
+      <div class="ci"><div class="term">٩ · التتبّع والكتابة</div><div class="def">تتبّع الواو في الهواء وعلى بطاقة بارزة ثم كتابته على اللوح.</div></div>
+      <div class="ci"><div class="term">١٠ · التكرار</div><div class="def">إعادة اسم الحرف وصوته وترديد الجملة الختامية لتثبيتها.</div></div>
+    </div>
+
+    <div class="sec-head"><div class="num grn">🎨</div><h2>الوسائل</h2><div class="rule"></div></div>
+    <div class="means">
+      <div class="m"><h4>مرئية</h4><span class="i">بطاقة حرف و وبطاقة كلمة «وَرَقَة»</span><span class="i">بطاقة آية الأنعام ٥٩ وبطاقات الورد وصورة ورقة شجر</span><span class="i">أحرف مشتّتة ولوحة حديقة الكلمات</span></div>
+      <div class="m s2"><h4>سمعية</h4><span class="i">إشارة المادة: آيات الشعراء ١٩٢–١٩٥</span><span class="i">النمذجة الصوتية لصوت وَ بصوت المعلمة الواضح</span></div>
+      <div class="m s3"><h4>عملية (Hands-on)</h4><span class="i">تتبّع الحرف في الهواء وعلى البطاقة والكتابة على اللوح</span><span class="i">فرز الورقات بحرف و في حديقة الكلمات</span><span class="i">صينية التتبّع وورقة العمل</span></div>
+      <div class="m s4"><h4>قيمية (شرعية)</h4><span class="i">تعظيم علم الله والتفكّر في خلقه</span><span class="i">حب العربية لأنها لغة القرآن</span><span class="i">الرفق بالنبات وعدم إتلافه</span></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 7) الحصيلة اللغوية ══════════ -->
+  <div class="panel" id="p7">
+    <div class="info">📝 الحصيلة اللغوية تُعزّز الفهم وتُنمّي القدرة على التعبير — تُستخدَم بشكل طبيعي أثناء الدرس.</div>
+    <div class="card"><div class="lbl">الكلمات الأساسية في الدرس</div>
+      <table class="voc"><thead><tr><th style="width:22%">الكلمة</th><th>بيان المعنى</th></tr></thead><tbody>
+        <tr><td><span class="w">واو</span></td><td>اسم الحرف الذي نتعلّمه اليوم، شكله و بلا نقطة.</td></tr>
+        <tr><td><span class="w">وَ</span></td><td>صوت الواو مع الفتحة، كما في أول كلمة وَرَقَة.</td></tr>
+        <tr><td><span class="w">وَرَقَة</span></td><td>كلمة اللقاء؛ ما يسقط من الشجر، وتبدأ بحرف و.</td></tr>
+        <tr><td><span class="w">وَرْدَة</span></td><td>زهرة، كلمة تبدأ بحرف و.</td></tr>
+        <tr><td><span class="w">وَتَد</span></td><td>ما يُثبَّت به، كلمة تبدأ بحرف و.</td></tr>
+        <tr><td><span class="w">رأس وذيل</span></td><td>وصف شكل الواو: رأس مستدير فوق السطر وذيل ينزل أسفله.</td></tr>
+      </tbody></table>
+    </div>
+    <div class="card cardgold" style="margin-top:15px"><div class="lbl gold">💡 كيف تستخدم المعلمة هذه الحصيلة؟</div>
+      <ul class="steps">
+        <li>تُدرج الكلمات بشكل طبيعي في شرحها دون توقف مفاجئ.</li>
+        <li>تستخدم الكلمة في جملة واضحة: «<strong>وَرَقَة</strong> تبدأ بحرف <strong>و</strong> وصوته وَ».</li>
+        <li>تكرّر الكلمات التي تبدأ بواو في سياقات مختلفة لتثبيتها.</li>
+        <li>تُشجّع الأطفال على ذكر كلمات جديدة تبدأ بواو وتثني عليهم.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════ 8) المراجع ══════════ -->
+  <div class="panel" id="p8">
+    <div class="card refblock">
+      <div class="h">📖 الآيات وتفسيرها</div>
+      <div class="sub">مصادر لضبط نصّ الآيات ومعناها قبل اللقاء</div>
+      <div class="refitem"><span class="rbadge q">قرآن</span><div><div class="tt">Quran.com — سورة الشعراء، الآيات ١٩٢–١٩٥</div><div class="dd">آيات إشارة لساني عربي، وفيها ﴿بِلِسَانٍ عَرَبِيٍّ مُبِينٍ﴾.</div><a class="reflink" href="https://quran.com/26/192-195" target="_blank">quran.com/26/192-195</a></div></div>
+      <div class="refitem"><span class="rbadge q">قرآن</span><div><div class="tt">Quran.com — سورة الأنعام، الآية ٥٩</div><div class="dd">﴿وَمَا تَسْقُطُ مِنْ وَرَقَةٍ إِلَّا يَعْلَمُهَا﴾ — مدخل الحرف وعلم الله.</div><a class="reflink" href="https://quran.com/6/59" target="_blank">quran.com/6/59</a></div></div>
+    </div>
+    <div class="card refblock">
+      <div class="h">🔤 ضبط الحرف والكتابة</div>
+      <div class="sub">للتزوّد بضبط اسم الحرف وصوته وشكله قبل اللقاء</div>
+      <div class="refitem"><span class="rbadge t">لغة</span><div><div class="tt">كراسة الخط المعتمدة — كتابة حرف الواو</div><div class="dd">نموذج شكل الواو: رأس مستدير فوق السطر وذيل ينزل أسفله بلا نقطة.</div></div></div>
+      <div class="refitem"><span class="rbadge t">لغة</span><div><div class="tt">مواضع اتصال الواو في الكلمة</div><div class="dd">الواو تتّصل بما قبلها فقط ولا تتّصل بما بعدها.</div></div></div>
+    </div>
+    <div class="card refblock">
+      <div class="h">📜 مواد اللقاء المعتمدة</div>
+      <div class="refitem"><span class="rbadge t">بطاقة</span><div><div class="tt">بطاقة حرف و وبطاقة كلمة «وَرَقَة»</div><div class="dd">المعتمدة في مكتبة الدليل — للعرض على اللوحة.</div></div></div>
+      <div class="refitem"><span class="rbadge t">بطاقة</span><div><div class="tt">بطاقة الاعتقاد: القرآن كلام الله بلسان عربي مبين</div><div class="dd">تعرضها المعلمة ويردّدها الأطفال في لقاءات لساني عربي.</div></div></div>
+      <div class="refitem"><span class="rbadge t">لوحة</span><div><div class="tt">لوحة حديقة الكلمات وبطاقات الأحرف المشتّتة</div><div class="dd">للنشاط المصاحب «ورقات الواو في حديقة الكلمات».</div></div></div>
+    </div>
+    <div class="card refblock">
+      <div class="h">📕 مراجع تربوية</div>
+      <div class="refitem"><span class="rbadge p">تربية</span><div><div class="tt">تعليم الحروف الهجائية للأطفال — طرق ووسائل النطق والكتابة</div><div class="dd">تدرّج من الاسم إلى الصوت إلى الشكل إلى الكتابة بلا إرهاق.</div></div></div>
+      <div class="refitem"><span class="rbadge p">تربية</span><div><div class="tt">أوراق العمل وبطاقات الحرف والكلمة والآية المعتمدة في المؤسسة</div><div class="dd">مواد الدليل المعتمدة لمجلس الحرف والقراءة.</div></div></div>
+    </div>
+    <div class="card refblock">
+      <div class="h">📚 مرجع لغوي إثرائي</div>
+      <div class="sub">مرجع موحّد في لقاءات لساني عربي لضبط معاني المفردات وجذورها</div>
+      <div class="refitem"><span class="rbadge p">لغة</span><div><div class="tt">لسان العرب — ابن منظور</div><div class="dd">مرجع لغوي تستخدمه المعلمة لضبط معنى مفردات اللقاء وجذورها مثل «ورقة»، ثم تبسّط المعنى للأطفال بما يناسب أعمارهم.</div><a class="reflink" href="https://shamela.ws/book/1687" target="_blank">shamela.ws/book/1687</a></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 9) الأركان ══════════ -->
+  <div class="panel" id="p9">
+    <div class="sec-head first chero"><div class="num gold">▣</div><h2>وقت الأركان التطبيقية</h2><div class="rule"></div></div>
+    <div class="chero"><p style="margin-bottom:6px">الأركان مساحاتٌ غنيّة بأدوات التعلّم، مدّتها ٣٠ دقيقة، يلعب فيها الأطفال ويستكشفون الأدوات <strong>بحرّية ومرح</strong> — لا التزام بآداب مجالس العلم كالمواد الأساسية. وتستقطع المعلمة وقتًا يسيرًا لتنفيذ <strong>نشاط تطبيقي سريع على الفكرة المركزية للدرس</strong>: أتعرّف حرف و وأربطه بكلمة «وَرَقَة». أمام المعلمة <strong>ركنان مقترحان تختار بينهما</strong> (أو تنفّذهما معًا) بحسب جاهزية البيئة.</p></div>
+    <div class="caution"><strong>ضابط عقدي وتربوي:</strong> تعظّم المعلمة علم الله ولا تقول إن التجربة «تثبت» إحاطته؛ الآية هي الخبر الحق، والملاحظة تساعد الطفل على التفكّر في كثرة الأوراق وعجزنا عن إحاطة العلم بها. وتُفحص الأوراق الطبيعية قبل الاستخدام فتُستبعد الحادة أو المتّسخة أو مجهولة السلامة، ولا يُطلب من الطفل قطف النبات ولا وضعه في الفم.</div>
+
+    <div class="corner">
+      <div class="h" style="background:linear-gradient(90deg,#003E45,#0d6e6e)"><h4>رفّ حروفي الهادئ</h4><span class="k">📖 ركن أقرأ لأتعلّم</span></div>
+      <div class="b">
+        <div class="cfield"><b>الأدوات والوسائل التعليمية</b><p>بطاقات حروف كبيرة (و · ر · د)، بطاقة مصوّرة «وَرَقَة»، بطاقة نموذج «واو — وَ»، صور كلمات مألوفة تبدأ بـ وَ، خيوط تتبّع وقوالب حرف بارزة لرسم و، بطاقة حركة الفتحة، وحامل صغير للبطاقات مع وسادات جلوس هادئة.</p></div>
+        <div class="cfield"><b>قوانين الركن</b><p>البقاء في مساحة الركن · تقليب البطاقات برفق · انتظار الدور · إعادة كل وسيلة إلى مكانها بعد اللعب.</p></div>
+        <div class="cfield"><b>اللعب الحرّ في الركن</b><p>يتصفّح الأطفال بطاقات الحروف والصور بحرّية ومرح، ويتتبّعون شكل الواو المستدير بالخيوط والقوالب، ويعبّرون عمّا يعرفونه من كلمات دون تكليف؛ فالركن مساحة لعب لا حلقة علم.</p></div>
+        <div class="cfield"><b>النشاط التطبيقي السريع</b><p><em>تستقطع المعلمة نحو ٥–٧ دقائق لتطبيق سريع على الفكرة المركزية للدرس: <strong>حرف و له صوت «وَ» وشكله مستدير بلا نقطة، ونجده في أول كلمة «وَرَقَة».</strong></em></p><ol>
+          <li>تعرض المعلمة بطاقة و والنموذج «واو — وَ».</li>
+          <li>يختار الطفل حرف و من بين ر ود معتمدًا على شكله المستدير بلا نقطة.</li>
+          <li>يطابق و ببطاقة «وَرَقَة» ويشير إلى الحرف الأول.</li>
+          <li>ينطق الحرف مع صوته نطقًا قصيرًا: وَ.</li>
+          <li>يعيد البطاقة إلى الرفّ وينتقل الدور.</li>
+        </ol></div>
+        <div class="cfield"><b>هدف الركن</b><p>أن يميّز الطفل حرف و بشكله المستدير وينطق صوته «وَ» في كلمة مألوفة غير شرعية مثل «وَرَقَة».</p></div>
+        <div class="cfield"><b>دور المعلمة</b><p>تُتيح اللعب الحرّ أولًا، ثم تستقطع وقتًا يسيرًا للنشاط، وتصحّح النطق دون إطالة أو إحراج بكلمتين أو ثلاث.</p></div>
+        <div class="cfield"><b>خصوصية عقدية وتربوية</b><p>تعظّم المعلمة علم الله ولا تقول إن النشاط «يثبت» إحاطته؛ ولا تُستخدم آيات أو أحاديث للتجريب الصوتي داخل الركن، بل كلمات تعليمية عادية، وبلا مقارنة بين خطوط الأطفال.</p></div>
+        <div class="cfield"><b>مناسب للفئة العمرية</b><p>خطوات قصيرة محسوسة، مع اختيار طفل أو طفلين في كل دورة حتى لا يزدحم الركن أو يطول الشرح.</p></div>
+        <div class="cfield"><b>المخرج</b><p>يميّز الطفل حرف و بصريًّا وسمعيًّا في كلمة «وَرَقَة»، مع بطاقة يشير فيها إلى الحرف وينطق صوته وَ.</p></div>
+        <div class="faith">الجملة الختامية للركن: أنطق حرف الواو بهدوء وأتعلّم لغتي الجميلة.</div>
+      </div>
+    </div>
+
+    <div class="corner">
+      <div class="h" style="background:linear-gradient(90deg,#0d6e6e,#2b8f8f)"><h4>حرف الواو في مسكني</h4><span class="k">🏠 ركن المسكن</span></div>
+      <div class="b">
+        <div class="cfield"><b>الأدوات والوسائل التعليمية</b><p>لوحة مسكن بمساحات، بطاقات كلمات تبدأ بواو (وَرَقَة · وَرْدَة · وَتَد)، بطاقات حرف و وأحرف مشتّتة للتمييز، بطاقة حركة الفتحة، وجواز مرور الركن.</p></div>
+        <div class="cfield"><b>قوانين الركن</b><p>البقاء في مساحة الركن · المحافظة على الأدوات · انتظار الدور · إعادة كل وسيلة إلى مكانها بعد اللعب.</p></div>
+        <div class="cfield"><b>اللعب الحرّ في الركن</b><p>يستكشف الأطفال لوحة المسكن وبطاقات الكلمات بحرّية ومرح، ويطابقون حرف و بالأشياء المألوفة، ويعبّرون عمّا يشاهدون دون تكليف.</p></div>
+        <div class="cfield"><b>النشاط التطبيقي السريع</b><p><em>تستقطع المعلمة دقائق يسيرة لتطبيق سريع على الفكرة المركزية: <strong>في مسكني كلمات تبدأ بحرف و، أضع بطاقة و بجوار اسمها وأنطق صوته وَ.</strong></em></p><ol>
+          <li>يختار الطفل مساحة من المسكن وبطاقة كلمة مرتبطة بها تبدأ بواو.</li>
+          <li>ينطق الكلمة ويبرز صوت وَ، ثم يضع بطاقة و بجوار اسمها.</li>
+          <li>يتتبّع الحرف بإصبعه ويقول: واو - وَ - وَرَقَة.</li>
+          <li>يعرض عمله على المعلمة ثم يحصل على جواز المرور.</li>
+        </ol></div>
+        <div class="cfield"><b>هدف الركن</b><p>ركن داعم يربط حرف و بأشياء مألوفة في محيط البيت، فيثبّت الحرف في حياة الطفل اليومية.</p></div>
+        <div class="cfield"><b>دور المعلمة</b><p>تترك الطفل يلعب ويطابق أولًا، ثم تقرأ الكلمة وتنمذج الصوت، وتمنحه وقتًا للمطابقة، ولا تقارن بين الأطفال.</p></div>
+        <div class="cfield"><b>خصوصية عقدية وتربوية</b><p>ربط الحرف بمحيط الطفل يعينه على القراءة، ولا يتحوّل النشاط إلى مقارنة بين بيوت الأطفال أو ممتلكاتهم أو خطوطهم، ولا تُستخدم آيات أو أحاديث للتجريب الصوتي.</p></div>
+        <div class="cfield"><b>مناسب للفئة العمرية</b><p>خطوات قصيرة محسوسة، مع اختيار طفل أو طفلين في كل دورة حتى لا يزدحم الركن.</p></div>
+        <div class="cfield"><b>المخرج</b><p>مطابقة صحيحة لثلاث كلمات تبدأ بواو مع نطق الصوت وَ، وجملة يردّدها الطفل عن حرف الواو في مسكنه.</p></div>
+        <div class="faith">الجملة الختامية: في مسكني كلمات تبدأ بواو، وقد عرفت حرف الواو: وَ في وَرَقَة.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:4px;background:var(--elm-soft);border:1px solid #c8e6e6;border-radius:12px;padding:11px 14px"><b style="color:var(--elm);font-size:15px;display:block;margin-bottom:3px">🧵 المركز التطبيقي في تبويب مركز اللغة</b><p style="font-size:15px;line-height:1.8;margin:0;color:#063a3e">التطبيق الموسّع (٣٠ دقيقة: كشّاف الواو ورسم مسار الحرف ومطابقة صور تبدأ بـ وَ) مادّة مستقلّة في تبويب <strong>«مركز اللغة»</strong> ضمن الوحدة، مكمّلة لهذين الركنين لا بديلة عنهما.</p></div>
+</div>
+
+  <div class="foot">وحدة العائلة · لساني عربي · اللقاء الثالث — حرف و · نادي غرس القيم لضيافة الأطفال</div>
+</div>
+
+<script>
+(function(){
+  var doc=document, root=doc.documentElement, body=doc.body;
+  var pb=doc.createElement('div'); pb.className='gq-progress'; body.appendChild(pb);
+  var top=doc.createElement('button'); top.className='gq-top'; top.setAttribute('aria-label','العودة للأعلى'); top.textContent='↑'; body.appendChild(top);
+  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function onScroll(){ var sc=window.pageYOffset||root.scrollTop, max=(root.scrollHeight-root.clientHeight)||1; pb.style.width=Math.min(100,sc/max*100)+'%'; if(sc>320){top.classList.add('show');}else{top.classList.remove('show');} }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var lb=doc.createElement('div'); lb.className='gq-lb'; lb.innerHTML='<button class="close" aria-label="اغلاق">\u2715</button><figure><img alt=""/><figcaption class="cap"></figcaption></figure>'; body.appendChild(lb);
+  var lbImg=lb.querySelector('img'), lbCap=lb.querySelector('.cap');
+  function closeLb(){lb.classList.remove('open'); lbImg.removeAttribute('src');}
+  lb.addEventListener('click',function(e){ if(e.target===lb||e.target.classList.contains('close')) closeLb(); });
+  doc.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLb(); });
+  doc.querySelectorAll('.gitem img, .step-media img').forEach(function(im){
+    im.addEventListener('click',function(){ var cap='', box=im.closest('.gitem')||im.closest('.step-media'); if(box){var c=box.querySelector('.cap'); if(c) cap=c.textContent;} lbImg.src=im.currentSrc||im.src; lbCap.textContent=cap; lb.classList.add('open'); });
+  });
+  var tabs=[].slice.call(doc.querySelectorAll('.tab'));
+  var KEY='gq-fam-tab-'+(doc.title||'l');
+  function activate(btn,save,scroll){ tabs.forEach(function(t){t.classList.remove('active');}); doc.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');}); btn.classList.add('active'); var p=doc.getElementById(btn.dataset.p); if(p) p.classList.add('active'); if(save){ try{localStorage.setItem(KEY,btn.dataset.p);}catch(e){} } if(scroll){ window.scrollTo({top:0,behavior:'smooth'}); } }
+  tabs.forEach(function(btn,i){ btn.setAttribute('tabindex','0'); btn.addEventListener('click',function(){ activate(btn,true,true); }); btn.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ e.preventDefault(); var dir=(e.key==='ArrowLeft')?1:-1, ni=(i+dir+tabs.length)%tabs.length; tabs[ni].focus(); activate(tabs[ni],true,false); } }); });
+  try{ var saved=localStorage.getItem(KEY); if(saved){ var b=doc.querySelector('.tab[data-p="'+saved+'"]'); if(b) activate(b,false,false); } }catch(e){}
+  function fallback(txt,cb){ var ta=doc.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0'; body.appendChild(ta); ta.select(); try{doc.execCommand('copy');}catch(e){} body.removeChild(ta); cb(); }
+  doc.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){ var target=doc.querySelector(btn.getAttribute('data-copy')); if(!target) return; var clone=target.cloneNode(true); clone.querySelectorAll('.l,.copy-btn').forEach(function(n){n.remove();}); var txt=(clone.innerText||clone.textContent||'').replace(/\n{3,}/g,'\n\n').trim(); function done(){ var o=btn.getAttribute('data-lbl'); if(!o){o=btn.textContent; btn.setAttribute('data-lbl',o);} btn.textContent='\u2713 نُسخ'; btn.classList.add('copied'); setTimeout(function(){ btn.textContent=o; btn.classList.remove('copied'); },1500); } if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done).catch(function(){fallback(txt,done);}); } else { fallback(txt,done); } });
+  });
+})();
+</script>
+</body>
+</html>
