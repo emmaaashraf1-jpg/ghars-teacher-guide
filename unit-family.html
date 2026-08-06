@@ -93,6 +93,64 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
   opacity:0;pointer-events:none;transition:.25s;z-index:40}
 .gq-top.show{opacity:1;pointer-events:auto}
 
+/* ===== شريط تبويبات الوحدة (clean) ===== */
+.unitnav{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px;box-shadow:var(--shadow-sm);margin-bottom:14px}
+.unitnav-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.unitnav-row+.unitnav-row{margin-top:9px;padding-top:11px;border-top:1px dashed var(--line)}
+.unitnav-label{font-family:var(--fd);font-size:11.5px;font-weight:700;color:var(--t2);background:var(--elm-soft);border:1px solid #d5ebec;border-radius:999px;padding:5px 12px;white-space:nowrap}
+.utab{cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 15px;font-size:13px;font-weight:700;color:#4a5a58;font-family:var(--fb);transition:.15s;white-space:nowrap}
+.utab:hover{border-color:var(--t2);color:var(--t2);transform:translateY(-1px)}
+.utab.active{background:linear-gradient(135deg,var(--t1),var(--t2));border-color:var(--t1);color:#fff;box-shadow:0 6px 16px rgba(0,62,69,.2)}
+.utab.days-tab{background:linear-gradient(135deg,#fff,#eef8f6);border-color:#cfe8e6;color:var(--t1)}
+.utab.days-tab.active{background:linear-gradient(135deg,var(--gold),var(--gold2));border-color:var(--gold);color:#3a2c00}
+
+.upanel{display:none}
+.upanel.active{display:block;animation:fade .25s ease}
+
+/* مكوّنات محتوى لوحات الوحدة */
+.u-hero{background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff;border-radius:20px;padding:22px 24px;margin-bottom:16px;box-shadow:var(--shadow-sm)}
+.u-hero h2{font-family:var(--fd);font-size:24px;color:#fff;margin-bottom:6px}
+.u-hero p{font-size:14px;opacity:.96;max-width:860px;line-height:1.85}
+.u-h3{font-family:var(--fd);font-size:19px;color:var(--t1);margin:22px 0 12px;padding-inline-start:13px;border-inline-start:5px solid var(--gold)}
+.u-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.u-grid.two{grid-template-columns:repeat(auto-fill,minmax(330px,1fr))}
+.u-card{background:var(--card);border:1px solid var(--line);border-inline-start:5px solid var(--ac,var(--t2));border-radius:15px;padding:15px 17px;box-shadow:var(--shadow-sm)}
+.u-card h4{font-family:var(--fd);font-size:16px;color:var(--ac,var(--t1));margin-bottom:6px}
+.u-card p,.u-card li{font-size:13.5px;color:var(--ink);line-height:1.8}
+.u-card ul{list-style:none;margin-top:7px;display:grid;gap:5px}
+.u-card ul li{position:relative;padding-inline-start:18px}
+.u-card ul li::before{content:"•";position:absolute;inset-inline-start:2px;color:var(--ac,var(--t2));font-weight:700}
+.u-subj{display:inline-block;background:var(--ac,var(--t2));color:#fff;border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;margin-bottom:8px}
+.u-note{background:var(--elm-soft);border:1px solid #d5ebec;border-radius:14px;padding:13px 16px;font-size:13.5px;color:#215c60;margin:12px 0;line-height:1.8}
+.u-note b{color:var(--t1)}
+.u-note.warn{background:#fff7e8;border-color:#ecd9a8;color:#7a5710}
+.u-note.warn b{color:#8a5a00}
+.u-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:13px;margin:10px 0}
+.u-table th{background:var(--t1);color:#fff;padding:10px;font-family:var(--fd);font-weight:700;font-size:13px;text-align:start}
+.u-table td{border-top:1px solid var(--line);padding:9px 11px;vertical-align:top}
+.u-table tr:nth-child(even) td{background:#faf7f0}
+.u-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+.u-chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:12.5px;font-weight:700;color:var(--t2)}
+.u-media{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#000;margin:12px 0;box-shadow:var(--shadow-sm)}
+.u-media video{display:block;width:100%;max-height:470px;background:#000}
+.u-btnlink{display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:var(--t2);color:#fff;border-radius:10px;padding:9px 15px;font-size:13px;font-weight:700;margin-top:6px}
+.u-btnlink:hover{opacity:.9}
+.u-verse{background:linear-gradient(180deg,#fffdf7,#fff);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin:12px 0;box-shadow:var(--shadow-sm);text-align:center;font-family:var(--fd);font-size:17px;line-height:2.4;color:var(--t1)}
+.motion-grid,.fitness-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.motion-card,.fitness-card{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.fitness-card.wide{grid-column:1/-1}
+.motion-card video,.fitness-card .fitness-image{display:block;width:100%;background:#000;max-height:230px;object-fit:cover}
+.motion-card-head{display:flex;align-items:center;gap:10px;padding:12px 14px 6px}
+.motion-icon{font-size:24px}
+.motion-title,.fitness-title-row h3{font-family:var(--fd);font-size:15.5px;color:var(--t1)}
+.motion-sub{font-size:11.5px;color:var(--muted)}
+.motion-card-body,.fitness-body{padding:8px 14px 14px;font-size:13px;color:var(--ink);line-height:1.75}
+.fitness-title-row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:5px}
+.fitness-duration{background:var(--elm-soft);color:var(--t2);border-radius:999px;padding:3px 10px;font-size:11.5px;font-weight:700;white-space:nowrap}
+.fitness-steps{list-style:none;margin-top:8px;display:grid;gap:5px;counter-reset:fs}
+.fitness-steps li{position:relative;padding-inline-start:26px;font-size:13px}
+.fitness-steps li::before{counter-increment:fs;content:counter(fs);position:absolute;inset-inline-start:0;top:0;width:18px;height:18px;background:var(--t2);color:#fff;border-radius:50%;font-size:11px;display:grid;place-items:center;font-weight:700}
+
 @media(max-width:700px){
   .hero-title{font-size:26px}.hero-in{padding:24px 18px}
   .daytab{min-width:calc(50% - 5px)}
@@ -121,7 +179,29 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
     </div>
   </div>
 
-  <!-- ===== تبويبات الأيام ===== -->
+  <!-- ═══════════ شريط تبويبات الوحدة ═══════════ -->
+  <nav class="unitnav" aria-label="تبويبات الوحدة">
+    <div class="unitnav-row">
+      <span class="unitnav-label">التخطيط والمتابعة</span>
+      <button class="utab days-tab active" data-u="days">دروس الوحدة</button>
+      <button class="utab" data-u="usage">دليل الاستخدام</button>
+      <button class="utab" data-u="theme">الفكرة الناظمة والتكامل</button>
+      <button class="utab" data-u="unit">الوحدة</button>
+      <button class="utab" data-u="week">خريطة الأسبوع</button>
+    </div>
+    <div class="unitnav-row">
+      <span class="unitnav-label">المحتوى والتطبيق</span>
+      <button class="utab" data-u="values">القيم والأسرة والتقييم</button>
+      <button class="utab" data-u="lang">الحصيلة اللغوية</button>
+      <button class="utab" data-u="manzooma">منظومة الوحدة</button>
+      <button class="utab" data-u="songs">أناشيد حركية</button>
+      <button class="utab" data-u="fitness">اللياقة البدنية</button>
+      <button class="utab" data-u="corners">خريطة الأركان</button>
+    </div>
+  </nav>
+
+  <!-- ═══════════ دروس الوحدة (تبويبات الأيام) ═══════════ -->
+  <div class="upanel active" id="u-days">
   <div class="daytabs" role="tablist">
     <button class="daytab active" data-d="1"><span class="d-n">الأحد · اليوم الأول</span><span class="d-t">مفهوم العائلة</span></button>
     <button class="daytab" data-d="2"><span class="d-n">الاثنين · اليوم الثاني</span><span class="d-t">آداب التعامل</span></button>
@@ -219,6 +299,673 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
     <div class="subpanel" data-s="5"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>أتعرّف حرف ش وصوته</h2><a class="open" href="lisani-lesson5.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — حرف ش" data-src="lisani-lesson5.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="6"><div class="day-head" style="--sc:#0e7c86"><span class="subj">مركز اللغة</span><h2>أميّز حرف ش وأبني نقاطه</h2><a class="open" href="markaz-lugha-lesson5.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل المركز…</div><iframe title="مركز اللغة — حرف ش" data-src="markaz-lugha-lesson5.html" loading="lazy"></iframe></div></div>
   </div>
+  </div><!-- /#u-days -->
+
+  <!-- ═══════════ لوحة: دليل الاستخدام ═══════════ -->
+  <section class="upanel" id="u-usage">
+    <div class="u-hero"><h2>دليل الاستخدام السريع للمعلمة</h2><p>هذا الدليل منظَّم على مستويين واضحين: «التخطيط والمتابعة» لتجهيز الوحدة وفهم فكرتها الناظمة وخريطة أسبوعها وقيمها وحصيلتها اللغوية، و«دروس الوحدة» لفتح اليوم المطلوب ثم التنقّل بين لقاءاته السبعة ومركزَيه التطبيقيَّين.</p></div>
+    <div class="u-note warn"><b>تنبيه بخصوص الشاشات:</b> فيديوهات الأناشيد الحركية والمنظومة وإشارات بدء اللقاءات مرجعٌ للمعلمة لتتعلّم اللحن والحركة ثم تنفّذها بنفسها أمام الأطفال؛ لا يُعرَّض الأطفال للشاشات.</div>
+    <h3 class="u-h3">طريقة التنقّل المقترحة</h3>
+    <div class="u-grid">
+      <div class="u-card" style="--ac:#006B69"><h4>① ابدئي بالتخطيط</h4><p>اطّلعي على «الوحدة» و«الفكرة الناظمة والتكامل» و«خريطة الأسبوع» قبل بدء الأسبوع لتكوّني صورة كاملة وتجهّزي الأدوات والوسائل.</p></div>
+      <div class="u-card" style="--ac:#2D7A4B"><h4>② افتحي دروس الوحدة</h4><p>من تبويب «دروس الوحدة» اختاري اليوم ثم المادة. يبدأ كل يوم بلقاء «كتابي المنير» (فيه تهيئة بداية اليوم والتاريخ الهجري) ثم «علّمني ربي» فبقيّة المواد.</p></div>
+      <div class="u-card" style="--ac:#8660A8"><h4>③ طبّقي وأثري</h4><p>راجعي «خريطة الأركان» لتنفيذ نشاط تطبيقي سريع داخل أركان اللعب الحرّ، و«القيم والأسرة والتقييم» و«الحصيلة اللغوية» و«منظومة أحسن الأخلاق» لإثراء اللقاءات وتثبيت القيم.</p></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ لوحة: الفكرة الناظمة والتكامل ═══════════ -->
+  <section class="upanel" id="u-theme"><div class="u-hero">
+  <h2>الفكرة الناظمة لوحدة العائلة</h2>
+  <p>العائلة نعمةٌ من الله، ومحبتُها وبرُّها وحسنُ الخلق معها محورٌ تلتفّ حوله مواد الوحدة.</p>
+</div>
+
+<h3 class="u-h3">خريطة الأفكار الناظمة اليومية</h3>
+<div style="overflow-x:auto">
+  <table class="u-table">
+    <tr><th>اليوم</th><th>الفكرة الناظمة</th><th>كيف تتكامل المواد حولها</th></tr>
+    <tr>
+      <td>الأحد</td>
+      <td>مفهوم العائلة نعمة من الله</td>
+      <td>علّمني ربي يعرّف العائلة وأفرادها والجميع في نعمة؛ وكتابي المنير بسورة الانفطار يربط النعمة بربوبية الخالق الذي خلق الطفل وسوّاه؛ ومهاراتي يعدّ أفراد العائلة.</td>
+    </tr>
+    <tr>
+      <td>الاثنين</td>
+      <td>آداب التعامل مع أفراد العائلة</td>
+      <td>علّمني ربي يعرض آداب الاحترام والمساعدة والرحمة؛ وقال رسولي يؤكّد «خيركم خيركم لأهله»؛ وأدب واقتداء يطبّق أدب الاستئذان داخل البيت.</td>
+    </tr>
+    <tr>
+      <td>الثلاثاء</td>
+      <td>برّ الوالدين والإحسان إليهما</td>
+      <td>علّمني ربي يبني آداب البرّ ومعنى ﴿وبالوالدين إحسانًا﴾؛ وأحبك ربي بمراقبة الله البصير يجعل معاملة الوالدين صادقة؛ ولساني ومهاراتي يوظّفان كلمات وأعدادًا من عالم الأسرة.</td>
+    </tr>
+    <tr>
+      <td>الأربعاء</td>
+      <td>مسؤوليات أفراد العائلة والتعاون</td>
+      <td>علّمني ربي يميّز الأدوار والعائلة الصغرى من الكبرى والاقتداء بالنبي ﷺ في خدمة أهله؛ ومهاراتي بمقارنة السعة وترتيب أدوات البيت يترجم التعاون إلى عمل.</td>
+    </tr>
+    <tr>
+      <td>الخميس</td>
+      <td>عائلة النبي ﷺ ورعاية الله</td>
+      <td>علّمني ربي يعرّف آل بيته الكرام بالترضّي والاقتداء؛ وكتابي وأحبك ربي يرسّخان الطمأنينة إلى رعاية الله؛ وقال رسولي يدعو للاقتداء بخلقه ﷺ مع أهله.</td>
+    </tr>
+  </table>
+</div>
+
+<h3 class="u-h3">تكامل المواد حول المحور</h3>
+<div class="u-grid">
+  <div class="u-card" style="--ac:#006B69">
+    <h4><span class="u-subj" style="--ac:#006B69">علّمني ربي</span></h4>
+    <p>المحور الذي تدور حوله الوحدة؛ يبني مفهوم العائلة وآدابها وبرّها ومسؤولياتها، وينتهي بعائلة النبي ﷺ.</p>
+  </div>
+  <div class="u-card" style="--ac:#2D7A4B">
+    <h4><span class="u-subj" style="--ac:#2D7A4B">كتابي المنير</span></h4>
+    <p>تلاوة سورة الانفطار تصل قلب الطفل بالخالق الذي أنعم عليه بالعائلة، فيشكرها ويحبّها.</p>
+  </div>
+  <div class="u-card" style="--ac:#6B3F22">
+    <h4><span class="u-subj" style="--ac:#6B3F22">قال رسولي</span></h4>
+    <p>حديث خصال الإيمان يجعل حسن الخلق مع الأهل عبادةً يُثاب عليها الطفل.</p>
+  </div>
+  <div class="u-card" style="--ac:#55702B">
+    <h4><span class="u-subj" style="--ac:#55702B">أدب واقتداء</span></h4>
+    <p>أدب الاستئذان قبل الدخول يترجم محبة العائلة إلى سلوكٍ محترم داخل البيت.</p>
+  </div>
+  <div class="u-card" style="--ac:#8660A8">
+    <h4><span class="u-subj" style="--ac:#8660A8">أحبك ربي</span></h4>
+    <p>مراقبة الله البصير تجعل الطفل صادقًا محسنًا مع أهله ولو لم يره أحد.</p>
+  </div>
+  <div class="u-card" style="--ac:#0d6e6e">
+    <h4><span class="u-subj" style="--ac:#0d6e6e">لساني عربي</span></h4>
+    <p>حرف الثاء يُتعلَّم عبر كلماتٍ مألوفة من عالم البيت والأسرة.</p>
+  </div>
+  <div class="u-card" style="--ac:#8B0000">
+    <h4><span class="u-subj" style="--ac:#8B0000">مهاراتي</span></h4>
+    <p>العدد أربعة عشر ومقارنة السعة يوظّفهما الطفل في عدّ أفراد العائلة وترتيب أدوات البيت.</p>
+  </div>
+</div>
+<p class="u-note">الربط بين المواد لطيفٌ واقعيٌّ يخدم محور العائلة دون تكلّف؛ فكلُّ مادة تُسهم من بابها في ترسيخ محبة الأسرة وآدابها وشكر نعمتها.</p></section>
+
+  <!-- ═══════════ لوحة: الوحدة ═══════════ -->
+  <section class="upanel" id="u-unit"><div class="u-hero">
+  <h2>وحدة العائلة</h2>
+  <p>وحدة تغرس محبة العائلة وآدابها وبرّ الوالدين عبر سبع مواد ومركزين تطبيقيين خلال خمسة أيام.</p>
+</div>
+
+<h3 class="u-h3">أهداف الوحدة</h3>
+<div class="u-grid">
+  <div class="u-card" style="--ac:#C79A3B">
+    <h4><span class="u-subj" style="--ac:#C79A3B">وجدانية</span></h4>
+    <p>أن يشعر الطفل بمحبة عائلته ودفئها، ويُدرك أنها نعمة من الله فيرضى بحالها ويطمئنّ لرعاية الله؛ ويحبّ الأدب الحسن مع أهله وبرّ والديه، ويمتلئ قلبه محبةً للنبي ﷺ وآل بيته الكرام.</p>
+  </div>
+  <div class="u-card" style="--ac:#006B69">
+    <h4><span class="u-subj" style="--ac:#006B69">معرفية</span></h4>
+    <p>أن يعرف معنى العائلة وأفرادها واختلاف العوائل مع بقاء الجميع في نعمة، وآداب التعامل مع الأهل والوالدين ومكانتهما، ويميّز العائلة الصغرى من الكبرى ومسؤولية كل فرد، ويتعرّف على عائلة النبي ﷺ ورعاية الله له.</p>
+  </div>
+  <div class="u-card" style="--ac:#2D7A4B">
+    <h4><span class="u-subj" style="--ac:#2D7A4B">مهارية</span></h4>
+    <p>أن يمثّل مواقف من حياة الأسرة، ويصنّف صور أفراد العائلة (الصغرى والكبرى وأفراد بيت النبي ﷺ)، ويختار بطاقات الآداب والأسماء ويصنّفها، ويعبّر شفهيًا عن دوره في عائلته وعن مشاعره تجاه والديه.</p>
+  </div>
+  <div class="u-card" style="--ac:#8660A8">
+    <h4><span class="u-subj" style="--ac:#8660A8">سلوكية / إجرائية</span></h4>
+    <p>أن يقول «الحمد لله على نعمة العائلة»، ويحترم الكبير ويرحم الصغير، ويطبّق أدبًا مع أهله، وينادي والديه باحترام ويساعدهما ويطلب دعاءهما، ويؤدّي دورًا بسيطًا في بيته اقتداءً بالنبي ﷺ، ويلتزم الترضّي عند ذكر آل البيت.</p>
+  </div>
+</div>
+
+<h3 class="u-h3">مواد الوحدة</h3>
+<div class="u-grid">
+  <div class="u-card" style="--ac:#006B69">
+    <h4><span class="u-subj" style="--ac:#006B69">علّمني ربي</span></h4>
+    <p>المادة المحورية للوحدة؛ خمسة لقاءات تبني مفهوم العائلة وآدابها، وبرّ الوالدين، ومسؤوليات الأفراد، وعائلة النبي ﷺ.</p>
+  </div>
+  <div class="u-card" style="--ac:#2D7A4B">
+    <h4><span class="u-subj" style="--ac:#2D7A4B">كتابي المنير</span></h4>
+    <p>علوم سورة الانفطار؛ يتلو الطفل ويتدبّر عظمة الخالق الذي خلقه وسوّاه وسخّر له من يرعاه، فيقترن حبّ الله بشكر نعمة العائلة.</p>
+  </div>
+  <div class="u-card" style="--ac:#6B3F22">
+    <h4><span class="u-subj" style="--ac:#6B3F22">قال رسولي</span></h4>
+    <p>حديث خصال الإيمان؛ يتعلّم الطفل من كلام النبي ﷺ حسن الخلق الذي يبدأ من البيت وأهله.</p>
+  </div>
+  <div class="u-card" style="--ac:#55702B">
+    <h4><span class="u-subj" style="--ac:#55702B">أدب واقتداء</span></h4>
+    <p>أدب الاستئذان قبل الدخول؛ يطبّق الطفل أدبًا أسريًا في بيته اقتداءً بهدي النبي ﷺ.</p>
+  </div>
+  <div class="u-card" style="--ac:#8660A8">
+    <h4><span class="u-subj" style="--ac:#8660A8">أحبك ربي</span></h4>
+    <p>الله البصير يراني؛ يستشعر الطفل مراقبة الله فيصدق ويُحسن حتى مع أهله ولو لم يره أحد (قصة بائعة اللبن).</p>
+  </div>
+  <div class="u-card" style="--ac:#0d6e6e">
+    <h4><span class="u-subj" style="--ac:#0d6e6e">لساني عربي</span></h4>
+    <p>حرف الثاء (ث) وصوته؛ يتعرّف الطفل على الحرف ضمن كلمات من عالم العائلة والبيت.</p>
+  </div>
+  <div class="u-card" style="--ac:#8B0000">
+    <h4><span class="u-subj" style="--ac:#8B0000">مهاراتي</span></h4>
+    <p>العدد أربعة عشر ومقارنة السعة (الفارغ والممتلئ)؛ مهارات حسية يوظّفها الطفل في عدّ أفراد العائلة وترتيب أدوات البيت.</p>
+  </div>
+</div>
+<p class="u-note">ويكمِّل الوحدةَ مركزان تطبيقيان: <strong>مركز اللغة</strong> (حرف الثاء) و<strong>مركز الرياضيات</strong> (الأربعة عشر والسعة)؛ لقاءات عملية تُرسّخ ما تعلّمه الطفل بأنشطة تطبيقية.</p></section>
+
+  <!-- ═══════════ لوحة: خريطة الأسبوع ═══════════ -->
+  <section class="upanel" id="u-week">
+    <div class="u-hero"><h2>خريطة أسبوع وحدة العائلة</h2><p>خمسة أيام تعليمية، يفتتح كلَّ يومٍ لقاءُ «كتابي المنير»، وتتوزّع فيه المواد السبع والمركزان التطبيقيان حول الفكرة الناظمة لليوم.</p></div>
+    <div style="overflow-x:auto">
+    <table class="u-table">
+      <tr><th>اليوم</th><th>الفكرة الناظمة</th><th>لقاءات اليوم (بالترتيب)</th></tr>
+      <tr><td><b>الأحد</b><br/>الأول</td><td>مفهوم العائلة</td><td>كتابي (الانفطار ١) · علّمني (مفهوم العائلة) · قال رسولي (خصال الإيمان ١) · أدب (الاستئذان ١) · لساني (حرف ث) · مركز اللغة (كشّاف الثاء)</td></tr>
+      <tr><td><b>الاثنين</b><br/>الثاني</td><td>آداب التعامل مع أفراد العائلة</td><td>كتابي (الانفطار ٢) · علّمني (آداب التعامل) · أدب (الاستئذان ٢) · لساني (مواضع ث) · مركز اللغة (أصطاد ث) · مهاراتي (العدد ١٤) · مركز الرياضيات (مسار ١٤)</td></tr>
+      <tr><td><b>الثلاثاء</b><br/>الثالث</td><td>برّ الوالدين</td><td>كتابي (الانفطار ٣) · علّمني (برّ الوالدين) · أحبك ربي (البصير) · لساني (حرف و) · مركز اللغة (مسار الواو)</td></tr>
+      <tr><td><b>الأربعاء</b><br/>الرابع</td><td>مسؤوليات أفراد العائلة</td><td>كتابي (الانفطار ٤) · علّمني (مسؤوليات الأفراد) · لساني (مواضع و) · مركز اللغة (مواضع الواو) · مهاراتي (السعة) · مركز الرياضيات</td></tr>
+      <tr><td><b>الخميس</b><br/>الخامس</td><td>عائلة النبي ﷺ</td><td>كتابي (الانفطار ٥) · علّمني (عائلة النبي ﷺ) · قال رسولي (خصال الإيمان ٢) · أحبك ربي (بائعة اللبن) · لساني (حرف ش) · مركز اللغة (حرف ش)</td></tr>
+    </table>
+    </div>
+    <div class="u-note"><b>ملحوظة تنظيمية:</b> يبدأ كل يوم بلقاء «كتابي المنير» لأنه مفتتح اليوم، ثم «علّمني ربي» المحور القيمي للوحدة، ثم بقيّة المواد؛ والمركزان التطبيقيّان (اللغة والرياضيات) يُنفَّذان ضمن وقت الأركان.</div>
+  </section>
+
+  <!-- ═══════════ لوحة: القيم والأسرة والتقييم ═══════════ -->
+  <section class="upanel" id="u-values"><div class="u-hero">
+  <h2>القيم والأسرة والتقييم</h2>
+  <p>خلاصةٌ منقولة من لقاءات وحدة العائلة كما وردت في الدروس: القيم التي تُغرَس ووسيلة غرسها، ودور الأسرة في ترسيخها بالبيت، ثم التقويم الثلاثي ومؤشرات نجاحه. القيم مستمدّة أساسًا من مادة «علّمني ربي» مع لمحات من «أدب واقتداء» و«أحبك ربي» في الوحدة نفسها. التعلّم توفيقٌ من الله، ولا تجسيد لذوات الأنبياء وآل البيت، ويُذكر آل البيت والصحابة بالترضّي.</p>
+</div>
+
+<h3 class="u-h3">قيم الوحدة ومفاهيمها</h3>
+<div class="u-grid">
+
+  <div class="u-card" style="--ac:#006B69">
+    <h4>برّ الوالدين والإحسان إليهما</h4>
+    <p>الإحسان إلى الأم والأب بالقول والفعل طاعةً لله. تُغرَس بالبدء بآية ﴿وَبِالْوَالِدَيْنِ إِحْسَانًا﴾، ونمذجة النداء باحترام «أمي… أبي» وخفض الصوت والقول الكريم، وربط السلام وتقبيل الرأس واليد بمكانتهما، والتعزيز الشرعي: «بارك الله فيك، أنت بارٌّ بوالديك».</p>
+  </div>
+
+  <div class="u-card" style="--ac:#2D7A4B">
+    <h4>حسن التعامل والرحمة بالإخوة</h4>
+    <p>احترام أفراد العائلة، ومساعدة الوالدين، والرحمة بالإخوة الصغار والمشاركة بلطف بلا صراخ ولا أذى. تُغرَس عبر صندوق بطاقات الآداب وتمثيل مواقف الأسرة، والتعزيز الفوري «أحسنت · جزاك الله خيرًا»، وترديد «خيركم خيركم لأهله» حتى يثبت في الوجدان.</p>
+  </div>
+
+  <div class="u-card" style="--ac:#0E7C86">
+    <h4>التعاون وتحمّل المسؤولية في البيت</h4>
+    <p>البيت فريقٌ واحد، ولكل فرد مسؤولية يؤدّيها من غير تهرّب. تُغرَس بإبراز قدوة النبي ﷺ في عمله ببيته، وربطها بالنص الشرعي ﴿وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ﴾ و«كلكم راعٍ وكلكم مسؤول عن رعيته»، وتكليف الطفل بمهمّة واحدة يلتزم بها ثم شكره عليها.</p>
+  </div>
+
+  <div class="u-card" style="--ac:#C79A3B">
+    <h4>الشكر والرضا بنعمة العائلة</h4>
+    <p>العائلة نعمة من الله، والعوائل مختلفة والجميع في نعمة؛ فالله يرسل لكل طفل من يرعاه — كما رعى نبيّه ﷺ في صغره. تُغرَس بأن تُتبع كل ذِكرٍ لفرد من العائلة بـ«هذه نعمة من الله… الحمد لله»، وبربط قصة رعاية الله لنبيّه ﷺ بالرضا والطمأنينة والبُعد عن المقارنة.</p>
+  </div>
+
+  <div class="u-card" style="--ac:#7A5CC0">
+    <h4>محبة النبي ﷺ والاقتداء بآل بيته</h4>
+    <p>محبة النبي ﷺ فوق كل أحد، والاقتداء بأخلاقه في محبته لأهله، وتوقير زوجاته وأبنائه والترضّي عنهم. تُغرَس بنمذجة الاقتداء بهديه ﷺ، وذِكر أمّهات المؤمنين بالترضّي «رضي الله عنها»، والصبر واليقين بأن الله لا يترك عباده — دون أي تمثيل لأشخاص آل البيت.</p>
+  </div>
+
+  <div class="u-card" style="--ac:#C46B2E">
+    <h4>آداب الاستئذان واحترام الخصوصية</h4>
+    <p>الاستئذان هو طلب الإذن قبل دخول مكانٍ خاصٍّ لغيري أو استعمال ما يخصّه (من «أدب واقتداء»). تُغرَس بقراءة الحديث «الاستئذان ثلاث، فإن أُذن لك وإلا فارجع»، وعرض مواقف الدخول والاستعمال، وتقبّل الجواب اقتداءً برسول الله ﷺ، وربطها بالبيت: يستأذن قبل دخول غرفة مغلقة.</p>
+  </div>
+
+  <div class="u-card" style="--ac:#546E7A">
+    <h4>مراقبة الله والصدق والإحسان</h4>
+    <p>الله البصير يراني، فأعمل ما يحبّه محبةً وإخلاصًا: أصدق، وأُحسن، وأحفظ جوارحي عن الأذى (من «أحبك ربي»). تُغرَس بترديد «الله البصير يراني؛ فأفعل ما يحبّه»، والاختيار المعلّل للتصرّف الأحسن، والتعزيز «الله رأى إحسانك» — من غير تخويفٍ للطفل ولا مراقبةٍ خفيّة.</p>
+  </div>
+
+</div>
+
+<h3 class="u-h3">دور الأسرة — رسائل لولي الأمر</h3>
+<div class="u-grid">
+
+  <div class="u-card" style="--ac:#006B69">
+    <h4>مفهوم العائلة</h4>
+    <p>بدأ طفلكم وحدة «العائلة»؛ تعلّم أن العائلة نعمة عظيمة من الله، وأن العوائل مختلفة والجميع في نعمة، لأن الله يرسل لكل طفل من يرعاه كما رعى نبيّه ﷺ. نشاطٌ بيتي: تحدّثوا معه عن أفراد العائلة، وصِلوا رحمًا، وقولوا معًا: «الحمد لله على نعمة العائلة».</p>
+  </div>
+
+  <div class="u-card" style="--ac:#2D7A4B">
+    <h4>آداب التعامل مع أفراد العائلة</h4>
+    <p>تعلّم احترام الوالدين، والجلوس بأدب وهدوء، ومساعدة ماما وبابا، والرحمة بالإخوة والمشاركة بلطف — فخيركم خيركم لأهله. نشاطٌ بيتي: شجّعوه على تطبيق أدبٍ واحد اليوم (يساعد، أو يخفض صوته، أو يشارك أخاه)، وامدحوه بـ«أحسنت» و«جزاك الله خيرًا».</p>
+  </div>
+
+  <div class="u-card" style="--ac:#7A5CC0">
+    <h4>برّ الوالدين</h4>
+    <p>عرف أن الله أمر بالإحسان إلى الوالدين ﴿وَبِالْوَالِدَيْنِ إِحْسَانًا﴾، وتعلّم آدابًا عملية: النداء باحترام، والسلام وتقبيل الرأس واليد، وخفض الصوت، وتفقّد أحوالهما، وإهداءهما، وطلب الدعاء منهما. نشاطٌ بيتي: ساعدوه على تطبيق أدبٍ واحد، واطلبوا منه هديةً بسيطة أو كلمة محبة، وادعوا له فدعاؤكم بركة.</p>
+  </div>
+
+  <div class="u-card" style="--ac:#0E7C86">
+    <h4>مسؤوليات أفراد العائلة</h4>
+    <p>عرف الفرق بين العائلة الصغرى والكبرى، وأن لكل فرد مسؤوليةً كأنّهم فريق واحد، وأن النبي ﷺ كان يعمل في بيته ويساعد أهله بتواضع. نشاطٌ بيتي: اتّفقوا معه على مهمّة منزلية واحدة يلتزم بها (ترتيب ألعابه أو مساعدة إخوته)، واشكروه، وقولوا معًا: «كلكم راعٍ وكلكم مسؤول عن رعيته».</p>
+  </div>
+
+  <div class="u-card" style="--ac:#C79A3B">
+    <h4>عائلة النبي ﷺ</h4>
+    <p>تعرّف على زوجات النبي ﷺ وأبنائه الكرام، وكيف رعى الله نبيّه ﷺ بعد فقد والديه؛ ليتعلّم أن الله لا يترك عباده بل يرسل لهم من يعتني بهم. نشاطٌ بيتي: تحدّثوا معه عن محبة النبي ﷺ والاقتداء بأخلاقه، واذكروا آل بيته بالترضّي، وقولوا معًا: «اللهم صلِّ وسلّم على نبيّنا محمد».</p>
+  </div>
+
+  <div class="u-card" style="--ac:#546E7A">
+    <h4>تهيئة الأسرة قبل اللقاء وبعده</h4>
+    <p>القيمة تترسّخ حين تُعاش في البيت كما تُتعلَّم في الفصل. يهيّئ ولي الأمر طفله وجدانيًّا ومعرفيًّا وحسّيًّا: يقرأ معه الآية، ويُريه المواقف عمليًّا، ويجهّز بطاقةً أو رسمًا بسيطًا (بلا وجوه) يحمله للصف. ومن اللمحات: أن يستأذن الطفل قبل دخول غرفة مغلقة، وأن يلاحظ الوالدان عملًا صالحًا فيقولا «الله رأى إحسانك» من غير مراقبةٍ خفية أو تخويف.</p>
+  </div>
+
+</div>
+
+<h3 class="u-h3">التقويم ومؤشرات النجاح</h3>
+<div style="overflow-x:auto">
+  <table class="u-table">
+    <tr><th>نوع التقويم</th><th>أمثلة المؤشرات</th></tr>
+    <tr>
+      <td>التقويم القبلي</td>
+      <td>من يعيش معك في المنزل؟ · هل تعرف معنى العائلة؟ وهل كل العائلات متشابهة؟ · كيف تتعامل مع والديك؟ · هل تعرف الفرق بين العائلة الصغرى والكبرى؟ · هل تعرف شيئًا عن عائلة النبي ﷺ؟</td>
+    </tr>
+    <tr>
+      <td>التقويم التكويني</td>
+      <td>متابعة تفاعل الأطفال أثناء عرض الصور والبطاقات · من أفراد العائلة؟ · كيف أحترم أمي وأساعد أبي وأرحم إخوتي؟ · ما مسؤولية الأب والأم والإخوة؟ · من ربّى النبي ﷺ بعد وفاة والديه؟</td>
+    </tr>
+    <tr>
+      <td>التقويم النهائي</td>
+      <td>ما معنى نعمة العائلة؟ · اذكر أدبًا من آداب التعامل مع العائلة وبرّ الوالدين · صنّف أفراد العائلة (صغرى/كبرى) واذكر مسؤولية واحدة · كم عدد أبناء النبي ﷺ؟ <b>المعيار: ٣ إجابات صحيحة على الأقل، أو ذكر أدب/مسؤولية واحدة صحيحة مع أداء النشاط.</b></td>
+    </tr>
+    <tr>
+      <td>المؤشر الوجداني</td>
+      <td>ظهور محبة وامتنان عند الحديث عن الأهل والوالدين، وقول «الحمد لله» على نعمة العائلة بصدق، ومحبة النبي ﷺ وتوقير آل بيته بالترضّي.</td>
+    </tr>
+    <tr>
+      <td>المؤشر المعرفي</td>
+      <td>الإجابة الصحيحة على ٣ أسئلة من التقويم النهائي، وذكر أدبٍ واحد صحيح من آداب البرّ وحسن التعامل، والتمييز بين العائلة الصغرى والكبرى.</td>
+    </tr>
+    <tr>
+      <td>المؤشر السلوكي</td>
+      <td>الجلوس الهادئ والاستماع دون مقاطعة، وخفض الصوت والنداء باحترام، والمشاركة بلطف، والالتزام بالدور المسند إليه.</td>
+    </tr>
+    <tr>
+      <td>المؤشر التطبيقي</td>
+      <td>تصنيف صور أفراد العائلة تصنيفًا صحيحًا، واختيار بطاقة الأدب الصحيح، وتمثيل موقف من مواقف البرّ (سلام – مساعدة – تقبيل رأس)، والتعبير عمّن يعيش معه ودوره في عائلته.</td>
+    </tr>
+  </table>
+</div></section>
+
+  <!-- ═══════════ لوحة: الحصيلة اللغوية ═══════════ -->
+  <section class="upanel" id="u-lang"><div class="u-hero">
+  <h2>الحصيلة اللغوية لوحدة العائلة</h2>
+  <p>أبرز الكلمات والمصطلحات الجديدة عبر مواد الوحدة، لتوظّفها المعلمة في الحوار والتعزيز.</p>
+</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#006B69">علّمني</span></h3>
+<div style="overflow-x:auto"><table class="u-table">
+  <tr><th>الكلمة/المصطلح</th><th>معناها المبسّط</th></tr>
+  <tr><td>العائلة</td><td>كل من يجمعنا بهم بيتٌ واحد أو صلةُ رحم؛ كالأب والأم والإخوة والجد والجدة.</td></tr>
+  <tr><td>نعمة</td><td>عطاء يهبه الله لعباده يستوجب الشكر.</td></tr>
+  <tr><td>الرعاية</td><td>العناية والاهتمام بمن جعله الله في كنفنا.</td></tr>
+  <tr><td>صلة الرحم</td><td>وصل الأقارب بالزيارة والسؤال والإحسان — عبادة يحبها الله.</td></tr>
+  <tr><td>الأقارب</td><td>أهلنا الذين تربطنا بهم صلة رحم كالأعمام والأخوال.</td></tr>
+  <tr><td>برّ</td><td>الإحسان إلى الوالدين وتوقيرهما بالقول والفعل.</td></tr>
+  <tr><td>إحسان</td><td>فعل الخير مع الوالدين على أكمل وجه طاعةً لله.</td></tr>
+  <tr><td>توقير</td><td>احترام الوالدين وإجلالهما وخفض الصوت عندهما.</td></tr>
+</table></div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#2D7A4B">كتابي المنير</span></h3>
+<div style="overflow-x:auto"><table class="u-table">
+  <tr><th>الكلمة/المصطلح</th><th>معناها المبسّط</th></tr>
+  <tr><td>سورة الإنفطار</td><td>سورة مكية من جزء عمّ، عدد آياتها ١٩ آية، سُمّيت بلفظ «انفطرت» في أولها.</td></tr>
+  <tr><td>جزء عمّ</td><td>الجزء الأخير (الثلاثون) من القرآن، يبدأ بسورة النبأ وينتهي بسورة الناس.</td></tr>
+  <tr><td>مكية</td><td>ما نزل على النبي ﷺ في مكة.</td></tr>
+  <tr><td>آية</td><td>جملة أو كلمات من كلام الله لها موضع محدّد في السورة.</td></tr>
+  <tr><td>انفطرت</td><td>تشقّقت السماء بأمر الله لنزول الملائكة.</td></tr>
+  <tr><td>الكواكب</td><td>النجوم المضيئة في السماء.</td></tr>
+  <tr><td>القبور</td><td>مواضع دفن الأموات.</td></tr>
+  <tr><td>يوم القيامة</td><td>اليوم الذي تتغيّر فيه أحوال المخلوقات ويُبعث الناس للحساب.</td></tr>
+</table></div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#6B3F22">قال رسولي</span></h3>
+<div style="overflow-x:auto"><table class="u-table">
+  <tr><th>الكلمة/المصطلح</th><th>معناها المبسّط</th></tr>
+  <tr><td>حديث</td><td>ما نُقل إلينا من قول النبي ﷺ أو فعله أو إقراره.</td></tr>
+  <tr><td>خصال</td><td>جمع خَصْلة، وهي الصفة أو العمل؛ ومنها خصال الإيمان الثلاث في الحديث.</td></tr>
+  <tr><td>إيمان</td><td>التصديق بالله واليوم الآخر الذي يثمر العمل الصالح.</td></tr>
+  <tr><td>راوي</td><td>الصحابي الذي سمع الحديث ونقله لمن بعده، وراوي حديثنا أبو هريرة رضي الله عنه.</td></tr>
+  <tr><td>متن</td><td>نص الحديث الذي نسمعه بعد ذكر الراوي.</td></tr>
+  <tr><td>صحابي</td><td>من لقي النبي ﷺ مؤمنًا به ومات على ذلك.</td></tr>
+</table></div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#55702B">أدب الاستئذان</span></h3>
+<div style="overflow-x:auto"><table class="u-table">
+  <tr><th>الكلمة/المصطلح</th><th>معناها المبسّط</th></tr>
+  <tr><td>الاستئذان</td><td>طلب الإذن قبل الدخول على مكان خاص لغيري، وانتظار الجواب.</td></tr>
+  <tr><td>الإذن</td><td>السماح الذي يمنحه صاحب المكان أو الغرض لمن طلبه.</td></tr>
+  <tr><td>أستأذن</td><td>أطلب الإذن قبل أن أدخل أو أستعمل ما يخص غيري.</td></tr>
+  <tr><td>أنتظر</td><td>أصبر بعد طلب الإذن حتى أسمع الجواب.</td></tr>
+  <tr><td>خصوصية</td><td>ما يخص الإنسان في مكانه أو أغراضه ونحفظ راحته فيه.</td></tr>
+  <tr><td>باب مغلق</td><td>علامة على مكان خاص لا أدخله حتى يأذن لي صاحبه.</td></tr>
+</table></div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#8660A8">أحبك ربي</span></h3>
+<div style="overflow-x:auto"><table class="u-table">
+  <tr><th>الكلمة/المصطلح</th><th>معناها المبسّط</th></tr>
+  <tr><td>البصير</td><td>اسم من أسماء الله الحسنى؛ يرى جميع المبصرات ولا يخفى عليه شيء.</td></tr>
+  <tr><td>المبصرات</td><td>الأشياء التي تُرى.</td></tr>
+  <tr><td>خفي</td><td>لم يظهر للناس أو لم ينتبهوا إليه.</td></tr>
+  <tr><td>المراقبة</td><td>أن أتذكر أن الله يراني، فأعمل ما يحبه.</td></tr>
+  <tr><td>الإحسان</td><td>أن أعمل العمل الحسن بإتقان وصدق.</td></tr>
+  <tr><td>الأذى</td><td>قول أو فعل يضر غيري.</td></tr>
+</table></div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#0d6e6e">لساني</span></h3>
+<div style="overflow-x:auto"><table class="u-table">
+  <tr><th>الكلمة/المصطلح</th><th>معناها المبسّط</th></tr>
+  <tr><td>واو</td><td>اسم الحرف الذي نتعلّمه، شكله و بلا نقطة.</td></tr>
+  <tr><td>وَرَقَة</td><td>كلمة اللقاء؛ ما يسقط من الشجر، وتبدأ بحرف و.</td></tr>
+  <tr><td>ثاء</td><td>اسم الحرف الذي نتعلّمه، وفوقه ثلاث نقاط.</td></tr>
+  <tr><td>ثوب</td><td>قطعة من اللباس؛ وهي كلمة تبدأ بحرف ث.</td></tr>
+  <tr><td>ثياب</td><td>جمع ثوب، وهي كلمة وردت في القرآن.</td></tr>
+  <tr><td>طهارة ونظافة</td><td>العناية بالثياب وحفظها نظيفة، وهي من شكر النعمة.</td></tr>
+</table></div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#8B0000">مهاراتي</span></h3>
+<div style="overflow-x:auto"><table class="u-table">
+  <tr><th>الكلمة/المصطلح</th><th>معناها المبسّط</th></tr>
+  <tr><td>عدد</td><td>كلمة تدل على مقدار كمية من الأشياء، مثل: أربعة عشر.</td></tr>
+  <tr><td>رقم</td><td>الرمز المكتوب الذي يمثّل العدد، مثل الرمز ١٤.</td></tr>
+  <tr><td>أربعة عشر · ١٤</td><td>العدد الذي يأتي بعد ثلاثة عشر، وكميته ١٤، ويُكوَّن من عشرة وأربعة.</td></tr>
+  <tr><td>كمية</td><td>مقدار ما في المجموعة من أشياء، نعرفه بالعدّ.</td></tr>
+  <tr><td>عشرة</td><td>مجموعة عشر وحدات نضعها داخل إطار العشرة.</td></tr>
+  <tr><td>آحاد</td><td>الوحدات المفردة التي نضعها في خانات الآحاد خارج إطار العشرة.</td></tr>
+</table></div></section>
+
+  <!-- ═══════════ لوحة: منظومة أحسن الأخلاق ═══════════ -->
+  <section class="upanel" id="u-manzooma">
+    <div class="u-hero"><h2>منظومة الوحدة: أحسن الأخلاق</h2><p>منظومةٌ تربط قيم الوحدة — برّ الوالدين، وآداب التعامل، وحسن الخلق مع الأهل — بنشيدٍ جماعيّ تردّده المعلمة مع الأطفال فيثبت المعنى في وجدانهم، على منوال نونية القحطاني في كتابي المنير.</p></div>
+    <div class="u-note warn"><b>للمعلمة:</b> الفيديو مرجعٌ لتتعلّم اللحن والأداء ثم تردّده مع الأطفال دون عرض الشاشة عليهم.</div>
+    <div class="u-media"><video controls preload="none" src="assets/gq_manzooma_akhlaq.mp4"></video></div>
+    <a class="u-btnlink" href="https://www.youtube.com/watch?v=XdyoMAyYUB8" target="_blank" rel="noopener">▶ منظومة أحسن الأخلاق على يوتيوب</a>
+    <div class="u-note">نصّ أبيات المنظومة يُضاف هنا مكتوبًا فور توفّره ليُعرَض كاملًا كما تُعرض النونية.</div>
+  </section>
+
+  <!-- ═══════════ لوحة: أناشيد حركية ═══════════ -->
+  <section class="upanel" id="u-songs"><div class="u-hero">
+  <h2>أناشيد حركية وألعاب أصابع</h2>
+  <p>تستخدمها المعلمة للفصل بين اللقاءات، أو لاستعادة نشاط الأطفال، أو عند ظهور فوضى صفية تحتاج إلى جذب انتباه لطيف. ومع التكرار يحفظ الأطفال النشيد وحركاته، فتتحول الأناشيد إلى أداة انتقال تربوية ثابتة تُهيّئ الأطفال للانتقال بين أركان الوحدة.</p>
+</div>
+
+<div class="u-note warn"><b>تنبيه بخصوص الشاشات:</b> فيديوهات الأناشيد الحركية وألعاب الأصابع هي مرجع للمعلمة فقط لتتعلم اللحن والحركات ثم تنفذها بنفسها أمام الأطفال، ولا تُعرض على الأطفال. اختاري نشيدًا واحدًا بين كل لقاءين؛ فالثبات يساعد الأطفال على حفظ الحركة والانتقال الهادئ.</div>
+
+<div class="motion-grid">
+  <div class="motion-card">
+    <div class="motion-card-head">
+      <div class="motion-icon">🌧️</div>
+      <div>
+        <div class="motion-title">تهطل الأمطار</div>
+        <div class="motion-sub">لعبة أصابع · انتقال حركي</div>
+      </div>
+    </div>
+    <video controls preload="none"><source src="assets/video_002_cfd19c4ef405a80b.mp4" type="video/mp4"></video>
+    <div class="motion-card-body">لعبة أصابع قصيرة لاستعادة الانتباه وتحريك الأصابع بتمثيل المطر.</div>
+  </div>
+
+  <div class="motion-card">
+    <div class="motion-card-head">
+      <div class="motion-icon">🐦</div>
+      <div>
+        <div class="motion-title">عصفورتي</div>
+        <div class="motion-sub">لعبة أصابع · انتقال حركي</div>
+      </div>
+    </div>
+    <video controls preload="none"><source src="assets/video_003_4236b9ef43dbf67f.mp4" type="video/mp4"></video>
+    <div class="motion-card-body">نشيد حركي رقيق يحفّز الخيال والتمثيل الإيهامي.</div>
+  </div>
+
+  <div class="motion-card">
+    <div class="motion-card-head">
+      <div class="motion-icon">🕊️</div>
+      <div>
+        <div class="motion-title">حلّقت الطيور</div>
+        <div class="motion-sub">لعبة أصابع · انتقال حركي</div>
+      </div>
+    </div>
+    <video controls preload="none"><source src="assets/video_004_7a3a0a820714e4f1.mp4" type="video/mp4"></video>
+    <div class="motion-card-body">حركات طيران تساعد على التفريغ الحركي والعودة للجلوس الهادئ.</div>
+  </div>
+
+  <div class="motion-card">
+    <div class="motion-card-head">
+      <div class="motion-icon">🍃</div>
+      <div>
+        <div class="motion-title">ورقة التوت</div>
+        <div class="motion-sub">لعبة أصابع · انتقال حركي</div>
+      </div>
+    </div>
+    <video controls preload="none"><source src="assets/video_005_657836c2ea5b14a9.mp4" type="video/mp4"></video>
+    <div class="motion-card-body">نشيد أصابع مناسب للانتقال بين اللقاءات أو قبل نشاط يدوي.</div>
+  </div>
+
+  <div class="motion-card">
+    <div class="motion-card-head">
+      <div class="motion-icon">👐</div>
+      <div>
+        <div class="motion-title">يدان يدان</div>
+        <div class="motion-sub">لعبة أصابع · انتقال حركي</div>
+      </div>
+    </div>
+    <video controls preload="none"><source src="assets/video_006_61b742e6906dc87f.mp4" type="video/mp4"></video>
+    <div class="motion-card-body">تنشيط لليدين والعضلات الصغيرة مع ضبط الإيقاع الجماعي.</div>
+  </div>
+
+  <div class="motion-card">
+    <div class="motion-card-head">
+      <div class="motion-icon">☁️</div>
+      <div>
+        <div class="motion-title">أنشودة الطقس بالحركات</div>
+        <div class="motion-sub">لعبة أصابع · انتقال حركي</div>
+      </div>
+    </div>
+    <video controls preload="none"><source src="assets/video_007_fad2d0d2cd60a387.mp4" type="video/mp4"></video>
+    <div class="motion-card-body">تستخدمها المعلمة في تهيئة اليوم أو بين اللقاءات؛ ينظر الأطفال إلى حال الجو ثم يشاركون بالحركات لاستعادة النشاط وضبط الانتباه.</div>
+  </div>
+</div></section>
+
+  <!-- ═══════════ لوحة: اللياقة البدنية ═══════════ -->
+  <section class="upanel" id="u-fitness"><div class="u-hero">
+  <h2>اللياقة البدنية في وحدة العائلة</h2>
+  <p>هذا التبويب يجمع أفكارًا بدنية قصيرة تساعد المعلمة على تفريغ طاقة الأطفال بين اللقاءات أو قبل الأركان، فتُستخدم حركات النشاط لرفع الحيوية ثم تُختم بحركات التهدئة قبل الجلوس للأركان. الأنشطة هنا ليست درسًا مستقلًا، بل أداة تنظيمية تربوية تدعم التركيز والانتباه.</p>
+</div>
+
+<div class="u-note warn"><b>تنبيه بخصوص الشاشات:</b> بطاقات اللياقة البدنية مرجع بصري للمعلمة لتفهم الوضعية والخطوات ثم تنفذ النشاط بنفسها أمام الأطفال، ولا تُعرض الشاشة على الأطفال، وتُراعى السلامة والمساحة المناسبة والفروق الفردية.</div>
+
+<div class="u-grid">
+  <div class="fitness-quick"><b>المدة المناسبة:</b> من 3 إلى 7 دقائق، ويكفي تمرين واحد أو تمرينان في الانتقال الواحد.</div>
+  <div class="fitness-quick"><b>المكان:</b> ساحة آمنة أو مساحة صفية واسعة، مع إبعاد الأدوات الحادة أو الزوايا الصلبة.</div>
+  <div class="fitness-quick"><b>قاعدة التنفيذ:</b> شرح قصير، نموذج من المعلمة، ثم تنفيذ جماعي بإيقاع هادئ ومنظم.</div>
+  <div class="fitness-quick"><b>الربط بالوحدة:</b> تُستخدم حركات النشاط للانتقال بين لقاءات الوحدة، وحركات التهدئة قبل الجلوس للأركان.</div>
+</div>
+
+<div class="u-note warn"><b>سلامة التنفيذ:</b> لا تُستخدم المنافسة إذا أخرجت الأطفال عن الهدوء أو سببت تزاحمًا. يُمنع دفع الزملاء، وتُخفف التمارين للأطفال الذين يحتاجون دعمًا حركيًا. في تمارين الظهر والبطن تُختصر المدة، ويُطلب من الطفل التوقف فورًا عند التعب.</div>
+
+<div class="fitness-grid">
+  <article class="fitness-card wide">
+    <img class="fitness-image" src="assets/fitness_obstacle_relay.webp" loading="lazy" alt="لعبة بدنية جماعية بالحواجز والكرات والسلة">
+    <div class="fitness-body">
+      <div class="fitness-title-row"><h3>لعبة القاطرتين: مسار الحواجز والكرات</h3><span class="fitness-duration">5-7 دقائق</span></div>
+      <p>نشاط جماعي منظم يناسب الساحة، يدرّب الطفل على انتظار الدور، الحركة في مسار واضح، والعودة الهادئة إلى المجموعة.</p>
+      <ol class="fitness-steps">
+        <li>تقف كل مجموعة في صف واحد عند خط البداية.</li>
+        <li>يمر الطفل من أسفل الحاجز، ثم يقفز من فوق الحاجز التالي حسب قدرة الأطفال.</li>
+        <li>يضع الكرة في السلة ثم يعود بسرعة معتدلة ليلمس يد زميله.</li>
+        <li>تفوز المجموعة التي تكمل المسار دون تزاحم أو خروج عن القواعد.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="fitness-card">
+    <img class="fitness-image" src="assets/fitness_kicks.webp" loading="lazy" alt="تمرين الركلات على الظهر للأطفال">
+    <div class="fitness-body">
+      <div class="fitness-title-row"><h3>تمرين الركلات</h3><span class="fitness-duration">30 ثانية</span></div>
+      <p>تمرين بسيط لتقوية الساقين وتنظيم التنفس، مناسب بعد جلوس طويل أو قبل نشاط يحتاج يقظة.</p>
+      <ol class="fitness-steps">
+        <li>يستلقي الطفل على ظهره مع مد الساقين.</li>
+        <li>يركل للأعلى والأسفل دون ثني الركبتين.</li>
+        <li>تذكّر المعلمة الأطفال بحركة هادئة لا تؤذي الزميل.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="fitness-card">
+    <img class="fitness-image" src="assets/fitness_crawl.webp" loading="lazy" alt="تمرين الزحف للأطفال على الأرض">
+    <div class="fitness-body">
+      <div class="fitness-title-row"><h3>تمرين الزحف</h3><span class="fitness-duration">40-60 ثانية</span></div>
+      <p>ينمي التآزر بين اليدين والقدمين، ويصلح كفاصل حركي قصير للانتقال بين اللقاءات وتفريغ طاقة الأطفال.</p>
+      <ol class="fitness-steps">
+        <li>يضع الطفل يديه وقدميه على الأرض بشكل ثابت.</li>
+        <li>يتقدم للأمام ببطء مع ترك مسافة آمنة.</li>
+        <li>يمكن جعل المسار خطًا مستقيمًا أو بين أقماع خفيفة.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="fitness-card">
+    <img class="fitness-image" src="assets/fitness_crawl_race.webp" loading="lazy" alt="مسابقة الزحف في القاعة">
+    <div class="fitness-body">
+      <div class="fitness-title-row"><h3>سباق الزحف الهادئ</h3><span class="fitness-duration">3 دقائق</span></div>
+      <p>صيغة جماعية من تمرين الزحف، لكنها تُقدَّم بقواعد واضحة حتى لا تتحول إلى فوضى.</p>
+      <ol class="fitness-steps">
+        <li>تحدد المعلمة خط بداية ونهاية بمسافة قصيرة.</li>
+        <li>ينطلق الأطفال في مجموعات صغيرة لا في كل الصف مرة واحدة.</li>
+        <li>المعيار ليس السرعة فقط، بل الالتزام بالمسار وعدم الاصطدام.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="fitness-card">
+    <img class="fitness-image" src="assets/fitness_squat.webp" loading="lazy" alt="تمرين القرفصاء للأطفال">
+    <div class="fitness-body">
+      <div class="fitness-title-row"><h3>تمرين القرفصاء</h3><span class="fitness-duration">60 ثانية</span></div>
+      <p>يقوي الساقين ويحسن الاتزان، ويستخدم عندما تحتاج المعلمة نشاطًا بدنيًا واضح البداية والنهاية.</p>
+      <ol class="fitness-steps">
+        <li>يبعد الطفل بين قدميه بمقدار مناسب.</li>
+        <li>يمد يديه للأمام ثم ينزل بثني الركبتين بهدوء.</li>
+        <li>تنتبه المعلمة لوضع الركبة وألا يكون النزول سريعًا.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="fitness-card">
+    <img class="fitness-image" src="assets/fitness_abs.webp" loading="lazy" alt="تمرين المعدة للأطفال">
+    <div class="fitness-body">
+      <div class="fitness-title-row"><h3>تمرين المعدة</h3><span class="fitness-duration">6-8 مرات</span></div>
+      <p>تمرين اختياري قصير للأطفال القادرين، ويُنفذ ببطء مع دعم القدمين عند الحاجة.</p>
+      <ol class="fitness-steps">
+        <li>يستلقي الطفل على ظهره مع ثني الركبتين.</li>
+        <li>تكون اليدان خلف الرقبة أو بجانب الجسم دون شد الرقبة.</li>
+        <li>يرفع الجزء العلوي قليلًا ثم يعود للوضع الأول.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="fitness-card">
+    <img class="fitness-image" src="assets/fitness_star_jump.webp" loading="lazy" alt="قفز فتح وإغلاق للأطفال">
+    <div class="fitness-body">
+      <div class="fitness-title-row"><h3>قفز الفتح والإغلاق</h3><span class="fitness-duration">20-30 ثانية</span></div>
+      <p>نشاط قصير لرفع النشاط بسرعة، ثم يعقبه تنفس هادئ حتى لا ينتقل الطفل إلى الدرس وهو مشتت.</p>
+      <ol class="fitness-steps">
+        <li>يبدأ الطفل واقفًا ويداه بجانب جسمه.</li>
+        <li>يقفز مع فتح القدمين ورفع اليدين، ثم يعود للوضع الأول.</li>
+        <li>تختم المعلمة بثلاث أنفاس هادئة قبل الجلوس.</li>
+      </ol>
+    </div>
+  </article>
+</div></section>
+
+  <!-- ═══════════ لوحة: خريطة الأركان التطبيقية ═══════════ -->
+  <section class="upanel" id="u-corners"><div class="u-hero"><h2>خريطة الأركان التطبيقية</h2><p>أركان الوحدة أماكن لعب حرّ بأدوات تعليمية (٣٠ دقيقة)، تستقطع فيها المعلمة وقتًا قصيرًا لنشاط تطبيقي سريع على فكرة الدرس. لكل مادة ركنان.</p></div>
+
+<div class="u-note">مبدأ الأركان: لعبٌ حرّ بالأدوات + نشاط تطبيقي سريع على الفكرة المركزية.</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#006B69">علّمني ربي</span></h3>
+<div class="u-grid two">
+  <div class="u-card" style="--ac:#006B69">
+    <h4>🏠 ركن المنزل</h4>
+    <p><b>الأدوات:</b> بيت لعب أو مجسّم بيت كبير، دُمى بيوت خشبية صغيرة ودُمى عائلة قماشية بلا ملامح وجه، أثاث تمثيلي صغير (سرير · مائدة · أريكة)، بطاقات أفراد العائلة بلا وجوه (أب · أم · أخ · أخت · جد · جدة)، وبطاقات الأدوار.</p>
+    <p><b>النشاط:</b> التعرّف على أفراد العائلة وتقسيم الأدوار بين الأطفال (أم · أخت · …)؛ يرتّب الطفل بطاقات عائلته في البيت ويسمّي كل فرد ومن يعيش معه، ويختم: «الحمد لله على نعمة العائلة».</p>
+  </div>
+  <div class="u-card" style="--ac:#006B69">
+    <h4>📚 ركن القصة</h4>
+    <p><b>الأدوات:</b> سلّة قصص وكتب مصوّرة عن العائلة واختلاف البيوت (قصة «كل البيوت مختلفة» وقصة عن العائلات الكبيرة)، حامل قصص، بطاقات مطابقة كلمة-صورة (أب · أم · بيت · عائلة · جد · جدة)، ووسادات جلوس هادئة.</p>
+    <p><b>النشاط:</b> العوائل والبيوت مختلفة والجميع في نعمة؛ تقرأ المعلمة قصة قصيرة مصوّرة، ويتحدّث الطفل عن عائلته وبيته ويطابق الكلمة بصورتها، ويختم: «الحمد لله على نعمة عائلتي وبيتي».</p>
+  </div>
+</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#2D7A4B">كتابي المنير</span></h3>
+<div class="u-grid two">
+  <div class="u-card" style="--ac:#2D7A4B">
+    <h4>📖 ركن أقرأ لأتعلّم</h4>
+    <p><b>الأدوات:</b> لوحة سورة الإنفطار المطبوعة، المصحف المعلّم في حامله، تسجيل التلاوة، بطاقات علوم السورة (الاسم · عدد الآيات · مكان التنزيل · أول آية · آخر آية)، وبطاقات العناوين.</p>
+    <p><b>النشاط:</b> التعرّف على علوم سورة الإنفطار تعظيمًا لكلام الله؛ يستمع الطفل لمقطع من التلاوة ويطابق بطاقات العلوم عند عناوينها، ويختم: «سورة الإنفطار مكية، عدد آياتها ١٩».</p>
+  </div>
+  <div class="u-card" style="--ac:#2D7A4B">
+    <h4>🎨 ركن فنوني الجميلة</h4>
+    <p><b>الأدوات:</b> بطاقة عنوان «سورة الإنفطار» وبطاقات علومها لتزيينها، أقلام وألوان آمنة، أختام وقصاصات وعناصر زخرفية إسلامية، أوراق مقوّاة وصمغ، ولوحة عرض لأعمال الأطفال.</p>
+    <p><b>النشاط:</b> أتعرّف على علوم السورة وأُعظّم اسمها بتزيينه؛ يزيّن الطفل بطاقة اسم السورة وبطاقة معلومة من علومها بلمسة فنية جميلة.</p>
+  </div>
+</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#6B3F22">قال رسولي</span></h3>
+<div class="u-grid two">
+  <div class="u-card" style="--ac:#6B3F22">
+    <h4>📚 ركن أقرأ لأتعلّم</h4>
+    <p><b>الأدوات:</b> بطاقة الحديث الكبيرة، بطاقات الراوي والمتن والمصنف، بطاقة اسم أبي هريرة رضي الله عنه واسم الإمام البخاري، أقلام معلومات الراوي، وسلّة قصص مصوّرة مناسبة عن العائلة وزيارة الأقارب مع حامل قصص.</p>
+    <p><b>النشاط:</b> أتعرّف بطاقة الحديث وأميّز راويه ومتنه ومصنفه؛ يطابق الطفل البطاقات في مواضعها ويثبّت قلم معلومة عن أبي هريرة، ويختم: «الحمد لله الذي حفظ لنا سنة نبيه ﷺ».</p>
+  </div>
+  <div class="u-card" style="--ac:#6B3F22">
+    <h4>🧩 ركن أدرك وأستمتع</h4>
+    <p><b>الأدوات:</b> بطاقة الحديث، بطاقات الراوي والمتن والمصنف، بطاقة اسم أبي هريرة رضي الله عنه واسم الإمام البخاري، بطاقات مطابقة وذاكرة، لوحة تسلسل، وأقلام معلومات الراوي.</p>
+    <p><b>النشاط:</b> أُميّز عناصر بطاقة الحديث (الراوي والمتن والمصنف) عبر ألعاب المطابقة والذاكرة والتسلسل بمرح.</p>
+  </div>
+</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#55702B">أدب الاقتداء</span></h3>
+<div class="u-grid two">
+  <div class="u-card" style="--ac:#55702B">
+    <h4>🏠 ركن المسكن</h4>
+    <p><b>الأدوات:</b> واجهة باب تمثيلية مكشوفة الجوانب أو ستارة خفيفة، جرس/مطرقة باب لطيف، لوحة بيت كبيرة وأثاث تمثيلي آمن، بطاقات مواقف الدخول بلا وجوه، بطاقتا عبارتَي الاستئذان، وبطاقة حديث آداب الاستئذان.</p>
+    <p><b>النشاط:</b> أستأذن قبل أن أدخل مكانًا خاصًا لغيري وأنتظر الجواب، فإن أُذن لي دخلت وإلا رجعت بهدوء دون غضب؛ يمثّل الطفل الطرق وقول: «السلام عليكم، هل تسمح لي بالدخول؟».</p>
+  </div>
+  <div class="u-card" style="--ac:#55702B">
+    <h4>🛒 ركن الدكان</h4>
+    <p><b>الأدوات:</b> طاولة دكان تمثيلية ورفوف صغيرة، سلع وأدوات آمنة تحمل بطاقات ملكية (قلم صديقي · ألوانه · لعبة · كتاب)، سلّة تسوّق ونقود لعب، بطاقة «أطلب الإذن قبل الاستعمال»، ولافتة «السلام عليكم، من فضلك، شكرًا».</p>
+    <p><b>النشاط:</b> أطلب الإذن قبل أن أستعمل ما يخصّ غيري، وأتعامل بأدب، وأحترم الجواب.</p>
+  </div>
+</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#8660A8">أحبّك ربي</span></h3>
+<div class="u-grid two">
+  <div class="u-card" style="--ac:#8660A8">
+    <h4>🏠 ركن المسكن</h4>
+    <p><b>الأدوات:</b> لوحة/مجسّم بيت بعدّة غرف، دُمى عائلة قماشية بلا وجوه وأثاث تمثيلي صغير، بطاقات مواقف بيتية (ترتيب لعبة · مساعدة أخ · قول الحقيقة بعد خطأ · إعادة أمانة · كلمة طيبة)، بطاقتا «يحبّه الله» و«أُصلحه»، وبطاقات الخيارات.</p>
+    <p><b>النشاط:</b> الله البصير يراني في السرّ والعلن فأفعل ما يحبّه؛ يفرز الطفل بطاقات المواقف على لوحتَي «يحبّه الله» و«أُصلحه».</p>
+  </div>
+  <div class="u-card" style="--ac:#8660A8">
+    <h4>🎨 ركن فنوني</h4>
+    <p><b>الأدوات:</b> أوراق ملوّنة وكرتون، أقلام تلوين وطبشور آمن، ملصقات نجوم وقلوب، صور مواقف خير مطبوعة (سقاية نبتة · ترتيب حذاء · مساعدة أم · إعادة لعبة لصاحبها)، غراء آمن ومقصّ أطفال، ولوحة «أعمالي التي يحبّها الله».</p>
+    <p><b>النشاط:</b> أُعبّر بعملي الفني عن أعمال الخير التي يحبّها الله ويراها في السرّ والعلن، وألصقها على لوحة أعمالي.</p>
+  </div>
+</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#0d6e6e">لساني</span></h3>
+<div class="u-grid two">
+  <div class="u-card" style="--ac:#0d6e6e">
+    <h4>📖 ركن أقرأ لأتعلّم</h4>
+    <p><b>الأدوات:</b> بطاقات حروف كبيرة (ث · ب · ت)، بطاقة مصوّرة «ثَوْب»، بطاقة نموذج «ثاء — ثَ»، صور كلمات مألوفة تبدأ بـ ثَ، خيوط تتبّع وقوالب حروف بارزة، بطاقة حركة الفتحة، وحامل بطاقات مع وسادات جلوس هادئة.</p>
+    <p><b>النشاط:</b> أتعرّف حرف ث صوتًا وشكلًا؛ يتتبّع الطفل الحرف بإصبعه ويطابقه ببداية كلمات تبدأ بـ ثَ.</p>
+  </div>
+  <div class="u-card" style="--ac:#0d6e6e">
+    <h4>🏠 ركن المسكن</h4>
+    <p><b>الأدوات:</b> لوحة مسكن بمساحة لحفظ الثياب (خزانة)، بطاقة «ثَوْب»، بطاقة ث، بطاقات قطع ثياب، بطاقة حركة الفتحة، وجواز مرور الركن.</p>
+    <p><b>النشاط:</b> أربط حرف ث بكلمة «ثوب» في مسكني؛ يرتّب الطفل قطع الثياب في الخزانة ويميّز مطلع الكلمة بحرف ث.</p>
+  </div>
+</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#8B0000">مهاراتي</span></h3>
+<div class="u-grid two">
+  <div class="u-card" style="--ac:#8B0000">
+    <h4>🧱 ركن أدرك وأستمتع</h4>
+    <p><b>الأدوات:</b> بطاقات الأعداد ١–١٤ (بطاقة الاسم وبطاقة الرمز)، إطار عشرة كبير وأربع خانات آحاد، قطع عدّ ومكعبات بناء كبيرة آمنة متماثلة، خط أعداد أرضي، أسماك الأعداد وصنارة مغناطيسية آمنة، وملاقط وسلة.</p>
+    <p><b>النشاط:</b> أبني كمية ١٤ (عشرة وأربعًا) وأربطها ببطاقة الاسم فالرمز عبر القطع وإطار العشرة.</p>
+  </div>
+  <div class="u-card" style="--ac:#8B0000">
+    <h4>🏠 ركن المسكن</h4>
+    <p><b>الأدوات:</b> أدوات منزلية تمثيلية آمنة متماثلة كبيرة (أغطية · ملاعق بلاستيكية كبيرة · مكعبات)، سلّتان، بطاقات الأعداد ١–١٤، وإطار عشرة كبير.</p>
+    <p><b>النشاط:</b> أعدّ أدوات بيتي وأرتّبها عشرة وأربعًا داخل إطار العشرة وخارجه.</p>
+  </div>
+</div></section>
 
   <div class="foot">وحدة العائلة · دليل معلمة غرس القيم لضيافة الأطفال — سبع مواد ومركزان تطبيقيان · الأسبوع الحادي عشر (جمادى الأولى)</div>
 </div>
@@ -283,6 +1030,17 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
   var start='1';
   try{ var s=localStorage.getItem(KEY); if(s && doc.getElementById('d'+s)) start=s; }catch(e){}
   activateDay(start,false);
+
+  // ===== تبويبات الوحدة =====
+  var utabs=[].slice.call(doc.querySelectorAll('.utab'));
+  var upanels=[].slice.call(doc.querySelectorAll('.upanel'));
+  function showUnit(u){
+    utabs.forEach(function(t){ t.classList.toggle('active', t.dataset.u===u); });
+    upanels.forEach(function(p){ p.classList.toggle('active', p.id==='u-'+u); });
+    if(u==='days'){ var pn=doc.querySelector('.daypanel.active'); if(pn){ var cs=pn.querySelector('.subtab.active'); if(cs) selectSub(pn, cs.dataset.s); } }
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  utabs.forEach(function(t){ t.addEventListener('click',function(){ showUnit(t.dataset.u); }); });
 
   var top=doc.querySelector('.gq-top');
   top.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
