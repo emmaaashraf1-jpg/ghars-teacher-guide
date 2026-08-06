@@ -136,6 +136,20 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .u-btnlink{display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:var(--t2);color:#fff;border-radius:10px;padding:9px 15px;font-size:13px;font-weight:700;margin-top:6px}
 .u-btnlink:hover{opacity:.9}
 .u-verse{background:linear-gradient(180deg,#fffdf7,#fff);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin:12px 0;box-shadow:var(--shadow-sm);text-align:center;font-family:var(--fd);font-size:17px;line-height:2.4;color:var(--t1)}
+/* جدول منظومة الوحي مقابل الشيطان (clean) */
+.msys-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:13px;margin:12px 0}
+.msys-table th,.msys-table td{padding:10px 12px;text-align:center;border-top:1px solid var(--line);vertical-align:middle}
+.msys-table thead th{border-top:0;font-family:var(--fd);font-size:13.5px}
+.msys-table th.dim,.msys-table td.dim{background:#faf7f0;font-weight:700;color:var(--muted);font-size:12px;white-space:nowrap}
+.msys-table th.wahy{background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff}
+.msys-table th.shaytan{background:linear-gradient(135deg,#8a3a3a,#6f2b2b);color:#fff}
+.msys-table td.wahy{background:#eef7f0}
+.msys-table td.shaytan{background:#fbf1ef}
+.msys-table td .ic{font-size:17px;display:block;margin-bottom:2px}
+.msys-table td .lb{display:block;font-weight:700}
+.msys-table td.wahy .lb{color:#0A5030}
+.msys-table td.shaytan .lb{color:#8a3a3a}
+.msys-table td .sub{display:block;font-size:11px;color:var(--muted);margin-top:2px}
 .motion-grid,.fitness-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
 .motion-card,.fitness-card{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:var(--shadow-sm)}
 .fitness-card.wide{grid-column:1/-1}
@@ -391,174 +405,29 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 </div>
 
 <h3 class="u-h3">الأساس الفلسفي: منظومة الوحي مقابل منظومة الشيطان</h3>
-    <div style="overflow-x:auto"><div style="margin-bottom:20px;">
-<!-- رأس القسم -->
-<div style="background:linear-gradient(135deg,#0D0D2B,#1C1C4A);border-radius:10px 10px 0 0;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;">
-<div style="color:#fff;">
-<div style="font-size:10px;color:#C8A200;font-weight:700;letter-spacing:1px;margin-bottom:3px;">الأساس الفلسفي للمنهج</div>
-<div style="font-size:14px;font-weight:700;color:#fff;font-family:'Amiri',serif;">منظومة الوحي — المرجعية التي يقوم عليها منهج غرس القيم</div>
-</div>
-<div style="background:rgba(200,162,0,.2);border:1px solid #C8A200;border-radius:6px;padding:6px 12px;text-align:center;color:#C8A200;font-size:11px;font-weight:700;">منهجٌ يُعيد<br>للوحي مرجعيته</div>
-</div>
-<!-- البيان التمهيدي -->
-<div style="background:#1C1C4A;padding:11px 18px;font-size:11.5px;line-height:2;color:rgba(255,255,255,.88);border-bottom:2px solid #C8A200;">
-      منهج غرس القيم يقوم على <strong style="color:#C8A200;">منظومة الوحي</strong> بوصفها المرجع الأعلى في بناء الإنسان وتنمية وجدانه. في المقابل، المناهج الإنسانية والعلمانية تتبنّى <strong style="color:#F0A080;">منظومة الشيطان</strong> التي تتمحور حول الإنسان والعقل المجرد فتغدو الحرية هي القيمة المطلقة والمتعة هي الغاية. المنهج لا يرفض العلم الأكاديمي بل يُعيد ربطه بالوحي ليكون العلم خادمًا للإنسان في طريق عبوديته لله، وللعلم بوصلة، وللإنسان غاية.
+    <div class="u-note"><b>الأساس الفلسفي للمنهج:</b> يقوم منهج غرس القيم على <b>منظومة الوحي</b> بوصفها المرجع الأعلى في بناء الإنسان وتنمية وجدانه. وفي المقابل تتبنّى المناهج الإنسانية والعلمانية <b>منظومة الشيطان</b> التي تتمحور حول الإنسان والعقل المجرّد، فتغدو الحرية هي القيمة المطلقة والمتعة هي الغاية. والمنهج لا يرفض العلم الأكاديمي بل يُعيد ربطه بالوحي ليكون العلم خادمًا للإنسان في طريق عبوديته لله؛ فللعلم بوصلة، وللإنسان غاية.</div>
+    <div style="overflow-x:auto">
+    <table class="msys-table">
+      <thead><tr><th class="dim">البُعد</th><th class="wahy">🌙 منظومة الوحي</th><th class="shaytan">⚠️ منظومة الشيطان</th></tr></thead>
+      <tbody>
+        <tr><td class="dim">الإله</td><td class="wahy"><span class="ic">🕌</span><span class="lb">الله</span><span class="sub">الخالق الواحد القهار</span></td><td class="shaytan"><span class="ic">🧑</span><span class="lb">الإنسان</span><span class="sub">محور الكون ومقياسه</span></td></tr>
+        <tr><td class="dim">المرجع</td><td class="wahy"><span class="ic">📖</span><span class="lb">الوحي</span><span class="sub">قرآن كريم وسنة نبوية</span></td><td class="shaytan"><span class="ic">🧠</span><span class="lb">العقل</span><span class="sub">العقل المجرّد والمادة</span></td></tr>
+        <tr><td class="dim">القيمة</td><td class="wahy"><span class="ic">☝️</span><span class="lb">التوحيد</span><span class="sub">القيمة المحورية</span></td><td class="shaytan"><span class="ic">🗽</span><span class="lb">الحرية</span><span class="sub">الحرية المطلقة كغاية</span></td></tr>
+        <tr><td class="dim">الفعل</td><td class="wahy"><span class="ic">🤲</span><span class="lb">التسليم</span><span class="sub">العبودية الاختيارية لله</span></td><td class="shaytan"><span class="ic">⚡</span><span class="lb">الطغيان</span><span class="sub">اتباع الهوى والنفس</span></td></tr>
+        <tr><td class="dim">الغاية</td><td class="wahy"><span class="ic">🌟</span><span class="lb">الدار الآخرة</span><span class="sub">الغاية الحقيقية للوجود</span></td><td class="shaytan"><span class="ic">💰</span><span class="lb">الدار الدنيا</span><span class="sub">الدنيا نهاية المطاف</span></td></tr>
+        <tr><td class="dim">الثمرة</td><td class="wahy"><span class="ic">✨</span><span class="lb">حلاوة الإيمان</span><span class="sub">سموّ السلوك واتزان الشخصية</span></td><td class="shaytan"><span class="ic">😞</span><span class="lb">المتعة واللذة</span><span class="sub">فراغ الروح وفقدان المعنى</span></td></tr>
+      </tbody>
+    </table>
     </div>
-<!-- المخطط البصري الرئيسي بالتدفق العمودي -->
-<div style="display:grid;grid-template-columns:1fr 60px 1fr;background:#f9f9f9;border:1px solid #ddd;border-top:none;">
-<!-- رأس العمود الأيمن -->
-<div style="background:linear-gradient(180deg,#0D0D2B,#1A1F5E);color:#C8A200;padding:10px 6px;text-align:center;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:5px;">
-        🌙 منظومة الوحي
-      </div>
-<div style="background:#C8A200;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#0D0D2B;text-align:center;padding:4px;">المحور</div>
-<div style="background:linear-gradient(180deg,#3B0000,#5A1010);color:#F0A080;padding:10px 6px;text-align:center;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:5px;">
-        ⚠️ منظومة الشيطان
-      </div>
-<!-- الصف 1 -->
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #e0e0e0;border-left:none;background:#EAF5EE;">
-<div style="font-size:18px;margin-bottom:3px;">🕌</div>
-<div style="font-size:12px;font-weight:700;color:#0A5030;">الله</div>
-<div style="font-size:10px;color:#555;margin-top:2px;">الخالق الواحد القهار</div>
-</div>
-<div style="background:#FEF7E6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-bottom:1px solid #e0e0e0;padding:4px;">
-<div style="font-size:9px;font-weight:700;color:#7A4A00;">الإله</div>
-<div style="font-size:14px;color:#C8A200;">⇆</div>
-</div>
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #e0e0e0;background:#FFF0EC;">
-<div style="font-size:18px;margin-bottom:3px;">🧑</div>
-<div style="font-size:12px;font-weight:700;color:#8B2020;">الإنسان</div>
-<div style="font-size:10px;color:#888;margin-top:2px;">محور الكون ومقياسه</div>
-</div>
-<!-- سهم تدفق -->
-<div style="padding:5px;text-align:center;background:#EAF5EE;font-size:13px;color:#1A7A4C;">↓</div>
-<div style="background:#FFF8E6;padding:2px;"></div>
-<div style="padding:5px;text-align:center;background:#FFF0EC;font-size:13px;color:#8B2020;">↓</div>
-<!-- الصف 2 -->
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #e0e0e0;background:#EAF5EE;">
-<div style="font-size:18px;margin-bottom:3px;">📖</div>
-<div style="font-size:12px;font-weight:700;color:#0A5030;">الوحي</div>
-<div style="font-size:10px;color:#555;margin-top:2px;">قرآن كريم وسنة نبوية</div>
-</div>
-<div style="background:#FEF7E6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-bottom:1px solid #e0e0e0;padding:4px;">
-<div style="font-size:9px;font-weight:700;color:#7A4A00;">المرجع</div>
-<div style="font-size:14px;color:#C8A200;">⇆</div>
-</div>
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #e0e0e0;background:#FFF0EC;">
-<div style="font-size:18px;margin-bottom:3px;">🧠</div>
-<div style="font-size:12px;font-weight:700;color:#8B2020;">العقل</div>
-<div style="font-size:10px;color:#888;margin-top:2px;">العقل المجرد والمادة</div>
-</div>
-<!-- سهم تدفق -->
-<div style="padding:5px;text-align:center;background:#EAF5EE;font-size:13px;color:#1A7A4C;">↓</div>
-<div style="background:#FFF8E6;padding:2px;"></div>
-<div style="padding:5px;text-align:center;background:#FFF0EC;font-size:13px;color:#8B2020;">↓</div>
-<!-- الصف 3 -->
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #e0e0e0;background:#EAF5EE;">
-<div style="font-size:18px;margin-bottom:3px;">☝️</div>
-<div style="font-size:12px;font-weight:700;color:#0A5030;">التوحيد</div>
-<div style="font-size:10px;color:#555;margin-top:2px;">القيمة المحورية</div>
-</div>
-<div style="background:#FEF7E6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-bottom:1px solid #e0e0e0;padding:4px;">
-<div style="font-size:9px;font-weight:700;color:#7A4A00;">القيمة</div>
-<div style="font-size:14px;color:#C8A200;">⇆</div>
-</div>
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #e0e0e0;background:#FFF0EC;">
-<div style="font-size:18px;margin-bottom:3px;">🗽</div>
-<div style="font-size:12px;font-weight:700;color:#8B2020;">الحرية</div>
-<div style="font-size:10px;color:#888;margin-top:2px;">الحرية المطلقة كغاية</div>
-</div>
-<!-- سهم تدفق -->
-<div style="padding:5px;text-align:center;background:#EAF5EE;font-size:13px;color:#1A7A4C;">↓</div>
-<div style="background:#FFF8E6;padding:2px;"></div>
-<div style="padding:5px;text-align:center;background:#FFF0EC;font-size:13px;color:#8B2020;">↓</div>
-<!-- الصف 4 -->
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #e0e0e0;background:#EAF5EE;">
-<div style="font-size:18px;margin-bottom:3px;">🤲</div>
-<div style="font-size:12px;font-weight:700;color:#0A5030;">التسليم</div>
-<div style="font-size:10px;color:#555;margin-top:2px;">العبودية الاختيارية لله</div>
-</div>
-<div style="background:#FEF7E6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-bottom:1px solid #e0e0e0;padding:4px;">
-<div style="font-size:9px;font-weight:700;color:#7A4A00;">الفعل</div>
-<div style="font-size:14px;color:#C8A200;">⇆</div>
-</div>
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #e0e0e0;background:#FFF0EC;">
-<div style="font-size:18px;margin-bottom:3px;">⚡</div>
-<div style="font-size:12px;font-weight:700;color:#8B2020;">الطغيان</div>
-<div style="font-size:10px;color:#888;margin-top:2px;">اتباع الهوى والنفس</div>
-</div>
-<!-- سهم تدفق -->
-<div style="padding:5px;text-align:center;background:#EAF5EE;font-size:13px;color:#1A7A4C;">↓</div>
-<div style="background:#FFF8E6;padding:2px;"></div>
-<div style="padding:5px;text-align:center;background:#FFF0EC;font-size:13px;color:#8B2020;">↓</div>
-<!-- الصف 5 -->
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #e0e0e0;background:#EAF5EE;">
-<div style="font-size:18px;margin-bottom:3px;">🌟</div>
-<div style="font-size:12px;font-weight:700;color:#0A5030;">الدار الآخرة</div>
-<div style="font-size:10px;color:#555;margin-top:2px;">الغاية الحقيقية للوجود</div>
-</div>
-<div style="background:#FEF7E6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-bottom:1px solid #e0e0e0;padding:4px;">
-<div style="font-size:9px;font-weight:700;color:#7A4A00;">الغاية</div>
-<div style="font-size:14px;color:#C8A200;">⇆</div>
-</div>
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #e0e0e0;background:#FFF0EC;">
-<div style="font-size:18px;margin-bottom:3px;">💰</div>
-<div style="font-size:12px;font-weight:700;color:#8B2020;">الدار الدنيا</div>
-<div style="font-size:10px;color:#888;margin-top:2px;">الدنيا نهاية المطاف</div>
-</div>
-<!-- سهم تدفق -->
-<div style="padding:5px;text-align:center;background:#EAF5EE;font-size:13px;color:#1A7A4C;">↓</div>
-<div style="background:#FFF8E6;padding:2px;"></div>
-<div style="padding:5px;text-align:center;background:#FFF0EC;font-size:13px;color:#8B2020;">↓</div>
-<!-- الصف 6 — الثمرة -->
-<div style="padding:13px 14px;text-align:center;background:linear-gradient(135deg,#EAF5EE,#D4EDDA);">
-<div style="font-size:20px;margin-bottom:4px;">✨</div>
-<div style="font-size:12px;font-weight:700;color:#0A5030;">حلاوة الإيمان</div>
-<div style="font-size:10px;color:#1A7A4C;margin-top:2px;font-weight:600;">وسمو السلوك · واتزان الشخصية</div>
-</div>
-<div style="background:linear-gradient(180deg,#C8A200,#A07800);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px;">
-<div style="font-size:9px;font-weight:700;color:#0D0D2B;">الثمرة</div>
-<div style="font-size:14px;color:#0D0D2B;">⇆</div>
-</div>
-<div style="padding:13px 14px;text-align:center;background:linear-gradient(135deg,#FFF0EC,#FFE0D4);">
-<div style="font-size:20px;margin-bottom:4px;">😞</div>
-<div style="font-size:12px;font-weight:700;color:#8B2020;">المتعة واللذة</div>
-<div style="font-size:10px;color:#B02020;margin-top:2px;font-weight:600;">فراغ الروح · فقدان المعنى</div>
-</div>
-</div>
-<!-- شريط تطبيقي — كيف تتجلّى في هذه الوحدة -->
-<div style="background:#FEF7E6;border:1px solid #C8A200;border-top:3px solid #C8A200;border-radius:0 0 10px 10px;padding:14px 18px;">
-<div style="font-size:12px;font-weight:700;color:#5A3E00;margin-bottom:10px;display:flex;align-items:center;gap:7px;">
-<span style="font-size:16px;">🌙</span>
-        كيف تتجلّى الأبعاد الستة لمنظومة الوحي في وحدة العائلة؟
-      </div>
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
-<div style="background:#fff;border:1px solid #E8C5A0;border-top:3px solid #0A5030;border-radius:0 0 6px 6px;padding:9px 11px;">
-<div style="font-size:10px;font-weight:700;color:#0A5030;margin-bottom:4px;">① الإله — الله وحده</div>
-<div style="font-size:10.5px;color:#555;line-height:1.7;">العائلة والوالدان والإخوة نعمةٌ من الله الخالق، لا من الطبيعة ولا الصدفة — يفتح كل لقاء بأنّ الله وهبنا العائلة.</div>
-</div>
-<div style="background:#fff;border:1px solid #E8C5A0;border-top:3px solid #1B4D7E;border-radius:0 0 6px 6px;padding:9px 11px;">
-<div style="font-size:10px;font-weight:700;color:#1B4D7E;margin-bottom:4px;">② المرجع — الوحي</div>
-<div style="font-size:10.5px;color:#555;line-height:1.7;">كل قيمة مستندة لآية أو حديث: ﴿وَبِالْوَالِدَيْنِ إِحْسَانًا﴾ · ﴿لَا تَدْخُلُوا بُيُوتًا غَيْرَ بُيُوتِكُمْ حَتَّىٰ تَسْتَأْنِسُوا﴾ · وأحاديث خصال الإيمان وهدي النبي ﷺ مع أهله.</div>
-</div>
-<div style="background:#fff;border:1px solid #E8C5A0;border-top:3px solid #C8A200;border-radius:0 0 6px 6px;padding:9px 11px;">
-<div style="font-size:10px;font-weight:700;color:#7A4A00;margin-bottom:4px;">③ القيمة — التوحيد</div>
-<div style="font-size:10.5px;color:#555;line-height:1.7;">محبة العائلة وبرُّها لا تقف عند العاطفة بل عبادةٌ لله وطاعةٌ له — هذا قلب الوحدة.</div>
-</div>
-<div style="background:#fff;border:1px solid #E8C5A0;border-top:3px solid #5B2D8E;border-radius:0 0 6px 6px;padding:9px 11px;">
-<div style="font-size:10px;font-weight:700;color:#5B2D8E;margin-bottom:4px;">④ الفعل — التسليم</div>
-<div style="font-size:10.5px;color:#555;line-height:1.7;">برّ الوالدين وصلة الرحم وآداب الاستئذان والصدق ومراقبة الله كلّها تسليمٌ وطاعة.</div>
-</div>
-<div style="background:#fff;border:1px solid #E8C5A0;border-top:3px solid #D05A1A;border-radius:0 0 6px 6px;padding:9px 11px;">
-<div style="font-size:10px;font-weight:700;color:#D05A1A;margin-bottom:4px;">⑤ الغاية — الدار الآخرة</div>
-<div style="font-size:10.5px;color:#555;line-height:1.7;">برّ الوالدين طريقٌ إلى الجنة، والعائلة وسيلةٌ للفوز بالآخرة لا غايةً بذاتها.</div>
-</div>
-<div style="background:#fff;border:1px solid #E8C5A0;border-top:3px solid #1A7A4C;border-radius:0 0 6px 6px;padding:9px 11px;">
-<div style="font-size:10px;font-weight:700;color:#1A7A4C;margin-bottom:4px;">⑥ الثمرة — حلاوة الإيمان</div>
-<div style="font-size:10.5px;color:#555;line-height:1.7;">الطفل يبرّ والديه ويصل رحمه ويستأذن محبةً لله لا خوفًا فحسب — هذا الأثر الوجداني هو هدف الوحدة.</div>
-</div>
-</div>
-</div>
-</div></div>
+    <h3 class="u-h3">كيف تتجلّى الأبعاد الستة في وحدة العائلة؟</h3>
+    <div class="u-grid">
+      <div class="u-card" style="--ac:#0A5030"><h4>① الإله — الله وحده</h4><p>العائلة والوالدان والإخوة نعمةٌ من الله الخالق، لا من الطبيعة ولا الصدفة — يفتح كل لقاء بأنّ الله وهبنا العائلة.</p></div>
+      <div class="u-card" style="--ac:#1B4D7E"><h4>② المرجع — الوحي</h4><p>كل قيمة مستندة لآية أو حديث: ﴿وَبِالْوَالِدَيْنِ إِحْسَانًا﴾ · ﴿لَا تَدْخُلُوا بُيُوتًا غَيْرَ بُيُوتِكُمْ حَتَّىٰ تَسْتَأْنِسُوا﴾ · وأحاديث خصال الإيمان وهدي النبي ﷺ مع أهله.</p></div>
+      <div class="u-card" style="--ac:#7A4A00"><h4>③ القيمة — التوحيد</h4><p>محبة العائلة وبرُّها لا تقف عند العاطفة بل عبادةٌ لله وطاعةٌ له — هذا قلب الوحدة.</p></div>
+      <div class="u-card" style="--ac:#5B2D8E"><h4>④ الفعل — التسليم</h4><p>برّ الوالدين وصلة الرحم وآداب الاستئذان والصدق ومراقبة الله كلّها تسليمٌ وطاعة.</p></div>
+      <div class="u-card" style="--ac:#D05A1A"><h4>⑤ الغاية — الدار الآخرة</h4><p>برّ الوالدين طريقٌ إلى الجنة، والعائلة وسيلةٌ للفوز بالآخرة لا غايةً بذاتها.</p></div>
+      <div class="u-card" style="--ac:#1A7A4C"><h4>⑥ الثمرة — حلاوة الإيمان</h4><p>الطفل يبرّ والديه ويصل رحمه ويستأذن محبةً لله لا خوفًا فحسب — هذا الأثر الوجداني هو هدف الوحدة.</p></div>
+    </div>
 
     <h3 class="u-h3">أهداف الوحدة</h3>
 <div class="u-grid">
