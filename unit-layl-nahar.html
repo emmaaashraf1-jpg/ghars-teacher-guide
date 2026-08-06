@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>وحدة الليل والنهار · دليل المعلمة · غرس القيم</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45; --t2:#006B69; --grn:#2D7A4B;
+  --gold:#C79A3B; --gold2:#C8A200; --cream:#FFF7E8;
+  --ink:#1e2b2a; --muted:#5f6f6c;
+  --elm:#0E7C86; --elm-soft:#E6F4F5;
+  --line:#e8dfd0; --card:#fff;
+  --shadow:0 8px 26px rgba(0,50,55,.08);
+  --shadow-sm:0 3px 12px rgba(0,50,55,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.9;font-size:16px;
+  background:radial-gradient(1200px 520px at 82% -12%,#eef8f6 0,transparent 60%),linear-gradient(#fbf7ee,#f4eddd)}
+b,strong{font-weight:700}
+h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
+.wrap{max-width:1080px;margin:0 auto;padding:18px 14px 70px}
+
+/* ===== الغلاف ===== */
+.hero{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:18px;isolation:isolate}
+.hero-photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;transform:scale(1.02)}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg,rgba(0,62,69,.93),rgba(0,107,105,.86) 60%,rgba(14,124,134,.82))}
+.hero-in{position:relative;z-index:2;padding:34px 30px 30px;color:#fff;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.hero-badge-logo{flex:0 0 auto;width:104px;height:104px;border-radius:22px;background:#fff;
+  border:1px solid rgba(255,255,255,.65);display:grid;place-items:center;padding:9px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.hero-badge-logo img{width:100%;height:100%;object-fit:contain}
+.hero-txt{flex:1;min-width:260px}
+.hero-kicker{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);
+  border-radius:999px;padding:5px 14px;font-size:12.5px;font-weight:700;margin-bottom:10px;color:#fff}
+.hero-title{font-size:34px;line-height:1.4;margin-bottom:8px;color:#fff}
+.hero-sub{font-size:14px;opacity:.94;line-height:1.9;max-width:820px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hero-chips span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;padding:5px 12px;font-size:12px;color:#fff}
+
+/* ===== تبويبات الأيام ===== */
+.daytabs{display:flex;flex-wrap:wrap;gap:10px;background:var(--card);border:1px solid var(--line);
+  border-radius:18px;padding:12px;box-shadow:var(--shadow-sm);margin-bottom:16px;position:sticky;top:8px;z-index:20}
+.daytab{flex:1 1 auto;min-width:150px;cursor:pointer;border:1px solid var(--line);background:#fff;
+  border-radius:13px;padding:11px 13px;text-align:start;transition:.18s;display:flex;flex-direction:column;gap:3px}
+.daytab .d-n{font-size:12.5px;color:var(--t2);font-weight:700}
+.daytab .d-t{font-size:15px;font-weight:700;color:var(--ink)}
+.daytab:hover{border-color:var(--t2);transform:translateY(-1px)}
+.daytab.active{background:linear-gradient(135deg,var(--t1),var(--t2));border-color:var(--t1);box-shadow:0 8px 22px rgba(0,62,69,.24)}
+.daytab.active .d-n,.daytab.active .d-t{color:#fff}
+
+/* ===== لوحة اليوم ===== */
+.daypanel{display:none}
+.daypanel.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* ===== تبويبات المواد داخل اليوم ===== */
+.subtabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:10px;box-shadow:var(--shadow-sm)}
+.subtab{cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;
+  font-size:13.5px;font-weight:700;color:#4a5a58;font-family:var(--fb);transition:.15s;white-space:nowrap}
+.subtab:hover{border-color:var(--sc,#006B69);color:var(--sc,#006B69)}
+.subtab.active{background:var(--sc,#006B69);border-color:var(--sc,#006B69);color:#fff}
+.subpanel{display:none}
+.subpanel.active{display:block;animation:fade .2s ease}
+
+.day-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);
+  border-inline-start:6px solid var(--sc,var(--t2));border-radius:16px;padding:13px 18px;box-shadow:var(--shadow-sm);margin-bottom:12px}
+.day-head .subj{background:var(--sc,var(--t2));color:#fff;border-radius:999px;padding:6px 14px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.day-head h2{font-size:19px;color:var(--t1);flex:1;min-width:160px}
+.day-head .open{margin-inline-start:auto;text-decoration:none;background:var(--sc,var(--t1));color:#fff;border-radius:10px;
+  padding:9px 15px;font-size:13px;font-weight:700;white-space:nowrap;transition:.18s;filter:saturate(1)}
+.day-head .open:hover{opacity:.9}
+.frame-wrap{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:var(--shadow);margin-bottom:8px}
+.frame-wrap iframe{display:block;width:100%;border:0;background:#fff;min-height:900px}
+.frame-load{padding:60px 20px;text-align:center;color:var(--muted);font-size:15px}
+.frame-load .sp{display:inline-block;width:30px;height:30px;border:3px solid var(--elm-soft);border-top-color:var(--t2);
+  border-radius:50%;animation:spin .8s linear infinite;margin-bottom:12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.foot{margin-top:26px;text-align:center;color:var(--muted);font-size:13px;border-top:1px dashed var(--line);padding-top:16px}
+
+/* العودة للأعلى */
+.gq-top{position:fixed;inset-inline-end:18px;bottom:18px;width:46px;height:46px;border-radius:50%;border:0;
+  background:var(--t2);color:#fff;font-size:20px;cursor:pointer;box-shadow:0 8px 22px rgba(0,62,69,.3);
+  opacity:0;pointer-events:none;transition:.25s;z-index:40}
+.gq-top.show{opacity:1;pointer-events:auto}
+
+/* ===== شريط تبويبات الوحدة (clean) ===== */
+.unitnav{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px;box-shadow:var(--shadow-sm);margin-bottom:14px}
+.unitnav-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.unitnav-row+.unitnav-row{margin-top:9px;padding-top:11px;border-top:1px dashed var(--line)}
+.unitnav-label{font-family:var(--fd);font-size:11.5px;font-weight:700;color:var(--t2);background:var(--elm-soft);border:1px solid #d5ebec;border-radius:999px;padding:5px 12px;white-space:nowrap}
+.utab{cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 15px;font-size:13px;font-weight:700;color:#4a5a58;font-family:var(--fb);transition:.15s;white-space:nowrap}
+.utab:hover{border-color:var(--t2);color:var(--t2);transform:translateY(-1px)}
+.utab.active{background:linear-gradient(135deg,var(--t1),var(--t2));border-color:var(--t1);color:#fff;box-shadow:0 6px 16px rgba(0,62,69,.2)}
+.utab.days-tab{background:linear-gradient(135deg,#fff,#eef8f6);border-color:#cfe8e6;color:var(--t1)}
+.utab.days-tab.active{background:linear-gradient(135deg,var(--gold),var(--gold2));border-color:var(--gold);color:#3a2c00}
+
+.upanel{display:none}
+.upanel.active{display:block;animation:fade .25s ease}
+
+/* مكوّنات محتوى لوحات الوحدة */
+.u-hero{background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff;border-radius:20px;padding:22px 24px;margin-bottom:16px;box-shadow:var(--shadow-sm)}
+.u-hero h2{font-family:var(--fd);font-size:24px;color:#fff;margin-bottom:6px}
+.u-hero p{font-size:14px;opacity:.96;max-width:860px;line-height:1.85}
+.u-h3{font-family:var(--fd);font-size:19px;color:var(--t1);margin:22px 0 12px;padding-inline-start:13px;border-inline-start:5px solid var(--gold)}
+.u-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.u-grid.two{grid-template-columns:repeat(auto-fill,minmax(330px,1fr))}
+.u-card{background:var(--card);border:1px solid var(--line);border-inline-start:5px solid var(--ac,var(--t2));border-radius:15px;padding:15px 17px;box-shadow:var(--shadow-sm)}
+.u-card h4{font-family:var(--fd);font-size:16px;color:var(--ac,var(--t1));margin-bottom:6px}
+.u-card p,.u-card li{font-size:13.5px;color:var(--ink);line-height:1.8}
+.u-card ul{list-style:none;margin-top:7px;display:grid;gap:5px}
+.u-card ul li{position:relative;padding-inline-start:18px}
+.u-card ul li::before{content:"•";position:absolute;inset-inline-start:2px;color:var(--ac,var(--t2));font-weight:700}
+.u-subj{display:inline-block;background:var(--ac,var(--t2));color:#fff;border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;margin-bottom:8px}
+.u-note{background:var(--elm-soft);border:1px solid #d5ebec;border-radius:14px;padding:13px 16px;font-size:13.5px;color:#215c60;margin:12px 0;line-height:1.8}
+.u-note b{color:var(--t1)}
+.u-note.warn{background:#fff7e8;border-color:#ecd9a8;color:#7a5710}
+.u-note.warn b{color:#8a5a00}
+.u-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:13px;margin:10px 0}
+.u-table th{background:var(--t1);color:#fff;padding:10px;font-family:var(--fd);font-weight:700;font-size:13px;text-align:start}
+.u-table td{border-top:1px solid var(--line);padding:9px 11px;vertical-align:top}
+.u-table tr:nth-child(even) td{background:#faf7f0}
+.u-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+.u-chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:12.5px;font-weight:700;color:var(--t2)}
+.u-media{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#000;margin:12px 0;box-shadow:var(--shadow-sm)}
+.u-media video{display:block;width:100%;max-height:470px;background:#000}
+.u-btnlink{display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:var(--t2);color:#fff;border-radius:10px;padding:9px 15px;font-size:13px;font-weight:700;margin-top:6px}
+.u-btnlink:hover{opacity:.9}
+.u-verse{background:linear-gradient(180deg,#fffdf7,#fff);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin:12px 0;box-shadow:var(--shadow-sm);text-align:center;font-family:var(--fd);font-size:17px;line-height:2.4;color:var(--t1)}
+/* جدول منظومة الوحي مقابل الشيطان (clean) */
+.msys-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:13px;margin:12px 0}
+.msys-table th,.msys-table td{padding:10px 12px;text-align:center;border-top:1px solid var(--line);vertical-align:middle}
+.msys-table thead th{border-top:0;font-family:var(--fd);font-size:13.5px}
+.msys-table th.dim,.msys-table td.dim{background:#faf7f0;font-weight:700;color:var(--muted);font-size:12px;white-space:nowrap}
+.msys-table th.wahy{background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff}
+.msys-table th.shaytan{background:linear-gradient(135deg,#8a3a3a,#6f2b2b);color:#fff}
+.msys-table td.wahy{background:#eef7f0}
+.msys-table td.shaytan{background:#fbf1ef}
+.msys-table td .ic{font-size:17px;display:block;margin-bottom:2px}
+.msys-table td .lb{display:block;font-weight:700}
+.msys-table td.wahy .lb{color:#0A5030}
+.msys-table td.shaytan .lb{color:#8a3a3a}
+.msys-table td .sub{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+.motion-grid,.fitness-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.motion-card,.fitness-card{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.fitness-card.wide{grid-column:1/-1}
+.motion-card video,.fitness-card .fitness-image{display:block;width:100%;background:#000;max-height:230px;object-fit:cover}
+.motion-card-head{display:flex;align-items:center;gap:10px;padding:12px 14px 6px}
+.motion-icon{font-size:24px}
+.motion-title,.fitness-title-row h3{font-family:var(--fd);font-size:15.5px;color:var(--t1)}
+.motion-sub{font-size:11.5px;color:var(--muted)}
+.motion-card-body,.fitness-body{padding:8px 14px 14px;font-size:13px;color:var(--ink);line-height:1.75}
+.fitness-title-row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:5px}
+.fitness-duration{background:var(--elm-soft);color:var(--t2);border-radius:999px;padding:3px 10px;font-size:11.5px;font-weight:700;white-space:nowrap}
+.fitness-steps{list-style:none;margin-top:8px;display:grid;gap:5px;counter-reset:fs}
+.fitness-steps li{position:relative;padding-inline-start:26px;font-size:13px}
+.fitness-steps li::before{counter-increment:fs;content:counter(fs);position:absolute;inset-inline-start:0;top:0;width:18px;height:18px;background:var(--t2);color:#fff;border-radius:50%;font-size:11px;display:grid;place-items:center;font-weight:700}
+
+@media(max-width:700px){
+  .hero-title{font-size:26px}.hero-in{padding:24px 18px}
+  .daytab{min-width:calc(50% - 5px)}
+  .day-head .open{margin-inline-start:0;width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== الغلاف ===== -->
+  <div class="hero">
+    <div class="hero-photo" style="background-image:url('units-art/unit-layl-nahar.jpg')"></div>
+    <div class="hero-in">
+      <div class="hero-badge-logo">
+        <img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة" onerror="this.style.display='none'"/>
+      </div>
+      <div class="hero-txt">
+        <span class="hero-kicker">الوحدة النموذجية · الفصل الدراسي الأول · المرحلة التمهيدية</span>
+        <h1 class="hero-title">وحدة الليل والنهار</h1>
+        <div class="hero-sub">وحدة متكاملة تغرس تعظيم الله بالتفكّر في آياته في الليل والنهار والشمس والقمر، وأعمالٍ يحبّها الله في النهار والليل. تضمّ سبع موادّ — <b>كتابي المنير · علّمني ربي · قال رسولي · أحبك ربي · أدب واقتداء · لساني عربي · مهاراتي</b> — ويومًا ختاميًّا ببرنامج الوحدة. اختاري اليوم، ثم المادة لعرض دليل لقائها كاملًا.</div>
+        <div class="hero-chips">
+          <span>☀ ٥ أيام + يوم ختامي</span><span>📚 ٧ مواد</span><span>🌙 سورة الفجر</span><span>⏱️ ٣٠ دقيقة/لقاء</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ شريط تبويبات الوحدة ═══════════ -->
+  <nav class="unitnav" aria-label="تبويبات الوحدة">
+    <div class="unitnav-row">
+      <span class="unitnav-label">التخطيط والمتابعة</span>
+      <button class="utab days-tab active" data-u="days">دروس الوحدة</button>
+      <button class="utab" data-u="usage">دليل الاستخدام</button>
+      <button class="utab" data-u="theme">الفكرة الناظمة والتكامل</button>
+      <button class="utab" data-u="unit">الوحدة</button>
+      <button class="utab" data-u="week">خريطة الأسبوع</button>
+    </div>
+    <div class="unitnav-row">
+      <span class="unitnav-label">المحتوى والتطبيق</span>
+      <button class="utab" data-u="values">القيم والأسرة والتقييم</button>
+      <button class="utab" data-u="lang">الحصيلة اللغوية</button>
+      <button class="utab" data-u="manzooma">منظومة الوحدة</button>
+      <button class="utab" data-u="songs">أناشيد حركية</button>
+      <button class="utab" data-u="fitness">اللياقة البدنية</button>
+      <button class="utab" data-u="corners">خريطة الأركان</button>
+    </div>
+  </nav>
+
+  <!-- ═══════════ دروس الوحدة (تبويبات الأيام) ═══════════ -->
+  <div class="upanel active" id="u-days">
+  <div class="daytabs" role="tablist">
+    <button class="daytab active" data-d="1"><span class="d-n">الأحد · اليوم الأول</span><span class="d-t">مفهوم الليل والنهار</span></button>
+    <button class="daytab" data-d="2"><span class="d-n">الاثنين · اليوم الثاني</span><span class="d-t">الشمس</span></button>
+    <button class="daytab" data-d="3"><span class="d-n">الثلاثاء · اليوم الثالث</span><span class="d-t">أعمال يحبها الله في النهار</span></button>
+    <button class="daytab" data-d="4"><span class="d-n">الأربعاء · اليوم الرابع</span><span class="d-t">القمر</span></button>
+    <button class="daytab" data-d="5"><span class="d-n">الخميس · اليوم الخامس</span><span class="d-t">أعمال يحبها الله في الليل</span></button>
+    <button class="daytab" data-d="6"><span class="d-n">اليوم الختامي</span><span class="d-t">برنامج الوحدة</span></button>
+  </div>
+
+  <!-- ═══ اليوم الأول ═══ -->
+  <div class="daypanel active" id="d1">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+      <button class="subtab" data-s="2" style="--sc:#006B69">علّمني ربي</button>
+      <button class="subtab" data-s="3" style="--sc:#8660A8">أحبك ربي</button>
+      <button class="subtab" data-s="4" style="--sc:#0d6e6e">لساني عربي</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الفجر (١٥–١٦) · الابتلاء والشكر والصبر</h2><a class="open" href="ln-kitabi-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الفجر ١٥–١٦" data-src="ln-kitabi-lesson1.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>مفهوم الليل والنهار</h2><a class="open" href="ln-allamni-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — مفهوم الليل والنهار" data-src="ln-allamni-lesson1.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#8660A8"><span class="subj">أحبك ربي</span><h2>أسماء الله: الوهاب · الغني · الشافي</h2><a class="open" href="ln-ohb-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="أحبك ربي — الوهاب والغني والشافي" data-src="ln-ohb-lesson1.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="4"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>التعرّف على الحركات الثلاث</h2><a class="open" href="ln-lisani-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — الحركات الثلاث" data-src="ln-lisani-lesson1.html" loading="lazy"></iframe></div></div>
+  </div>
+
+  <!-- ═══ اليوم الثاني ═══ -->
+  <div class="daypanel" id="d2">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+      <button class="subtab" data-s="2" style="--sc:#006B69">علّمني ربي</button>
+      <button class="subtab" data-s="3" style="--sc:#0d6e6e">لساني عربي</button>
+      <button class="subtab" data-s="4" style="--sc:#8B0000">مهاراتي</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الفجر (١٧–٢٠) · شكر النعمة والإحسان</h2><a class="open" href="ln-kitabi-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الفجر ١٧–٢٠" data-src="ln-kitabi-lesson2.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>الشمس آيةٌ من آيات الله</h2><a class="open" href="ln-allamni-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — الشمس" data-src="ln-allamni-lesson2.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>تهجئة كلمات بالفتحة</h2><a class="open" href="ln-lisani-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — الفتحة" data-src="ln-lisani-lesson2.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="4"><div class="day-head" style="--sc:#8B0000"><span class="subj">مهاراتي</span><h2>مراجعة الأعداد ١٠ · ١١ · ١٢</h2><a class="open" href="ln-maharati-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="مهاراتي — الأعداد ١٠–١٢" data-src="ln-maharati-lesson1.html" loading="lazy"></iframe></div></div>
+  </div>
+
+  <!-- ═══ اليوم الثالث ═══ -->
+  <div class="daypanel" id="d3">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+      <button class="subtab" data-s="2" style="--sc:#006B69">علّمني ربي</button>
+      <button class="subtab" data-s="3" style="--sc:#6B3F22">قال رسولي</button>
+      <button class="subtab" data-s="4" style="--sc:#0d6e6e">لساني عربي</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الفجر (٢١–٢٦) · اليوم الآخر والندم</h2><a class="open" href="ln-kitabi-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الفجر ٢١–٢٦" data-src="ln-kitabi-lesson3.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>أعمال يحبها الله في النهار</h2><a class="open" href="ln-allamni-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — أعمال النهار" data-src="ln-allamni-lesson3.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#6B3F22"><span class="subj">قال رسولي</span><h2>حديث «ما أصبح بي من نعمة»</h2><a class="open" href="ln-rasuli-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="قال رسولي — حديث ما أصبح بي من نعمة" data-src="ln-rasuli-lesson1.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="4"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>تهجئة كلمات بالكسرة</h2><a class="open" href="ln-lisani-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — الكسرة" data-src="ln-lisani-lesson3.html" loading="lazy"></iframe></div></div>
+  </div>
+
+  <!-- ═══ اليوم الرابع ═══ -->
+  <div class="daypanel" id="d4">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+      <button class="subtab" data-s="2" style="--sc:#006B69">علّمني ربي</button>
+      <button class="subtab" data-s="3" style="--sc:#8660A8">أحبك ربي</button>
+      <button class="subtab" data-s="4" style="--sc:#0d6e6e">لساني عربي</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الفجر (٢٧–٣٠) · النفس المطمئنة</h2><a class="open" href="ln-kitabi-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الفجر ٢٧–٣٠" data-src="ln-kitabi-lesson4.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>القمر آيةٌ من آيات الله</h2><a class="open" href="ln-allamni-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — القمر" data-src="ln-allamni-lesson4.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#8660A8"><span class="subj">أحبك ربي</span><h2>أسماء الله: الغفور · العزيز</h2><a class="open" href="ln-ohb-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="أحبك ربي — الغفور والعزيز" data-src="ln-ohb-lesson2.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="4"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>تهجئة كلمات بالضمة</h2><a class="open" href="ln-lisani-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — الضمة" data-src="ln-lisani-lesson4.html" loading="lazy"></iframe></div></div>
+  </div>
+
+  <!-- ═══ اليوم الخامس ═══ -->
+  <div class="daypanel" id="d5">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+      <button class="subtab" data-s="2" style="--sc:#006B69">علّمني ربي</button>
+      <button class="subtab" data-s="3" style="--sc:#55702B">أدب واقتداء</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الفجر · مراجعة وتسميع</h2><a class="open" href="ln-kitabi-lesson5.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — مراجعة الفجر" data-src="ln-kitabi-lesson5.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>أعمال يحبها الله في الليل</h2><a class="open" href="ln-allamni-lesson5.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — أعمال الليل" data-src="ln-allamni-lesson5.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#55702B"><span class="subj">أدب واقتداء</span><h2>آداب المساء</h2><a class="open" href="ln-adab-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="أدب واقتداء — آداب المساء" data-src="ln-adab-lesson1.html" loading="lazy"></iframe></div></div>
+  </div>
+
+  <!-- ═══ اليوم الختامي · البرنامج ═══ -->
+  <div class="daypanel" id="d6">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#C79A3B">برنامج الوحدة</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#C79A3B"><span class="subj">اليوم الختامي</span><h2>برنامج وحدة الليل والنهار</h2><a class="open" href="ln-program.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل البرنامج…</div><iframe title="برنامج وحدة الليل والنهار" data-src="ln-program.html" loading="lazy"></iframe></div></div>
+  </div>
+  </div><!-- /#u-days -->
+
+  <!-- ═══════════ لوحة: دليل الاستخدام ═══════════ -->
+  <section class="upanel" id="u-usage">
+    <div class="u-hero"><h2>دليل الاستخدام السريع للمعلمة</h2><p>هذا الدليل منظَّم على مستويين واضحين: «التخطيط والمتابعة» لتجهيز الوحدة وفهم فكرتها الناظمة وخريطة أسبوعها وقيمها وحصيلتها اللغوية، و«دروس الوحدة» لفتح اليوم المطلوب ثم التنقّل بين لقاءاته، ويومٍ ختاميٍّ ببرنامج الوحدة.</p></div>
+    <div class="u-note warn"><b>تنبيه بخصوص الشاشات:</b> فيديوهات الأناشيد الحركية ونشيد التفكّر وإشارات بدء اللقاءات مرجعٌ للمعلمة لتتعلّم اللحن والحركة ثم تنفّذها بنفسها أمام الأطفال؛ لا يُعرَّض الأطفال للشاشات.</div>
+    <h3 class="u-h3">طريقة التنقّل المقترحة</h3>
+    <div class="u-grid">
+      <div class="u-card" style="--ac:#006B69"><h4>① ابدئي بالتخطيط</h4><p>اطّلعي على «الوحدة» و«الفكرة الناظمة والتكامل» و«خريطة الأسبوع» قبل بدء الأسبوع لتكوّني صورة كاملة وتجهّزي الأدوات والوسائل.</p></div>
+      <div class="u-card" style="--ac:#2D7A4B"><h4>② افتحي دروس الوحدة</h4><p>من تبويب «دروس الوحدة» اختاري اليوم ثم المادة. يبدأ كل يوم بلقاء «كتابي المنير» (فيه تهيئة بداية اليوم والتاريخ الهجري) ثم «علّمني ربي» فبقيّة المواد.</p></div>
+      <div class="u-card" style="--ac:#8660A8"><h4>③ طبّقي وأثري</h4><p>راجعي «خريطة الأركان» لتنفيذ نشاطٍ تطبيقيٍّ سريع داخل أركان اللعب الحرّ، و«القيم والأسرة والتقييم» و«الحصيلة اللغوية» و«نشيد التفكّر» لإثراء اللقاءات وتثبيت القيم.</p></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ لوحة: الفكرة الناظمة والتكامل ═══════════ -->
+  <section class="upanel" id="u-theme">
+    <div class="u-hero">
+  <h2>الفكرة الناظمة لوحدة الليل والنهار</h2>
+  <p>الليل والنهار آيتان من آيات الله تدلّان على عظمته وقدرته، وتنظّمان عبادة العبد؛ فالنهار وقتٌ للعمل وطلب العلم، والليل سكنٌ وراحةٌ وذكرٌ وصلاة — وحول هذا المحور تلتفّ مواد الوحدة.</p>
+</div>
+
+<h3 class="u-h3">خريطة الأفكار الناظمة اليومية</h3>
+<div style="overflow-x:auto">
+  <table class="u-table">
+    <tr><th>اليوم</th><th>الفكرة الناظمة</th><th>كيف تتكامل المواد حولها</th></tr>
+    <tr>
+      <td>الأول</td>
+      <td>مفهوم الليل والنهار آيتان من آيات الله</td>
+      <td>علّمني ربي يعرّف تعاقب الليل والنهار آيةً من آيات الله وأن التفكّر عبادة يحبها الله؛ وكتابي المنير يفتتح سورة الفجر بقسم الله بالفجر والليل؛ ولساني عربي يهيّئ الطفل بالتعرّف على الحركات الثلاث.</td>
+    </tr>
+    <tr>
+      <td>الثاني</td>
+      <td>الشمس مخلوق النهار تجري بأمر الله</td>
+      <td>علّمني ربي يعرّف الشمس آيةً «سراجًا وهّاجًا» تسير بتقدير الله لا بذاتها؛ وكتابي المنير يواصل سورة الفجر بشكر النعمة والإحسان؛ ولساني عربي يتهجّى كلمات بالفتحة من عالم النهار.</td>
+    </tr>
+    <tr>
+      <td>الثالث</td>
+      <td>أعمالٌ يحبها الله في النهار</td>
+      <td>علّمني ربي يبني معنى ﴿النَّهَارَ مَعَاشًا﴾ ووقت طلب العلم والعمل الصالح؛ وقال رسولي بحديث «ما أصبح بي من نعمة» يغرس شكر نعمة الصباح؛ وكتابي المنير يتدبّر اليوم الآخر؛ ولساني عربي يتهجّى بالكسرة.</td>
+    </tr>
+    <tr>
+      <td>الرابع</td>
+      <td>القمر آية الليل ومنازله</td>
+      <td>علّمني ربي يعرّف القمر آيةً من آيات الله له منازل والهلال بداية شهر جديد؛ وكتابي المنير يبلغ ﴿النَّفْسَ المُطْمَئِنَّة﴾؛ ومهاراتي يراجع الأعداد ١٠–١١–١٢ في عدّ منازل القمر؛ ولساني عربي يتهجّى بالضمة.</td>
+    </tr>
+    <tr>
+      <td>الخامس</td>
+      <td>أعمالٌ يحبها الله في الليل</td>
+      <td>علّمني ربي يعرّف الليل سكنًا ورحمة وفيه صلاة المغرب والعشاء والذكر؛ وأدب واقتداء يطبّق آداب المساء وأذكاره؛ وأحبك ربي يراجع أسماء الله الحسنى؛ وكتابي المنير يراجع سورة الفجر ويثبّت معانيها.</td>
+    </tr>
+  </table>
+</div>
+
+<h3 class="u-h3">تكامل المواد حول المحور</h3>
+<div class="u-grid">
+  <div class="u-card" style="--ac:#006B69">
+    <h4><span class="u-subj" style="--ac:#006B69">علّمني ربي</span></h4>
+    <p>المحور الذي تدور حوله الوحدة؛ يبني مفهوم الليل والنهار والشمس والقمر وأعمال النهار والليل، فيرى الطفل الكون آياتٍ تدلّ على عظمة الله.</p>
+  </div>
+  <div class="u-card" style="--ac:#2D7A4B">
+    <h4><span class="u-subj" style="--ac:#2D7A4B">كتابي المنير</span></h4>
+    <p>تلاوة سورة الفجر التي يفتتحها الله بالقسم بالفجر والليل؛ تصل قلب الطفل بربّ الليل والنهار وتغرس شكر النعمة والطمأنينة.</p>
+  </div>
+  <div class="u-card" style="--ac:#6B3F22">
+    <h4><span class="u-subj" style="--ac:#6B3F22">قال رسولي</span></h4>
+    <p>حديث «ما أصبح بي من نعمة» يجعل شكر نعمة الصباح والمساء عبادةً يتعلّمها الطفل من هدي النبي ﷺ.</p>
+  </div>
+  <div class="u-card" style="--ac:#55702B">
+    <h4><span class="u-subj" style="--ac:#55702B">أدب واقتداء</span></h4>
+    <p>آداب المساء وأذكاره تترجم نعمة الليل إلى سلوكٍ محترم، فيدخل الطفل ليله بذكر الله واقتداءً بالنبي ﷺ.</p>
+  </div>
+  <div class="u-card" style="--ac:#8660A8">
+    <h4><span class="u-subj" style="--ac:#8660A8">أحبك ربي</span></h4>
+    <p>مراجعة أسماء الله الحسنى تربط جمال الكون وتعاقب الليل والنهار بأسماء خالقه، فيحبّه الطفل ويعظّمه.</p>
+  </div>
+  <div class="u-card" style="--ac:#0d6e6e">
+    <h4><span class="u-subj" style="--ac:#0d6e6e">لساني عربي</span></h4>
+    <p>الحركات الثلاث (الفتحة والكسرة والضمة) تُتعلَّم عبر كلماتٍ مألوفة من عالم الليل والنهار والشمس والقمر.</p>
+  </div>
+  <div class="u-card" style="--ac:#8B0000">
+    <h4><span class="u-subj" style="--ac:#8B0000">مهاراتي</span></h4>
+    <p>مراجعة الأعداد ١٠–١١–١٢؛ مهارات حسّية يوظّفها الطفل في عدّ نجوم الليل ومنازل القمر وأوقات اليوم.</p>
+  </div>
+</div>
+<p class="u-note">الربط بين المواد لطيفٌ واقعيٌّ يخدم محور الليل والنهار دون تكلّف؛ فكلُّ مادة تُسهم من بابها في ترسيخ تعظيم الله والتفكّر في آياته وشكر نعمة الليل والنهار.</p>
+  </section>
+
+  <!-- ═══════════ لوحة: الوحدة ═══════════ -->
+  <section class="upanel" id="u-unit">
+    <h3 class="u-h3">الأساس الفلسفي: منظومة الوحي مقابل منظومة الشيطان</h3>
+    <div class="u-note"><b>الأساس الفلسفي للمنهج:</b> يقوم منهج غرس القيم على <b>منظومة الوحي</b> بوصفها المرجع الأعلى في بناء الإنسان وتنمية وجدانه. وفي المقابل تتبنّى المناهج الإنسانية والعلمانية <b>منظومة الشيطان</b> التي تتمحور حول الإنسان والعقل المجرّد، فتغدو الحرية هي القيمة المطلقة والمتعة هي الغاية. والمنهج لا يرفض العلم الأكاديمي بل يُعيد ربطه بالوحي ليكون العلم خادمًا للإنسان في طريق عبوديته لله؛ فللعلم بوصلة، وللإنسان غاية.</div>
+    <div style="overflow-x:auto">
+    <table class="msys-table">
+      <thead><tr><th class="dim">البُعد</th><th class="wahy">🌙 منظومة الوحي</th><th class="shaytan">⚠️ منظومة الشيطان</th></tr></thead>
+      <tbody>
+        <tr><td class="dim">الإله</td><td class="wahy"><span class="ic">🕌</span><span class="lb">الله</span><span class="sub">الخالق الواحد القهار</span></td><td class="shaytan"><span class="ic">👤</span><span class="lb">الإنسان</span><span class="sub">محور الكون ومقياسه</span></td></tr>
+        <tr><td class="dim">المرجع</td><td class="wahy"><span class="ic">📖</span><span class="lb">الوحي</span><span class="sub">قرآن كريم وسنة نبوية</span></td><td class="shaytan"><span class="ic">🧠</span><span class="lb">العقل</span><span class="sub">العقل المجرّد والمادة</span></td></tr>
+        <tr><td class="dim">القيمة</td><td class="wahy"><span class="ic">☝️</span><span class="lb">التوحيد</span><span class="sub">القيمة المحورية</span></td><td class="shaytan"><span class="ic">🔓</span><span class="lb">الحرية</span><span class="sub">الحرية المطلقة كغاية</span></td></tr>
+        <tr><td class="dim">الفعل</td><td class="wahy"><span class="ic">🤲</span><span class="lb">التسليم</span><span class="sub">العبودية الاختيارية لله</span></td><td class="shaytan"><span class="ic">⚡</span><span class="lb">الطغيان</span><span class="sub">اتباع الهوى والنفس</span></td></tr>
+        <tr><td class="dim">الغاية</td><td class="wahy"><span class="ic">🌟</span><span class="lb">الدار الآخرة</span><span class="sub">الغاية الحقيقية للوجود</span></td><td class="shaytan"><span class="ic">💰</span><span class="lb">الدار الدنيا</span><span class="sub">الدنيا نهاية المطاف</span></td></tr>
+        <tr><td class="dim">الثمرة</td><td class="wahy"><span class="ic">🌟</span><span class="lb">حلاوة الإيمان</span><span class="sub">سموّ السلوك واتزان الشخصية</span></td><td class="shaytan"><span class="ic">🕳️</span><span class="lb">المتعة واللذة</span><span class="sub">فراغ الروح وفقدان المعنى</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3 class="u-h3">كيف تتجلّى الأبعاد الستة في وحدة الليل والنهار؟</h3>
+    <div class="u-grid">
+      <div class="u-card" style="--ac:#0A5030"><h4>① الإله — الله وحده</h4><p>الليل والنهار والشمس والقمر لله لا للطبيعة ولا للصدفة — كل لقاء يفتح بهذا التأسيس.</p></div>
+      <div class="u-card" style="--ac:#1B4D7E"><h4>② المرجع — الوحي</h4><p>كل معلومة مستندة لآية أو حديث: ﴿إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ﴾ · ﴿وَالشَّمْسُ تَجْرِي لِمُسْتَقَرٍّ لَّهَا﴾ · ﴿وَالْقَمَرَ قَدَّرْنَاهُ مَنَازِلَ﴾.</p></div>
+      <div class="u-card" style="--ac:#7A4A00"><h4>③ القيمة — التوحيد</h4><p>التفكّر في الكون لا يُفضي إلى إعجابٍ به بل إلى تعظيم خالقه — هذا هو قلب الوحدة.</p></div>
+      <div class="u-card" style="--ac:#5B2D8E"><h4>④ الفعل — التسليم</h4><p>أعمال الليل والنهار كلها تسليم: صلاةٌ وذكرٌ ونومٌ بنيّة وآدابُ المساء النبوية.</p></div>
+      <div class="u-card" style="--ac:#D05A1A"><h4>⑤ الغاية — الدار الآخرة</h4><p>سورة الفجر تختم بالنفس المطمئنة في الجنة — الليل والنهار وسيلةٌ للفوز لا غايةً بذاتها.</p></div>
+      <div class="u-card" style="--ac:#1A7A4C"><h4>⑥ الثمرة — حلاوة الإيمان</h4><p>الطفل يقول «سبحان الله» تلقائيًّا عند رؤية القمر — هذا الأثر الوجداني هو هدف الوحدة كله.</p></div>
+    </div>
+
+    <div class="u-hero">
+  <h2>وحدة الليل والنهار</h2>
+  <p>وحدة تغرس في الطفل تعظيم الله والتفكّر في آياته من خلال تعاقب الليل والنهار والشمس والقمر، وتنظّم عبادته بين نهارٍ للعمل وطلب العلم وليلٍ للسكون والذكر والصلاة؛ عبر سبع مواد خلال خمسة أيام.</p>
+</div>
+
+<h3 class="u-h3">أهداف الوحدة</h3>
+<div class="u-grid">
+  <div class="u-card" style="--ac:#C79A3B">
+    <h4><span class="u-subj" style="--ac:#C79A3B">وجدانية</span></h4>
+    <p>أن يشعر الطفل بعظمة الله عند رؤية الليل والنهار والشمس والقمر فيقول «سبحان الله» تلقائيًا، ويطمئنّ قلبه أن الكون يسير بتقدير الله وحكمته، ويحبّ التفكّر في مخلوقات الله، ويستشعر نعمة الليل سكنًا والنهار معاشًا، ويميل إلى ذكر الله في ليله ونهاره.</p>
+  </div>
+  <div class="u-card" style="--ac:#006B69">
+    <h4><span class="u-subj" style="--ac:#006B69">معرفية</span></h4>
+    <p>أن يعرف أن الله وحده خلق الليل والنهار وسخّر الشمس والقمر، وأن التفكّر عبادة، ويدرك حكمة تعاقبهما (سكونٌ وعمل)، ويعرف الشمس آية النهار والقمر آية الليل ومنازله والهلال بداية الشهر، ومعنى ﴿النَّهَارَ مَعَاشًا﴾ و﴿اللَّيْلَ سَكَنًا﴾، وأعمال النهار والليل التي يحبها الله.</p>
+  </div>
+  <div class="u-card" style="--ac:#2D7A4B">
+    <h4><span class="u-subj" style="--ac:#2D7A4B">مهارية</span></h4>
+    <p>أن يصنّف بطاقات الليل والنهار والشمس والقمر وأعمالهما، ويرتّب منازل القمر ويميّز الهلال من البدر، ويتهجّى كلمات بالحركات الثلاث، ويلوّن الشمس والقمر (بلا ملامح بشرية)، ويشارك في ألعاب المراجعة، ويعبّر شفهيًا عن نعم الله في ليله ونهاره.</p>
+  </div>
+  <div class="u-card" style="--ac:#8660A8">
+    <h4><span class="u-subj" style="--ac:#8660A8">سلوكية / إجرائية</span></h4>
+    <p>أن يقول «الله خلق الليل والنهار» ويعتاد «سبحان الله» عند رؤية الشمس أو القمر، ويقول «بسم الله» قبل الطعام و«الحمد لله» بعده، ويربط ذهابه للروضة بطلب العلم ورضى الله، ويؤدّي آداب المساء والذكر قبل النوم، ويجيب عن أسئلة التقويم، ويردّد أن الليل والنهار نعمتان نملؤهما بطاعة الله.</p>
+  </div>
+</div>
+
+<h3 class="u-h3">مواد الوحدة</h3>
+<div class="u-grid">
+  <div class="u-card" style="--ac:#006B69">
+    <h4><span class="u-subj" style="--ac:#006B69">علّمني ربي</span></h4>
+    <p>المادة المحورية للوحدة؛ خمسة لقاءات تبني مفهوم الليل والنهار آيتين من آيات الله، ثم الشمس مخلوق النهار، وأعمال النهار الصالحة، والقمر آية الليل ومنازله، وأعمال الليل من ذكرٍ وصلاةٍ وسكون.</p>
+  </div>
+  <div class="u-card" style="--ac:#2D7A4B">
+    <h4><span class="u-subj" style="--ac:#2D7A4B">كتابي المنير</span></h4>
+    <p>تلاوة وتدبّر سورة الفجر التي يفتتحها الله بالقسم بالفجر والليل؛ خمسة لقاءات تصل قلب الطفل بربّ الليل والنهار وتغرس شكر النعمة والطمأنينة إلى النفس المطمئنة.</p>
+  </div>
+  <div class="u-card" style="--ac:#6B3F22">
+    <h4><span class="u-subj" style="--ac:#6B3F22">قال رسولي</span></h4>
+    <p>حديث «ما أصبح بي من نعمة فمنك وحدك»؛ يتعلّم الطفل من هدي النبي ﷺ شكر الله على نعمة الصباح والمساء والليل والنهار.</p>
+  </div>
+  <div class="u-card" style="--ac:#55702B">
+    <h4><span class="u-subj" style="--ac:#55702B">أدب واقتداء</span></h4>
+    <p>آداب المساء وأذكاره؛ يطبّق الطفل أدب الدخول إلى الليل بذكر الله اقتداءً بهدي النبي ﷺ، فتترجم نعمة الليل إلى سلوك.</p>
+  </div>
+  <div class="u-card" style="--ac:#8660A8">
+    <h4><span class="u-subj" style="--ac:#8660A8">أحبك ربي</span></h4>
+    <p>مراجعة أسماء الله الحسنى (الوهاب · الغني · الشافي · الغفور · العزيز)؛ يربط الطفل جمال الكون وتعاقب الليل والنهار بأسماء خالقه فيحبّه ويعظّمه.</p>
+  </div>
+  <div class="u-card" style="--ac:#0d6e6e">
+    <h4><span class="u-subj" style="--ac:#0d6e6e">لساني عربي</span></h4>
+    <p>الحركات الثلاث (الفتحة والكسرة والضمة) وتهجئة الكلمات بها؛ يتعرّف الطفل عليها ويتهجّاها عبر كلماتٍ من عالم الليل والنهار.</p>
+  </div>
+  <div class="u-card" style="--ac:#8B0000">
+    <h4><span class="u-subj" style="--ac:#8B0000">مهاراتي</span></h4>
+    <p>مراجعة الأعداد ١٠–١١–١٢؛ مهارات حسابية حسّية يوظّفها الطفل في عدّ نجوم الليل ومنازل القمر وأوقات اليوم.</p>
+  </div>
+</div>
+<p class="u-note">تلتفّ المواد السبع حول محورٍ واحد: <b>الليل والنهار آيتان من آيات الله ننظّم بهما عبادتنا</b>؛ فمادة «علّمني ربي» هي القلب الذي يبني المفاهيم، وتُسهم بقيّة المواد من أبوابها في ترسيخ تعظيم الله والتفكّر في آياته وشكر نعمة الليل والنهار.</p>
+  </section>
+
+  <!-- ═══════════ لوحة: خريطة الأسبوع ═══════════ -->
+  <section class="upanel" id="u-week">
+    
+    <div class="u-hero"><h2>خريطة أسبوع وحدة الليل والنهار</h2><p>خمسة أيام تعليمية، يفتتح كلَّ يومٍ لقاءُ «كتابي المنير» بسورة الفجر، ثم يتوزّع اليوم على بقيّة المواد حول الفكرة الناظمة — من مفهوم الليل والنهار إلى الشمس فأعمال النهار فالقمر فأعمال الليل.</p></div>
+    <div style="overflow-x:auto">
+    <table class="u-table">
+      <tr><th>اليوم</th><th>الفكرة الناظمة</th><th>لقاءات اليوم (بالترتيب)</th></tr>
+      <tr><td><b>الأحد</b><br/>الأول</td><td>مفهوم الليل والنهار</td><td>كتابي (الفجر ١٥–١٦) · علّمني (مفهوم الليل والنهار) · أحبك ربي (الوهاب · الغني · الشافي) · لساني (الحركات الثلاث)</td></tr>
+      <tr><td><b>الاثنين</b><br/>الثاني</td><td>الشمس</td><td>كتابي (الفجر ١٧–٢٠) · علّمني (الشمس) · لساني (الفتحة) · مهاراتي (الأعداد ١٠–١٢)</td></tr>
+      <tr><td><b>الثلاثاء</b><br/>الثالث</td><td>أعمال يحبها الله في النهار</td><td>كتابي (الفجر ٢١–٢٦) · علّمني (أعمال النهار) · قال رسولي (حديث «ما أصبح») · لساني (الكسرة)</td></tr>
+      <tr><td><b>الأربعاء</b><br/>الرابع</td><td>القمر</td><td>كتابي (الفجر ٢٧–٣٠) · علّمني (القمر) · أحبك ربي (الغفور · العزيز) · لساني (الضمة)</td></tr>
+      <tr><td><b>الخميس</b><br/>الخامس</td><td>أعمال يحبها الله في الليل</td><td>كتابي (مراجعة الفجر) · علّمني (أعمال الليل) · أدب واقتداء (آداب المساء)</td></tr>
+    </table>
+    </div>
+    <div class="u-note"><b>ملحوظة تنظيمية:</b> يبدأ كل يوم بلقاء «كتابي المنير» لأنه مفتتح اليوم (وفيه تهيئة بداية اليوم والتاريخ الهجري)، ثم «علّمني ربي» المحور القيمي للوحدة، ثم بقيّة المواد؛ ولساني عربي يتدرّج في الحركات الثلاث عبر الأسبوع (الحركات الثلاث ثم الفتحة فالكسرة فالضمة)، وينفَّذ اللعب التطبيقي ضمن وقت الأركان.</div>
+
+    <h3 class="u-h3">قائمة تجهيز الأسبوع</h3>
+<div class="u-grid">
+
+  <div class="u-card" style="--ac:#2D7A4B">
+    <h4>وسائل كتابي المنير القرآنية</h4>
+    <ul>
+      <li>لوحة سورة الفجر وبطاقة الآيات (١٥–٣٠).</li>
+      <li>المصاحف والحوامل.</li>
+      <li>السماعة وفيديو الترديد وتلاوة السورة.</li>
+      <li>بطاقتا الشكر والصبر، وبطاقة «اعتقادنا في القرآن الكريم».</li>
+    </ul>
+  </div>
+
+  <div class="u-card" style="--ac:#006B69">
+    <h4>بطاقات علّمني ربي ووسائل التعاقب</h4>
+    <ul>
+      <li>بطاقات: ليل – نهار – شمس – قمر، وقرص ورقي نصفه نهار ونصفه ليل.</li>
+      <li>فيديو تعاقب الليل والنهار، وصور سماء ليلية ونهارية.</li>
+      <li>مصباح صغير للتجربة الحسية، وكرة خفيفة ملوّنة.</li>
+      <li>بطاقات منازل القمر (هلال · بدر · عرجون)، وأوراق تلوين.</li>
+    </ul>
+  </div>
+
+  <div class="u-card" style="--ac:#0d6e6e">
+    <h4>وسائل لساني عربي والحركات</h4>
+    <ul>
+      <li>وسيلة «بيت الحركات» (غرفة الفتحة · الضمة · الكسرة).</li>
+      <li>بطاقات الأحرف ولوحة الحركات الثلاث.</li>
+      <li>صنفرة الحركات (لمس وتتبّع) وصلصال لتشكيل الحركة.</li>
+      <li>مغناطيس أو لاصق لتثبيت البطاقات على اللوحة.</li>
+    </ul>
+  </div>
+
+  <div class="u-card" style="--ac:#8B0000">
+    <h4>أدوات مهاراتي والعدّ</h4>
+    <ul>
+      <li>بطاقات الأرقام مع المعدودات (١٠ · ١١ · ١٢) من ركن أدرك وأستمتع.</li>
+      <li>مكعبات بناء وأطباق عدّ لبناء العدد.</li>
+      <li>سجادة خشنة وكرات صغيرة للعدّ عليها.</li>
+      <li>بطاقات بيضاء مغلّفة حراريًّا وأقلام سبورة قابلة للمسح.</li>
+    </ul>
+  </div>
+
+  <div class="u-card" style="--ac:#8660A8">
+    <h4>وسائل أحبك ربي — أسماء الله الحسنى</h4>
+    <ul>
+      <li>ثلاثة صناديق مغلقة وبطاقات الأسماء (الوهاب · الغني · الشافي / الغفور · العزيز).</li>
+      <li>بطاقات حاجات الناس (مريض · فقير · جائع · حزين · غني).</li>
+      <li>محسوسات أو صور الأسباب: العسل · ماء زمزم · الحبة السوداء · الدواء.</li>
+      <li>بطاقة الاعتقاد في أسماء الله الحسنى.</li>
+    </ul>
+  </div>
+
+  <div class="u-card" style="--ac:#6B3F22">
+    <h4>بطاقات قال رسولي وأدب واقتداء</h4>
+    <ul>
+      <li>بطاقة الحديث «ما أصبح بي من نعمة» وبطاقة الاعتقاد في النبي ﷺ.</li>
+      <li>صور النعم اليومية وبطاقات ألفاظ الذكر ومعانيها.</li>
+      <li>بطاقة حديث آداب المساء وبطاقات المصابيح الستّة وبطاقة الذكر.</li>
+      <li>ورقة سوداء مقوّاة، وأعواد بأسماء الأطفال لاختيار المشاركين.</li>
+    </ul>
+  </div>
+
+</div>
+  </section>
+
+  <!-- ═══════════ لوحة: القيم والأسرة والتقييم ═══════════ -->
+  <section class="upanel" id="u-values">
+    <div class="u-hero">
+  <h2>القيم والأسرة والتقييم في وحدة الليل والنهار</h2>
+  <p>خلاصةٌ منقولة من لقاءات وحدة الليل والنهار كما وردت في الدروس: القيم التي تُغرَس ووسيلة غرسها، ودور الأسرة في ترسيخها بالبيت، ثم التقويم الثلاثي ومؤشرات نجاحه. القيم مستمدّة أساسًا من مادة «علّمني ربي» مع لمحاتٍ من «كتابي المنير» (سورة الفجر) و«أدب واقتداء» و«أحبك ربي» في الوحدة نفسها. الليل والنهار والشمس والقمر آياتٌ مخلوقةٌ مسخّرةٌ بأمر الله، لا تُجسَّم ولا تُرسم بأعينٍ أو ملامح؛ والتفكّر فيها يُفضي إلى تعظيم الخالق لا الانشغال بالمخلوق.</p>
+</div>
+
+<h3 class="u-h3">قيم الوحدة ومفاهيمها</h3>
+<div class="u-grid">
+
+  <div class="u-card" style="--ac:#006B69">
+    <h4>تعظيم الله بالتفكّر في آياته</h4>
+    <p>التفكّر عبادةٌ قلبية تُقوّي الإيمان؛ إعمال العقل في الليل والنهار والشمس والقمر طريقٌ لمعرفة الله ومحبته — ﴿إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ لَآيَاتٍ﴾. تُغرَس بأن تقول المعلمة عند كل صورةٍ للشمس أو القمر: «هذا من خلق الله العظيم» ثم تبادر بـ«سبحان الله»، وتحوّل تعجّب الطفل إلى تسبيح: «الله الكبير يأمرها فتُطيع، قل معي: سبحان الله».</p>
+  </div>
+
+  <div class="u-card" style="--ac:#C79A3B">
+    <h4>الشكر على نعمة الليل والنهار</h4>
+    <p>شكر الله على تعاقب الليل والنهار وما فيهما من ضوءٍ وحرارةٍ وسكونٍ وراحة؛ فتجدّدهما دعوةٌ متجددة للحمد والذكر. تُغرَس بربط النهار ببركة العلم والرزق والحركة، والليل بالسكينة والراحة، وترديد «الحمد لله على نعمة الليل والنهار»، وردّ كل نعمةٍ إلى المنعم سبحانه لا إلى المخلوق.</p>
+  </div>
+
+  <div class="u-card" style="--ac:#0E7C86">
+    <h4>المحافظة على الصلوات في أوقاتها</h4>
+    <p>الصلاة صلةٌ بالله وعملٌ يحبه ويجعل اليوم مباركًا: الفجر والظهر والعصر في النهار، والمغرب والعشاء في الليل، ومن وفّقه الله قد يصلّي من الليل ﴿وَمِنَ اللَّيْلِ فَاسْجُدْ لَهُ﴾. تُغرَس بتصنيف بطاقات الصلوات على أوقاتها (ليل/نهار)، وربط كل صلاةٍ بوقتها، وترسيخ أنّ لكل عملٍ وقتًا يناسبه كما جعل الله لكلٍّ من الليل والنهار حكمة.</p>
+  </div>
+
+  <div class="u-card" style="--ac:#2D7A4B">
+    <h4>أذكار الصباح والمساء</h4>
+    <p>يوم المؤمن يبدأ وينتهي بذكر الله ﴿وَأَطْرَافَ النَّهَارِ لَعَلَّكَ تَرْضَى﴾؛ والذكر والدعاء والتسبيح ممّا يحبه الله في الليل والنهار. تُغرَس بترديد أذكار الصباح عند الاستيقاظ وأذكار المساء قبل النوم («أمسينا وأمسى الملك لله…»)، ونمذجة «سبحان الله، الحمد لله، لا إله إلا الله، الله أكبر»، وقول عند النوم: «باسمك اللهم أموت وأحيا»، وعند الاستيقاظ: «الحمد لله الذي أحيانا بعدما أماتنا».</p>
+  </div>
+
+  <div class="u-card" style="--ac:#7A5CC0">
+    <h4>الرضا والطمأنينة والتسليم لحكمة الله</h4>
+    <p>الاطمئنان لحكمة الله والرضا بأمره وما قدّره من تعاقب الليل والنهار، فالليل سكنٌ ورحمة ﴿هُوَ الَّذِي جَعَلَ لَكُمُ اللَّيْلَ لِتَسْكُنُوا فِيهِ﴾. تُغرَس بترسيخ أنّ كل شيءٍ يجري لأجلٍ مسمّى بأمر الله ﴿كُلٌّ يَجْرِي لِأَجَلٍ مُّسَمًّى﴾، وأنّ لكلٍّ نصيبه ورزقه، وتوجيه الطفل عند الانتظار: «الشمس تنتظر وقتها ولا تخرج قبل أوانها».</p>
+  </div>
+
+  <div class="u-card" style="--ac:#C46B2E">
+    <h4>الإحسان وإكرام اليتيم والمسكين</h4>
+    <p>من سورة الفجر في «كتابي المنير»: شكر النعمة يظهر في العمل لا في القول وحده — إكرام اليتيم والحضّ على إطعام المسكين ورحمة الضعيف ﴿كَلَّا بَل لَّا تُكْرِمُونَ الْيَتِيمَ ۝ وَلَا تَحَاضُّونَ عَلَىٰ طَعَامِ الْمِسْكِينِ﴾. تُغرَس ببطاقات المواقف (أكرم اليتيم · أطعم المسكين)، وبيان أنّ إكرام المحتاج من شكر نعمة الله علينا.</p>
+  </div>
+
+  <div class="u-card" style="--ac:#546E7A">
+    <h4>التوحيد: الشمس والقمر مسخّران بأمر الله</h4>
+    <p>كل الكون في قبضة الله، والشمس والقمر لا يفعلان شيئًا إلا بأمره ﴿وَسَخَّرَ الشَّمْسَ وَالْقَمَرَ﴾؛ فالنفع والضر بيد الله وحده، والقمر يتغيّر شكله بأمر الله ﴿وَالْقَمَرَ قَدَّرْنَاهُ مَنَازِلَ﴾. تُغرَس بردّ كل ظاهرةٍ إلى الله: «الله يأمر الشمس أن تشرق»، وترديد «الشمس آيةٌ عظيمة تدل على قدرة الله»، وتعظيم الخالق كلما عظُم المخلوق.</p>
+  </div>
+
+  <div class="u-card" style="--ac:#8B0000">
+    <h4>الإيمان بالغيب</h4>
+    <p>نؤمن بما أخبر الله ورسوله ﷺ كما جاء من غير تكييفٍ ولا تمثيلٍ ولا خوضٍ في الكيفية: سجود الشمس تحت العرش، وتسبيح القمر وسجوده لله — من صميم الإيمان بالغيب الذي يعلمه الله وحده. تُغرَس بأسلوبٍ يقينيٍّ مطمئن: «نؤمن به كما جاء، ولا نبحث في كيفيته»، من غير تكلّفٍ في التصوير أو الرسم.</p>
+  </div>
+
+</div>
+
+<h3 class="u-h3">دور الأسرة — رسائل لولي الأمر</h3>
+<div class="u-grid">
+
+  <div class="u-card" style="--ac:#006B69">
+    <h4>تهيئة وجدانية بالأذكار</h4>
+    <p>قبل النوم يُحدّث ولي الأمر طفله عن نعمة الليل كوقتٍ للراحة والسكينة ويقرأ معه أذكار المساء، وعند الاستيقاظ يذكّره بنعمة النهار ويقرأ معه أذكار الصباح؛ فيربط الطفل بين الدرس والعبادة اليومية في حياته الفعلية.</p>
+  </div>
+
+  <div class="u-card" style="--ac:#2D7A4B">
+    <h4>تهيئة معرفية بالقرآن</h4>
+    <p>يفتح ولي الأمر مع طفله المصحف على ﴿إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ﴾ ويقرأها بصوتٍ مؤثّر، ثم يناقشه بلطف: «ماذا ترى في السماء ليلًا؟ وماذا ترى نهارًا؟» فيرسّخ المفاهيم القرآنية قبل سماعها في الصف.</p>
+  </div>
+
+  <div class="u-card" style="--ac:#0E7C86">
+    <h4>تهيئة حسية بالمشاهدة</h4>
+    <p>في الليل يخرج مع طفله إلى النافذة ليرى القمر أو النجوم، وفي النهار يُشير معه إلى ضوء الشمس ويقول: «الله يأمر الشمس أن تشرق»؛ فيعيش الطفل المعنى واقعيًّا قبل عرضه في الصف، مع ملاحظة الهلال والبدر وربطهما بمعرفة الشهور.</p>
+  </div>
+
+  <div class="u-card" style="--ac:#C79A3B">
+    <h4>المحافظة على الصلاة وأعمال اليوم</h4>
+    <p>يعوّد ولي الأمر طفله على أعمالٍ يحبها الله: الصلاة في وقتها، والبدء بالطعام بـ«بسم الله» وختمه بـ«الحمد لله»، وقراءة القرآن، وطلب العلم في النهار؛ ويدرّبه على النوم مبكرًا («الليل = راحة») والاستيقاظ بنشاط («النهار = تعلّم وعمل»).</p>
+  </div>
+
+  <div class="u-card" style="--ac:#7A5CC0">
+    <h4>تهيئة عملية بسيطة</h4>
+    <p>يجهّز ولي الأمر بطاقةً مكتوبًا عليها «ليل» وأخرى «نهار» يحملها الطفل إلى الصف، أو رسمًا سريعًا للشمس والقمر بألوان بسيطة من غير أعينٍ أو ملامح؛ فمشاركة الأسرة تعطي الطفل حافزًا للعرض أمام زملائه.</p>
+  </div>
+
+  <div class="u-card" style="--ac:#546E7A">
+    <h4>رسالة جامعة لولي الأمر</h4>
+    <p>بدأ طفلكم الكريم وحدة «الليل والنهار» في مادة «علّمني ربي»؛ تعلّم أن التفكّر في مخلوقات الله عبادةٌ يحبها الله، وأن الشمس تضيء نهارنا والقمر يضيء ليلنا بأمر الله وحده. نشاطٌ بيتي: مساء اليوم ابحثوا معًا عن القمر في السماء وقولوا: «سبحان الله العظيم». جزاكم الله خيرًا على مشاركتكم في تربية أبنائكم.</p>
+  </div>
+
+</div>
+
+<h3 class="u-h3">التقويم ومؤشرات النجاح</h3>
+<div style="overflow-x:auto">
+  <table class="u-table">
+    <tr><th>نوع التقويم</th><th>أمثلة المؤشرات</th></tr>
+    <tr>
+      <td>التقويم القبلي</td>
+      <td>ما اسم وحدتنا؟ · متى ننام ومتى نستيقظ؟ · ماذا نرى في الليل وماذا نرى في النهار؟ · من الذي يأمر الشمس أن تشرق وتغرب؟ · من هم أولو الألباب؟ (يربط القبلي كلَّ لقاءٍ بما سبقه من لقاءات الوحدة).</td>
+    </tr>
+    <tr>
+      <td>التقويم التكويني</td>
+      <td>متابعة تفاعل الأطفال مع الصور والفيديو والبطاقات · هل يظهر القمر في النهار؟ · هل يضع الطفل بطاقة العمل (صلاة/ذكر/نوم/عشاء) في وقتها الصحيح؟ · ما نقول قبل الأكل؟ · ملاحظة الآداب: الجلوس، انتظار الدور، عدم خطف البطاقة، رفع اليد.</td>
+    </tr>
+    <tr>
+      <td>التقويم النهائي</td>
+      <td>ما اسم وحدتنا؟ · ما العبادة القلبية التي يحبها الله؟ · ما المخلوق الذي نراه في الليل وما الذي نراه في النهار؟ · التمييز بين الهلال والبدر · ذكر ثلاثة أعمال يحبها الله في الليل أو النهار (لعبة الكرة / البازل / التصنيف). <b>المعيار: ٣ إجابات صحيحة على الأقل مع مشاركةٍ هادئة.</b></td>
+    </tr>
+    <tr>
+      <td>المؤشر الوجداني</td>
+      <td>قول «سبحان الله» بصدقٍ عند ذكر الشمس أو القمر، أو ظهور ابتسامة إعجابٍ تلقائية، أو قول «الحمد لله على نعمة الليل والنهار» شكرًا لله على النوم والراحة.</td>
+    </tr>
+    <tr>
+      <td>المؤشر المعرفي</td>
+      <td>الإجابة الصحيحة على ٣ أسئلة من التقويم النهائي، وتسمية الشمس والقمر مخلوقَين لله، والتمييز بين ما يخصّ الليل وما يكون في كل وقت، وذكر أعمالٍ يحبها الله في الليل والنهار.</td>
+    </tr>
+    <tr>
+      <td>المؤشر السلوكي</td>
+      <td>الانتظار الهادئ دون مقاطعةٍ في لعبة الكرة، وعدم خطف البطاقة أثناء التصنيف، والمشاركة بلطفٍ واحترام في كرسي الأسئلة.</td>
+    </tr>
+    <tr>
+      <td>المؤشر اللغوي والفنّي</td>
+      <td>توظيف كلمات الدرس (معاشًا، نشورًا، منازل، هلال، بدر، سكن، سكون، بركة، كل وقت)، ورسم أو تلوين الشمس/القمر تلوينًا صحيحًا من غير أعينٍ أو ملامح مع كتابة: سبحان الله.</td>
+    </tr>
+  </table>
+</div>
+  </section>
+
+  <!-- ═══════════ لوحة: الحصيلة اللغوية ═══════════ -->
+  <section class="upanel" id="u-lang">
+    <div class="u-hero">
+  <h2>الحصيلة اللغوية لوحدة الليل والنهار</h2>
+  <p>أبرز الكلمات والمصطلحات الجديدة عبر مواد الوحدة، لتوظّفها المعلمة في الحوار والتعزيز أثناء الدرس والقراءة والنشاط.</p>
+</div>
+
+<h3 class="u-h3">نظرة سريعة على حصيلة الوحدة</h3>
+<div class="u-chips">
+  <span class="u-chip">كتابي المنير · ١٠ مفردات</span>
+  <span class="u-chip">علّمني ربي · ١١ مفردة</span>
+  <span class="u-chip">قال رسولي · ٦ مفردات</span>
+  <span class="u-chip">أدب واقتداء · ٦ مفردات</span>
+  <span class="u-chip">أحبك ربي · ٨ مفردات</span>
+  <span class="u-chip">لساني عربي · ٧ مفردات</span>
+  <span class="u-chip">مهاراتي · ٦ مفردات</span>
+  <span class="u-chip">إجمالي الوحدة · ٥٤ مفردة</span>
+</div>
+<div class="u-note"><b>للمعلمة:</b> وظّفي هذه المفردات في الحوار والتعزيز اليومي، ولا تُدرّسها قائمةً منفصلة؛ بل التقطيها أثناء الدرس والقراءة والنشاط، واختاري قبل كل يوم ٣–٥ كلمات تركّزين عليها شفهيًّا وتربطينها بفكرة اليوم الناظمة (الليل والنهار والشمس والقمر وأعمالهما).</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#2D7A4B">كتابي المنير</span></h3>
+<div style="overflow-x:auto"><table class="u-table">
+  <tr><th>الكلمة/المصطلح</th><th>معناها المبسّط</th></tr>
+  <tr><td>ابتلاء</td><td>اختبار من الله للعبد بالخير أو الشر.</td></tr>
+  <tr><td>شكر</td><td>استعمال النعمة في طاعة الله وحمده عليها.</td></tr>
+  <tr><td>صبر</td><td>الثبات والرضا وعدم الاعتراض عند الضيق.</td></tr>
+  <tr><td>يتيم</td><td>طفل فقد أباه ويحتاج إلى رحمة وإكرام.</td></tr>
+  <tr><td>مسكين</td><td>صاحب حاجة يحتاج إلى إطعام ومساعدة.</td></tr>
+  <tr><td>اليوم الآخر</td><td>يوم يجمع الله الخلق للحساب والجزاء.</td></tr>
+  <tr><td>العمل الصالح</td><td>كل فعل خير يحبه الله ويناسب عمر الطفل.</td></tr>
+  <tr><td>النفس المطمئنة</td><td>نفس مؤمنة راضية بالله، شاكرة عند النعمة، صابرة عند البلاء.</td></tr>
+  <tr><td>الجنة</td><td>دار النعيم التي أعدّها الله لعباده المؤمنين.</td></tr>
+  <tr><td>تعظيم القرآن</td><td>إجلال كلام الله وتوقيره وحسن التعامل مع المصحف.</td></tr>
+</table></div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#006B69">علّمني ربي</span></h3>
+<div style="overflow-x:auto"><table class="u-table">
+  <tr><th>الكلمة/المصطلح</th><th>معناها المبسّط</th></tr>
+  <tr><td>الليل</td><td>الوقت الذي يجعل الله فيه الظلام بعد غروب الشمس ليكون وقت سكون وراحة.</td></tr>
+  <tr><td>النهار</td><td>الوقت الذي يجعل الله فيه الضوء بعد شروق الشمس ليعمل الناس وينتفعوا.</td></tr>
+  <tr><td>يتعاقبان</td><td>يجعل الله الليل يأتي بعد النهار، والنهار يأتي بعد الليل بانتظام.</td></tr>
+  <tr><td>الشمس</td><td>مخلوق عظيم خلقه الله وسخّره لينير الأرض ويعطيها الضوء والحرارة في النهار.</td></tr>
+  <tr><td>القمر</td><td>مخلوق عظيم خلقه الله، نراه غالبًا في الليل، وسخّره الله لينتفع الناس به.</td></tr>
+  <tr><td>منازل القمر</td><td>المراحل التي جعلها الله للقمر خلال الشهر: هلال، تربيع، أحدب، بدر.</td></tr>
+  <tr><td>التفكّر</td><td>النظر في مخلوقات الله لنعرف عظمته ونزداد إيمانًا — عبادة قلبية يحبها الله.</td></tr>
+  <tr><td>آية</td><td>علامة من خلق الله تدل على قدرته وعظمته — الشمس والقمر آيتان من آياته.</td></tr>
+  <tr><td>التسخير</td><td>أن يجعل الله المخلوقات تعمل بأمره لمصلحة خلقه.</td></tr>
+  <tr><td>أعمال النهار</td><td>أعمال نافعة نكثر منها في النهار: التعلم، الصلاة، الذكر، العمل، قراءة القرآن.</td></tr>
+  <tr><td>أعمال الليل</td><td>أعمالٌ يحبها الله يفعلها المؤمن في الليل، مثل الصلاة والذكر والنوم والسحور.</td></tr>
+</table></div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#6B3F22">قال رسولي</span></h3>
+<div style="overflow-x:auto"><table class="u-table">
+  <tr><th>الكلمة/المصطلح</th><th>معناها المبسّط</th></tr>
+  <tr><td>الحديث</td><td>كلام النبي ﷺ وأفعاله وتقريراته.</td></tr>
+  <tr><td>الراوي</td><td>الصحابي الذي نقل لنا الحديث، وراوي حديثنا عبد الله بن غنّام البياضي رضي الله عنه.</td></tr>
+  <tr><td>المتن</td><td>نص الحديث وكلام النبي ﷺ الذي نسمعه بعد ذكر الراوي.</td></tr>
+  <tr><td>المصنّف</td><td>العالم الذي جمع الأحاديث في كتاب، ومصنّف حديثنا أبو داود.</td></tr>
+  <tr><td>النعمة</td><td>كل خيرٍ رزقنا الله إياه، وهي منه وحده لا شريك له.</td></tr>
+  <tr><td>الشكر</td><td>أن نعرف النعمة من الله، ونحمده، ونستخدمها فيما يحبّ.</td></tr>
+</table></div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#55702B">أدب واقتداء</span></h3>
+<div style="overflow-x:auto"><table class="u-table">
+  <tr><th>الكلمة/المصطلح</th><th>معناها المبسّط</th></tr>
+  <tr><td>آداب المساء</td><td>الأعمال التي علّمنا إياها النبي ﷺ إذا دخل المساء، حفظًا لنا واتباعًا لهديه.</td></tr>
+  <tr><td>جُنح الليل</td><td>أوّل دخول الليل أو وقت المساء.</td></tr>
+  <tr><td>أوكوا قِرَبكم</td><td>اربطوا أوعية الماء واللبن وأغلقوها مع ذكر اسم الله.</td></tr>
+  <tr><td>خمّروا آنيتكم</td><td>غطّوا الأواني مع ذكر اسم الله ولو بعرض عودٍ عليها.</td></tr>
+  <tr><td>أطفئوا مصابيحكم</td><td>إطفاء ما يضيء عند النوم مع ذكر اسم الله؛ صيانةً وسلامة.</td></tr>
+  <tr><td>ذكر المساء</td><td>«بسم الله الذي لا يضرّ مع اسمه شيءٌ...» يُقال ثلاثًا صباحًا ومساءً.</td></tr>
+</table></div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#8660A8">أحبك ربي</span></h3>
+<div style="overflow-x:auto"><table class="u-table">
+  <tr><th>الكلمة/المصطلح</th><th>معناها المبسّط</th></tr>
+  <tr><td>الوهاب</td><td>الذي يهب عباده من فضله العظيم ويوسّع لهم في العطاء.</td></tr>
+  <tr><td>الغني</td><td>واسع العطاء، يحتاجه الخلق جميعًا ولا يحتاج إلى أحد.</td></tr>
+  <tr><td>الشافي</td><td>الذي يشفي وحده من أمراض القلوب والأبدان.</td></tr>
+  <tr><td>الغفور</td><td>الذي يستر ذنوب عباده ويغفر لمن تاب واستغفر.</td></tr>
+  <tr><td>العزيز</td><td>الذي ليس له شبيه، له كمال القدرة والقوة والغلبة.</td></tr>
+  <tr><td>السبب</td><td>ما سخّره الله لننتفع به، ولا يؤثّر إلا بإذن الله.</td></tr>
+  <tr><td>الشفاء</td><td>زوال المرض بإذن الله، وهو من الله الشافي وحده.</td></tr>
+  <tr><td>الاستغفار</td><td>طلب المغفرة من الله: أستغفر الله وأتوب إليه.</td></tr>
+</table></div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#0d6e6e">لساني عربي</span></h3>
+<div style="overflow-x:auto"><table class="u-table">
+  <tr><th>الكلمة/المصطلح</th><th>معناها المبسّط</th></tr>
+  <tr><td>الحركة</td><td>علامة صغيرة توضع فوق الحرف أو تحته، فتغيّر صوت الحرف دون أن تغيّر الحرف نفسه.</td></tr>
+  <tr><td>الفتحة</td><td>حركة فوق الحرف، وعند نطقها أفتح ما بين الفكين: بَ.</td></tr>
+  <tr><td>الضمة</td><td>حركة فوق الحرف، وعند نطقها أضمّ شفتيّ: بُ.</td></tr>
+  <tr><td>الكسرة</td><td>حركة تحت الحرف، وعند نطقها ينخفض الفك: بِ.</td></tr>
+  <tr><td>التهجئة</td><td>قراءة الكلمة حرفًا حرفًا مع ملاحظة الحركة، ثم جمع الأصوات لتكوين الكلمة.</td></tr>
+  <tr><td>تحليل · تركيب</td><td>تجزئة الكلمة إلى حروفها ثم جمعها كلمة واحدة.</td></tr>
+  <tr><td>لسان عربي مبين</td><td>لغة واضحة بيّن الله بها القرآن، نتقرّب إلى الله بتعلّمها لخدمة قراءة القرآن.</td></tr>
+</table></div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#8B0000">مهاراتي</span></h3>
+<div style="overflow-x:auto"><table class="u-table">
+  <tr><th>الكلمة/المصطلح</th><th>معناها المبسّط</th></tr>
+  <tr><td>عشرة · ١٠</td><td>عدد يلي تسعة، ونعدّ له عشرة معدودات.</td></tr>
+  <tr><td>أحد عشر · ١١</td><td>عدد أكبر من عشرة بواحد.</td></tr>
+  <tr><td>اثنا عشر · ١٢</td><td>عدد ذُكر في الآية: عدّة الشهور اثنا عشر شهرًا.</td></tr>
+  <tr><td>عدّ</td><td>أن نذكر الأعداد بالترتيب ونحن نشير إلى كل معدود.</td></tr>
+  <tr><td>معدودات</td><td>الأشياء التي نعدّها: كرات، مكعبات، نجوم.</td></tr>
+  <tr><td>كمية</td><td>مقدار ما في المجموعة من أشياء، نعرفه بالعدّ.</td></tr>
+</table></div>
+  </section>
+
+  <!-- ═══════════ لوحة: منظومة أحسن الأخلاق ═══════════ -->
+  <section class="upanel" id="u-manzooma">
+    <div class="u-hero"><h2>منظومة الوحدة: نشيد التفكّر</h2><p>هذه المنظومة الشعرية هي الصوت الجامع لوحدة الليل والنهار. تُشغّلها المعلمة عند الانتقال بين اللقاءات أو الأركان، ليستمع الأطفال إلى النشيد دون مشاهدة الشاشة، ويبقوا مندمجين في معنى الوحدة.</p></div>
+    <div class="u-note warn"><b>للمعلمة:</b> الفيديو مرجعٌ للاستماع لا للمشاهدة؛ تتعلّم منه المعلمة الأداء ثم تردّده مع الأطفال دون عرض الشاشة عليهم.</div>
+    <div class="u-media"><video controls preload="none" src="assets/video_008_cfcf4810def7d59f.mp4"></video></div>
+    <h3 class="u-h3">كيف تستخدمها المعلمة؟</h3>
+    <div class="u-grid">
+      <div class="u-card" style="--ac:#006B69"><h4>بين اللقاءات</h4><p>تُشغّل المنظومة ليستعيد الأطفال هدوءهم وتركيزهم.</p></div>
+      <div class="u-card" style="--ac:#2D7A4B"><h4>قبل الأركان</h4><p>تُستخدم كجسرٍ وجدانيّ يذكّر الأطفال بأن الأركان تطبيقٌ لمعنى الوحدة.</p></div>
+      <div class="u-card" style="--ac:#8660A8"><h4>قاعدة الشاشة</h4><p>الفيديو مرجعٌ مرئيٌّ وصوتيٌّ للمعلمة داخل الدليل؛ أما الأطفال فيستفيدون من الأداء دون توجيه أنظارهم إلى الشاشة.</p></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ لوحة: أناشيد حركية ═══════════ -->
+  <section class="upanel" id="u-songs"><div class="u-hero">
+  <h2>أناشيد حركية وألعاب أصابع</h2>
+  <p>تستخدمها المعلمة للفصل بين اللقاءات، أو لاستعادة نشاط الأطفال، أو عند ظهور فوضى صفية تحتاج إلى جذب انتباه لطيف. ومع التكرار يحفظ الأطفال النشيد وحركاته، فتتحول الأناشيد إلى أداة انتقال تربوية ثابتة تُهيّئ الأطفال للانتقال بين أركان الوحدة.</p>
+</div>
+
+<div class="u-note warn"><b>تنبيه بخصوص الشاشات:</b> فيديوهات الأناشيد الحركية وألعاب الأصابع هي مرجع للمعلمة فقط لتتعلم اللحن والحركات ثم تنفذها بنفسها أمام الأطفال، ولا تُعرض على الأطفال. اختاري نشيدًا واحدًا بين كل لقاءين؛ فالثبات يساعد الأطفال على حفظ الحركة والانتقال الهادئ.</div>
+
+<div class="motion-grid">
+  <div class="motion-card">
+    <div class="motion-card-head">
+      <div class="motion-icon">🌧️</div>
+      <div>
+        <div class="motion-title">تهطل الأمطار</div>
+        <div class="motion-sub">لعبة أصابع · انتقال حركي</div>
+      </div>
+    </div>
+    <video controls preload="none"><source src="assets/video_002_cfd19c4ef405a80b.mp4" type="video/mp4"></video>
+    <div class="motion-card-body">لعبة أصابع قصيرة لاستعادة الانتباه وتحريك الأصابع بتمثيل المطر.</div>
+  </div>
+
+  <div class="motion-card">
+    <div class="motion-card-head">
+      <div class="motion-icon">🪶</div>
+      <div>
+        <div class="motion-title">عصفورتي</div>
+        <div class="motion-sub">لعبة أصابع · انتقال حركي</div>
+      </div>
+    </div>
+    <video controls preload="none"><source src="assets/video_003_4236b9ef43dbf67f.mp4" type="video/mp4"></video>
+    <div class="motion-card-body">نشيد حركي رقيق يحفّز الخيال والتمثيل الإيهامي.</div>
+  </div>
+
+  <div class="motion-card">
+    <div class="motion-card-head">
+      <div class="motion-icon">🪁</div>
+      <div>
+        <div class="motion-title">حلّقت الطيور</div>
+        <div class="motion-sub">لعبة أصابع · انتقال حركي</div>
+      </div>
+    </div>
+    <video controls preload="none"><source src="assets/video_004_7a3a0a820714e4f1.mp4" type="video/mp4"></video>
+    <div class="motion-card-body">حركات طيران تساعد على التفريغ الحركي والعودة للجلوس الهادئ.</div>
+  </div>
+
+  <div class="motion-card">
+    <div class="motion-card-head">
+      <div class="motion-icon">🍃</div>
+      <div>
+        <div class="motion-title">ورقة التوت</div>
+        <div class="motion-sub">لعبة أصابع · انتقال حركي</div>
+      </div>
+    </div>
+    <video controls preload="none"><source src="assets/video_005_657836c2ea5b14a9.mp4" type="video/mp4"></video>
+    <div class="motion-card-body">نشيد أصابع مناسب للانتقال بين اللقاءات أو قبل نشاط يدوي.</div>
+  </div>
+
+  <div class="motion-card">
+    <div class="motion-card-head">
+      <div class="motion-icon">👐</div>
+      <div>
+        <div class="motion-title">يدان يدان</div>
+        <div class="motion-sub">لعبة أصابع · انتقال حركي</div>
+      </div>
+    </div>
+    <video controls preload="none"><source src="assets/video_006_61b742e6906dc87f.mp4" type="video/mp4"></video>
+    <div class="motion-card-body">تنشيط لليدين والعضلات الصغيرة مع ضبط الإيقاع الجماعي.</div>
+  </div>
+
+  <div class="motion-card">
+    <div class="motion-card-head">
+      <div class="motion-icon">☁️</div>
+      <div>
+        <div class="motion-title">أنشودة الطقس بالحركات</div>
+        <div class="motion-sub">لعبة أصابع · انتقال حركي</div>
+      </div>
+    </div>
+    <video controls preload="none"><source src="assets/video_007_fad2d0d2cd60a387.mp4" type="video/mp4"></video>
+    <div class="motion-card-body">تستخدمها المعلمة في تهيئة اليوم أو بين اللقاءات؛ ينظر الأطفال إلى حال الجو ثم يشاركون بالحركات لاستعادة النشاط وضبط الانتباه.</div>
+  </div>
+</div></section>
+
+  <!-- ═══════════ لوحة: اللياقة البدنية ═══════════ -->
+  <section class="upanel" id="u-fitness"><div class="u-hero">
+  <h2>اللياقة البدنية في وحدة الليل والنهار</h2>
+  <p>هذا التبويب يجمع أفكارًا بدنية قصيرة تساعد المعلمة على تفريغ طاقة الأطفال بين اللقاءات أو قبل الأركان، فتُستخدم حركات النشاط لرفع الحيوية ثم تُختم بحركات التهدئة قبل الجلوس للأركان. الأنشطة هنا ليست درسًا مستقلًا، بل أداة تنظيمية تربوية تدعم التركيز والانتباه.</p>
+</div>
+
+<div class="u-note warn"><b>تنبيه بخصوص الشاشات:</b> بطاقات اللياقة البدنية مرجع بصري للمعلمة لتفهم الوضعية والخطوات ثم تنفذ النشاط بنفسها أمام الأطفال، ولا تُعرض الشاشة على الأطفال، وتُراعى السلامة والمساحة المناسبة والفروق الفردية.</div>
+
+<div class="u-grid">
+  <div class="fitness-quick"><b>المدة المناسبة:</b> من 3 إلى 7 دقائق، ويكفي تمرين واحد أو تمرينان في الانتقال الواحد.</div>
+  <div class="fitness-quick"><b>المكان:</b> ساحة آمنة أو مساحة صفية واسعة، مع إبعاد الأدوات الحادة أو الزوايا الصلبة.</div>
+  <div class="fitness-quick"><b>قاعدة التنفيذ:</b> شرح قصير، نموذج من المعلمة، ثم تنفيذ جماعي بإيقاع هادئ ومنظم.</div>
+  <div class="fitness-quick"><b>الربط بالوحدة:</b> تُستخدم حركات النشاط للانتقال بين لقاءات الوحدة، وحركات التهدئة قبل الجلوس للأركان.</div>
+</div>
+
+<div class="u-note warn"><b>سلامة التنفيذ:</b> لا تُستخدم المنافسة إذا أخرجت الأطفال عن الهدوء أو سببت تزاحمًا. يُمنع دفع الزملاء، وتُخفف التمارين للأطفال الذين يحتاجون دعمًا حركيًا. في تمارين الظهر والبطن تُختصر المدة، ويُطلب من الطفل التوقف فورًا عند التعب.</div>
+
+<div class="fitness-grid">
+  <article class="fitness-card wide">
+    <img class="fitness-image" src="assets/fitness_obstacle_relay.webp" loading="lazy" alt="لعبة بدنية جماعية بالحواجز والكرات والسلة">
+    <div class="fitness-body">
+      <div class="fitness-title-row"><h3>لعبة القاطرتين: مسار الحواجز والكرات</h3><span class="fitness-duration">5-7 دقائق</span></div>
+      <p>نشاط جماعي منظم يناسب الساحة، يدرّب الطفل على انتظار الدور، الحركة في مسار واضح، والعودة الهادئة إلى المجموعة.</p>
+      <ol class="fitness-steps">
+        <li>تقف كل مجموعة في صف واحد عند خط البداية.</li>
+        <li>يمر الطفل من أسفل الحاجز، ثم يقفز من فوق الحاجز التالي حسب قدرة الأطفال.</li>
+        <li>يضع الكرة في السلة ثم يعود بسرعة معتدلة ليلمس يد زميله.</li>
+        <li>تفوز المجموعة التي تكمل المسار دون تزاحم أو خروج عن القواعد.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="fitness-card">
+    <img class="fitness-image" src="assets/fitness_kicks.webp" loading="lazy" alt="تمرين الركلات على الظهر للأطفال">
+    <div class="fitness-body">
+      <div class="fitness-title-row"><h3>تمرين الركلات</h3><span class="fitness-duration">30 ثانية</span></div>
+      <p>تمرين بسيط لتقوية الساقين وتنظيم التنفس، مناسب بعد جلوس طويل أو قبل نشاط يحتاج يقظة.</p>
+      <ol class="fitness-steps">
+        <li>يستلقي الطفل على ظهره مع مد الساقين.</li>
+        <li>يركل للأعلى والأسفل دون ثني الركبتين.</li>
+        <li>تذكّر المعلمة الأطفال بحركة هادئة لا تؤذي الزميل.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="fitness-card">
+    <img class="fitness-image" src="assets/fitness_crawl.webp" loading="lazy" alt="تمرين الزحف للأطفال على الأرض">
+    <div class="fitness-body">
+      <div class="fitness-title-row"><h3>تمرين الزحف</h3><span class="fitness-duration">40-60 ثانية</span></div>
+      <p>ينمي التآزر بين اليدين والقدمين، ويصلح كفاصل حركي قصير للانتقال بين اللقاءات وتفريغ طاقة الأطفال.</p>
+      <ol class="fitness-steps">
+        <li>يضع الطفل يديه وقدميه على الأرض بشكل ثابت.</li>
+        <li>يتقدم للأمام ببطء مع ترك مسافة آمنة.</li>
+        <li>يمكن جعل المسار خطًا مستقيمًا أو بين أقماع خفيفة.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="fitness-card">
+    <img class="fitness-image" src="assets/fitness_crawl_race.webp" loading="lazy" alt="مسابقة الزحف في القاعة">
+    <div class="fitness-body">
+      <div class="fitness-title-row"><h3>سباق الزحف الهادئ</h3><span class="fitness-duration">3 دقائق</span></div>
+      <p>صيغة جماعية من تمرين الزحف، لكنها تُقدَّم بقواعد واضحة حتى لا تتحول إلى فوضى.</p>
+      <ol class="fitness-steps">
+        <li>تحدد المعلمة خط بداية ونهاية بمسافة قصيرة.</li>
+        <li>ينطلق الأطفال في مجموعات صغيرة لا في كل الصف مرة واحدة.</li>
+        <li>المعيار ليس السرعة فقط، بل الالتزام بالمسار وعدم الاصطدام.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="fitness-card">
+    <img class="fitness-image" src="assets/fitness_squat.webp" loading="lazy" alt="تمرين القرفصاء للأطفال">
+    <div class="fitness-body">
+      <div class="fitness-title-row"><h3>تمرين القرفصاء</h3><span class="fitness-duration">60 ثانية</span></div>
+      <p>يقوي الساقين ويحسن الاتزان، ويستخدم عندما تحتاج المعلمة نشاطًا بدنيًا واضح البداية والنهاية.</p>
+      <ol class="fitness-steps">
+        <li>يبعد الطفل بين قدميه بمقدار مناسب.</li>
+        <li>يمد يديه للأمام ثم ينزل بثني الركبتين بهدوء.</li>
+        <li>تنتبه المعلمة لوضع الركبة وألا يكون النزول سريعًا.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="fitness-card">
+    <img class="fitness-image" src="assets/fitness_abs.webp" loading="lazy" alt="تمرين المعدة للأطفال">
+    <div class="fitness-body">
+      <div class="fitness-title-row"><h3>تمرين المعدة</h3><span class="fitness-duration">6-8 مرات</span></div>
+      <p>تمرين اختياري قصير للأطفال القادرين، ويُنفذ ببطء مع دعم القدمين عند الحاجة.</p>
+      <ol class="fitness-steps">
+        <li>يستلقي الطفل على ظهره مع ثني الركبتين.</li>
+        <li>تكون اليدان خلف الرقبة أو بجانب الجسم دون شد الرقبة.</li>
+        <li>يرفع الجزء العلوي قليلًا ثم يعود للوضع الأول.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="fitness-card">
+    <img class="fitness-image" src="assets/fitness_star_jump.webp" loading="lazy" alt="قفز فتح وإغلاق للأطفال">
+    <div class="fitness-body">
+      <div class="fitness-title-row"><h3>قفز الفتح والإغلاق</h3><span class="fitness-duration">20-30 ثانية</span></div>
+      <p>نشاط قصير لرفع النشاط بسرعة، ثم يعقبه تنفس هادئ حتى لا ينتقل الطفل إلى الدرس وهو مشتت.</p>
+      <ol class="fitness-steps">
+        <li>يبدأ الطفل واقفًا ويداه بجانب جسمه.</li>
+        <li>يقفز مع فتح القدمين ورفع اليدين، ثم يعود للوضع الأول.</li>
+        <li>تختم المعلمة بثلاث أنفاس هادئة قبل الجلوس.</li>
+      </ol>
+    </div>
+  </article>
+</div></section>
+
+  <!-- ═══════════ لوحة: خريطة الأركان التطبيقية ═══════════ -->
+  <section class="upanel" id="u-corners">
+    <div class="u-hero"><h2>خريطة الأركان التطبيقية</h2><p>أركان الوحدة أماكن لعب حرّ بأدوات تعليمية (٣٠ دقيقة)، تستقطع فيها المعلمة وقتًا قصيرًا لنشاط تطبيقي سريع على فكرة الدرس. لكل مادة ركنان.</p></div>
+
+<div class="u-note">مبدأ الأركان: لعبٌ حرّ بالأدوات + نشاط تطبيقي سريع على الفكرة المركزية.</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#2D7A4B">كتابي المنير</span></h3>
+<div class="u-grid two">
+  <div class="u-card" style="--ac:#2D7A4B">
+    <h4>🛒 دكان الشكر والصبر</h4>
+    <p><b>الأدوات:</b> سلّتان مكتوب عليهما: «أشكر الله» و«أصبر وأسأل الله العون»، وخضار أو فواكه تمثيلية، وبطاقات مواقف يومية مصوّرة لا تحمل نصّ الآية.</p>
+    <p><b>النشاط:</b> يسحب الطفل بطاقة موقف ويضعها في سلّة «الشكر» أو سلّة «الصبر»، وتسأله المعلمة: ماذا تقول لله هنا؟ ويختم: «أشكر ربّي عند النعمة، وأصبر إذا لم أحصل على ما أريد».</p>
+  </div>
+  <div class="u-card" style="--ac:#2D7A4B">
+    <h4>🧩 مشبك الاستجابة الصحيحة</h4>
+    <p><b>الأدوات:</b> لوحة مقسومة إلى «شكر» و«صبر»، ومشابك خشبية، وبطاقات صور يومية مثل: طعام، لعبة، انتظار، مشاركة.</p>
+    <p><b>النشاط:</b> يختار الطفل بطاقة صورة ويثبّت المشبك على خانة «شكر» أو «صبر» ويردّد الجملة المناسبة، ويختم: «أختار ما يرضي الله: شكرًا عند النعمة وصبرًا عند الانتظار».</p>
+  </div>
+</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#006B69">علّمني ربي</span></h3>
+<div class="u-grid two">
+  <div class="u-card" style="--ac:#006B69">
+    <h4>🔭 نافذة التعاقب</h4>
+    <p><b>الأدوات:</b> صورة الشمس والقمر، قرص ورقي نصفه نهار ونصفه ليل، مصباح صغير يستخدمه الراشد، وبطاقات: ليل · نهار · شروق · غروب.</p>
+    <p><b>النشاط:</b> يرتّب الطفل بطاقات «شروق · نهار · غروب · ليل» ويطابق الشمس بالنهار والقمر بالليل ويصف: يأتي النهار ثم يأتي الليل، ويختم: «الله جعل الليل والنهار يتعاقبان بنظام».</p>
+  </div>
+  <div class="u-card" style="--ac:#006B69">
+    <h4>🧱 مسار الشروق إلى الليل</h4>
+    <p><b>الأدوات:</b> مكعبات أو قطع بناء بأربعة ألوان، سيارة صغيرة، وبطاقات زمنية: شروق · نهار · غروب · ليل.</p>
+    <p><b>النشاط:</b> يبني الطفل طريقًا من أربع محطات ملوّنة ويحرّك السيارة بينها مسمّيًا كلَّ محطة: شروق · نهار · غروب · ليل، ويختم: «يومي يسير بنظام: شروق · نهار · غروب · ليل».</p>
+  </div>
+</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#6B3F22">قال رسولي</span></h3>
+<div class="u-grid two">
+  <div class="u-card" style="--ac:#6B3F22">
+    <h4>🏠 دفتر الحمد في البيت</h4>
+    <p><b>الأدوات:</b> زاوية جلوس منزلية هادئة تصلح لحوار قصير حول النعم، بطاقات نعم مصوّرة (نوم، طعام، ماء، لباس، أسرة)، وصندوق صغير باسم «الحمد لله»، مع بطاقة قوانين الركن.</p>
+    <p><b>النشاط:</b> يختار الطفل بطاقة نعمة من البيت ويضعها في صندوق «الحمد لله»، وتسأله المعلمة: ماذا نقول عند النعمة؟ فيردّد: الحمد لله على نعمه، ويختم: «كل نعمة عندي من الله، فأحمده».</p>
+  </div>
+  <div class="u-card" style="--ac:#6B3F22">
+    <h4>🛒 اختيار بلا إسراف</h4>
+    <p><b>الأدوات:</b> منتجات تمثيلية، بطاقة «أحتاج»، بطاقة «لا أحتاج الآن»، وسلّة شكر، مع بطاقة قوانين الركن.</p>
+    <p><b>النشاط:</b> ينظر الطفل إلى المنتجات ويختار ما يحتاجه ويضع بطاقة «لا أحتاج الآن» على الزائد قائلًا: «الحمد لله، أكتفي بما أحتاج»، ويختم: «أشكر النعمة فلا أسرف».</p>
+  </div>
+</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#55702B">أدب الاقتداء</span></h3>
+<div class="u-grid two">
+  <div class="u-card" style="--ac:#55702B">
+    <h4>🏠 إغلاق البيت بذكر الله</h4>
+    <p><b>الأدوات:</b> بابٌ خشبيٌّ صغير أو بيت دمى، كوبٌ بغطاء وإناءٌ صغير، قطعة قماشٍ للتخمير، مصباحٌ رمزيٌّ آمن، وبطاقات: «أغلق» · «أغطي» · «أذكر اسم الله»، وبطاقة حديث آداب المساء.</p>
+    <p><b>النشاط:</b> يغلق الطفل الباب الصغير برفقٍ ويغطّي الإناء قائلًا «بسم الله» عند كل عمل، ويختم: «أغلق وأغطّي وأذكر اسم الله اقتداءً برسول الله ﷺ».</p>
+  </div>
+  <div class="u-card" style="--ac:#55702B">
+    <h4>🧩 ترتيب آداب المساء</h4>
+    <p><b>الأدوات:</b> لوحة مطابقة وتصنيف، وبطاقات صورٍ بلا وجوه: دخول المساء · كفّ الصبيان · إغلاق الباب · تغطية الإناء · إطفاء ما يؤذي، ولوحة ترتيب وصندوق بطاقات.</p>
+    <p><b>النشاط:</b> يرتّب الطفل بطاقات المساء بلا وجوه على لوحة الترتيب من العام إلى الخاص دون حفظ نصّ الحديث، وتسأله المعلمة: أيّ فعلٍ يحفظ البيت؟ ويختم: «أتّبع هدي النبي ﷺ في مسائي».</p>
+  </div>
+</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#8660A8">أحبّك ربي</span></h3>
+<div class="u-grid two">
+  <div class="u-card" style="--ac:#8660A8">
+    <h4>🏠 سلة النعم في المسكن</h4>
+    <p><b>الأدوات:</b> أدوات مطبخ لعب، كوب، طعام تمثيلي، سلّة، بطاقة قلب للشكر، وثلاث بطاقات: نعمة · أحتاج · سبب.</p>
+    <p><b>النشاط:</b> يختار الطفل شيئًا من أدوات المسكن ويضعه في سلّة النعم، وتسأله المعلمة: من الذي أنعم علينا؟ فيردّد: الحمد لله، الله الوهاب، ويختم: «الله الوهاب أنعم علينا، فنحمده».</p>
+  </div>
+  <div class="u-card" style="--ac:#8660A8">
+    <h4>🧩 بطاقات السبب والشافي</h4>
+    <p><b>الأدوات:</b> بطاقات مصوّرة: دواء، طبيب، راحة، ماء، طفل متعب، وسهمان: «أسباب نافعة» و«الله الشافي».</p>
+    <p><b>النشاط:</b> يطابق الطفل بطاقات الدواء والطبيب والراحة تحت خانة «أسباب نافعة»، وتسأله المعلمة: من الشافي؟ فيردّد: الله الشافي والدواء سبب، ويختم: «نأخذ السبب، ونوقن أن الله هو الشافي».</p>
+  </div>
+</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#0d6e6e">لساني عربي</span></h3>
+<div class="u-grid two">
+  <div class="u-card" style="--ac:#0d6e6e">
+    <h4>📖 رفّ الحركات الهادئ</h4>
+    <p><b>الأدوات:</b> بطاقات حروف كبيرة، بطاقات الفتحة والضمة والكسرة، صور كلمات مألوفة، وحامل صغير للبطاقات مع وسادات جلوس هادئة.</p>
+    <p><b>النشاط:</b> يسحب الطفل بطاقة كلمة مصوّرة ويضع عليها الحركة المناسبة (فتحة · ضمة · كسرة) ثم ينطق الحرف مع حركته نطقًا قصيرًا، ويختم: «أنطق الحرف بهدوء وأتعلّم لغتي الجميلة».</p>
+  </div>
+  <div class="u-card" style="--ac:#0d6e6e">
+    <h4>🧩 مسار الحركة على الحرف</h4>
+    <p><b>الأدوات:</b> بطاقة حرف كبير، خيط أو مشبك، علامات أعلى وأسفل وأمام الحرف، وبطاقات الحركات.</p>
+    <p><b>النشاط:</b> يضع الطفل علامة الفتحة فوق الحرف أو الكسرة تحته أو الضمة فوقه ويتتبّعها بالخيط أو المشبك ثم ينطقها، ويختم: «أرى الحركة، أضعها في مكانها، ثم أنطقها».</p>
+  </div>
+</div>
+
+<h3 class="u-h3"><span class="u-subj" style="--ac:#8B0000">مهاراتي</span></h3>
+<div class="u-grid two">
+  <div class="u-card" style="--ac:#8B0000">
+    <h4>🎨 تزيين الرقم ١٠ بالنجوم</h4>
+    <p><b>الأدوات:</b> قالب رقم ١٠ كبير، عشر نجوم ورقية جاهزة، غراء آمن، وصحن صغير للقطع، مع خامات زخرفة آمنة من ركن فنوني الجميلة، وبطاقة «قوانين الركن».</p>
+    <p><b>النشاط:</b> يعدّ الطفل عشر نجوم بصوت هادئ من ١ إلى ١٠ ويلصقها داخل قالب الرقم ١٠ أو حوله، وتسأله المعلمة: كم نجمة استخدمت؟ ويختم: «أعدّ عشرة أشياء ثم أثبتها في عملي».</p>
+  </div>
+  <div class="u-card" style="--ac:#8B0000">
+    <h4>🛒 أشتري بعددي ١٠ و١١ و١٢</h4>
+    <p><b>الأدوات:</b> بطاقات أعداد ١٠ و١١ و١٢، مكعبات أو ثمار لعب، سلال صغيرة، وكاشير تمثيلي، وبطاقة «قوانين الركن».</p>
+    <p><b>النشاط:</b> يسحب الطفل بطاقة عدد (١٠ أو ١١ أو ١٢) ويجمع العدد نفسه من الثمار أو المكعبات ثم يمرّرها على الكاشير التمثيلي ناطقًا العدد، ويختم: «أقرأ العدد ثم أجمع كمية تساويه».</p>
+  </div>
+</div>
+  </section>
+
+  <div class="foot">وحدة الليل والنهار · دليل معلمة غرس القيم لضيافة الأطفال — سبع مواد ويوم ختامي · الوحدة النموذجية</div>
+</div>
+
+<button class="gq-top" aria-label="العودة للأعلى">↑</button>
+
+<script>
+(function(){
+  var doc=document, root=doc.documentElement;
+  var KEY='gq-family-day';
+
+  function fit(fr){ try{ var d=fr.contentWindow.document; var h=Math.max(d.body.scrollHeight, d.documentElement.scrollHeight); if(h>200){ fr.style.height=h+'px'; } }catch(e){} }
+
+  function loadFrame(sp){
+    if(!sp) return;
+    var fr=sp.querySelector('iframe'), load=sp.querySelector('.frame-load');
+    if(!fr || fr.getAttribute('src')) return;              // already loaded
+    fr.addEventListener('load',function(){
+      if(load) load.style.display='none';
+      fit(fr);
+      try{
+        var bd=fr.contentWindow.document.body;
+        if('ResizeObserver' in window){ new ResizeObserver(function(){ fit(fr); }).observe(bd); }
+        else { setInterval(function(){ fit(fr); }, 800); }
+        fr.contentWindow.document.addEventListener('click',function(){ setTimeout(function(){ fit(fr); },60); });
+      }catch(e){}
+      var t=0, iv=setInterval(function(){ fit(fr); if(++t>10) clearInterval(iv); }, 500);
+    });
+    fr.setAttribute('src', fr.getAttribute('data-src'));
+  }
+
+  function selectSub(panel, s){
+    panel.querySelectorAll('.subtab').forEach(function(t){ t.classList.toggle('active', t.dataset.s===s); });
+    panel.querySelectorAll('.subpanel').forEach(function(p){ p.classList.toggle('active', p.dataset.s===s); });
+    loadFrame(panel.querySelector('.subpanel.active'));
+  }
+
+  var daytabs=[].slice.call(doc.querySelectorAll('.daytab'));
+  var daypanels=[].slice.call(doc.querySelectorAll('.daypanel'));
+
+  function activateDay(d,save){
+    daytabs.forEach(function(t){ t.classList.toggle('active', t.dataset.d===d); });
+    daypanels.forEach(function(p){ p.classList.toggle('active', p.id==='d'+d); });
+    var panel=doc.getElementById('d'+d);
+    if(panel){ var cur=panel.querySelector('.subtab.active')||panel.querySelector('.subtab'); if(cur) selectSub(panel, cur.dataset.s); }
+    if(save){ try{ localStorage.setItem(KEY,d); }catch(e){} }
+  }
+
+  // ربط تبويبات المواد داخل كل يوم
+  daypanels.forEach(function(panel){
+    panel.querySelectorAll('.subtab').forEach(function(t){
+      t.addEventListener('click',function(){ selectSub(panel, t.dataset.s); });
+    });
+  });
+
+  // ربط تبويبات الأيام
+  daytabs.forEach(function(t,i){
+    t.addEventListener('click',function(){ activateDay(t.dataset.d,true); window.scrollTo({top:0,behavior:'smooth'}); });
+    t.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ e.preventDefault(); var dir=(e.key==='ArrowLeft')?1:-1, ni=(i+dir+daytabs.length)%daytabs.length; daytabs[ni].focus(); activateDay(daytabs[ni].dataset.d,true); } });
+  });
+
+  var start='1';
+  try{ var s=localStorage.getItem(KEY); if(s && doc.getElementById('d'+s)) start=s; }catch(e){}
+  activateDay(start,false);
+
+  // ===== تبويبات الوحدة =====
+  var utabs=[].slice.call(doc.querySelectorAll('.utab'));
+  var upanels=[].slice.call(doc.querySelectorAll('.upanel'));
+  function showUnit(u){
+    utabs.forEach(function(t){ t.classList.toggle('active', t.dataset.u===u); });
+    upanels.forEach(function(p){ p.classList.toggle('active', p.id==='u-'+u); });
+    if(u==='days'){ var pn=doc.querySelector('.daypanel.active'); if(pn){ var cs=pn.querySelector('.subtab.active'); if(cs) selectSub(pn, cs.dataset.s); } }
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  utabs.forEach(function(t){ t.addEventListener('click',function(){ showUnit(t.dataset.u); }); });
+
+  var top=doc.querySelector('.gq-top');
+  top.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+  window.addEventListener('scroll',function(){ var sc=window.pageYOffset||root.scrollTop; if(sc>320) top.classList.add('show'); else top.classList.remove('show'); },{passive:true});
+})();
+</script>
+</body>
+</html>
