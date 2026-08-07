@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>وحدة المسكن · دليل المعلمة · غرس القيم</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45; --t2:#006B69; --grn:#2D7A4B;
+  --gold:#C79A3B; --gold2:#C8A200; --cream:#FFF7E8;
+  --ink:#1e2b2a; --muted:#5f6f6c;
+  --elm:#0E7C86; --elm-soft:#E6F4F5;
+  --line:#e8dfd0; --card:#fff;
+  --shadow:0 8px 26px rgba(0,50,55,.08);
+  --shadow-sm:0 3px 12px rgba(0,50,55,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.9;font-size:16px;
+  background:radial-gradient(1200px 520px at 82% -12%,#eef8f6 0,transparent 60%),linear-gradient(#fbf7ee,#f4eddd)}
+b,strong{font-weight:700}
+h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
+.wrap{max-width:1080px;margin:0 auto;padding:18px 14px 70px}
+
+/* ===== الغلاف ===== */
+.hero{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:18px;isolation:isolate}
+.hero-photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;transform:scale(1.02)}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg,rgba(0,62,69,.93),rgba(0,107,105,.86) 60%,rgba(14,124,134,.82))}
+.hero-in{position:relative;z-index:2;padding:34px 30px 30px;color:#fff;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.hero-badge-logo{flex:0 0 auto;width:104px;height:104px;border-radius:22px;background:#fff;
+  border:1px solid rgba(255,255,255,.65);display:grid;place-items:center;padding:9px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.hero-badge-logo img{width:100%;height:100%;object-fit:contain}
+.hero-txt{flex:1;min-width:260px}
+.hero-kicker{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);
+  border-radius:999px;padding:5px 14px;font-size:12.5px;font-weight:700;margin-bottom:10px;color:#fff}
+.hero-title{font-size:34px;line-height:1.4;margin-bottom:8px;color:#fff}
+.hero-sub{font-size:14px;opacity:.94;line-height:1.9;max-width:820px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hero-chips span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;padding:5px 12px;font-size:12px;color:#fff}
+
+/* ===== تبويبات الأيام ===== */
+.daytabs{display:flex;flex-wrap:wrap;gap:10px;background:var(--card);border:1px solid var(--line);
+  border-radius:18px;padding:12px;box-shadow:var(--shadow-sm);margin-bottom:16px;position:sticky;top:8px;z-index:20}
+.daytab{flex:1 1 auto;min-width:150px;cursor:pointer;border:1px solid var(--line);background:#fff;
+  border-radius:13px;padding:11px 13px;text-align:start;transition:.18s;display:flex;flex-direction:column;gap:3px}
+.daytab .d-n{font-size:12.5px;color:var(--t2);font-weight:700}
+.daytab .d-t{font-size:15px;font-weight:700;color:var(--ink)}
+.daytab:hover{border-color:var(--t2);transform:translateY(-1px)}
+.daytab.active{background:linear-gradient(135deg,var(--t1),var(--t2));border-color:var(--t1);box-shadow:0 8px 22px rgba(0,62,69,.24)}
+.daytab.active .d-n,.daytab.active .d-t{color:#fff}
+
+/* ===== لوحة اليوم ===== */
+.daypanel{display:none}
+.daypanel.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* ===== تبويبات المواد داخل اليوم ===== */
+.subtabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:10px;box-shadow:var(--shadow-sm)}
+.subtab{cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;
+  font-size:13.5px;font-weight:700;color:#4a5a58;font-family:var(--fb);transition:.15s;white-space:nowrap}
+.subtab:hover{border-color:var(--sc,#006B69);color:var(--sc,#006B69)}
+.subtab.active{background:var(--sc,#006B69);border-color:var(--sc,#006B69);color:#fff}
+.subpanel{display:none}
+.subpanel.active{display:block;animation:fade .2s ease}
+
+.day-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);
+  border-inline-start:6px solid var(--sc,var(--t2));border-radius:16px;padding:13px 18px;box-shadow:var(--shadow-sm);margin-bottom:12px}
+.day-head .subj{background:var(--sc,var(--t2));color:#fff;border-radius:999px;padding:6px 14px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.day-head h2{font-size:19px;color:var(--t1);flex:1;min-width:160px}
+.day-head .open{margin-inline-start:auto;text-decoration:none;background:var(--sc,var(--t1));color:#fff;border-radius:10px;
+  padding:9px 15px;font-size:13px;font-weight:700;white-space:nowrap;transition:.18s;filter:saturate(1)}
+.day-head .open:hover{opacity:.9}
+.frame-wrap{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:var(--shadow);margin-bottom:8px}
+.frame-wrap iframe{display:block;width:100%;border:0;background:#fff;min-height:900px}
+.frame-load{padding:60px 20px;text-align:center;color:var(--muted);font-size:15px}
+.frame-load .sp{display:inline-block;width:30px;height:30px;border:3px solid var(--elm-soft);border-top-color:var(--t2);
+  border-radius:50%;animation:spin .8s linear infinite;margin-bottom:12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.foot{margin-top:26px;text-align:center;color:var(--muted);font-size:13px;border-top:1px dashed var(--line);padding-top:16px}
+
+/* العودة للأعلى */
+.gq-top{position:fixed;inset-inline-end:18px;bottom:18px;width:46px;height:46px;border-radius:50%;border:0;
+  background:var(--t2);color:#fff;font-size:20px;cursor:pointer;box-shadow:0 8px 22px rgba(0,62,69,.3);
+  opacity:0;pointer-events:none;transition:.25s;z-index:40}
+.gq-top.show{opacity:1;pointer-events:auto}
+
+/* ===== شريط تبويبات الوحدة (clean) ===== */
+.unitnav{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px;box-shadow:var(--shadow-sm);margin-bottom:14px}
+.unitnav-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.unitnav-row+.unitnav-row{margin-top:9px;padding-top:11px;border-top:1px dashed var(--line)}
+.unitnav-label{font-family:var(--fd);font-size:11.5px;font-weight:700;color:var(--t2);background:var(--elm-soft);border:1px solid #d5ebec;border-radius:999px;padding:5px 12px;white-space:nowrap}
+.utab{cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 15px;font-size:13px;font-weight:700;color:#4a5a58;font-family:var(--fb);transition:.15s;white-space:nowrap}
+.utab:hover{border-color:var(--t2);color:var(--t2);transform:translateY(-1px)}
+.utab.active{background:linear-gradient(135deg,var(--t1),var(--t2));border-color:var(--t1);color:#fff;box-shadow:0 6px 16px rgba(0,62,69,.2)}
+.utab.days-tab{background:linear-gradient(135deg,#fff,#eef8f6);border-color:#cfe8e6;color:var(--t1)}
+.utab.days-tab.active{background:linear-gradient(135deg,var(--gold),var(--gold2));border-color:var(--gold);color:#3a2c00}
+
+.upanel{display:none}
+.upanel.active{display:block;animation:fade .25s ease}
+
+/* مكوّنات محتوى لوحات الوحدة */
+.u-hero{background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff;border-radius:20px;padding:22px 24px;margin-bottom:16px;box-shadow:var(--shadow-sm)}
+.u-hero h2{font-family:var(--fd);font-size:24px;color:#fff;margin-bottom:6px}
+.u-hero p{font-size:14px;opacity:.96;max-width:860px;line-height:1.85}
+.u-h3{font-family:var(--fd);font-size:19px;color:var(--t1);margin:22px 0 12px;padding-inline-start:13px;border-inline-start:5px solid var(--gold)}
+.u-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.u-grid.two{grid-template-columns:repeat(auto-fill,minmax(330px,1fr))}
+.u-card{background:var(--card);border:1px solid var(--line);border-inline-start:5px solid var(--ac,var(--t2));border-radius:15px;padding:15px 17px;box-shadow:var(--shadow-sm)}
+.u-card h4{font-family:var(--fd);font-size:16px;color:var(--ac,var(--t1));margin-bottom:6px}
+.u-card p,.u-card li{font-size:13.5px;color:var(--ink);line-height:1.8}
+.u-card ul{list-style:none;margin-top:7px;display:grid;gap:5px}
+.u-card ul li{position:relative;padding-inline-start:18px}
+.u-card ul li::before{content:"•";position:absolute;inset-inline-start:2px;color:var(--ac,var(--t2));font-weight:700}
+.u-subj{display:inline-block;background:var(--ac,var(--t2));color:#fff;border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;margin-bottom:8px}
+.u-note{background:var(--elm-soft);border:1px solid #d5ebec;border-radius:14px;padding:13px 16px;font-size:13.5px;color:#215c60;margin:12px 0;line-height:1.8}
+.u-note b{color:var(--t1)}
+.u-note.warn{background:#fff7e8;border-color:#ecd9a8;color:#7a5710}
+.u-note.warn b{color:#8a5a00}
+.u-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:13px;margin:10px 0}
+.u-table th{background:var(--t1);color:#fff;padding:10px;font-family:var(--fd);font-weight:700;font-size:13px;text-align:start}
+.u-table td{border-top:1px solid var(--line);padding:9px 11px;vertical-align:top}
+.u-table tr:nth-child(even) td{background:#faf7f0}
+.u-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+.u-chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:12.5px;font-weight:700;color:var(--t2)}
+.u-media{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#000;margin:12px 0;box-shadow:var(--shadow-sm)}
+.u-media video{display:block;width:100%;max-height:470px;background:#000}
+.u-btnlink{display:inline-flex;align-items:center;gap:7px;text-decoration:none;background:var(--t2);color:#fff;border-radius:10px;padding:9px 15px;font-size:13px;font-weight:700;margin-top:6px}
+.u-btnlink:hover{opacity:.9}
+.u-verse{background:linear-gradient(180deg,#fffdf7,#fff);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin:12px 0;box-shadow:var(--shadow-sm);text-align:center;font-family:var(--fd);font-size:17px;line-height:2.4;color:var(--t1)}
+/* جدول منظومة الوحي مقابل الشيطان (clean) */
+.msys-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:13px;margin:12px 0}
+.msys-table th,.msys-table td{padding:10px 12px;text-align:center;border-top:1px solid var(--line);vertical-align:middle}
+.msys-table thead th{border-top:0;font-family:var(--fd);font-size:13.5px}
+.msys-table th.dim,.msys-table td.dim{background:#faf7f0;font-weight:700;color:var(--muted);font-size:12px;white-space:nowrap}
+.msys-table th.wahy{background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff}
+.msys-table th.shaytan{background:linear-gradient(135deg,#8a3a3a,#6f2b2b);color:#fff}
+.msys-table td.wahy{background:#eef7f0}
+.msys-table td.shaytan{background:#fbf1ef}
+.msys-table td .ic{font-size:17px;display:block;margin-bottom:2px}
+.msys-table td .lb{display:block;font-weight:700}
+.msys-table td.wahy .lb{color:#0A5030}
+.msys-table td.shaytan .lb{color:#8a3a3a}
+.msys-table td .sub{display:block;font-size:11px;color:var(--muted);margin-top:2px}
+.motion-grid,.fitness-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.motion-card,.fitness-card{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.fitness-card.wide{grid-column:1/-1}
+.motion-card video,.fitness-card .fitness-image{display:block;width:100%;background:#000;max-height:230px;object-fit:cover}
+.motion-card-head{display:flex;align-items:center;gap:10px;padding:12px 14px 6px}
+.motion-icon{font-size:24px}
+.motion-title,.fitness-title-row h3{font-family:var(--fd);font-size:15.5px;color:var(--t1)}
+.motion-sub{font-size:11.5px;color:var(--muted)}
+.motion-card-body,.fitness-body{padding:8px 14px 14px;font-size:13px;color:var(--ink);line-height:1.75}
+.fitness-title-row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:5px}
+.fitness-duration{background:var(--elm-soft);color:var(--t2);border-radius:999px;padding:3px 10px;font-size:11.5px;font-weight:700;white-space:nowrap}
+.fitness-steps{list-style:none;margin-top:8px;display:grid;gap:5px;counter-reset:fs}
+.fitness-steps li{position:relative;padding-inline-start:26px;font-size:13px}
+.fitness-steps li::before{counter-increment:fs;content:counter(fs);position:absolute;inset-inline-start:0;top:0;width:18px;height:18px;background:var(--t2);color:#fff;border-radius:50%;font-size:11px;display:grid;place-items:center;font-weight:700}
+
+@media(max-width:700px){
+  .hero-title{font-size:26px}.hero-in{padding:24px 18px}
+  .daytab{min-width:calc(50% - 5px)}
+  .day-head .open{margin-inline-start:0;width:100%;text-align:center}
+}
+
+.fitness-quick{background:#fff;border:1px solid var(--line);border-inline-start:4px solid var(--t2);border-radius:12px;padding:11px 14px;font-size:13px;line-height:1.8;box-shadow:var(--shadow-sm)}
+.fitness-quick b{color:var(--t1)}
+</style>
+  <link rel="stylesheet" href="app.css"/>
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#00575C"/>
+  <link rel="apple-touch-icon" href="brand/logo-ghars.webp"/>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== الغلاف ===== -->
+  <div class="hero">
+    <div class="hero-photo" style="background-image:url('units-art/unit-maskan.jpg')"></div>
+    <div class="hero-in">
+      <div class="hero-badge-logo">
+        <img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة" onerror="this.style.display='none'"/>
+      </div>
+      <div class="hero-txt">
+        <span class="hero-kicker">وحدة تكاملية · الأسبوع الثاني · المرحلة التمهيدية</span>
+        <h1 class="hero-title">وحدة المسكن</h1>
+        <div class="hero-sub">وحدة متكاملة تغرس شكر الله على نعمة المسكن والعائلة، وتتأمّل هدايته في مساكن مخلوقاته. تضمّ ستّ موادّ — <b>كتابي المنير · علّمني ربي · قال رسولي · أدب واقتداء · لساني عربي · مهاراتي</b> — تُكمل سورة الإنفطار وتربط آيات المسكن بالآداب والمهارات. اختاري اليوم، ثم المادة لعرض دليل لقائها كاملًا.</div>
+        <div class="hero-chips">
+          <span>🏠 ٥ أيام</span><span>📚 ٦ مواد + مركزان</span><span>📖 سورة الإنفطار (٩–١٩)</span><span>⏱️ ٣٠ دقيقة/لقاء</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ شريط تبويبات الوحدة ═══════════ -->
+  <nav class="unitnav" aria-label="تبويبات الوحدة">
+    <div class="unitnav-row">
+      <span class="unitnav-label">التخطيط والمتابعة</span>
+      <button class="utab days-tab active" data-u="days">دروس الوحدة</button>
+      <button class="utab" data-u="about">عن الوحدة</button>
+    </div>
+    <!-- أضيفي لوحات تعريفية أخرى بنفس النمط: <button class="utab" data-u="KEY">العنوان</button>
+         مع لوحة مطابقة <div class="upanel" id="u-KEY">…</div> بالأسفل. -->
+  </nav>
+
+  <!-- ═══════════ لوحة تعريفية (نموذج) ═══════════ -->
+  <div class="upanel" id="u-about">
+    <div class="u-hero"><h2>عن وحدة المسكن</h2></div>
+    <p style="max-width:74ch"><b>الفكرة الناظمة:</b> المسكن نعمةٌ من الله يجمعنا بعائلتنا في مكانٍ آمن، فنشكره عليها ونعمّره بالطاعة والعمل الصالح، ونتأمّل هدايته لكلّ مخلوق في بناء مسكنه.</p>
+    <p style="max-width:74ch;margin-top:10px"><b>المواد وتكاملها عبر الأيام الخمسة:</b> يُكمل <b>كتابي المنير</b> سورة الإنفطار (الآيات ٩–١٩ ثم المعنى الجامع والمراجعة)؛ ويعرّف <b>علّمني ربي</b> مفهوم المسكن وأنواعه وأجزاءه وهداية الله للمخلوقات؛ ويربط <b>قال رسولي</b> إكرام الضيف وصلة الرحم بالبيت؛ ويعلّم <b>أدب واقتداء</b> آداب الاستئذان؛ ويتناول <b>لساني عربي</b> حروف (ش · ت · هـ)؛ و<b>مهاراتي</b> العدد ١٥ ومفهوم الوقت.</p>
+    <p style="max-width:74ch;margin-top:10px;color:var(--muted);font-size:14.5px">🏗️ مركز اللغة ومركز الرياضيات يُضافان قريبًا في اليوم الخامس.</p>
+  </div>
+
+  <!-- ═══════════ دروس الوحدة (تبويبات الأيام) ═══════════ -->
+  <div class="upanel active" id="u-days">
+  <div class="daytabs" role="tablist">
+    <button class="daytab active" data-d="1"><span class="d-n">الأحد · اليوم الأول</span><span class="d-t">مفهوم المسكن</span></button>
+    <button class="daytab" data-d="2"><span class="d-n">الإثنين · اليوم الثاني</span><span class="d-t">أنواع المساكن</span></button>
+    <button class="daytab" data-d="3"><span class="d-n">الثلاثاء · اليوم الثالث</span><span class="d-t">أجزاء المسكن وآدابها</span></button>
+    <button class="daytab" data-d="4"><span class="d-n">الأربعاء · اليوم الرابع</span><span class="d-t">هداية المخلوقات</span></button>
+    <button class="daytab" data-d="5"><span class="d-n">الخميس · اليوم الخامس</span><span class="d-t">المراجعة والختام</span></button>
+  </div>
+
+  <!-- ═══ اليوم الأول · الأحد · مفهوم المسكن ═══ -->
+  <div class="daypanel active" id="d1">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+      <button class="subtab" data-s="2" style="--sc:#006B69">علّمني ربي</button>
+      <button class="subtab" data-s="3" style="--sc:#0d6e6e">لساني عربي</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الإنفطار (٩–١٢) · الملائكة الكرام الكاتبون</h2><a class="open" href="mk-kitabi-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الإنفطار ٩–١٢" data-src="mk-kitabi-lesson1.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>مفهوم المسكن</h2><a class="open" href="mk-allamni-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — مفهوم المسكن" data-src="mk-allamni-lesson1.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>حرف الشين (ش) ومواضعه</h2><a class="open" href="mk-lisani-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — حرف الشين" data-src="mk-lisani-lesson1.html" loading="lazy"></iframe></div></div>
+  </div>
+
+  <!-- ═══ اليوم الثاني · الإثنين · أنواع المساكن ═══ -->
+  <div class="daypanel" id="d2">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+      <button class="subtab" data-s="2" style="--sc:#006B69">علّمني ربي</button>
+      <button class="subtab" data-s="3" style="--sc:#55702B">أدب واقتداء</button>
+      <button class="subtab" data-s="4" style="--sc:#0d6e6e">لساني عربي</button>
+      <button class="subtab" data-s="5" style="--sc:#8B0000">مهاراتي</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الإنفطار (١٣–١٦) · جزاء الأبرار والفجار</h2><a class="open" href="mk-kitabi-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الإنفطار ١٣–١٦" data-src="mk-kitabi-lesson2.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>أنواع المساكن</h2><a class="open" href="mk-allamni-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — أنواع المساكن" data-src="mk-allamni-lesson2.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#55702B"><span class="subj">أدب واقتداء</span><h2>آداب الاستئذان — إذا لم يُؤذن لي</h2><a class="open" href="mk-adab-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="أدب واقتداء — آداب الاستئذان" data-src="mk-adab-lesson1.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="4"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>حرفا التاء (ت) والهاء (هـ)</h2><a class="open" href="mk-lisani-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — التاء والهاء" data-src="mk-lisani-lesson2.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="5"><div class="day-head" style="--sc:#8B0000"><span class="subj">مهاراتي</span><h2>العدد خمسة عشر (١٥)</h2><a class="open" href="mk-maharati-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="مهاراتي — العدد ١٥" data-src="mk-maharati-lesson1.html" loading="lazy"></iframe></div></div>
+  </div>
+
+  <!-- ═══ اليوم الثالث · الثلاثاء · أجزاء المسكن وآدابها ═══ -->
+  <div class="daypanel" id="d3">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+      <button class="subtab" data-s="2" style="--sc:#006B69">علّمني ربي</button>
+      <button class="subtab" data-s="3" style="--sc:#6B3F22">قال رسولي</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الإنفطار (١٧–١٩) · خاتمة السورة</h2><a class="open" href="mk-kitabi-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الإنفطار ١٧–١٩" data-src="mk-kitabi-lesson3.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>أجزاء المسكن وآداب التعامل فيها</h2><a class="open" href="mk-allamni-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — أجزاء المسكن" data-src="mk-allamni-lesson3.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#6B3F22"><span class="subj">قال رسولي</span><h2>حديث من خصال الإيمان — إكرام الضيف</h2><a class="open" href="mk-rasuli-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="قال رسولي — خصال الإيمان" data-src="mk-rasuli-lesson1.html" loading="lazy"></iframe></div></div>
+  </div>
+
+  <!-- ═══ اليوم الرابع · الأربعاء · هداية المخلوقات ═══ -->
+  <div class="daypanel" id="d4">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+      <button class="subtab" data-s="2" style="--sc:#006B69">علّمني ربي</button>
+      <button class="subtab" data-s="3" style="--sc:#8B0000">مهاراتي</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>المعنى الجامع · خريطة معاني سورة الإنفطار</h2><a class="open" href="mk-kitabi-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — المعنى الجامع" data-src="mk-kitabi-lesson4.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>هداية الله للمخلوقات في بناء مساكنها</h2><a class="open" href="mk-allamni-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — هداية المخلوقات" data-src="mk-allamni-lesson4.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#8B0000"><span class="subj">مهاراتي</span><h2>التعرّف على مفهوم الوقت</h2><a class="open" href="mk-maharati-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="مهاراتي — مفهوم الوقت" data-src="mk-maharati-lesson2.html" loading="lazy"></iframe></div></div>
+  </div>
+
+  <!-- ═══ اليوم الخامس · الخميس · المراجعة والختام ═══ -->
+  <div class="daypanel" id="d5">
+    <div class="subtabs">
+      <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+      <button class="subtab" data-s="2" style="--sc:#0e7c86">مركز اللغة</button>
+      <button class="subtab" data-s="3" style="--sc:#a83232">مركز الرياضيات</button>
+    </div>
+    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>المراجعة والتسميع والتقويم الختامي</h2><a class="open" href="mk-kitabi-lesson5.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — المراجعة والتسميع" data-src="mk-kitabi-lesson5.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#0e7c86"><span class="subj">مركز اللغة</span><h2>يُضاف قريبًا</h2></div><div class="frame-wrap" style="min-height:180px;display:grid;place-items:center;background:var(--card);border:1px dashed var(--line);border-radius:14px;color:var(--muted);text-align:center;padding:30px">🏗️ مركز اللغة قيد الإعداد — سيُرسل محتواه ويُضاف هنا قريبًا بإذن الله.</div></div>
+    <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#a83232"><span class="subj">مركز الرياضيات</span><h2>يُضاف قريبًا</h2></div><div class="frame-wrap" style="min-height:180px;display:grid;place-items:center;background:var(--card);border:1px dashed var(--line);border-radius:14px;color:var(--muted);text-align:center;padding:30px">🏗️ مركز الرياضيات قيد الإعداد — سيُرسل محتواه ويُضاف هنا قريبًا بإذن الله.</div></div>
+  </div>
+
+  </div><!-- /#u-days -->
+
+</div><!-- /.wrap -->
+
+<button class="gq-top" aria-label="العودة للأعلى">↑</button>
+<script>
+(function(){
+  var doc=document, root=doc.documentElement;
+  var KEY='gq-maskan-day';
+
+  function fit(fr){ try{ var d=fr.contentWindow.document; var h=Math.max(d.body.scrollHeight, d.documentElement.scrollHeight); if(h>200){ fr.style.height=h+'px'; } }catch(e){} }
+
+  function loadFrame(sp){
+    if(!sp) return;
+    var fr=sp.querySelector('iframe'), load=sp.querySelector('.frame-load');
+    if(!fr || fr.getAttribute('src')) return;              // already loaded
+    fr.addEventListener('load',function(){
+      if(load) load.style.display='none';
+      fit(fr);
+      try{
+        var bd=fr.contentWindow.document.body;
+        if('ResizeObserver' in window){ new ResizeObserver(function(){ fit(fr); }).observe(bd); }
+        else { setInterval(function(){ fit(fr); }, 800); }
+        fr.contentWindow.document.addEventListener('click',function(){ setTimeout(function(){ fit(fr); },60); });
+      }catch(e){}
+      var t=0, iv=setInterval(function(){ fit(fr); if(++t>10) clearInterval(iv); }, 500);
+    });
+    fr.setAttribute('src', fr.getAttribute('data-src'));
+  }
+
+  function selectSub(panel, s){
+    panel.querySelectorAll('.subtab').forEach(function(t){ t.classList.toggle('active', t.dataset.s===s); });
+    panel.querySelectorAll('.subpanel').forEach(function(p){ p.classList.toggle('active', p.dataset.s===s); });
+    loadFrame(panel.querySelector('.subpanel.active'));
+  }
+
+  var daytabs=[].slice.call(doc.querySelectorAll('.daytab'));
+  var daypanels=[].slice.call(doc.querySelectorAll('.daypanel'));
+
+  function activateDay(d,save){
+    daytabs.forEach(function(t){ t.classList.toggle('active', t.dataset.d===d); });
+    daypanels.forEach(function(p){ p.classList.toggle('active', p.id==='d'+d); });
+    var panel=doc.getElementById('d'+d);
+    if(panel){ var cur=panel.querySelector('.subtab.active')||panel.querySelector('.subtab'); if(cur) selectSub(panel, cur.dataset.s); }
+    if(save){ try{ localStorage.setItem(KEY,d); }catch(e){} }
+  }
+
+  // ربط تبويبات المواد داخل كل يوم
+  daypanels.forEach(function(panel){
+    panel.querySelectorAll('.subtab').forEach(function(t){
+      t.addEventListener('click',function(){ selectSub(panel, t.dataset.s); });
+    });
+  });
+
+  // ربط تبويبات الأيام
+  daytabs.forEach(function(t,i){
+    t.addEventListener('click',function(){ activateDay(t.dataset.d,true); window.scrollTo({top:0,behavior:'smooth'}); });
+    t.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ e.preventDefault(); var dir=(e.key==='ArrowLeft')?1:-1, ni=(i+dir+daytabs.length)%daytabs.length; daytabs[ni].focus(); activateDay(daytabs[ni].dataset.d,true); } });
+  });
+
+  var start='1';
+  try{ var s=localStorage.getItem(KEY); if(s && doc.getElementById('d'+s)) start=s; }catch(e){}
+  activateDay(start,false);
+
+  // ===== تبويبات الوحدة =====
+  var utabs=[].slice.call(doc.querySelectorAll('.utab'));
+  var upanels=[].slice.call(doc.querySelectorAll('.upanel'));
+  function showUnit(u){
+    utabs.forEach(function(t){ t.classList.toggle('active', t.dataset.u===u); });
+    upanels.forEach(function(p){ p.classList.toggle('active', p.id==='u-'+u); });
+    if(u==='days'){ var pn=doc.querySelector('.daypanel.active'); if(pn){ var cs=pn.querySelector('.subtab.active'); if(cs) selectSub(pn, cs.dataset.s); } }
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  utabs.forEach(function(t){ t.addEventListener('click',function(){ showUnit(t.dataset.u); }); });
+
+  var top=doc.querySelector('.gq-top');
+  top.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+  window.addEventListener('scroll',function(){ var sc=window.pageYOffset||root.scrollTop; if(sc>320) top.classList.add('show'); else top.classList.remove('show'); },{passive:true});
+})();
+</script>
+<script src="app.js"></script>
+</body>
+</html>
