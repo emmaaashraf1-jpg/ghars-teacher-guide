@@ -1,0 +1,17 @@
+{
+  "name": "دليل معلمة غرس القيم",
+  "short_name": "غرس القيم",
+  "description": "دليل المعلمة التفاعلي لمنهج غرس القيم — الوحدات التكاملية لمرحلة التمهيدي.",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "dir": "rtl",
+  "lang": "ar",
+  "background_color": "#F4EEE1",
+  "theme_color": "#00575C",
+  "icons": [
+    { "src": "brand/logo-ghars.webp", "sizes": "192x192", "type": "image/webp", "purpose": "any maskable" },
+    { "src": "brand/logo-ghars.webp", "sizes": "512x512", "type": "image/webp", "purpose": "any maskable" }
+  ]
+}
