@@ -1,9 +1,22 @@
-/* دليل غرس القيم — نسخة تجريبية · سلوكيات تطوير تجربة المعلمة (UX/UI) */
+/* دليل غرس القيم · سلوكيات تطوير تجربة المعلمة (UX/UI) — طبقة مشتركة لكل الوحدات.
+   التفعيل في أي وحدة: أضيفي <script src="app.js"></script> قبل </body> — يركّب بقيّته بنفسه. */
 (function(){
   'use strict';
   var doc=document, body=doc.body;
   body.classList.add('trial');
-  var UNIT = (location.pathname.indexOf('layl-nahar')>=0)?'layl-nahar':'family';
+  /* معرّف الوحدة من اسم الملف (unit-XXX.html → XXX) ليكون مفتاح التقدّم فريدًا لكل وحدة */
+  var UNIT = ((location.pathname.split('/').pop()||'unit').replace(/\.html?$/i,'').replace(/^unit-/,'')) || 'unit';
+
+  /* ---------- تركيب ذاتي: مسارات + أنماط + PWA (يكفي سطر <script src="app.js"> لتفعيل كل شيء) ---------- */
+  var BASE=(function(){ try{ var s=doc.currentScript; if(!s){ var ss=doc.getElementsByTagName('script'); s=ss[ss.length-1]; } return (s&&s.src||'').replace(/[^\/]*$/,''); }catch(e){ return ''; } })();
+  (function ensureHead(){
+    var h=doc.head||doc.getElementsByTagName('head')[0]; if(!h) return;
+    if(!doc.querySelector('link[rel="stylesheet"][href*="app.css"]')) h.insertAdjacentHTML('beforeend','<link rel="stylesheet" href="'+BASE+'app.css"/>');
+    if(!doc.querySelector('link[rel="manifest"]')) h.insertAdjacentHTML('beforeend','<link rel="manifest" href="'+BASE+'manifest.json"/>');
+    if(!doc.querySelector('meta[name="theme-color"]')) h.insertAdjacentHTML('beforeend','<meta name="theme-color" content="#00575C"/>');
+    if(!doc.querySelector('link[rel="apple-touch-icon"]')) h.insertAdjacentHTML('beforeend','<link rel="apple-touch-icon" href="'+BASE+'brand/logo-ghars.webp"/>');
+  })();
+
   function svg(p,cls){ return '<svg class="'+(cls||'tico')+'" viewBox="0 0 24 24" aria-hidden="true">'+p+'</svg>'; }
 
   /* ---------- أيقونات ---------- */
@@ -39,7 +52,7 @@
 
   /* ---------- شريط علوي + مسار تنقّل + بحث ---------- */
   function buildTopbar(){
-    var logo = doc.querySelector('.hero-badge-logo img'); var lsrc = logo?logo.getAttribute('src'):'brand/logo-ghars.webp';
+    var logo = doc.querySelector('.hero-badge-logo img'); var lsrc = logo?logo.getAttribute('src'):(BASE+'brand/logo-ghars.webp');
     var title = (doc.querySelector('.hero-title')||{}).textContent||'دليل المعلمة';
     var bar = doc.createElement('div'); bar.className='tbar';
     bar.innerHTML =
@@ -239,7 +252,7 @@
     [].forEach.call(doc.querySelectorAll('.frame-wrap iframe'),function(fr){ fr.addEventListener('load',function(){enhanceFrame(fr);refreshProg();}); });
     afterNav();
     // PWA
-    if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }
+    if('serviceWorker' in navigator){ navigator.serviceWorker.register(BASE+'sw.js').catch(function(){}); }
   }
   if(doc.readyState!=='loading') setTimeout(init,60); else doc.addEventListener('DOMContentLoaded',function(){setTimeout(init,60);});
 })();
