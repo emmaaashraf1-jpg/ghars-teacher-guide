@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>عنوان اللقاء · اسم المادة · اسم الوحدة</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;   /* خط العناوين */
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif; /* خط المتن */
+  --t1:#003E45; --t2:#006B69; --grn:#2D7A4B;
+  --gold:#C79A3B; --gold2:#C8A200; --cream:#FFF7E8;
+  --ink:#1e2b2a; --muted:#5f6f6c;
+  --elm:#0E7C86; --elm-soft:#E6F4F5;
+  --line:#e8dfd0; --card:#fff;
+  --shadow:0 8px 26px rgba(0,50,55,.08);
+  --shadow-sm:0 3px 12px rgba(0,50,55,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:var(--fb);
+  color:var(--ink);line-height:1.95;font-size:16.5px;
+  background:
+    radial-gradient(1200px 520px at 82% -12%,#eef8f6 0,transparent 60%),
+    linear-gradient(#fbf7ee,#f4eddd);
+}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 60px}
+b,strong{font-weight:700}
+/* العناوين فقط بخط AlAwwal */
+.cover h1,.c-badge,.c-unit,.sec-head h2,.flow-card h3,.lbl,.taq h3,.ci .term,
+.adab .h,.par .h,.corner .h h4,.story .h,.refblock .h,.dua .x,.dua .l,
+table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd)}
+
+/* ===== الغلاف ===== */
+.cover{position:relative;overflow:hidden;border-radius:26px;color:#fff;box-shadow:var(--shadow);min-height:200px}
+.cover-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.cover::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg,rgba(0,62,69,.91),rgba(0,107,105,.78) 52%,rgba(45,122,75,.87))}
+.cover::after{content:"";position:absolute;inset:0;z-index:1;opacity:.07;pointer-events:none;
+  background:radial-gradient(circle at 88% 18%,#fff 0 2px,transparent 3px) 0 0/34px 34px}
+.cover-main{position:relative;z-index:2;padding:28px 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cover-l{flex:1 1 60%;min-width:240px}
+.cover-r{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.c-badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:999px;padding:6px 15px;font-weight:700;font-size:15px;margin-bottom:12px}
+.cover h1{font-size:33px;line-height:1.42;font-weight:700;margin-bottom:10px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+.c-meta{font-size:15px;color:#dcf3ef;line-height:1.9}
+.c-unit{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:14px;
+  padding:12px 16px;font-weight:700;font-size:16px;line-height:1.6}
+.c-dur{color:#bfe6e0;font-size:14.5px}
+
+/* ===== شريط التبويبات ===== */
+.tabs{position:sticky;top:0;z-index:40;display:flex;flex-wrap:wrap;gap:8px;
+  margin:16px 0 24px;padding:10px;background:rgba(255,251,242,.94);backdrop-filter:blur(6px);
+  border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 14px rgba(0,50,55,.05)}
+.tab{background:#fff;border:1px solid var(--line);color:var(--t2);border-radius:999px;
+  padding:8px 15px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s}
+.tab:hover{background:var(--elm-soft);border-color:var(--elm);color:var(--elm)}
+.tab.active{background:var(--elm);border-color:var(--elm);color:#fff;box-shadow:0 4px 12px rgba(14,124,134,.28)}
+.tab.gold{background:var(--gold);border-color:var(--gold);color:#3a2a06}
+.tab.gold.active{background:var(--gold2);border-color:var(--gold2);color:#241a00}
+
+/* ===== نظام اللوحات ===== */
+.panel{display:none;animation:fade .25s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ===== مكوّنات ===== */
+.sec-head{display:flex;align-items:center;gap:12px;margin:26px 0 15px}
+.sec-head .num{flex:none;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+  background:var(--elm);color:#fff;font-size:18px;box-shadow:0 4px 12px rgba(14,124,134,.28)}
+.sec-head .num.grn{background:var(--grn)}.sec-head .num.gold{background:var(--gold);color:#3a2a06}
+.sec-head h2{font-size:22px;color:var(--t1);font-weight:700}
+.sec-head .rule{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.first{margin-top:6px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow-sm)}
+.grid{display:grid;gap:15px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){.g2,.g3{grid-template-columns:1fr}.cover h1{font-size:27px}}
+.lbl{color:var(--t1);font-weight:700;font-size:16px;border-bottom:2px solid var(--gold);display:inline-block;padding-bottom:3px;margin-bottom:12px}
+
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border-radius:999px;padding:6px 13px;font-size:15px;border:1px solid var(--line);background:#fff}
+.chip.v{background:#fff7e8;border-color:#ebd9a8;color:#8a6410}
+.chip.c{background:var(--elm-soft);border-color:#bfe3e6;color:#08636b}
+
+/* مسار البدء */
+.flow-card{border-radius:14px;padding:15px 18px;margin-bottom:12px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.flow-card.sig{border-inline-start:5px solid var(--elm)}
+.flow-card.law{border-inline-start:5px solid var(--gold)}
+.flow-card.rev{border-inline-start:5px solid var(--grn)}
+.flow-card h3{font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.flow-card.sig h3{color:var(--elm)}.flow-card.law h3{color:#8a6410}.flow-card.rev h3{color:var(--grn)}
+.greet{background:var(--elm-soft);border-radius:10px;padding:10px 14px;color:#08636b;font-weight:700;margin-bottom:10px}
+.linkbtn{display:inline-block;background:var(--t2);color:#fff;border-radius:999px;padding:8px 16px;font-weight:700;text-decoration:none;font-size:15px;margin:6px 0}
+.law-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+@media(max-width:600px){.law-grid{grid-template-columns:1fr}}
+.law-grid > div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 13px;font-size:15px}
+.law-grid small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+
+/* الشريط الجانبي/الأهداف */
+.two{display:grid;grid-template-columns:.9fr 1.4fr;gap:16px;align-items:start}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.obj{margin-bottom:8px;display:flex;gap:9px;align-items:flex-start}
+.obj .n{flex:none;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;color:#fff;font-size:13.5px;background:var(--elm)}
+.obj .n.o{background:var(--gold);color:#3a2a06}.obj .n.g{background:var(--grn)}.obj .n.p{background:#7a5cc0}
+.obj span.t{font-size:15.5px;line-height:1.8}
+.mini{font-size:15px;line-height:1.8;color:var(--ink)}
+.mini .src{color:var(--muted);font-size:13.5px}
+
+/* سير اللقاء */
+.flow{position:relative;padding-inline-start:26px}
+.flow::before{content:"";position:absolute;inset-inline-start:8px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--elm),var(--gold))}
+.step{position:relative;margin-bottom:14px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 17px;box-shadow:var(--shadow-sm)}
+.step::before{content:"";position:absolute;inset-inline-start:-24px;top:17px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--elm)}
+.step b.k{color:var(--elm)}
+
+.story{background:#fff8ec;border:1px solid #ebd9a8;border-radius:16px;padding:0;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:6px}
+.story .h{background:linear-gradient(90deg,var(--gold),#b98a2a);color:#fff;padding:11px 18px;font-weight:700;font-size:16px}
+.story .h span{font-weight:400;opacity:.9;font-size:13.5px}
+.story .b{padding:14px 18px}
+.story .b p{margin-bottom:8px}
+
+/* التغذية الراجعة */
+.feedback{border-inline-start:5px solid var(--grn)}
+.feedback h3{color:var(--grn);font-size:16px;margin-bottom:8px}
+.feedback ol{margin-inline-start:20px;font-size:16px;line-height:2}
+.note{color:var(--muted);font-size:14.5px;margin-top:8px}
+
+/* اختيارات الأنشطة */
+.actbar{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#3a2a06;border-radius:14px 14px 0 0;font-weight:700;padding:11px;text-align:center;margin-top:8px}
+.actgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;overflow:hidden}
+@media(max-width:600px){.actgrid{grid-template-columns:1fr}}
+.actgrid > div{padding:13px 16px;border:1px solid #f0e8da;font-size:15px;line-height:1.85}
+.actgrid .t{color:var(--t1);font-weight:700;display:block;margin-bottom:5px}
+.actgrid .bd{color:var(--elm);font-weight:700}
+
+/* كفارة */
+.dua{text-align:center;background:linear-gradient(135deg,var(--t1),var(--grn));color:#fff;border-radius:18px;padding:24px;box-shadow:var(--shadow);margin-top:16px}
+.dua .l{color:var(--gold);font-size:15px;letter-spacing:.5px;margin-bottom:6px}
+.dua .x{font-size:21px;line-height:2}
+
+/* info bar */
+.info{background:var(--elm-soft);border:1px solid #bfe3e6;color:#08636b;border-radius:12px;padding:11px 15px;font-size:15.5px;font-weight:600;margin-bottom:14px}
+
+/* التقويم */
+.taq{border-top:4px solid var(--elm)}
+.taq.t{border-top-color:var(--gold2)}.taq.n{border-top-color:var(--grn)}
+.taq h3{font-size:16px;font-weight:700;margin-bottom:10px}
+.taq.q h3{color:var(--elm)}.taq.t h3{color:#b0851a}.taq.n h3{color:var(--grn)}
+.taq ul{list-style:none}
+.taq li{display:flex;gap:8px;align-items:flex-start;margin-bottom:7px;font-size:15.5px;line-height:1.8}
+.taq li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:9px}
+
+/* con-grid (قيم/مفاهيم/مؤشرات) */
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.cg{grid-template-columns:1fr}}
+.ci{background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 14px}
+.ci .term{color:var(--elm);font-weight:700;font-size:15.5px;margin-bottom:3px}
+.ci .def{font-size:15px;line-height:1.8}
+.steps{list-style:none;margin-top:6px}
+.steps li{display:flex;gap:9px;margin-bottom:7px;font-size:15.5px;line-height:1.85}
+.steps li::before{content:"•";color:var(--gold);font-weight:900;font-size:18px;line-height:1.2}
+.cardgold{border-top:4px solid var(--gold)}
+.cardpurple{border-top:4px solid #7a5cc0}
+.cardblue{border-top:4px solid var(--t2)}
+.card > .lbl.gold{border-color:var(--gold)}
+
+/* الآداب */
+.adab{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:14px;background:#fff}
+.adab .h{background:linear-gradient(90deg,var(--elm),#0b6f78);color:#fff;padding:11px 16px;font-weight:700;font-size:16px}
+.adab .b{padding:14px 16px}
+.adab .row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:15.5px;line-height:1.8}
+.tag{flex:none;border-radius:8px;font-weight:700;font-size:13.5px;padding:3px 11px;color:#fff}
+.tag.s{background:#c46b2e}.tag.r{background:var(--t2)}.tag.v{background:var(--grn)}
+.adab .link{background:#fff7e8;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;font-size:15px;padding:8px 12px;margin-top:6px}
+
+/* تحضيرات ولي الأمر */
+.par{margin-bottom:12px}
+.par .h{color:var(--t1);font-weight:700;font-size:16.5px;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.hs{display:flex;gap:9px;align-items:flex-start;margin-bottom:6px;font-size:15.5px;line-height:1.8}
+.hs .n{flex:none;width:22px;height:22px;border-radius:50%;background:var(--elm);color:#fff;display:grid;place-items:center;font-size:13.5px}
+.after{background:#f2faf5;border:1px solid #bfe0cd;border-radius:9px;padding:6px 12px;margin-top:5px;font-size:14.5px;color:#0A5030;font-style:italic}
+.pq{background:var(--elm-soft);border-radius:10px;color:#08636b;padding:8px 12px;margin:5px 0;font-size:15px;font-weight:600}
+.msg{border-inline-start:5px solid var(--grn);font-size:15.5px;line-height:1.95}
+.msg .l{color:var(--grn);font-weight:700;margin-bottom:6px}
+
+/* الحصيلة */
+table.voc{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:4px}
+table.voc th{background:var(--elm);color:#fff;font-size:15px;padding:10px 12px;text-align:start}
+table.voc td{font-size:15px;line-height:1.8;padding:10px 12px;border-top:1px solid var(--line)}
+table.voc .w{color:var(--elm);font-weight:700}
+
+/* المراجع */
+.refblock{margin-bottom:14px}
+.refblock .h{color:var(--t1);font-weight:700;font-size:16px;margin-bottom:4px}
+.refblock .sub{color:var(--muted);font-size:14.5px;margin-bottom:8px}
+.refitem{display:flex;gap:10px;align-items:flex-start;border-bottom:1px dashed var(--line);padding:10px 0}
+.rbadge{flex:none;border-radius:999px;font-size:12.5px;font-weight:700;padding:3px 10px;color:#fff}
+.rbadge.q{background:var(--grn)}.rbadge.t{background:var(--t2)}.rbadge.p{background:#7a5cc0}.rbadge.d{background:#546e7a}
+.refitem .tt{font-size:15.5px;font-weight:700}
+.refitem .dd{color:var(--muted);font-size:14.5px}
+.reflink{color:var(--t2);font-size:14.5px;text-decoration:underline;margin-inline-end:8px}
+
+/* الأركان */
+.chero h2{margin-bottom:6px}
+.chero p{color:var(--muted);font-size:15.5px}
+.caution{background:#fff7e8;border:1px dashed #ebd9a8;border-radius:12px;padding:11px 15px;color:#8a6410;font-size:15px;margin:12px 0}
+.corner{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:16px;background:#fff}
+.corner .h{padding:13px 18px;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.corner .h .k{background:rgba(255,255,255,.2);border-radius:999px;padding:4px 13px;font-size:14.5px}
+.corner .h h4{font-size:17px}
+.corner .b{padding:16px 18px}
+.cfield{margin-bottom:10px}
+.cfield b{color:var(--elm);font-size:15px;display:block;margin-bottom:2px}
+.cfield p,.cfield li{font-size:15px;line-height:1.8}
+.cfield ol{margin-inline-start:20px}
+.faith{background:#fff7e8;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;padding:10px 14px;margin-top:8px;font-size:15px}
+
+.foot{text-align:center;color:var(--muted);font-size:14.5px;margin-top:34px}
+/* ==== إثراء الدليل ==== */
+.sig-video{margin:10px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#0b3f45}
+.sig-video video{display:block;width:100%;max-height:300px;background:#000}
+.sig-video .cap{background:var(--elm-soft);color:#08636b;font-size:13.5px;padding:8px 12px}
+.plan-wrap{overflow-x:auto}
+table.plan{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+table.plan th{background:var(--t2);color:#fff;font-size:14.5px;padding:9px 12px;text-align:start}
+table.plan td{font-size:14.5px;padding:9px 12px;border-top:1px solid var(--line);line-height:1.7}
+table.plan td:first-child{font-weight:700;color:var(--t1);white-space:nowrap}
+table.plan td.z{color:var(--gold2);font-weight:700;white-space:nowrap;text-align:center}
+table.plan tr.tot td{background:#fff7e8;font-weight:700;color:#8a6410}
+.central{background:linear-gradient(135deg,#0b6f78,#0E7C86);color:#fff;border-radius:14px;padding:14px 18px;margin:6px 0 2px;box-shadow:var(--shadow-sm)}
+.central b{color:#ffe9b8;display:block;margin-bottom:3px}
+.cues{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.cue{border:2px dashed #cdbf9e;background:#fffdf6;border-radius:14px;padding:14px;text-align:center}
+.cue .ic{font-size:30px;display:block;margin-bottom:6px}
+.cue .t{font-weight:700;color:var(--t1);font-size:14.5px;display:block}
+.cue .d{color:var(--muted);font-size:13px;display:block;margin-top:2px}
+.cue .tag{display:inline-block;margin-top:7px;background:var(--elm-soft);color:#08636b;border-radius:999px;padding:2px 10px;font-size:12px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.gitem{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow-sm)}
+.gitem .imgwrap{background:#f6f1e6;height:180px;overflow:hidden}
+.gitem img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.gitem .cap{padding:9px 12px;font-size:14px;font-weight:700;color:var(--t1);text-align:center}
+.gitem .cap small{display:block;color:var(--muted);font-weight:400;font-size:12.5px;margin-top:2px}
+.step-media{margin:9px auto 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;max-width:330px;box-shadow:var(--shadow-sm)}
+.step-media img{display:block;width:100%;height:auto}
+.step-media .cap{background:var(--elm-soft);color:#08636b;font-size:12.5px;padding:5px 10px;text-align:center}
+.actful{border-inline-start:5px solid var(--gold);margin-top:8px}
+.actful h3{color:#8a6410;font-size:17px;margin-bottom:10px}
+.actful .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px}
+@media(max-width:600px){.actful .row2{grid-template-columns:1fr}}
+.miniblock b{color:var(--elm);display:block;margin-bottom:3px;font-size:14.5px}
+.actful ol{margin-inline-start:20px;font-size:15px;line-height:1.95}
+.actful .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px;margin-top:8px}
+.actful .opt{background:#f7fbfa;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;line-height:1.7}
+.actful .opt b{color:var(--t2)}
+ol.qa{list-style:none;margin-inline-start:0}
+ol.qa li{margin-bottom:12px}
+ol.qa .q{font-weight:700;color:var(--t1);font-size:15.5px}
+ol.qa .a{display:block;margin-top:3px;background:#f2faf5;border-inline-start:3px solid var(--grn);border-radius:8px;padding:7px 12px;font-size:14.5px;color:#12563a;line-height:1.8}
+ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;color:var(--grn)}
+.strat{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 13px;margin-bottom:8px}
+.strat .k{flex:none;background:var(--elm-soft);color:#08636b;border-radius:8px;padding:4px 11px;font-size:13.5px;font-weight:700;white-space:nowrap}
+.strat .v{font-size:14.5px;line-height:1.8}
+.means{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.means .m{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;border-top:4px solid var(--elm)}
+.means .m.s2{border-top-color:var(--gold2)}.means .m.s3{border-top-color:var(--grn)}.means .m.s4{border-top-color:#7a5cc0}
+.means .m h4{color:var(--t1);font-size:15px;margin-bottom:6px}
+.means .m .i{font-size:13.5px;line-height:1.7;color:var(--ink);display:block;padding-inline-start:12px;position:relative}
+.means .m .i::before{content:"•";color:var(--gold);position:absolute;inset-inline-start:0}
+/* تخطيط: شريط «حول الدرس» جانبي مصغّر + سير اللقاء أوسع */
+.les{display:grid;grid-template-columns:minmax(190px,0.72fr) 1.9fr;gap:16px;align-items:start;margin-top:6px}
+.objgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:600px){.objgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.objgrid{grid-template-columns:1fr}}
+.objgrid .lbl{font-size:13px;margin-bottom:8px;padding-bottom:2px}
+.objgrid .obj{margin-bottom:5px;gap:7px}
+.objgrid .obj .n{width:19px;height:19px;font-size:11.5px;border-radius:6px}
+.objgrid .obj span.t{font-size:13.5px;line-height:1.6}
+@media(max-width:560px){.les{grid-template-columns:1fr}}
+.side .card{padding:12px 14px;margin-bottom:12px}
+.side .card:last-child{margin-bottom:0}
+.side .lbl{font-size:14px;margin-bottom:9px}
+.side .chip{font-size:12.5px;padding:5px 10px}
+.side .mini{font-size:13.5px}
+.side .mini .src{font-size:12px}
+.side-title{font-family:var(--fd);font-weight:700;color:#08636b;font-size:15px;background:var(--elm-soft);border:1px solid #bfe3e6;border-radius:10px;padding:7px 12px;margin-bottom:12px;text-align:center}
+.mainflow .sec-head{margin-top:0}
+.mainflow .flow{padding-inline-start:24px}
+/* ==== تحسينات حديثة هادئة + شعار ==== */
+.gq-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:120;background:linear-gradient(90deg,var(--gold),var(--elm));transition:width .12s ease-out}
+.gq-top{position:fixed;bottom:22px;inset-inline-start:22px;width:46px;height:46px;border-radius:50%;background:var(--elm);color:#fff;border:0;cursor:pointer;display:grid;place-items:center;font-size:22px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(8px);transition:.25s;z-index:110}
+.gq-top.show{opacity:1;pointer-events:auto;transform:none}
+.gq-lb{position:fixed;inset:0;background:rgba(8,28,30,.88);display:none;place-items:center;z-index:200;padding:26px;cursor:zoom-out}
+.gq-lb.open{display:grid}
+.gq-lb figure{margin:0;text-align:center;max-width:96vw}
+.gq-lb img{max-width:96vw;max-height:86vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5);background:#fff}
+.gq-lb .cap{color:#fff;font-size:15px;margin-top:10px;font-family:var(--fd)}
+.gq-lb .close{position:absolute;top:16px;inset-inline-start:18px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:20px;cursor:pointer}
+.gitem img,.step-media img{cursor:zoom-in}
+.gitem .imgwrap{position:relative}
+.gitem .imgwrap:has(img)::after{content:"";position:absolute;bottom:6px;inset-inline-end:6px;width:30px;height:30px;background:url('brand/seedling.webp') center/contain no-repeat;opacity:.9;filter:drop-shadow(0 1px 2px rgba(0,0,0,.25));pointer-events:none}
+.copy-btn{margin-inline-start:8px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);color:inherit;border-radius:8px;padding:3px 10px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:var(--fb);vertical-align:middle}
+.copy-btn:hover{background:rgba(255,255,255,.3)}
+.copy-btn.copied{background:#2e9e5b;border-color:#2e9e5b;color:#fff}
+/* ==== ورقة التدريس السريعة (٣ مراحل) ==== */
+.quick-sheet{margin:16px 0;background:linear-gradient(180deg,#fffdf8,#f4fbf1);border:1px solid rgba(45,122,75,.20);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden}
+.quick-sheet .qs-head{background:linear-gradient(90deg,var(--t1),var(--t2));color:#fff;padding:12px 16px;font-family:var(--fd);font-weight:700;font-size:15.5px}
+.quick-sheet .qs-phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;padding:14px}
+.quick-sheet .qs-phase{background:#fff;border:1px solid rgba(45,122,75,.14);border-top:4px solid var(--t2);border-radius:14px;padding:11px 13px}
+.quick-sheet .qs-ph-h{display:flex;align-items:center;gap:7px;color:var(--t1);font-family:var(--fd);font-weight:700;font-size:14px;margin-bottom:8px;flex-wrap:wrap}
+.quick-sheet .qs-n{width:26px;height:26px;border-radius:8px;background:var(--t2);color:#fff;display:grid;place-items:center;font-size:14px;flex:0 0 auto}
+.quick-sheet .qs-min{margin-inline-start:auto;background:var(--elm-soft);color:var(--t2);border-radius:999px;padding:2px 10px;font-size:11.5px;font-weight:700}
+.quick-sheet .qs-phase ul{margin:0;padding-inline-start:18px}
+.quick-sheet .qs-phase li{font-size:12.5px;line-height:1.8;margin-bottom:4px}
+.quick-sheet .qs-phase li::marker{color:var(--t2)}
+.quick-sheet .qs-home{margin:0 14px;background:#fbf3e3;border:1px solid #eccf94;border-radius:12px;padding:9px 12px;font-size:12.5px;color:#7a5a10;line-height:1.75}
+.quick-sheet .qs-note{margin:12px 14px 14px;padding:9px 12px;border-radius:12px;background:#fff;border:1px dashed rgba(45,122,75,.35);color:var(--muted);font-size:12px;line-height:1.75}
+.side .objgrid{grid-template-columns:1fr!important;gap:10px}
+.side .objgrid>div{min-width:0}
+.side .objgrid .obj span.t{font-size:13px;line-height:1.7;word-break:break-word}
+
+/* تطوير-النشاط: تخطيط صندوق النشاط المصاحب */
+.actful .miniblock{margin-top:15px}
+.actful .row2 .miniblock{margin-top:0}
+.actful .miniblock>b{display:block;color:var(--t1);font-size:14px;font-weight:700;padding:6px 13px;margin-bottom:9px;border-inline-start:4px solid var(--gold);border-radius:0 9px 9px 0;background:linear-gradient(90deg,rgba(199,154,59,.16),rgba(199,154,59,.03))}
+.actful ol{margin-top:2px;padding-inline-start:8px}
+.actful ol li{margin-bottom:6px}
+.actful .opts{margin-top:2px}
+
+/* ===== مكوّنات المواد الشرعية (كتابي المنير · قال رسولي · أحبك ربي · لساني) ===== */
+.flow-card.belief{border-inline-start:5px solid var(--t1)}
+.flow-card.belief h3{color:var(--t1);font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.belief-text{background:var(--elm-soft);border:1px solid #d7cfc0;border-radius:12px;padding:13px 16px;color:#3a2010;font-size:16px;line-height:2;font-weight:600}
+</style>
+</head>
+<body>
+<!--
+  ══════════════════════════════════════════════════════════════════════════
+  قالب درس — دليل معلمة غرس القيم · القالب الموحّد (٩ تبويبات)
+  ══════════════════════════════════════════════════════════════════════════
+  كيف تستخدمينه:
+   • انسخي هذا الملف لكل لقاء (مثلًا: kitabi-lesson1.html) واملئي ما بين [ ... ].
+   • احذفي التعليقات الإرشادية <!-- ... --> بعد الملء إن رغبتِ.
+   • البنية والأصناف (class) والـ data-p ثابتة — لا تغيّريها (التبويبات والطبقة تعتمدها).
+   • التبويبات التسعة موحّدة لكل المواد. بعض المكوّنات خاصّة بمادة بعينها؛
+     ابحثي عن وسم [[خاص بمادة: ...]] واحتفظي به فقط في مادته واحذفيه من غيرها.
+   • قواعد مُلزِمة:
+       - «قوانين الفصل» تأتي دائمًا قبل «بطاقة الاعتقاد».
+       - «بطاقة الاعتقاد» في مادتي (كتابي المنير) و(قال رسولي) فقط — احذفيها من بقية المواد.
+       - لا صور/أيقونات لذوات الأرواح (وجوه/حيوانات)، ولا رموز تشبه شعارات دينية، ولا رموز موسيقية.
+   • ألوان المواد للغلاف وترويسات المواد:
+       كتابي #2D7A4B · علّمني #006B69 · قال رسولي #6B3F22 · أدب #55702B ·
+       أحبك #8660A8 · لساني #0d6e6e · مهاراتي #8B0000
+  ══════════════════════════════════════════════════════════════════════════
+-->
+<div class="wrap">
+
+  <!-- ═══════════════════ الغلاف ═══════════════════ -->
+  <div class="cover">
+    <!-- استبدلي UNIT-COVER.jpg بلوحة الوحدة المائية: units-art/unit-XXX.jpg -->
+    <div class="cover-photo" style="background-image:url('units-art/UNIT-COVER.jpg')"></div>
+    <div class="cover-main">
+      <div class="cover-l">
+        <span class="c-badge">مادة: [اسم المادة] · [الفصل الدراسي]</span>
+        <h1>[اسم الوحدة] — اللقاء [الأول]<br/>[عنوان اللقاء]</h1>
+        <div class="c-meta">المرحلة: تمهيدي (5–6 سنوات) · الركن الداعم: [اسم الركن]</div>
+      </div>
+      <div class="cover-r">
+        <div class="c-unit" style="background:#fff;padding:8px 10px;display:grid;place-items:center"><img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة" style="display:block;width:88px;height:88px;object-fit:contain"/></div>
+        <div class="c-dur">المدة: نصف ساعة</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ التبويبات التسعة (ثابتة) ═══════════════════ -->
+  <div class="tabs">
+    <button class="tab active" data-p="p1">دليل الدرس كامل</button>
+    <button class="tab" data-p="p2">التكامل اليومي</button>
+    <button class="tab" data-p="p3">التقويم</button>
+    <button class="tab" data-p="p4">الآداب الصفية</button>
+    <button class="tab" data-p="p5">تحضيرات ولي الأمر</button>
+    <button class="tab" data-p="p6">القيم والمفاهيم والاستراتيجيات</button>
+    <button class="tab" data-p="p7">الحصيلة اللغوية</button>
+    <button class="tab" data-p="p8">مراجع إثرائية</button>
+    <button class="tab gold" data-p="p9">الأركان التطبيقية</button>
+  </div>
+
+  <!-- ══════════ ① دليل الدرس كامل ══════════ -->
+  <div class="panel active" id="p1">
+
+    <!-- [[خاص بمادة: كتابي المنير فقط]] «تهيئة بداية اليوم» + أداة التاريخ الهجري تسبق «مسار بداية اللقاء»
+         (لأن كتابي أول لقاء في اليوم). انسخي كتلتها (CSS ‎.kitabi-hijri-*‎ + الماركب + سكربت kitabiUpdateHijri)
+         من kitabi-lesson1.html. بقية المواد تبدأ مباشرة بـ«مسار بداية اللقاء». -->
+
+    <!-- ملاحظة الترتيب: مسار البدء = الإشارة ← قوانين الفصل ← (بطاقة الاعتقاد لكتابي/قال رسولي فقط) ← المراجعة -->
+    <div class="sec-head first"><div class="num">🧭</div><h2>مسار بداية اللقاء</h2><div class="rule"></div></div>
+
+    <!-- إشارة البدء: لكل مادة إشارتها الثابتة (نفس الإشارة في كل الوحدات). غيّري عنوان h3 بحسب المادة:
+         كتابي: «🕌 إشارة بدء اللقاء — نونية القحطاني» · قال رسولي: «📜 إشارة بدء اللقاء — منظومة الأرجوزة الميئية»
+         أحبك: «📿 إشارة بدء اللقاء — أسماء الله الحسنى» · أدب: «📜 إشارة بدء اللقاء — أدب واقتداء»
+         لساني: «📖 … لساني عربي» · مهاراتي: «🔢 … مهاراتي» · علّمني: «🌙 إشارة بدء اللقاء» -->
+    <div class="flow-card sig">
+      <h3>🏡 إشارة بدء اللقاء</h3>
+      <div class="greet">السلام عليكم ورحمة الله وبركاته يا طلاب العلم المباركين… [جملة التهيئة للإنصات].</div>
+      <p><strong>الإشارة الثابتة:</strong> [صف الإشارة الثابتة لهذه المادة — نشيد/فيديو تعريفي — دون أن تُسمّي المعلمة اللقاء].</p>
+      <!-- إن وُجد فيديو إشارة للمادة: -->
+      <div class="sig-video">
+        <video controls preload="metadata" src="assets/[ملف-فيديو-الإشارة].mp4">متصفحك لا يدعم تشغيل الفيديو.</video>
+        <div class="cap">🎬 [تعريف فيديو الإشارة].</div>
+      </div>
+      <a class="linkbtn" href="[رابط النشيد]" target="_blank" rel="noopener">▶ [اسم النشيد] (يوتيوب)</a>
+      <p style="margin-top:8px"><strong>بعد الإشارة:</strong> يتعرّف الأطفال بأنفسهم على اللقاء، ثم تؤكّد المعلمة: «نعم، لقاؤنا الآن لقاء <strong>[اسم المادة]</strong>».</p>
+    </div>
+
+    <!-- قوانين الفصل الخمسة (ثابتة — قبل بطاقة الاعتقاد).
+         العنوان «📜 قوانين الفصل» لكل المواد، ويصبح «📜 آداب لقاء القرآن» في كتابي المنير فقط. -->
+    <div class="flow-card law">
+      <h3>📜 قوانين الفصل</h3>
+      <div class="law-grid">
+        <div>🌿 <b>أحافظ على نظافة فصلي</b><small>إماطة الأذى عن الطريق صدقة.</small></div>
+        <div>👂 <b>أستمع وأنصت</b><small>فلا أقاطع الآخرين.</small></div>
+        <div>🤲 <b>أحفظ لساني ويدي</b><small>المسلم من سلم المسلمون من لسانه ويده.</small></div>
+        <div>🪑 <b>أجلس جلسة صحيحة</b><small>في المساحة المخصصة لي.</small></div>
+        <div>✋ <b>أرفع يدي للمشاركة</b><small>السؤال للجميع والإجابة لمن تختاره المعلمة.</small></div>
+      </div>
+    </div>
+
+    <!-- [[خاص بمادة: كتابي المنير + قال رسولي فقط]] بطاقة الاعتقاد — تأتي بعد القوانين مباشرة، واحذفيها من بقية المواد.
+         العنوان في كتابي: «🤍 الاعتقاد — اعتقادنا في القرآن الكريم» · في قال رسولي: «🤍 الاعتقاد — اعتقادنا في النبي ﷺ».
+         كتابي يضيف صورة البطاقة + مشغّل صوت؛ قال رسولي نصّ فقط.
+    <div class="flow-card belief">
+      <h3>🤍 الاعتقاد — اعتقادنا في القرآن الكريم</h3>
+      <div class="belief-text">[العقيدة المستفادة من الآية/الحديث بصياغة مبسّطة لطفل التمهيدي].</div>
+    </div>
+    -->
+
+    <!-- مراجعة سريعة / افتتاح -->
+    <div class="flow-card rev">
+      <h3>↺ مراجعة سريعة</h3>
+      <p>[سؤال مراجعة للقاء السابق، أو تمهيد لافتتاح الوحدة إن كان أول لقاء].</p>
+    </div>
+
+    <!-- ورقة التدريس السريعة (٣ مراحل زمنية) — منها يُستخرج «وضع التدريس» في المجمّع -->
+    <div class="quick-sheet">
+      <div class="qs-head">📋 ورقة التدريس السريعة — خطوات اللقاء أثناء الدرس</div>
+      <div class="qs-phases">
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">①</span> تهيئة وبداية اللقاء <span class="qs-min">٨ د</span></div>
+          <ul>
+            <li>[خطوة]</li>
+            <li>[خطوة]</li>
+          </ul>
+        </div>
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">②</span> بناء وسير اللقاء <span class="qs-min">١٤ د</span></div>
+          <ul>
+            <li>[خطوة]</li>
+            <li>[خطوة]</li>
+          </ul>
+        </div>
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">③</span> إغلاق وتقويم <span class="qs-min">٨ د</span></div>
+          <ul>
+            <li>[خطوة]</li>
+            <li>[خطوة]</li>
+          </ul>
+        </div>
+      </div>
+      <div class="qs-home">🏠 <strong>ربط الأسرة:</strong> [نشاط بيتي قصير يربط اللقاء بالأسرة].</div>
+      <div class="qs-note">ورقةٌ مرجعية سريعة أثناء الدرس — الخطوات فقط؛ والنصّ الكامل في هذا التبويب.</div>
+    </div>
+
+    <!-- صفّان: شريط «حول الدرس» الجانبي + سير اللقاء الأوسع -->
+    <div class="les">
+      <aside class="side">
+        <div class="side-title">📎 حول الدرس</div>
+
+        <div class="card">
+          <div class="lbl">أهداف اللقاء</div>
+          <div class="objgrid">
+            <div>
+              <div class="lbl">وجدانية</div>
+              <div class="obj"><span class="n o">١</span><span class="t">[هدف وجداني]</span></div>
+            </div>
+            <div>
+              <div class="lbl">معرفية</div>
+              <div class="obj"><span class="n">١</span><span class="t">[هدف معرفي]</span></div>
+            </div>
+            <div>
+              <div class="lbl">مهارية</div>
+              <div class="obj"><span class="n g">١</span><span class="t">[هدف مهاري]</span></div>
+            </div>
+            <div>
+              <div class="lbl">إجرائية</div>
+              <div class="obj"><span class="n p">١</span><span class="t">[هدف إجرائي قابل للقياس]</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="lbl">المفردات</div>
+          <div class="chips">
+            <span class="chip c">[كلمة]</span><span class="chip c">[كلمة]</span><span class="chip c">[كلمة]</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="lbl">الآيات والأحاديث</div>
+          <div class="mini">﴿[الآية]﴾ <span class="src">[السورة: رقم]</span></div>
+          <div class="mini" style="margin-top:6px">«[الحديث]» <span class="src">[المصدر]</span></div>
+        </div>
+
+        <div class="card">
+          <div class="lbl">المواد المساعدة</div>
+          <div class="mini">• [وسيلة]</div>
+          <div class="mini">• [وسيلة]</div>
+        </div>
+
+        <div class="card">
+          <div class="lbl">ترابط المواد</div>
+          <div class="chips">
+            <span class="chip v">[مادة]</span><span class="chip v">[مادة]</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="mainflow">
+        <div class="sec-head first"><div class="num">☀</div><h2>سير اللقاء</h2><div class="rule"></div></div>
+        <div class="flow">
+          <div class="step"><b class="k">[عنوان الخطوة]:</b> [شرح ما تفعله المعلمة وتقوله].
+            <!-- صورة داخل الخطوة (اختياري): -->
+            <div class="step-media"><img src="units-art/[صورة].jpg" alt="[وصف]"/><div class="cap">🖼️ [تعليق الصورة]</div></div>
+          </div>
+          <div class="step"><b class="k">[عنوان الخطوة]:</b> [شرح].</div>
+          <div class="step"><b class="k">💡 المعنى المركزي:</b> [الفكرة الجوهرية للقاء بجملة مركّزة].</div>
+          <div class="step"><b class="k">❓ تصحيح فهم الطفل:</b> [الخطأ الشائع وتصويبه].</div>
+          <div class="step"><b class="k">الجملة الختامية:</b> «[جملة يردّدها الأطفال]».</div>
+        </div>
+
+        <!-- قصة ضمن سير الدرس (إن وُجدت) -->
+        <div class="story">
+          <div class="h">📖 [عنوان القصة] <span>(سرد قصصي مبسّط · ضمن سير الدرس)</span></div>
+          <div class="b">
+            <p>[نص القصة المبسّط].</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- الوسائل والصور المعروضة (بطاقات .cues أو معرض صور .gallery للصور الحقيقية).
+         في مهاراتي يصبح العنوان «أدوات اللقاء المعروضة». -->
+    <div class="sec-head"><div class="num grn">🖼️</div><h2>الوسائل والصور المعروضة في اللقاء</h2><div class="rule"></div></div>
+    <div class="cues">
+      <div class="cue"><span class="ic">🃏</span><span class="t">[اسم الوسيلة]</span><span class="d">[وصف موجز]</span><span class="tag">[متى تُعرض]</span></div>
+      <div class="cue"><span class="ic">📇</span><span class="t">[اسم الوسيلة]</span><span class="d">[وصف موجز]</span><span class="tag">[متى تُعرض]</span></div>
+    </div>
+    <!-- بديل بالصور الحقيقية:
+    <div class="gallery">
+      <div class="gitem"><div class="imgwrap"><img src="units-art/[صورة].jpg" alt="[وصف]"/></div><div class="cap">[عنوان]<small>[تفصيل]</small></div></div>
+    </div>
+    -->
+
+    <!-- النشاط المصاحب المفصّل -->
+    <div class="sec-head"><div class="num gold">✂️</div><h2>النشاط المصاحب</h2><div class="rule"></div></div>
+    <div class="card actful">
+      <h3>🧩 [اسم النشاط]</h3>
+      <div class="row2">
+        <div class="miniblock"><b>🎯 الهدف</b><p>[هدف النشاط].</p></div>
+        <div class="miniblock"><b>🧰 الأدوات</b><p>[الأدوات المطلوبة].</p></div>
+      </div>
+      <div class="miniblock"><b>📝 الخطوات</b>
+        <ol><li>[خطوة]</li><li>[خطوة]</li></ol>
+      </div>
+      <div class="miniblock"><b>❓ أسئلة أثناء النشاط</b>
+        <ol><li>[سؤال]</li></ol>
+      </div>
+      <div class="miniblock"><b>🔀 اختيارات حسب الطفل</b>
+        <div class="opts">
+          <div class="opt"><b>[الفئة]:</b> [البديل].</div>
+          <div class="opt"><b>[الفئة]:</b> [البديل].</div>
+        </div>
+      </div>
+      <div class="central"><b>💡 خلاصة النشاط</b>[الأثر المركزي الذي يخرج به الطفل من النشاط].</div>
+    </div>
+
+    <!-- الإغلاق: التغذية الراجعة بالإجابات النموذجية -->
+    <div class="sec-head"><div class="num grn">✅</div><h2>الإغلاق — التغذية الراجعة</h2><div class="rule"></div></div>
+    <div class="card feedback">
+      <h3>أسئلة الإغلاق</h3>
+      <ol class="qa">
+        <li><span class="q">[السؤال]</span><span class="a">[الإجابة النموذجية]</span></li>
+        <li><span class="q">[السؤال]</span><span class="a">[الإجابة النموذجية]</span></li>
+      </ol>
+      <p class="note">[ملاحظة للمعلمة إن لزم].</p>
+    </div>
+
+    <!-- اختيارات الأنشطة (اختياري) + كفارة المجلس -->
+    <div class="actbar">اختيارات أنشطة إضافية</div>
+    <div class="actgrid">
+      <div><span class="t">[نشاط]</span><span class="bd">[نوعه]</span> — [وصف].</div>
+      <div><span class="t">[نشاط]</span><span class="bd">[نوعه]</span> — [وصف].</div>
+    </div>
+    <div class="dua">
+      <div class="l">كفارة المجلس</div>
+      <div class="x">سبحانك اللهمّ وبحمدك، أشهد أن لا إله إلا أنت، أستغفرك وأتوب إليك.</div>
+    </div>
+
+  </div><!-- /p1 -->
+
+  <!-- ══════════ ② التكامل اليومي ══════════ -->
+  <div class="panel" id="p2">
+    <div class="sec-head first"><div class="num">🔗</div><h2>العلاقة التكاملية لهذا اللقاء</h2><div class="rule"></div></div>
+    <div class="card cardblue">
+      <div class="lbl">الفكرة الناظمة لليوم</div>
+      <p>[الفكرة التي تجمع مواد اليوم]. <b>سؤال اليوم:</b> [السؤال المحوري]. <b>موضع هذا اللقاء:</b> [إسهامه في الفكرة].</p>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <div class="lbl">فكرة للربط السريع</div>
+      <div class="chips" style="margin-top:6px">
+        <span class="chip v">[مادة]: [نقطة الربط]</span>
+        <span class="chip v">[مادة]: [نقطة الربط]</span>
+      </div>
+    </div>
+  </div><!-- /p2 -->
+
+  <!-- ══════════ ③ التقويم ══════════ -->
+  <div class="panel" id="p3">
+    <div class="info">التقويم ثلاثيّ: قبليّ قبل اللقاء · تكوينيّ أثناءه · نهائيّ في ختامه.</div>
+    <div class="grid g3">
+      <div class="card taq q"><h3>◐ التقويم القبلي</h3><ul><li>[مؤشر/سؤال قبلي]</li><li>[مؤشر]</li></ul></div>
+      <div class="card taq t"><h3>◑ التقويم التكويني</h3><ul><li>[ملاحظة أثناء اللقاء]</li><li>[مؤشر]</li></ul></div>
+      <div class="card taq n"><h3>● التقويم النهائي</h3><ul><li>[مؤشر ختامي]</li><li>[مؤشر]</li></ul></div>
+    </div>
+    <div class="sec-head"><div class="num grn">📈</div><h2>مؤشرات النجاح</h2><div class="rule"></div></div>
+    <div class="card">
+      <div class="steps"><ul style="list-style:none">
+        <li class="obj"><span class="n g">✓</span><span class="t">[مؤشر نجاح قابل للملاحظة]</span></li>
+        <li class="obj"><span class="n g">✓</span><span class="t">[مؤشر]</span></li>
+      </ul></div>
+    </div>
+  </div><!-- /p3 -->
+
+  <!-- ══════════ ④ الآداب الصفية ══════════ -->
+  <div class="panel" id="p4">
+    <div class="info">الآداب الصفية = آداب المعلمة (النمذجة) + آداب الطفل (المواقف والردود المقترحة).</div>
+    <div class="card" style="margin-bottom:14px">
+      <div class="lbl">آداب المعلمة — مقدمة الرعاية</div>
+      <p>[توجيه عام للمعلمة حول الأدب المستهدف في هذا اللقاء وكيف تنمذجه].</p>
+    </div>
+    <div class="card" style="margin-bottom:14px">
+      <div class="lbl">آداب الطفل</div>
+      <p>[الأدب المتوقّع من الطفل في هذا اللقاء، يُعزَّز خلال المواقف التالية].</p>
+    </div>
+    <!-- خمس بطاقات مواقف (كرّري .adab): tag.s=سلوك · tag.r=مرجع · tag.v=قيمة -->
+    <div class="adab">
+      <div class="h">١ · [عنوان الأدب/الموقف]</div>
+      <div class="b">
+        <div class="row"><span class="tag s">الموقف</span> [وصف الموقف الصفّي].</div>
+        <div class="row"><span class="tag r">التوجيه</span> [ما تفعله/تقوله المعلمة].</div>
+        <div class="row"><span class="tag v">القيمة</span> [القيمة المغروسة].</div>
+        <div class="link">[دليل شرعي/حكمة مختصرة إن وُجد].</div>
+      </div>
+    </div>
+    <!-- كرّري البطاقة أعلاه لبقية المواقف (٢…٥) -->
+  </div><!-- /p4 -->
+
+  <!-- ══════════ ⑤ تحضيرات ولي الأمر ══════════ -->
+  <div class="panel" id="p5">
+    <div class="info">ست تهيئات بيتية يهيّئ بها ولي الأمر طفله قبل اللقاء.</div>
+    <!-- ست تهيئات (كرّري .par) بالعناوين الستة التالية حرفيًّا -->
+    <div class="card par">
+      <div class="h">❤️ ١ · تهيئة وجدانية</div>
+      <div class="hs"><span class="n">١</span><div>[ما يفعله ولي الأمر].</div></div>
+      <div class="after">💡 [الأثر المرجوّ].</div>
+    </div>
+    <div class="card par">
+      <div class="h">📖 ٢ · تهيئة معرفية</div>
+      <div class="hs"><span class="n">١</span><div>[نشاط تهيئة معرفية في البيت].</div></div>
+    </div>
+    <div class="card par"><div class="h">👂 ٣ · تهيئة حسية سمعية</div><div class="hs"><span class="n">١</span><div>[نشاط].</div></div></div>
+    <div class="card par"><div class="h">✂️ ٤ · تهيئة عملية بسيطة</div><div class="hs"><span class="n">١</span><div>[نشاط].</div></div></div>
+    <div class="card par"><div class="h">🕌 ٥ · تهيئة سلوكية</div><div class="hs"><span class="n">١</span><div>[نشاط].</div></div></div>
+    <div class="card par"><div class="h">🤝 ٦ · تهيئة تعاونية أسرية</div><div class="hs"><span class="n">١</span><div>[نشاط].</div></div></div>
+
+    <div class="card" style="margin:14px 0">
+      <div class="lbl">💬 أسئلة تطرحها على طفلك</div>
+      <div class="pq">[سؤال يفتح حوارًا مع الطفل حول موضوع اللقاء].</div>
+      <div class="pq">[سؤال].</div>
+    </div>
+
+    <div class="card msg">
+      <div class="l">📱 رسالة لولي الأمر (واتساب)
+        <button class="copy-btn" data-copy="#waMsg">نسخ</button>
+      </div>
+      <div id="waMsg">[نصّ رسالة مختصرة لولي الأمر تلخّص اللقاء وتقترح متابعة بيتية].</div>
+    </div>
+  </div><!-- /p5 -->
+
+  <!-- ══════════ ⑥ القيم والمفاهيم والاستراتيجيات ══════════ -->
+  <div class="panel" id="p6">
+    <div class="sec-head first"><div class="num">💎</div><h2>القيم الأساسية للدرس</h2><div class="rule"></div></div>
+    <div class="cg">
+      <div class="ci"><div class="term">[القيمة]</div><div class="def">[تعريفها الإجرائي للطفل].</div></div>
+      <div class="ci"><div class="term">[القيمة]</div><div class="def">[تعريفها].</div></div>
+    </div>
+    <div class="card cardgold" style="margin-top:14px">
+      <div class="lbl gold">❓ كيف تغرس المعلمة القيم</div>
+      <ul class="steps">
+        <li>[إجراء عملي لغرس القيمة].</li>
+        <li>[إجراء].</li>
+      </ul>
+    </div>
+
+    <div class="sec-head"><div class="num grn">🧠</div><h2>المفاهيم الأساسية</h2><div class="rule"></div></div>
+    <div class="cg">
+      <div class="ci"><div class="term">[المفهوم]</div><div class="def">[تبسيطه للطفل].</div></div>
+    </div>
+
+    <div class="sec-head"><div class="num">🎯</div><h2>الاستراتيجيات التعليمية</h2><div class="rule"></div></div>
+    <div class="strat"><span class="k">[الاستراتيجية]</span><span class="v">[كيف تُطبَّق في هذا اللقاء].</span></div>
+    <div class="strat"><span class="k">[الاستراتيجية]</span><span class="v">[التطبيق].</span></div>
+
+    <div class="sec-head"><div class="num gold">🔟</div><h2>الأساليب العشرة</h2><div class="rule"></div></div>
+    <div class="cg">
+      <!-- عشر بطاقات (كرّري .ci حتى ١٠) -->
+      <div class="ci"><div class="term">١ · [الأسلوب]</div><div class="def">[توظيفه].</div></div>
+      <div class="ci"><div class="term">٢ · [الأسلوب]</div><div class="def">[توظيفه].</div></div>
+    </div>
+
+    <div class="sec-head"><div class="num">🧰</div><h2>الوسائل</h2><div class="rule"></div></div>
+    <div class="means">
+      <div class="m"><h4>مرئية</h4><span class="i">[وسيلة]</span><span class="i">[وسيلة]</span></div>
+      <div class="m s2"><h4>سمعية</h4><span class="i">[وسيلة]</span></div>
+      <div class="m s3"><h4>عملية</h4><span class="i">[وسيلة]</span></div>
+      <div class="m s4"><h4>قيمية</h4><span class="i">[وسيلة]</span></div>
+    </div>
+  </div><!-- /p6 -->
+
+  <!-- ══════════ ⑦ الحصيلة اللغوية ══════════ -->
+  <div class="panel" id="p7">
+    <div class="info">الحصيلة اللغوية = كلمات ومصطلحات اللقاء وكيفية توظيفها لإثراء لغة الطفل.</div>
+    <div class="card" style="margin-bottom:14px">
+      <div class="lbl">الكلمات الأساسية في اللقاء</div>
+      <table class="voc"><tr><th>الكلمة</th><th>المعنى المبسّط</th></tr>
+        <tr><td class="w">[كلمة]</td><td>[معناها للطفل].</td></tr>
+        <tr><td class="w">[كلمة]</td><td>[معناها].</td></tr>
+      </table>
+    </div>
+    <div class="card" style="margin-bottom:14px">
+      <div class="lbl">المصطلحات الأساسية</div>
+      <table class="voc"><tr><th>المصطلح</th><th>التوضيح</th></tr>
+        <tr><td class="w">[مصطلح]</td><td>[توضيحه].</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="lbl">💡 كيف تستخدم المعلمة الحصيلة</div>
+      <p>[توظيف المفردات في الحوار والأنشطة لإثراء لغة الطفل].</p>
+    </div>
+  </div><!-- /p7 -->
+
+  <!-- ══════════ ⑧ مراجع إثرائية ══════════ -->
+  <div class="panel" id="p8">
+    <!-- كرّري .refblock لكل تصنيف. rbadge: q=قرآن · t=سنة · p=تربوي · d=رقمي -->
+    <div class="refblock">
+      <div class="h">📖 القرآن الكريم — مصادر الآيات</div>
+      <div class="sub">[تعريف موجز].</div>
+      <div class="refitem"><span class="rbadge q">قرآن</span><div><div class="tt">[المرجع]</div><div class="dd">[التفصيل]</div></div></div>
+    </div>
+    <div class="refblock">
+      <div class="h">📗 السنة النبوية — مصادر الأحاديث</div>
+      <div class="refitem"><span class="rbadge t">سنة</span><div><div class="tt">[المرجع]</div><div class="dd">[التخريج]</div></div></div>
+    </div>
+    <div class="refblock">
+      <div class="h">📕 مراجع شرعية وتربوية إثرائية</div>
+      <div class="refitem"><span class="rbadge p">تربوي</span><div><div class="tt">[المرجع]</div><div class="dd">[التفصيل]</div></div></div>
+    </div>
+    <div class="refblock">
+      <div class="h">📙 مراجع تربوية حديثة</div>
+      <div class="refitem"><span class="rbadge p">تربوي</span><div><div class="tt">[المرجع]</div></div></div>
+    </div>
+    <div class="refblock">
+      <div class="h">🖥️ مصادر رقمية إثرائية</div>
+      <div class="refitem"><span class="rbadge d">رقمي</span><div><div class="tt">[المصدر]</div> <a class="reflink" href="[رابط]" target="_blank" rel="noopener">الرابط</a></div></div>
+    </div>
+  </div><!-- /p8 -->
+
+  <!-- ══════════ ⑨ الأركان التطبيقية ══════════ -->
+  <div class="panel" id="p9">
+    <div class="chero">
+      <div class="sec-head first"><div class="num gold">🧩</div><h2>وقت الأركان التطبيقية</h2><div class="rule"></div></div>
+      <p>[توجيه عام: اللعب الحرّ بأدوات الركن + نشاط تطبيقي سريع على فكرة اللقاء].</p>
+    </div>
+    <div class="caution">⚠️ [تنبيه للمعلمة حول إدارة الركن/السلامة إن لزم].</div>
+
+    <!-- ركنان (كرّري .corner). لوّني الترويسة عبر style="background:..." -->
+    <div class="corner">
+      <div class="h" style="background:linear-gradient(90deg,var(--elm),#0b6f78)"><h4>[اسم الركن]</h4><span class="k">[نوع الركن]</span></div>
+      <div class="b">
+        <div class="cfield"><b>🎯 الفكرة</b><p>[فكرة النشاط في الركن].</p></div>
+        <div class="cfield"><b>🧰 الأدوات</b><p>[الأدوات].</p></div>
+        <div class="cfield"><b>📝 الخطوات</b><ol><li>[خطوة]</li></ol></div>
+        <!-- [[خاص بمادة: كتابي المنير + قال رسولي]] الأثر العقدي في الركن (اختياري):
+        <div class="faith">💚 [الربط العقدي للنشاط].</div>
+        -->
+      </div>
+    </div>
+    <div class="corner">
+      <div class="h" style="background:linear-gradient(90deg,var(--grn),#1e6b40)"><h4>[اسم الركن]</h4><span class="k">[نوع الركن]</span></div>
+      <div class="b">
+        <div class="cfield"><b>🎯 الفكرة</b><p>[فكرة النشاط].</p></div>
+        <div class="cfield"><b>🧰 الأدوات</b><p>[الأدوات].</p></div>
+        <div class="cfield"><b>📝 الخطوات</b><ol><li>[خطوة]</li></ol></div>
+      </div>
+    </div>
+  </div><!-- /p9 -->
+
+  <!--
+  ══════════════════════════════════════════════════════════════════════════
+  مكتبة مكوّنات المواد (انسخي ما تحتاجينه إلى مكانه في اللوحات أعلاه ثم احذفي البقية)
+  ══════════════════════════════════════════════════════════════════════════
+
+  ① بطاقة الاعتقاد — [[كتابي المنير + قال رسولي فقط]] (توضع في p1 بعد «قوانين الفصل»):
+  <div class="flow-card belief">
+    <h3>🤍 الاعتقاد — اعتقادنا في القرآن الكريم</h3>   ← قال رسولي: «اعتقادنا في النبي ﷺ»
+    <div class="belief-text">[صياغة العقيدة المبسّطة].</div>
+    ملاحظة: كتابي يضيف تحتها صورة البطاقة + مشغّل الصوت (رقم ③) — قال رسولي نصّ فقط.
+  </div>
+
+  ② صندوق نصّ شرعي عام (.belief-text) — [[كتابي · قال رسولي · أحبك ربي · لساني]]
+     (لعرض آية/حديث/منظومة داخل أي بطاقة):
+  <div class="belief-text">﴿[نصّ الآية]﴾ — أو «[نصّ الحديث]».</div>
+
+  ③ مشغّل تلاوة السورة / صوت — [[كتابي المنير]] (عنصر مستقل بأنماط داخلية، لا يحتاج CSS إضافيًّا):
+  <div class="gq-surah-audio" style="margin:10px auto 0;max-width:680px;background:linear-gradient(135deg,#EFFAF4,#FFFCF5);border:1px solid #C9DED5;border-right:6px solid #2D7A4B;border-radius:16px;padding:12px 14px;text-align:right;box-shadow:var(--shadow-sm)">
+    <div style="color:#1b5e34;font-size:13px;font-weight:900;margin-bottom:8px">🎧 تلاوة الآيات [من–إلى] — القارئ [الاسم]</div>
+    <audio controls preload="none" src="assets/[ملف-التلاوة].mp3" style="width:100%">متصفحك لا يدعم الصوت.</audio>
+  </div>
+
+  ④ تنبيه عقدي (.caution) — [[أحبك ربي وغيرها عند اللبس]] (مثل: لا يُقال إن أسماء الله ٩٩ فقط):
+  <div class="caution">⚠️ [الضابط العقدي/التنبيه المنهجي].</div>
+
+  ⑤ متن الحديث كاملًا في الشريط الجانبي — [[قال رسولي]] (بطاقة .card داخل aside.side):
+  <div class="card"><div class="lbl">📜 نصّ الحديث كاملًا</div>
+    <div class="mini">«[متن الحديث]» <span class="src">[التخريج]</span></div></div>
+
+  ⑥ أداة التاريخ الهجري + «تهيئة بداية اليوم» — [[كتابي المنير فقط، أول لقاء في اليوم]]:
+     تحتاج CSS (‎.kitabi-hijri-*‎) + ماركب + سكربت (‎kitabiUpdateHijri/kitabiAdjustHijri/kitabiResetHijri‎).
+     انسخيها كاملةً من kitabi-lesson1.html (لم تُضمَّن هنا لأنها واسعة وخاصة بمادة واحدة).
+
+  ⑦ دروس المراكز (مركز اللغة / مركز الرياضيات) — بنية مختلفة تمامًا (ليست ٩ تبويبات، أصناف mc-*).
+     لا تستخدمي هذا القالب لها — انسخي markaz-lugha-lesson1.html أو markaz-math-lesson1.html نموذجًا.
+  ══════════════════════════════════════════════════════════════════════════
+  -->
+
+  <div class="foot">— نهاية دليل اللقاء —</div>
+  <div class="gq-dev-credit" style="margin:22px auto 0;max-width:540px;padding:18px 16px 4px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center"><span style="font-size:11.5px;color:var(--muted);letter-spacing:.3px">إعداد وتطوير وإخراج دليل المعلمة</span><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="display:inline-block;line-height:0"><img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية" style="width:104px;height:auto;display:block"/></a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-family:var(--fd);font-size:14.5px;color:#1e5631;text-decoration:none;font-weight:700">شركة حضارة للاستشارات التربوية والتعليمية</a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--elm,#0E7C86);text-decoration:none">www.hadarah-consulting.com</a></div>
+</div>
+
+<script>
+(function(){
+  var doc=document, root=doc.documentElement, body=doc.body;
+  var pb=doc.createElement('div'); pb.className='gq-progress'; body.appendChild(pb);
+  var top=doc.createElement('button'); top.className='gq-top'; top.setAttribute('aria-label','العودة للأعلى'); top.textContent='↑'; body.appendChild(top);
+  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function onScroll(){ var sc=window.pageYOffset||root.scrollTop, max=(root.scrollHeight-root.clientHeight)||1; pb.style.width=Math.min(100,sc/max*100)+'%'; if(sc>320){top.classList.add('show');}else{top.classList.remove('show');} }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var lb=doc.createElement('div'); lb.className='gq-lb'; lb.innerHTML='<button class="close" aria-label="اغلاق">\u2715</button><figure><img alt=""/><figcaption class="cap"></figcaption></figure>'; body.appendChild(lb);
+  var lbImg=lb.querySelector('img'), lbCap=lb.querySelector('.cap');
+  function closeLb(){lb.classList.remove('open'); lbImg.removeAttribute('src');}
+  lb.addEventListener('click',function(e){ if(e.target===lb||e.target.classList.contains('close')) closeLb(); });
+  doc.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLb(); });
+  doc.querySelectorAll('.gitem img, .step-media img').forEach(function(im){
+    im.addEventListener('click',function(){ var cap='', box=im.closest('.gitem')||im.closest('.step-media'); if(box){var c=box.querySelector('.cap'); if(c) cap=c.textContent;} lbImg.src=im.currentSrc||im.src; lbCap.textContent=cap; lb.classList.add('open'); });
+  });
+  var tabs=[].slice.call(doc.querySelectorAll('.tab'));
+  var KEY='gq-fam-tab-'+(doc.title||'l');
+  function activate(btn,save,scroll){ tabs.forEach(function(t){t.classList.remove('active');}); doc.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');}); btn.classList.add('active'); var p=doc.getElementById(btn.dataset.p); if(p) p.classList.add('active'); if(save){ try{localStorage.setItem(KEY,btn.dataset.p);}catch(e){} } if(scroll){ window.scrollTo({top:0,behavior:'smooth'}); } }
+  tabs.forEach(function(btn,i){ btn.setAttribute('tabindex','0'); btn.addEventListener('click',function(){ activate(btn,true,true); }); btn.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ e.preventDefault(); var dir=(e.key==='ArrowLeft')?1:-1, ni=(i+dir+tabs.length)%tabs.length; tabs[ni].focus(); activate(tabs[ni],true,false); } }); });
+  try{ var saved=localStorage.getItem(KEY); if(saved){ var b=doc.querySelector('.tab[data-p="'+saved+'"]'); if(b) activate(b,false,false); } }catch(e){}
+  function fallback(txt,cb){ var ta=doc.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0'; body.appendChild(ta); ta.select(); try{doc.execCommand('copy');}catch(e){} body.removeChild(ta); cb(); }
+  doc.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){ var target=doc.querySelector(btn.getAttribute('data-copy')); if(!target) return; var clone=target.cloneNode(true); clone.querySelectorAll('.l,.copy-btn').forEach(function(n){n.remove();}); var txt=(clone.innerText||clone.textContent||'').replace(/\n{3,}/g,'\n\n').trim(); function done(){ var o=btn.getAttribute('data-lbl'); if(!o){o=btn.textContent; btn.setAttribute('data-lbl',o);} btn.textContent='\u2713 نُسخ'; btn.classList.add('copied'); setTimeout(function(){ btn.textContent=o; btn.classList.remove('copied'); },1500); } if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done).catch(function(){fallback(txt,done);}); } else { fallback(txt,done); } });
+  });
+})();
+</script>
+<!--gq-credit-embed-hide--><script>try{if(window.self!==window.top){var _c=document.querySelector(".gq-dev-credit");if(_c)_c.style.display="none";}}catch(e){}</script>
+</body>
+</html>
