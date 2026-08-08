@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>منظومة الوحدة · وحدة المسكن · غرس القيم</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif; --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --v1:#2a1a4a; --v2:#4a2f7a; --v3:#6d4aa7; --gold:#E7B84B; --gold2:#C79A3B;
+  --ink:#efe9f7; --muted:#c9bde0; --line:rgba(231,184,75,.28); --card:rgba(255,255,255,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.95;font-size:16px;
+  background:
+    radial-gradient(1100px 480px at 82% -8%,rgba(231,184,75,.16),transparent 55%),
+    radial-gradient(900px 520px at 6% 8%,rgba(109,74,167,.5),transparent 50%),
+    linear-gradient(160deg,var(--v1),var(--v2) 60%,#1c1233);
+  min-height:100vh;padding:26px 16px 50px}
+.wrap{max-width:920px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1,h2,h3,.kicker,.abyat{font-family:var(--fd)}
+b,strong{font-weight:700}
+
+/* ترويسة */
+.mz-head{position:relative;overflow:hidden;border-radius:24px;padding:30px 28px;text-align:center;
+  background:linear-gradient(135deg,rgba(109,74,167,.55),rgba(42,26,74,.5));
+  border:1px solid var(--line);box-shadow:0 18px 48px rgba(10,4,26,.4)}
+.mz-head::after{content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;
+  background:radial-gradient(circle at 50% 120%,rgba(231,184,75,.22),transparent 60%)}
+.mz-head .kicker{display:inline-block;background:rgba(231,184,75,.16);border:1px solid var(--line);
+  color:var(--gold);border-radius:999px;padding:6px 16px;font-size:13px;font-weight:700;margin-bottom:14px}
+.mz-star{font-size:30px;color:var(--gold);letter-spacing:8px;margin-bottom:8px}
+.mz-head h1{font-size:33px;line-height:1.4;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.35)}
+.mz-head h1 span{color:var(--gold)}
+.mz-head .sub{color:var(--muted);font-size:15px;margin-top:10px;max-width:640px;margin-inline:auto}
+
+/* شريط الطقس اليومي */
+.mz-ritual{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);
+  border-inline-start:5px solid var(--gold);border-radius:16px;padding:14px 18px;font-size:15px;color:var(--ink)}
+.mz-ritual .clock{flex:0 0 auto;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(231,184,75,.16);border:1px solid var(--line);font-size:22px}
+
+/* مشغّل الوسائط */
+.mz-player{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;
+  box-shadow:0 14px 40px rgba(10,4,26,.35)}
+.mz-player h2{color:var(--gold);font-size:18px;margin-bottom:12px;display:flex;align-items:center;gap:9px}
+.mz-media{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#160d2b;aspect-ratio:16/9}
+.mz-media iframe,.mz-media video{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.mz-audio{width:100%;margin-top:6px}
+/* عنصر نائب للوسائط قبل إضافة الرابط */
+.mz-ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;gap:8px;
+  color:var(--muted);background:repeating-linear-gradient(45deg,#180e30,#180e30 12px,#1d1238 12px,#1d1238 24px)}
+.mz-ph .big{font-size:44px;color:var(--gold)}
+.mz-ph .t{font-size:14px;max-width:80%}
+.mz-link{display:inline-block;margin-top:12px;background:linear-gradient(90deg,var(--gold),var(--gold2));
+  color:#2a1a06;border-radius:999px;padding:9px 20px;font-weight:700;text-decoration:none;font-size:14.5px}
+
+/* الأبيات */
+.mz-abyat{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
+  border:1px solid var(--line);border-radius:20px;padding:22px 24px}
+.mz-abyat h2{color:var(--gold);font-size:18px;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.abyat{font-family:var(--fd);font-size:20px;line-height:2.4;text-align:center;color:#fff}
+.abyat .bayt{display:block;padding:4px 0;border-bottom:1px dashed rgba(231,184,75,.18)}
+.abyat .bayt:last-child{border-bottom:0}
+.mz-note{color:var(--muted);font-size:13px;margin-top:12px;text-align:center;font-style:italic}
+
+.mz-foot{text-align:center;color:var(--muted);font-size:12.5px;opacity:.8;margin-top:6px}
+@media(max-width:560px){.mz-head h1{font-size:26px}.abyat{font-size:17px;line-height:2.2}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="mz-head">
+    <span class="kicker">✦ منظومة الوحدة ✦</span>
+    <div class="mz-star">☾ ✧ ☾</div>
+    <h1>منظومة وحدة <span>المسكن</span></h1>
+    <div class="sub">منظومةٌ تُغرَس بها قيم الوحدة في وجدان الطفل بالنغم والترديد — يستمع إليها الأطفال ويردّدونها في ختام كل يوم.</div>
+  </div>
+
+  <div class="mz-ritual">
+    <span class="clock">⏳</span>
+    <div><strong>طقس اليومي:</strong> آخر نصف ساعة من اليوم مخصّصة لمنظومة الوحدة — تُشغّلها المعلمة، ويستمع الأطفال ويردّدون، فترسخ معاني الوحدة في نفوسهم بلطف وتكرار.</div>
+  </div>
+
+  <div class="mz-player">
+    <h2>▶ الاستماع إلى المنظومة</h2>
+    <div class="mz-media">
+      <!-- ═══ أضيفي هنا وسائط المنظومة ═══
+           فيديو يوتيوب:  <iframe src="https://www.youtube.com/embed/XXXXXXXX" title="منظومة وحدة المسكن" allowfullscreen></iframe>
+           أو فيديو ملف:  <video controls src="assets/mk-manzuma.mp4"></video>
+           ثم احذفي عنصر .mz-ph النائب أدناه -->
+      <div class="mz-ph">
+        <div class="big">🎬</div>
+        <div class="t">سيُضاف مقطع منظومة وحدة المسكن هنا فور إرساله (رابط يوتيوب أو ملف فيديو/صوت).</div>
+      </div>
+    </div>
+    <!-- بديل صوتي إن كانت المنظومة صوتًا فقط:
+    <audio class="mz-audio" controls src="assets/mk-manzuma.mp3"></audio> -->
+  </div>
+
+  <div class="mz-abyat">
+    <h2>✍ أبيات المنظومة</h2>
+    <div class="abyat">
+      <span class="bayt">[يُكتب هنا البيت الأول من منظومة الوحدة]</span>
+      <span class="bayt">[البيت الثاني]</span>
+      <span class="bayt">[البيت الثالث]</span>
+    </div>
+    <div class="mz-note">تُستبدل هذه الأبيات بنصّ منظومة وحدة المسكن المعتمدة عند إرساله.</div>
+  </div>
+
+  <div class="mz-foot">منظومة الوحدة · وحدة المسكن · نادي غرس القيم لضيافة الأطفال</div>
+</div>
+</body>
+</html>
