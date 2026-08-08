@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>مركز الرياضيات · مسار الخمسة عشر · وحدة المسكن</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#5c1010; --t2:#8B0000; --soft:#f7e6e6; --soft2:#fdf3f3;
+  --gold:#C79A3B; --cream:#FFF7E8;
+  --ink:#1e2b2a; --muted:#5f6f6c; --line:#e6ded0; --card:#fff;
+  --shadow:0 6px 20px rgba(50,10,10,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.95;font-size:16px;
+  background:linear-gradient(#fbf9f3,#f6f0e6);padding:22px 16px 60px}
+.wrap{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+b,strong{font-weight:700}
+h1,h2,h3,.c-badge,.c-unit{font-family:var(--fd)}
+
+/* ===== الغلاف (بأسلوب دروس العائلة) ===== */
+.cover{position:relative;overflow:hidden;border-radius:22px;color:#fff;box-shadow:var(--shadow);min-height:190px}
+.cover-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.cover::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg,rgba(92,16,16,.92),rgba(139,0,0,.80) 52%,rgba(139,0,0,.88))}
+.cover::after{content:"";position:absolute;inset:0;z-index:1;opacity:.07;pointer-events:none;
+  background:radial-gradient(circle at 88% 18%,#fff 0 2px,transparent 3px) 0 0/34px 34px}
+.cover-main{position:relative;z-index:2;padding:26px 28px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cover-l{flex:1 1 60%;min-width:240px}
+.cover-r{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.c-badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:999px;padding:6px 15px;font-weight:700;font-size:14px;margin-bottom:11px}
+.cover h1{font-size:29px;line-height:1.42;font-weight:700;margin-bottom:10px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+.c-meta{font-size:14px;color:#f3d9d9;line-height:1.85}
+.c-unit{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:12px 16px;font-weight:700;font-size:15px;line-height:1.6}
+.c-dur{color:#ecc9c9;font-size:14px}
+
+/* ===== رقائق المعنى ===== */
+.mc-chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.mc-chip{background:var(--soft2);border:1px solid var(--line);border-radius:16px;padding:13px 15px;font-size:14px;line-height:1.85}
+.mc-chip strong{display:block;color:var(--t1);font-weight:700;margin-bottom:3px;font-family:var(--fd);font-size:15px}
+
+/* ===== أقسام وبطاقات ===== */
+.mc-block{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow)}
+.mc-block>h2{color:var(--t1);font-size:18px;font-weight:700;margin-bottom:12px;
+  padding-inline-start:12px;border-inline-start:4px solid var(--t2)}
+.mc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px}
+.mc-card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--t2);
+  border-radius:16px;padding:15px 17px;box-shadow:var(--shadow)}
+.mc-card h3{color:var(--t1);font-size:15.5px;font-weight:700;margin-bottom:9px}
+.mc-card.wide{grid-column:1/-1}
+.mc-card ul,.mc-card ol{margin:0;padding-inline-start:20px}
+.mc-card li{margin-bottom:5px;font-size:14px;line-height:1.9}
+.mc-card li::marker{color:var(--t2)}
+
+/* ===== ملفات مساعِدة ===== */
+.mc-res{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));gap:10px}
+.mc-res a{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;
+  padding:11px 14px;background:var(--soft2);border:1px solid var(--line);border-inline-start:4px solid var(--t2);
+  border-radius:13px;color:var(--ink);text-decoration:none;font-size:13.5px;font-weight:700}
+.mc-res a::after{content:"فتح ↗";color:#fff;background:var(--t2);border-radius:999px;padding:4px 11px;font-size:11px;white-space:nowrap}
+
+/* ===== تنبيه ===== */
+.mc-note{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);
+  border-radius:16px;padding:14px 17px;font-size:14px;line-height:1.95;color:#5b4412}
+.mc-note strong{color:#7a5a12}
+@media(max-width:640px){.mc-cover{flex-direction:column;text-align:center}.mc-cover h1{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="cover-photo" style="background-image:url('units-art/unit-maskan.jpg')"></div>
+    <div class="cover-main">
+      <div class="cover-l">
+        <span class="c-badge">مركز الرياضيات · لقاء تطبيقي · ٣٠ دقيقة</span>
+        <h1>وحدة المسكن — مركز الرياضيات<br/>مسار الخمسة عشر: أرتّب وأبحث وأبني وأدّخر</h1>
+        <div class="c-meta">المرحلة: تمهيدي (5–6 سنوات) · الدرس المرتبط: مهاراتي — اللقاء الأول (العدد خمسة عشر) · تنظيم: ٤–٦ أطفال</div>
+      </div>
+      <div class="cover-r">
+        <div class="c-unit" style="background:#fff;padding:8px 10px;display:grid;place-items:center"><img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة" style="display:block;width:88px;height:88px;object-fit:contain"/></div>
+        <div class="c-dur">المدة: ٣٠ دقيقة</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="mc-chips">
+    <div class="mc-chip"><strong>المعنى المركزي</strong>قدّم درس «مهاراتي» العدد خمسة عشر بالمحسوس مرتبطًا بالرمز ١٥ بعد ١٤ ومكوَّنًا من عشرة وخمسة؛ وفي المركز لا يسمع الطفل الشرح من جديد، بل يثبّت التسلسل بالخيط، ويبحث عن الرمز دون الاعتماد على اللون، ثم يبرهن اختياره ببناء خمس عشرة قطعة، ويطبّق ذلك في نشاط الحصالة عدًّا للنقود.</div>
+    <div class="mc-chip"><strong>الركن الداعم</strong>ركن الرياضيات والتفكير المنطقي بعد درس مهاراتي، مع ربط العدد خمسة عشر بمواقف المسكن عدًّا وترتيبًا وادّخارًا في الحصالة.</div>
+    <div class="mc-chip"><strong>المثير</strong>تعرض المعلمة بطاقة ١٤ ثم بطاقة ١٥ وتسأل: ما العدد الذي يأتي بعد أربعة عشر؟ فينتبه الأطفال إلى الرمز ١٥ وموضعه في التسلسل.</div>
+    <div class="mc-chip"><strong>التقويم</strong>يضع الطفل ١٥ بعد ١٤، ويختار رمزها من ثلاثة خيارات، ثم يكمل إطار عشرة بخمس وحدات ويشرح النتيجة، ويعدّ خمس عشرة قطعة نقود في الحصالة؛ مع توثيق درجة الاستقلال لا تحويله إلى اختبار.</div>
+  </section>
+
+  <section class="mc-grid">
+    <div class="mc-card"><h3>الأهداف ونواتج التعلّم</h3><ul><li>الهدف الإجرائي: يرتّب الطفل الأعداد من ١ إلى ١٥ بمساندة مناسبة، ويميّز الرمز ١٥ في أربع محاولات من خمس دون قرينة لون ثابتة، ثم يبني خمس عشرة قطعة بالمطابقة واحدًا لواحد في صورة عشرة وخمسة.</li><li>يوصل الخيط من ١ إلى ١٥ وفق الترتيب، ويضع ١٥ بعد ١٤.</li><li>يختار الرمز ١٥ بين رموز تعلّمها سابقًا حتى مع تغيّر موضعه ولونه، ويقول: خمسة عشر.</li><li>يعدّ خمس عشرة قطعة (أو نقود الحصالة) بتحريك كل قطعة مرة واحدة، ويجمعها في عشرة وخمس وحدات، ثم يتتبّع أو يكتب ١٥ محاولة واحدة.</li></ul></div>
+    <div class="mc-card"><h3>خطوات النشاط · ٦ مراحل</h3><ol><li>استدعاء التعلّم (٣د): ١٤ ثم ١٥، وقراءة الرمز واسم العدد.</li><li>خيط التسلسل (٦د): تمرير الخيط في تسلسل ١–١٥، ونطق كل عدد قبل إدخال الخيط في حلقته.</li><li>ابحث عن ١٥ (٤د): تغطية الرمز ١٥ في الشبكة دون قرينة لون، مع تغيير الموضع للتحقق.</li><li>حصّالتي وأدّخر خمس عشرة (٩د): يضع الطفل النقود في الحصالة ويعدّها حتى ١٥، ويبنيها عشرةً وخمسًا في إطار العشرة، والمطابقة واحدًا لواحد.</li><li>تطبيق فردي وتقويم (٦د): اختيار الرمز بين ١٣·١٤·١٥، وبناء مصغّر، وتتبّع/كتابة ١٥ محاولة واحدة.</li><li>إعادة الأدوات (٢د): عدّ القطع حتى ١٥ وإعادتها ومسح البطاقات.</li></ol></div>
+    <div class="mc-card wide"><h3>الأدوات والكميات</h3><ul><li>لوحة تسلسل واحدة نحو ٥٠×٧٠سم مثبّت عليها ١٥ حلقة كرتونية كبيرة أو بطاقة مثقّبة مرقّمة من ١ إلى ١٥، وخيط قماشي سميك مثبّت من طرف واحد بطول لا يتجاوز ٨٠سم.</li><li>شريط أعداد ١–١٥ وبطاقات منفصلة للأعداد نفسها، وبطاقتا الاسم «أربعة عشر» و«خمسة عشر» عند الحاجة.</li><li>بطاقتا بحث مغلّفتان في كل منهما شبكة تضمّ ٥ صور للرمز ١٥ ومشتّتات من ١·٥·١٠·١٢·١٣·١٤، مع أغطية أو أكواب شفّافة كبيرة للتغطية.</li><li>حصّالة (صندوق نقود) لكل مجموعة و١٥ قطعة نقدية آمنة (أو أقراص تمثّل الريالات) لعدّها وإدخالها، مع صينية عدّ.</li><li>لوحتا إطار العشرة و<b>خمس</b> وحدات (عشرة وخمسة = ١٥)، وبطاقتا الرمز ١٥، وبطاقة تتبّع مغلّفة وقلم قابل للمسح وقطعة مسح لكل طفل، وبطاقة ملاحظة المعلمة.</li></ul></div>
+    <div class="mc-card wide"><h3>📄 أوراق العمل المرفقة (طباعة)</h3><ul><li><b>تتبّع وكتابة الرقم ١٥:</b> يتتبّع الطفل الرقم ١٥ المنقّط ثم يكتبه بنفسه في الخانات الفارغة.</li><li><b>نشاط الحصّالة والنقود:</b> يقصّ قطع النقود ويضعها في الحصّالة ويعدّها حتى ١٥ — ربطٌ بالادّخار في المسكن.</li><li><b>ورقة تشكيل الرقم ١٥:</b> يملأ/يزيّن مجسّم الرقم ١٥ الكبير (تلوين · لصق · بصمة) بلا صور ذوات أرواح.</li></ul><p style="font-size:13px;color:var(--muted);margin-top:6px">الروابط في قسم «ملفات مساعدة للمعلمة» بالأسفل.</p></div>
+    <div class="mc-card wide"><h3>المؤشّرات والتوثيق</h3><ul><li>يضع ١٥ بعد ١٤ في التسلسل · يميّز الرمز ١٥ مع تغيّر اللون والموضع · يعدّ خمس عشرة قطعة/نقودًا بالمطابقة واحدًا لواحد · يبني الكمية من عشرة وخمس وحدات · يطابق الرمز ١٥ مع الكمية والاسم.</li><li><b>رمز التوثيق:</b> م = مستقل، ت = بتلميح، س = بمساعدة مباشرة. يُسجَّل بعد التطبيق الفردي، ولا يتحوّل المركز إلى اختبار.</li></ul></div>
+    <div class="mc-card wide"><h3>التمايز حسب حاجة الطفل</h3><ul><li><b>يحتاج دعمًا:</b> يعمل على تسلسل ١٠–١٥ فقط، ثم يختار ١٥ بين بطاقتين، ويستخدم إطار عشرة ممتلئًا جاهزًا ويضيف خمس وحدات بمرافقة شريط عدّ مصوّر.</li><li><b>متقن:</b> يبني ١٥ بطريقتين محسوستين مثل ١٠+٥ و٧+٨، ويشرح أن اختلاف توزيع القطع لا يغيّر العدد، دون تحويل المهمة إلى جمع مجرّد.</li><li><b>حاجة حركية:</b> يحمل بطاقات الأعداد الأرضية ويقف في موضع ١٥ بعد ١٤، أو يشارك في حمل بطاقتي ١ و٥ ثم يعود ليبني الكمية.</li><li><b>صعوبة حركية دقيقة أو حسّية:</b> يستخدم حلقات أوسع وخيطًا أثخن وأغطية كبيرة، ويشير إلى ١٥ بدل الكتابة، ثم يبني الكمية بقطع كبيرة سهلة الإمساك.</li></ul></div>
+  </section>
+
+  <section class="mc-block">
+    <h2>ملفات مساعدة للمعلمة — أوراق العمل (طباعة)</h2>
+    <div class="mc-res">
+      <a href="assets/mk-math15-tracing.pdf" target="_blank" rel="noopener">تتبّع وكتابة الرقم ١٥</a>
+      <a href="assets/mk-math15-hasala.pdf" target="_blank" rel="noopener">نشاط الحصّالة والنقود — عدّ حتى ١٥</a>
+      <a href="assets/mk-math15-worksheet.pdf" target="_blank" rel="noopener">ورقة تشكيل الرقم ١٥</a>
+    </div>
+  </section>
+
+  <div class="mc-note"><strong>تنبيه منهجي:</strong> يبدأ المركز بالمحسوس فيثبّت الطفل التسلسل والرمز والكمية عمليًّا؛ ولا يقدّم خوارزمية جمع ولا يطلب حفظ ١٠ + ٥ مجرّدًا، ولا يُعدّ وقوف طفلين ببطاقتي ١ و٥ دليلًا كافيًا على فهم الكمية حتى يبنيها الطفل ويعدّها. ولا تُستخدم أعداد لم يتعلّمها الطفل كمشتّتات. وأوراق العمل للطباعة تطبيقٌ يدويّ بعد المحسوس لا بديلٌ عنه. المركز فترة تطبيقية مستقلّة بعد الدرس، لا يحلّ محلّه ولا يقدّم مفهومًا جديدًا.</div>
+
+
+  <div class="gq-dev-credit" style="margin:22px auto 0;max-width:540px;padding:18px 16px 4px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center"><span style="font-size:11.5px;color:var(--muted);letter-spacing:.3px">إعداد وتطوير وإخراج دليل المعلمة</span><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="display:inline-block;line-height:0"><img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية" style="width:104px;height:auto;display:block"/></a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-family:var(--fd);font-size:14.5px;color:#1e5631;text-decoration:none;font-weight:700">شركة حضارة للاستشارات التربوية والتعليمية</a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--elm,#0E7C86);text-decoration:none">www.hadarah-consulting.com</a></div>
+</div>
+<!--gq-credit-embed-hide--><script>try{if(window.self!==window.top){var _c=document.querySelector(".gq-dev-credit");if(_c)_c.style.display="none";}}catch(e){}</script>
+</body>
+</html>
