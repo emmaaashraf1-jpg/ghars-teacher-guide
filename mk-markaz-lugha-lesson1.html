@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>مركز اللغة · حروف المسكن (ش · ت · هـ) · وحدة المسكن</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45; --t2:#0d6e6e; --soft:#E6F4F5; --soft2:#F2FAF9;
+  --gold:#C79A3B; --cream:#FFF7E8;
+  --ink:#1e2b2a; --muted:#5f6f6c; --line:#e6ded0; --card:#fff;
+  --shadow:0 6px 20px rgba(0,50,55,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.95;font-size:16px;
+  background:linear-gradient(#fbf9f3,#f6f0e6);padding:22px 16px 60px}
+.wrap{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+b,strong{font-weight:700}
+h1,h2,h3,.c-badge,.c-unit{font-family:var(--fd)}
+
+/* ===== الغلاف (بأسلوب دروس العائلة) ===== */
+.cover{position:relative;overflow:hidden;border-radius:22px;color:#fff;box-shadow:var(--shadow);min-height:190px}
+.cover-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.cover::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg,rgba(0,62,69,.92),rgba(13,110,110,.80) 52%,rgba(13,110,110,.88))}
+.cover::after{content:"";position:absolute;inset:0;z-index:1;opacity:.07;pointer-events:none;
+  background:radial-gradient(circle at 88% 18%,#fff 0 2px,transparent 3px) 0 0/34px 34px}
+.cover-main{position:relative;z-index:2;padding:26px 28px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cover-l{flex:1 1 60%;min-width:240px}
+.cover-r{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.c-badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:999px;padding:6px 15px;font-weight:700;font-size:14px;margin-bottom:11px}
+.cover h1{font-size:29px;line-height:1.42;font-weight:700;margin-bottom:10px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+.c-meta{font-size:14px;color:#dcf3ef;line-height:1.85}
+.c-unit{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:12px 16px;font-weight:700;font-size:15px;line-height:1.6}
+.c-dur{color:#bfe6e0;font-size:14px}
+
+/* ===== رقائق المعنى ===== */
+.mc-chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.mc-chip{background:var(--soft2);border:1px solid var(--line);border-radius:16px;padding:13px 15px;font-size:14px;line-height:1.85}
+.mc-chip strong{display:block;color:var(--t1);font-weight:700;margin-bottom:3px;font-family:var(--fd);font-size:15px}
+
+/* ===== أقسام وبطاقات ===== */
+.mc-block{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow)}
+.mc-block>h2{color:var(--t1);font-size:18px;font-weight:700;margin-bottom:12px;
+  padding-inline-start:12px;border-inline-start:4px solid var(--t2)}
+.mc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px}
+.mc-card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--t2);
+  border-radius:16px;padding:15px 17px;box-shadow:var(--shadow)}
+.mc-card h3{color:var(--t1);font-size:15.5px;font-weight:700;margin-bottom:9px}
+.mc-card.wide{grid-column:1/-1}
+.mc-card ul,.mc-card ol{margin:0;padding-inline-start:20px}
+.mc-card li{margin-bottom:5px;font-size:14px;line-height:1.9}
+.mc-card li::marker{color:var(--t2)}
+
+/* ===== معاينة أوراق العمل ===== */
+.mc-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px}
+.mc-fig{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.mc-fig img{display:block;width:100%;height:240px;object-fit:contain;background:var(--soft2);padding:8px}
+.mc-fig figcaption{padding:9px 12px;font-size:13px;font-weight:700;color:var(--ink);background:#fff;border-top:1px solid var(--line)}
+.mc-fig a{text-decoration:none;color:inherit}
+
+/* ===== ملفات مساعِدة ===== */
+.mc-res{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));gap:10px}
+.mc-res a{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;
+  padding:11px 14px;background:var(--soft2);border:1px solid var(--line);border-inline-start:4px solid var(--t2);
+  border-radius:13px;color:var(--ink);text-decoration:none;font-size:13.5px;font-weight:700}
+.mc-res a::after{content:"فتح ↗";color:#fff;background:var(--t2);border-radius:999px;padding:4px 11px;font-size:11px;white-space:nowrap}
+
+/* ===== تنبيه ===== */
+.mc-note{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);
+  border-radius:16px;padding:14px 17px;font-size:14px;line-height:1.95;color:#5b4412}
+.mc-note strong{color:#7a5a12}
+@media(max-width:640px){.mc-cover{flex-direction:column;text-align:center}.mc-cover h1{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="cover-photo" style="background-image:url('units-art/unit-maskan.jpg')"></div>
+    <div class="cover-main">
+      <div class="cover-l">
+        <span class="c-badge">مركز اللغة · لقاء تطبيقي · ٣٠ دقيقة</span>
+        <h1>وحدة المسكن — مركز اللغة<br/>حروف المسكن: الشين والتاء والهاء</h1>
+        <div class="c-meta">المرحلة: تمهيدي (5–6 سنوات) · الدرس المرتبط: لساني عربي — اللقاءان الأول (ش) والثاني (ت · هـ) · تنظيم: ٤–٦ أطفال</div>
+      </div>
+      <div class="cover-r">
+        <div class="c-unit" style="background:#fff;padding:8px 10px;display:grid;place-items:center"><img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة" style="display:block;width:88px;height:88px;object-fit:contain"/></div>
+        <div class="c-dur">المدة: ٣٠ دقيقة</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="mc-chips">
+    <div class="mc-chip"><strong>المعنى المركزي</strong>اللغة العربية باب لفهم القرآن؛ ينتقل الطفل من المشاهدة مع المعلمة إلى أداء عملي: يميّز حروف <b>ش · ت · هـ</b> بعلاماتها، ويبني أشكالها، ويتتبّعها، ويطابق كلّ حرف بكلمة من بيئة المسكن (شُبّاك · تنّور · هدية).</div>
+    <div class="mc-chip"><strong>الركن الداعم</strong>ركن أقرأ لأتعلّم في درس لساني، وربط الحروف بكلمات المسكن؛ فالمركز تطبيقٌ عمليّ لما تعلّمه الطفل في لقاءَي لساني (ش · ت · هـ).</div>
+    <div class="mc-chip"><strong>المثير</strong>تعرض المعلمة بطاقات ش · ت · هـ وتسأل: ما العلامة التي تميّز كلّ حرف؟ فينتبه الأطفال إلى نقاط الشين الثلاث فوقها، ونقطتَي التاء، وخلوّ الهاء من النقاط.</div>
+    <div class="mc-chip"><strong>التقويم</strong>يختار الطفل الحرف المطلوب من بطاقات جديدة، ويضع علامته الصحيحة، ويطابقه بكلمته، ويتتبّعه؛ مع توثيق درجة الاستقلال لا تحويله إلى اختبار.</div>
+  </section>
+
+  <section class="mc-block">
+    <h2>أوراق العمل المرفقة</h2>
+    <ul style="margin:0;padding-inline-start:20px;font-size:14.5px;line-height:1.95">
+      <li><b>حرف الشين (ش):</b> ورقة التدرّب على كتابة الشين.</li>
+      <li><b>حرف التاء (ت):</b> أوراق عمل حرف التاء.</li>
+      <li><b>حرف الهاء (هـ):</b> أوراق عمل حرف الهاء + ورقة التدرّب على كتابته.</li>
+      <li><b>بطاقات ت · ث:</b> للتمييز بين الحرفين المتشابهين بعدد النقاط.</li>
+      <li><b>مراجعة الحروف (أ–ي):</b> ورقة مراجعة شاملة للحروف الهجائية.</li>
+    </ul>
+    <p style="font-size:13px;color:var(--muted);margin-top:8px">روابط الطباعة في «ملفات مساعدة للمعلمة» بالأسفل.</p>
+  </section>
+
+  <section class="mc-grid">
+    <div class="mc-card"><h3>الأهداف ونواتج التعلّم</h3><ul><li>الهدف الإجرائي: يميّز الطفل الحرف المطلوب (ش · ت · هـ) بين حروف مشابهة في أربع محاولات من خمس بالاعتماد على علامته.</li><li>ينطق صوت الحرف قريبًا من النموذج أو يردّد بعد نموذج واحد.</li><li>يبني شكل الحرف ويضع علامته الصحيحة (ثلاث نقاط للشين فوقها · نقطتان للتاء · بلا نقاط للهاء)، ثم يتتبّعه مرّة في الاتجاه الصحيح.</li><li>يطابق كلّ حرف بكلمة من بيئة المسكن (ش: شُبّاك · ت: تنّور · هـ: هدية) ويشير إلى موضع الحرف فيها.</li></ul></div>
+    <div class="mc-card"><h3>خطوات النشاط · ٦ مراحل</h3><ol><li>استدعاء التعلّم (٣د): بطاقة الحرف واسمه وصوته، والإشارة إلى كلمته من المسكن.</li><li>تمييز الحرف (٧د): يفرز بطاقات الحروف فيضع (ش · ت · هـ) في مكانها بحسب علامتها.</li><li>أبني الحرف (١٠د): يصفّ قطع الجسم، ويضع علامة الحرف (نقاطه) ويعدّها، ثم يميّز مواضعه (أول/وسط/آخر).</li><li>مطابقة وتتبّع (٦د): يختار الحرف بين حروف مشابهة، ويطابقه بكلمته، ثم يتتبّعه أو يكتبه مرّة (ورقة التدرّب).</li><li>تقويم هادئ (٢د): استجابة «الاسم — الصوت — الكلمة» وتوثيق الاستقلال.</li><li>إعادة الأدوات (٢د): فرز القطع ومسح البطاقات.</li></ol></div>
+    <div class="mc-card wide"><h3>الأدوات والكميات</h3><ul><li>بطاقات الحروف ش · ت · هـ مع مشتّتات من حروف مشابهة (ب · ث · ن · د …)، وشبكة فرز لكلّ حرف.</li><li>بطاقات كبيرة لمسار كلّ حرف بنقطة بداية وسهم، و١٢–١٨ كرة وبرية أو أقراص لباد لجسم الحرف، مع قطع بلون مختلف للنقاط في طبق مستقل.</li><li>بطاقات مصوّرة لكلمات المسكن (شُبّاك · تنّور · هدية)، وأوراق التدرّب على الكتابة (المرفقة)، وقلم قابل للمسح وقطعة قماش، وبطاقة ملاحظة المعلمة.</li></ul></div>
+    <div class="mc-card wide"><h3>المؤشّرات والتوثيق</h3><ul><li>يميّز الحرف بعلامته بين حروف مشابهة · ينطق صوته قريبًا من النموذج · يضع علامته الصحيحة (نقاط الشين/التاء أو خلوّ الهاء) · يطابقه بكلمته من المسكن · يتتبّع/يكتب مساره في اتجاهه الصحيح.</li><li><b>رمز التوثيق:</b> م = مستقل، ت = بتلميح، س = بمساعدة مباشرة. يُسجَّل مرّة واحدة بعد التطبيق الفردي، ولا يتحوّل المركز إلى اختبار.</li></ul></div>
+    <div class="mc-card wide"><h3>التمايز حسب حاجة الطفل</h3><ul><li><b>يحتاج دعمًا:</b> يعمل على حرفٍ واحد بين بطاقتين فقط، مع دوائر لمواضع النقاط، والتتبّع بالإصبع قبل القلم.</li><li><b>متقن:</b> يميّز الحروف الثلاثة معًا ويشرح الفرق بينها بعدد النقاط، ثم يكتب كلمةً من المسكن تبدأ بأحدها.</li><li><b>حاجة حركية:</b> ينقل قطع الجسم إلى المسار قطعةً قطعة ثم يعيد فرزها بين الحروف.</li><li><b>يتردّد في النطق:</b> يُقبل منه الاختيار والإشارة، ثم يردّد الصوت مع المعلمة بلا إلزام أمام زملائه.</li></ul></div>
+  </section>
+
+  <section class="mc-block">
+    <h2>ملفات مساعدة للمعلمة — أوراق العمل (طباعة)</h2>
+    <div class="mc-res">
+      <a href="assets/mk-lugha-sh-tracing.pdf" target="_blank" rel="noopener">التدرّب على كتابة حرف الشين</a>
+      <a href="assets/mk-lugha-ta-worksheets.pdf" target="_blank" rel="noopener">أوراق عمل حرف التاء</a>
+      <a href="assets/mk-lugha-ha-worksheets.pdf" target="_blank" rel="noopener">أوراق عمل حرف الهاء</a>
+      <a href="assets/mk-lugha-ha-tracing.pdf" target="_blank" rel="noopener">التدرّب على كتابة حرف الهاء</a>
+      <a href="assets/mk-lugha-ta-tha-cards.pdf" target="_blank" rel="noopener">بطاقات الحرفين ت · ث (التمييز)</a>
+      <a href="assets/mk-lugha-review-alphabet.docx" target="_blank" rel="noopener">مراجعة الحروف من أ إلى ي</a>
+    </div>
+  </section>
+
+  <div class="mc-note"><strong>تنبيه منهجي:</strong> يُقدَّم التدريب بوصفه ضبطًا للّسان لخدمة القراءة الصحيحة لا كلعبة صوتية منفصلة عن المعنى؛ فلا تُستخدم آيات أو أحاديث للتجريب الصوتي داخل المركز، ولا مقارنة بين خطوط الأطفال، مع الهدوء والتصحيح اللطيف. المركز فترة تطبيقية مستقلّة بعد الدرس، لا يحلّ محلّه ولا يقدّم مفهومًا جديدًا.</div>
+
+
+  <div class="gq-dev-credit" style="margin:22px auto 0;max-width:540px;padding:18px 16px 4px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center"><span style="font-size:11.5px;color:var(--muted);letter-spacing:.3px">إعداد وتطوير وإخراج دليل المعلمة</span><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="display:inline-block;line-height:0"><img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية" style="width:104px;height:auto;display:block"/></a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-family:var(--fd);font-size:14.5px;color:#1e5631;text-decoration:none;font-weight:700">شركة حضارة للاستشارات التربوية والتعليمية</a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--elm,#0E7C86);text-decoration:none">www.hadarah-consulting.com</a></div>
+</div>
+<!--gq-credit-embed-hide--><script>try{if(window.self!==window.top){var _c=document.querySelector(".gq-dev-credit");if(_c)_c.style.display="none";}}catch(e){}</script>
+</body>
+</html>
