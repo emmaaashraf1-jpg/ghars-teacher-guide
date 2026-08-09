@@ -480,14 +480,19 @@ body,.page,.page-body,.page-main,.page-aside,p,td,th,li,.lead-box,.resource-card
 body{background:radial-gradient(1150px 500px at 84% -12%,#eef8f6 0,transparent 58%),linear-gradient(#fbf7ee,#f4eddd)}
 .book{border:1px solid #e8dfd0;border-radius:26px;box-shadow:0 20px 55px rgba(0,50,55,.10)}
 .running-head{background:#fff;color:#5f6b66}
-/* ===== غلاف بروح الوحدات ===== */
-.cover{background:radial-gradient(680px 320px at 88% 6%,rgba(231,193,105,.22),transparent 60%),linear-gradient(135deg,#003E45 0%,#006B69 55%,#0E7C86 100%) !important;padding:42px 44px 46px !important;align-items:center;gap:26px}
-.cover-kicker{display:inline-block;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 15px;color:#ffe6a8 !important;font-size:13px;font-weight:700;letter-spacing:.2px}
-.cover h1{color:#fff}
-.subtitle{color:rgba(255,255,255,.9) !important;font-size:18px}
-.teacher-edition{background:linear-gradient(135deg,#e7c169,#c79a3b) !important;border:none !important;border-radius:999px !important;color:#3a2a06 !important;padding:9px 18px !important;box-shadow:0 8px 20px rgba(199,154,59,.3);letter-spacing:0}
-.cover-logo-card{width:250px !important;padding:22px !important;border-radius:28px !important;background:#fff !important;box-shadow:0 22px 55px rgba(0,0,0,.22) !important}
-.cover-logo-card img{width:170px !important;height:170px !important}
+/* ===== غلاف يطابق «بطل» الوحدات ===== */
+.cover{background:radial-gradient(700px 320px at 88% -10%,rgba(231,193,105,.20),transparent 60%),linear-gradient(135deg,#003E45 0%,#006B69 56%,#0E7C86 100%) !important;padding:0 !important;display:block !important;position:relative;overflow:hidden;grid-template-columns:none !important}
+.cover::after{content:"";position:absolute;inset:0;opacity:.06;pointer-events:none;background:radial-gradient(circle at 90% 16%,#fff 0 2px,transparent 3px) 0 0/34px 34px}
+.hero-x{position:relative;z-index:2;display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding:40px 44px 42px}
+.hero-badge-x{flex:0 0 auto;width:152px;height:152px;border-radius:28px;background:#fff;border:1px solid rgba(255,255,255,.6);display:grid;place-items:center;padding:14px;box-shadow:0 18px 44px rgba(0,0,0,.22)}
+.hero-badge-x img{width:100%;height:100%;object-fit:contain}
+.hero-copy-x{flex:1;min-width:280px}
+.cover-kicker{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.32);border-radius:999px;padding:6px 15px;color:#ffe6a8 !important;font-size:13px;font-weight:700;margin-bottom:12px}
+.cover h1{color:#fff;margin:0 0 12px}
+.subtitle{color:rgba(255,255,255,.9) !important;font-size:17px;max-width:720px}
+.cover-tags{margin-top:18px}
+.cover-tags span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);border-radius:999px;padding:6px 14px;font-size:12.5px;color:#fff}
+.teacher-edition{display:inline-block;margin-top:18px;background:linear-gradient(135deg,#e7c169,#c79a3b) !important;border:none !important;border-radius:999px !important;color:#3a2a06 !important;padding:9px 18px !important;box-shadow:0 8px 20px rgba(199,154,59,.3);letter-spacing:0}
 .section-banner{border-bottom:1px solid #eee4d4}
 /* إصلاح تباين الخطوط مع الخلفية */
 #vision{--accent:#B15230}
@@ -522,14 +527,16 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#eef8f6 0,transparent 5
 <main class="book" id="book">
 <div class="topline"></div>
 <section class="cover">
-<div class="cover-copy">
-<div class="cover-kicker">نادي غرس القيم للطفولة · إصدار المعلمة</div>
-<h1>الدليل التعريفي<br/>والتشغيلي للمنهج</h1>
+<div class="hero-x">
+<div class="hero-badge-x"><img alt="شعار غرس القيم" src="intro-assets/img_f995567352da.png"/></div>
+<div class="hero-copy-x">
+<span class="cover-kicker">نادي غرس القيم للطفولة · إصدار المعلمة</span>
+<h1>الدليل التعريفي والتشغيلي للمنهج</h1>
 <p class="subtitle">منظومة تربوية متكاملة تبدأ من الوحي، وتصل إلى المعرفة والمهارة والسلوك عبر لقاءات قصيرة، وأركان تطبيقية، وآداب صفية حية.</p>
 <div class="cover-tags"><span>مرجعية الوحي</span><span>تكامل المواد</span><span>التعلم باللعب</span><span>التربية بالموقف</span></div>
 <span class="teacher-edition">دليل المعلمة · مرحلة التمهيدي</span>
 </div>
-<div class="cover-brand"><div class="cover-logo-card"><img alt="شعار غرس القيم" src="intro-assets/img_f995567352da.png"/><strong>غرس القيم</strong><small>معرفة · إيمان · مهارة · سلوك</small></div></div>
+</div>
 </section>
 <template id="__bundler_thumbnail" data-bg-color="#06393b">
 <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
