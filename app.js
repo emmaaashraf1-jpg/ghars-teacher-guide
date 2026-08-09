@@ -39,10 +39,15 @@
     scale:'<path d="M12 4v16M6 8h12M6 8l-3 6a3 3 0 0 0 6 0zM18 8l-3 6a3 3 0 0 0 6 0z"/>',
     map:'<path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/>',
     note:'<path d="M6 3h12v18l-6-3-6 3z"/>',
-    home:'<path d="M4 11l8-7 8 7M6 10v10h12V10"/>'
+    home:'<path d="M4 11l8-7 8 7M6 10v10h12V10"/>',
+    beads:'<path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z"/><circle cx="12" cy="3" r="1.4"/><circle cx="12" cy="21" r="1.4"/><circle cx="3" cy="12" r="1.4"/><circle cx="21" cy="12" r="1.4"/>',
+    meal:'<path d="M4 4v5a2 2 0 0 0 4 0V4M6 4v16M16 4c-1.5 0-2.5 2-2.5 5s2.5 3 2.5 3v8"/>',
+    ball:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18"/>',
+    blocks:'<path d="M12 3l8 4-8 4-8-4 8-4zM4 7v10l8 4 8-4V7M12 11v10"/>',
+    scroll:'<path d="M8 3h9a1 1 0 0 1 1 1v13a2 2 0 0 0 2 2H7a2 2 0 0 1-2-2V6a3 3 0 0 1 3-3zM9 8h6M9 12h6M9 16h4"/>'
   };
   var UTAB_ICON={days:'note',usage:'idea',theme:'map',unit:'book',week:'day',values:'star',lang:'letter',manzooma:'play',songs:'play',fitness:'scale',corners:'puzzle'};
-  var SUBJ_ICON=[['كتابي','book'],['علّمني','cap'],['قال رسولي','dome'],['رسولي','dome'],['أدب','door'],['أحبك','star'],['لساني','letter'],['مهاراتي','grid'],['مركز اللغة','puzzle'],['مركز الرياضيات','grid2'],['البرنامج','note'],['برنامج','note']];
+  var SUBJ_ICON=[['أذكار','beads'],['وجبة','meal'],['ساحة','ball'],['أركان','blocks'],['أدرك','idea'],['منظومة','scroll'],['كتابي','book'],['علّمني','cap'],['قال رسولي','dome'],['رسولي','dome'],['أدب','door'],['أحبك','star'],['لساني','letter'],['مهاراتي','grid'],['مركز اللغة','puzzle'],['مركز الرياضيات','grid2'],['البرنامج','note'],['برنامج','note']];
   function subjIcon(t){ for(var i=0;i<SUBJ_ICON.length;i++){ if(t.indexOf(SUBJ_ICON[i][0])>=0) return I[SUBJ_ICON[i][1]]; } return I.book; }
   function injectIcons(){
     [].forEach.call(doc.querySelectorAll('.utab'),function(b){ var k=UTAB_ICON[b.dataset.u]; if(k&&!b.querySelector('svg')) b.insertAdjacentHTML('afterbegin',svg(I[k])); });
