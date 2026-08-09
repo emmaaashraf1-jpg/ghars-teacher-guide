@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>منظومة الوحدة · وحدة الليل والنهار · غرس القيم</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif; --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --v1:#4a2a7a; --v2:#6d4aa7; --v3:#8a67c4; --v-soft:#f3eefb; --v-soft2:#faf7ff;
+  --gold:#C79A3B; --gold2:#C8A200;
+  --ink:#2a2340; --muted:#6b6480; --line:#e9e2f2; --card:#fff;
+  --shadow:0 10px 30px rgba(60,30,110,.10); --shadow-sm:0 4px 14px rgba(60,30,110,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.95;font-size:16px;
+  background:radial-gradient(1100px 480px at 85% -10%,#efe7fb 0,transparent 58%),linear-gradient(#fbf8f2,#f4eef8);
+  padding:22px 16px 60px}
+.wrap{max-width:940px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+b,strong{font-weight:700}
+h1,h2,h3,h4,.badge,.sec-head h2{font-family:var(--fd)}
+
+/* ===== الغلاف ===== */
+.cover{position:relative;overflow:hidden;border-radius:24px;color:#fff;box-shadow:var(--shadow);min-height:180px}
+.cover-bg{position:absolute;inset:0;z-index:0;
+  background:linear-gradient(135deg,var(--v1) 0%,var(--v2) 55%,#5a3a95 100%)}
+.cover-bg::after{content:"";position:absolute;inset:0;opacity:.16;
+  background:radial-gradient(circle at 86% 20%,#fff 0 2px,transparent 3px) 0 0/30px 30px}
+.cover-glow{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(700px 260px at 12% -10%,rgba(231,193,105,.35),transparent 60%)}
+.cover-in{position:relative;z-index:2;padding:28px 30px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.cover-badge{flex:0 0 auto;width:78px;height:78px;border-radius:20px;background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.4);display:grid;place-items:center;box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.cover-badge svg{width:42px;height:42px;color:#ffe6a8}
+.cover-txt{flex:1;min-width:240px}
+.badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:999px;padding:5px 15px;font-weight:700;font-size:13.5px;margin-bottom:11px}
+.cover h1{font-size:31px;line-height:1.4;font-weight:700;text-shadow:0 1px 0 rgba(0,0,0,.14)}
+.cover h1 span{color:#ffe6a8}
+.cover .sub{font-size:14.5px;color:#efe7fb;line-height:1.9;margin-top:9px;max-width:640px}
+
+/* ===== شريط الاستخدام ===== */
+.usebar{display:flex;align-items:center;gap:13px;background:var(--v-soft);border:1px solid var(--line);
+  border-inline-start:5px solid var(--v2);border-radius:16px;padding:14px 18px;color:#3d2f5c;font-size:15px}
+.usebar .ic{flex:0 0 auto;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  background:#fff;border:1px solid var(--line);color:var(--v2)}
+.usebar .ic svg{width:22px;height:22px}
+.usebar b{color:var(--v1)}
+
+/* ===== بطاقة ===== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px 22px;box-shadow:var(--shadow-sm)}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.sec-head .num{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#fff;
+  background:linear-gradient(135deg,var(--v2),var(--v1));box-shadow:0 5px 14px rgba(74,42,122,.28)}
+.sec-head .num svg{width:20px;height:20px}
+.sec-head h2{font-size:20px;color:var(--v1);font-weight:700}
+.sec-head .rule{flex:1;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+
+/* مشغّل الوسائط */
+.media{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+  background:#f6f2fb;aspect-ratio:16/9;box-shadow:inset 0 0 0 1px rgba(109,74,167,.06)}
+.media iframe,.media video{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.hint{margin-top:12px;font-size:12.5px;color:var(--muted);text-align:center}
+
+/* بطاقات الاستخدام */
+.use-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px}
+.use-card{background:var(--v-soft2);border:1px solid var(--line);border-top:3px solid var(--v2);
+  border-radius:16px;padding:15px 17px}
+.use-card h4{color:var(--v1);font-size:15.5px;font-weight:700;margin-bottom:7px}
+.use-card p{font-size:14px;line-height:1.9;color:var(--ink)}
+.note{background:var(--v-soft2);border:1px solid var(--line);border-inline-start:5px solid var(--gold);
+  border-radius:14px;padding:13px 16px;font-size:13.5px;line-height:1.95;color:#5b4d78;margin-top:14px}
+.note b{color:var(--v1)}
+
+.foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:6px;padding-top:12px;border-top:1px dashed var(--line)}
+@media(max-width:560px){.cover h1{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== الغلاف ===== -->
+  <div class="cover">
+    <div class="cover-bg"></div>
+    <div class="cover-glow"></div>
+    <div class="cover-in">
+      <div class="cover-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4M12 2v2.6"/><path d="M7.6 7.6c0-1.5 2-2.6 4.4-2.6s4.4 1.1 4.4 2.6"/><rect x="7.1" y="7.6" width="9.8" height="9.4" rx="2.2"/><path d="M7.6 17c0 1.5 2 2.6 4.4 2.6s4.4-1.1 4.4-2.6"/><path d="M12 8.1v8.4M9.7 8.7v7.2M14.3 8.7v7.2"/><path d="M11 21.4h2"/></svg>
+      </div>
+      <div class="cover-txt">
+        <span class="badge">منظومة الوحدة</span>
+        <h1>نشيد <span>التفكّر</span></h1>
+        <div class="sub">منظومة وحدة الليل والنهار — الصوت الجامع الذي يربط قيم الوحدة بتعظيم الله والتفكّر في آياته؛ يستمع إليه الأطفال ويردّدونه في ختام كل يوم.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== شريط الاستخدام ===== -->
+  <div class="usebar">
+    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+    <div><b>ختام اليوم:</b> آخر نصف ساعة مخصّصة لمنظومة الوحدة — تُشغّلها المعلمة، ويستمع الأطفال ويردّدون نشيد التفكّر، فترسخ معاني تعظيم الله والتفكّر في آياته بلطفٍ وتكرار.</div>
+  </div>
+
+  <!-- ===== الاستماع ===== -->
+  <div class="card">
+    <div class="sec-head">
+      <div class="num"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg></div>
+      <h2>الاستماع إلى نشيد التفكّر</h2><div class="rule"></div>
+    </div>
+    <div class="media">
+      <video controls preload="metadata" playsinline src="assets/video_008_cfcf4810def7d59f.mp4" style="object-fit:contain;background:#2c1a55">متصفحك لا يدعم تشغيل الفيديو.</video>
+    </div>
+    <div class="hint">🎧 الفيديو مرجعٌ للمعلمة لتتعلّم الأداء ثم تردّده مع الأطفال دون عرض الشاشة عليهم.</div>
+  </div>
+
+  <!-- ===== كيف تستخدمها المعلمة ===== -->
+  <div class="card">
+    <div class="sec-head">
+      <div class="num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.2 4.5 4.9.7-3.5 3.5.8 4.9L12 18.8 7.6 16.6l.8-4.9L4.9 8.2l4.9-.7z"/></svg></div>
+      <h2>كيف تستخدمها المعلمة؟</h2><div class="rule"></div>
+    </div>
+    <div class="use-grid">
+      <div class="use-card"><h4>ختام اليوم</h4><p>في آخر نصف ساعة تُشغّلها المعلمة ويردّدها الأطفال، فتُختَم بها معاني الوحدة وتثبت في الوجدان.</p></div>
+      <div class="use-card"><h4>بين اللقاءات</h4><p>تُشغّل المنظومة ليستعيد الأطفال هدوءهم وتركيزهم، وتكون جسرًا لطيفًا للانتقال.</p></div>
+      <div class="use-card"><h4>قبل الأركان</h4><p>تُستخدم كجسرٍ وجدانيّ يذكّر الأطفال بأن الأركان تطبيقٌ لمعنى الوحدة: التفكّر في آيات الله.</p></div>
+    </div>
+    <div class="note"><b>قاعدة الشاشة:</b> الفيديو مرجعٌ مرئيٌّ وصوتيٌّ للمعلمة داخل الدليل؛ أمّا الأطفال فيستفيدون من الأداء دون توجيه أنظارهم إلى الشاشة. ويُضاف نصّ النشيد مكتوبًا هنا فور توفّره ليُعرَض كاملًا.</div>
+  </div>
+
+  <div class="foot">منظومة الوحدة · وحدة الليل والنهار · نادي غرس القيم لضيافة الأطفال</div>
+</div>
+</body>
+</html>
