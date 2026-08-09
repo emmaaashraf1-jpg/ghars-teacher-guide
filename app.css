@@ -129,6 +129,8 @@
 .teach-ctrl button.go{background:var(--gold);color:#04322f;border-color:var(--gold)}
 
 /* ===== خريطة رحلة الوحدة ===== */
+.journey-label{font-family:var(--fd,inherit);font-weight:700;color:var(--t1,#003E45);font-size:15px;margin:4px 2px 2px;padding-inline-start:4px;display:flex;align-items:center;gap:7px}
+.journey-label::before{content:"";width:14px;height:14px;border-radius:4px;background:linear-gradient(135deg,var(--t1,#003E45),var(--t2,#006B69))}
 .journey{display:flex;gap:0;overflow-x:auto;padding:6px 2px 14px;margin:2px 0 8px}
 .jstep{flex:0 0 auto;min-width:150px;position:relative;padding:0 10px;text-align:center}
 .jstep::before{content:"";position:absolute;top:19px;inset-inline-start:-50%;width:100%;height:2px;background:var(--line);z-index:0}

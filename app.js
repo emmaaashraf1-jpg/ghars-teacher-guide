@@ -167,7 +167,7 @@
   function mountJourney(){
     var days=doc.getElementById('u-days'); if(!days||doc.getElementById('journey'))return;
     var dt=days.querySelector('.daytabs');
-    dt.insertAdjacentHTML('beforebegin','<div class="journey" id="journey"></div>');
+    dt.insertAdjacentHTML('beforebegin','<div class="journey-label">أيام الوحدة</div><div class="journey" id="journey"></div>');
     dt.style.display='none';   // دمج: المسار المرقّم للأيام يغني عن تبويبات الأيام
     renderJourney();
   }
