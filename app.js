@@ -129,7 +129,7 @@
     [].forEach.call(doc.querySelectorAll('.daypanel'),function(dp){
       var dnum=dp.id.replace('d',''); var dt=doc.querySelector('.daytab[data-d="'+dnum+'"] .d-t'); var theme=dt?dt.textContent.trim():'';
       [].forEach.call(dp.querySelectorAll('.subpanel'),function(sp,i){
-        var subj=(sp.querySelector('.subj')||{}).textContent.trim(); var ttl=(sp.querySelector('h2')||{}).textContent.trim();
+        var subjEl=sp.querySelector('.subj')||sp.querySelector('.rc-name'); var subj=subjEl?subjEl.textContent.trim():''; var ttlEl=sp.querySelector('h2')||sp.querySelector('.rc-name'); var ttl=ttlEl?ttlEl.textContent.trim():'';
         var color=(sp.querySelector('.day-head')||{style:{}}).style.getPropertyValue?getComputedStyle(sp.querySelector('.day-head')).getPropertyValue('--sc'):'';
         INDEX.push({day:dnum,theme:theme,subj:subj,ttl:ttl,s:i+1,color:color,text:(subj+' '+ttl+' '+theme).toLowerCase()});
       });
