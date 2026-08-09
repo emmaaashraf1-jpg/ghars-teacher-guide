@@ -476,9 +476,18 @@ radial-gradient(circle at 80% 20%,rgba(255,255,255,.18),transparent 25%);overflo
 </style>
 <style id="units-theme">
 :root{--line:#e8dfd0}
+body,.page,.page-body,.page-main,.page-aside,p,td,th,li,.lead-box,.resource-card,.teacher-tip,.quick-card,.reference-card,.subtitle{font-family:'Saudi','Noto Naskh Arabic',Tahoma,Arial,sans-serif}
 body{background:radial-gradient(1150px 500px at 84% -12%,#eef8f6 0,transparent 58%),linear-gradient(#fbf7ee,#f4eddd)}
 .book{border:1px solid #e8dfd0;border-radius:26px;box-shadow:0 20px 55px rgba(0,50,55,.10)}
 .running-head{background:#fff;color:#5f6b66}
+/* ===== غلاف بروح الوحدات ===== */
+.cover{background:radial-gradient(680px 320px at 88% 6%,rgba(231,193,105,.22),transparent 60%),linear-gradient(135deg,#003E45 0%,#006B69 55%,#0E7C86 100%) !important;padding:42px 44px 46px !important;align-items:center;gap:26px}
+.cover-kicker{display:inline-block;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 15px;color:#ffe6a8 !important;font-size:13px;font-weight:700;letter-spacing:.2px}
+.cover h1{color:#fff}
+.subtitle{color:rgba(255,255,255,.9) !important;font-size:18px}
+.teacher-edition{background:linear-gradient(135deg,#e7c169,#c79a3b) !important;border:none !important;border-radius:999px !important;color:#3a2a06 !important;padding:9px 18px !important;box-shadow:0 8px 20px rgba(199,154,59,.3);letter-spacing:0}
+.cover-logo-card{width:250px !important;padding:22px !important;border-radius:28px !important;background:#fff !important;box-shadow:0 22px 55px rgba(0,0,0,.22) !important}
+.cover-logo-card img{width:170px !important;height:170px !important}
 .section-banner{border-bottom:1px solid #eee4d4}
 /* إصلاح تباين الخطوط مع الخلفية */
 #vision{--accent:#B15230}
@@ -490,7 +499,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#eef8f6 0,transparent 5
 .lead-box{background:color-mix(in srgb,var(--accent) 6%,#fff);border:1px solid #e8dfd0;border-inline-start:5px solid var(--accent);border-radius:16px;box-shadow:0 6px 20px rgba(0,50,55,.05)}
 .resource-card,.refs-helper-card{background:#fff;border:1px solid #e8dfd0;border-top:3px solid var(--accent);border-radius:15px;box-shadow:0 8px 22px rgba(0,50,55,.06);transition:transform .16s ease,box-shadow .16s ease}
 .resource-card:hover,.refs-helper-card:hover{transform:translateY(-3px);box-shadow:0 15px 32px rgba(0,50,55,.12)}
-.resource-card h4,.refs-helper-card b{color:var(--accent)}
+.resource-card h4,.refs-helper-card b{color:var(--accent) !important;-webkit-text-fill-color:var(--accent) !important;background:none !important}
 .teacher-tip,.quick-card,.reference-card{border:1px solid #e8dfd0;border-top:4px solid var(--accent);border-radius:16px;box-shadow:0 6px 18px rgba(0,50,55,.06)}
 .components-matrix,.asset-table{border-radius:14px;overflow:hidden}
 .components-matrix thead th,.asset-table thead th{background:var(--accent);color:#fff;border-color:rgba(255,255,255,.25)}
