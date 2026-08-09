@@ -76,18 +76,19 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .pathkey b{color:var(--t1);font-family:var(--fd)}
 .pathkey .k{display:inline-flex;align-items:center;gap:5px}
 .pathkey .k i{width:11px;height:11px;border-radius:50%;display:inline-block}
-/* مسار اليوم — أفقي متسلسل على صفوف مع خط ربط */
-.subtabs.seq{flex-wrap:wrap;gap:10px 0;align-items:center;justify-content:center;counter-reset:pstep;padding:14px 12px}
-.subtabs.seq .subtab{display:inline-flex;align-items:center;gap:7px;flex:0 0 auto}
+/* مسار اليوم — أفقي متسلسل على صفوف، أرقام + أسهم اتجاه */
+.subtabs.seq{flex-wrap:wrap;gap:10px 0;align-items:center;justify-content:flex-start;counter-reset:pstep;padding:16px 14px}
+.subtabs.seq .subtab{display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;
+  padding:6px 15px 6px 10px;font-size:13.5px;border-radius:999px}
 .subtabs.seq .subtab::before{counter-increment:pstep;content:counter(pstep,arabic-indic);flex:0 0 auto;
-  width:21px;height:21px;border-radius:50%;display:grid;place-items:center;font-size:11.5px;font-weight:700;font-family:var(--fb);
-  background:var(--sc,#006B69);color:#fff;opacity:.9}
-.subtabs.seq .subtab.active{background:var(--sc,#006B69);border-color:var(--sc,#006B69);color:#fff}
-.subtabs.seq .subtab.active::before{background:#fff;color:var(--sc,#006B69);opacity:1}
-.subtabs.seq .subtab.routine{--sc:#8a8f98;border-style:dashed;color:#5f6560;background:#f7f7f5}
+  width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:12.5px;font-weight:700;font-family:var(--fb);
+  background:var(--sc,#006B69);color:#fff}
+.subtabs.seq .subtab.active{background:var(--sc,#006B69);border-color:var(--sc,#006B69);color:#fff;box-shadow:0 4px 14px color-mix(in srgb,var(--sc,#006B69) 32%,transparent)}
+.subtabs.seq .subtab.active::before{background:#fff;color:var(--sc,#006B69)}
+.subtabs.seq .subtab.routine{--sc:#8a8f98;border-style:dashed;color:#5f6560;background:#f7f8f6}
 .subtabs.seq .subtab.routine:hover{color:#5f6560;border-color:#8a8f98}
 .subtabs.seq .subtab.routine.active{background:#8a8f98;border-color:#8a8f98;color:#fff}
-.subtabs.seq .pconn{flex:0 0 auto;width:15px;height:2px;background:#cfd8d4;border-radius:2px;margin:0 2px}
+.subtabs.seq .pconn{flex:1 1 14px;min-width:10px;height:3px;background:#d6ded9;border-radius:3px;align-self:center}
 /* ===== بطاقة فترة روتينية ===== */
 .rcard{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
   border-inline-start:6px solid var(--rc,#8a8f98);border-radius:18px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:8px}
