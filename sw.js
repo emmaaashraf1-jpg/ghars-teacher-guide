@@ -1,5 +1,5 @@
 /* دليل غرس القيم — عامل الخدمة (شبكة أولًا للصفحات · كاش أولًا للأصول الثابتة) */
-var CACHE = 'ghars-v1';
+var CACHE = 'ghars-v2';
 
 self.addEventListener('install', function(e){ self.skipWaiting(); });
 
@@ -15,6 +15,8 @@ self.addEventListener('fetch', function(e){
   var url;
   try { url = new URL(e.request.url); } catch(err){ return; }
   if(url.origin!==location.origin) return; // أصول خارجية تُترك للمتصفّح
+  // ملفات قابلة للتنزيل/كبيرة (PDF، مستندات، وسائط): يتولّاها المتصفّح مباشرةً بلا تدخّل
+  if(/\.(pdf|docx?|xlsx?|pptx?|mp4|webm|mp3|zip)$/i.test(url.pathname)) return;
 
   var accept = e.request.headers.get('accept') || '';
   var isHTML = e.request.mode==='navigate' || accept.indexOf('text/html')>=0;
