@@ -165,7 +165,7 @@
       var dp=doc.getElementById('d'+d); var fs=dp?[].slice.call(dp.querySelectorAll('.subpanel iframe')):[];
       var done=fs.length&&fs.every(function(f){return p[f.getAttribute('data-src')];});
       var cls='jstep'+(done?' done':'')+(d===curd?' cur':'');
-      return '<div class="'+cls+'" data-d="'+d+'"><div class="jdot">'+(done?svg(I.check,''):d)+'</div><div class="jt">'+th+'</div><div class="js">'+nm.split('·')[0]+'</div></div>';
+      return '<div class="'+cls+'" data-d="'+d+'"><div class="jdot">'+(done?svg(I.check,''):d)+'</div><div class="jt">'+th+'</div><div class="js">'+((nm.split('·')[1]||'').trim())+'</div></div>';
     }).join('');
     [].forEach.call(host.querySelectorAll('.jstep'),function(el){ el.addEventListener('click',function(){ var dt=doc.querySelector('.daytab[data-d="'+el.dataset.d+'"]'); if(dt){dt.click();afterNav();} }); });
   }

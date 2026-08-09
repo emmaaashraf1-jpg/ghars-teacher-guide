@@ -71,6 +71,36 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .subpanel{display:none}
 .subpanel.active{display:block;animation:fade .2s ease}
 
+/* ===== مسار اليوم — تسلسل مرقّم ===== */
+.pathkey{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:9px;font-size:12px;color:var(--muted)}
+.pathkey b{color:var(--t1);font-family:var(--fd)}
+.pathkey .k{display:inline-flex;align-items:center;gap:5px}
+.pathkey .k i{width:11px;height:11px;border-radius:50%;display:inline-block}
+/* مسار اليوم — أفقي متسلسل على صفوف، أرقام + أسهم اتجاه */
+.subtabs.seq{flex-wrap:wrap;gap:10px 0;align-items:center;justify-content:flex-start;counter-reset:pstep;padding:16px 14px}
+.subtabs.seq .subtab{display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;
+  padding:6px 15px 6px 10px;font-size:13.5px;border-radius:999px}
+.subtabs.seq .subtab::before{counter-increment:pstep;content:counter(pstep,arabic-indic);flex:0 0 auto;
+  width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:12.5px;font-weight:700;font-family:var(--fb);
+  background:var(--sc,#006B69);color:#fff}
+.subtabs.seq .subtab.active{background:var(--sc,#006B69);border-color:var(--sc,#006B69);color:#fff;box-shadow:0 4px 14px color-mix(in srgb,var(--sc,#006B69) 32%,transparent)}
+.subtabs.seq .subtab.active::before{background:#fff;color:var(--sc,#006B69)}
+.subtabs.seq .subtab.routine{--sc:#8a8f98;border-style:dashed;color:#5f6560;background:#f7f8f6}
+.subtabs.seq .subtab.routine:hover{color:#5f6560;border-color:#8a8f98}
+.subtabs.seq .subtab.routine.active{background:#8a8f98;border-color:#8a8f98;color:#fff}
+.subtabs.seq .pconn{flex:1 1 14px;min-width:10px;height:3px;background:#d6ded9;border-radius:3px;align-self:center}
+/* ===== بطاقة فترة روتينية ===== */
+.rcard{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
+  border-inline-start:6px solid var(--rc,#8a8f98);border-radius:18px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:8px}
+.rcard .rc-ic{flex:0 0 auto;width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:29px;
+  background:var(--rc-soft,#f2f3f2);border:1px solid var(--line)}
+.rcard .rc-b{flex:1;min-width:0}
+.rcard .rc-top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:9px}
+.rcard .rc-name{font-family:var(--fd);font-weight:700;font-size:20px;color:var(--t1)}
+.rcard .rc-time{font-size:12.5px;color:var(--muted);font-weight:700;background:#f4f7f6;border:1px solid var(--line);border-radius:999px;padding:3px 12px;white-space:nowrap}
+.rcard p{font-size:14.5px;line-height:1.95;margin:0 0 8px;color:var(--ink)}
+.rcard .rc-aim{color:#5b4412;background:#fffdf6;border:1px solid #ecd9a8;border-inline-start:4px solid var(--gold);border-radius:12px;padding:9px 13px;font-size:13.5px;margin:0}
+
 .day-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);
   border-inline-start:6px solid var(--sc,var(--t2));border-radius:16px;padding:13px 18px;box-shadow:var(--shadow-sm);margin-bottom:12px}
 .day-head .subj{background:var(--sc,var(--t2));color:#fff;border-radius:999px;padding:6px 14px;font-size:12.5px;font-weight:700;white-space:nowrap}
@@ -174,7 +204,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .fitness-quick{background:#fff;border:1px solid var(--line);border-inline-start:4px solid var(--t2);border-radius:12px;padding:11px 14px;font-size:13px;line-height:1.8;box-shadow:var(--shadow-sm)}
 .fitness-quick b{color:var(--t1)}
 </style>
-  <link rel="stylesheet" href="app.css"/>
+  <link rel="stylesheet" href="app.css?v=dp2"/>
   <link rel="manifest" href="manifest.json"/>
   <meta name="theme-color" content="#00575C"/>
   <link rel="apple-touch-icon" href="brand/logo-ghars.webp"/>
@@ -201,6 +231,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
   </div>
 
   <!-- ═══════════ شريط تبويبات الوحدة ═══════════ -->
+  <div class="journey-label" style="margin-top:6px">أقسام الوحدة</div>
   <nav class="unitnav" aria-label="تبويبات الوحدة">
     <div class="unitnav-row">
       <span class="unitnav-label">التخطيط والمتابعة</span>
@@ -233,17 +264,46 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 
   <!-- ═══════════ اليوم الأول · الأحد ═══════════ -->
   <div class="daypanel active" id="d1">
-    <div class="subtabs">
-      <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+    <div class="pathkey"><b>مسار اليوم:</b>
+      <span class="k"><i style="background:#2D7A4B"></i>لقاءات المواد</span>
+      <span class="k"><i style="background:#8a8f98"></i>فترات روتينية (أذكار · وجبة · ساحة · أركان)</span>
+      <span class="k"><i style="background:#6d4aa7"></i>المنظومة</span>
+    </div>
+    <div class="subtabs seq">
+      <button class="subtab routine active" data-s="r1">أذكار وتربية بدنية</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="2" style="--sc:#006B69">علّمني ربي</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r2">وجبة أولى</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="3" style="--sc:#6B3F22">قال رسولي</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r3">الساحة الداخلية</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="4" style="--sc:#55702B">أدب واقتداء</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="5" style="--sc:#0d6e6e">لساني عربي</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="6" style="--sc:#0e7c86">مركز اللغة</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r4">وجبة ثانية</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r5">أركان اللعب</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r6">أدرك واستمتع</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="9" style="--sc:#6d4aa7">منظومة الوحدة</button>
     </div>
+    <div class="subpanel active" data-s="r1"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">📿</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أذكار وتربية بدنية</span><span class="rc-time">٣٠ دقيقة</span></div><p>يجتمع الأطفال لأذكار الصباح جماعةً، ثم تمارين حركية خفيفة (قفز، تمدّد، مشي منظّم) لتنشيط الأجسام وتهيئة الانتباه لليوم.</p><p class="rc-aim"><b>الهدف:</b> ربط بداية اليوم بذكر الله، وبناء عادة حركية صحّية، وتفريغ الطاقة قبل اللقاءات.</p></div></div></div>
+    <div class="subpanel" data-s="r2"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🍎</div><div class="rc-b"><div class="rc-top"><span class="rc-name">وجبة أولى</span><span class="rc-time">٣٠ دقيقة</span></div><p>وجبة الإفطار مع تطبيق آداب الطعام: التسمية قبل الأكل، والأكل باليمين وممّا يليه، والحمد بعد الطعام، وعدم الإسراف.</p><p class="rc-aim"><b>الهدف:</b> ترسيخ آداب الطعام النبوية عمليًّا في موقف يوميّ متكرّر.</p></div></div></div>
+    <div class="subpanel" data-s="r3"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">⚽</div><div class="rc-b"><div class="rc-top"><span class="rc-name">الساحة الداخلية</span><span class="rc-time">٣٠ دقيقة</span></div><p>لعب حرّ منظّم داخل القاعة (ألعاب حركية هادئة وتعاونية) لتفريغ الطاقة والتفاعل الاجتماعي بين الأطفال.</p><p class="rc-aim"><b>الهدف:</b> تنمية المهارات الحركية والاجتماعية واللعب التعاوني الآمن.</p></div></div></div>
+    <div class="subpanel" data-s="r4"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🍽️</div><div class="rc-b"><div class="rc-top"><span class="rc-name">وجبة ثانية</span><span class="rc-time">٣٠ دقيقة</span></div><p>وجبة خفيفة ثانية بآداب الطعام نفسها، مع تشجيع الأطفال على ترتيب أماكنهم والنظافة بعدها.</p><p class="rc-aim"><b>الهدف:</b> تثبيت آداب الطعام والنظافة وتحمّل المسؤولية.</p></div></div></div>
+    <div class="subpanel" data-s="r5"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🧩</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أركان اللعب</span><span class="rc-time">٣٠ دقيقة</span></div><p>ينتقل الأطفال إلى أركان الوحدة (البناء · الإدراكي · الفنّي · القراءة) لتطبيق مفاهيم الوحدة باللعب الحرّ الموجّه.</p><p class="rc-aim"><b>الهدف:</b> تطبيق مفاهيم الوحدة عمليًّا، وتنمية الاستقلال والاختيار والتعاون.</p></div></div></div>
+    <div class="subpanel" data-s="r6"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">💡</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أدرك واستمتع</span><span class="rc-time">٣٠ دقيقة</span></div><p>نشاط إدراكي ختامي ممتع (تصنيف · تسلسل · مطابقة) مرتبط بمفهوم اليوم، يُقدَّم بروح اللعب.</p><p class="rc-aim"><b>الهدف:</b> مراجعة مرحة لمفاهيم اليوم وتنمية التفكير قبل الختام.</p></div></div></div>
     <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>مفهوم العائلة</h2><a class="open" href="family-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — مفهوم العائلة" data-src="family-lesson1.html" loading="lazy"></iframe></div></div>
-    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الانفطار · اللقاء الأول</h2><a class="open" href="kitabi-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الانفطار ١" data-src="kitabi-lesson1.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الانفطار · اللقاء الأول</h2><a class="open" href="kitabi-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الانفطار ١" data-src="kitabi-lesson1.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#6B3F22"><span class="subj">قال رسولي</span><h2>حديث من خصال الإيمان</h2><a class="open" href="qal-rasuli-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="قال رسولي — خصال الإيمان ١" data-src="qal-rasuli-lesson1.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="4"><div class="day-head" style="--sc:#55702B"><span class="subj">أدب واقتداء</span><h2>آداب الاستئذان · اللقاء الأول</h2><a class="open" href="adab-iqtida-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="أدب واقتداء — الاستئذان ١" data-src="adab-iqtida-lesson1.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="5"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>أتعرّف حرف ث وصوته</h2><a class="open" href="lisani-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — حرف ث" data-src="lisani-lesson1.html" loading="lazy"></iframe></div></div>
@@ -253,18 +313,48 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 
   <!-- ═══════════ اليوم الثاني · الاثنين ═══════════ -->
   <div class="daypanel" id="d2">
-    <div class="subtabs">
-      <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+    <div class="pathkey"><b>مسار اليوم:</b>
+      <span class="k"><i style="background:#2D7A4B"></i>لقاءات المواد</span>
+      <span class="k"><i style="background:#8a8f98"></i>فترات روتينية (أذكار · وجبة · ساحة · أركان)</span>
+      <span class="k"><i style="background:#6d4aa7"></i>المنظومة</span>
+    </div>
+    <div class="subtabs seq">
+      <button class="subtab routine active" data-s="r1">أذكار وتربية بدنية</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="2" style="--sc:#006B69">علّمني ربي</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r2">وجبة أولى</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="3" style="--sc:#55702B">أدب واقتداء</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r3">الساحة الداخلية</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="4" style="--sc:#0d6e6e">لساني عربي</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="5" style="--sc:#0e7c86">مركز اللغة</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="6" style="--sc:#8B0000">مهاراتي</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="7" style="--sc:#a83232">مركز الرياضيات</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r4">وجبة ثانية</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r5">أركان اللعب</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r6">أدرك واستمتع</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="9" style="--sc:#6d4aa7">منظومة الوحدة</button>
     </div>
+    <div class="subpanel active" data-s="r1"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">📿</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أذكار وتربية بدنية</span><span class="rc-time">٣٠ دقيقة</span></div><p>يجتمع الأطفال لأذكار الصباح جماعةً، ثم تمارين حركية خفيفة (قفز، تمدّد، مشي منظّم) لتنشيط الأجسام وتهيئة الانتباه لليوم.</p><p class="rc-aim"><b>الهدف:</b> ربط بداية اليوم بذكر الله، وبناء عادة حركية صحّية، وتفريغ الطاقة قبل اللقاءات.</p></div></div></div>
+    <div class="subpanel" data-s="r2"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🍎</div><div class="rc-b"><div class="rc-top"><span class="rc-name">وجبة أولى</span><span class="rc-time">٣٠ دقيقة</span></div><p>وجبة الإفطار مع تطبيق آداب الطعام: التسمية قبل الأكل، والأكل باليمين وممّا يليه، والحمد بعد الطعام، وعدم الإسراف.</p><p class="rc-aim"><b>الهدف:</b> ترسيخ آداب الطعام النبوية عمليًّا في موقف يوميّ متكرّر.</p></div></div></div>
+    <div class="subpanel" data-s="r3"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">⚽</div><div class="rc-b"><div class="rc-top"><span class="rc-name">الساحة الداخلية</span><span class="rc-time">٣٠ دقيقة</span></div><p>لعب حرّ منظّم داخل القاعة (ألعاب حركية هادئة وتعاونية) لتفريغ الطاقة والتفاعل الاجتماعي بين الأطفال.</p><p class="rc-aim"><b>الهدف:</b> تنمية المهارات الحركية والاجتماعية واللعب التعاوني الآمن.</p></div></div></div>
+    <div class="subpanel" data-s="r4"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🍽️</div><div class="rc-b"><div class="rc-top"><span class="rc-name">وجبة ثانية</span><span class="rc-time">٣٠ دقيقة</span></div><p>وجبة خفيفة ثانية بآداب الطعام نفسها، مع تشجيع الأطفال على ترتيب أماكنهم والنظافة بعدها.</p><p class="rc-aim"><b>الهدف:</b> تثبيت آداب الطعام والنظافة وتحمّل المسؤولية.</p></div></div></div>
+    <div class="subpanel" data-s="r5"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🧩</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أركان اللعب</span><span class="rc-time">٣٠ دقيقة</span></div><p>ينتقل الأطفال إلى أركان الوحدة (البناء · الإدراكي · الفنّي · القراءة) لتطبيق مفاهيم الوحدة باللعب الحرّ الموجّه.</p><p class="rc-aim"><b>الهدف:</b> تطبيق مفاهيم الوحدة عمليًّا، وتنمية الاستقلال والاختيار والتعاون.</p></div></div></div>
+    <div class="subpanel" data-s="r6"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">💡</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أدرك واستمتع</span><span class="rc-time">٣٠ دقيقة</span></div><p>نشاط إدراكي ختامي ممتع (تصنيف · تسلسل · مطابقة) مرتبط بمفهوم اليوم، يُقدَّم بروح اللعب.</p><p class="rc-aim"><b>الهدف:</b> مراجعة مرحة لمفاهيم اليوم وتنمية التفكير قبل الختام.</p></div></div></div>
     <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>آداب التعامل مع أفراد العائلة</h2><a class="open" href="family-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — آداب التعامل" data-src="family-lesson2.html" loading="lazy"></iframe></div></div>
-    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الانفطار · اللقاء الثاني</h2><a class="open" href="kitabi-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الانفطار ٢" data-src="kitabi-lesson2.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الانفطار · اللقاء الثاني</h2><a class="open" href="kitabi-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الانفطار ٢" data-src="kitabi-lesson2.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#55702B"><span class="subj">أدب واقتداء</span><h2>آداب الاستئذان · اللقاء الثاني</h2><a class="open" href="adab-iqtida-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="أدب واقتداء — الاستئذان ٢" data-src="adab-iqtida-lesson2.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="4"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>أراجع حرف ث وأميّز مواضعه</h2><a class="open" href="lisani-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — مواضع ث" data-src="lisani-lesson2.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="5"><div class="day-head" style="--sc:#0e7c86"><span class="subj">مركز اللغة</span><h2>أصطاد حرف ث وأحدّد موضعه</h2><a class="open" href="markaz-lugha-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل المركز…</div><iframe title="مركز اللغة — أصطاد ث" data-src="markaz-lugha-lesson2.html" loading="lazy"></iframe></div></div>
@@ -275,16 +365,44 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 
   <!-- ═══════════ اليوم الثالث · الثلاثاء ═══════════ -->
   <div class="daypanel" id="d3">
-    <div class="subtabs">
-      <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+    <div class="pathkey"><b>مسار اليوم:</b>
+      <span class="k"><i style="background:#2D7A4B"></i>لقاءات المواد</span>
+      <span class="k"><i style="background:#8a8f98"></i>فترات روتينية (أذكار · وجبة · ساحة · أركان)</span>
+      <span class="k"><i style="background:#6d4aa7"></i>المنظومة</span>
+    </div>
+    <div class="subtabs seq">
+      <button class="subtab routine active" data-s="r1">أذكار وتربية بدنية</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="2" style="--sc:#006B69">علّمني ربي</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r2">وجبة أولى</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="3" style="--sc:#8660A8">أحبك ربي</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r3">الساحة الداخلية</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="4" style="--sc:#0d6e6e">لساني عربي</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="5" style="--sc:#0e7c86">مركز اللغة</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r4">وجبة ثانية</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r5">أركان اللعب</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r6">أدرك واستمتع</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="9" style="--sc:#6d4aa7">منظومة الوحدة</button>
     </div>
+    <div class="subpanel active" data-s="r1"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">📿</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أذكار وتربية بدنية</span><span class="rc-time">٣٠ دقيقة</span></div><p>يجتمع الأطفال لأذكار الصباح جماعةً، ثم تمارين حركية خفيفة (قفز، تمدّد، مشي منظّم) لتنشيط الأجسام وتهيئة الانتباه لليوم.</p><p class="rc-aim"><b>الهدف:</b> ربط بداية اليوم بذكر الله، وبناء عادة حركية صحّية، وتفريغ الطاقة قبل اللقاءات.</p></div></div></div>
+    <div class="subpanel" data-s="r2"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🍎</div><div class="rc-b"><div class="rc-top"><span class="rc-name">وجبة أولى</span><span class="rc-time">٣٠ دقيقة</span></div><p>وجبة الإفطار مع تطبيق آداب الطعام: التسمية قبل الأكل، والأكل باليمين وممّا يليه، والحمد بعد الطعام، وعدم الإسراف.</p><p class="rc-aim"><b>الهدف:</b> ترسيخ آداب الطعام النبوية عمليًّا في موقف يوميّ متكرّر.</p></div></div></div>
+    <div class="subpanel" data-s="r3"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">⚽</div><div class="rc-b"><div class="rc-top"><span class="rc-name">الساحة الداخلية</span><span class="rc-time">٣٠ دقيقة</span></div><p>لعب حرّ منظّم داخل القاعة (ألعاب حركية هادئة وتعاونية) لتفريغ الطاقة والتفاعل الاجتماعي بين الأطفال.</p><p class="rc-aim"><b>الهدف:</b> تنمية المهارات الحركية والاجتماعية واللعب التعاوني الآمن.</p></div></div></div>
+    <div class="subpanel" data-s="r4"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🍽️</div><div class="rc-b"><div class="rc-top"><span class="rc-name">وجبة ثانية</span><span class="rc-time">٣٠ دقيقة</span></div><p>وجبة خفيفة ثانية بآداب الطعام نفسها، مع تشجيع الأطفال على ترتيب أماكنهم والنظافة بعدها.</p><p class="rc-aim"><b>الهدف:</b> تثبيت آداب الطعام والنظافة وتحمّل المسؤولية.</p></div></div></div>
+    <div class="subpanel" data-s="r5"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🧩</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أركان اللعب</span><span class="rc-time">٣٠ دقيقة</span></div><p>ينتقل الأطفال إلى أركان الوحدة (البناء · الإدراكي · الفنّي · القراءة) لتطبيق مفاهيم الوحدة باللعب الحرّ الموجّه.</p><p class="rc-aim"><b>الهدف:</b> تطبيق مفاهيم الوحدة عمليًّا، وتنمية الاستقلال والاختيار والتعاون.</p></div></div></div>
+    <div class="subpanel" data-s="r6"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">💡</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أدرك واستمتع</span><span class="rc-time">٣٠ دقيقة</span></div><p>نشاط إدراكي ختامي ممتع (تصنيف · تسلسل · مطابقة) مرتبط بمفهوم اليوم، يُقدَّم بروح اللعب.</p><p class="rc-aim"><b>الهدف:</b> مراجعة مرحة لمفاهيم اليوم وتنمية التفكير قبل الختام.</p></div></div></div>
     <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>برّ الوالدين</h2><a class="open" href="family-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — برّ الوالدين" data-src="family-lesson3.html" loading="lazy"></iframe></div></div>
-    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الانفطار · اللقاء الثالث</h2><a class="open" href="kitabi-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الانفطار ٣" data-src="kitabi-lesson3.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الانفطار · اللقاء الثالث</h2><a class="open" href="kitabi-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الانفطار ٣" data-src="kitabi-lesson3.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#8660A8"><span class="subj">أحبك ربي</span><h2>الله البصير يراني ويرى عملي</h2><a class="open" href="ohb-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="أحبك ربي — البصير" data-src="ohb-lesson3.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="4"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>أتعرّف حرف و وصوته</h2><a class="open" href="lisani-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — حرف و" data-src="lisani-lesson3.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="5"><div class="day-head" style="--sc:#0e7c86"><span class="subj">مركز اللغة</span><h2>أكتشف حرف و وأرسم مساره</h2><a class="open" href="markaz-lugha-lesson3.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل المركز…</div><iframe title="مركز اللغة — مسار الواو" data-src="markaz-lugha-lesson3.html" loading="lazy"></iframe></div></div>
@@ -293,17 +411,46 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 
   <!-- ═══════════ اليوم الرابع · الأربعاء ═══════════ -->
   <div class="daypanel" id="d4">
-    <div class="subtabs">
-      <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+    <div class="pathkey"><b>مسار اليوم:</b>
+      <span class="k"><i style="background:#2D7A4B"></i>لقاءات المواد</span>
+      <span class="k"><i style="background:#8a8f98"></i>فترات روتينية (أذكار · وجبة · ساحة · أركان)</span>
+      <span class="k"><i style="background:#6d4aa7"></i>المنظومة</span>
+    </div>
+    <div class="subtabs seq">
+      <button class="subtab routine active" data-s="r1">أذكار وتربية بدنية</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="2" style="--sc:#006B69">علّمني ربي</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r2">وجبة أولى</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="3" style="--sc:#0d6e6e">لساني عربي</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r3">الساحة الداخلية</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="4" style="--sc:#0e7c86">مركز اللغة</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="5" style="--sc:#8B0000">مهاراتي</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="6" style="--sc:#a83232">مركز الرياضيات</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r4">وجبة ثانية</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r5">أركان اللعب</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r6">أدرك واستمتع</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="9" style="--sc:#6d4aa7">منظومة الوحدة</button>
     </div>
+    <div class="subpanel active" data-s="r1"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">📿</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أذكار وتربية بدنية</span><span class="rc-time">٣٠ دقيقة</span></div><p>يجتمع الأطفال لأذكار الصباح جماعةً، ثم تمارين حركية خفيفة (قفز، تمدّد، مشي منظّم) لتنشيط الأجسام وتهيئة الانتباه لليوم.</p><p class="rc-aim"><b>الهدف:</b> ربط بداية اليوم بذكر الله، وبناء عادة حركية صحّية، وتفريغ الطاقة قبل اللقاءات.</p></div></div></div>
+    <div class="subpanel" data-s="r2"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🍎</div><div class="rc-b"><div class="rc-top"><span class="rc-name">وجبة أولى</span><span class="rc-time">٣٠ دقيقة</span></div><p>وجبة الإفطار مع تطبيق آداب الطعام: التسمية قبل الأكل، والأكل باليمين وممّا يليه، والحمد بعد الطعام، وعدم الإسراف.</p><p class="rc-aim"><b>الهدف:</b> ترسيخ آداب الطعام النبوية عمليًّا في موقف يوميّ متكرّر.</p></div></div></div>
+    <div class="subpanel" data-s="r3"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">⚽</div><div class="rc-b"><div class="rc-top"><span class="rc-name">الساحة الداخلية</span><span class="rc-time">٣٠ دقيقة</span></div><p>لعب حرّ منظّم داخل القاعة (ألعاب حركية هادئة وتعاونية) لتفريغ الطاقة والتفاعل الاجتماعي بين الأطفال.</p><p class="rc-aim"><b>الهدف:</b> تنمية المهارات الحركية والاجتماعية واللعب التعاوني الآمن.</p></div></div></div>
+    <div class="subpanel" data-s="r4"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🍽️</div><div class="rc-b"><div class="rc-top"><span class="rc-name">وجبة ثانية</span><span class="rc-time">٣٠ دقيقة</span></div><p>وجبة خفيفة ثانية بآداب الطعام نفسها، مع تشجيع الأطفال على ترتيب أماكنهم والنظافة بعدها.</p><p class="rc-aim"><b>الهدف:</b> تثبيت آداب الطعام والنظافة وتحمّل المسؤولية.</p></div></div></div>
+    <div class="subpanel" data-s="r5"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🧩</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أركان اللعب</span><span class="rc-time">٣٠ دقيقة</span></div><p>ينتقل الأطفال إلى أركان الوحدة (البناء · الإدراكي · الفنّي · القراءة) لتطبيق مفاهيم الوحدة باللعب الحرّ الموجّه.</p><p class="rc-aim"><b>الهدف:</b> تطبيق مفاهيم الوحدة عمليًّا، وتنمية الاستقلال والاختيار والتعاون.</p></div></div></div>
+    <div class="subpanel" data-s="r6"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">💡</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أدرك واستمتع</span><span class="rc-time">٣٠ دقيقة</span></div><p>نشاط إدراكي ختامي ممتع (تصنيف · تسلسل · مطابقة) مرتبط بمفهوم اليوم، يُقدَّم بروح اللعب.</p><p class="rc-aim"><b>الهدف:</b> مراجعة مرحة لمفاهيم اليوم وتنمية التفكير قبل الختام.</p></div></div></div>
     <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>مسؤوليات أفراد العائلة</h2><a class="open" href="family-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — مسؤوليات الأفراد" data-src="family-lesson4.html" loading="lazy"></iframe></div></div>
-    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الانفطار · اللقاء الرابع</h2><a class="open" href="kitabi-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الانفطار ٤" data-src="kitabi-lesson4.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الانفطار · اللقاء الرابع</h2><a class="open" href="kitabi-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الانفطار ٤" data-src="kitabi-lesson4.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>أتعرّف مواضع حرف و</h2><a class="open" href="lisani-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — مواضع و" data-src="lisani-lesson4.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="4"><div class="day-head" style="--sc:#0e7c86"><span class="subj">مركز اللغة</span><h2>أرتّب مواضع الواو</h2><a class="open" href="markaz-lugha-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل المركز…</div><iframe title="مركز اللغة — مواضع الواو" data-src="markaz-lugha-lesson4.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="5"><div class="day-head" style="--sc:#8B0000"><span class="subj">مهاراتي</span><h2>أميّز الفارغ والممتلئ وأقارن السعة</h2><a class="open" href="maharati-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="مهاراتي — السعة" data-src="maharati-lesson2.html" loading="lazy"></iframe></div></div>
@@ -313,17 +460,46 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 
   <!-- ═══════════ اليوم الخامس · الخميس ═══════════ -->
   <div class="daypanel" id="d5">
-    <div class="subtabs">
-      <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+    <div class="pathkey"><b>مسار اليوم:</b>
+      <span class="k"><i style="background:#2D7A4B"></i>لقاءات المواد</span>
+      <span class="k"><i style="background:#8a8f98"></i>فترات روتينية (أذكار · وجبة · ساحة · أركان)</span>
+      <span class="k"><i style="background:#6d4aa7"></i>المنظومة</span>
+    </div>
+    <div class="subtabs seq">
+      <button class="subtab routine active" data-s="r1">أذكار وتربية بدنية</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="2" style="--sc:#006B69">علّمني ربي</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r2">وجبة أولى</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="3" style="--sc:#6B3F22">قال رسولي</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r3">الساحة الداخلية</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="4" style="--sc:#8660A8">أحبك ربي</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="5" style="--sc:#0d6e6e">لساني عربي</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="6" style="--sc:#0e7c86">مركز اللغة</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r4">وجبة ثانية</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r5">أركان اللعب</button>
+      <span class="pconn" aria-hidden="true"></span>
+      <button class="subtab routine" data-s="r6">أدرك واستمتع</button>
+      <span class="pconn" aria-hidden="true"></span>
       <button class="subtab" data-s="9" style="--sc:#6d4aa7">منظومة الوحدة</button>
     </div>
+    <div class="subpanel active" data-s="r1"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">📿</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أذكار وتربية بدنية</span><span class="rc-time">٣٠ دقيقة</span></div><p>يجتمع الأطفال لأذكار الصباح جماعةً، ثم تمارين حركية خفيفة (قفز، تمدّد، مشي منظّم) لتنشيط الأجسام وتهيئة الانتباه لليوم.</p><p class="rc-aim"><b>الهدف:</b> ربط بداية اليوم بذكر الله، وبناء عادة حركية صحّية، وتفريغ الطاقة قبل اللقاءات.</p></div></div></div>
+    <div class="subpanel" data-s="r2"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🍎</div><div class="rc-b"><div class="rc-top"><span class="rc-name">وجبة أولى</span><span class="rc-time">٣٠ دقيقة</span></div><p>وجبة الإفطار مع تطبيق آداب الطعام: التسمية قبل الأكل، والأكل باليمين وممّا يليه، والحمد بعد الطعام، وعدم الإسراف.</p><p class="rc-aim"><b>الهدف:</b> ترسيخ آداب الطعام النبوية عمليًّا في موقف يوميّ متكرّر.</p></div></div></div>
+    <div class="subpanel" data-s="r3"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">⚽</div><div class="rc-b"><div class="rc-top"><span class="rc-name">الساحة الداخلية</span><span class="rc-time">٣٠ دقيقة</span></div><p>لعب حرّ منظّم داخل القاعة (ألعاب حركية هادئة وتعاونية) لتفريغ الطاقة والتفاعل الاجتماعي بين الأطفال.</p><p class="rc-aim"><b>الهدف:</b> تنمية المهارات الحركية والاجتماعية واللعب التعاوني الآمن.</p></div></div></div>
+    <div class="subpanel" data-s="r4"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🍽️</div><div class="rc-b"><div class="rc-top"><span class="rc-name">وجبة ثانية</span><span class="rc-time">٣٠ دقيقة</span></div><p>وجبة خفيفة ثانية بآداب الطعام نفسها، مع تشجيع الأطفال على ترتيب أماكنهم والنظافة بعدها.</p><p class="rc-aim"><b>الهدف:</b> تثبيت آداب الطعام والنظافة وتحمّل المسؤولية.</p></div></div></div>
+    <div class="subpanel" data-s="r5"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🧩</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أركان اللعب</span><span class="rc-time">٣٠ دقيقة</span></div><p>ينتقل الأطفال إلى أركان الوحدة (البناء · الإدراكي · الفنّي · القراءة) لتطبيق مفاهيم الوحدة باللعب الحرّ الموجّه.</p><p class="rc-aim"><b>الهدف:</b> تطبيق مفاهيم الوحدة عمليًّا، وتنمية الاستقلال والاختيار والتعاون.</p></div></div></div>
+    <div class="subpanel" data-s="r6"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">💡</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أدرك واستمتع</span><span class="rc-time">٣٠ دقيقة</span></div><p>نشاط إدراكي ختامي ممتع (تصنيف · تسلسل · مطابقة) مرتبط بمفهوم اليوم، يُقدَّم بروح اللعب.</p><p class="rc-aim"><b>الهدف:</b> مراجعة مرحة لمفاهيم اليوم وتنمية التفكير قبل الختام.</p></div></div></div>
     <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>عائلة النبي ﷺ</h2><a class="open" href="family-lesson5.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي — عائلة النبي ﷺ" data-src="family-lesson5.html" loading="lazy"></iframe></div></div>
-    <div class="subpanel active" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الانفطار · اللقاء الخامس</h2><a class="open" href="kitabi-lesson5.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الانفطار ٥" data-src="kitabi-lesson5.html" loading="lazy"></iframe></div></div>
+    <div class="subpanel" data-s="1"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الانفطار · اللقاء الخامس</h2><a class="open" href="kitabi-lesson5.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الانفطار ٥" data-src="kitabi-lesson5.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#6B3F22"><span class="subj">قال رسولي</span><h2>أفهم خصال الإيمان الثلاث</h2><a class="open" href="qal-rasuli-lesson2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="قال رسولي — خصال الإيمان ٢" data-src="qal-rasuli-lesson2.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="4"><div class="day-head" style="--sc:#8660A8"><span class="subj">أحبك ربي</span><h2>بائعة اللبن — أصدق وإن لم يرَني الناس</h2><a class="open" href="ohb-lesson4.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="أحبك ربي — بائعة اللبن" data-src="ohb-lesson4.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="5"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>أتعرّف حرف ش وصوته</h2><a class="open" href="lisani-lesson5.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — حرف ش" data-src="lisani-lesson5.html" loading="lazy"></iframe></div></div>
@@ -1229,6 +1405,6 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
   window.addEventListener('scroll',function(){ var sc=window.pageYOffset||root.scrollTop; if(sc>320) top.classList.add('show'); else top.classList.remove('show'); },{passive:true});
 })();
 </script>
-<script src="app.js"></script>
+<script src="app.js?v=dp2"></script>
 </body>
 </html>
