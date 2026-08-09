@@ -76,18 +76,24 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .pathkey b{color:var(--t1);font-family:var(--fd)}
 .pathkey .k{display:inline-flex;align-items:center;gap:5px}
 .pathkey .k i{width:11px;height:11px;border-radius:50%;display:inline-block}
-.subtabs{counter-reset:pstep;flex-wrap:nowrap;overflow-x:auto;gap:0;align-items:center;scrollbar-width:thin;scroll-snap-type:x proximity}
-.subtabs::-webkit-scrollbar{height:7px}
-.subtabs::-webkit-scrollbar-thumb{background:#d7ded9;border-radius:10px}
-.subtab{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;scroll-snap-align:center}
-.subtab::before{counter-increment:pstep;content:counter(pstep,arabic-indic);flex:0 0 auto;
-  width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:11.5px;font-weight:700;
-  background:var(--sc,#006B69);color:#fff;opacity:.92;font-family:var(--fb)}
-.subtab.active::before{background:#fff;color:var(--sc,#006B69);opacity:1}
-.subtab.routine{--sc:#8a8f98;border-style:dashed;color:#5f6560;background:#f7f7f5}
-.subtab.routine:hover{color:#5f6560;border-color:#8a8f98}
-.subtab.routine.active{background:#8a8f98;border-color:#8a8f98;color:#fff}
-.pconn{flex:0 0 auto;color:#c2ccc8;font-size:17px;font-weight:700;line-height:1;padding:0 3px;user-select:none;align-self:center}
+/* تخطيط اليوم: خط زمني رأسي + محتوى */
+.dayflow{display:flex;gap:18px;align-items:flex-start}
+.daybody{flex:1;min-width:0}
+.subtabs.timeline{flex:0 0 272px;width:272px;flex-direction:column;flex-wrap:nowrap;gap:0;align-items:stretch;
+  counter-reset:pstep;overflow:visible;padding:12px 10px}
+.subtabs.timeline::before{content:"";position:absolute;top:26px;bottom:26px;right:28px;width:2px;background:#e6ece9;z-index:0}
+.subtabs.timeline .subtab{width:100%;justify-content:flex-start;gap:11px;border:1px solid transparent;background:transparent;
+  border-radius:11px;padding:6px 9px;white-space:nowrap;text-align:start;position:relative;z-index:1;transition:.14s;font-size:13px}
+.subtabs.timeline .subtab::before{counter-increment:pstep;content:counter(pstep,arabic-indic);flex:0 0 auto;
+  width:23px;height:23px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;font-family:var(--fb);
+  background:#fff;color:var(--sc,#006B69);border:2px solid var(--sc,#006B69);box-shadow:0 0 0 4px var(--card)}
+.subtabs.timeline .subtab .stime{margin-inline-start:auto;font-size:11.5px;color:var(--muted);font-weight:700;white-space:nowrap;font-family:var(--fb)}
+.subtabs.timeline .subtab:hover{background:#f3f7f6}
+.subtabs.timeline .subtab.active{background:var(--sc,#006B69);color:#fff;border-color:var(--sc,#006B69)}
+.subtabs.timeline .subtab.active::before{background:#fff;color:var(--sc,#006B69);border-color:#fff}
+.subtabs.timeline .subtab.active .stime{color:rgba(255,255,255,.9)}
+.subtabs.timeline .subtab.routine{--sc:#8a8f98}
+@media(max-width:820px){.dayflow{flex-direction:column}.subtabs.timeline{flex-basis:auto;width:100%}}
 /* ===== بطاقة فترة روتينية ===== */
 .rcard{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
   border-inline-start:6px solid var(--rc,#8a8f98);border-radius:18px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:8px}
@@ -265,33 +271,23 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
       <span class="k"><i style="background:#8a8f98"></i>فترات روتينية (أذكار · وجبة · ساحة · أركان)</span>
       <span class="k"><i style="background:#6d4aa7"></i>المنظومة</span>
     </div>
-    <div class="subtabs">
-      <button class="subtab routine active" data-s="1">أذكار وتربية بدنية</button>
-      <span class="pconn" aria-hidden="true">‹</span>
-      <button class="subtab" data-s="2" style="--sc:#2D7A4B">كتابي المنير</button>
-      <span class="pconn" aria-hidden="true">‹</span>
-      <button class="subtab" data-s="3" style="--sc:#0d6e6e">لساني عربي</button>
-      <span class="pconn" aria-hidden="true">‹</span>
-      <button class="subtab routine" data-s="4">وجبة أولى</button>
-      <span class="pconn" aria-hidden="true">‹</span>
-      <button class="subtab" data-s="5" style="--sc:#006B69">علّمني ربي</button>
-      <span class="pconn" aria-hidden="true">‹</span>
-      <button class="subtab routine" data-s="6">الساحة الداخلية</button>
-      <span class="pconn" aria-hidden="true">‹</span>
-      <button class="subtab" data-s="7" style="--sc:#8B0000">مهاراتي</button>
-      <span class="pconn" aria-hidden="true">‹</span>
-      <button class="subtab" data-s="8" style="--sc:#a83232">مركز الرياضيات</button>
-      <span class="pconn" aria-hidden="true">‹</span>
-      <button class="subtab" data-s="9" style="--sc:#0e7c86">مركز اللغة</button>
-      <span class="pconn" aria-hidden="true">‹</span>
-      <button class="subtab routine" data-s="10">وجبة ثانية</button>
-      <span class="pconn" aria-hidden="true">‹</span>
-      <button class="subtab routine" data-s="11">أركان اللعب</button>
-      <span class="pconn" aria-hidden="true">‹</span>
-      <button class="subtab routine" data-s="12">أدرك واستمتع</button>
-      <span class="pconn" aria-hidden="true">‹</span>
-      <button class="subtab" data-s="13" style="--sc:#6d4aa7">لقاء المنظومة</button>
+    <div class="dayflow">
+    <div class="subtabs timeline">
+      <button class="subtab routine active" data-s="1"><span class="stime">٧:٣٠</span>أذكار وتربية بدنية</button>
+      <button class="subtab" data-s="2" style="--sc:#2D7A4B"><span class="stime">٨:٠٠</span>كتابي المنير</button>
+      <button class="subtab" data-s="3" style="--sc:#0d6e6e"><span class="stime">٨:٣٠</span>لساني عربي</button>
+      <button class="subtab routine" data-s="4"><span class="stime">٩:٠٠</span>وجبة أولى</button>
+      <button class="subtab" data-s="5" style="--sc:#006B69"><span class="stime">٩:٣٠</span>علّمني ربي</button>
+      <button class="subtab routine" data-s="6"><span class="stime">١٠:٠٠</span>الساحة الداخلية</button>
+      <button class="subtab" data-s="7" style="--sc:#8B0000"><span class="stime">١٠:٣٠</span>مهاراتي</button>
+      <button class="subtab" data-s="8" style="--sc:#a83232"><span class="stime">١١:٠٠</span>مركز الرياضيات</button>
+      <button class="subtab" data-s="9" style="--sc:#0e7c86"><span class="stime">١١:٣٠</span>مركز اللغة</button>
+      <button class="subtab routine" data-s="10"><span class="stime">١٢:٠٠</span>وجبة ثانية</button>
+      <button class="subtab routine" data-s="11"><span class="stime">١٢:٣٠</span>أركان اللعب</button>
+      <button class="subtab routine" data-s="12"><span class="stime">١:٠٠</span>أدرك واستمتع</button>
+      <button class="subtab" data-s="13" style="--sc:#6d4aa7"><span class="stime">١:٣٠</span>لقاء المنظومة</button>
     </div>
+    <div class="daybody">
     <div class="subpanel active" data-s="1"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">📿</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أذكار وتربية بدنية</span><span class="rc-time">٧:٣٠–٨:٠٠ · ٣٠ دقيقة</span></div><p>يجتمع الأطفال لأذكار الصباح جماعةً، ثم تمارين حركية خفيفة (قفز، تمدّد، مشي منظّم) لتنشيط الأجسام وتهيئة الانتباه لليوم.</p><p class="rc-aim"><b>الهدف:</b> ربط بداية اليوم بذكر الله، وبناء عادة حركية صحّية، وتفريغ الطاقة قبل اللقاءات.</p></div></div></div>
     <div class="subpanel" data-s="2"><div class="day-head" style="--sc:#2D7A4B"><span class="subj">كتابي المنير</span><h2>سورة الإنفطار (٩–١٢) · الملائكة الكرام الكاتبون</h2><a class="open" href="mk-kitabi-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير — الإنفطار ٩–١٢" data-src="mk-kitabi-lesson1.html" loading="lazy"></iframe></div></div>
     <div class="subpanel" data-s="3"><div class="day-head" style="--sc:#0d6e6e"><span class="subj">لساني عربي</span><h2>حرف الشين (ش) ومواضعه</h2><a class="open" href="mk-lisani-lesson1.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="لساني عربي — حرف الشين" data-src="mk-lisani-lesson1.html" loading="lazy"></iframe></div></div>
@@ -305,6 +301,8 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
     <div class="subpanel" data-s="11"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">🧩</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أركان اللعب</span><span class="rc-time">١٢:٣٠–١:٠٠ · ٣٠ دقيقة</span></div><p>ينتقل الأطفال إلى أركان الوحدة (البناء · الإدراكي · الفنّي · القراءة) لتطبيق مفاهيم «المسكن» باللعب الحرّ الموجّه.</p><p class="rc-aim"><b>الهدف:</b> تطبيق مفاهيم الوحدة عمليًّا، وتنمية الاستقلال والاختيار والتعاون.</p></div></div></div>
     <div class="subpanel" data-s="12"><div class="rcard" style="--rc:#8a8f98;--rc-soft:#eef0ee"><div class="rc-ic">💡</div><div class="rc-b"><div class="rc-top"><span class="rc-name">أدرك واستمتع</span><span class="rc-time">١:٠٠–١:٣٠ · ٣٠ دقيقة</span></div><p>نشاط إدراكي ختامي ممتع (تصنيف · تسلسل · مطابقة) مرتبط بمفهوم اليوم، يُقدَّم بروح اللعب.</p><p class="rc-aim"><b>الهدف:</b> مراجعة مرحة لمفاهيم اليوم وتنمية التفكير قبل الختام.</p></div></div></div>
     <div class="subpanel" data-s="13"><div class="day-head" style="--sc:#6d4aa7"><span class="subj">لقاء المنظومة</span><h2>آخر نصف ساعة · يستمع الأطفال ويردّدون</h2><a class="open" href="mk-manzuma.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div><div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>تُحمّل المنظومة…</div><iframe title="منظومة الوحدة" data-src="mk-manzuma.html" loading="lazy"></iframe></div></div>
+    </div>
+    </div>
   </div>
 
   <!-- ═══ اليوم الثاني · الإثنين · أنواع المساكن ═══ -->
