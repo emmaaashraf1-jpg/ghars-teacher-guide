@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ملف أعمال الطفل — وحدة المسكن · غرس القيم</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45;--t2:#0d6e6e;--gold:#C79A3B;--gold-d:#9c7a2a;--ink:#24322f;--muted:#6a7a75;--line:#e4d9bf;--cream:#FBF5E9;--card:#FFFDF8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.7;font-size:15px;background:#d9cdb2;padding:18px}
+.cover{max-width:800px;margin:0 auto;background:var(--cream);border-radius:18px;overflow:hidden;
+  box-shadow:0 12px 34px rgba(0,40,45,.16);border:1px solid #cdbf9f}
+h1,h2,h3,.badge,.plate .val{font-family:var(--fd)}
+/* الترويسة */
+.top{background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff;padding:16px 26px;display:flex;align-items:center;gap:13px}
+.top img{width:52px;height:52px;object-fit:contain;filter:drop-shadow(0 2px 4px rgba(0,0,0,.25))}
+.top .club{font-family:var(--fd);font-size:17px;font-weight:700;line-height:1.2}
+.top .club small{display:block;font-family:var(--fb);font-size:11.5px;font-weight:400;color:#bfe6e6;letter-spacing:.4px}
+.top .doc{margin-inline-start:auto;background:var(--gold);color:#3a2a06;font-family:var(--fd);font-weight:700;font-size:14px;border-radius:999px;padding:6px 16px}
+/* مشهد الوحدة */
+.hero{position:relative;text-align:center;padding:22px 22px 8px}
+.hero .unit-k{font-size:12.5px;letter-spacing:3px;color:var(--gold-d);font-weight:700}
+.hero h1{font-size:34px;color:var(--t1);margin:2px 0 4px;line-height:1.15}
+.hero p{font-size:13px;color:var(--muted);max-width:520px;margin:0 auto}
+.scene{width:100%;max-width:340px;height:auto;display:block;margin:6px auto 0}
+/* لوحة بيانات الطفل */
+.body{padding:6px 26px 26px}
+.plate{background:var(--card);border:2px solid var(--gold);border-radius:16px;padding:16px 18px;margin-top:8px;
+  box-shadow:0 4px 14px rgba(199,154,59,.12)}
+.plate .nm{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.plate .nm .lab{font-family:var(--fd);font-weight:700;color:var(--t1);font-size:17px;white-space:nowrap}
+.plate .nm .line{flex:1;min-width:200px;border-bottom:2.5px dotted var(--line);height:30px}
+.plate .id{display:flex;align-items:center;gap:9px}
+.plate .id .lab{font-family:var(--fd);font-weight:700;color:var(--gold-d);font-size:14px}
+.plate .id .box{display:flex;gap:5px}
+.plate .id .box i{width:30px;height:38px;border:2px solid var(--t2);border-radius:8px;background:#fff;display:block}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:11px;margin-top:12px}
+.mcell{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-size:13.5px}
+.mcell b{font-family:var(--fd);color:var(--t1);display:block;font-size:13px;margin-bottom:2px}
+.mcell .fill{border-bottom:2px dotted var(--line);min-height:22px}
+/* جدول المتابعة */
+.trk{margin-top:16px}
+.trk h2{font-family:var(--fd);font-size:16px;color:var(--t1);display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.trk h2::before{content:"";width:16px;height:16px;border-radius:4px;background:var(--gold)}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);border-radius:12px;overflow:hidden}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:right}
+th{background:var(--t1);color:#fff;font-family:var(--fd);font-weight:700;font-size:13px}
+td .chk{width:20px;height:20px;border:2px solid var(--t2);border-radius:6px;display:inline-block}
+tbody tr:nth-child(even){background:#fbf7ee}
+.ctr{text-align:center}
+.note{margin-top:14px;background:#eef6f6;border:1px solid #cfe6e6;border-inline-start:5px solid var(--t2);border-radius:12px;
+  padding:11px 14px;font-size:12.8px;color:#2c4a4a;line-height:1.85}
+.foot{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px;
+  border-top:1px solid var(--line);padding-top:12px;text-align:center}
+.foot img{width:78px;height:auto}
+.foot span{font-size:11px;color:var(--muted)}
+.printbtn{display:block;margin:16px auto 0;background:var(--t1);color:#fff;border:0;border-radius:999px;
+  padding:9px 24px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
+@media print{body{background:#fff;padding:0}.cover{box-shadow:none;border:0;border-radius:0;max-width:100%}.printbtn{display:none}}
+</style>
+</head>
+<body>
+<div class="cover">
+
+  <div class="top">
+    <img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم"/>
+    <div class="club">نادي غرس القيم<small>لضيافة الأطفال · المرحلة التمهيدية</small></div>
+    <div class="doc">ملف أعمال الطفل</div>
+  </div>
+
+  <div class="hero">
+    <div class="unit-k">الوحدة الثانية</div>
+    <h1>وحدة المسكن</h1>
+    <p>مجموعةُ أعمال الطفل وأوراقه خلال الوحدة — تُجمع هنا لمتابعة تقدّمه، وتُرسل لوليّ الأمر في ختام الوحدة.</p>
+    <!-- مشهد المسكن (بلا ذوات أرواح) -->
+    <svg class="scene" viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مشهد بيت">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef7f7"/><stop offset="1" stop-color="#fbf5e9"/></linearGradient>
+        <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff7e6"/><stop offset="1" stop-color="#f3e6c8"/></linearGradient>
+      </defs>
+      <rect x="0" y="0" width="340" height="150" fill="url(#sky)"/>
+      <path d="M295 24a12 12 0 1 0 4 9 9 9 0 1 1-4-9z" fill="#C79A3B"/>
+      <line x1="0" y1="132" x2="340" y2="132" stroke="#cdbf9f" stroke-width="2"/>
+      <!-- بيت رئيسي -->
+      <rect x="112" y="66" width="116" height="66" fill="url(#wall)" stroke="#c9a24a" stroke-width="2"/>
+      <path d="M104 66 L170 30 L236 66 Z" fill="#0d6e6e" stroke="#08535a" stroke-width="2"/>
+      <rect x="158" y="92" width="26" height="40" rx="2" fill="#0d6e6e"/>
+      <rect x="124" y="80" width="22" height="22" rx="2" fill="#eaf6f6" stroke="#0d6e6e" stroke-width="2"/>
+      <line x1="135" y1="80" x2="135" y2="102" stroke="#0d6e6e" stroke-width="1.5"/><line x1="124" y1="91" x2="146" y2="91" stroke="#0d6e6e" stroke-width="1.5"/>
+      <rect x="194" y="80" width="22" height="22" rx="2" fill="#eaf6f6" stroke="#0d6e6e" stroke-width="2"/>
+      <line x1="205" y1="80" x2="205" y2="102" stroke="#0d6e6e" stroke-width="1.5"/><line x1="194" y1="91" x2="216" y2="91" stroke="#0d6e6e" stroke-width="1.5"/>
+      <!-- بيت جانبي -->
+      <rect x="60" y="92" width="50" height="40" fill="#f6ecd4" stroke="#c9a24a" stroke-width="2"/>
+      <path d="M54 92 L85 70 L116 92 Z" fill="#C79A3B" stroke="#9c7a2a" stroke-width="2"/>
+      <rect x="78" y="108" width="16" height="24" rx="2" fill="#C79A3B"/>
+    </svg>
+  </div>
+
+  <div class="body">
+    <!-- بيانات الطفل -->
+    <div class="plate">
+      <div class="nm"><span class="lab">اسم الطفل</span><span class="line"></span>
+        <span class="id"><span class="lab">الرقم التعريفي (ID)</span><span class="box"><i></i><i></i><i></i><i></i></span></span>
+      </div>
+    </div>
+    <div class="meta">
+      <div class="mcell"><b>الفصل / المجموعة</b><div class="fill"></div></div>
+      <div class="mcell"><b>المعلمة المشرفة</b><div class="fill"></div></div>
+      <div class="mcell"><b>الفصل الدراسي</b><div class="fill"></div></div>
+      <div class="mcell"><b>التاريخ (من — إلى)</b><div class="fill"></div></div>
+    </div>
+
+    <!-- جدول المتابعة -->
+    <div class="trk">
+      <h2>متابعة أوراق عمل الوحدة</h2>
+      <table>
+        <thead><tr><th style="width:34%">المركز / المادة</th><th>ورقة العمل</th><th class="ctr" style="width:14%">أنجزها ✓</th><th style="width:22%">ملاحظة المعلمة</th></tr></thead>
+        <tbody>
+          <tr><td>مركز الرياضيات</td><td>العدد خمسة عشر (١٥)</td><td class="ctr"><span class="chk"></span></td><td></td></tr>
+          <tr><td>مركز الرياضيات</td><td>مفهوم الوقت</td><td class="ctr"><span class="chk"></span></td><td></td></tr>
+          <tr><td>مركز اللغة</td><td>حرف الشين (ش)</td><td class="ctr"><span class="chk"></span></td><td></td></tr>
+          <tr><td>مركز اللغة</td><td>حرفا التاء والهاء (ت · هـ)</td><td class="ctr"><span class="chk"></span></td><td></td></tr>
+          <tr><td>لساني عربي</td><td>&nbsp;</td><td class="ctr"><span class="chk"></span></td><td></td></tr>
+          <tr><td>مهاراتي</td><td>&nbsp;</td><td class="ctr"><span class="chk"></span></td><td></td></tr>
+          <tr><td>&nbsp;</td><td>&nbsp;</td><td class="ctr"><span class="chk"></span></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note"><strong>لوليّ الأمر:</strong> هذا الملفّ يجمع أعمال طفلكم وأوراقه خلال وحدة المسكن، ليطمئنّ الجميعُ على تقدّمه وما أنجزه. نشكر الله على نعمة العلم، ونسأله أن يبارك في أبنائنا. برجاء الاطّلاع عليه وإعادته مع الطفل.</div>
+
+    <div class="foot">
+      <a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener"><img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية"/></a>
+      <span>إعداد وتطوير وإخراج دليل المعلمة — شركة حضارة للاستشارات التربوية والتعليمية</span>
+    </div>
+    <button class="printbtn" onclick="window.print()">🖨️ طباعة الغلاف</button>
+  </div>
+</div>
+</body>
+</html>
