@@ -51,6 +51,13 @@ h1,h2,h3,.badge{font-family:var(--fd)}
 .foot{margin-top:20px;border-top:1px dashed var(--line);padding-top:9px;font-size:11.5px;color:var(--muted);text-align:center}
 .printbtn{display:block;margin:14px auto 0;background:var(--t2);color:#fff;border:0;border-radius:999px;padding:9px 22px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
 @media print{body{background:#fff;padding:0}.sheet{box-shadow:none;border:0;border-radius:0;max-width:100%}.printbtn{display:none}}
+.match{display:flex;justify-content:space-between;gap:34px;max-width:430px;margin:0 auto}
+.mcol{display:flex;flex-direction:column;gap:13px;flex:1}
+.mrow{display:flex;align-items:center;gap:8px}
+.mitem{flex:1;border:2px solid var(--line);border-radius:12px;background:var(--soft);padding:9px 8px;text-align:center;font-family:var(--fd);font-weight:700;color:var(--t1);font-size:20px;min-height:46px;display:flex;align-items:center;justify-content:center}
+.mdot{width:12px;height:12px;border-radius:50%;background:var(--t2);flex:0 0 auto}
+.blankbox{display:inline-block;width:26px;height:32px;border:2px dashed var(--t2);border-radius:7px;vertical-align:-6px;margin:0 3px;background:#fff}
+.countline{font-family:var(--fd);font-size:28px;color:var(--t1);text-align:center;letter-spacing:12px;background:var(--soft);border:2px solid var(--line);border-radius:12px;padding:12px 8px}
 </style>
 </head>
 <body>
@@ -76,31 +83,39 @@ h1,h2,h3,.badge{font-family:var(--fd)}
     </div>
   </div>
 
-  <!-- ٢: ميّز الحرفين -->
   <div class="act">
-    <div class="act-h"><span class="n">٢</span><h2>ميّز التاء والهاء</h2></div>
-    <p class="hint">ضع دائرةً حول كلّ تاء (ت)، ومربّعًا حول كلّ هاء (هـ).</p>
-    <div class="lgrid">
-      <div class="lc">ت</div><div class="lc">هـ</div><div class="lc">ب</div><div class="lc">ت</div><div class="lc">ث</div>
-      <div class="lc">هـ</div><div class="lc">ن</div><div class="lc">ت</div><div class="lc">هـ</div><div class="lc">ت</div>
-      <div class="lc">ث</div><div class="lc">هـ</div><div class="lc">ت</div><div class="lc">ب</div><div class="lc">هـ</div>
+    <div class="act-h"><span class="n">٢</span><h2>صِل الكلمة بحرفها</h2></div>
+    <p class="hint">صِل كلّ كلمةٍ بخطٍّ إلى الحرف الذي فيها: التاء (ت) أو الهاء (هـ).</p>
+    <div class="match">
+      <div class="mcol">
+        <div class="mrow"><span class="mitem">تنّور</span><span class="mdot"></span></div>
+        <div class="mrow"><span class="mitem">هديّة</span><span class="mdot"></span></div>
+        <div class="mrow"><span class="mitem">بيت</span><span class="mdot"></span></div>
+        <div class="mrow"><span class="mitem">وجه</span><span class="mdot"></span></div>
+      </div>
+      <div class="mcol" style="justify-content:center;gap:34px">
+        <div class="mrow"><span class="mdot"></span><span class="mitem" style="font-size:26px">ت</span></div>
+        <div class="mrow"><span class="mdot"></span><span class="mitem" style="font-size:26px">هـ</span></div>
+      </div>
     </div>
-    <div class="legend"><span>◯ التاء <b>ت</b> (نقطتان)</span><span>▢ الهاء <b>هـ</b> (بلا نقاط)</span></div>
   </div>
 
-  <!-- ٣: العلامة الفارقة -->
   <div class="act">
-    <div class="act-h"><span class="n">٣</span><h2>علامة التاء: نقطتان</h2></div>
-    <p class="hint">ارسم النقطتين فوق كلّ حرفٍ لتجعله تاءً، ثمّ اكتب عدد نقاط التاء في المربّع. (تذكّر: الثاء ثلاث نقاط، والهاء بلا نقاط.)</p>
-    <div class="dotsrow"><span class="baseL">ٮ</span><span class="baseL">ٮ</span><span class="baseL">ٮ</span></div>
-    <div class="countbox">عدد نقاط التاء = <span class="b"></span></div>
+    <div class="act-h"><span class="n">٣</span><h2>اكتب الحرف الناقص</h2></div>
+    <p class="hint">اكتب الحرف الناقص (ت أو هـ) في مكانه لتُكمل كلَّ كلمة.</p>
+    <div class="wordwrap">
+      <span class="wordcard"><span class="blankbox"></span>نّور</span>
+      <span class="wordcard"><span class="blankbox"></span>ديّة</span>
+      <span class="wordcard">بي<span class="blankbox"></span></span>
+      <span class="wordcard">وج<span class="blankbox"></span></span>
+    </div>
   </div>
 
-  <!-- ٤: الحرف في كلمة -->
   <div class="act">
-    <div class="act-h"><span class="n">٤</span><h2>الحرفان في كلمات المسكن</h2></div>
-    <p class="hint">ضع دائرةً حول التاء ومربّعًا حول الهاء في كلّ كلمة.</p>
-    <div class="wordwrap"><span class="wordcard">تنّور</span><span class="wordcard">بيت</span><span class="wordcard">هديّة</span><span class="wordcard">وجه</span></div>
+    <div class="act-h"><span class="n">٤</span><h2>عُدّ التاء والهاء</h2></div>
+    <p class="hint">عُدّ كم مرّةً يظهر كلّ حرفٍ في السطر، واكتب العدد في مربّعه.</p>
+    <div class="countline">ت هـ ت هـ ت ب هـ ت</div>
+    <div class="countbox">عدد التاء (ت) = <span class="b"></span> &nbsp;&nbsp; عدد الهاء (هـ) = <span class="b"></span></div>
   </div>
 
   <div class="foot">نادي غرس القيم لضيافة الأطفال · وحدة المسكن — مركز اللغة (التاء والهاء) · تدريبٌ يضبط اللسان لخدمة القراءة الصحيحة، بعد المحسوس؛ واللغةُ نعمةٌ نشكر الله عليها.</div>
