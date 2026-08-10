@@ -290,50 +290,128 @@
       <filter id="wcBloom" x="-40%" y="-40%" width="180%" height="180%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="8"/><feGaussianBlur stdDeviation="2.4"/></filter>
       <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"/></filter>
     </defs></svg>
-    <div class="ug-head"><h3>وحدة نموذجية</h3><span>مبنيّة بالكامل — نموذجٌ يُحتذى في بناء بقية الوحدات</span></div>
-    <section class="units">
-      <a class="unit model" href="unit-layl-nahar.html">
-        <div class="unit-cap" style="background:url('units-art/unit-layl-nahar.jpg') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important"><span class="u-order">الوحدة الأولى</span>
-        </div>
-        <div class="unit-body">
-          <h3>وحدة الليل والنهار</h3>
-          <div class="unit-dots">
-            <i style="background:#C05000"></i><i style="background:#1A7A4C"></i><i style="background:#5B2D8E"></i><i style="background:#0A6677"></i><i style="background:#7A4A00"></i><i style="background:#1B4D7E"></i><i style="background:#8B0000"></i>
-          </div>
-          <p>خمسة أيام تعليمية + يوم ختامي، تربط آيات الليل والنهار بالمواد السبع والأركان التطبيقية.</p>
-          <span class="unit-open">افتحي دليل الوحدة ←</span>
-        </div>
-      </a>
-    </section>
+    <style id="tl-css">
+.tl-year{position:relative;margin:6px auto 4px}
+.tl{position:relative;max-width:940px;margin:6px auto 0;padding:6px 0}
+.tl-spine{position:absolute;left:50%;transform:translateX(-50%);top:0;bottom:0;width:44px;z-index:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='150'%3E%3Cpath d='M22 0 Q46 37 22 75 Q-2 113 22 150' fill='none' stroke='%23cdb570' stroke-width='4' stroke-linecap='round' stroke-dasharray='1 12'/%3E%3C/svg%3E") repeat-y center top}
+.tl-mile,.tl-end{position:relative;z-index:2;text-align:center;margin:16px 0}
+.tl-mile span{display:inline-block;background:linear-gradient(135deg,#00434b,#006B69);color:#fff;font-weight:800;font-size:13px;border-radius:999px;padding:8px 20px;box-shadow:0 10px 24px rgba(0,67,75,.22);border:2px solid #e7c169}
+.tl-mile.soon-mile span{background:#efe7d6;color:#8a7f68;border-color:#d9cfbb;box-shadow:none}
+.tl-end span{display:inline-block;background:linear-gradient(135deg,#e7c169,#C79A3B);color:#3a2a06;font-weight:800;font-size:13px;border-radius:999px;padding:8px 20px;box-shadow:0 10px 22px rgba(199,154,59,.3)}
+.tl-item{position:relative;z-index:1;display:grid;grid-template-columns:1fr 92px 1fr;align-items:center;margin:11px 0;text-decoration:none;color:inherit}
+.tl-item::before{content:"";position:absolute;top:50%;width:32px;height:3px;background:#d9cdb0;z-index:0}
+.side-right::before{left:calc(50% + 22px)}
+.side-left::before{right:calc(50% + 22px)}
+.tl-node{grid-column:2;justify-self:center;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:17px;font-family:Tahoma,sans-serif;z-index:3}
+.tl-node.built{background:radial-gradient(circle at 34% 30%,#0a9f92,#006B69);color:#fff;box-shadow:0 0 0 5px #fff,0 0 0 8px #e7c169,0 8px 20px rgba(0,67,75,.28)}
+.tl-node.soon{background:#eae3d4;color:#a99e86;box-shadow:0 0 0 5px #fff,0 0 0 7px #e0d7c4}
+.tl-card{position:relative;background:#fff;border:1px solid #e8dfd0;border-radius:16px;padding:12px 14px;box-shadow:0 8px 22px rgba(0,50,55,.08);display:flex;align-items:center;gap:12px;transition:transform .16s,box-shadow .16s}
+.tl-item:hover .tl-card{transform:translateY(-3px);box-shadow:0 16px 32px rgba(0,50,55,.14)}
+.side-right .tl-card{grid-column:3;border-inline-start:4px solid #006B69}
+.side-left .tl-card{grid-column:1;flex-direction:row-reverse;text-align:left;border-inline-end:4px solid #006B69}
+.tl-item.soon .tl-card{box-shadow:0 4px 14px rgba(0,50,55,.05);background:#fdfbf6}
+.side-right.soon .tl-card{border-inline-start-color:#d9cfbb}
+.side-left.soon .tl-card{border-inline-end-color:#d9cfbb}
+.tl-thumb{flex:0 0 auto;width:58px;height:58px;border-radius:12px;background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.tl-item.soon .tl-thumb{filter:grayscale(.45);opacity:.72}
+.tl-info h4{margin:0 0 5px;font-size:15px;color:#00434b;font-weight:800}
+.tl-info .st{display:inline-block;font-size:11px;font-weight:800;border-radius:6px;padding:2px 9px}
+.tl-info .st.built{background:#eaf6ee;color:#1e7a45}
+.tl-info .st.soon{background:#f1ece0;color:#9a8f78}
+.tl-info .st.model{background:#fbf0d6;color:#9a7526;margin-inline-start:5px}
+@media(max-width:640px){
+  .tl-spine{left:32px}
+  .tl-item{grid-template-columns:64px 1fr}
+  .tl-node{grid-column:1}
+  .side-right .tl-card,.side-left .tl-card{grid-column:2;flex-direction:row;text-align:right;border-inline:0;border-inline-start:4px solid #006B69}
+  .side-left.soon .tl-card,.side-right.soon .tl-card{border-inline-start-color:#d9cfbb}
+  .tl-item::before{left:56px;right:auto;width:14px}
+  .tl-mile,.tl-end{text-align:right;padding-inline-start:6px}
+}
+</style>
+<div class="tl-year">
+<div class="tl">
+<div class="tl-spine"></div>
 
-    <div class="ug-head"><h3>وحدات الفصل الدراسي الأول</h3><span>٩ وحدات</span></div>
-    <section class="units">
-      <div class="unit upcoming"><span class="soon-badge">قريبًا</span><div class="unit-cap" style="background:url('units-art/unit-makhlouq.jpg?v=5') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة أنا مخلوق كرمني الله"></div><div class="unit-body"><h3>أنا مخلوق كرمني الله</h3><span class="unit-open">قيد الإعداد</span></div></div>
-      <div class="unit upcoming"><span class="soon-badge">قريبًا</span><div class="unit-cap" style="background:url('units-art/unit-mumin.jpg?v=2') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة أنا مؤمن"></div><div class="unit-body"><h3>أنا مؤمن</h3><span class="unit-open">قيد الإعداد</span></div></div>
-      <div class="unit upcoming"><span class="soon-badge">قريبًا</span><div class="unit-cap" style="background:url('units-art/unit-kitab-allah.jpg?v=2') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة أنا مع كتاب الله"></div><div class="unit-body"><h3>أنا مع كتاب الله</h3><span class="unit-open">قيد الإعداد</span></div></div>
-      <div class="unit upcoming"><span class="soon-badge">قريبًا</span><div class="unit-cap" style="background:url('units-art/unit-nabi-muhammad.jpg') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة نبيي محمد صلى الله عليه وسلم"></div><div class="unit-body"><h3>نبيي محمد ﷺ</h3><span class="unit-open">قيد الإعداد</span></div></div>
-      <a class="unit model" href="unit-family.html"><div class="unit-cap" style="background:url('units-art/unit-family.jpg') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة العائلة"></div><div class="unit-body"><h3>العائلة</h3><div class="unit-dots"><i style="background:#006B69"></i><i style="background:#2D7A4B"></i><i style="background:#6B3F22"></i><i style="background:#55702B"></i><i style="background:#8660A8"></i><i style="background:#0d6e6e"></i><i style="background:#8B0000"></i></div><p>خمسة أيام تعليمية بالمواد السبع، ومركزا اللغة والرياضيات التطبيقيان، مبنيّة على تصميم الوحدة النموذجية.</p><span class="unit-open">افتحي دليل الوحدة ←</span></div></a>
-      <a class="unit model" href="unit-maskan.html"><div class="unit-cap" style="background:url('units-art/unit-maskan.jpg?v=2') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة المسكن"></div><div class="unit-body"><h3>المسكن</h3><div class="unit-dots"><i style="background:#2D7A4B"></i><i style="background:#006B69"></i><i style="background:#6B3F22"></i><i style="background:#55702B"></i><i style="background:#0d6e6e"></i><i style="background:#8B0000"></i></div><p>خمسة أيام تعليمية بستّ موادّ — تُكمل سورة الإنفطار وتغرس شكر نعمة المسكن وآدابه وهداية الله للمخلوقات. (مركزا اللغة والرياضيات قريبًا.)</p><span class="unit-open">افتحي دليل الوحدة ←</span></div></a>
-      <div class="unit upcoming"><span class="soon-badge">قريبًا</span><div class="unit-cap" style="background:url('units-art/unit-ashab.jpg') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة الأصحاب"></div><div class="unit-body"><h3>الأصحاب</h3><span class="unit-open">قيد الإعداد</span></div></div>
-      <div class="unit upcoming"><span class="soon-badge">قريبًا</span><div class="unit-cap" style="background:url('units-art/unit-amal-mal.jpg?v=2') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة العمل والمال"></div><div class="unit-body"><h3>العمل والمال</h3><span class="unit-open">قيد الإعداد</span></div></div>
-      <div class="unit upcoming"><span class="soon-badge">قريبًا</span><div class="unit-cap" style="background:url('units-art/unit-water-food.jpg') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة الماء والغذاء"></div><div class="unit-body"><h3>الماء والغذاء</h3><span class="unit-open">قيد الإعداد</span></div></div>
-    </section>
+<a class="tl-item side-right" href="unit-layl-nahar.html">
+<span class="tl-node built">١</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-layl-nahar.jpg')"></div>
+<div class="tl-info"><h4>الليل والنهار</h4><span class="st built">مكتملة</span><span class="st model">نموذجية</span></div></div>
+</a>
 
-    <div class="ug-head"><h3>وحدات الفصل الدراسي الثاني</h3><span>٧ وحدات</span></div>
-    <section class="units">
-      <div class="unit upcoming"><span class="soon-badge">قريبًا</span><div class="unit-cap" style="background:url('units-art/unit-sihha.jpg?v=2') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة نعمة الصحة"></div><div class="unit-body"><h3>نعمة الصحة</h3><span class="unit-open">قيد الإعداد</span></div></div>
-      <div class="unit upcoming"><span class="soon-badge">قريبًا</span><div class="unit-cap" style="background:url('units-art/unit-islam-deeni.jpg?v=2') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة الإسلام ديني"></div><div class="unit-body"><h3>الإسلام ديني</h3><span class="unit-open">قيد الإعداد</span></div></div>
-      <div class="unit upcoming"><span class="soon-badge">قريبًا</span><div class="unit-cap" style="background:url('units-art/unit-ramadan.jpg') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة خير الشهور"></div><div class="unit-body"><h3>خير الشهور</h3><span class="unit-open">قيد الإعداد</span></div></div>
-      <div class="unit upcoming"><span class="soon-badge">قريبًا</span><div class="unit-cap" style="background:url('units-art/unit-khayr-quroon.jpg') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة خير القرون"></div><div class="unit-body"><h3>خير القرون</h3><span class="unit-open">قيد الإعداد</span></div></div>
-      <div class="unit upcoming"><span class="soon-badge">قريبًا</span><div class="unit-cap" style="background:url('units-art/unit-past-present.jpg') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة الماضي والحاضر"></div><div class="unit-body"><h3>الماضي والحاضر</h3><span class="unit-open">قيد الإعداد</span></div></div>
-      <div class="unit upcoming"><span class="soon-badge">قريبًا</span><div class="unit-cap" style="background:url('units-art/unit-azmina-mubaraka.jpg') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة أزمنة مباركة"></div><div class="unit-body"><h3>أزمنة مباركة</h3><span class="unit-open">قيد الإعداد</span></div></div>
-      <div class="unit upcoming"><span class="soon-badge">قريبًا</span><div class="unit-cap" style="background:url('units-art/unit-warif.jpg') center center/cover no-repeat!important;aspect-ratio:2/1;height:auto!important" role="img" aria-label="وحدة وريف"></div><div class="unit-body"><h3>وحدة وريف</h3><span class="unit-open">قيد الإعداد</span></div></div>
-    </section>
+<div class="tl-mile"><span>الفصل الدراسي الأول · ٩ وحدات</span></div>
 
-    <div class="ug-head"><h3>وحدات الفصل الدراسي الثالث</h3><span>تُضاف عند إرسال قائمتها</span></div>
-    <section class="units">
-      <div class="unit soon"><span class="soon-badge">قريبًا</span><div class="unit-cap"><span class="u-order">الفصل الثالث</span></div><div class="unit-body"><h3>وحدات قادمة</h3><div class="unit-dots"><i style="background:#c9c3b6"></i><i style="background:#c9c3b6"></i><i style="background:#c9c3b6"></i></div><p>تُضاف فور إرسال قائمة وحدات الفصل الدراسي الثالث.</p><span class="unit-open">قيد الإعداد</span></div></div>
-    </section>
+<div class="tl-item side-left soon"><span class="tl-node soon">٢</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-makhlouq.jpg?v=5')"></div>
+<div class="tl-info"><h4>أنا مخلوقٌ كرّمني الله</h4><span class="st soon">قريبًا</span></div></div></div>
+
+<div class="tl-item side-right soon"><span class="tl-node soon">٣</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-mumin.jpg?v=2')"></div>
+<div class="tl-info"><h4>أنا مؤمن</h4><span class="st soon">قريبًا</span></div></div></div>
+
+<div class="tl-item side-left soon"><span class="tl-node soon">٤</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-kitab-allah.jpg?v=2')"></div>
+<div class="tl-info"><h4>أنا مع كتاب الله</h4><span class="st soon">قريبًا</span></div></div></div>
+
+<div class="tl-item side-right soon"><span class="tl-node soon">٥</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-nabi-muhammad.jpg')"></div>
+<div class="tl-info"><h4>نبيّي محمد ﷺ</h4><span class="st soon">قريبًا</span></div></div></div>
+
+<a class="tl-item side-left" href="unit-family.html"><span class="tl-node built">٦</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-family.jpg')"></div>
+<div class="tl-info"><h4>العائلة</h4><span class="st built">مكتملة</span></div></div></a>
+
+<a class="tl-item side-right" href="unit-maskan.html"><span class="tl-node built">٧</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-maskan.jpg?v=2')"></div>
+<div class="tl-info"><h4>المسكن</h4><span class="st built">مكتملة</span></div></div></a>
+
+<div class="tl-item side-left soon"><span class="tl-node soon">٨</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-ashab.jpg')"></div>
+<div class="tl-info"><h4>الأصحاب</h4><span class="st soon">قريبًا</span></div></div></div>
+
+<div class="tl-item side-right soon"><span class="tl-node soon">٩</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-amal-mal.jpg?v=2')"></div>
+<div class="tl-info"><h4>العمل والمال</h4><span class="st soon">قريبًا</span></div></div></div>
+
+<div class="tl-item side-left soon"><span class="tl-node soon">١٠</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-water-food.jpg')"></div>
+<div class="tl-info"><h4>الماء والغذاء</h4><span class="st soon">قريبًا</span></div></div></div>
+
+<div class="tl-mile"><span>الفصل الدراسي الثاني · ٧ وحدات</span></div>
+
+<div class="tl-item side-right soon"><span class="tl-node soon">١١</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-sihha.jpg?v=2')"></div>
+<div class="tl-info"><h4>نعمة الصحة</h4><span class="st soon">قريبًا</span></div></div></div>
+
+<div class="tl-item side-left soon"><span class="tl-node soon">١٢</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-islam-deeni.jpg?v=2')"></div>
+<div class="tl-info"><h4>الإسلام ديني</h4><span class="st soon">قريبًا</span></div></div></div>
+
+<div class="tl-item side-right soon"><span class="tl-node soon">١٣</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-ramadan.jpg')"></div>
+<div class="tl-info"><h4>خير الشهور</h4><span class="st soon">قريبًا</span></div></div></div>
+
+<div class="tl-item side-left soon"><span class="tl-node soon">١٤</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-khayr-quroon.jpg')"></div>
+<div class="tl-info"><h4>خير القرون</h4><span class="st soon">قريبًا</span></div></div></div>
+
+<div class="tl-item side-right soon"><span class="tl-node soon">١٥</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-past-present.jpg')"></div>
+<div class="tl-info"><h4>الماضي والحاضر</h4><span class="st soon">قريبًا</span></div></div></div>
+
+<div class="tl-item side-left soon"><span class="tl-node soon">١٦</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-azmina-mubaraka.jpg')"></div>
+<div class="tl-info"><h4>أزمنة مباركة</h4><span class="st soon">قريبًا</span></div></div></div>
+
+<div class="tl-item side-right soon"><span class="tl-node soon">١٧</span>
+<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-warif.jpg')"></div>
+<div class="tl-info"><h4>وريف</h4><span class="st soon">قريبًا</span></div></div></div>
+
+<div class="tl-mile soon-mile"><span>الفصل الدراسي الثالث · تُضاف قريبًا</span></div>
+<div class="tl-end"><span>ختام العام 🎓</span></div>
+</div>
+</div>
 
     <section class="dev-credit">
       <span class="dc-label">إعداد وتطوير وإخراج دليل المعلمة</span>
