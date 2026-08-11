@@ -351,6 +351,11 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 
 .flow-card.belief{border-inline-start:5px solid var(--t1)}
 .flow-card.belief h3{color:var(--t1);font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+
+/* ===== توحيد أيقونات الدليل (الخيار أ) ===== */
+.sec-head .num{background:#EEF4F1!important;border:1px solid #D6E5DF;color:#00575C!important;box-shadow:none!important}
+.sec-head .num .gi-svg,.sec-head .num .gi{width:22px;height:22px}
+h2 .gi,h3 .gi{vertical-align:-.18em}
 </style>
 </head>
 <body>
@@ -388,7 +393,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
   <!-- ══════════ 1) دليل الدرس ══════════ -->
   <div class="panel active" id="p1">
 
-    <div class="sec-head first"><div class="num gold">🌅</div><h2>تهيئة بداية اليوم</h2><div class="rule"></div></div>
+    <div class="sec-head first"><div class="num gold"><i class="gi" data-i="مسار بداية اللقاء" data-size="22"></i></div><h2>تهيئة بداية اليوم</h2><div class="rule"></div></div>
     <div class="flow-card" style="border-inline-start:5px solid var(--gold)">
       <p style="margin-bottom:10px"><strong>تُنفَّذ تهيئة بداية اليوم في أوّل لقاء من اليوم فقط — وهو لقاء «كتابي المنير»</strong> — ثم تنتقل المعلمة في بقيّة اللقاءات مباشرةً إلى إشارة بدء اللقاء.</p>
       <div class="kitabi-hijri-tool" contenteditable="false" aria-label="أداة التاريخ الهجري في تهيئة اليوم">
@@ -419,7 +424,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
       <p>تقول المعلمة: نبدأ يومنا بذكر الله وشكره على نعمة القرآن الذي سنتعلّمه.</p>
     </div>
 
-    <div class="sec-head"><div class="num">🧭</div><h2>مسار بداية اللقاء</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num"><i class="gi" data-i="مسار بداية اللقاء" data-size="22"></i></div><h2>مسار بداية اللقاء</h2><div class="rule"></div></div>
     <div class="flow-card sig">
       <h3>🕌 إشارة بدء اللقاء — نونية القحطاني</h3>
       <div class="greet">السلام عليكم ورحمة الله وبركاته يا أحباب القرآن. <strong>نستمع الآن إلى إشارة بدء اللقاء لنعرف ماذا سيكون لقاؤنا.</strong></div>
@@ -557,7 +562,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
       </aside>
 
       <div class="mainflow">
-        <div class="sec-head first"><div class="num">☀</div><h2>سير اللقاء</h2><div class="rule"></div></div>
+        <div class="sec-head first"><div class="num"><i class="gi" data-i="سير اللقاء" data-size="22"></i></div><h2>سير اللقاء</h2><div class="rule"></div></div>
         <div class="flow">
           <div class="step"><b class="k">المرحلة الأولى — البناء:</b> تُذكّر المعلمة الأطفال أن للقرآن أوصافًا، ومنها أنه <b>برهان</b>، قال تعالى: ﴿يَا أَيُّهَا النَّاسُ قَدْ جَاءَكُمْ بُرْهَانٌ مِنْ رَبِّكُمْ وَأَنْزَلْنَا إِلَيْكُمْ نُورًا مُبِينًا﴾ — أي بيّن الله فيه الحق ووضّحه ليهدينا إلى الصراط المستقيم والوصول إلى جنّات النعيم.</div>
           <div class="step"><b class="k">القرآن ثلاثون جزءًا:</b> توضّح المعلمة أن القرآن مكوّن من <b>٣٠ جزءًا</b>، ونحن نتعلّم الجزء الأخير وهو <b>جزء عمّ</b> (يبدأ بسورة النبأ وينتهي بسورة الناس).</div>
@@ -579,7 +584,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
       </div>
     </div>
 
-    <div class="sec-head"><div class="num">🖼️</div><h2>الوسائل والصور المعروضة في اللقاء</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num"><i class="gi" data-i="الوسائل والأدوات" data-size="22"></i></div><h2>الوسائل والصور المعروضة في اللقاء</h2><div class="rule"></div></div>
     <div class="gallery">
       <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;font-size:46px;background:var(--elm-soft)">📖</div><div class="cap">المصاحف والحوامل<small>يجلس الأطفال حلقة علم أمامها</small></div></div>
       <div class="gitem"><div class="imgwrap" style="height:230px"><img src="assets/gq_kitabi_surah_infitar.jpg" alt="لوحة سورة الإنفطار كاملة (آيات ١–١٩)" loading="lazy"/></div><div class="cap">لوحة سورة الإنفطار<small>آيات ١–١٩ · تُوضع في المنتصف وتُوزّع بطاقات المعاني حولها</small></div></div>
@@ -587,7 +592,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
       <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;font-size:46px;background:var(--elm-soft)">🔊</div><div class="cap">تسجيل تلاوة السورة<small>من قارئ متقن للاستماع</small></div></div>
     </div>
 
-    <div class="sec-head"><div class="num gold">✂️</div><h2>النشاط المصاحب</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num gold"><i class="gi" data-i="النشاط المصاحب" data-size="22"></i></div><h2>النشاط المصاحب</h2><div class="rule"></div></div>
     <div class="card actful">
       <h3>ماذا تعلّمنا السورة؟</h3>
       <div class="row2">
@@ -634,13 +639,13 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 
   <!-- ══════════ 2) التكامل اليومي ══════════ -->
   <div class="panel" id="p2">
-    <div class="sec-head first"><div class="num">🔗</div><h2>العلاقة التكاملية لهذا اللقاء</h2><div class="rule"></div></div>
+    <div class="sec-head first"><div class="num"><i class="gi" data-i="التكامل اليومي" data-size="22"></i></div><h2>العلاقة التكاملية لهذا اللقاء</h2><div class="rule"></div></div>
     <div class="card cardblue">
       <div class="mini" style="font-size:16px"><b style="color:var(--t1)">الفكرة الناظمة لليوم:</b> تعينني عائلتي على العمل الصالح والاستعداد للآخرة.</div>
       <div class="mini" style="font-size:16px;margin-top:8px"><b style="color:var(--t1)">سؤال اليوم:</b> ما العمل الصالح الذي يمكن أن أفعله مع عائلتي؟</div>
       <div class="mini" style="font-size:16px;margin-top:8px"><b style="color:var(--t1)">هذا اللقاء:</b> 🕌 كتابي المنير — سبب نزول سورة الإنفطار.</div>
     </div>
-    <div class="sec-head"><div class="num" style="background:var(--elm)">🕸️</div><h2>كيف يتكامل هذا اللقاء مع بقية دروس اليوم والوحدة؟</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num" style="background:var(--elm)"><i class="gi" data-i="التكامل اليومي" data-size="22"></i></div><h2>كيف يتكامل هذا اللقاء مع بقية دروس اليوم والوحدة؟</h2><div class="rule"></div></div>
     <p class="mini" style="font-size:15px;margin-bottom:10px">التعليمُ التكامليّ = يعيشُ الطفلُ <b>المعنى الواحد</b> في كلّ حصص يومه؛ فلا يكون درسُ «سبب نزول سورة الانفطار» جزيرةً منعزلة، بل خيطًا يربط القرآنَ بالعائلة والعددِ والأدب في تجربةٍ واحدة. وهذه جسورُ الربط العمليّة:</p>
     <div class="cg">
       <div class="ci"><div class="term">🌳 علّمني ربي — آداب التعامل داخل العائلة</div><div class="def">سببُ نزول السورة يوقظُ في الطفل الاستعدادَ للقاء الله؛ فيترجمُه سلوكًا حسنًا مع أهله كالرفق والمساعدة. <b>حركةُ المعلمة:</b> «مَن يستعدُّ للآخرة يُحسنُ إلى أهله اليوم… ما العملُ الذي ستفعله لعائلتك؟».</div></div>
@@ -671,7 +676,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
         <li>يذكر عملًا صالحًا يستعين بالله على فعله</li><li><b>المعيار: ربط السورة بيوم القيامة والاستعداد بالعمل الصالح</b></li>
       </ul></div>
     </div>
-    <div class="sec-head"><div class="num grn">★</div><h2>مؤشرات النجاح</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num grn"><i class="gi" data-i="مؤشر النجاح والتقويم" data-size="22"></i></div><h2>مؤشرات النجاح</h2><div class="rule"></div></div>
     <div class="cg">
       <div class="ci"><div class="term">المؤشر المعرفي</div><div class="def">يتعرّف على سبب نزول السورة، ويذكر أنها تخبرنا عن يوم القيامة والاستعداد له.</div></div>
       <div class="ci"><div class="term">المؤشر المهاري</div><div class="def">يربط بطاقة سورة الإنفطار بالمعاني الواردة عنها (البعث · الأبرار · الفجّار).</div></div>
@@ -778,7 +783,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 
   <!-- ══════════ 6) القيم والمفاهيم ══════════ -->
   <div class="panel" id="p6">
-    <div class="sec-head first"><div class="num gold">💎</div><h2>القيم الأساسية للدرس</h2><div class="rule"></div></div>
+    <div class="sec-head first"><div class="num gold"><i class="gi" data-i="القيم الأساسية" data-size="22"></i></div><h2>القيم الأساسية للدرس</h2><div class="rule"></div></div>
     <div class="cg">
       <div class="ci"><div class="term">الإيمان بالبعث</div><div class="def">التصديق بأن الله يبعث الخلق يوم القيامة، وهو من الغيب الذي أخبرنا الله به.</div></div>
       <div class="ci"><div class="term">الاستعداد ليوم القيامة</div><div class="def">الاستعداد لذلك اليوم العظيم بطاعة الله والإقبال على الخير.</div></div>
@@ -794,14 +799,14 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
         <li>تُظهر تعظيمها لخبر الله: «صدق الله، فنستعدّ لهذا اليوم بطاعته».</li>
       </ul>
     </div>
-    <div class="sec-head"><div class="num p" style="background:#7a5cc0">🧠</div><h2>المفاهيم الأساسية</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num p" style="background:#7a5cc0"><i class="gi" data-i="المفاهيم الأساسية" data-size="22"></i></div><h2>المفاهيم الأساسية</h2><div class="rule"></div></div>
     <div class="cg">
       <div class="ci"><div class="term">سبب النزول</div><div class="def">المناسبة التي نزلت فيها السورة، وما اشتملت عليه من مقاصد بيّنها الله.</div></div>
       <div class="ci"><div class="term">يوم القيامة</div><div class="def">اليوم الذي يبعث الله فيه الخلق وتتغيّر فيه أحوال المخلوقات.</div></div>
       <div class="ci"><div class="term">عاقبة الأبرار والفجّار</div><div class="def">حُسن مصير الأبرار المطيعين، وسوء مصير الفجّار العاصين.</div></div>
       <div class="ci"><div class="term">الاستعداد</div><div class="def">الإقبال على طاعة الله والعمل الصالح تأهّبًا ليوم القيامة.</div></div>
     </div>
-    <div class="sec-head"><div class="num">⚙️</div><h2>الاستراتيجيات التعليمية</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num"><i class="gi" data-i="الاستراتيجيات التعليمية" data-size="22"></i></div><h2>الاستراتيجيات التعليمية</h2><div class="rule"></div></div>
     <div class="card">
       <div class="strat"><span class="k">الاستماع</span><span class="v">سماع السورة من قارئ متقن وتكرار السماع لتثبيت معانيها.</span></div>
       <div class="strat"><span class="k">الشرح المبسّط</span><span class="v">تبسيط معاني السورة عن يوم القيامة والاستعداد له وفق التحضير.</span></div>
@@ -809,7 +814,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
       <div class="strat"><span class="k">بطاقات المعاني</span><span class="v">بطاقات: يوم القيامة · البعث · الاستعداد · الأبرار · الفجّار حول عنوان السورة.</span></div>
     </div>
 
-    <div class="sec-head"><div class="num gold">🎯</div><h2>الأساليب العشرة</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num gold"><i class="gi" data-i="الاستراتيجيات التعليمية" data-size="22"></i></div><h2>الأساليب العشرة</h2><div class="rule"></div></div>
     <div class="cg">
       <div class="ci"><div class="term">١ · المناقشة الهادفة</div><div class="def">أسئلة مباشرة تقرّب المعنى: ماذا يعلّمنا الله في السورة؟ لأيّ يوم نستعدّ؟</div></div>
       <div class="ci"><div class="term">٢ · العصف الذهني</div><div class="def">استدعاء ما يعرفه الأطفال عن يوم القيامة والاستعداد له.</div></div>
@@ -823,7 +828,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
       <div class="ci"><div class="term">١٠ · التكرار</div><div class="def">إعادة سماع السورة وترديد معانيها لتثبيتها في الوجدان.</div></div>
     </div>
 
-    <div class="sec-head"><div class="num grn">🎨</div><h2>الوسائل</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num grn"><i class="gi" data-i="الوسائل والأدوات" data-size="22"></i></div><h2>الوسائل</h2><div class="rule"></div></div>
     <div class="means">
       <div class="m"><h4>مرئية</h4><span class="i">لوحة سورة الإنفطار</span><span class="i">المصاحف والحوامل</span><span class="i">بطاقات المعاني (يوم القيامة · البعث · الاستعداد · الأبرار · الفجّار)</span></div>
       <div class="m s2"><h4>سمعية</h4><span class="i">مقطع نونية القحطاني (إشارة اللقاء)</span><span class="i">تسجيل تلاوة سورة الإنفطار من قارئ متقن</span><span class="i">تسجيل صوت بطاقة «اعتقادنا في القرآن»</span></div>
@@ -910,7 +915,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 
   <!-- ══════════ 9) الأركان ══════════ -->
   <div class="panel" id="p9">
-    <div class="sec-head first chero"><div class="num gold">▣</div><h2>وقت الأركان التطبيقية</h2><div class="rule"></div></div>
+    <div class="sec-head first chero"><div class="num gold"><i class="gi" data-i="أركان" data-size="22"></i></div><h2>وقت الأركان التطبيقية</h2><div class="rule"></div></div>
     <div class="chero"><p style="margin-bottom:6px">الأركان مساحاتٌ غنيّة بأدوات التعلّم، مدّتها ٣٠ دقيقة، يستكشف فيها الأطفال الأدوات <strong>بحرّية ومرح</strong> — لا التزام بآداب مجالس العلم كالمواد الأساسية، مع بقاء المصحف والنصّ القرآني في موضع التلاوة والتعظيم. وتستقطع المعلمة وقتًا يسيرًا لتنفيذ <strong>نشاط تطبيقي سريع على الفكرة المركزية للدرس</strong>: سورة الإنفطار تخبرنا عن يوم القيامة والاستعداد له بالعمل الصالح. أمام المعلمة <strong>ركنان مقترحان تختار بينهما</strong> (أو تنفّذهما معًا) بحسب جاهزية البيئة.</p></div>
     <div class="caution"><strong>ضابط منهجي:</strong> الإيمان بيوم القيامة من الغيب الذي أخبرنا الله به، فلا يُمثَّل ولا يُجسَّد؛ ولا تتوسّع المعلمة في وصف الأهوال، بل تربط الخبر بالاستعداد بالعمل الصالح، وتحافظ على آداب التعامل مع المصحف.</div>
 
@@ -1004,5 +1009,6 @@ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded'
 })();
 </script>
 <!--gq-credit-embed-hide--><script>try{if(window.self!==window.top){var _c=document.querySelector(".gq-dev-credit");if(_c)_c.style.display="none";}}catch(e){}</script>
+<script src="brand/guide-icons.js?v=1"></script>
 </body>
 </html>

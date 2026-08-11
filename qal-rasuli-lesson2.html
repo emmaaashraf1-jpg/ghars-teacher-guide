@@ -336,6 +336,11 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 .actful ol{margin-top:2px;padding-inline-start:8px}
 .actful ol li{margin-bottom:6px}
 .actful .opts{margin-top:2px}
+
+/* ===== توحيد أيقونات الدليل (الخيار أ) ===== */
+.sec-head .num{background:#EEF4F1!important;border:1px solid #D6E5DF;color:#00575C!important;box-shadow:none!important}
+.sec-head .num .gi-svg,.sec-head .num .gi{width:22px;height:22px}
+h2 .gi,h3 .gi{vertical-align:-.18em}
 </style>
 </head>
 <body>
@@ -373,7 +378,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
   <!-- ══════════ 1) دليل الدرس ══════════ -->
   <div class="panel active" id="p1">
 
-    <div class="sec-head first"><div class="num">🧭</div><h2>مسار بداية اللقاء</h2><div class="rule"></div></div>
+    <div class="sec-head first"><div class="num"><i class="gi" data-i="مسار بداية اللقاء" data-size="22"></i></div><h2>مسار بداية اللقاء</h2><div class="rule"></div></div>
     <div class="flow-card sig">
       <h3>📜 إشارة بدء اللقاء — منظومة الأرجوزة الميئية (السيرة النبوية)</h3>
       <div class="greet">السلام عليكم ورحمة الله وبركاته يا أحباب النبي ﷺ. <strong>نستمع الآن إلى إشارة بدء اللقاء لنعرف ماذا سيكون لقاؤنا.</strong></div>
@@ -495,7 +500,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
       </aside>
 
       <div class="mainflow">
-        <div class="sec-head first"><div class="num">☀</div><h2>سير اللقاء</h2><div class="rule"></div></div>
+        <div class="sec-head first"><div class="num"><i class="gi" data-i="سير اللقاء" data-size="22"></i></div><h2>سير اللقاء</h2><div class="rule"></div></div>
         <div class="flow">
           <div class="step"><b class="k">المرحلة الأولى — الاستماع والترديد:</b> تراجع المعلمة الراوي والمتن والمصنف بالبطاقات الثلاث، ثم تقرأ الحديث كاملًا مرة واحدة ويستمع الأطفال بسكينة. وتوضّح بإيجاز: يؤمن بالله أي يصدّق بالله ربًّا وإلهًا ويعبده وحده، ويؤمن باليوم الآخر أي يصدّق بالبعث والحساب والجزاء — يُشرح بإجمال دون صور أو تمثيل للغيب.<div class="step-media" style="max-width:680px"><img src="assets/gq_qal_rasuli_khisal_card.jpg" alt="بطاقة حديث من خصال الإيمان — نص الحديث وخصاله الثلاث"/><div class="cap">📜 بطاقة الحديث التي تعرضها المعلمة — إكرام الضيف · صلة الرحم · قول الخير أو الصمت</div></div>
             <div class="gq-hadith-audio" style="margin:10px auto 0;max-width:680px;background:linear-gradient(135deg,#F7EFE5,#FFFDF8);border:1px solid #e0cdb8;border-right:6px solid #6B3F22;border-radius:16px;padding:12px 14px;text-align:right;box-shadow:var(--shadow-sm)"><div style="display:flex;align-items:center;gap:9px;margin-bottom:8px;color:#4a2a15;font-size:13px;font-weight:900;line-height:1.7"><span style="width:34px;height:34px;border-radius:12px;background:#6B3F22;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:0 0 auto">🔊</span><span>قراءة حديث «من خصال الإيمان» بصوت واضح</span></div><audio controls preload="none" style="width:100%;height:42px;display:block"><source src="assets/khisal_iman_hadith_audio.mp3" type="audio/mpeg"/>المتصفح لا يدعم تشغيل الصوت.</audio></div></div>
@@ -517,7 +522,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
       </div>
     </div>
 
-    <div class="sec-head"><div class="num">🖼️</div><h2>الوسائل والصور المعروضة في اللقاء</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num"><i class="gi" data-i="الوسائل والأدوات" data-size="22"></i></div><h2>الوسائل والصور المعروضة في اللقاء</h2><div class="rule"></div></div>
     <div class="gallery">
       <div class="gitem"><div class="imgwrap" style="height:230px"><img src="assets/gq_qal_rasuli_khisal_card.jpg" alt="بطاقة حديث من خصال الإيمان — نص الحديث وخصاله الثلاث" loading="lazy"/></div><div class="cap">بطاقة الحديث<small>إكرام الضيف · صلة الرحم · قول الخير أو الصمت</small></div></div>
       <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;font-size:46px;background:var(--elm-soft)">📄</div><div class="cap">أوراق الخصال الثلاث<small>ورقة كبيرة لكل خصلة من الحديث</small></div></div>
@@ -525,7 +530,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
       <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;font-size:46px;background:var(--elm-soft)">🔊</div><div class="cap">تسجيل الحديث<small>للاستماع والترديد المجزّأ</small></div></div>
     </div>
 
-    <div class="sec-head"><div class="num gold">✂️</div><h2>النشاط المصاحب</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num gold"><i class="gi" data-i="النشاط المصاحب" data-size="22"></i></div><h2>النشاط المصاحب</h2><div class="rule"></div></div>
     <div class="card actful">
       <h3>أوراق خصال الإيمان الثلاث</h3>
       <div class="row2">
@@ -574,13 +579,13 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 
   <!-- ══════════ 2) التكامل اليومي ══════════ -->
   <div class="panel" id="p2">
-    <div class="sec-head first"><div class="num">🔗</div><h2>العلاقة التكاملية لهذا اللقاء</h2><div class="rule"></div></div>
+    <div class="sec-head first"><div class="num"><i class="gi" data-i="التكامل اليومي" data-size="22"></i></div><h2>العلاقة التكاملية لهذا اللقاء</h2><div class="rule"></div></div>
     <div class="card cardblue">
       <div class="mini" style="font-size:16px"><b style="color:var(--t1)">الفكرة الناظمة لليوم:</b> بفضل الله تسكن المودّة في العائلة حين نحسن إلى الضيف والقريب، ونحفظ ألسنتنا من الأذى.</div>
       <div class="mini" style="font-size:16px;margin-top:8px"><b style="color:var(--t1)">سؤال اليوم:</b> كيف أطبّق حديث النبي ﷺ في مسكني ومع عائلتي؟</div>
       <div class="mini" style="font-size:16px;margin-top:8px"><b style="color:var(--t1)">هذا اللقاء:</b> 📜 قال رسولي — أفهم خصال الإيمان الثلاث: إكرام الضيف · صلة الرحم · قول الخير أو الصمت.</div>
     </div>
-    <div class="sec-head"><div class="num" style="background:var(--elm)">🕸️</div><h2>كيف يتكامل هذا اللقاء مع بقية دروس اليوم والوحدة؟</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num" style="background:var(--elm)"><i class="gi" data-i="التكامل اليومي" data-size="22"></i></div><h2>كيف يتكامل هذا اللقاء مع بقية دروس اليوم والوحدة؟</h2><div class="rule"></div></div>
     <p class="mini" style="font-size:15px;margin-bottom:10px">التعليمُ التكامليّ = يعيشُ الطفلُ <b>المعنى الواحد</b> في كلّ حصص يومه؛ فلا يكون درسُ «فهم خصال الإيمان — المودّة في العائلة» جزيرةً منعزلة، بل خيطًا يربط القرآنَ والعائلةَ والأدبَ واللغةَ والأركان في تجربةٍ واحدة. وهذه جسورُ الربط العمليّة:</p>
     <div class="cg">
       <div class="ci"><div class="term">📖 كتابي المنير — الانفطار</div><div class="def">أعمالُنا مكتوبةٌ واللهُ رقيب؛ فالمودّةُ والترحيبُ وحفظُ اللسان سلوكٌ يعلمُه اللهُ ويُثيبُ عليه. <b>حركةُ المعلمة:</b> «مودّتُنا لأهلنا يراها اللهُ وتُكتبُ لنا حسنات».</div></div>
@@ -611,7 +616,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
         <li>يميّز بين قول الخير وترك الكلام المؤذي، ويذكر أنه يخبر بالغًا موثوقًا عند الأذى</li><li><b>المعيار: ذكر خصلتين + ترديد مقطع + تصنيف موقفين</b></li>
       </ul></div>
     </div>
-    <div class="sec-head"><div class="num grn">★</div><h2>مؤشرات النجاح</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num grn"><i class="gi" data-i="مؤشر النجاح والتقويم" data-size="22"></i></div><h2>مؤشرات النجاح</h2><div class="rule"></div></div>
     <div class="cg">
       <div class="ci"><div class="term">المؤشر المعرفي</div><div class="def">يذكر خصلتين على الأقل من خصال الحديث الثلاث، ويردّد مقطعًا واحدًا أو أكثر وفق قدرته.</div></div>
       <div class="ci"><div class="term">المؤشر المهاري</div><div class="def">يصنّف موقفين تحت الخصلتين المناسبتين على أوراق الخصال.</div></div>
@@ -719,7 +724,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 
   <!-- ══════════ 6) القيم والمفاهيم ══════════ -->
   <div class="panel" id="p6">
-    <div class="sec-head first"><div class="num gold">💎</div><h2>القيم الأساسية للدرس</h2><div class="rule"></div></div>
+    <div class="sec-head first"><div class="num gold"><i class="gi" data-i="القيم الأساسية" data-size="22"></i></div><h2>القيم الأساسية للدرس</h2><div class="rule"></div></div>
     <div class="cg">
       <div class="ci"><div class="term">الإيمان بالله واليوم الآخر والاقتداء</div><div class="def">التصديق بالله ربًّا وباليوم الآخر، وطاعة الله والاقتداء برسوله ﷺ في أعماله.</div></div>
       <div class="ci"><div class="term">الكرم وإكرام الضيف</div><div class="def">الترحيب بالزائر والإحسان إليه بوجه طلق وكلام طيب، بإذن الكبار وإشرافهم.</div></div>
@@ -735,14 +740,14 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
         <li>تثبّت قاعدة الأمان: «ليصمت» لا تعني الصمت عن أذى؛ نُخبر بالغًا موثوقًا.</li>
       </ul>
     </div>
-    <div class="sec-head"><div class="num p" style="background:#7a5cc0">🧠</div><h2>المفاهيم الأساسية</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num p" style="background:#7a5cc0"><i class="gi" data-i="المفاهيم الأساسية" data-size="22"></i></div><h2>المفاهيم الأساسية</h2><div class="rule"></div></div>
     <div class="cg">
       <div class="ci"><div class="term">خصال الإيمان</div><div class="def">أعمال من كمال الإيمان وثمراته؛ لا يُقال لمن قصّر في واحدة إنه غير مؤمن.</div></div>
       <div class="ci"><div class="term">إكرام الضيف</div><div class="def">الترحيب بالزائر والإحسان إليه بوجه طلق وكلام طيب، بإذن الكبار وإشرافهم.</div></div>
       <div class="ci"><div class="term">صلة الرحم</div><div class="def">الإحسان إلى الأقارب: الوالدان والجدّان والإخوة والأعمام والعمّات والأخوال والخالات وأبناؤهم.</div></div>
       <div class="ci"><div class="term">قول الخير أو الصمت</div><div class="def">أقول الطيب النافع، وإن لم يكن خيرًا سكتُّ؛ والصمت لا يكون عن أذى أو خطر.</div></div>
     </div>
-    <div class="sec-head"><div class="num">⚙️</div><h2>الاستراتيجيات التعليمية</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num"><i class="gi" data-i="الاستراتيجيات التعليمية" data-size="22"></i></div><h2>الاستراتيجيات التعليمية</h2><div class="rule"></div></div>
     <div class="card">
       <div class="strat"><span class="k">الاستماع والترديد المجزّأ</span><span class="v">قراءة الحديث كاملًا، ثم ترديد مقاطعه الثلاثة في وحدات قصيرة وفق قدرة الأطفال.</span></div>
       <div class="strat"><span class="k">استراتيجية الأوراق الثلاث</span><span class="v">ثلاث أوراق كبيرة بعناوين الخصال، تُصنَّف تحتها بطاقات المواقف.</span></div>
@@ -751,7 +756,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
       <div class="strat"><span class="k">المطابقة والاختيار الموجّه</span><span class="v">وضع بطاقة الموقف تحت الخصلة المناسبة واختيار تصرّف آمن واحد.</span></div>
     </div>
 
-    <div class="sec-head"><div class="num gold">🎯</div><h2>الأساليب العشرة</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num gold"><i class="gi" data-i="الاستراتيجيات التعليمية" data-size="22"></i></div><h2>الأساليب العشرة</h2><div class="rule"></div></div>
     <div class="cg">
       <div class="ci"><div class="term">١ · المناقشة الهادفة</div><div class="def">أسئلة تقرّب الخصال: كيف أكرم ضيفًا؟ من رحمي؟ ما الكلام الخير؟</div></div>
       <div class="ci"><div class="term">٢ · العصف الذهني</div><div class="def">استدعاء ما يعرفه الطفل عن الضيف والأقارب والكلام الطيب قبل عرض الخصال.</div></div>
@@ -765,7 +770,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
       <div class="ci"><div class="term">١٠ · التكرار</div><div class="def">إعادة ترديد المقاطع ومراجعة الخصال الثلاث لتثبيتها في الوجدان.</div></div>
     </div>
 
-    <div class="sec-head"><div class="num grn">🎨</div><h2>الوسائل</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num grn"><i class="gi" data-i="الوسائل والأدوات" data-size="22"></i></div><h2>الوسائل</h2><div class="rule"></div></div>
     <div class="means">
       <div class="m"><h4>مرئية</h4><span class="i">بطاقة الحديث «من خصال الإيمان»</span><span class="i">ثلاث أوراق كبيرة بعناوين الخصال</span><span class="i">بطاقات مواقف ورموز غير مجسّدة للضيف والعائلة والكلام الطيب</span></div>
       <div class="m s2"><h4>سمعية</h4><span class="i">مقدمة لقاء الحديث — منظومة السيرة (إشارة اللقاء)</span><span class="i">تسجيل الحديث للاستماع والترديد المجزّأ</span></div>
@@ -835,7 +840,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 
   <!-- ══════════ 9) الأركان ══════════ -->
   <div class="panel" id="p9">
-    <div class="sec-head first chero"><div class="num gold">▣</div><h2>وقت الأركان التطبيقية</h2><div class="rule"></div></div>
+    <div class="sec-head first chero"><div class="num gold"><i class="gi" data-i="أركان" data-size="22"></i></div><h2>وقت الأركان التطبيقية</h2><div class="rule"></div></div>
     <div class="chero"><p style="margin-bottom:6px">الأركان مساحاتٌ غنيّة بأدوات التعلّم، مدّتها ٣٠ دقيقة، يلعب فيها الأطفال ويستكشفون الأدوات <strong>بحرّية ومرح</strong> — لا التزام بآداب مجالس العلم كالمواد الأساسية. وتستقطع المعلمة وقتًا يسيرًا لتنفيذ <strong>نشاط تطبيقي سريع على الفكرة المركزية للدرس</strong>: تطبيق خصال الإيمان الثلاث سلوكًا في مواقف العائلة — إكرام الضيف، وصلة الرحم، وقول الخير أو الصمت — بأمان وإشراف الكبار. أمام المعلمة <strong>ركنان مقترحان تختار بينهما</strong> (أو تنفّذهما معًا) بحسب جاهزية البيئة.</p></div>
     <div class="caution"><strong>ضابط منهجي:</strong> نعمل بالحديث طاعةً لله واقتداءً برسوله ﷺ، وننسب التوفيق إلى الله ولا يُقاس إيمان الأطفال أو يُقارن. لا يفتح الطفل بابًا حقيقيًا، ولا تُقدَّم سوائل ساخنة أو أطعمة حقيقية، ولا يُطلب منه الاتصال بشخص فعلي أو الإفصاح عن علاقة أسرية مؤلمة. والصمت في الحديث لا يُستخدم لمنع الإبلاغ عن الأذى. ولا صور تجسّد النبي ﷺ أو الصحابة، والحديث يُروى برفق.</div>
 
@@ -921,5 +926,6 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 })();
 </script>
 <!--gq-credit-embed-hide--><script>try{if(window.self!==window.top){var _c=document.querySelector(".gq-dev-credit");if(_c)_c.style.display="none";}}catch(e){}</script>
+<script src="brand/guide-icons.js?v=1"></script>
 </body>
 </html>
