@@ -187,20 +187,39 @@
     .sfoot b{font-size:12px}
   }
 
-  /* ============ معرض: من داخل روضة غرس القيم ============ */
-  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,16px);margin-top:clamp(24px,3vw,42px)}
-  .shot{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:var(--cream);
-    border:1px solid var(--line);box-shadow:0 14px 30px rgba(20,40,35,.10);margin:0}
-  .shot::before{content:"";position:absolute;inset:0;z-index:2;border-radius:16px;pointer-events:none;
-    box-shadow:inset 0 0 0 1px rgba(199,154,59,.18)}
-  .shot::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .4s ease;
-    background:linear-gradient(to top,rgba(18,53,43,.34),transparent 44%)}
-  .shot img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06);
-    transition:transform .6s cubic-bezier(.2,.7,.2,1)}
-  .shot:hover img{transform:scale(1.14)}
-  .shot:hover::after{opacity:1}
-  @media(max-width:860px){.shots{grid-template-columns:repeat(3,1fr)}}
-  @media(max-width:540px){.shots{grid-template-columns:repeat(2,1fr);gap:9px}}
+  /* ============ معرض قلّاب (coverflow) — من داخل روضة غرس القيم ============ */
+  .reel{position:relative;margin-top:clamp(26px,3.4vw,46px)}
+  .reel-stage{position:relative;height:clamp(370px,54vw,530px);perspective:1600px;overflow:hidden}
+  .slide{position:absolute;top:50%;left:50%;width:clamp(220px,31vw,344px);aspect-ratio:4/5;margin:0;
+    border-radius:18px;overflow:hidden;cursor:pointer;background:var(--cream);
+    box-shadow:0 26px 54px rgba(20,40,35,.26);opacity:0;pointer-events:none;
+    transform:translate(-50%,-50%) translateX(var(--x,0)) rotateY(var(--r,0deg)) scale(var(--s,1));
+    transition:transform .64s cubic-bezier(.22,.61,.36,1),opacity .5s ease,box-shadow .5s ease;
+    will-change:transform,opacity}
+  .slide::before{content:"";position:absolute;inset:0;z-index:2;border-radius:18px;pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(199,154,59,.2)}
+  .slide::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(16,22,25,.32);
+    opacity:0;transition:opacity .5s ease}
+  .slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.05)}
+  .slide.is-active{opacity:1;pointer-events:auto;box-shadow:0 38px 76px rgba(20,40,35,.34)}
+  .slide.is-side{opacity:.62;pointer-events:auto}
+  .slide.is-side::after{opacity:1}
+  .slide.is-far{opacity:.14;pointer-events:none}
+  .slide.is-far::after{opacity:1}
+  .reel-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:9;width:48px;height:48px;border-radius:50%;
+    background:rgba(255,255,255,.94);border:1px solid var(--line);color:var(--forest);cursor:pointer;
+    display:grid;place-items:center;box-shadow:0 12px 26px rgba(20,40,35,.18);transition:background .2s,transform .2s,color .2s}
+  .reel-nav svg{width:20px;height:20px}
+  .reel-nav:hover{background:var(--forest);color:#fff;transform:translateY(-50%) scale(1.07)}
+  .reel-nav.prev{right:clamp(2px,2vw,22px)}.reel-nav.next{left:clamp(2px,2vw,22px)}
+  .reel-foot{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
+  .reel-dots{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
+  .reel-dots button{width:8px;height:8px;border-radius:50%;border:0;background:#d9cfbb;cursor:pointer;padding:0;
+    transition:background .25s,transform .25s}
+  .reel-dots button.on{background:var(--ochre);transform:scale(1.4)}
+  .reel-count{font-size:12.5px;font-weight:700;color:var(--gray);font-variant-numeric:tabular-nums;letter-spacing:1px;min-width:52px;text-align:center}
+  @media(max-width:540px){.reel-nav{width:40px;height:40px}.slide{width:clamp(190px,62vw,250px)}}
+  @media(prefers-reduced-motion:reduce){.slide{transition-duration:.001s}}
 
   /* ============ General guide feature ============ */
   .feature{background:linear-gradient(160deg,#20493a,#12352b 70%);color:#fff;border-radius:30px;overflow:hidden;
@@ -426,19 +445,27 @@
       <h2>من داخل روضة غرس القيم</h2>
       <p>لقطاتٌ حقيقيّة من بيئة التعلّم وأركانها وأنشطة الأطفال — حيث تصير القيمُ ممارسةً يوميّةً محسوسة.</p>
     </div>
-    <div class="shots reveal">
-      <figure class="shot"><img src="assets/gallery/photo-04.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/gallery/photo-02.jpg" alt="ركن اللغة داخل روضة غرس القيم" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/gallery/photo-08.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/gallery/photo-14.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/gallery/photo-09.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/gallery/photo-05.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/gallery/photo-10.jpg" alt="ركن سوق غرس القيم" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/gallery/photo-13.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/gallery/photo-11.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/gallery/photo-06.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/gallery/photo-12.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/gallery/photo-15.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+    <div class="reel reveal" tabindex="0" aria-roledescription="عرض صور" aria-label="من داخل روضة غرس القيم">
+      <button class="reel-nav prev" type="button" data-dir="1" aria-label="الصورة التالية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="reel-stage">
+        <figure class="slide"><img src="assets/gallery/photo-04.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/gallery/photo-02.jpg" alt="ركن اللغة داخل روضة غرس القيم" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/gallery/photo-08.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/gallery/photo-14.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/gallery/photo-09.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/gallery/photo-05.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/gallery/photo-10.jpg" alt="ركن سوق غرس القيم" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/gallery/photo-13.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/gallery/photo-11.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/gallery/photo-06.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/gallery/photo-12.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+        <figure class="slide"><img src="assets/gallery/photo-15.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+      </div>
+      <button class="reel-nav next" type="button" data-dir="-1" aria-label="الصورة السابقة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+      <div class="reel-foot">
+        <div class="reel-dots" role="tablist" aria-label="مؤشّر الصور"></div>
+        <span class="reel-count" aria-hidden="true"></span>
+      </div>
     </div>
   </div>
 </section>
@@ -561,6 +588,60 @@
   if(reduce||!('IntersectionObserver' in window)){ items.forEach(function(el){el.classList.add('in');}); return; }
   var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   items.forEach(function(el){ io.observe(el); });
+})();
+
+/* ===== معرض قلّاب (coverflow) — من داخل روضة غرس القيم ===== */
+(function(){
+  var reel=document.querySelector('.reel'); if(!reel) return;
+  var slides=[].slice.call(reel.querySelectorAll('.slide'));
+  var dotsWrap=reel.querySelector('.reel-dots'), countEl=reel.querySelector('.reel-count');
+  var n=slides.length, cur=0, timer=null, resumeT=null;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  slides.forEach(function(s,i){
+    var b=document.createElement('button'); b.type='button'; b.setAttribute('role','tab');
+    b.setAttribute('aria-label','الصورة '+(i+1)); b.addEventListener('click',function(){ go(i); nudge(); });
+    dotsWrap.appendChild(b);
+  });
+  var dots=[].slice.call(dotsWrap.children);
+  function norm(d){ d=((d%n)+n)%n; if(d>n/2) d-=n; return d; }
+  function render(){
+    slides.forEach(function(s,i){
+      var rel=norm(i-cur), x='0%', r='0deg', sc=1, z=1;
+      s.classList.remove('is-active','is-side','is-far');
+      if(rel===0){ z=6; s.classList.add('is-active'); }
+      else if(rel===1){ x='60%'; r='-27deg'; sc=.8; z=5; s.classList.add('is-side'); }
+      else if(rel===-1){ x='-60%'; r='27deg'; sc=.8; z=5; s.classList.add('is-side'); }
+      else if(rel===2){ x='112%'; r='-33deg'; sc=.62; z=4; s.classList.add('is-far'); }
+      else if(rel===-2){ x='-112%'; r='33deg'; sc=.62; z=4; s.classList.add('is-far'); }
+      else { x=(rel>0?'150%':'-150%'); sc=.5; z=1; s.classList.add('is-far'); }
+      s.style.setProperty('--x',x); s.style.setProperty('--r',r); s.style.setProperty('--s',sc); s.style.zIndex=z;
+      s.setAttribute('aria-hidden', rel===0?'false':'true');
+    });
+    dots.forEach(function(d,i){ d.classList.toggle('on',i===cur); d.setAttribute('aria-selected',i===cur?'true':'false'); });
+    if(countEl) countEl.textContent=(cur+1)+' / '+n;
+  }
+  function go(i){ cur=((i%n)+n)%n; render(); }
+  function step(d){ go(cur+d); }
+  reel.querySelectorAll('.reel-nav').forEach(function(btn){
+    btn.addEventListener('click',function(){ step(parseInt(btn.dataset.dir,10)||1); nudge(); });
+  });
+  slides.forEach(function(s,i){ s.addEventListener('click',function(){ if(i!==cur){ go(i); nudge(); } }); });
+  reel.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'){ step(1); nudge(); e.preventDefault(); }
+    else if(e.key==='ArrowLeft'){ step(-1); nudge(); e.preventDefault(); }
+  });
+  var sx=null, sy=null;
+  reel.addEventListener('touchstart',function(e){ sx=e.touches[0].clientX; sy=e.touches[0].clientY; },{passive:true});
+  reel.addEventListener('touchend',function(e){
+    if(sx==null) return; var dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy;
+    if(Math.abs(dx)>44 && Math.abs(dx)>Math.abs(dy)){ step(dx<0?1:-1); nudge(); } sx=sy=null;
+  },{passive:true});
+  function play(){ if(reduce) return; stop(); timer=setInterval(function(){ step(1); },5200); }
+  function stop(){ if(timer){ clearInterval(timer); timer=null; } }
+  function nudge(){ stop(); if(resumeT) clearTimeout(resumeT); if(!reduce) resumeT=setTimeout(play,9000); }
+  reel.addEventListener('mouseenter',stop);
+  reel.addEventListener('mouseleave',function(){ if(!resumeT) play(); });
+  render(); play();
 })();
 </script>
 </body>
