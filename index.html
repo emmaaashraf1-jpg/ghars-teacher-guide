@@ -124,44 +124,44 @@
   .flow-step:not(:last-child)::after{content:"";position:absolute;top:calc(14px + 18px);inset-inline-start:-50%;
     width:100%;height:2px;background:linear-gradient(90deg,var(--line),var(--line));z-index:0}
 
-  /* ===== منظومة الوحي × منظومة الشيطان ===== */
+  /* ===== منظومة الوحي × منظومة الشيطان — مقارنة العالمَين ===== */
   .wahy{background:linear-gradient(180deg,#F6F1E4,#F1EAD9)}
-  .cmp{display:grid;grid-template-columns:1fr 58px 1fr;align-items:center;max-width:940px;
-    margin:clamp(30px,4.5vw,52px) auto 0}
-  .cmp-card{border-radius:22px;padding:clamp(22px,3vw,34px);position:relative}
-  .cmp-card.ours{background:linear-gradient(165deg,#20493a,#12352b);color:#fff;
-    box-shadow:0 30px 60px rgba(18,53,43,.26);z-index:1}
-  .cmp-card.ours::after{content:"";position:absolute;inset:0;border-radius:22px;pointer-events:none;
-    box-shadow:inset 0 0 0 1px rgba(231,201,143,.22)}
-  .cmp-card.other{background:#EDE8DE;color:#8a857b;border:1px solid #e3ded2;transform:scale(.92);
-    transform-origin:center right}
-  .cmp-head{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid}
-  .cmp-card.ours .cmp-head{border-color:rgba(231,201,143,.26)}
-  .cmp-card.other .cmp-head{border-color:#e3ded2}
-  .cmp-head small{display:block;font-size:11px;letter-spacing:2.5px;font-weight:700;margin-bottom:5px}
-  .cmp-card.ours .cmp-head small{color:#e7c98f}
-  .cmp-card.other .cmp-head small{color:#a89f8f}
-  .cmp-head b{font-family:var(--display);font-weight:700;font-size:clamp(20px,2.8vw,28px)}
-  .cmp-list{display:flex;flex-direction:column}
-  .cmp-li{display:flex;align-items:baseline;gap:12px;padding:12px 0;border-top:1px solid}
-  .cmp-li:first-child{border-top:0}
-  .cmp-card.ours .cmp-li{border-color:rgba(255,255,255,.1)}
-  .cmp-card.other .cmp-li{border-color:#e7e1d6}
-  .cmp-role{flex:0 0 auto;min-width:104px;font-size:10.5px;letter-spacing:.8px;font-weight:700;line-height:1.5}
-  .cmp-card.ours .cmp-role{color:#e7c98f}
-  .cmp-card.other .cmp-role{color:#b4ac9d}
-  .cmp-val{font-family:var(--display);font-weight:700;line-height:1.3}
-  .cmp-card.ours .cmp-val{font-size:clamp(19px,2.3vw,26px);color:#fff}
-  .cmp-card.other .cmp-val{font-size:clamp(15px,1.8vw,19px);color:#8a857b}
-  .cmp-vs{justify-self:center;align-self:center;position:relative;z-index:2;width:54px;height:54px;border-radius:50%;
-    background:#fff;border:1.5px solid var(--ochre);display:grid;place-items:center;font-family:var(--display);
-    font-weight:700;font-size:13.5px;color:var(--ochre);box-shadow:0 10px 22px rgba(31,74,57,.14)}
+  .duel{position:relative;max-width:940px;margin:clamp(30px,4.5vw,52px) auto 0;border-radius:26px;overflow:hidden;
+    box-shadow:0 36px 78px rgba(20,40,35,.28)}
+  .duel::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(to left,#FCF8EE 0 50%,#20272A 50% 100%)}
+  .duel::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(460px 240px at 82% 114%,rgba(199,154,59,.30),transparent 62%),
+              radial-gradient(360px 220px at 16% -8%,rgba(0,0,0,.42),transparent 60%)}
+  .duel-inner{position:relative;z-index:2;padding:clamp(24px,3.2vw,38px) clamp(16px,3vw,30px)}
+  .duel-inner::before{content:"";position:absolute;z-index:-1;top:72px;bottom:84px;right:50%;transform:translateX(50%);
+    width:2px;background:linear-gradient(#cbbd94,rgba(203,189,148,.12))}
+  .duel-heads,.drow,.duel-foot{display:grid;grid-template-columns:1fr 132px 1fr;align-items:center}
+  .duel-heads{margin-bottom:6px;padding-bottom:14px}
+  .dh small{display:block;font-size:10.5px;letter-spacing:2.5px;font-weight:700;margin-bottom:4px}
+  .dh b{font-family:var(--display);font-weight:700;font-size:clamp(17px,2.4vw,23px)}
+  .dh.ours{text-align:start;color:var(--forest)} .dh.ours small{color:#b8892e}
+  .dh.other{text-align:end;color:#9297a2} .dh.other small{color:#828892}
+  .drow{padding:13px 0}
+  .dv{font-family:var(--display);font-weight:700;line-height:1.25}
+  .dv.ours{text-align:start;color:var(--forest);font-size:clamp(20px,2.6vw,30px)}
+  .dv.other{text-align:end;color:#b1b6bc;font-size:clamp(15px,1.9vw,20px)}
+  .drow:last-of-type .dv.ours{color:#C79A3B;text-shadow:0 0 26px rgba(199,154,59,.4)}
+  .drow:last-of-type .dv.other{opacity:.6}
+  .drole{justify-self:center;text-align:center}
+  .drole span{display:inline-block;font-size:10px;letter-spacing:.4px;font-weight:700;color:#7c744f;
+    background:#FBF6EA;border:1px solid #ece0c6;border-radius:999px;padding:5px 11px;line-height:1.4;
+    box-shadow:0 5px 14px rgba(20,40,35,.16)}
+  .duel-foot{margin-top:14px;padding-top:16px;border-top:1px solid rgba(180,170,140,.2)}
+  .df-ours{text-align:start;color:#2e6a4d;font-weight:800;font-size:13px}
+  .df-other{text-align:end;color:#9297a2;font-weight:700;font-size:12.5px}
   .wahy-note{margin-top:26px;text-align:center;font-size:13.5px;color:var(--gray);line-height:2;max-width:66ch;margin-inline:auto}
   .wahy-note b{color:var(--forest);font-weight:700}
-  @media(max-width:720px){
-    .cmp{grid-template-columns:1fr;gap:0}
-    .cmp-card.other{transform:none;margin-top:16px}
-    .cmp-vs{margin:14px auto -14px;transform:translateY(0)}
+  @media(max-width:640px){
+    .duel-heads,.drow,.duel-foot{grid-template-columns:1fr 68px 1fr}
+    .dv.ours{font-size:18px}.dv.other{font-size:13.5px}
+    .drole span{font-size:8.5px;letter-spacing:0;padding:4px 6px}
+    .dh b{font-size:15px}.dh small{font-size:9px;letter-spacing:1px}
+    .df-ours,.df-other{font-size:10.5px}
   }
 
   /* ============ General guide feature ============ */
@@ -350,28 +350,23 @@
       <h2>منظومة الوحي — في مقابل غيرها</h2>
       <p>يقوم منهجنا على منظومة الوحي مرجعًا أعلى؛ في مقابل مناهجَ تُقصي الوحي فتجعل الإنسانَ والعقلَ والحريةَ المطلقة مركزها.</p>
     </div>
-    <div class="cmp reveal">
-      <div class="cmp-card ours">
-        <div class="cmp-head"><small>منهجنا</small><b>منظومة الوحي</b></div>
-        <div class="cmp-list">
-          <div class="cmp-li"><span class="cmp-role">الإله</span><span class="cmp-val">الله</span></div>
-          <div class="cmp-li"><span class="cmp-role">المرجع والمصدر</span><span class="cmp-val">الوحي</span></div>
-          <div class="cmp-li"><span class="cmp-role">القيمة المركزية</span><span class="cmp-val">التوحيد</span></div>
-          <div class="cmp-li"><span class="cmp-role">الفعل</span><span class="cmp-val">التسليم لله</span></div>
-          <div class="cmp-li"><span class="cmp-role">الغاية</span><span class="cmp-val">الدار الآخرة</span></div>
-          <div class="cmp-li"><span class="cmp-role">الثمرة</span><span class="cmp-val">حلاوة الإيمان</span></div>
+    <div class="duel reveal">
+      <div class="duel-inner">
+        <div class="duel-heads">
+          <div class="dh ours"><small>منهجنا</small><b>منظومة الوحي</b></div>
+          <div class="dh-axis"></div>
+          <div class="dh other"><small>مناهج أخرى</small><b>منظومة الشيطان</b></div>
         </div>
-      </div>
-      <div class="cmp-vs" aria-hidden="true">مقابل</div>
-      <div class="cmp-card other">
-        <div class="cmp-head"><small>مناهج أخرى</small><b>منظومة الشيطان</b></div>
-        <div class="cmp-list">
-          <div class="cmp-li"><span class="cmp-role">الإله</span><span class="cmp-val">الإنسان</span></div>
-          <div class="cmp-li"><span class="cmp-role">المرجع والمصدر</span><span class="cmp-val">العقل</span></div>
-          <div class="cmp-li"><span class="cmp-role">القيمة المركزية</span><span class="cmp-val">الحرية</span></div>
-          <div class="cmp-li"><span class="cmp-role">الفعل</span><span class="cmp-val">الطغيان</span></div>
-          <div class="cmp-li"><span class="cmp-role">الغاية</span><span class="cmp-val">الدار الدنيا</span></div>
-          <div class="cmp-li"><span class="cmp-role">الثمرة</span><span class="cmp-val">المتعة واللذة</span></div>
+        <div class="drow"><span class="dv ours">الله</span><span class="drole"><span>الإله</span></span><span class="dv other">الإنسان</span></div>
+        <div class="drow"><span class="dv ours">الوحي</span><span class="drole"><span>المرجع والمصدر</span></span><span class="dv other">العقل</span></div>
+        <div class="drow"><span class="dv ours">التوحيد</span><span class="drole"><span>القيمة المركزية</span></span><span class="dv other">الحرية</span></div>
+        <div class="drow"><span class="dv ours">التسليم لله</span><span class="drole"><span>الفعل</span></span><span class="dv other">الطغيان</span></div>
+        <div class="drow"><span class="dv ours">الدار الآخرة</span><span class="drole"><span>الغاية</span></span><span class="dv other">الدار الدنيا</span></div>
+        <div class="drow"><span class="dv ours">حلاوة الإيمان</span><span class="drole"><span>الثمرة</span></span><span class="dv other">المتعة واللذة</span></div>
+        <div class="duel-foot">
+          <div class="df-ours">طمأنينةٌ واتزانٌ وسموُّ سلوك</div>
+          <div class="dh-axis"></div>
+          <div class="df-other">لذّةٌ عابرة وفقدانٌ للمعنى</div>
         </div>
       </div>
     </div>
