@@ -12,10 +12,10 @@
 :root{
   --fd:'AlAwwal','Noto Naskh Arabic',serif;   /* خط العناوين */
   --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif; /* خط المتن */
-  --t1:#1b5e34; --t2:#2D7A4B; --grn:#2D7A4B;
+  --t1:#1b5e34; --t2:#1E5631; --grn:#1E5631;
   --gold:#C79A3B; --gold2:#C8A200; --cream:#F4EDDE;
   --ink:#1E2E29; --muted:#6C776F;
-  --elm:#2D7A4B; --elm-soft:#EAF5EE;
+  --elm:#1E5631; --elm-soft:#EAF5EE;
   --line:#E9E1D2; --card:#fff;
   --shadow:0 8px 26px rgba(20,40,35,.08);
   --shadow-sm:0 3px 12px rgba(20,40,35,.06);
@@ -59,7 +59,7 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 .tab{background:#fff;border:1px solid var(--line);color:var(--t2);border-radius:999px;
   padding:8px 15px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s}
 .tab:hover{background:var(--elm-soft);border-color:var(--elm);color:var(--elm)}
-.tab.active{background:var(--elm);border-color:var(--elm);color:#fff;box-shadow:0 4px 12px rgba(45,122,75,.28)}
+.tab.active{background:var(--elm);border-color:var(--elm);color:#fff;box-shadow:0 4px 12px rgba(30,86,49,.28)}
 .tab.gold{background:var(--gold);border-color:var(--gold);color:#3a2a06}
 .tab.gold.active{background:var(--gold2);border-color:var(--gold2);color:#241a00}
 
@@ -71,7 +71,7 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 /* ===== مكوّنات ===== */
 .sec-head{display:flex;align-items:center;gap:12px;margin:26px 0 15px}
 .sec-head .num{flex:none;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
-  background:var(--elm);color:#fff;font-size:18px;box-shadow:0 4px 12px rgba(45,122,75,.28)}
+  background:var(--elm);color:#fff;font-size:18px;box-shadow:0 4px 12px rgba(30,86,49,.28)}
 .sec-head .num.grn{background:var(--grn)}.sec-head .num.gold{background:var(--gold);color:#3a2a06}
 .sec-head h2{font-size:22px;color:var(--t1);font-weight:700}
 .sec-head .rule{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
@@ -233,7 +233,7 @@ table.plan td{font-size:14.5px;padding:9px 12px;border-top:1px solid var(--line)
 table.plan td:first-child{font-weight:700;color:var(--t1);white-space:nowrap}
 table.plan td.z{color:var(--gold2);font-weight:700;white-space:nowrap;text-align:center}
 table.plan tr.tot td{background:#F4EDDE;font-weight:700;color:#8a6410}
-.central{background:linear-gradient(135deg,#1b5e34,#2D7A4B);color:#fff;border-radius:14px;padding:14px 18px;margin:6px 0 2px;box-shadow:var(--shadow-sm)}
+.central{background:linear-gradient(135deg,#1b5e34,#1E5631);color:#fff;border-radius:14px;padding:14px 18px;margin:6px 0 2px;box-shadow:var(--shadow-sm)}
 .central b{color:#ffe9b8;display:block;margin-bottom:3px}
 .cues{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
 .cue{border:2px dashed #cdbf9e;background:#fffdf6;border-radius:14px;padding:14px;text-align:center}
@@ -295,10 +295,10 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 .side .objgrid>div{min-width:0}
 .side .objgrid .obj span.t{font-size:13px;line-height:1.7;word-break:break-word}
 /* ورقة التدريس السريعة (٣ مراحل · خطوات مرجعية) */
-.quick-sheet{margin:16px 0;background:linear-gradient(180deg,#fffdf8,#f4fbf1);border:1px solid rgba(45,122,75,.20);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden}
+.quick-sheet{margin:16px 0;background:linear-gradient(180deg,#fffdf8,#f4fbf1);border:1px solid rgba(30,86,49,.20);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden}
 .quick-sheet .qs-head{background:linear-gradient(90deg,var(--t1),var(--t2));color:#fff;padding:12px 16px;font-family:var(--fd);font-weight:700;font-size:15.5px}
 .quick-sheet .qs-phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;padding:14px}
-.quick-sheet .qs-phase{background:#fff;border:1px solid rgba(45,122,75,.14);border-top:4px solid var(--t2);border-radius:14px;padding:11px 13px}
+.quick-sheet .qs-phase{background:#fff;border:1px solid rgba(30,86,49,.14);border-top:4px solid var(--t2);border-radius:14px;padding:11px 13px}
 .quick-sheet .qs-ph-h{display:flex;align-items:center;gap:7px;color:var(--t1);font-family:var(--fd);font-weight:700;font-size:14px;margin-bottom:8px;flex-wrap:wrap}
 .quick-sheet .qs-n{width:26px;height:26px;border-radius:8px;background:var(--t2);color:#fff;display:grid;place-items:center;font-size:14px;flex:0 0 auto}
 .quick-sheet .qs-min{margin-inline-start:auto;background:var(--elm-soft);color:var(--t2);border-radius:999px;padding:2px 10px;font-size:11.5px;font-weight:700}
@@ -306,7 +306,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 .quick-sheet .qs-phase li{font-size:12.5px;line-height:1.8;margin-bottom:4px}
 .quick-sheet .qs-phase li::marker{color:var(--t2)}
 .quick-sheet .qs-home{margin:0 14px;background:#fbf3e3;border:1px solid #eccf94;border-radius:12px;padding:9px 12px;font-size:12.5px;color:#7a5a10;line-height:1.75}
-.quick-sheet .qs-note{margin:12px 14px 14px;padding:9px 12px;border-radius:12px;background:#fff;border:1px dashed rgba(45,122,75,.35);color:var(--muted);font-size:12px;line-height:1.75}
+.quick-sheet .qs-note{margin:12px 14px 14px;padding:9px 12px;border-radius:12px;background:#fff;border:1px dashed rgba(30,86,49,.35);color:var(--muted);font-size:12px;line-height:1.75}
 /* ===== أداة التاريخ الهجري (تهيئة كتابي) ===== */
 .kitabi-hijri-tool{margin:0 0 12px;background:linear-gradient(135deg,#fffaf0,#f2fbf8);border:1px solid #e6d2a8;border-right:7px solid var(--gold);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden;direction:rtl;color:#102d36}
 .kitabi-hijri-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 15px;background:linear-gradient(90deg,#fff,#f7fbfa)}
@@ -570,7 +570,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
           <div class="step"><b class="k">الدنيا دار عمل:</b> في الدنيا نستطيع أن نصلّي ونشكر ونحسن ونعتذر ونصلح؛ أمّا الآخرة فهي وقت الجزاء لا وقت العمل.</div>
           <div class="step"><b class="k"> تصحيح فهم الطفل:</b> ليس المقصود تخويف الطفل من الآخرة؛ بل تحبيبه في المبادرة إلى الخير الآن. ولا نمثّل مشاهد الغيب أو العذاب، ولا نصوّرها؛ إنما نتعلّم أن العاقل يعمل الصالح اليوم قبل أن يندم فيقول: يا ليتني.</div>
           <div class="step"><b class="k">المرحلة الثانية — التلاوة والتثبيت:</b> تستعيذ المعلمة وتبسمل ثم تقرأ الآيات قراءة واضحة مرتّلة، وتخفض صوتها قليلًا عند ﴿يَا لَيْتَنِي قَدَّمْتُ لِحَيَاتِي﴾، ويستمع الأطفال بسكينة ثم يردّدون خلفها مقطعًا مقطعًا، وتختار طفلًا أو طفلة للترديد الفردي.<div class="step-media" style="max-width:680px"><img src="assets/image_038_8d405e8e2151b456.webp" alt="بطاقة الآيات المقررة — الفجر ٢١–٢٦"/><div class="cap"> بطاقة الآيات المقررة التي تعرضها المعلمة — الفجر ٢١–٢٦</div></div>
-            <div class="gq-surah-audio" style="margin:10px auto 0;max-width:680px;background:linear-gradient(135deg,#EFFAF4,#FFFCF5);border:1px solid #C9DED5;border-right:6px solid #2D7A4B;border-radius:16px;padding:12px 14px;text-align:right;box-shadow:var(--shadow-sm)"><div style="display:flex;align-items:center;gap:9px;margin-bottom:8px;color:#1b5e34;font-size:13px;font-weight:900;line-height:1.7"><span style="width:34px;height:34px;border-radius:12px;background:#2D7A4B;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:0 0 auto">▶</span><span>ترديد سورة الفجر — الآيات ٢١–٢٦ (للاستماع والترديد فقط · لا تُعرض شاشة الفيديو على الأطفال)</span></div><video controls preload="metadata" style="width:100%;border-radius:12px;border:1px solid var(--line);display:block"><source src="assets/video_039_ad37867104c88637.mp4" type="video/mp4"/>المتصفح لا يدعم تشغيل الفيديو.</video></div></div>
+            <div class="gq-surah-audio" style="margin:10px auto 0;max-width:680px;background:linear-gradient(135deg,#EFFAF4,#FFFCF5);border:1px solid #C9DED5;border-right:6px solid #1E5631;border-radius:16px;padding:12px 14px;text-align:right;box-shadow:var(--shadow-sm)"><div style="display:flex;align-items:center;gap:9px;margin-bottom:8px;color:#1b5e34;font-size:13px;font-weight:900;line-height:1.7"><span style="width:34px;height:34px;border-radius:12px;background:#1E5631;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:0 0 auto">▶</span><span>ترديد سورة الفجر — الآيات ٢١–٢٦ (للاستماع والترديد فقط · لا تُعرض شاشة الفيديو على الأطفال)</span></div><video controls preload="metadata" style="width:100%;border-radius:12px;border:1px solid var(--line);display:block"><source src="assets/video_039_ad37867104c88637.mp4" type="video/mp4"/>المتصفح لا يدعم تشغيل الفيديو.</video></div></div>
           <div class="step"><b class="k">جملة اللقاء الختامية:</b> «الدنيا دار عمل، والآخرة دار جزاء؛ يوم القيامة يتذكّر الإنسان ولا ينفعه الندم إن ضيّع العمل الصالح».</div>
         </div>
         <div class="story">
@@ -620,7 +620,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
         <div class="opt"><b>السريع:</b> يذكر مثالًا من حياته أو يساعد في ترتيب البطاقات.</div>
         <div class="opt"><b>كثير الحركة:</b> يُعطى دورًا: حامل اللوحة أو موزّع البطاقات.</div>
       </div>
-      <div class="central" style="margin-top:12px;background:linear-gradient(135deg,#1b5e34,#2D7A4B)"><b> الجملة الختامية</b>العاقل يعمل اليوم عملًا صالحًا قبل أن يقول: يا ليتني.</div>
+      <div class="central" style="margin-top:12px;background:linear-gradient(135deg,#1b5e34,#1E5631)"><b> الجملة الختامية</b>العاقل يعمل اليوم عملًا صالحًا قبل أن يقول: يا ليتني.</div>
     </div>
 
     <div class="actbar"> اختيارات الأنشطة الإضافية</div>

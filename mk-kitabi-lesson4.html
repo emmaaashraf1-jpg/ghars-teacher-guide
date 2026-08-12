@@ -12,10 +12,10 @@
 :root{
   --fd:'AlAwwal','Noto Naskh Arabic',serif;   /* خط العناوين */
   --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif; /* خط المتن */
-  --t1:#1b5e34; --t2:#2D7A4B; --grn:#2D7A4B;
+  --t1:#1b5e34; --t2:#1E5631; --grn:#1E5631;
   --gold:#C79A3B; --gold2:#C8A200; --cream:#F4EDDE;
   --ink:#1E2E29; --muted:#6C776F;
-  --elm:#2D7A4B; --elm-soft:#EAF5EE;
+  --elm:#1E5631; --elm-soft:#EAF5EE;
   --line:#E9E1D2; --card:#fff;
   --shadow:0 8px 26px rgba(20,40,35,.08);
   --shadow-sm:0 3px 12px rgba(20,40,35,.06);
@@ -39,7 +39,7 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 .cover{position:relative;overflow:hidden;border-radius:26px;color:#fff;box-shadow:var(--shadow);min-height:200px}
 .cover-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
 .cover::before{content:"";position:absolute;inset:0;z-index:1;opacity:.78;
-  background:linear-gradient(135deg,rgba(27,94,52,.91),rgba(45,122,75,.78) 52%,rgba(45,122,75,.87))}
+  background:linear-gradient(135deg,rgba(27,94,52,.91),rgba(30,86,49,.78) 52%,rgba(30,86,49,.87))}
 .cover::after{content:"";position:absolute;inset:0;z-index:1;opacity:.07;pointer-events:none;
   background:radial-gradient(circle at 88% 18%,#fff 0 2px,transparent 3px) 0 0/34px 34px}
 .cover-main{position:relative;z-index:2;padding:28px 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -59,7 +59,7 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 .tab{background:#fff;border:1px solid var(--line);color:var(--t2);border-radius:999px;
   padding:8px 15px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s}
 .tab:hover{background:var(--elm-soft);border-color:var(--elm);color:var(--elm)}
-.tab.active{background:var(--elm);border-color:var(--elm);color:#fff;box-shadow:0 4px 12px rgba(45,122,75,.28)}
+.tab.active{background:var(--elm);border-color:var(--elm);color:#fff;box-shadow:0 4px 12px rgba(30,86,49,.28)}
 .tab.gold{background:var(--gold);border-color:var(--gold);color:#3a2a06}
 .tab.gold.active{background:var(--gold2);border-color:var(--gold2);color:#241a00}
 
@@ -71,7 +71,7 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 /* ===== مكوّنات ===== */
 .sec-head{display:flex;align-items:center;gap:12px;margin:26px 0 15px}
 .sec-head .num{flex:none;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
-  background:var(--elm);color:#fff;font-size:18px;box-shadow:0 4px 12px rgba(45,122,75,.28)}
+  background:var(--elm);color:#fff;font-size:18px;box-shadow:0 4px 12px rgba(30,86,49,.28)}
 .sec-head .num.grn{background:var(--grn)}.sec-head .num.gold{background:var(--gold);color:#3a2a06}
 .sec-head h2{font-size:22px;color:var(--t1);font-weight:700}
 .sec-head .rule{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
@@ -233,7 +233,7 @@ table.plan td{font-size:14.5px;padding:9px 12px;border-top:1px solid var(--line)
 table.plan td:first-child{font-weight:700;color:var(--t1);white-space:nowrap}
 table.plan td.z{color:var(--gold2);font-weight:700;white-space:nowrap;text-align:center}
 table.plan tr.tot td{background:#F4EDDE;font-weight:700;color:#8a6410}
-.central{background:linear-gradient(135deg,#1b5e34,#2D7A4B);color:#fff;border-radius:14px;padding:14px 18px;margin:6px 0 2px;box-shadow:var(--shadow-sm)}
+.central{background:linear-gradient(135deg,#1b5e34,#1E5631);color:#fff;border-radius:14px;padding:14px 18px;margin:6px 0 2px;box-shadow:var(--shadow-sm)}
 .central b{color:#ffe9b8;display:block;margin-bottom:3px}
 .cues{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
 .cue{border:2px dashed #cdbf9e;background:#fffdf6;border-radius:14px;padding:14px;text-align:center}
@@ -295,10 +295,10 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 .side .objgrid>div{min-width:0}
 .side .objgrid .obj span.t{font-size:13px;line-height:1.7;word-break:break-word}
 /* ورقة التدريس السريعة (٣ مراحل · خطوات مرجعية) */
-.quick-sheet{margin:16px 0;background:linear-gradient(180deg,#fffdf8,#f4fbf1);border:1px solid rgba(45,122,75,.20);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden}
+.quick-sheet{margin:16px 0;background:linear-gradient(180deg,#fffdf8,#f4fbf1);border:1px solid rgba(30,86,49,.20);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden}
 .quick-sheet .qs-head{background:linear-gradient(90deg,var(--t1),var(--t2));color:#fff;padding:12px 16px;font-family:var(--fd);font-weight:700;font-size:15.5px}
 .quick-sheet .qs-phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;padding:14px}
-.quick-sheet .qs-phase{background:#fff;border:1px solid rgba(45,122,75,.14);border-top:4px solid var(--t2);border-radius:14px;padding:11px 13px}
+.quick-sheet .qs-phase{background:#fff;border:1px solid rgba(30,86,49,.14);border-top:4px solid var(--t2);border-radius:14px;padding:11px 13px}
 .quick-sheet .qs-ph-h{display:flex;align-items:center;gap:7px;color:var(--t1);font-family:var(--fd);font-weight:700;font-size:14px;margin-bottom:8px;flex-wrap:wrap}
 .quick-sheet .qs-n{width:26px;height:26px;border-radius:8px;background:var(--t2);color:#fff;display:grid;place-items:center;font-size:14px;flex:0 0 auto}
 .quick-sheet .qs-min{margin-inline-start:auto;background:var(--elm-soft);color:var(--t2);border-radius:999px;padding:2px 10px;font-size:11.5px;font-weight:700}
@@ -306,7 +306,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 .quick-sheet .qs-phase li{font-size:12.5px;line-height:1.8;margin-bottom:4px}
 .quick-sheet .qs-phase li::marker{color:var(--t2)}
 .quick-sheet .qs-home{margin:0 14px;background:#fbf3e3;border:1px solid #eccf94;border-radius:12px;padding:9px 12px;font-size:12.5px;color:#7a5a10;line-height:1.75}
-.quick-sheet .qs-note{margin:12px 14px 14px;padding:9px 12px;border-radius:12px;background:#fff;border:1px dashed rgba(45,122,75,.35);color:var(--muted);font-size:12px;line-height:1.75}
+.quick-sheet .qs-note{margin:12px 14px 14px;padding:9px 12px;border-radius:12px;background:#fff;border:1px dashed rgba(30,86,49,.35);color:var(--muted);font-size:12px;line-height:1.75}
 /* ===== أداة التاريخ الهجري (تهيئة كتابي) ===== */
 .kitabi-hijri-tool{margin:0 0 12px;background:linear-gradient(135deg,#fffaf0,#f2fbf8);border:1px solid #e6d2a8;border-right:7px solid var(--gold);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden;direction:rtl;color:#102d36}
 .kitabi-hijri-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 15px;background:linear-gradient(90deg,#fff,#f7fbfa)}
@@ -626,7 +626,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
         <div class="opt"><b>كثير الحركة:</b> ينقل البطاقات بين المحطات ويرتّبها.</div>
       </div>
       <div class="miniblock" style="margin-top:8px"><b>الضابط التربوي</b>لا تتحوّل المحطات إلى سباق في تلاوة كلام الله؛ بل مطابقةٌ هادئة تربط كل مقطع بمعناه.</div>
-      <div class="central" style="margin-top:12px;background:linear-gradient(135deg,#1b5e34,#2D7A4B)"><b> الجملة الختامية</b>الحمد لله الذي علّمنا من كتابه، اللهم انفعنا بما تعلّمنا.</div>
+      <div class="central" style="margin-top:12px;background:linear-gradient(135deg,#1b5e34,#1E5631)"><b> الجملة الختامية</b>الحمد لله الذي علّمنا من كتابه، اللهم انفعنا بما تعلّمنا.</div>
     </div>
 
     <div class="actbar"> اختيارات الأنشطة الإضافية</div>
@@ -941,7 +941,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
       <a href="mk-arkan-tatbiqiyya.html#kitabi" target="_blank" rel="noopener" style="display:block;text-align:center;padding:11px;background:#eef6f4;color:#0d6e6e;text-decoration:none;font-weight:700;font-size:13px;border-top:1px solid #E9E1D2">افتحي صفحة الأركان التطبيقية الكاملة (الأهداف · الأدوات · الخطوات · القوانين · الروتين) ↗</a>
     </div>
     <div class="corner">
-      <div class="h" style="background:linear-gradient(90deg,#1b5e34,#2D7A4B)"><h4>أجمع معاني السورة في ثلاثة مقاطع</h4><span class="k"> ركن أدرك وأستمتع</span></div>
+      <div class="h" style="background:linear-gradient(90deg,#1b5e34,#1E5631)"><h4>أجمع معاني السورة في ثلاثة مقاطع</h4><span class="k"> ركن أدرك وأستمتع</span></div>
       <div class="b">
         <div class="cfield"><b>المعنى المركزي</b><p>أجمع معاني سورة الإنفطار في ثلاثة مقاطع (١–٥ · ٦–١٢ · ١٣–١٩)، وأربط كل مقطع بمعناه الجامع.</p></div>
         <div class="cfield"><b>الأدوات والوسائل التعليمية</b><p>اللوحات الثلاث للمقاطع، المصحف المعلّم في حامله، تسجيل تلاوة السورة، بطاقات نطاقات الآيات، بطاقات المعاني، سلّة بطاقات، وجواز مرور الركن.</p></div>
