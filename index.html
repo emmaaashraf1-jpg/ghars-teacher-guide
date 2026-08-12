@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="منصّة منهج غرس القيم للطفولة — الدليل التعريفي والتشغيلي وأدلة الوحدات التكاملية لمرحلة التمهيدي." />
-<title>منهج غرس القيم — منصّة الأدلة</title>
+<meta name="description" content="غرس القيم — منهج متكامل لبناء الطفل إيمانًا وقيمًا ومهارات في مرحلة التمهيدي. الدليل العام وأدلة الوحدات التكاملية." />
+<title>غرس القيم — منهج متكامل لبناء الطفل</title>
 <link rel="icon" href="brand/logo-ghars.webp" />
 <link rel="preload" href="assets/fonts/AlAwwal-Regular.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="assets/fonts/AlAwwal-Bold.woff2" as="font" type="font/woff2" crossorigin />
@@ -15,438 +15,412 @@
   @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
   @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
 
+  /* ============ Design tokens ============ */
   :root{
-    --navy:#003E45; --teal:#006B69; --green:#2D7A4B; --gold:#C79A3B; --gold-2:#C8A200;
-    --ink:#123A3E; --muted:#5c6b6b; --cream:#FFF7E8; --paper:#fffdf8; --line:#e7dcc4;
-    --night-1:#0D0D2B; --night-2:#1C1C4A; --night-3:#2D3A8C;
-    --shadow:0 22px 52px rgba(16,45,54,.16); --shadow-sm:0 8px 24px rgba(16,45,54,.10);
-    --head:'AlAwwal','Amiri',serif; --body:'Noto Naskh Arabic','Tahoma',sans-serif;
+    --ivory:#FBF9F2; --cream:#F4EDDE; --surface:#FFFFFF; --surface-2:#FEFCF7;
+    --forest:#1F4A39; --forest-2:#2C6A4D; --teal:#0E6E6B; --blue:#5C7B90;
+    --sage:#8AA48F; --terra:#C57B57; --ochre:#C0922E; --gold:#C79A3B;
+    --ink:#1E2E29; --gray:#6C776F; --line:#E9E1D2; --line-soft:#F0E9DB;
+    --display:'AlAwwal','Amiri',serif;
+    --body:'Noto Naskh Arabic','Segoe UI',Tahoma,sans-serif;
+    --maxw:1200px;
+    --r:18px;
+    --ease:cubic-bezier(.22,.61,.36,1);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:var(--body); color:var(--ink); line-height:1.9;
-    background:
-      radial-gradient(circle at 88% -5%,rgba(199,154,59,.14),transparent 34%),
-      radial-gradient(circle at 5% 6%,rgba(45,122,75,.10),transparent 30%),
-      var(--cream);
-    min-height:100vh; -webkit-font-smoothing:antialiased;
+    font-family:var(--body);color:var(--ink);line-height:1.95;background:var(--ivory);
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
   }
-  .wrap{max-width:1080px;margin:0 auto;padding:0 18px 60px}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  ::selection{background:rgba(192,146,46,.22)}
+  :focus-visible{outline:2.5px solid var(--teal);outline-offset:3px;border-radius:4px}
+  .shell{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,52px)}
+  .eyebrow{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:3px;color:var(--ochre);
+    text-transform:uppercase}
+  .eyebrow::before{content:"";display:inline-block;width:22px;height:1.5px;background:var(--ochre);
+    vertical-align:middle;margin-inline-start:10px;opacity:.8}
 
-  /* ===== Hero ===== */
-  .hero{
-    position:relative; overflow:hidden; color:#fff;
-    margin:0 0 26px; padding:38px 0 32px;
-    border-radius:0 0 36px 36px;
-    background:
-      radial-gradient(circle at 12% 20%,rgba(199,154,59,.36),transparent 30%),
-      radial-gradient(circle at 80% 10%,rgba(126,163,72,.24),transparent 30%),
-      linear-gradient(135deg,var(--navy) 0%,var(--teal) 54%,var(--green) 100%);
-    box-shadow:var(--shadow); isolation:isolate;
-  }
-  .hero::before{
-    content:"";position:absolute;inset:0;z-index:0;opacity:.6;
-    background:
-      linear-gradient(135deg,rgba(255,252,245,.08) 25%,transparent 25%) 0 0/36px 36px,
-      linear-gradient(225deg,rgba(255,252,245,.06) 25%,transparent 25%) 0 0/36px 36px;
-  }
-  .hero > *{position:relative;z-index:1}
-  .hero-inner{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 34px}
-  .hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
-  .brand-pill{
-    display:inline-flex;align-items:center;gap:11px;
-    background:rgba(255,252,245,.12);border:1px solid rgba(230,200,121,.5);
-    padding:8px 14px 8px 10px;border-radius:999px;backdrop-filter:blur(3px);
-  }
-  .brand-pill img{width:44px;height:44px;border-radius:50%;object-fit:cover;background:#fff;padding:2px}
-  .brand-pill b{font-family:var(--head);font-size:17px;color:#fff;letter-spacing:.3px}
-  .brand-pill span{display:block;font-size:11px;color:rgba(255,255,255,.72)}
-  .stage-badge{
-    background:rgba(200,162,0,.18);border:1px solid var(--gold);color:#f4e3b3;
-    border-radius:10px;padding:8px 14px;font-size:12.5px;font-weight:700;text-align:center;line-height:1.6
-  }
-  .hero-title{font-family:var(--head);font-size:clamp(30px,6vw,46px);line-height:1.25;margin:20px 0 6px;color:#fff}
-  .hero-title .accent{color:var(--gold)}
-  .hero-sub{font-size:clamp(13px,2.4vw,15.5px);color:rgba(255,255,255,.82);max-width:640px}
-  .hero-points{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-  .hero-points span{
-    display:inline-flex;align-items:center;gap:6px;font-size:12px;
-    background:rgba(255,252,245,.10);border:1px solid rgba(255,252,245,.18);
-    padding:6px 12px;border-radius:999px;color:rgba(255,255,255,.9)
-  }
+  /* ============ Header ============ */
+  .nav{position:sticky;top:0;z-index:60;background:rgba(251,249,242,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid transparent;transition:border-color .3s,background .3s,box-shadow .3s}
+  .nav.stuck{border-color:var(--line);box-shadow:0 6px 22px rgba(31,74,57,.05)}
+  .nav-in{max-width:var(--maxw);margin:0 auto;padding:14px clamp(20px,5vw,52px);
+    display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none}
+  .brand img{width:42px;height:42px;border-radius:50%;background:#fff;padding:3px;box-shadow:0 3px 10px rgba(31,74,57,.12)}
+  .brand b{font-family:var(--display);font-size:22px;color:var(--forest);line-height:1;letter-spacing:.3px}
+  .brand small{display:block;font-size:10.5px;color:var(--gray);font-weight:400;margin-top:3px;letter-spacing:.4px}
+  .menu{display:flex;align-items:center;gap:6px}
+  .menu a{font-size:15px;font-weight:600;color:var(--ink);text-decoration:none;padding:8px 15px;border-radius:999px;
+    transition:background .2s,color .2s}
+  .menu a:hover{background:rgba(31,74,57,.06);color:var(--forest)}
+  .menu a.cta{background:var(--forest);color:#fff;padding:9px 20px}
+  .menu a.cta:hover{background:var(--forest-2);color:#fff}
+  .burger{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--surface);
+    cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px}
+  .burger span{width:19px;height:2px;background:var(--forest);border-radius:2px;transition:.25s}
+  .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
-  /* ===== Section heads ===== */
-  .sec-head{display:flex;align-items:center;gap:12px;margin:34px 4px 16px}
-  .sec-head .bar{width:5px;height:26px;border-radius:4px;background:linear-gradient(var(--gold),var(--green))}
-  .sec-head h2{font-family:var(--head);font-size:24px;color:var(--navy)}
-  .sec-head p{font-size:12.5px;color:var(--muted);margin-top:2px}
+  /* ============ Hero ============ */
+  .hero{padding:clamp(46px,8vw,92px) 0 clamp(40px,7vw,80px)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,68px);align-items:center}
+  .hero-copy .eyebrow{margin-bottom:22px}
+  .hero h1{font-family:var(--display);font-weight:700;color:var(--forest);
+    font-size:clamp(64px,12vw,124px);line-height:.98;letter-spacing:-.5px;margin-bottom:18px}
+  .hero .lede{font-family:var(--display);font-weight:700;font-size:clamp(21px,3.2vw,31px);
+    line-height:1.5;color:var(--ink);max-width:20ch;margin-bottom:16px}
+  .hero p{font-size:clamp(15px,1.7vw,17px);line-height:2.05;color:var(--gray);max-width:46ch;margin-bottom:30px}
+  .actions{display:flex;flex-wrap:wrap;gap:14px}
+  .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:16px;
+    border-radius:999px;padding:14px 28px;transition:transform .18s var(--ease),box-shadow .18s var(--ease),background .2s}
+  .btn .ar{transition:transform .2s var(--ease)}
+  .btn-primary{background:var(--forest);color:#fff;box-shadow:0 12px 26px rgba(31,74,57,.22)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 34px rgba(31,74,57,.28)}
+  .btn-primary:hover .ar{transform:translateX(-5px)}
+  .btn-ghost{background:transparent;color:var(--forest);border:1.5px solid var(--line)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--sage);background:var(--surface)}
+  /* hero artwork — editorial */
+  .hero-art{position:relative}
+  .hero-art figure{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:5/4;
+    box-shadow:0 34px 70px rgba(31,74,57,.18);border:1px solid rgba(255,255,255,.6)}
+  .hero-art figure::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(31,74,57,.05)}
+  .hero-art img{width:100%;height:100%;object-fit:cover}
+  .hero-art .frame{position:absolute;inset:-14px -14px auto auto;width:64%;height:64%;
+    border:1.5px solid rgba(192,146,46,.5);border-radius:26px;z-index:-1}
+  .hero-art .chip{position:absolute;bottom:18px;inset-inline-start:18px;background:rgba(251,249,242,.92);
+    backdrop-filter:blur(6px);border-radius:14px;padding:10px 16px;box-shadow:0 10px 24px rgba(31,74,57,.14)}
+  .hero-art .chip b{font-family:var(--display);font-size:15px;color:var(--forest);display:block}
+  .hero-art .chip span{font-size:11.5px;color:var(--gray)}
 
-  /* ===== General guide band ===== */
-  .general{
-    position:relative;overflow:hidden;
-    display:grid;grid-template-columns:1.5fr .9fr;gap:22px;align-items:center;
-    background:var(--paper);border:1.5px solid var(--gold);
-    border-radius:24px;padding:26px 28px;box-shadow:var(--shadow-sm);
-  }
-  .general::before{
-    content:"";position:absolute;inset:0;z-index:0;opacity:.5;pointer-events:none;
-    background:radial-gradient(circle at 95% 8%,rgba(199,154,59,.13),transparent 40%)
-  }
-  .general > *{position:relative;z-index:1}
-  .gtag{
-    display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;letter-spacing:.4px;
-    color:#8a5e21;background:rgba(199,154,59,.14);border:1px solid rgba(199,154,59,.4);
-    padding:5px 12px;border-radius:999px;margin-bottom:12px
-  }
-  .general h3{font-family:var(--head);font-size:27px;color:var(--navy);margin-bottom:8px}
-  .general p{font-size:13.5px;color:#3f5350;margin-bottom:16px;max-width:56ch}
-  .chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}
-  .chips i{font-style:normal;font-size:11.5px;color:var(--teal);background:#eaf4f2;border:1px solid #cfe6e1;padding:4px 11px;border-radius:999px}
-  .btn{
-    display:inline-flex;align-items:center;gap:9px;text-decoration:none;
-    font-family:var(--head);font-size:16px;font-weight:700;
-    background:linear-gradient(135deg,var(--teal),var(--green));color:#fff;
-    padding:12px 26px;border-radius:999px;box-shadow:0 10px 22px rgba(0,107,105,.28);
-    transition:transform .16s ease,box-shadow .16s ease
-  }
-  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(0,107,105,.34)}
-  .btn .ar{transition:transform .16s ease}
-  .btn:hover .ar{transform:translateX(-4px)}
-  .general-art{
-    display:grid;place-items:center;min-height:150px;border-radius:18px;
-    background:radial-gradient(circle at 50% 30%,rgba(45,122,75,.1),transparent 60%),#f4efe1;
-    border:1px dashed var(--line)
-  }
-  .general-art img{width:118px;height:118px;object-fit:contain;filter:drop-shadow(0 8px 16px rgba(0,0,0,.12))}
+  /* ============ Section rhythm ============ */
+  section{position:relative}
+  .band{padding:clamp(56px,9vw,110px) 0}
+  .band-line{border-top:1px solid var(--line-soft)}
+  .sec-head{max-width:640px;margin:0 auto clamp(34px,5vw,56px);text-align:center}
+  .sec-head.start{margin-inline:0;text-align:start}
+  .sec-head h2{font-family:var(--display);font-weight:700;color:var(--forest);
+    font-size:clamp(28px,4.4vw,44px);line-height:1.2;margin:16px 0 12px}
+  .sec-head p{font-size:16px;color:var(--gray);line-height:2}
 
-  /* ===== Units grid ===== */
-  .units{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:18px}
-  .unit{
-    position:relative;overflow:hidden;text-decoration:none;color:inherit;
-    background:var(--paper);border:1px solid var(--line);border-radius:20px;
-    box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease;display:flex;flex-direction:column
-  }
-  .unit:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-  .unit-cap{
-    position:relative;overflow:hidden;height:120px;display:flex;align-items:flex-end;padding:14px 16px;
-    background:radial-gradient(circle at 80% 20%,rgba(200,162,0,.28),transparent 42%),
-      linear-gradient(135deg,var(--night-1) 0%,var(--night-2) 55%,var(--night-3) 100%)
-  }
-  .unit-cap::before{content:"";position:absolute;top:10px;right:14px;font-size:13px;opacity:.55;letter-spacing:5px}
-  .unit-cap img{position:absolute;left:-6px;bottom:-14px;width:104px;opacity:.9;filter:drop-shadow(0 6px 12px rgba(0,0,0,.35))}
-  .unit-cap .u-order{font-size:11px;color:#f0d98a;font-weight:700;background:rgba(200,162,0,.2);border:1px solid rgba(200,162,0,.5);padding:3px 10px;border-radius:999px}
-  .unit-body{padding:16px 18px 18px}
-  .unit-body h3{font-family:var(--head);font-size:21px;color:var(--navy);margin-bottom:5px}
-  .unit-body p{font-size:12.5px;color:var(--muted);margin-bottom:14px;min-height:44px}
-  .unit-open{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:13.5px;color:var(--teal)}
-  .unit-dots{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}
-  .unit-dots i{width:14px;height:14px;border-radius:50%;display:inline-block}
+  /* ============ Philosophy ============ */
+  .philo{text-align:center}
+  .philo .statement{font-family:var(--display);font-weight:700;color:var(--forest);
+    font-size:clamp(28px,5vw,52px);line-height:1.34;max-width:16ch;margin:18px auto 22px}
+  .philo .statement .soft{color:var(--teal)}
+  .philo .lede{font-size:16.5px;line-height:2.1;color:var(--gray);max-width:56ch;margin:0 auto}
+  .flow{display:flex;align-items:stretch;justify-content:center;gap:0;flex-wrap:wrap;
+    margin-top:clamp(40px,6vw,64px)}
+  .flow-step{flex:1 1 0;min-width:150px;max-width:210px;text-align:center;padding:0 14px;position:relative}
+  .flow-step .n{font-family:Georgia,serif;font-size:14px;color:var(--ochre);font-weight:700;letter-spacing:1px}
+  .flow-step .dot{width:13px;height:13px;border-radius:50%;background:var(--surface);border:2px solid var(--sage);
+    margin:12px auto;position:relative;z-index:1}
+  .flow-step b{display:block;font-family:var(--display);font-size:19px;color:var(--forest);line-height:1.4;margin-bottom:6px}
+  .flow-step em{font-style:normal;font-size:12.5px;color:var(--gray);line-height:1.7}
+  .flow-step:not(:last-child)::after{content:"";position:absolute;top:calc(14px + 18px);inset-inline-start:-50%;
+    width:100%;height:2px;background:linear-gradient(90deg,var(--line),var(--line));z-index:0}
 
-  .unit.soon{opacity:.62;pointer-events:none;filter:saturate(.6)}
-  .unit.soon .unit-cap{background:linear-gradient(135deg,#3a4a4a,#556)}
-  /* بطاقات الوحدات المصمّمة: مشهد الوحدة النموذجية + رموز الوحدات القادمة */
-  .unit:not(.soon) .unit-cap::before{content:"" !important}
-  .unit:not(.soon) .unit-cap img{display:none !important}
-  .unit-cap>.gq-nd-scene{position:absolute;inset:0;z-index:0;line-height:0}
-  .unit-cap>.gq-nd-scene svg{width:100%;height:100%;display:block}
-  .unit:not(.soon) .unit-cap .u-order{position:relative;z-index:2;background:rgba(10,16,40,.42);border-color:rgba(255,255,255,.4);color:#fff;backdrop-filter:blur(2px)}
-  /* بطاقة وحدة قادمة: خلفية متدرّجة مناسبة للعنوان + نجوم خفيفة + رمز معبّر */
-  .unit.upcoming{pointer-events:none}
-  .unit.upcoming .unit-open{color:var(--muted)}
-  .unit-cap>.gq-uscene{position:absolute;inset:0;z-index:0;line-height:0}
-  .unit-cap>.gq-uscene svg{width:100%;height:100%;display:block}
-  /* مجموعات الوحدات (نموذجية / الفصل الأول / الثاني / الثالث) */
-  .ug-head{display:flex;align-items:baseline;gap:10px;margin:28px 2px 14px}
-  .ug-head h3{font-family:var(--head);font-size:18px;color:var(--navy);position:relative;padding-inline-start:14px}
-  .ug-head h3::before{content:"";position:absolute;inset-inline-start:0;top:4px;bottom:4px;width:5px;border-radius:3px;background:var(--gold)}
-  .ug-head span{font-size:12px;color:var(--muted);font-weight:400}
-  .unit.soon .unit-open{color:var(--muted)}
-  .soon-badge{position:absolute;top:12px;left:12px;z-index:2;background:#fff;border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px}
+  /* ============ General guide feature ============ */
+  .feature{background:linear-gradient(160deg,#20493a,#12352b 70%);color:#fff;border-radius:30px;overflow:hidden;
+    display:grid;grid-template-columns:1.02fr .98fr;box-shadow:0 34px 70px rgba(18,53,43,.28)}
+  .feature-copy{padding:clamp(34px,5vw,60px)}
+  .feature .eyebrow{color:#e7c98f}
+  .feature .eyebrow::before{background:#e7c98f}
+  .feature h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.2vw,44px);line-height:1.18;
+    margin:16px 0 16px;color:#fff}
+  .feature p{font-size:16px;line-height:2.05;color:rgba(255,255,255,.82);max-width:44ch;margin-bottom:26px}
+  .feature .fpts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+  .feature .fpts span{font-size:12.5px;color:rgba(255,255,255,.9);border:1px solid rgba(231,201,143,.32);
+    border-radius:999px;padding:6px 14px}
+  .btn-gold{background:linear-gradient(135deg,#e7c169,#C79A3B);color:#3a2a06;box-shadow:0 14px 28px rgba(199,154,59,.3)}
+  .btn-gold:hover{transform:translateY(-3px);box-shadow:0 20px 36px rgba(199,154,59,.38)}
+  .btn-gold:hover .ar{transform:translateX(-5px)}
+  .feature-art{position:relative;min-height:280px}
+  .feature-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .feature-art::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(300deg,transparent,rgba(18,53,43,.18) 60%,rgba(18,53,43,.9))}
 
-  /* ===== Footer ===== */
-  .foot{margin-top:18px;padding-top:16px;text-align:center;color:var(--muted);font-size:12px;line-height:2}
-  .foot img{width:34px;vertical-align:middle;margin-inline-start:6px;opacity:.8}
+  /* ============ Unit collection ============ */
+  .chapter{margin-top:clamp(40px,6vw,66px)}
+  .chapter:first-of-type{margin-top:0}
+  .ch-head{display:flex;align-items:baseline;gap:16px;padding-bottom:16px;margin-bottom:30px;
+    border-bottom:1px solid var(--line)}
+  .ch-head .idx{font-family:Georgia,serif;font-size:15px;color:var(--ochre);font-weight:700;letter-spacing:1px}
+  .ch-head h3{font-family:var(--display);font-weight:700;font-size:clamp(21px,3vw,28px);color:var(--forest)}
+  .ch-head .count{margin-inline-start:auto;font-size:13px;color:var(--gray);font-weight:600;white-space:nowrap}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,30px)}
 
-  /* إسناد التطوير — شركة حضارة */
-  .dev-credit{
-    margin-top:44px;padding:28px 22px 24px;border-top:1px solid var(--line);
-    display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;
-    background:linear-gradient(180deg,transparent,rgba(45,122,75,.05));border-radius:22px 22px 0 0;
-  }
-  .dc-label{font-size:12px;color:var(--muted);letter-spacing:.4px}
-  .dc-logo{display:inline-block;line-height:0}
-  .dc-logo img{width:118px;height:auto;filter:drop-shadow(0 8px 18px rgba(0,0,0,.12));transition:transform .2s ease}
-  .dc-logo:hover img{transform:scale(1.05)}
-  .dc-name{font-family:var(--head);font-size:17px;color:#1e5631;text-decoration:none;font-weight:700;line-height:1.5}
-  .dc-name:hover{text-decoration:underline}
-  .dc-site{font-size:12px;color:var(--teal);text-decoration:none}
-  .dc-site:hover{text-decoration:underline}
+  .card{position:relative;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);
+    overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;
+    transition:transform .22s var(--ease),box-shadow .22s var(--ease),border-color .22s}
+  a.card:hover{transform:translateY(-5px);box-shadow:0 24px 46px rgba(31,74,57,.14);border-color:var(--line-soft)}
+  .card-art{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--cream)}
+  .card-art img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+  a.card:hover .card-art img{transform:scale(1.045)}
+  .card-num{position:absolute;top:12px;inset-inline-end:12px;z-index:2;font-family:Georgia,serif;
+    font-size:14px;font-weight:700;color:#fff;background:rgba(31,74,57,.55);backdrop-filter:blur(4px);
+    width:34px;height:34px;border-radius:50%;display:grid;place-items:center;letter-spacing:.5px}
+  .soon-badge{position:absolute;top:14px;inset-inline-start:14px;z-index:2;font-size:11px;font-weight:700;
+    color:var(--gray);background:rgba(251,249,242,.9);backdrop-filter:blur(4px);border:1px solid var(--line);
+    padding:4px 11px;border-radius:999px;letter-spacing:.3px}
+  .card-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .card-body h4{font-family:var(--display);font-weight:700;font-size:19px;color:var(--forest);line-height:1.35}
+  .card-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .open{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:14px;color:var(--teal)}
+  .open .ar{transition:transform .2s var(--ease)}
+  a.card:hover .open .ar{transform:translateX(-4px)}
+  .tag-model{font-size:11px;font-weight:700;color:var(--ochre);background:rgba(192,146,46,.12);
+    border-radius:6px;padding:3px 9px}
+  .card.upcoming{background:var(--surface)}
+  .card.upcoming .card-art img{filter:saturate(.72) opacity(.9)}
+  .card.upcoming .muted{font-size:13px;color:var(--gray)}
 
-  /* شريط الهوية — صور حقيقية مدمجة كطابع بصري (بلا مسميات) */
-  .gq-identity-band{position:relative;margin:26px 0 6px;border-radius:20px;overflow:hidden;display:grid;grid-template-columns:repeat(6,1fr);box-shadow:0 12px 30px rgba(16,45,54,.14)}
-  .gq-identity-band .t{position:relative;aspect-ratio:1/1;overflow:hidden}
-  .gq-identity-band img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.72) contrast(1.02);transition:transform .5s ease}
-  .gq-identity-band:hover img{transform:scale(1.05)}
-  .gq-identity-band::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(120deg,rgba(0,62,69,.80),rgba(0,107,105,.52) 48%,rgba(45,122,75,.74))}
-  .gq-identity-band::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;box-shadow:inset 0 0 70px rgba(0,40,45,.55);border-radius:20px}
-  .gq-identity-cap{position:absolute;z-index:4;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;color:#fff;font-family:var(--head);font-size:clamp(18px,3.4vw,26px);letter-spacing:.5px;text-shadow:0 3px 14px rgba(0,0,0,.5)}
-  @media(max-width:640px){.gq-identity-band{grid-template-columns:repeat(4,1fr)}}
+  /* ============ Footer ============ */
+  .credit{margin-top:clamp(56px,8vw,96px);padding:clamp(30px,4vw,44px) 0;text-align:center;
+    border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:12px}
+  .credit .lbl{font-size:12.5px;color:var(--gray);letter-spacing:.4px}
+  .credit img{width:112px;height:auto;filter:drop-shadow(0 8px 16px rgba(31,74,57,.1));transition:transform .2s}
+  .credit a:hover img{transform:scale(1.04)}
+  .credit .name{font-family:var(--display);font-size:17px;color:var(--forest-2);text-decoration:none;font-weight:700}
+  .credit .name:hover{text-decoration:underline}
+  .credit .site{font-size:12.5px;color:var(--teal);text-decoration:none}
+  .foot{background:var(--forest);color:#fff;padding:clamp(44px,6vw,72px) 0 34px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:start}
+  .foot h3{font-family:var(--display);font-size:34px;margin-bottom:12px}
+  .foot .tag{font-size:15.5px;color:rgba(255,255,255,.72);line-height:2;max-width:40ch}
+  .foot-links{display:flex;flex-direction:column;gap:12px;justify-self:end}
+  .foot-links a{color:rgba(255,255,255,.82);text-decoration:none;font-size:15px;transition:color .2s}
+  .foot-links a:hover{color:#e7c98f}
+  .foot-base{border-top:1px solid rgba(255,255,255,.14);margin-top:40px;padding-top:22px;
+    font-size:12.5px;color:rgba(255,255,255,.6);text-align:center;line-height:2}
 
-  /* ===== حركات احترافية دقيقة ===== */
-  @keyframes heroDrift{from{transform:translate(-4%,-2%) scale(1)}to{transform:translate(6%,4%) scale(1.06)}}
-  .hero::after{content:"";position:absolute;inset:-25%;z-index:0;pointer-events:none;background:radial-gradient(circle at 32% 42%,rgba(199,154,59,.16),transparent 45%);animation:heroDrift 15s ease-in-out infinite alternate}
-  .brand-pill img{transition:transform .5s ease}
-  .brand-pill:hover img{transform:rotate(-6deg) scale(1.06)}
-  .hero-points span{transition:transform .2s ease,background .2s ease}
-  .hero-points span:hover{transform:translateY(-2px);background:rgba(255,252,245,.18)}
-  .gq-reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
-  .gq-reveal.is-in{opacity:1;transform:none}
+  /* ============ Motion ============ */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion: reduce){
-    .hero::after{animation:none}
-    .gq-reveal{opacity:1 !important;transform:none !important}
+    html{scroll-behavior:auto}
+    .reveal{opacity:1 !important;transform:none !important}
     *{transition:none !important;animation:none !important}
   }
 
-  @media(max-width:720px){
-    .general{grid-template-columns:1fr}
-    .general-art{display:none}
-    .hero{border-radius:0 0 26px 26px;padding:30px 0 26px;margin:0 0 22px}
-    .hero-inner{padding:0 20px}
-    .wrap{padding:0 14px 48px}
+  /* ============ Responsive ============ */
+  @media(max-width:980px){
+    .feature{grid-template-columns:1fr}
+    .feature-art{min-height:230px;order:-1}
+    .grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:820px){
+    .menu{position:fixed;inset:64px 14px auto 14px;background:var(--surface);border:1px solid var(--line);
+      border-radius:18px;flex-direction:column;align-items:stretch;gap:4px;padding:12px;
+      box-shadow:0 24px 50px rgba(31,74,57,.16);transform:translateY(-12px);opacity:0;pointer-events:none;transition:.25s}
+    .menu.open{transform:none;opacity:1;pointer-events:auto}
+    .menu a{padding:12px 16px;font-size:16px}
+    .menu a.cta{text-align:center;margin-top:4px}
+    .burger{display:flex}
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .hero-art{order:-1;max-width:460px;margin-inline:auto}
+    .flow-step{flex:1 1 100%;max-width:none;display:flex;align-items:flex-start;gap:16px;text-align:start;padding:14px 0}
+    .flow-step .dot{margin:4px 0 0}
+    .flow-step:not(:last-child)::after{display:none}
+    .flow-step .fs-c{flex:1}
+  }
+  @media(max-width:560px){
+    .grid{grid-template-columns:1fr;gap:16px}
+    .card-art{aspect-ratio:16/9}
+    .foot-grid{grid-template-columns:1fr;gap:26px}
+    .foot-links{justify-self:start}
+    .ch-head{flex-wrap:wrap}
+    .ch-head .count{margin-inline-start:0;flex-basis:100%}
   }
 </style>
 </head>
 <body>
-  <header class="hero">
-   <div class="hero-inner">
-    <div class="hero-top">
-      <div class="brand-pill">
-        <img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم" />
-        <b>نادي غرس القيم للطفولة<span>غرس الإيمان والقيم والمهارات</span></b>
+
+<!-- ============ Header ============ -->
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="غرس القيم — الصفحة الرئيسية">
+      <img src="brand/logo-ghars.webp" alt="" />
+      <span><b>غرس القيم</b><small>منهج بناء الطفل</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu" aria-label="القائمة الرئيسية">
+      <a href="#top">الرئيسية</a>
+      <a href="#philosophy">المنهج</a>
+      <a href="#units">الوحدات</a>
+      <a class="cta" href="intro-guide.html">الدليل العام</a>
+    </nav>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="shell hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">منهج غرس القيم</span>
+      <h1>غرس القيم</h1>
+      <p class="lede">منهجٌ متكامل لبناء الطفل إيمانًا وقيمًا ومهارات.</p>
+      <p>تجربةٌ تربويةٌ متكاملة تجعل الوحي والقيم جزءًا حيًّا من تعلّم الطفل وحياته اليومية — في مرحلة التمهيدي.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#units">استكشفي المنهج <span class="ar">←</span></a>
+        <a class="btn btn-ghost" href="intro-guide.html">ابدئي بالدليل العام</a>
       </div>
-      <div class="stage-badge">مرحلة التمهيدي<br />المنهج التكاملي للقيم</div>
     </div>
-    <h1 class="hero-title">منصّة <span class="accent">منهج غرس القيم</span></h1>
-    <p class="hero-sub">مدخل موحّد لأدلة المعلمة: يبدأ بالدليل التعريفي والتشغيلي الذي يشرح فلسفة المنهج وطريقة تشغيله، ثم أدلة الوحدات التكاملية جاهزة للتطبيق داخل الروضة.</p>
-    <div class="hero-points">
-      <span>◆ منظومة الوحي</span>
-      <span>◆ سبع مواد تكاملية</span>
-      <span>◆ أركان ومراكز تطبيقية</span>
-      <span>◆ تقويم ومتابعة</span>
+    <div class="hero-art reveal">
+      <span class="frame" aria-hidden="true"></span>
+      <figure>
+        <img src="units-art/intro-cover.jpg?v=13" alt="لوحة مائية تعبّر عن منهج غرس القيم: مرجٌ ودربٌ نحو النور" />
+      </figure>
+      <div class="chip"><b>لوحاتٌ مرسومةٌ يدويًّا</b><span>هويّة بصرية خاصة بكل وحدة</span></div>
     </div>
-   </div>
-  </header>
+  </div>
+</section>
 
-  <main class="wrap">
-    <section class="gq-identity-band" aria-label="من داخل روضة غرس القيم">
-      <div class="t"><img src="assets/gallery/photo-04.jpg" alt="" loading="lazy"></div>
-      <div class="t"><img src="assets/gallery/photo-02.jpg" alt="" loading="lazy"></div>
-      <div class="t"><img src="assets/gallery/photo-08.jpg" alt="" loading="lazy"></div>
-      <div class="t"><img src="assets/gallery/photo-14.jpg" alt="" loading="lazy"></div>
-      <div class="t"><img src="assets/gallery/photo-09.jpg" alt="" loading="lazy"></div>
-      <div class="t"><img src="assets/gallery/photo-05.jpg" alt="" loading="lazy"></div>
-      <div class="t"><img src="assets/gallery/photo-10.jpg" alt="" loading="lazy"></div>
-      <div class="t"><img src="assets/gallery/photo-13.jpg" alt="" loading="lazy"></div>
-      <div class="t"><img src="assets/gallery/photo-11.jpg" alt="" loading="lazy"></div>
-      <div class="t"><img src="assets/gallery/photo-06.jpg" alt="" loading="lazy"></div>
-      <div class="t"><img src="assets/gallery/photo-12.jpg" alt="" loading="lazy"></div>
-      <div class="t"><img src="assets/gallery/photo-15.jpg" alt="" loading="lazy"></div>
-      <span class="gq-identity-cap">من داخل روضة غرس القيم</span>
-    </section>
-
-    <!-- General guide (top band) -->
-    <div class="sec-head">
-      <span class="bar"></span>
-      <div><h2>الدليل العام للمنهج</h2><p>مرجع شامل لا يخص وحدة بعينها — افهمي المنهج قبل الدخول إلى الوحدات.</p></div>
+<!-- ============ Philosophy ============ -->
+<section class="band band-line philo" id="philosophy">
+  <div class="shell">
+    <div class="sec-head reveal" style="margin-bottom:8px">
+      <span class="eyebrow">فلسفة غرس القيم</span>
     </div>
+    <p class="statement reveal">نبني القيمة في قلب الطفل، <span class="soft">ثم نمنحه فرصة أن يعيشها.</span></p>
+    <p class="lede reveal">منهجٌ يبدأ من منظومة الوحي مرجعًا أعلى، فيغرس القيمة في وجدان الطفل عبر المواد التكاملية والتجربة التعليمية، ثم يتيح له تطبيقها في أركانه ومراكزه، ويتابع أثرها بالتقويم.</p>
 
-    <section class="general">
-      <div>
-        <span class="gtag">دليل عام · يُقرأ أولًا</span>
-        <h3>الدليل التعريفي والتشغيلي</h3>
-        <p>يعرّف فلسفة منهج غرس القيم ومنظومة الوحي التي يقوم عليها، ومكوّناته السبعة، وبنية اللقاء التعليمي، والأركان والمراكز، والمخطط الدراسي، وطريقة التقويم والمتابعة — ليكون بوصلة المعلمة قبل تنفيذ أي وحدة.</p>
-        <div class="chips">
-          <i>ابدئي من هنا</i><i>الرؤية والمنظومة</i><i>مكوّنات المنهج</i><i>خريطة المواد</i><i>المخطط الدراسي</i><i>اللياقة البدنية</i>
+    <div class="flow reveal" aria-label="بنية المنهج">
+      <div class="flow-step"><div class="fs-c"><span class="n">٠١</span><div class="dot"></div><b>منظومة الوحي</b><em>المرجعية العليا للمنهج</em></div></div>
+      <div class="flow-step"><div class="fs-c"><span class="n">٠٢</span><div class="dot"></div><b>المواد التكاملية</b><em>سبعُ موادّ تغرس القيمة</em></div></div>
+      <div class="flow-step"><div class="fs-c"><span class="n">٠٣</span><div class="dot"></div><b>التجربة التعليمية</b><em>لقاءاتٌ حيّة قصيرة</em></div></div>
+      <div class="flow-step"><div class="fs-c"><span class="n">٠٤</span><div class="dot"></div><b>التطبيق</b><em>أركانٌ ومراكزُ عملية</em></div></div>
+      <div class="flow-step"><div class="fs-c"><span class="n">٠٥</span><div class="dot"></div><b>التقويم والمتابعة</b><em>قياسُ الأثر ومتابعته</em></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ General guide feature ============ -->
+<section class="band">
+  <div class="shell">
+    <div class="feature reveal">
+      <div class="feature-copy">
+        <span class="eyebrow">ابدئي من هنا</span>
+        <h2>الدليل العام للمنهج</h2>
+        <p>البوصلة التي تشرح فلسفة غرس القيم، وبنيته، ومكوّناته السبعة، وطريقة تطبيقه وتقويمه — يُقرأ أولًا قبل الدخول إلى الوحدات.</p>
+        <div class="fpts">
+          <span>الرؤية والمنظومة</span><span>مكوّنات المنهج</span><span>خريطة المواد</span><span>المخطط الدراسي</span><span>التقويم والمتابعة</span>
         </div>
-        <a class="btn" href="intro-guide.html">افتحي الدليل التعريفي <span class="ar">←</span></a>
+        <a class="btn btn-gold" href="intro-guide.html">افتحي الدليل العام <span class="ar">←</span></a>
       </div>
-      <div class="general-art">
-        <img src="brand/seedling.webp" alt="غرس القيم" />
+      <div class="feature-art">
+        <img src="units-art/unit-kitab-allah.jpg?v=13" alt="لوحةٌ تمثّل مرجعية المنهج ومصادره" loading="lazy" />
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Units -->
-    <div class="sec-head">
-      <span class="bar"></span>
-      <div><h2>أدلة الوحدات التكاملية</h2><p>كل وحدة دليل مستقل بدروسها ومهامها وأركانها، مبني على الدليل العام.</p></div>
+<!-- ============ Unit collection ============ -->
+<section class="band band-line" id="units">
+  <div class="shell">
+    <div class="sec-head reveal">
+      <span class="eyebrow">أدلة الوحدات</span>
+      <h2>أدلة الوحدات التكاملية</h2>
+      <p>كل وحدةٍ تجربةٌ تربويةٌ متكاملة، مبنيّةٌ على منظومة المنهج.</p>
     </div>
 
-    <svg id="gq-wc-defs" width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-      <filter id="wc" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.013 0.016" numOctaves="3" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="10" xChannelSelector="R" yChannelSelector="G"/></filter>
-      <filter id="wcsoft" x="-35%" y="-35%" width="170%" height="170%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="7"/><feGaussianBlur stdDeviation="1.1"/></filter>
-      <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/></filter>
-      <filter id="wcEdge" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.011 0.014" numOctaves="3" seed="8" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="12" xChannelSelector="R" yChannelSelector="G"/></filter>
-      <filter id="wcBloom" x="-40%" y="-40%" width="180%" height="180%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="8"/><feGaussianBlur stdDeviation="2.4"/></filter>
-      <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"/></filter>
-    </defs></svg>
-    <style id="tl-css">
-.tl-year{position:relative;margin:6px auto 4px}
-.tl{position:relative;max-width:940px;margin:6px auto 0;padding:6px 0}
-.tl-spine{position:absolute;left:50%;transform:translateX(-50%);top:0;bottom:0;width:44px;z-index:0;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='150'%3E%3Cpath d='M22 0 Q46 37 22 75 Q-2 113 22 150' fill='none' stroke='%23cdb570' stroke-width='4' stroke-linecap='round' stroke-dasharray='1 12'/%3E%3C/svg%3E") repeat-y center top}
-.tl-mile,.tl-end{position:relative;z-index:2;text-align:center;margin:16px 0}
-.tl-mile span{display:inline-block;background:linear-gradient(135deg,#00434b,#006B69);color:#fff;font-weight:800;font-size:13px;border-radius:999px;padding:8px 20px;box-shadow:0 10px 24px rgba(0,67,75,.22);border:2px solid #e7c169}
-.tl-mile.soon-mile span{background:#efe7d6;color:#8a7f68;border-color:#d9cfbb;box-shadow:none}
-.tl-end span{display:inline-block;background:linear-gradient(135deg,#e7c169,#C79A3B);color:#3a2a06;font-weight:800;font-size:13px;border-radius:999px;padding:8px 20px;box-shadow:0 10px 22px rgba(199,154,59,.3)}
-.tl-item{position:relative;z-index:1;display:grid;grid-template-columns:1fr 92px 1fr;align-items:center;margin:11px 0;text-decoration:none;color:inherit}
-.tl-item::before{content:"";position:absolute;top:50%;width:32px;height:3px;background:#d9cdb0;z-index:0}
-.side-right::before{left:calc(50% + 22px)}
-.side-left::before{right:calc(50% + 22px)}
-.tl-node{grid-column:2;justify-self:center;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:17px;font-family:Tahoma,sans-serif;z-index:3}
-.tl-node.built{background:radial-gradient(circle at 34% 30%,#0a9f92,#006B69);color:#fff;box-shadow:0 0 0 5px #fff,0 0 0 8px #e7c169,0 8px 20px rgba(0,67,75,.28)}
-.tl-node.soon{background:#eae3d4;color:#a99e86;box-shadow:0 0 0 5px #fff,0 0 0 7px #e0d7c4}
-.tl-card{position:relative;background:#fff;border:1px solid #e8dfd0;border-radius:16px;padding:0;overflow:hidden;box-shadow:0 8px 22px rgba(0,50,55,.08);display:block;transition:transform .16s,box-shadow .16s}
-.tl-item:hover .tl-card{transform:translateY(-3px);box-shadow:0 16px 32px rgba(0,50,55,.14)}
-.side-right .tl-card{grid-column:3;border-inline-start:4px solid #006B69}
-.side-left .tl-card{grid-column:1;border-inline-end:4px solid #006B69}
-.tl-item.soon .tl-card{box-shadow:0 4px 14px rgba(0,50,55,.05);background:#fdfbf6}
-.side-right.soon .tl-card{border-inline-start-color:#d9cfbb}
-.side-left.soon .tl-card{border-inline-end-color:#d9cfbb}
-.tl-thumb{width:100%;height:112px;background-size:cover;background-position:center;background-repeat:no-repeat}
-.tl-item.soon .tl-thumb{filter:grayscale(.45);opacity:.72}
-.tl-info{padding:12px 15px}
-.tl-info h4{margin:0 0 5px;font-size:15px;color:#00434b;font-weight:800}
-.tl-info .st{display:inline-block;font-size:11px;font-weight:800;border-radius:6px;padding:2px 9px}
-.tl-info .st.built{background:#eaf6ee;color:#1e7a45}
-.tl-info .st.soon{background:#f1ece0;color:#9a8f78}
-.tl-info .st.model{background:#fbf0d6;color:#9a7526;margin-inline-start:5px}
-@media(max-width:640px){
-  .tl-spine{left:32px}
-  .tl-item{grid-template-columns:64px 1fr}
-  .tl-node{grid-column:1}
-  .side-right .tl-card,.side-left .tl-card{grid-column:2;border-inline:0;border-inline-start:4px solid #006B69}
-  .side-left.soon .tl-card,.side-right.soon .tl-card{border-inline-start-color:#d9cfbb}
-  .tl-item::before{left:56px;right:auto;width:14px}
-  .tl-mile,.tl-end{text-align:right;padding-inline-start:6px}
-}
-</style>
-<div class="tl-year">
-<div class="tl">
-<div class="tl-spine"></div>
+    <!-- الفصل الأول -->
+    <div class="chapter">
+      <div class="ch-head reveal"><span class="idx">الفصل الأول</span><h3>الفصل الدراسي الأول</h3><span class="count">٤ وحدات</span></div>
+      <div class="grid">
+        <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">١</span><img src="units-art/unit-makhlouq.jpg?v=13" alt="وحدة أنا مخلوقٌ كرّمني الله" loading="lazy"></div><div class="card-body"><h4>أنا مخلوقٌ كرّمني الله</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
+        <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">٢</span><img src="units-art/unit-mumin.jpg?v=13" alt="وحدة أنا مؤمن" loading="lazy"></div><div class="card-body"><h4>أنا مؤمن</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
+        <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">٣</span><img src="units-art/unit-kitab-allah.jpg?v=13" alt="وحدة أنا مع كتاب الله" loading="lazy"></div><div class="card-body"><h4>أنا مع كتاب الله</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
+        <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">٤</span><img src="units-art/unit-nabi-muhammad.jpg?v=13" alt="وحدة نبيّي محمد ﷺ" loading="lazy"></div><div class="card-body"><h4>نبيّي محمد ﷺ</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
+      </div>
+    </div>
 
-<div class="tl-mile"><span>الفصل الدراسي الأول · ٤ وحدات</span></div>
+    <!-- الفصل الثاني -->
+    <div class="chapter">
+      <div class="ch-head reveal"><span class="idx">الفصل الثاني</span><h3>الفصل الدراسي الثاني</h3><span class="count">٩ وحدات</span></div>
+      <div class="grid">
+        <a class="card reveal" href="unit-family.html"><div class="card-art"><span class="card-num">٥</span><img src="units-art/unit-family.jpg?v=13" alt="وحدة العائلة" loading="lazy"></div><div class="card-body"><h4>العائلة</h4><div class="card-foot"><span class="open">افتحي الدليل <span class="ar">←</span></span></div></div></a>
+        <a class="card reveal" href="unit-maskan.html"><div class="card-art"><span class="card-num">٦</span><img src="units-art/unit-maskan.jpg?v=13" alt="وحدة المسكن" loading="lazy"></div><div class="card-body"><h4>المسكن</h4><div class="card-foot"><span class="open">افتحي الدليل <span class="ar">←</span></span></div></div></a>
+        <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">٧</span><img src="units-art/unit-ashab.jpg?v=13" alt="وحدة الأصحاب" loading="lazy"></div><div class="card-body"><h4>الأصحاب</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
+        <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">٨</span><img src="units-art/unit-amal-mal.jpg?v=13" alt="وحدة المال والعمل" loading="lazy"></div><div class="card-body"><h4>المال والعمل</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
+        <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">٩</span><img src="units-art/unit-water-food.jpg?v=13" alt="وحدة الماء والغذاء" loading="lazy"></div><div class="card-body"><h4>الماء والغذاء</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
+        <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">١٠</span><img src="units-art/unit-sihha.jpg?v=13" alt="وحدة نعمة الصحة" loading="lazy"></div><div class="card-body"><h4>نعمة الصحة</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
+        <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">١١</span><img src="units-art/unit-islam-deeni.jpg?v=13" alt="وحدة الإسلام ديني" loading="lazy"></div><div class="card-body"><h4>الإسلام ديني</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
+        <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">١٢</span><img src="units-art/unit-warif.jpg?v=13" alt="وحدة وريف" loading="lazy"></div><div class="card-body"><h4>وريف</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
+        <a class="card reveal" href="unit-layl-nahar.html"><div class="card-art"><span class="card-num">١٣</span><img src="units-art/unit-layl-nahar.jpg?v=13" alt="وحدة الليل والنهار — الوحدة النموذجية" loading="lazy"></div><div class="card-body"><h4>الليل والنهار</h4><div class="card-foot"><span class="open">افتحي الدليل <span class="ar">←</span></span><span class="tag-model">نموذجية</span></div></div></a>
+      </div>
+    </div>
 
-<div class="tl-item side-right soon"><span class="tl-node soon">١</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-makhlouq.jpg?v=13')"></div>
-<div class="tl-info"><h4>أنا مخلوقٌ كرّمني الله</h4><span class="st soon">قريبًا</span></div></div></div>
+    <!-- الفصل الثالث -->
+    <div class="chapter">
+      <div class="ch-head reveal"><span class="idx">الفصل الثالث</span><h3>الفصل الدراسي الثالث</h3><span class="count">٥ وحدات</span></div>
+      <div class="grid">
+        <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">١٤</span><img src="units-art/unit-ramadan.jpg?v=13" alt="وحدة خير الشهور" loading="lazy"></div><div class="card-body"><h4>خير الشهور</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
+        <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">١٥</span><img src="units-art/unit-khayr-quroon.jpg?v=13" alt="وحدة خير القرون" loading="lazy"></div><div class="card-body"><h4>خير القرون</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
+        <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">١٦</span><img src="units-art/unit-past-present.jpg?v=13" alt="وحدة الماضي والحاضر" loading="lazy"></div><div class="card-body"><h4>الماضي والحاضر</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
+        <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">١٧</span><img src="units-art/unit-azmina-mubaraka.jpg?v=13" alt="وحدة أزمنة مباركة" loading="lazy"></div><div class="card-body"><h4>أزمنة مباركة</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
+        <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">١٨</span><img src="units-art/unit-abqariyat.jpg?v=13" alt="وحدة عبقريات" loading="lazy"></div><div class="card-body"><h4>عبقريات</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
+      </div>
+    </div>
 
-<div class="tl-item side-left soon"><span class="tl-node soon">٢</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-mumin.jpg?v=13')"></div>
-<div class="tl-info"><h4>أنا مؤمن</h4><span class="st soon">قريبًا</span></div></div></div>
+    <!-- إسناد التطوير — شركة حضارة -->
+    <div class="credit reveal">
+      <span class="lbl">إعداد وتطوير وإخراج دليل المعلمة</span>
+      <a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener"><img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية"></a>
+      <a class="name" href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener">شركة حضارة للاستشارات التربوية والتعليمية</a>
+      <a class="site" href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener">www.hadarah-consulting.com</a>
+    </div>
+  </div>
+</section>
 
-<div class="tl-item side-right soon"><span class="tl-node soon">٣</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-kitab-allah.jpg?v=13')"></div>
-<div class="tl-info"><h4>أنا مع كتاب الله</h4><span class="st soon">قريبًا</span></div></div></div>
+<!-- ============ Footer ============ -->
+<footer class="foot">
+  <div class="shell">
+    <div class="foot-grid">
+      <div>
+        <h3>غرس القيم</h3>
+        <p class="tag">منهجٌ متكامل لبناء الطفل إيمانًا وقيمًا ومهارات، في مرحلة التمهيدي.</p>
+      </div>
+      <nav class="foot-links" aria-label="روابط سريعة">
+        <a href="#top">الرئيسية</a>
+        <a href="#philosophy">فلسفة المنهج</a>
+        <a href="#units">أدلة الوحدات</a>
+        <a href="intro-guide.html">الدليل العام</a>
+      </nav>
+    </div>
+    <div class="foot-base">نادي غرس القيم لضيافة الأطفال · جميع الحقوق محفوظة © ٢٠٢٦</div>
+  </div>
+</footer>
 
-<div class="tl-item side-left soon"><span class="tl-node soon">٤</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-nabi-muhammad.jpg?v=13')"></div>
-<div class="tl-info"><h4>نبيّي محمد ﷺ</h4><span class="st soon">قريبًا</span></div></div></div>
-
-<div class="tl-mile"><span>الفصل الدراسي الثاني · ٩ وحدات</span></div>
-
-<a class="tl-item side-right" href="unit-family.html"><span class="tl-node built">٥</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-family.jpg?v=13')"></div>
-<div class="tl-info"><h4>العائلة</h4><span class="st built">مكتملة</span></div></div></a>
-
-<a class="tl-item side-left" href="unit-maskan.html"><span class="tl-node built">٦</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-maskan.jpg?v=13')"></div>
-<div class="tl-info"><h4>المسكن</h4><span class="st built">مكتملة</span></div></div></a>
-
-<div class="tl-item side-right soon"><span class="tl-node soon">٧</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-ashab.jpg?v=13')"></div>
-<div class="tl-info"><h4>الأصحاب</h4><span class="st soon">قريبًا</span></div></div></div>
-
-<div class="tl-item side-left soon"><span class="tl-node soon">٨</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-amal-mal.jpg?v=13')"></div>
-<div class="tl-info"><h4>المال والعمل</h4><span class="st soon">قريبًا</span></div></div></div>
-
-<div class="tl-item side-right soon"><span class="tl-node soon">٩</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-water-food.jpg?v=13')"></div>
-<div class="tl-info"><h4>الماء والغذاء</h4><span class="st soon">قريبًا</span></div></div></div>
-
-<div class="tl-item side-left soon"><span class="tl-node soon">١٠</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-sihha.jpg?v=13')"></div>
-<div class="tl-info"><h4>نعمة الصحة</h4><span class="st soon">قريبًا</span></div></div></div>
-
-<div class="tl-item side-right soon"><span class="tl-node soon">١١</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-islam-deeni.jpg?v=13')"></div>
-<div class="tl-info"><h4>الإسلام ديني</h4><span class="st soon">قريبًا</span></div></div></div>
-
-<div class="tl-item side-left soon"><span class="tl-node soon">١٢</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-warif.jpg?v=13')"></div>
-<div class="tl-info"><h4>وريف</h4><span class="st soon">قريبًا</span></div></div></div>
-
-<a class="tl-item side-right" href="unit-layl-nahar.html"><span class="tl-node built">١٣</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-layl-nahar.jpg?v=13')"></div>
-<div class="tl-info"><h4>الليل والنهار</h4><span class="st built">مكتملة</span><span class="st model">نموذجية</span></div></div></a>
-
-<div class="tl-mile soon-mile"><span>الفصل الدراسي الثالث · ٥ وحدات</span></div>
-
-<div class="tl-item side-left soon"><span class="tl-node soon">١٤</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-ramadan.jpg?v=13')"></div>
-<div class="tl-info"><h4>خير الشهور</h4><span class="st soon">قريبًا</span></div></div></div>
-
-<div class="tl-item side-right soon"><span class="tl-node soon">١٥</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-khayr-quroon.jpg?v=13')"></div>
-<div class="tl-info"><h4>خير القرون</h4><span class="st soon">قريبًا</span></div></div></div>
-
-<div class="tl-item side-left soon"><span class="tl-node soon">١٦</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-past-present.jpg?v=13')"></div>
-<div class="tl-info"><h4>الماضي والحاضر</h4><span class="st soon">قريبًا</span></div></div></div>
-
-<div class="tl-item side-right soon"><span class="tl-node soon">١٧</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-azmina-mubaraka.jpg?v=13')"></div>
-<div class="tl-info"><h4>أزمنة مباركة</h4><span class="st soon">قريبًا</span></div></div></div>
-
-<div class="tl-item side-left soon"><span class="tl-node soon">١٨</span>
-<div class="tl-card"><div class="tl-thumb" style="background-image:url('units-art/unit-abqariyat.jpg?v=13')"></div>
-<div class="tl-info"><h4>عبقريات</h4><span class="st soon">قريبًا</span></div></div></div>
-
-<div class="tl-end"><span>ختام العام</span></div>
-</div>
-</div>
-
-    <section class="dev-credit">
-      <span class="dc-label">إعداد وتطوير وإخراج دليل المعلمة</span>
-      <a class="dc-logo" href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener">
-        <img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية" />
-      </a>
-      <a class="dc-name" href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener">شركة حضارة للاستشارات التربوية والتعليمية</a>
-      <a class="dc-site" href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener">www.hadarah-consulting.com</a>
-    </section>
-
-    <footer class="foot">
-      <div>نادي غرس القيم لضيافة الأطفال · جميع الحقوق محفوظة © 2026</div>
-    </footer>
-  </main>
 <script>
 (function(){
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce) return;
-  var targets = [].slice.call(document.querySelectorAll('.sec-head, .general, .unit, .tl-item, .tl-mile, .tl-end, .gq-identity-band, .dev-credit, .foot'));
-  targets.forEach(function(el){ el.classList.add('gq-reveal'); });
-  [].slice.call(document.querySelectorAll('.units .unit')).forEach(function(el,i){ el.style.transitionDelay=(i*0.08)+'s'; });
-  [].slice.call(document.querySelectorAll('.tl .tl-item, .tl .tl-mile, .tl .tl-end')).forEach(function(el,i){ el.style.transitionDelay=((i%5)*0.05)+'s'; });
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); } });
-    }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
-    targets.forEach(function(el){ io.observe(el); });
-  } else { targets.forEach(function(el){ el.classList.add('is-in'); }); }
-  var hero = [].slice.call(document.querySelectorAll('.brand-pill,.stage-badge,.hero-title,.hero-sub,.hero-points'));
-  hero.forEach(function(el,i){ el.style.opacity='0'; el.style.transform='translateY(16px)'; el.style.transition='opacity .7s cubic-bezier(.22,.61,.36,1) '+(i*0.09)+'s, transform .7s cubic-bezier(.22,.61,.36,1) '+(i*0.09)+'s'; });
-  requestAnimationFrame(function(){ requestAnimationFrame(function(){ hero.forEach(function(el){ el.style.opacity='1'; el.style.transform='none'; }); }); });
+  /* mobile menu */
+  var burger=document.getElementById('burger'), menu=document.getElementById('menu');
+  if(burger){
+    burger.addEventListener('click',function(){
+      var open=menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded',open?'true':'false');
+    });
+    menu.addEventListener('click',function(e){ if(e.target.tagName==='A'){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }});
+  }
+  /* sticky nav shadow */
+  var nav=document.getElementById('nav');
+  var onScroll=function(){ nav.classList.toggle('stuck', window.scrollY>8); };
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+  /* reveal on scroll */
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items=[].slice.call(document.querySelectorAll('.reveal'));
+  if(reduce||!('IntersectionObserver' in window)){ items.forEach(function(el){el.classList.add('in');}); return; }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  items.forEach(function(el){ io.observe(el); });
 })();
 </script>
 </body>
