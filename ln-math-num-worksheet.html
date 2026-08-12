@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ورقة عمل: الأعداد ١٠ · ١١ · ١٢ — مهاراتي · وحدة الليل والنهار</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#5c1010;--t2:#8B0000;--gold:#C79A3B;--ink:#1e2b2a;--muted:#5f6f6c;--line:#d9cbb6;--soft:#fdf3f3}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.8;font-size:15px;background:#efe9dd;padding:18px}
+.sheet{max-width:820px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 30px 34px;box-shadow:0 8px 26px rgba(50,10,10,.08)}
+h1,h2,h3,.badge{font-family:var(--fd)}
+.head{display:flex;align-items:center;gap:14px;border-bottom:3px solid var(--t2);padding-bottom:14px;margin-bottom:8px}
+.head img{width:64px;height:64px;object-fit:contain}
+.head .t{flex:1}
+.badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:999px;padding:3px 13px;font-size:12.5px;font-weight:700;margin-bottom:5px}
+.head h1{font-size:24px;color:var(--t1);line-height:1.3}
+.head .sub{font-size:12.5px;color:var(--muted)}
+.namerow{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0 4px;font-size:13.5px;color:var(--t1);font-weight:700}
+.namerow span{flex:1;min-width:180px;border-bottom:2px dotted var(--line);padding-bottom:4px}
+.act{margin-top:22px;break-inside:avoid}
+.act-h{display:flex;align-items:center;gap:9px;margin-bottom:6px}
+.act-h .n{width:28px;height:28px;border-radius:50%;background:var(--t2);color:#fff;display:grid;place-items:center;font-family:var(--fd);font-weight:700;font-size:15px;flex:0 0 auto}
+.act-h h2{font-size:17px;color:var(--t1)}
+.act .hint{font-size:12.5px;color:var(--muted);margin:0 0 10px 37px}
+/* تتبّع الأعداد */
+.tracerow{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
+.tracecell{display:flex;flex-direction:column;align-items:center;gap:8px}
+.tracecell .big{font-family:var(--fd);font-size:74px;font-weight:700;line-height:1;color:#fff;-webkit-text-stroke:2px #d8bcbc;letter-spacing:4px}
+.wbox{display:flex;gap:8px}
+.wbox i{width:44px;height:56px;border:2px dashed #c9b79a;border-radius:9px;background:var(--soft);display:block}
+/* عدّ النجوم */
+.stars{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;max-width:420px;margin:0 auto}
+.star{aspect-ratio:1;background:radial-gradient(circle at 40% 35%,#f6e2a8,#d9a83c);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.countbox{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;font-weight:700;color:var(--t1)}
+.countbox .b{width:52px;height:52px;border:2px solid var(--t2);border-radius:12px;background:#fff}
+/* تسلسل */
+.numline{display:grid;grid-template-columns:repeat(auto-fit,minmax(44px,1fr));gap:7px;max-width:640px;margin:0 auto}
+.nl{height:48px;border-radius:10px;border:2px solid var(--line);display:grid;place-items:center;font-family:var(--fd);font-weight:700;font-size:19px;color:var(--t1);background:#fff}
+.nl.blank{border-style:dashed;border-color:var(--t2);background:var(--soft)}
+/* إطار العشرة */
+.tenrow{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:center;margin-bottom:14px}
+.tenrow .lead{font-family:var(--fd);font-size:20px;font-weight:700;color:var(--t2);min-width:120px}
+.tframe{display:grid;grid-template-columns:repeat(5,40px);grid-auto-rows:40px;gap:5px;border:2px solid var(--t2);border-radius:10px;padding:6px;background:#fff}
+.cell{border:1px solid #e2d3b8;border-radius:7px}
+.cell.f{background:radial-gradient(circle at 35% 30%,#f6e2a8,#d9a83c);border-color:#b8892c}
+.plus{font-family:var(--fd);font-size:26px;color:var(--t2);font-weight:700}
+.fives{display:grid;grid-template-columns:repeat(5,36px);gap:6px}
+.fives .cell{width:36px;height:36px}
+.eq{font-family:var(--fd);font-size:30px;color:var(--t2);font-weight:700}
+.foot{margin-top:20px;border-top:1px dashed var(--line);padding-top:9px;font-size:11.5px;color:var(--muted);text-align:center}
+.printbtn{display:block;margin:14px auto 0;background:var(--t2);color:#fff;border:0;border-radius:999px;padding:9px 22px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
+@media print{body{background:#fff;padding:0}.sheet{box-shadow:none;border:0;border-radius:0;max-width:100%}.printbtn{display:none}}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="head">
+    <img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم"/>
+    <div class="t">
+      <span class="badge">مهاراتي · وحدة الليل والنهار</span>
+      <h1>ورقة عمل: الأعداد ١٠ · ١١ · ١٢</h1>
+      <div class="sub">المرتبط بدرس مهاراتي — مراجعة الأعداد عشرة وأحد عشر واثني عشر · المرحلة التمهيدية (5–6 سنوات)</div>
+    </div>
+  </div>
+  <div class="namerow"><span>الاسم: ⋯⋯⋯⋯⋯⋯⋯⋯</span><span>التاريخ: ⋯⋯⋯⋯⋯⋯</span></div>
+
+  <!-- ١: تتبّع واكتب -->
+  <div class="act">
+    <div class="act-h"><span class="n">١</span><h2>تتبّع واكتب</h2></div>
+    <p class="hint">تتبّع كلّ عددٍ ثمّ اكتبه بنفسك في المربّعات.</p>
+    <div class="tracerow">
+      <div class="tracecell"><span class="big">١٠</span><div class="wbox"><i></i><i></i></div></div>
+      <div class="tracecell"><span class="big">١١</span><div class="wbox"><i></i><i></i></div></div>
+      <div class="tracecell"><span class="big">١٢</span><div class="wbox"><i></i><i></i></div></div>
+    </div>
+  </div>
+
+  <!-- ٢: عُدّ النجوم -->
+  <div class="act">
+    <div class="act-h"><span class="n">٢</span><h2>عُدّ نجوم الليل واكتب العدد</h2></div>
+    <p class="hint">عُدّ النجوم ثمّ اكتب عددها في المربّع.</p>
+    <div class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+    <div class="countbox">عددها = <span class="b"></span></div>
+  </div>
+
+  <!-- ٣: أكمل التسلسل -->
+  <div class="act">
+    <div class="act-h"><span class="n">٣</span><h2>أكمل التسلسل ١ ← ١٢</h2></div>
+    <p class="hint">اكتب الأعداد الناقصة في المربّعات المتقطّعة.</p>
+    <div class="numline">
+      <div class="nl">١</div><div class="nl">٢</div><div class="nl blank"></div><div class="nl">٤</div><div class="nl">٥</div><div class="nl blank"></div>
+      <div class="nl">٧</div><div class="nl">٨</div><div class="nl blank"></div><div class="nl">١٠</div><div class="nl blank"></div><div class="nl">١٢</div>
+    </div>
+  </div>
+
+  <!-- ٤: كوّن العدد بإطار العشرة -->
+  <div class="act">
+    <div class="act-h"><span class="n">٤</span><h2>كوّن العدد = عشرة وآحاد</h2></div>
+    <p class="hint">لوّن الخانات الفارغة لتُكمل الآحاد مع العشرة، فيصير المجموع كما هو مكتوب.</p>
+    <div class="tenrow">
+      <span class="lead">١١ = عشرة وواحد</span>
+      <div class="tframe">
+        <span class="cell f"></span><span class="cell f"></span><span class="cell f"></span><span class="cell f"></span><span class="cell f"></span>
+        <span class="cell f"></span><span class="cell f"></span><span class="cell f"></span><span class="cell f"></span><span class="cell f"></span>
+      </div>
+      <span class="plus">+</span>
+      <div class="fives"><span class="cell"></span></div>
+      <span class="eq">= ١١</span>
+    </div>
+    <div class="tenrow">
+      <span class="lead">١٢ = عشرة واثنان</span>
+      <div class="tframe">
+        <span class="cell f"></span><span class="cell f"></span><span class="cell f"></span><span class="cell f"></span><span class="cell f"></span>
+        <span class="cell f"></span><span class="cell f"></span><span class="cell f"></span><span class="cell f"></span><span class="cell f"></span>
+      </div>
+      <span class="plus">+</span>
+      <div class="fives"><span class="cell"></span><span class="cell"></span></div>
+      <span class="eq">= ١٢</span>
+    </div>
+  </div>
+
+  <div class="foot">نادي غرس القيم لضيافة الأطفال · وحدة الليل والنهار — مهاراتي (الأعداد ١٠·١١·١٢) · تُنفَّذ بعد المحسوس، والعدّ نعمةٌ نشكر الله عليها.</div>
+  <button class="printbtn" onclick="window.print()"><i class="gi gi-dark" data-i="طباعة / PDF" data-size="18"></i> طباعة الورقة</button>
+</div>
+<script src="brand/guide-icons.js?v=2"></script>
+</body>
+</html>
