@@ -124,61 +124,69 @@
   .flow-step:not(:last-child)::after{content:"";position:absolute;top:calc(14px + 18px);inset-inline-start:-50%;
     width:100%;height:2px;background:linear-gradient(90deg,var(--line),var(--line));z-index:0}
 
-  /* ===== منظومتان: نظام الوحي المتّسق × نظام الشيطان المبعثر ===== */
+  /* ===== مقارنة المنظومتين — إطارٌ واحد، عالمان يلتقيان على محور ===== */
   .wahy{background:linear-gradient(180deg,#F6F1E4,#F1EAD9)}
-  .orbit-wrap{position:relative;max-width:1000px;margin:clamp(30px,4.5vw,54px) auto 0;
-    display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,30px);align-items:stretch}
-  .orbit{position:relative;border-radius:26px;overflow:hidden;padding:clamp(20px,2.6vw,30px);display:flex;flex-direction:column}
-  .orbit.ours{background:radial-gradient(120% 92% at 50% 0%,#FFFDF6,#F6EEDB);
-    box-shadow:0 34px 74px rgba(122,92,20,.20);border:1px solid rgba(199,154,59,.3)}
-  .orbit.other{background:radial-gradient(120% 92% at 50% 0%,#23282C,#14181B);
-    box-shadow:0 34px 74px rgba(0,0,0,.36);border:1px solid rgba(80,88,96,.45)}
-  .orbit-hd{display:flex;align-items:center;gap:12px;margin-bottom:4px}
-  .orbit-hd .emblem{width:44px;height:44px;flex:0 0 auto;display:grid;place-items:center;border-radius:50%}
-  .orbit.ours .emblem{background:radial-gradient(circle at 40% 35%,#fff,#f3e2b8);box-shadow:0 0 0 1.5px var(--gold),0 0 26px rgba(199,154,59,.5)}
-  .orbit.other .emblem{background:#262b2f;box-shadow:0 0 0 1px #3a4046,inset 0 0 14px rgba(0,0,0,.6)}
-  .o-name small{display:block;font-size:10px;letter-spacing:3px;font-weight:700}
-  .o-name b{font-family:var(--display);font-weight:700;font-size:clamp(18px,2.4vw,25px);line-height:1.2}
-  .orbit.ours .o-name small{color:#b0821f}.orbit.ours .o-name b{color:var(--forest)}
-  .orbit.other .o-name small{color:#7a828b}.orbit.other .o-name b{color:#b9bfc6}
-  .canvas{position:relative;aspect-ratio:1/1;width:100%;max-width:360px;margin:8px auto 6px}
-  .canvas>svg{position:absolute;inset:0;width:100%;height:100%}
-  .chip{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;text-align:center;
-    display:flex;flex-direction:column;gap:1px;border-radius:13px;line-height:1.15}
-  .chip b{font-family:var(--display);font-weight:700;line-height:1.15}
-  .chip i{font-style:normal;font-size:9px;letter-spacing:.6px;font-weight:700;opacity:.85}
-  .core{padding:11px 17px;z-index:3}
-  .orbit.ours .core{background:radial-gradient(circle at 42% 34%,#fff,#f6ebcd);border:1.5px solid var(--gold);
-    box-shadow:0 0 40px rgba(199,154,59,.42),0 10px 24px rgba(120,90,20,.2)}
-  .orbit.other .core{background:#23282d;border:1px solid #3d444b;box-shadow:inset 0 0 18px rgba(0,0,0,.6)}
-  .core b{font-size:clamp(20px,2.6vw,26px)}
-  .orbit.ours .core b{color:var(--forest)}.orbit.ours .core i{color:#b0821f}
-  .orbit.other .core b{color:#cbd0d6}.orbit.other .core i{color:#828a92}
-  .sat{padding:6px 12px}
-  .orbit.ours .sat{background:rgba(255,253,246,.9);border:1px solid rgba(199,154,59,.32);box-shadow:0 6px 16px rgba(120,90,20,.13)}
-  .orbit.other .sat{background:rgba(28,33,37,.92);border:1px solid rgba(88,96,104,.5);box-shadow:0 6px 16px rgba(0,0,0,.4)}
-  .sat b{font-size:clamp(13.5px,1.7vw,17px)}
-  .orbit.ours .sat b{color:var(--forest)}.orbit.ours .sat i{color:#a9862f}
-  .orbit.other .sat b{color:#a9afb6}.orbit.other .sat i{color:#79818a}
-  .orbit.ours .sat.fruit{border-color:var(--gold);box-shadow:0 0 26px rgba(199,154,59,.4),0 6px 16px rgba(120,90,20,.16)}
-  .orbit.ours .sat.fruit b{color:#b98a1e;text-shadow:0 0 18px rgba(199,154,59,.4)}
-  .orbit.other .sat.fruit{opacity:.62}
-  .o-foot{margin-top:auto;padding-top:14px;border-top:1px solid;text-align:center}
-  .orbit.ours .o-foot{border-color:rgba(199,154,59,.26)}
-  .orbit.other .o-foot{border-color:rgba(88,96,104,.4)}
-  .o-foot small{display:block;font-size:9.5px;letter-spacing:2px;font-weight:700;margin-bottom:3px}
-  .o-foot b{font-family:var(--display);font-weight:700;font-size:clamp(14px,1.9vw,18px);line-height:1.4}
-  .orbit.ours .o-foot small{color:#b0821f}.orbit.ours .o-foot b{color:var(--forest-2)}
-  .orbit.other .o-foot small{color:#767e87}.orbit.other .o-foot b{color:#9aa0a8}
-  .vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:6;width:48px;height:48px;border-radius:50%;
-    background:#fff;border:1.5px solid var(--gold);color:var(--ochre);display:grid;place-items:center;
-    font-weight:700;font-size:12.5px;box-shadow:0 12px 26px rgba(31,74,57,.2)}
+  .sys{position:relative;max-width:940px;margin:clamp(30px,4.5vw,52px) auto 0;border-radius:28px;overflow:hidden;
+    box-shadow:0 40px 90px rgba(20,40,35,.30);isolation:isolate}
+  .sys::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(to left,#FCF9F0 0 50%,#1C2226 50% 100%)}
+  .sys::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(520px 300px at 76% 122%,rgba(199,154,59,.32),transparent 60%),
+              radial-gradient(420px 250px at 88% 2%,rgba(46,106,77,.14),transparent 62%),
+              radial-gradient(440px 280px at 12% -12%,rgba(0,0,0,.5),transparent 60%),
+              radial-gradient(340px 280px at 6% 112%,rgba(0,0,0,.32),transparent 62%)}
+  .sys-inner{position:relative;z-index:2;padding:clamp(24px,3.2vw,40px) clamp(16px,3vw,32px)}
+  .sys-inner::before{content:"";position:absolute;z-index:1;top:100px;bottom:96px;right:50%;transform:translateX(50%);width:2px;
+    background:linear-gradient(180deg,rgba(199,154,59,0),#cBA24E 12%,#cBA24E 88%,rgba(199,154,59,0));
+    box-shadow:0 0 16px rgba(199,154,59,.45)}
+  .sys-heads,.crow,.sys-foot{display:grid;grid-template-columns:1fr 176px 1fr;align-items:center}
+  .sys-heads{margin-bottom:16px;padding-bottom:6px;position:relative;z-index:3}
+  .shd{display:flex;align-items:center;gap:11px}
+  .shd.ours{justify-content:flex-start}
+  .shd.other{justify-content:flex-end;text-align:end}
+  .shd .emblem{width:46px;height:46px;flex:0 0 auto;display:grid;place-items:center;border-radius:50%}
+  .shd.ours .emblem{background:radial-gradient(circle at 40% 35%,#fff,#f3e2b8);box-shadow:0 0 0 1.5px var(--gold),0 0 28px rgba(199,154,59,.55)}
+  .shd.other .emblem{background:#262b2f;box-shadow:0 0 0 1px #3a4046,inset 0 0 14px rgba(0,0,0,.6)}
+  .shd .nm small{display:block;font-size:10px;letter-spacing:2.5px;font-weight:700}
+  .shd .nm b{font-family:var(--display);font-weight:700;font-size:clamp(17px,2.3vw,24px);line-height:1.2}
+  .shd.ours .nm small{color:#b0821f}.shd.ours .nm b{color:var(--forest)}
+  .shd.other .nm small{color:#7a828b}.shd.other .nm b{color:#b9bfc6}
+  .seal{justify-self:center;width:52px;height:52px;border-radius:50%;background:#fff;border:1.5px solid var(--gold);
+    color:var(--ochre);display:grid;place-items:center;font-weight:700;font-size:12px;
+    box-shadow:0 12px 26px rgba(31,74,57,.2);position:relative;z-index:3}
+  .crow{padding:14px 0;position:relative}
+  .ans{font-family:var(--display);font-weight:700;line-height:1.22}
+  .ans.ours{text-align:end;color:var(--forest);font-size:clamp(19px,2.5vw,29px);padding-inline-end:16px}
+  .ans.other{text-align:start;color:#a9afb6;font-size:clamp(15px,1.9vw,20px);padding-inline-start:16px}
+  .crow.r2 .ans.other{opacity:.9}.crow.r3 .ans.other{opacity:.82}
+  .crow.r4 .ans.other{opacity:.74}.crow.r5 .ans.other{opacity:.66}
+  .crow.crown .ans.ours{color:var(--gold);text-shadow:0 0 28px rgba(199,154,59,.5)}
+  .crow.crown .ans.other{opacity:.5}
+  .qn{justify-self:center;position:relative;display:flex;justify-content:center;z-index:2}
+  .qn::before,.qn::after{content:"";position:absolute;top:50%;height:1px;width:30px;z-index:0}
+  .qn::before{right:100%;background:linear-gradient(to left,rgba(199,154,59,.6),transparent)}
+  .qn::after{left:100%;background:linear-gradient(to right,rgba(120,130,140,.45),transparent)}
+  .qn i{font-style:normal;font-size:9.5px;letter-spacing:.4px;font-weight:700;color:#8a7f5c;white-space:nowrap;line-height:1.4;
+    background:#FBF6EA;border:1px solid #e7d9ba;border-radius:999px;padding:5px 13px;position:relative;z-index:2;
+    box-shadow:0 5px 14px rgba(20,40,35,.18)}
+  .sys-foot{margin-top:12px;padding-top:18px;border-top:1px solid rgba(150,140,110,.2)}
+  .sfoot{display:flex;flex-direction:column;gap:3px}
+  .sfoot.ours{text-align:end}.sfoot.other{text-align:start}
+  .sfoot small{font-size:9.5px;letter-spacing:2px;font-weight:700}
+  .sfoot.ours small{color:#b0821f}.sfoot.other small{color:#767e87}
+  .sfoot b{font-family:var(--display);font-size:clamp(13.5px,1.8vw,18px);font-weight:700;line-height:1.35}
+  .sfoot.ours b{color:var(--forest-2)}.sfoot.other b{color:#9aa0a8}
   .wahy-note{margin-top:28px;text-align:center;font-size:13.5px;color:var(--gray);line-height:2;max-width:72ch;margin-inline:auto}
   .wahy-note b{color:var(--forest);font-weight:700}
-  @media(max-width:720px){
-    .orbit-wrap{grid-template-columns:1fr;gap:0}
-    .vs{position:static;transform:none;margin:-8px auto}
-    .orbit+.orbit{margin-top:0}
+  @media(max-width:640px){
+    .sys-heads,.crow,.sys-foot{grid-template-columns:1fr 92px 1fr}
+    .sys-inner::before{top:118px;bottom:104px}
+    .ans.ours{font-size:17px;padding-inline-end:8px}.ans.other{font-size:13px;padding-inline-start:8px}
+    .qn i{font-size:8px;letter-spacing:0;padding:4px 7px}
+    .qn::before,.qn::after{width:10px}
+    .shd .emblem{width:38px;height:38px}
+    .shd .nm b{font-size:15px}.shd .nm small{font-size:9px;letter-spacing:1.5px}
+    .seal{width:42px;height:42px;font-size:10px}
+    .sfoot b{font-size:12px}
   }
 
   /* ============ General guide feature ============ */
@@ -367,55 +375,30 @@
       <h2>منظومة الوحي — في مقابل غيرها</h2>
       <p>يقوم منهجنا على منظومة الوحي مرجعًا أعلى؛ في مقابل مناهجَ تُقصي الوحي فتجعل الإنسانَ والعقلَ والحريةَ المطلقة مركزها.</p>
     </div>
-    <div class="orbit-wrap reveal">
-      <!-- منظومة الوحي: نظامٌ متّسق يدور حول التوحيد -->
-      <div class="orbit ours">
-        <div class="orbit-hd">
-          <span class="emblem"><svg width="26" height="26" viewBox="0 0 30 30" fill="none"><g stroke="#C79A3B" stroke-width="1.5" stroke-linecap="round"><line x1="15" y1="2.5" x2="15" y2="6"/><line x1="15" y1="24" x2="15" y2="27.5"/><line x1="2.5" y1="15" x2="6" y2="15"/><line x1="24" y1="15" x2="27.5" y2="15"/><line x1="6.2" y1="6.2" x2="8.7" y2="8.7"/><line x1="21.3" y1="21.3" x2="23.8" y2="23.8"/><line x1="23.8" y1="6.2" x2="21.3" y2="8.7"/><line x1="8.7" y1="21.3" x2="6.2" y2="23.8"/></g><circle cx="15" cy="15" r="5.5" fill="#C79A3B"/><circle cx="15" cy="15" r="2.3" fill="#fff8ea"/></svg></span>
-          <div class="o-name"><small>منهجنا</small><b>منظومة الوحي</b></div>
+    <div class="sys reveal">
+      <div class="sys-inner">
+        <div class="sys-heads">
+          <div class="shd ours">
+            <span class="emblem"><svg width="26" height="26" viewBox="0 0 30 30" fill="none"><g stroke="#C79A3B" stroke-width="1.5" stroke-linecap="round"><line x1="15" y1="2.5" x2="15" y2="6"/><line x1="15" y1="24" x2="15" y2="27.5"/><line x1="2.5" y1="15" x2="6" y2="15"/><line x1="24" y1="15" x2="27.5" y2="15"/><line x1="6.2" y1="6.2" x2="8.7" y2="8.7"/><line x1="21.3" y1="21.3" x2="23.8" y2="23.8"/><line x1="23.8" y1="6.2" x2="21.3" y2="8.7"/><line x1="8.7" y1="21.3" x2="6.2" y2="23.8"/></g><circle cx="15" cy="15" r="5.5" fill="#C79A3B"/><circle cx="15" cy="15" r="2.3" fill="#fff8ea"/></svg></span>
+            <div class="nm"><small>منهجنا</small><b>منظومة الوحي</b></div>
+          </div>
+          <div class="seal">مقابل</div>
+          <div class="shd other">
+            <div class="nm"><small>مناهج أخرى</small><b>منظومة الشيطان</b></div>
+            <span class="emblem"><svg width="26" height="26" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="8.5" stroke="#4a5158" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="9.5" y1="9.5" x2="20.5" y2="20.5" stroke="#3f464c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </div>
         </div>
-        <div class="canvas">
-          <svg viewBox="0 0 360 360" fill="none" aria-hidden="true">
-            <defs><radialGradient id="wahyGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f4d98a" stop-opacity=".5"/><stop offset="1" stop-color="#f4d98a" stop-opacity="0"/></radialGradient></defs>
-            <circle cx="180" cy="180" r="118" fill="url(#wahyGlow)"/>
-            <g stroke="#d3ab55" stroke-width="1.3" opacity=".5"><line x1="180" y1="180" x2="262.8" y2="79.2"/><line x1="180" y1="180" x2="97.2" y2="79.2"/><line x1="180" y1="180" x2="262.8" y2="280.8"/><line x1="180" y1="180" x2="97.2" y2="280.8"/></g>
-            <circle cx="180" cy="180" r="130" stroke="#c6a04c" stroke-width="1.2" opacity=".4"/>
-            <circle cx="180" cy="180" r="72" stroke="#c6a04c" stroke-width="1" opacity=".26"/>
-            <g stroke="#C79A3B" stroke-width="1.4" stroke-linecap="round" opacity=".62"><line x1="232" y1="180" x2="244" y2="180"/><line x1="225" y1="206" x2="235" y2="212"/><line x1="206" y1="225" x2="212" y2="235"/><line x1="180" y1="232" x2="180" y2="244"/><line x1="154" y1="225" x2="148" y2="235"/><line x1="135" y1="206" x2="125" y2="212"/><line x1="128" y1="180" x2="116" y2="180"/><line x1="135" y1="154" x2="125" y2="148"/><line x1="154" y1="135" x2="148" y2="125"/><line x1="180" y1="128" x2="180" y2="116"/><line x1="206" y1="135" x2="212" y2="125"/><line x1="225" y1="154" x2="235" y2="148"/></g>
-            <g fill="#C79A3B"><circle cx="262.8" cy="79.2" r="3"/><circle cx="97.2" cy="79.2" r="3"/><circle cx="262.8" cy="280.8" r="3"/><circle cx="97.2" cy="280.8" r="3"/></g>
-          </svg>
-          <div class="chip core"><b>الله</b><i>التوحيد</i></div>
-          <div class="chip sat" style="left:73%;top:22%"><b>الوحي</b><i>المرجع</i></div>
-          <div class="chip sat" style="left:27%;top:22%"><b>التسليم لله</b><i>الفعل</i></div>
-          <div class="chip sat" style="left:73%;top:78%"><b>الدار الآخرة</b><i>الغاية</i></div>
-          <div class="chip sat fruit" style="left:27%;top:78%"><b>حلاوة الإيمان</b><i>الثمرة</i></div>
+        <div class="crow r1"><div class="ans ours">الله</div><div class="qn"><i>الإله</i></div><div class="ans other">الإنسان</div></div>
+        <div class="crow r2"><div class="ans ours">الوحي</div><div class="qn"><i>المرجع والمصدر</i></div><div class="ans other">العقل</div></div>
+        <div class="crow r3"><div class="ans ours">التوحيد</div><div class="qn"><i>القيمة المركزية</i></div><div class="ans other">الحرية</div></div>
+        <div class="crow r4"><div class="ans ours">التسليم لله</div><div class="qn"><i>الفعل</i></div><div class="ans other">الطغيان</div></div>
+        <div class="crow r5"><div class="ans ours">الدار الآخرة</div><div class="qn"><i>الغاية</i></div><div class="ans other">الدار الدنيا</div></div>
+        <div class="crow crown"><div class="ans ours">حلاوة الإيمان</div><div class="qn"><i>الثمرة</i></div><div class="ans other">المتعة واللذة</div></div>
+        <div class="sys-foot">
+          <div class="sfoot ours"><small>المآل</small><b>طمأنينةٌ واتزانٌ وسموُّ سلوك</b></div>
+          <div></div>
+          <div class="sfoot other"><small>المآل</small><b>لذّةٌ عابرة وفقدانُ المعنى</b></div>
         </div>
-        <div class="o-foot"><small>المآل</small><b>طمأنينةٌ · اتزانٌ · سموُّ سلوك</b></div>
-      </div>
-
-      <div class="vs" aria-hidden="true">مقابل</div>
-
-      <!-- منظومة الشيطان: مبعثرةٌ تدور حول الأنا -->
-      <div class="orbit other">
-        <div class="orbit-hd">
-          <span class="emblem"><svg width="26" height="26" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="8.5" stroke="#4a5158" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="9.5" y1="9.5" x2="20.5" y2="20.5" stroke="#3f464c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-          <div class="o-name"><small>مناهج أخرى</small><b>منظومة الشيطان</b></div>
-        </div>
-        <div class="canvas">
-          <svg viewBox="0 0 360 360" fill="none" aria-hidden="true">
-            <circle cx="184" cy="176" r="128" stroke="#4a5158" stroke-width="1" opacity=".26" stroke-dasharray="6 9"/>
-            <circle cx="176" cy="188" r="150" stroke="#3f464c" stroke-width="1" opacity=".16" stroke-dasharray="3 10"/>
-            <g stroke="#545c63" stroke-width="1" opacity=".4"><line x1="180" y1="180" x2="273.6" y2="68.4"/><line x1="180" y1="180" x2="90" y2="75.6"/><line x1="180" y1="180" x2="270" y2="288"/><line x1="180" y1="180" x2="86.4" y2="270"/></g>
-            <path d="M180 180 L150 300" stroke="#3f464c" stroke-width="1" opacity=".28"/>
-            <g fill="#565e65"><circle cx="273.6" cy="68.4" r="2.5"/><circle cx="90" cy="75.6" r="2.5"/><circle cx="270" cy="288" r="2.5"/><circle cx="86.4" cy="270" r="2.5"/></g>
-          </svg>
-          <div class="chip core"><b>الإنسان</b><i>الحرية</i></div>
-          <div class="chip sat" style="left:76%;top:19%;transform:translate(-50%,-50%) rotate(-5deg)"><b>العقل</b><i>المرجع</i></div>
-          <div class="chip sat" style="left:25%;top:21%;transform:translate(-50%,-50%) rotate(4deg)"><b>الطغيان</b><i>الفعل</i></div>
-          <div class="chip sat" style="left:75%;top:80%;transform:translate(-50%,-50%) rotate(3deg)"><b>الدار الدنيا</b><i>الغاية</i></div>
-          <div class="chip sat fruit" style="left:24%;top:75%;transform:translate(-50%,-50%) rotate(-6deg)"><b>المتعة واللذة</b><i>الثمرة</i></div>
-        </div>
-        <div class="o-foot"><small>المآل</small><b>لذّةٌ عابرة · فقدانُ المعنى</b></div>
       </div>
     </div>
     <p class="wahy-note reveal"><b>منهجنا لا يرفض العلم</b>، بل يعيد للوحي مرجعيّته، وللعلم بوصلته، وللإنسان غايته — فيكون العلمُ خادمًا للإنسان في طريق عبوديّته لله.</p>
