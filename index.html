@@ -125,30 +125,43 @@
     width:100%;height:2px;background:linear-gradient(90deg,var(--line),var(--line));z-index:0}
 
   /* ===== منظومة الوحي × منظومة الشيطان ===== */
-  .wahy{background:#F6F1E4}
-  .wahy-grid{max-width:820px;margin:clamp(30px,4.5vw,50px) auto 0}
-  .wahy-cols{display:grid;grid-template-columns:1fr 122px 1fr;align-items:end;margin-bottom:12px;padding-bottom:12px;
-    border-bottom:2px solid var(--line)}
-  .wcol-h{line-height:1.5}
-  .wcol-h small{display:block;font-size:10.5px;font-weight:700;letter-spacing:2px;opacity:.75;margin-bottom:3px}
-  .wcol-h b{font-family:var(--display);font-size:clamp(16px,2.4vw,21px);font-weight:700}
-  .wcol-h.ours{text-align:start;color:var(--forest)}
-  .wcol-h.other{text-align:end;color:#98928633}
-  .wcol-h.other small{color:var(--gray)}
-  .wcol-h.other b{color:#9a9488}
-  .wahy-row{display:grid;grid-template-columns:1fr 122px 1fr;align-items:center;padding:15px 0;border-top:1px solid var(--line-soft)}
-  .wahy-row:first-of-type{border-top:0}
-  .wahy-row .ours{font-family:var(--display);font-weight:700;font-size:clamp(21px,3.1vw,32px);color:var(--forest);text-align:start;line-height:1.2}
-  .wahy-row .role{text-align:center;font-size:10.5px;font-weight:700;letter-spacing:1.2px;color:var(--ochre);line-height:1.45}
-  .wahy-row .role::after{content:"⟷";display:block;color:#cabf9f;font-size:14px;margin-top:4px;letter-spacing:0}
-  .wahy-row .other{font-family:var(--display);font-weight:700;font-size:clamp(15px,2vw,21px);color:#9c968a;text-align:end;line-height:1.3}
-  .wahy-note{margin-top:24px;text-align:center;font-size:13.5px;color:var(--gray);line-height:2;max-width:64ch;margin-inline:auto}
+  .wahy{background:linear-gradient(180deg,#F6F1E4,#F1EAD9)}
+  .cmp{display:grid;grid-template-columns:1fr 58px 1fr;align-items:center;max-width:940px;
+    margin:clamp(30px,4.5vw,52px) auto 0}
+  .cmp-card{border-radius:22px;padding:clamp(22px,3vw,34px);position:relative}
+  .cmp-card.ours{background:linear-gradient(165deg,#20493a,#12352b);color:#fff;
+    box-shadow:0 30px 60px rgba(18,53,43,.26);z-index:1}
+  .cmp-card.ours::after{content:"";position:absolute;inset:0;border-radius:22px;pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(231,201,143,.22)}
+  .cmp-card.other{background:#EDE8DE;color:#8a857b;border:1px solid #e3ded2;transform:scale(.92);
+    transform-origin:center right}
+  .cmp-head{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid}
+  .cmp-card.ours .cmp-head{border-color:rgba(231,201,143,.26)}
+  .cmp-card.other .cmp-head{border-color:#e3ded2}
+  .cmp-head small{display:block;font-size:11px;letter-spacing:2.5px;font-weight:700;margin-bottom:5px}
+  .cmp-card.ours .cmp-head small{color:#e7c98f}
+  .cmp-card.other .cmp-head small{color:#a89f8f}
+  .cmp-head b{font-family:var(--display);font-weight:700;font-size:clamp(20px,2.8vw,28px)}
+  .cmp-list{display:flex;flex-direction:column}
+  .cmp-li{display:flex;align-items:baseline;gap:12px;padding:12px 0;border-top:1px solid}
+  .cmp-li:first-child{border-top:0}
+  .cmp-card.ours .cmp-li{border-color:rgba(255,255,255,.1)}
+  .cmp-card.other .cmp-li{border-color:#e7e1d6}
+  .cmp-role{flex:0 0 auto;min-width:104px;font-size:10.5px;letter-spacing:.8px;font-weight:700;line-height:1.5}
+  .cmp-card.ours .cmp-role{color:#e7c98f}
+  .cmp-card.other .cmp-role{color:#b4ac9d}
+  .cmp-val{font-family:var(--display);font-weight:700;line-height:1.3}
+  .cmp-card.ours .cmp-val{font-size:clamp(19px,2.3vw,26px);color:#fff}
+  .cmp-card.other .cmp-val{font-size:clamp(15px,1.8vw,19px);color:#8a857b}
+  .cmp-vs{justify-self:center;align-self:center;position:relative;z-index:2;width:54px;height:54px;border-radius:50%;
+    background:#fff;border:1.5px solid var(--ochre);display:grid;place-items:center;font-family:var(--display);
+    font-weight:700;font-size:13.5px;color:var(--ochre);box-shadow:0 10px 22px rgba(31,74,57,.14)}
+  .wahy-note{margin-top:26px;text-align:center;font-size:13.5px;color:var(--gray);line-height:2;max-width:66ch;margin-inline:auto}
   .wahy-note b{color:var(--forest);font-weight:700}
-  @media(max-width:560px){
-    .wahy-cols,.wahy-row{grid-template-columns:1fr 62px 1fr}
-    .wahy-row .role{font-size:9px;letter-spacing:.3px}
-    .wahy-row .role::after{font-size:12px}
-    .wahy-row .ours{font-size:20px}.wahy-row .other{font-size:15px}
+  @media(max-width:720px){
+    .cmp{grid-template-columns:1fr;gap:0}
+    .cmp-card.other{transform:none;margin-top:16px}
+    .cmp-vs{margin:14px auto -14px;transform:translateY(0)}
   }
 
   /* ============ General guide feature ============ */
@@ -337,20 +350,32 @@
       <h2>منظومة الوحي — في مقابل غيرها</h2>
       <p>يقوم منهجنا على منظومة الوحي مرجعًا أعلى؛ في مقابل مناهجَ تُقصي الوحي فتجعل الإنسانَ والعقلَ والحريةَ المطلقة مركزها.</p>
     </div>
-    <div class="wahy-grid reveal">
-      <div class="wahy-cols">
-        <div class="wcol-h ours"><small>منهجنا</small><b>منظومة الوحي</b></div>
-        <div></div>
-        <div class="wcol-h other"><small>مناهج أخرى</small><b>منظومة الشيطان</b></div>
+    <div class="cmp reveal">
+      <div class="cmp-card ours">
+        <div class="cmp-head"><small>منهجنا</small><b>منظومة الوحي</b></div>
+        <div class="cmp-list">
+          <div class="cmp-li"><span class="cmp-role">الإله</span><span class="cmp-val">الله</span></div>
+          <div class="cmp-li"><span class="cmp-role">المرجع والمصدر</span><span class="cmp-val">الوحي</span></div>
+          <div class="cmp-li"><span class="cmp-role">القيمة المركزية</span><span class="cmp-val">التوحيد</span></div>
+          <div class="cmp-li"><span class="cmp-role">الفعل</span><span class="cmp-val">التسليم لله</span></div>
+          <div class="cmp-li"><span class="cmp-role">الغاية</span><span class="cmp-val">الدار الآخرة</span></div>
+          <div class="cmp-li"><span class="cmp-role">الثمرة</span><span class="cmp-val">حلاوة الإيمان</span></div>
+        </div>
       </div>
-      <div class="wahy-row"><b class="ours">الله</b><span class="role">الإله</span><b class="other">الإنسان</b></div>
-      <div class="wahy-row"><b class="ours">الوحي</b><span class="role">المرجع والمصدر</span><b class="other">العقل</b></div>
-      <div class="wahy-row"><b class="ours">التوحيد</b><span class="role">القيمة المركزية</span><b class="other">الحرية</b></div>
-      <div class="wahy-row"><b class="ours">التسليم لله</b><span class="role">الفعل</span><b class="other">الطغيان</b></div>
-      <div class="wahy-row"><b class="ours">الدار الآخرة</b><span class="role">الغاية</span><b class="other">الدار الدنيا</b></div>
-      <div class="wahy-row"><b class="ours">حلاوة الإيمان</b><span class="role">الثمرة</span><b class="other">المتعة واللذة</b></div>
-      <p class="wahy-note"><b>منهجنا لا يرفض العلم</b>، بل يعيد للوحي مرجعيّته، وللعلم بوصلته، وللإنسان غايته — فيكون العلمُ خادمًا للإنسان في طريق عبوديّته لله.</p>
+      <div class="cmp-vs" aria-hidden="true">مقابل</div>
+      <div class="cmp-card other">
+        <div class="cmp-head"><small>مناهج أخرى</small><b>منظومة الشيطان</b></div>
+        <div class="cmp-list">
+          <div class="cmp-li"><span class="cmp-role">الإله</span><span class="cmp-val">الإنسان</span></div>
+          <div class="cmp-li"><span class="cmp-role">المرجع والمصدر</span><span class="cmp-val">العقل</span></div>
+          <div class="cmp-li"><span class="cmp-role">القيمة المركزية</span><span class="cmp-val">الحرية</span></div>
+          <div class="cmp-li"><span class="cmp-role">الفعل</span><span class="cmp-val">الطغيان</span></div>
+          <div class="cmp-li"><span class="cmp-role">الغاية</span><span class="cmp-val">الدار الدنيا</span></div>
+          <div class="cmp-li"><span class="cmp-role">الثمرة</span><span class="cmp-val">المتعة واللذة</span></div>
+        </div>
+      </div>
     </div>
+    <p class="wahy-note reveal"><b>منهجنا لا يرفض العلم</b>، بل يعيد للوحي مرجعيّته، وللعلم بوصلته، وللإنسان غايته — فيكون العلمُ خادمًا للإنسان في طريق عبوديّته لله.</p>
   </div>
 </section>
 
