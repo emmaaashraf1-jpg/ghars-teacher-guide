@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ورقة طباعة · صيد الواو · وحدة العائلة</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45;--t2:#0d6e6e;--gold:#C79A3B;--gold-d:#7a5a12;--ink:#1e2b2a;--muted:#5f6f6c;--line:#e8dfd0;--cream:#FFF7E8}
+@page{size:A4;margin:12mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#eef1ec;padding:18px}
+.tip{max-width:820px;margin:0 auto 14px;font-size:13px;color:var(--muted);text-align:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 14px}
+.sheet{background:#fff;max-width:820px;margin:0 auto 18px;padding:28px;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--gold);padding-bottom:12px;margin-bottom:8px}
+.hd h1{font-family:var(--fd);color:var(--t1);font-size:23px;line-height:1.4}
+.hd .sub{font-size:12.5px;color:var(--muted);margin-top:3px}
+.hd .logo{width:60px;height:60px;object-fit:contain;flex:0 0 auto}
+.fields{display:flex;gap:22px;font-size:14px;color:var(--t1);font-weight:700;margin:12px 0 8px}
+.fields .f{flex:1;border-bottom:2px dotted var(--line);padding-bottom:4px}
+.prompt{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);border-radius:12px;padding:11px 15px;font-size:13.5px;line-height:1.9;color:var(--gold-d);margin-bottom:16px}
+.hunt{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row{border:2px dashed #9ab0b6;border-radius:14px;padding:12px 15px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff}
+.row .w{font-family:var(--fd);font-weight:700;font-size:26px;color:var(--t1)}
+.row .pos{display:flex;gap:5px}
+.row .pos span{width:34px;height:34px;border:1.6px solid var(--line);border-radius:9px;display:grid;place-items:center;font-size:11px;color:var(--muted);line-height:1.15;text-align:center}
+.legend{margin-top:14px;font-size:12.5px;color:var(--muted);text-align:center}
+.legend b{color:var(--t2)}
+.foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
+@media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+</style>
+</head>
+<body>
+<p class="tip">للطباعة: اضغطي <b>Ctrl/⌘ + P</b> ثم اختاري الحجم <b>A4</b>. تُطبع نسخة لكل طفل.</p>
+
+<div class="sheet">
+  <div class="hd">
+    <div>
+      <h1>صيدُ الواو</h1>
+      <div class="sub">وحدة العائلة · لساني عربي — الدرس الرابع · ركن أقرأ لأتعلم</div>
+    </div>
+    <img class="logo" src="brand/logo-ghars.webp" alt="شعار غرس القيم"/>
+  </div>
+
+  <div class="fields">
+    <div class="f">اسم الطفل/ة: …………………………</div>
+    <div class="f">التاريخ: ………………</div>
+  </div>
+
+  <div class="prompt"><b>طريقة العمل:</b> يبحث الطفل في كلِّ كلمةٍ عن حرف <b>الواو</b>، فيرسم حوله دائرة، ثم ينطق الكلمة ويضع علامةً في المربّع الذي يدلّ على موضع الواو: <b>أوّل</b> أم <b>وسط</b> أم <b>آخر</b>. نقرأ معًا بنظام العربية.</div>
+
+  <div class="hunt">
+    <div class="row"><span class="w">وَردة</span><div class="pos"><span>أوّل</span><span>وسط</span><span>آخر</span></div></div>
+    <div class="row"><span class="w">نُور</span><div class="pos"><span>أوّل</span><span>وسط</span><span>آخر</span></div></div>
+    <div class="row"><span class="w">دَلو</span><div class="pos"><span>أوّل</span><span>وسط</span><span>آخر</span></div></div>
+    <div class="row"><span class="w">وَتد</span><div class="pos"><span>أوّل</span><span>وسط</span><span>آخر</span></div></div>
+    <div class="row"><span class="w">ثَوب</span><div class="pos"><span>أوّل</span><span>وسط</span><span>آخر</span></div></div>
+    <div class="row"><span class="w">وِعاء</span><div class="pos"><span>أوّل</span><span>وسط</span><span>آخر</span></div></div>
+    <div class="row"><span class="w">جَوز</span><div class="pos"><span>أوّل</span><span>وسط</span><span>آخر</span></div></div>
+    <div class="row"><span class="w">ضَوء</span><div class="pos"><span>أوّل</span><span>وسط</span><span>آخر</span></div></div>
+  </div>
+
+  <div class="legend">أُحيطُ حرفَ <b>الواو</b> بدائرة · ثم أُعلّمُ على موضعه</div>
+
+<div style="background:linear-gradient(135deg,#003E45,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:16px 0 6px"><b>الخلاصة:</b> لكلِّ فردٍ في العائلة مكان، ولكلِّ حرفٍ موضعٌ في الكلمة، ونقرأ العربية بنظامها. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>
+  <div class="foot">دليل معلمة غرس القيم · نشاط تطبيقي — ركن أقرأ لأتعلم</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ورقة طباعة · طريق الأبرار · وحدة المسكن</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45;--t2:#0d6e6e;--gold:#C79A3B;--gold-d:#7a5a12;--ink:#1e2b2a;--muted:#5f6f6c;--line:#e8dfd0;--cream:#FFF7E8}
+@page{size:A4;margin:12mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#eef1ec;padding:18px}
+.tip{max-width:820px;margin:0 auto 14px;font-size:13px;color:var(--muted);text-align:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 14px}
+.sheet{background:#fff;max-width:820px;margin:0 auto 18px;padding:28px;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--gold);padding-bottom:12px;margin-bottom:8px}
+.hd h1{font-family:var(--fd);color:var(--t1);font-size:23px;line-height:1.4}
+.hd .sub{font-size:12.5px;color:var(--muted);margin-top:3px}
+.hd .logo{width:60px;height:60px;object-fit:contain;flex:0 0 auto}
+.fields{display:flex;gap:22px;font-size:14px;color:var(--t1);font-weight:700;margin:12px 0 4px}
+.fields .f{flex:1;border-bottom:2px dotted var(--line);padding-bottom:4px}
+.prompt{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);border-radius:12px;padding:11px 15px;font-size:13.5px;line-height:1.9;color:var(--gold-d);margin:8px 0 6px}
+.path-wrap{display:grid;place-items:center;padding:4px 0}
+.path-wrap svg{width:100%;max-width:600px;height:auto}
+.foot{margin-top:10px;text-align:center;font-size:12px;color:var(--muted)}
+@media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+</style>
+</head>
+<body>
+<p class="tip">للطباعة: اضغطي <b>Ctrl/⌘ + P</b> ثم اختاري الحجم <b>A4</b>. تُطبع نسخة لكل طفل.</p>
+
+<div class="sheet">
+  <div class="hd">
+    <div>
+      <h1>طريقُ الأبرار</h1>
+      <div class="sub">وحدة المسكن · كتابي المنير — الدرس الثاني · ركن فنوني الجميلة</div>
+    </div>
+    <img class="logo" src="brand/logo-ghars.webp" alt="شعار غرس القيم"/>
+  </div>
+
+  <div class="fields">
+    <div class="f">اسم الطفل/ة: …………………………</div>
+    <div class="f">التاريخ: ………………</div>
+  </div>
+
+  <div class="prompt"><b>طريقة العمل:</b> يلوّن الطفل الطريقَ ويسير بأصبعه من <b>البيت</b> إلى <b>البستان</b>. في كلِّ حجرٍ يرسم عملَ برٍّ أو يلصق بطاقته (طاعةٌ، صدقٌ، إكرامٌ، رِفقٌ، صلةٌ)، ويسمّيه. نختم: مَن مشى في طريق البرّ فهو من الأبرار، ولهم نعيمٌ عند ربهم.</div>
+
+  <div class="path-wrap">
+    <svg viewBox="0 0 600 400" role="img" aria-label="طريقٌ من البيت إلى البستان بأحجارٍ للتلوين">
+      <!-- أرضية -->
+      <rect x="0" y="0" width="600" height="400" fill="#f7fbf8" opacity=".5"/>
+      <!-- الطريق -->
+      <path d="M70 330 C160 300 120 220 220 210 C320 200 300 120 400 118 C470 116 500 90 530 78"
+            fill="none" stroke="#eadfc4" stroke-width="46" stroke-linecap="round"/>
+      <path d="M70 330 C160 300 120 220 220 210 C320 200 300 120 400 118 C470 116 500 90 530 78"
+            fill="none" stroke="#C79A3B" stroke-width="46" stroke-linecap="round" stroke-dasharray="1 26" opacity=".55"/>
+      <!-- البيت (بداية الطريق) -->
+      <g transform="translate(34,300)">
+        <rect x="0" y="24" width="66" height="46" fill="none" stroke="#0d6e6e" stroke-width="3"/>
+        <path d="M-6 24 l39 -26 39 26z" fill="none" stroke="#C79A3B" stroke-width="3"/>
+        <rect x="24" y="44" width="18" height="26" fill="none" stroke="#0d6e6e" stroke-width="2.4"/>
+        <text x="33" y="88" font-family="AlAwwal,serif" font-size="14" font-weight="700" fill="#0d6e6e" text-anchor="middle">بيتي</text>
+      </g>
+      <!-- أحجار العمل الصالح (فارغة للرسم/اللصق) -->
+      <g fill="#fff" stroke="#9a7550" stroke-width="2.5" stroke-dasharray="5 5">
+        <circle cx="150" cy="286" r="30"/>
+        <circle cx="222" cy="208" r="30"/>
+        <circle cx="300" cy="168" r="30"/>
+        <circle cx="360" cy="120" r="30"/>
+        <circle cx="450" cy="112" r="30"/>
+      </g>
+      <g font-family="AlAwwal,serif" font-size="15" font-weight="700" fill="#7a5a12" text-anchor="middle">
+        <text x="150" y="291">١</text><text x="222" y="213">٢</text><text x="300" y="173">٣</text><text x="360" y="125">٤</text><text x="450" y="117">٥</text>
+      </g>
+      <!-- البستان (نهاية الطريق: نعيم الأبرار) -->
+      <g transform="translate(500,40)">
+        <rect x="-6" y="52" width="80" height="10" rx="4" fill="#8fbf9a" opacity=".5"/>
+        <path d="M34 54 q-24 -6 -30 -26 M34 46 q24 -6 30 -28" stroke="#9a7550" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <rect x="30" y="30" width="8" height="26" rx="3" fill="#9a7550"/>
+        <circle cx="34" cy="12" r="24" fill="none" stroke="#6a9c78" stroke-width="3"/>
+        <circle cx="16" cy="20" r="14" fill="none" stroke="#6a9c78" stroke-width="3"/>
+        <circle cx="52" cy="20" r="14" fill="none" stroke="#6a9c78" stroke-width="3"/>
+        <g fill="none" stroke="#C79A3B" stroke-width="2.4"><circle cx="24" cy="10" r="4"/><circle cx="44" cy="14" r="4"/><circle cx="34" cy="22" r="4"/></g>
+        <text x="34" y="82" font-family="AlAwwal,serif" font-size="14" font-weight="700" fill="#5f9070" text-anchor="middle">نعيمُ الأبرار</text>
+      </g>
+    </svg>
+  </div>
+
+<div style="background:linear-gradient(135deg,#003E45,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:14px 0 6px"><b>الخلاصة:</b> نجعل المسكن موطنًا للبرّ والطاعة بفضل الله؛ فالأبرارُ في نعيم. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>
+  <div class="foot">دليل معلمة غرس القيم · نشاط تطبيقي — ركن فنوني الجميلة</div>
+</div>
+</body>
+</html>

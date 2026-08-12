@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ورقة طباعة · الكيل ومقارنة السعة · وحدة العائلة — مركز الرياضيات</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45;--t2:#0d6e6e;--gold:#C79A3B;--gold-d:#7a5a12;--ink:#1e2b2a;--muted:#5f6f6c;--line:#e8dfd0;--cream:#FFF7E8}
+@page{size:A4;margin:12mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#eef1ec;padding:18px}
+.tip{max-width:820px;margin:0 auto 14px;font-size:13px;color:var(--muted);text-align:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 14px}
+.sheet{background:#fff;max-width:820px;margin:0 auto 18px;padding:28px;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--gold);padding-bottom:12px;margin-bottom:14px}
+.hd h1{font-family:var(--fd);color:var(--t1);font-size:23px;line-height:1.4}
+.hd .sub{font-size:12.5px;color:var(--muted);margin-top:3px}
+.hd .logo{width:60px;height:60px;object-fit:contain;flex:0 0 auto}
+.prompt{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);border-radius:12px;padding:11px 15px;font-size:13.5px;line-height:1.9;color:var(--gold-d);margin-bottom:16px}
+h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;padding-inline-start:11px;border-inline-start:4px solid var(--t2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
+.vessel{border:2px solid var(--line);border-radius:16px;padding:14px;background:#f7fbfa;text-align:center}
+.vessel h3{font-family:var(--fd);font-size:18px;color:var(--t1);margin-bottom:8px}
+.vessel svg{width:110px;height:120px}
+.count{margin-top:10px;font-size:13.5px;color:var(--ink)}
+.count .cbox{display:inline-flex;align-items:center;justify-content:center;width:56px;height:44px;border:2px dashed #9ab0b6;border-radius:10px;background:#fff;margin-inline-start:6px;vertical-align:middle}
+.cups{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;margin-top:10px}
+.cups svg{width:26px;height:30px}
+.compare{border:2px solid var(--gold);border-radius:16px;background:var(--cream);padding:14px 16px;font-size:14px;line-height:2;color:var(--gold-d);text-align:center}
+.compare .blank{display:inline-block;min-width:120px;border-bottom:2px dotted var(--gold-d);margin:0 6px}
+.foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
+@media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+</style>
+</head>
+<body>
+<p class="tip">للطباعة: اضغطي <b>Ctrl/⌘ + P</b> ثم اختاري الحجم <b>A4</b>. تُطبع نسخة لكل طفل.</p>
+
+<div class="sheet">
+  <div class="hd">
+    <div>
+      <h1>كِلْ وقارِن السعة</h1>
+      <div class="sub">وحدة العائلة · مركز الرياضيات — اللقاء الثاني · ساحة الرمل</div>
+    </div>
+    <img class="logo" src="brand/logo-ghars.webp" alt="شعار غرس القيم"/>
+  </div>
+  <div class="prompt"><b>طريقة العمل:</b> يملأ الطفل الوعاء الأول <b>بالكوب نفسه</b> ويعدّ عددَ الأكواب ويكتبه، ثم يملأ الوعاء الثاني بالكوب ذاته ويعدّه. نقارن: أيّهما أكبر سعةً؟ الذي احتاج <b>أكوابًا أكثر</b>. نلوّن كوبًا مقابل كلِّ كوبٍ نسكبه.</div>
+
+  <h2>وعاءان — نكيل كلًّا بالكوب نفسه</h2>
+  <div class="two">
+    <div class="vessel">
+      <h3>الوعاء الأول</h3>
+      <svg viewBox="0 0 110 120" role="img" aria-label="وعاء واسع"><ellipse cx="55" cy="112" rx="40" ry="6" fill="#003E45" opacity=".1"/><path d="M18 40 h74 l-8 66 a8 8 0 0 1 -8 7 h-42 a8 8 0 0 1 -8 -7 z" fill="#eaf4f2" stroke="#0d6e6e" stroke-width="3"/><ellipse cx="55" cy="40" rx="37" ry="8" fill="#cfe7e4" stroke="#0d6e6e" stroke-width="3"/></svg>
+      <div class="count">عددُ الأكواب: <span class="cbox"></span></div>
+      <div class="cups"><svg viewBox="0 0 26 30"><path d="M4 4 h18 l-2 22 a2 2 0 0 1 -2 2 h-10 a2 2 0 0 1 -2 -2 z" fill="none" stroke="#0d6e6e" stroke-width="2"/></svg><svg viewBox="0 0 26 30"><path d="M4 4 h18 l-2 22 a2 2 0 0 1 -2 2 h-10 a2 2 0 0 1 -2 -2 z" fill="none" stroke="#0d6e6e" stroke-width="2"/></svg><svg viewBox="0 0 26 30"><path d="M4 4 h18 l-2 22 a2 2 0 0 1 -2 2 h-10 a2 2 0 0 1 -2 -2 z" fill="none" stroke="#0d6e6e" stroke-width="2"/></svg><svg viewBox="0 0 26 30"><path d="M4 4 h18 l-2 22 a2 2 0 0 1 -2 2 h-10 a2 2 0 0 1 -2 -2 z" fill="none" stroke="#0d6e6e" stroke-width="2"/></svg><svg viewBox="0 0 26 30"><path d="M4 4 h18 l-2 22 a2 2 0 0 1 -2 2 h-10 a2 2 0 0 1 -2 -2 z" fill="none" stroke="#0d6e6e" stroke-width="2"/></svg><svg viewBox="0 0 26 30"><path d="M4 4 h18 l-2 22 a2 2 0 0 1 -2 2 h-10 a2 2 0 0 1 -2 -2 z" fill="none" stroke="#0d6e6e" stroke-width="2"/></svg></div>
+    </div>
+    <div class="vessel">
+      <h3>الوعاء الثاني</h3>
+      <svg viewBox="0 0 110 120" role="img" aria-label="وعاء ضيّق وطويل"><ellipse cx="55" cy="112" rx="30" ry="6" fill="#003E45" opacity=".1"/><path d="M36 18 h38 l-4 88 a8 8 0 0 1 -8 7 h-14 a8 8 0 0 1 -8 -7 z" fill="#eaf4f2" stroke="#0d6e6e" stroke-width="3"/><ellipse cx="55" cy="18" rx="19" ry="6" fill="#cfe7e4" stroke="#0d6e6e" stroke-width="3"/></svg>
+      <div class="count">عددُ الأكواب: <span class="cbox"></span></div>
+      <div class="cups"><svg viewBox="0 0 26 30"><path d="M4 4 h18 l-2 22 a2 2 0 0 1 -2 2 h-10 a2 2 0 0 1 -2 -2 z" fill="none" stroke="#0d6e6e" stroke-width="2"/></svg><svg viewBox="0 0 26 30"><path d="M4 4 h18 l-2 22 a2 2 0 0 1 -2 2 h-10 a2 2 0 0 1 -2 -2 z" fill="none" stroke="#0d6e6e" stroke-width="2"/></svg><svg viewBox="0 0 26 30"><path d="M4 4 h18 l-2 22 a2 2 0 0 1 -2 2 h-10 a2 2 0 0 1 -2 -2 z" fill="none" stroke="#0d6e6e" stroke-width="2"/></svg><svg viewBox="0 0 26 30"><path d="M4 4 h18 l-2 22 a2 2 0 0 1 -2 2 h-10 a2 2 0 0 1 -2 -2 z" fill="none" stroke="#0d6e6e" stroke-width="2"/></svg><svg viewBox="0 0 26 30"><path d="M4 4 h18 l-2 22 a2 2 0 0 1 -2 2 h-10 a2 2 0 0 1 -2 -2 z" fill="none" stroke="#0d6e6e" stroke-width="2"/></svg><svg viewBox="0 0 26 30"><path d="M4 4 h18 l-2 22 a2 2 0 0 1 -2 2 h-10 a2 2 0 0 1 -2 -2 z" fill="none" stroke="#0d6e6e" stroke-width="2"/></svg></div>
+    </div>
+  </div>
+
+  <div class="compare">الأكبرُ سعةً هو <span class="blank"></span> لأنه احتاج <span class="blank"></span> أكوابٍ أكثر.</div>
+
+<div style="background:linear-gradient(135deg,#003E45,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:14px 0 6px"><b>الخلاصة:</b> السعةُ تُقاس بالوحدة نفسها؛ الأكبرُ ما احتاج أكوابًا أكثر لا ما بدا أطول. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>
+  <div class="foot">دليل معلمة غرس القيم · نشاط تطبيقي — ساحة الرمل</div>
+</div>
+</body>
+</html>

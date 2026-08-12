@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ورقة طباعة · مطابقة الأداة بغرفتها · بطاقات · وحدة المسكن</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45;--t2:#0d6e6e;--gold:#C79A3B;--gold-d:#7a5a12;--ink:#1e2b2a;--muted:#5f6f6c;--line:#e8dfd0;--cream:#FFF7E8}
+@page{size:A4;margin:12mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#eef1ec;padding:18px}
+.tip{max-width:820px;margin:0 auto 14px;font-size:13px;color:var(--muted);text-align:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 14px}
+.sheet{background:#fff;max-width:820px;margin:0 auto 18px;padding:28px;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--gold);padding-bottom:12px;margin-bottom:14px}
+.hd h1{font-family:var(--fd);color:var(--t1);font-size:23px;line-height:1.4}
+.hd .sub{font-size:12.5px;color:var(--muted);margin-top:3px}
+.hd .logo{width:60px;height:60px;object-fit:contain;flex:0 0 auto}
+.prompt{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);border-radius:12px;padding:11px 15px;font-size:13.5px;line-height:1.9;color:var(--gold-d);margin-bottom:16px}
+h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;padding-inline-start:11px;border-inline-start:4px solid var(--t2)}
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.room{border:2px solid var(--line);border-radius:16px;min-height:300px;padding:14px;text-align:center;background:#f7fbfa}
+.room h3{font-family:var(--fd);font-size:19px;color:var(--t2);margin-bottom:4px}
+.room .say{font-size:12.5px;color:var(--muted);margin-bottom:8px}
+.room svg{width:52px;height:52px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card{border:2px dashed #9ab0b6;border-radius:14px;padding:12px 8px;text-align:center;background:#fff;display:flex;flex-direction:column;align-items:center;gap:7px;min-height:104px;justify-content:center}
+.card svg{width:44px;height:44px}
+.card .t{font-weight:700;font-size:13.5px;color:var(--ink);line-height:1.5}
+.foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
+@media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
+</style>
+</head>
+<body>
+<p class="tip">للطباعة: اضغطي <b>Ctrl/⌘ + P</b> ثم اختاري الحجم <b>A4</b>. صفحة «الغرف» تُطبع مرّة، وصفحة البطاقات تُقصّ على الخطّ المتقطّع.</p>
+
+<!-- ===== الصفحة 1: لوحة الغرف ===== -->
+<div class="sheet">
+  <div class="hd">
+    <div>
+      <h1>طابِقِ الأداةَ بغرفتها</h1>
+      <div class="sub">وحدة المسكن · علّمني ربي — أجزاء المسكن وآدابها · ركن أدرك وأستمتع</div>
+    </div>
+    <img class="logo" src="brand/logo-ghars.webp" alt="شعار غرس القيم"/>
+  </div>
+  <div class="prompt"><b>طريقة العمل:</b> يسحب الطفل بطاقةَ أداةٍ (ملعقة، وسادة، صابون…) فيضعها تحت الغرفة المناسبة (مطبخ، نوم، حمّام)، ثم يذكر <b>أدبًا</b> لتلك الغرفة. نختم: لكلِّ غرفةٍ أدواتُها وآدابُها.</div>
+
+  <div class="rooms">
+    <div class="room">
+      <svg viewBox="0 0 48 48" role="img" aria-label="مطبخ">
+        <rect x="10" y="22" width="28" height="16" rx="3" fill="#8a99a0"/><rect x="8" y="18" width="32" height="5" rx="2" fill="#6f7d83"/>
+        <rect x="6" y="26" width="6" height="4" rx="2" fill="#6f7d83"/><rect x="36" y="26" width="6" height="4" rx="2" fill="#6f7d83"/>
+      </svg>
+      <h3>المطبخ</h3><div class="say">الأدب: النظافة وإغلاق الماء</div>
+    </div>
+    <div class="room">
+      <svg viewBox="0 0 48 48" role="img" aria-label="غرفة نوم">
+        <rect x="6" y="28" width="36" height="10" rx="3" fill="#0d6e6e"/><rect x="6" y="21" width="14" height="8" rx="3" fill="#cfe7e4"/>
+        <rect x="4" y="23" width="4" height="15" fill="#0b5c5c"/><rect x="40" y="23" width="4" height="15" fill="#0b5c5c"/>
+      </svg>
+      <h3>غرفةُ النوم</h3><div class="say">الأدب: الاستئذان وترتيب الفراش</div>
+    </div>
+    <div class="room">
+      <svg viewBox="0 0 48 48" role="img" aria-label="حمّام">
+        <path d="M12 16 h6 v6 h12 a5 5 0 0 1 5 5" fill="none" stroke="#8a99a0" stroke-width="3"/>
+        <rect x="9" y="13" width="6" height="6" rx="2" fill="#8a99a0"/>
+        <rect x="14" y="27" width="20" height="10" rx="4" fill="#7ba7bd"/>
+        <line x1="35" y1="27" x2="35" y2="33" stroke="#9cc3d6" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <h3>الحمّام</h3><div class="say">الأدب: النظافة وترشيد الماء</div>
+    </div>
+  </div>
+  <div class="foot">دليل معلمة غرس القيم · نشاط تطبيقي — ركن أدرك وأستمتع</div>
+</div>
+
+<!-- ===== الصفحة 2: بطاقات الأدوات ===== -->
+<div class="sheet">
+  <h2>بطاقاتُ الأدوات — تُقصّ وتُخلط</h2>
+  <div class="cards">
+    <div class="card">
+      <svg viewBox="0 0 48 48"><ellipse cx="24" cy="15" rx="7" ry="9" fill="#c9c9cf"/><rect x="22" y="20" width="4" height="20" rx="2" fill="#c9c9cf"/></svg>
+      <div class="t">ملعقة</div>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 48 48"><rect x="12" y="20" width="24" height="16" rx="3" fill="#8a99a0"/><rect x="10" y="16" width="28" height="5" rx="2" fill="#6f7d83"/><rect x="6" y="24" width="6" height="4" rx="2" fill="#6f7d83"/><rect x="36" y="24" width="6" height="4" rx="2" fill="#6f7d83"/></svg>
+      <div class="t">قِدر</div>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 48 48"><rect x="8" y="16" width="32" height="18" rx="9" fill="#cf9f7a"/><line x1="14" y1="25" x2="34" y2="25" stroke="#b87f4a" stroke-width="1.5"/></svg>
+      <div class="t">وِسادة</div>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 48 48"><rect x="8" y="17" width="32" height="16" rx="4" fill="#7ba7bd"/><path d="M8 23 h32 M8 28 h32" stroke="#5b86a8" stroke-width="1.5"/></svg>
+      <div class="t">لِحاف</div>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 48 48"><rect x="12" y="20" width="24" height="14" rx="6" fill="#8fc0b8"/><ellipse cx="24" cy="18" rx="5" ry="3" fill="#cfeee7"/></svg>
+      <div class="t">صابون</div>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 48 48"><rect x="14" y="12" width="20" height="26" rx="3" fill="#e0b98f"/><rect x="14" y="12" width="20" height="5" fill="#c99a6a"/><rect x="14" y="33" width="20" height="5" fill="#c99a6a"/></svg>
+      <div class="t">منشفة</div>
+    </div>
+  </div>
+<div style="background:linear-gradient(135deg,#003E45,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:16px 0 6px"><b>الخلاصة:</b> لكلّ جزءٍ من المسكن استخدامٌ وآدابٌ نتأدّب بها. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>
+  <div class="foot">دليل معلمة غرس القيم · بطاقات مطابقة — الأداة بغرفتها وأدبها</div>
+</div>
+</body>
+</html>

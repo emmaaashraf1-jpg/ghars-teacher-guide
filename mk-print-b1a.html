@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ورقة طباعة · بطاقات فرز الأعمال · وحدة المسكن</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45;--t2:#0d6e6e;--gold:#C79A3B;--gold-d:#7a5a12;--ink:#1e2b2a;--muted:#5f6f6c;--line:#e8dfd0;--cream:#FFF7E8;
+  --green:#5f9070;--green-bg:#eef6f0;--warm:#b06a52;--warm-bg:#f7efec}
+@page{size:A4;margin:12mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#eef1ec;padding:18px}
+.tip{max-width:820px;margin:0 auto 14px;font-size:13px;color:var(--muted);text-align:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 14px}
+.sheet{background:#fff;max-width:820px;margin:0 auto 18px;padding:28px;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--gold);padding-bottom:12px;margin-bottom:14px}
+.hd h1{font-family:var(--fd);color:var(--t1);font-size:23px;line-height:1.4}
+.hd .sub{font-size:12.5px;color:var(--muted);margin-top:3px}
+.hd .logo{width:60px;height:60px;object-fit:contain;flex:0 0 auto}
+.prompt{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);border-radius:12px;padding:11px 15px;font-size:13.5px;line-height:1.9;color:var(--gold-d);margin-bottom:16px}
+.scrolls{display:grid;place-items:center;margin-bottom:6px}
+.scrolls svg{width:100%;max-width:360px;height:auto}
+.mat{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+.pan{border:2px solid var(--line);border-radius:16px;min-height:260px;padding:14px}
+.pan.good{background:var(--green-bg);border-color:#cfe3d6}
+.pan.avoid{background:var(--warm-bg);border-color:#e6d2ca}
+.pan h3{font-family:var(--fd);font-size:19px;text-align:center;margin-bottom:4px}
+.pan.good h3{color:var(--green)}
+.pan.avoid h3{color:var(--warm)}
+.pan .say{text-align:center;font-size:13px;color:var(--muted);margin-bottom:10px}
+h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:2px 0 12px;padding-inline-start:11px;border-inline-start:4px solid var(--t2)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card{border:2px dashed #9ab0b6;border-radius:14px;padding:12px 8px;text-align:center;background:#fff;display:flex;flex-direction:column;align-items:center;gap:7px;min-height:110px;justify-content:center}
+.card svg{width:44px;height:44px}
+.card .t{font-weight:700;font-size:13.5px;color:var(--ink);line-height:1.5}
+.foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
+@media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
+</style>
+</head>
+<body>
+<p class="tip">للطباعة: اضغطي <b>Ctrl/⌘ + P</b> ثم اختاري الحجم <b>A4</b>. صفحة «البساط» تُطبع مرّة، وصفحة البطاقات تُقصّ على الخطّ المتقطّع.</p>
+
+<!-- ===== الصفحة 1: بساط الفرز ===== -->
+<div class="sheet">
+  <div class="hd">
+    <div>
+      <h1>أعمالي مكتوبة — بطاقاتُ الفرز</h1>
+      <div class="sub">وحدة المسكن · كتابي المنير — الدرس الأول · ركن أدرك وأستمتع</div>
+    </div>
+    <img class="logo" src="brand/logo-ghars.webp" alt="شعار غرس القيم"/>
+  </div>
+  <div class="prompt"><b>طريقة العمل:</b> يسحب الطفل بطاقةَ عملٍ ويصفه، فإن كان <b>عملًا صالحًا</b> وضعه في صحيفة «عملٌ صالح»، وإن كان مما <b>نتجنّبه</b> وضعه في صحيفة «أتجنّبه». نتذكّر: عن اليمين وعن الشمال كاتبان يكتبان، فأختارُ الخير ليُكتَب لي.</div>
+
+  <div class="scrolls">
+    <svg viewBox="0 0 360 140" role="img" aria-label="صحيفتان وقلمان للكتابة">
+      <ellipse cx="180" cy="128" rx="120" ry="7" fill="#003E45" opacity=".08"/>
+      <!-- صحيفة اليمين -->
+      <g transform="translate(46,26)">
+        <rect x="0" y="0" width="86" height="88" rx="6" fill="#f3ead3" stroke="#5f9070" stroke-width="3"/>
+        <g stroke="#8faf98" stroke-width="2.5"><line x1="12" y1="20" x2="74" y2="20"/><line x1="12" y1="34" x2="74" y2="34"/><line x1="12" y1="48" x2="74" y2="48"/><line x1="12" y1="62" x2="60" y2="62"/></g>
+        <path d="M60 66 l14 -14 8 8 -14 14 -10 2z" fill="#C79A3B"/><path d="M60 66 l-2 8 8 -2z" fill="#7a5a12"/>
+      </g>
+      <!-- صحيفة الشمال -->
+      <g transform="translate(228,26)">
+        <rect x="0" y="0" width="86" height="88" rx="6" fill="#f3ead3" stroke="#b06a52" stroke-width="3"/>
+        <g stroke="#d8b8ad" stroke-width="2.5"><line x1="12" y1="20" x2="74" y2="20"/><line x1="12" y1="34" x2="74" y2="34"/><line x1="12" y1="48" x2="74" y2="48"/><line x1="12" y1="62" x2="60" y2="62"/></g>
+        <path d="M60 66 l14 -14 8 8 -14 14 -10 2z" fill="#8a99a0"/><path d="M60 66 l-2 8 8 -2z" fill="#5f6f6c"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="mat">
+    <div class="pan good"><h3>عملٌ صالحٌ أفعله</h3><div class="say">يُكتَبُ لي في صحيفة الخير</div></div>
+    <div class="pan avoid"><h3>عملٌ أتجنّبه</h3><div class="say">أستغفرُ وأتركه</div></div>
+  </div>
+  <div class="foot">دليل معلمة غرس القيم · نشاط تطبيقي — ركن أدرك وأستمتع</div>
+</div>
+
+<!-- ===== الصفحة 2: بطاقات الأعمال ===== -->
+<div class="sheet">
+  <h2>بطاقاتُ الأعمال — تُقصّ وتُخلط</h2>
+  <div class="cards">
+    <div class="card"><svg viewBox="0 0 48 48"><rect x="22" y="8" width="4" height="24" rx="2" fill="#8a6a4a"/><path d="M14 32 h20 l-2 8 h-16 z" fill="#C79A3B"/><g stroke="#8a6a4a" stroke-width="1.4"><line x1="17" y1="34" x2="16" y2="40"/><line x1="24" y1="34" x2="24" y2="40"/><line x1="31" y1="34" x2="32" y2="40"/></g></svg><div class="t">أساعد أمي في الترتيب</div></div>
+    <div class="card"><svg viewBox="0 0 48 48"><ellipse cx="24" cy="30" rx="16" ry="7" fill="#bcd0d6"/><ellipse cx="24" cy="28" rx="16" ry="7" fill="#e6eef0"/><circle cx="24" cy="26" r="8" fill="#6a9c78"/><circle cx="18" cy="28" r="5" fill="#cf6f5f"/><circle cx="30" cy="29" r="5" fill="#e0b354"/></svg><div class="t">أشارك إخوتي الطعام</div></div>
+    <div class="card"><svg viewBox="0 0 48 48"><rect x="18" y="30" width="12" height="8" rx="2" fill="#b07d4a"/><rect x="20" y="24" width="8" height="8" rx="2" fill="#8fbf9a"/><path d="M24 24 q-6 -10 0 -14 q6 4 0 14z" fill="#6a9c78"/><path d="M8 18 l4 2 -1 4" fill="none" stroke="#5b86a8" stroke-width="1.6"/><line x1="9" y1="18" x2="20" y2="24" stroke="#8fc0d0" stroke-width="2"/></svg><div class="t">أسقي النبات</div></div>
+    <div class="card"><svg viewBox="0 0 48 48"><rect x="10" y="30" width="28" height="8" rx="2" fill="#6a9c78"/><rect x="12" y="20" width="24" height="10" rx="3" fill="#8fbf9a"/><path d="M16 20 l8 -8 8 8z" fill="#0d6e6e"/><rect x="22" y="24" width="4" height="14" fill="#C79A3B"/></svg><div class="t">أحافظ على صلاتي</div></div>
+    <div class="card"><svg viewBox="0 0 48 48"><rect x="14" y="10" width="20" height="28" rx="2" fill="#f3ead3" stroke="#C79A3B" stroke-width="2"/><g stroke="#9a7550" stroke-width="2"><line x1="18" y1="18" x2="30" y2="18"/><line x1="18" y1="24" x2="30" y2="24"/><line x1="18" y1="30" x2="26" y2="30"/></g></svg><div class="t">أقول الصدق دائمًا</div></div>
+    <div class="card"><svg viewBox="0 0 48 48"><path d="M24 38 C6 24 12 12 20 15 c2 .8 4 3 4 3 s2 -2.2 4 -3 c8 -3 14 9 -4 23z" fill="#cf6f5f"/></svg><div class="t">أرحمُ الصغير وأبرُّ الكبير</div></div>
+    <div class="card"><svg viewBox="0 0 48 48"><path d="M12 20 h24 v4 l-3 14 h-18 l-3 -14z" fill="#8a99a0"/><path d="M14 24 h20 l-2 12 h-16z" fill="#c7d0d3"/><line x1="16" y1="14" x2="32" y2="34" stroke="#b06a52" stroke-width="3"/><line x1="18" y1="14" x2="30" y2="14" stroke="#8a99a0" stroke-width="3"/></svg><div class="t">أرمي القمامة على الأرض</div></div>
+    <div class="card"><svg viewBox="0 0 48 48"><ellipse cx="24" cy="30" rx="15" ry="6" fill="#e6eef0"/><circle cx="24" cy="27" r="7" fill="#6a9c78"/><line x1="12" y1="15" x2="36" y2="39" stroke="#b06a52" stroke-width="3"/></svg><div class="t">أرمي الطعام وأُبذّره</div></div>
+    <div class="card"><svg viewBox="0 0 48 48"><rect x="9" y="22" width="14" height="14" rx="2" fill="#8a99a0" transform="rotate(-8 16 29)"/><rect x="25" y="22" width="14" height="14" rx="2" fill="#a7b3b8" transform="rotate(9 32 29)"/><path d="M24 12 l-2 8 4 0 -2 8" fill="none" stroke="#b06a52" stroke-width="2.4"/></svg><div class="t">أُتلفُ ألعابي وأكسرها</div></div>
+  </div>
+<div style="background:linear-gradient(135deg,#003E45,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:14px 0 6px"><b>الخلاصة:</b> نجعل المسكن موطنًا للطاعة والعمل الصالح؛ وأعمالنا مكتوبةٌ يحفظها الكرام الكاتبون. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>
+  <div class="foot">دليل معلمة غرس القيم · بطاقات أعمال — عملٌ صالح، وعملٌ أتجنّبه</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ورقة طباعة · دفتر صحيفة الاستعداد · وحدة العائلة</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45;--t2:#0d6e6e;--gold:#C79A3B;--gold-d:#7a5a12;--ink:#1e2b2a;--muted:#5f6f6c;--line:#e8dfd0;--cream:#FFF7E8;--soft:#f2faf9}
+@page{size:A4;margin:12mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#eef1ec;padding:18px}
+.tip{max-width:820px;margin:0 auto 14px;font-size:13px;color:var(--muted);text-align:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 14px}
+.sheet{background:#fff;max-width:820px;margin:0 auto 18px;padding:28px;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--gold);padding-bottom:12px;margin-bottom:8px}
+.hd h1{font-family:var(--fd);color:var(--t1);font-size:23px;line-height:1.4}
+.hd .sub{font-size:12.5px;color:var(--muted);margin-top:3px}
+.hd .logo{width:60px;height:60px;object-fit:contain;flex:0 0 auto}
+.fields{display:flex;gap:22px;font-size:14px;color:var(--t1);font-weight:700;margin:12px 0 4px}
+.fields .f{flex:1;border-bottom:2px dotted var(--line);padding-bottom:4px}
+.prompt{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);border-radius:12px;padding:11px 15px;font-size:13.5px;line-height:1.9;color:var(--gold-d);margin:8px 0 16px}
+table{width:100%;border-collapse:collapse;margin-bottom:6px}
+thead th{font-family:var(--fd);background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff;font-size:14px;font-weight:700;padding:10px 12px;border:1px solid var(--t1)}
+thead th:first-child{border-start-start-radius:12px}
+thead th:last-child{border-start-end-radius:12px}
+tbody td{border:1px dashed #b9c9c6;padding:0;height:56px;background:var(--soft);vertical-align:middle}
+tbody td.n{width:44px;text-align:center;font-family:var(--fd);font-weight:700;font-size:17px;color:var(--gold-d);background:#fff}
+tbody tr:nth-child(even) td{background:#fff}
+.draw{width:74px;text-align:center;color:#c3cecb;font-size:11px}
+.foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
+@media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+</style>
+</head>
+<body>
+<p class="tip">للطباعة: اضغطي <b>Ctrl/⌘ + P</b> ثم اختاري الحجم <b>A4</b>. تُطبع صحيفةٌ لكل طفل، ويسجّل فيها بالرسم أو بمعاونة أهله.</p>
+
+<div class="sheet">
+  <div class="hd">
+    <div>
+      <h1>صحيفةُ الاستعداد</h1>
+      <div class="sub">وحدة العائلة · كتابي المنير — سبب نزول السورة · ركن أقرأ لأتعلم</div>
+    </div>
+    <img class="logo" src="brand/logo-ghars.webp" alt="شعار غرس القيم"/>
+  </div>
+
+  <div class="fields">
+    <div class="f">اسم الطفل/ة: …………………………</div>
+    <div class="f">التاريخ: ………………</div>
+  </div>
+
+  <div class="prompt"><b>طريقة العمل:</b> يختار الطفل عملًا صالحًا يستعدّ به لآخرته، فيرسمه أو يعبّر عنه في «صحيفتي»، ويذكر <b>متى</b> يفعله و<b>كيف يعينه أهلُه</b> عليه. نضيف عملًا جديدًا كلَّ يوم لتنمو الصحيفة بالخير.</div>
+
+  <table>
+    <thead>
+      <tr><th>م</th><th>عملي الصالح (أرسمه)</th><th>متى أفعله؟</th><th>كيف يعينني أهلي؟</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="n">١</td><td class="draw">✎</td><td></td><td></td></tr>
+      <tr><td class="n">٢</td><td class="draw">✎</td><td></td><td></td></tr>
+      <tr><td class="n">٣</td><td class="draw">✎</td><td></td><td></td></tr>
+      <tr><td class="n">٤</td><td class="draw">✎</td><td></td><td></td></tr>
+      <tr><td class="n">٥</td><td class="draw">✎</td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+<div style="background:linear-gradient(135deg,#003E45,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:14px 0 6px"><b>الخلاصة:</b> تعينني عائلتي على العمل الصالح والاستعداد للآخرة. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>
+  <div class="foot">دليل معلمة غرس القيم · نشاط تطبيقي — ركن أقرأ لأتعلم</div>
+</div>
+</body>
+</html>

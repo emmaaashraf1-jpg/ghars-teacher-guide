@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ورقة طباعة · بطاقات نماذج الشين · وحدة العائلة</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45;--t2:#0d6e6e;--gold:#C79A3B;--gold-d:#7a5a12;--ink:#1e2b2a;--muted:#5f6f6c;--line:#e8dfd0;--cream:#FFF7E8;--sand:#e8d3a6}
+@page{size:A4;margin:12mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#eef1ec;padding:18px}
+.tip{max-width:820px;margin:0 auto 14px;font-size:13px;color:var(--muted);text-align:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 14px}
+.sheet{background:#fff;max-width:820px;margin:0 auto 18px;padding:28px;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--gold);padding-bottom:12px;margin-bottom:14px}
+.hd h1{font-family:var(--fd);color:var(--t1);font-size:23px;line-height:1.4}
+.hd .sub{font-size:12.5px;color:var(--muted);margin-top:3px}
+.hd .logo{width:60px;height:60px;object-fit:contain;flex:0 0 auto}
+.prompt{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);border-radius:12px;padding:11px 15px;font-size:13.5px;line-height:1.9;color:var(--gold-d);margin-bottom:16px}
+h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:2px 0 12px;padding-inline-start:11px;border-inline-start:4px solid var(--t2)}
+.trace{border:2px dashed #9ab0b6;border-radius:16px;padding:8px;background:#fff;margin-bottom:16px}
+.trace svg{display:block;width:100%;height:auto}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{border:2px dashed #9ab0b6;border-radius:14px;padding:12px;text-align:center;background:#fff}
+.card svg{width:100%;height:120px}
+.card .nm{font-family:var(--fd);color:var(--t1);font-weight:700;font-size:17px;margin-top:6px}
+.card .nm b{color:var(--gold-d)}
+.foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
+@media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+</style>
+</head>
+<body>
+<p class="tip">للطباعة: اضغطي <b>Ctrl/⌘ + P</b> ثم اختاري الحجم <b>A4</b>. اقصصي البطاقات على الخطّ المتقطّع.</p>
+
+<div class="sheet">
+  <div class="hd">
+    <div>
+      <h1>نماذجُ الشين — بطاقاتُ الكتابة في الرمل</h1>
+      <div class="sub">وحدة العائلة · لساني عربي — الدرس الخامس · ساحة الرمل</div>
+    </div>
+    <img class="logo" src="brand/logo-ghars.webp" alt="شعار غرس القيم"/>
+  </div>
+
+  <div class="prompt"><b>طريقة العمل:</b> يضع الطفل بطاقةَ النموذج بجوار حوض الرمل، ثم يتتبّع مسارَ حرف <b>الشين</b> بإصبعه في الرمل: يكتب جسمَ الحرف أوّلًا، ثم يضع نقاطَه الثلاث فوقه، وينطق «شَ»، ويطابقها بكلمة «شَمس». يمسح الرمل ويعيد الكرّة.</div>
+
+  <h2>نموذجُ التتبّع — جسمُ الشين ونقاطُها الثلاث</h2>
+  <div class="trace">
+    <svg viewBox="0 0 700 210" role="img" aria-label="نموذج تتبّع حرف الشين بالفتح">
+      <rect x="6" y="6" width="688" height="198" rx="14" fill="#faf5e8"/>
+      <line x1="30" y1="150" x2="670" y2="150" stroke="#e0cfa0" stroke-width="2" stroke-dasharray="6 8"/>
+      <!-- شين body: three teeth then a tail -->
+      <path d="M150 150 q0 -46 34 0 q0 -46 34 0 q0 -46 34 0 q20 40 96 40 q60 0 96 -46"
+            fill="none" stroke="#C79A3B" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M150 150 q0 -46 34 0 q0 -46 34 0 q0 -46 34 0 q20 40 96 40 q60 0 96 -46"
+            fill="none" stroke="#8a6a4a" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round"/>
+      <!-- three dots -->
+      <g fill="#cf6f5f"><circle cx="190" cy="72" r="10"/><circle cx="224" cy="72" r="10"/><circle cx="258" cy="72" r="10"/></g>
+      <!-- start marker -->
+      <circle cx="150" cy="150" r="9" fill="#0d6e6e"/>
+      <text x="150" y="184" font-family="AlAwwal,serif" font-size="18" fill="#0d6e6e" text-anchor="middle">ابدأ من هنا</text>
+      <text x="610" y="118" font-family="AlAwwal,serif" font-size="60" font-weight="700" fill="#003E45" text-anchor="middle">شَ</text>
+    </svg>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <svg viewBox="0 0 240 120" role="img" aria-label="حرف الشين">
+        <rect width="240" height="120" rx="12" fill="#f7fbfa"/>
+        <text x="120" y="86" font-family="AlAwwal,serif" font-size="66" font-weight="700" fill="#0d6e6e" text-anchor="middle">شَ</text>
+      </svg>
+      <div class="nm">أنطقُ: <b>شَ</b></div>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 240 120" role="img" aria-label="شمس">
+        <rect width="240" height="120" rx="12" fill="#0e2a3a"/>
+        <circle cx="120" cy="60" r="30" fill="#C79A3B"/><circle cx="120" cy="60" r="21" fill="#e0b354"/>
+        <g stroke="#C79A3B" stroke-width="5" stroke-linecap="round"><line x1="120" y1="16" x2="120" y2="4"/><line x1="120" y1="104" x2="120" y2="116"/><line x1="64" y1="60" x2="52" y2="60"/><line x1="176" y1="60" x2="188" y2="60"/><line x1="82" y1="22" x2="74" y2="14"/><line x1="158" y1="22" x2="166" y2="14"/><line x1="82" y1="98" x2="74" y2="106"/><line x1="158" y1="98" x2="166" y2="106"/></g>
+      </svg>
+      <div class="nm">أطابقُ: <b>شَ</b>مس</div>
+    </div>
+  </div>
+
+<div style="background:linear-gradient(135deg,#003E45,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:16px 0 6px"><b>الخلاصة:</b> ترى العائلة ضياءَ النهار فتذكر نعمةَ الله وآياته، وتسمّي ما تراه بالعربية. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>
+  <div class="foot">دليل معلمة غرس القيم · نشاط تطبيقي — ساحة الرمل</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ورقة طباعة · شجرة عائلتي · وحدة العائلة</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45;--t2:#0d6e6e;--gold:#C79A3B;--gold-d:#7a5a12;--ink:#1e2b2a;--muted:#5f6f6c;--line:#e8dfd0;--cream:#FFF7E8}
+@page{size:A4;margin:12mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#eef1ec;padding:18px}
+.tip{max-width:820px;margin:0 auto 14px;font-size:13px;color:var(--muted);text-align:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 14px}
+.sheet{background:#fff;max-width:820px;margin:0 auto 18px;padding:28px;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--gold);padding-bottom:12px;margin-bottom:8px}
+.hd h1{font-family:var(--fd);color:var(--t1);font-size:23px;line-height:1.4}
+.hd .sub{font-size:12.5px;color:var(--muted);margin-top:3px}
+.hd .logo{width:60px;height:60px;object-fit:contain;flex:0 0 auto}
+.fields{display:flex;gap:22px;font-size:14px;color:var(--t1);font-weight:700;margin:12px 0 4px}
+.fields .f{flex:1;border-bottom:2px dotted var(--line);padding-bottom:4px}
+.prompt{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);border-radius:12px;padding:11px 15px;font-size:13.5px;line-height:1.9;color:var(--gold-d);margin:8px 0 6px}
+.tree-wrap{display:grid;place-items:center;padding:4px 0}
+.tree-wrap svg{width:100%;max-width:600px;height:auto}
+.foot{margin-top:10px;text-align:center;font-size:12px;color:var(--muted)}
+@media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+</style>
+</head>
+<body>
+<p class="tip">للطباعة: اضغطي <b>Ctrl/⌘ + P</b> ثم اختاري الحجم <b>A4</b>. تُطبع نسخة لكل طفل.</p>
+
+<div class="sheet">
+  <div class="hd">
+    <div>
+      <h1>شجرةُ عائلتي</h1>
+      <div class="sub">وحدة العائلة · علّمني ربي — الدرس الأول · ركن فنوني الجميلة</div>
+    </div>
+    <img class="logo" src="brand/logo-ghars.webp" alt="شعار غرس القيم"/>
+  </div>
+
+  <div class="fields">
+    <div class="f">اسم الطفل/ة: …………………………</div>
+    <div class="f">التاريخ: ………………</div>
+  </div>
+
+  <div class="prompt"><b>طريقة العمل:</b> يرسم الطفل داخل كلِّ إطارٍ رمزًا لفردٍ من عائلته (بلا ملامح) أو يلصق صورةً، ويكتب/يُملي اسمه ودوره. ثم يتحدّث عن أحبِّ لحظةٍ جمعته بعائلته، ويقول: «الحمدُ لله على نعمة عائلتي».</div>
+
+  <div class="tree-wrap">
+    <svg viewBox="0 0 600 470" role="img" aria-label="شجرة عائلة بإطارات لوضع أفراد العائلة">
+      <ellipse cx="300" cy="452" rx="170" ry="12" fill="#003E45" opacity=".08"/>
+      <path d="M282 452 C282 380 270 330 276 300 L324 300 C330 330 318 380 318 452 Z" fill="#9a7550"/>
+      <path d="M290 452 C290 390 284 340 288 306 L296 306 C292 350 300 400 308 452 Z" fill="#835f3e" opacity=".5"/>
+      <g fill="none" stroke="#9a7550" stroke-width="13" stroke-linecap="round">
+        <path d="M300 306 C288 258 226 244 180 214"/>
+        <path d="M300 300 C312 250 374 240 420 210"/>
+        <path d="M298 262 C290 226 250 214 214 190"/>
+        <path d="M302 258 C312 224 350 214 386 194"/>
+        <path d="M300 236 C296 206 300 190 300 168"/>
+      </g>
+      <!-- crown -->
+      <g fill="#8fbf9a" opacity=".55">
+        <circle cx="300" cy="150" r="70"/><circle cx="210" cy="180" r="58"/><circle cx="390" cy="180" r="58"/>
+        <circle cx="250" cy="120" r="46"/><circle cx="350" cy="120" r="46"/>
+      </g>
+      <!-- frames -->
+      <g>
+        <rect x="256" y="118" width="88" height="70" rx="10" fill="#fff" stroke="#7a5a12" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="300" y="204" font-family="AlAwwal,serif" font-size="15" font-weight="700" fill="#003E45" text-anchor="middle">أنا</text>
+
+        <rect x="150" y="150" width="82" height="64" rx="10" fill="#fff" stroke="#7a5a12" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="191" y="230" font-family="AlAwwal,serif" font-size="14" font-weight="700" fill="#003E45" text-anchor="middle">أبي</text>
+
+        <rect x="368" y="150" width="82" height="64" rx="10" fill="#fff" stroke="#7a5a12" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="409" y="230" font-family="AlAwwal,serif" font-size="14" font-weight="700" fill="#003E45" text-anchor="middle">أمي</text>
+
+        <rect x="216" y="70" width="74" height="58" rx="10" fill="#fff" stroke="#7a5a12" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="253" y="142" font-family="AlAwwal,serif" font-size="13" font-weight="700" fill="#003E45" text-anchor="middle">جدّي</text>
+
+        <rect x="310" y="70" width="74" height="58" rx="10" fill="#fff" stroke="#7a5a12" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="347" y="142" font-family="AlAwwal,serif" font-size="13" font-weight="700" fill="#003E45" text-anchor="middle">جدّتي</text>
+
+        <rect x="96" y="238" width="80" height="62" rx="10" fill="#fff" stroke="#7a5a12" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="136" y="316" font-family="AlAwwal,serif" font-size="13.5" font-weight="700" fill="#003E45" text-anchor="middle">أخي / أختي</text>
+
+        <rect x="424" y="238" width="80" height="62" rx="10" fill="#fff" stroke="#7a5a12" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="464" y="316" font-family="AlAwwal,serif" font-size="13.5" font-weight="700" fill="#003E45" text-anchor="middle">فردٌ أحبّه</text>
+      </g>
+    </svg>
+  </div>
+
+<div style="background:linear-gradient(135deg,#003E45,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:14px 0 6px"><b>الخلاصة:</b> العائلة نعمةٌ من الله تستوجب الشكر وحسن التعامل، والله يسخّر لكلِّ طفلٍ من يرعاه. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>
+  <div class="foot">دليل معلمة غرس القيم · نشاط تطبيقي — ركن فنوني الجميلة</div>
+</div>
+</body>
+</html>

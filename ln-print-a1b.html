@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ورقة طباعة · لوحة يتعاقبان · وحدة الليل والنهار</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45;--t2:#0d6e6e;--gold:#C79A3B;--gold-d:#7a5a12;--ink:#1e2b2a;--muted:#5f6f6c;--line:#e8dfd0;--cream:#FFF7E8;--night:#0e2a3a}
+@page{size:A4;margin:12mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#eef1ec;padding:18px}
+.tip{max-width:820px;margin:0 auto 14px;font-size:13px;color:var(--muted);text-align:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 14px}
+.sheet{background:#fff;max-width:820px;margin:0 auto 18px;padding:28px;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--gold);padding-bottom:12px;margin-bottom:8px}
+.hd h1{font-family:var(--fd);color:var(--t1);font-size:23px;line-height:1.4}
+.hd .sub{font-size:12.5px;color:var(--muted);margin-top:3px}
+.hd .logo{width:60px;height:60px;object-fit:contain;flex:0 0 auto}
+.fields{display:flex;gap:22px;font-size:14px;color:var(--t1);font-weight:700;margin:12px 0 4px}
+.fields .f{flex:1;border-bottom:2px dotted var(--line);padding-bottom:4px}
+.prompt{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);border-radius:12px;padding:11px 15px;font-size:13.5px;line-height:1.9;color:var(--gold-d);margin:8px 0 12px}
+.board{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.half{border:2px solid var(--line);border-radius:16px;min-height:290px;padding:14px;position:relative;overflow:hidden}
+.half h3{font-family:var(--fd);font-size:19px;text-align:center;margin-bottom:6px}
+.half.day{background:#eaf4fb;border-color:#cfe1ef}
+.half.day h3{color:#3f7fa6}
+.half.night{background:#12304a;border-color:#0e2a3a}
+.half.night h3{color:#f3e3bf}
+.half .hint{text-align:center;font-size:12px}
+.half.day .hint{color:#6f93a6}
+.half.night .hint{color:#a9c3d6}
+h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 10px;padding-inline-start:11px;border-inline-start:4px solid var(--t2)}
+.cut{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.piece{width:130px;border:2px dashed #9ab0b6;border-radius:14px;padding:8px;text-align:center;background:#fff}
+.piece svg{width:88px;height:88px}
+.piece .nm{font-weight:700;font-size:13px;color:var(--ink);margin-top:4px}
+.foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
+@media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<p class="tip">للطباعة: اضغطي <b>Ctrl/⌘ + P</b> ثم اختاري الحجم <b>A4</b> وفعّلي «طباعة ألوان الخلفية». اقصصي العناصر أسفل الورقة والصقيها في مكانها.</p>
+
+<div class="sheet">
+  <div class="hd">
+    <div>
+      <h1>لوحةُ «يتعاقبان»</h1>
+      <div class="sub">وحدة الليل والنهار · علّمني ربي — الليل والنهار · ركن فنوني الجميلة</div>
+    </div>
+    <img class="logo" src="brand/logo-ghars.webp" alt="شعار غرس القيم"/>
+  </div>
+
+  <div class="fields">
+    <div class="f">اسم الطفل/ة: …………………………</div>
+    <div class="f">التاريخ: ………………</div>
+  </div>
+
+  <div class="prompt"><b>طريقة العمل:</b> يقصُّ الطفل العناصرَ أسفلَ الورقة، ثم يلصقُ ما يُناسبُ <b>النهار</b> في نصفه الفاتح (الشمس والسحابة) وما يُناسبُ <b>الليل</b> في نصفه الداكن (القمر والنجمات). نختم: جعل الله الليلَ والنهار يتعاقبان بأمره، آيةً من آياته.</div>
+
+  <div class="board">
+    <div class="half day">
+      <h3>النَّهار</h3>
+      <div class="hint">ألصقُ هنا ما نراه في النهار</div>
+    </div>
+    <div class="half night">
+      <h3>اللَّيل</h3>
+      <div class="hint">ألصقُ هنا ما نراه في الليل</div>
+    </div>
+  </div>
+
+  <h2>عناصرُ القصّ واللّصق — تُقصّ على الخطّ المتقطّع</h2>
+  <div class="cut">
+    <div class="piece">
+      <svg viewBox="0 0 88 88" role="img" aria-label="شمس">
+        <g stroke="#e0a92e" stroke-width="4" stroke-linecap="round">
+          <line x1="44" y1="8" x2="44" y2="20"/><line x1="44" y1="68" x2="44" y2="80"/>
+          <line x1="8" y1="44" x2="20" y2="44"/><line x1="68" y1="44" x2="80" y2="44"/>
+          <line x1="18" y1="18" x2="27" y2="27"/><line x1="61" y1="61" x2="70" y2="70"/>
+          <line x1="70" y1="18" x2="61" y2="27"/><line x1="27" y1="61" x2="18" y2="70"/>
+        </g>
+        <circle cx="44" cy="44" r="18" fill="#f4c752" stroke="#e0a92e" stroke-width="3"/>
+      </svg>
+      <div class="nm">شمس</div>
+    </div>
+    <div class="piece">
+      <svg viewBox="0 0 88 88" role="img" aria-label="هلال القمر">
+        <path d="M58 12 a34 34 0 1 0 0 64 a26 26 0 1 1 0 -64 z" fill="#e9edd6" stroke="#c9cfae" stroke-width="2.5"/>
+      </svg>
+      <div class="nm">قمر</div>
+    </div>
+    <div class="piece">
+      <svg viewBox="0 0 88 88" role="img" aria-label="نجمات">
+        <g fill="#f4c752" stroke="#e0a92e" stroke-width="2">
+          <path d="M30 20 l4 9 10 1 -7 7 2 10 -9 -5 -9 5 2 -10 -7 -7 10 -1z"/>
+          <path d="M60 46 l3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1z"/>
+        </g>
+      </svg>
+      <div class="nm">نجمات</div>
+    </div>
+    <div class="piece">
+      <svg viewBox="0 0 88 88" role="img" aria-label="سحابة">
+        <path d="M22 58 a15 15 0 0 1 3 -29 a18 18 0 0 1 34 4 a13 13 0 0 1 4 25 z" fill="#dce8f2" stroke="#b9cdde" stroke-width="2.5"/>
+      </svg>
+      <div class="nm">سحابة</div>
+    </div>
+  </div>
+
+<div style="background:linear-gradient(135deg,#003E45,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:14px 0 6px"><b>الخلاصة:</b> الليل والنهار آيتان يتعاقبان؛ التفكّر يزيد الإيمان والشكر. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>
+  <div class="foot">دليل معلمة غرس القيم · نشاط تطبيقي — ركن فنوني الجميلة 🎨</div>
+</div>
+</body>
+</html>
