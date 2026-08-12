@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>الأركان التطبيقية · وحدة المسكن · لكل درس ركنان</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#003E45; --t2:#0d6e6e; --soft:#E6F4F5; --soft2:#F2FAF9;
+  --gold:#C79A3B; --gold-d:#7a5a12; --cream:#FFF7E8;
+  --ink:#1e2b2a; --muted:#5f6f6c; --line:#e8dfd0; --card:#fff;
+  --shadow:0 6px 20px rgba(0,50,55,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.95;font-size:16px;
+  background:linear-gradient(#fbf9f3,#f6f0e6);padding:22px 16px 60px}
+.wrap{max-width:1060px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+b,strong{font-weight:700}
+h1,h2,h3,h4,.c-badge,.c-unit{font-family:var(--fd)}
+a{color:var(--t2)}
+
+/* ===== الغلاف ===== */
+.cover{position:relative;overflow:hidden;border-radius:22px;color:#fff;box-shadow:var(--shadow);min-height:190px}
+.cover-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.cover::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg,rgba(0,62,69,.93),rgba(13,110,110,.82) 52%,rgba(13,110,110,.9))}
+.cover::after{content:"";position:absolute;inset:0;z-index:1;opacity:.08;pointer-events:none;
+  background:radial-gradient(circle at 88% 18%,#fff 0 2px,transparent 3px) 0 0/34px 34px}
+.cover-main{position:relative;z-index:2;padding:26px 28px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cover-l{flex:1 1 60%;min-width:240px}
+.cover-r{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.c-badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:999px;padding:6px 15px;font-weight:700;font-size:14px;margin-bottom:11px}
+.cover h1{font-size:28px;line-height:1.42;font-weight:700;margin-bottom:10px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+.c-meta{font-size:14px;color:#dcf3ef;line-height:1.85}
+
+/* ===== رقائق ===== */
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.chip{background:var(--soft2);border:1px solid var(--line);border-radius:16px;padding:13px 15px;font-size:14px;line-height:1.85}
+.chip strong{display:block;color:var(--t1);font-weight:700;margin-bottom:3px;font-family:var(--fd);font-size:15px}
+
+/* ===== كتلة عامة ===== */
+.block{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow)}
+.block>h2{color:var(--t1);font-size:19px;font-weight:700;margin-bottom:12px;
+  padding-inline-start:12px;border-inline-start:4px solid var(--t2)}
+
+/* ===== لوحة الأركان الثمانية ===== */
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}
+.lg{background:var(--soft2);border:1px solid var(--line);border-top:3px solid var(--t2);border-radius:14px;padding:13px 15px}
+.lg h4{color:var(--t1);font-size:15.5px;margin-bottom:5px;display:flex;align-items:center;gap:8px}
+.lg h4 .ic{font-size:19px}
+.lg p{font-size:12.5px;color:var(--muted);line-height:1.8}
+.lg .rules{margin-top:9px;padding-top:8px;border-top:1px dashed var(--line)}
+.lg .rules b{display:block;color:var(--t2);font-size:12.5px;margin-bottom:3px;font-family:var(--fd)}
+.lg .rules ul{margin:0;padding-inline-start:16px}
+.lg .rules li{font-size:11.5px;color:var(--ink);line-height:1.7;margin-bottom:2px}
+.lg .rules li::marker{color:var(--gold)}
+
+/* ===== كتلة الروتين ===== */
+.routine{background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff;border-radius:18px;padding:18px 20px;box-shadow:var(--shadow)}
+.routine h2{font-size:18px;font-weight:700;margin-bottom:6px;color:#fff}
+.routine>p{font-size:13.5px;color:#dcf3ef;margin-bottom:13px}
+.routine-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:11px}
+.rstep{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:13px;padding:12px 14px}
+.rstep .num{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--gold);color:#3a2a06;font-weight:700;font-family:var(--fd);margin-bottom:7px}
+.rstep b{display:block;font-family:var(--fd);font-size:14.5px;margin-bottom:3px}
+.rstep p{font-size:12.5px;color:#eaf6f3;line-height:1.75}
+
+/* ===== فهرس المواد ===== */
+.toc{display:flex;flex-wrap:wrap;gap:8px}
+.toc a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700;color:var(--t1);text-decoration:none}
+.toc a:hover{background:var(--soft)}
+
+/* ===== عنوان المادة ===== */
+.subj{margin-top:6px}
+.subj-h{display:flex;align-items:center;gap:10px;margin:8px 0 4px;padding:10px 16px;border-radius:14px;
+  background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff;box-shadow:var(--shadow)}
+.subj-h .n{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);border-radius:10px;padding:3px 11px;font-size:13px;font-weight:700}
+.subj-h h3{font-size:18px;font-weight:700}
+
+/* ===== بطاقة الدرس ===== */
+.lesson{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;box-shadow:var(--shadow);margin-top:12px}
+.lesson-head{border-inline-start:4px solid var(--gold);padding-inline-start:13px;margin-bottom:13px}
+.lesson-head .tt{font-family:var(--fd);color:var(--t1);font-size:17px;font-weight:700}
+
+/* ===== الخياران ===== */
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:13px}
+.opt{border:1px solid var(--line);border-radius:15px;padding:14px 16px;background:var(--soft2);position:relative}
+.opt.a{border-top:4px solid var(--t2)}
+.opt.b{border-top:4px solid var(--gold)}
+.opt .head-row{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.opt .tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-weight:700;font-size:13px;border-radius:999px;padding:4px 12px}
+.opt.a .tag{background:var(--t2);color:#fff}
+.opt.b .tag{background:var(--gold);color:#3a2a06}
+.opt .dur{font-family:var(--fb);font-weight:700;font-size:12px;color:var(--t1);background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px 11px;white-space:nowrap}
+.opt-fig{margin:0 0 11px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.opt-fig img{display:block;width:100%;height:172px;object-fit:cover;background:var(--soft2)}
+.opt-ill{margin:0 0 11px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--soft2)}
+.opt-ill svg{display:block;width:100%;height:172px}
+.opt .rk{font-family:var(--fd);color:var(--t1);font-size:16px;font-weight:700;margin-bottom:7px}
+.opt dl{margin:0;font-size:13.5px;line-height:1.85}
+.opt dt{font-weight:700;color:var(--t2);font-family:var(--fd);margin-top:8px}
+.opt dd{margin:0;color:var(--ink)}
+.opt ol,.opt ul{margin:3px 0 0;padding-inline-start:19px}
+.opt li{margin-bottom:3px;font-size:13.5px;line-height:1.8}
+.opt ol li::marker{color:var(--t2)}
+.opt ul li::marker{color:var(--gold)}
+.opt .mean{margin-top:10px;font-size:13px;color:var(--ink);background:var(--cream);border:1px solid #ecd9a8;border-radius:12px;padding:9px 12px;line-height:1.8}
+.opt .mean b{color:var(--gold-d)}
+.opt .print-link{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:9px;padding:10px 12px;background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff;border-radius:11px;text-decoration:none;font-weight:700;font-size:12.5px;box-shadow:0 3px 10px rgba(0,50,55,.16)}
+.opt .print-link .ic{font-size:16px}
+
+/* ===== تنبيه ===== */
+.note{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);
+  border-radius:16px;padding:14px 17px;font-size:14px;line-height:1.95;color:#5b4412}
+.note strong{color:#7a5a12}
+.note ul{margin:8px 0 0;padding-inline-start:20px}
+.note li{margin-bottom:5px}
+
+@media(max-width:640px){.cover h1{font-size:23px}.opt{padding:13px 14px}}
+@media print{body{background:#fff;padding:0}.toc,.cover::after{display:none}.lesson,.opt,.block,.lg,.routine{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+<svg class="ill-defs" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs>
+  <symbol id="ill-basket" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="160" cy="150" rx="66" ry="7" fill="#003E45" opacity=".1"/><circle cx="132" cy="76" r="20" fill="#cf6f5f"/><circle cx="170" cy="72" r="23" fill="#6a9c78"/><circle cx="152" cy="64" r="8" fill="#e6cf9a"/><path d="M104 92 h112 l-12 46 a8 8 0 0 1 -8 6 h-72 a8 8 0 0 1 -8 -6 z" fill="#0d6e6e"/><path d="M104 92 h112 l-3 12 h-106 z" fill="#003E45"/><path d="M116 92 q44 -30 88 0" fill="none" stroke="#003E45" stroke-width="5"/><g stroke="#0b5c5c" stroke-width="3" opacity=".45"><line x1="132" y1="106" x2="128" y2="140"/><line x1="160" y1="106" x2="160" y2="142"/><line x1="188" y1="106" x2="192" y2="140"/></g></symbol>
+  <symbol id="ill-shelf" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><rect x="70" y="54" width="180" height="8" rx="3" fill="#C79A3B"/><rect x="72" y="62" width="176" height="3" rx="1" fill="#8a6420" opacity=".4"/><rect x="70" y="106" width="180" height="8" rx="3" fill="#C79A3B"/><rect x="72" y="114" width="176" height="3" rx="1" fill="#8a6420" opacity=".4"/><rect x="84" y="28" width="20" height="26" rx="3" fill="#cf6f5f"/><rect x="112" y="22" width="18" height="32" rx="3" fill="#6a9c78"/><circle cx="152" cy="42" r="12" fill="#5b86a8"/><rect x="174" y="26" width="22" height="28" rx="4" fill="#8a7bb0"/><rect x="206" y="32" width="18" height="22" rx="3" fill="#e0a94e"/><rect x="86" y="82" width="22" height="24" rx="3" fill="#0d6e6e"/><circle cx="130" cy="94" r="12" fill="#cf6f5f"/><rect x="152" y="78" width="18" height="28" rx="3" fill="#6a9c78"/><rect x="182" y="84" width="24" height="22" rx="4" fill="#5b86a8"/><rect x="214" y="82" width="16" height="24" rx="3" fill="#C97B5A"/></symbol>
+  <symbol id="ill-scale" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="160" cy="150" rx="62" ry="7" fill="#003E45" opacity=".12"/><rect x="122" y="132" width="76" height="12" rx="6" fill="#003E45"/><rect x="153" y="52" width="14" height="84" rx="6" fill="#0b5057"/><circle cx="160" cy="52" r="11" fill="#C79A3B"/><circle cx="160" cy="52" r="5" fill="#8a6a1e"/><rect x="84" y="49" width="152" height="9" rx="4.5" fill="#0d6e6e"/><line x1="96" y1="57" x2="88" y2="82" stroke="#0d6e6e" stroke-width="2.5"/><line x1="112" y1="57" x2="120" y2="82" stroke="#0d6e6e" stroke-width="2.5"/><path d="M78 82 h52 a26 13 0 0 1 -52 0 z" fill="#7fae8b"/><line x1="208" y1="57" x2="200" y2="82" stroke="#0d6e6e" stroke-width="2.5"/><line x1="224" y1="57" x2="232" y2="82" stroke="#0d6e6e" stroke-width="2.5"/><path d="M190 82 h52 a26 13 0 0 1 -52 0 z" fill="#7ba7bd"/></symbol>
+  <symbol id="ill-tree" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="160" cy="150" rx="46" ry="6" fill="#003E45" opacity=".1"/><rect x="153" y="94" width="14" height="56" rx="5" fill="#9a7550"/><path d="M160 108 q-22 -6 -28 -24 M160 100 q22 -6 30 -26" stroke="#9a7550" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="160" cy="58" r="42" fill="#cfe4d8"/><circle cx="132" cy="66" r="20" fill="#cfe4d8"/><circle cx="188" cy="66" r="20" fill="#cfe4d8"/><g fill="#cf6f5f"><circle cx="140" cy="48" r="7"/><circle cx="176" cy="42" r="7"/><circle cx="160" cy="64" r="7"/><circle cx="186" cy="64" r="6"/></g><g fill="#C79A3B"><circle cx="150" cy="66" r="6"/><circle cx="170" cy="54" r="6"/><circle cx="134" cy="72" r="5"/><circle cx="190" cy="50" r="5"/></g><g fill="#e08a7a"><circle cx="126" cy="58" r="5"/><circle cx="196" cy="72" r="5"/></g></symbol>
+  <symbol id="ill-blocks" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="160" cy="150" rx="66" ry="7" fill="#003E45" opacity=".1"/><rect x="112" y="102" width="42" height="42" rx="5" fill="#0d6e6e"/><rect x="112" y="102" width="42" height="9" rx="5" fill="#12857f"/><rect x="158" y="102" width="42" height="42" rx="5" fill="#C79A3B"/><rect x="158" y="102" width="42" height="9" rx="5" fill="#d8b060"/><rect x="135" y="58" width="42" height="42" rx="5" fill="#cf6f5f"/><rect x="135" y="58" width="42" height="9" rx="5" fill="#e08a7a"/><path d="M156 58 l22 -28 22 28 z" fill="#6a9c78"/></symbol>
+  <symbol id="ill-cards" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><g fill="#003E45" opacity=".07"><rect x="74" y="62" width="52" height="66" rx="8"/><rect x="138" y="62" width="52" height="66" rx="8"/><rect x="202" y="62" width="52" height="66" rx="8"/></g><rect x="70" y="58" width="52" height="66" rx="8" fill="#fff" stroke="#0d6e6e" stroke-width="3"/><rect x="134" y="58" width="52" height="66" rx="8" fill="#fff" stroke="#C79A3B" stroke-width="3"/><rect x="198" y="58" width="52" height="66" rx="8" fill="#fff" stroke="#cf6f5f" stroke-width="3"/><text x="96" y="101" font-family="sans-serif" font-size="30" font-weight="700" fill="#0d6e6e" text-anchor="middle">١</text><text x="160" y="101" font-family="sans-serif" font-size="30" font-weight="700" fill="#C79A3B" text-anchor="middle">٢</text><text x="224" y="101" font-family="sans-serif" font-size="30" font-weight="700" fill="#cf6f5f" text-anchor="middle">٣</text></symbol>
+  <symbol id="ill-quiet" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="160" cy="147" rx="76" ry="6" fill="#003E45" opacity=".08"/><rect x="96" y="104" width="128" height="40" rx="18" fill="#8a7bb0"/><circle cx="104" cy="124" r="6" fill="#6a5a94"/><circle cx="216" cy="124" r="6" fill="#6a5a94"/><path d="M160 60 l-52 14 v34 l52 -12 z" fill="#0d6e6e"/><path d="M160 60 l52 14 v34 l-52 -12 z" fill="#12857f"/><line x1="160" y1="60" x2="160" y2="96" stroke="#003E45" stroke-width="3"/></symbol>
+  <symbol id="ill-canvas" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="160" cy="152" rx="62" ry="6" fill="#003E45" opacity=".08"/><path d="M126 112 l-12 38 M194 112 l12 38 M160 116 v34" stroke="#9a7550" stroke-width="5" stroke-linecap="round" fill="none"/><rect x="112" y="38" width="96" height="80" rx="6" fill="#fff" stroke="#003E45" stroke-width="4"/><path d="M122 98 q20 -30 40 -14 t36 -6 v22 h-76 z" fill="#6a9c78"/><circle cx="150" cy="64" r="12" fill="#C79A3B"/><rect x="150" y="118" width="20" height="30" fill="#8a6a4a"/><rect x="208" y="66" width="10" height="52" rx="4" transform="rotate(28 213 92)" fill="#8a6a4a"/><path d="M230 112 l14 10 -6 9 z" fill="#cf6f5f"/></symbol>
+  <symbol id="ill-book" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><circle cx="160" cy="90" r="56" fill="#eaf4f2"/><ellipse cx="160" cy="140" rx="66" ry="6" fill="#003E45" opacity=".07"/><path d="M160 52 l-60 16 v58 l60 -14 z" fill="#0d6e6e"/><path d="M160 52 l60 16 v58 l-60 -14 z" fill="#12857f"/><line x1="160" y1="52" x2="160" y2="112" stroke="#003E45" stroke-width="4"/><g stroke="#cfe7e4" stroke-width="3"><line x1="118" y1="82" x2="150" y2="74"/><line x1="118" y1="96" x2="150" y2="88"/><line x1="170" y1="74" x2="202" y2="82"/><line x1="170" y1="88" x2="202" y2="96"/></g></symbol>
+  <symbol id="ill-flashlight" viewBox="0 0 320 172"><rect width="320" height="172" fill="#0e2a2e"/><g fill="#eae3c8" opacity=".5"><circle cx="66" cy="40" r="1.6"/><circle cx="150" cy="30" r="1.4"/><circle cx="300" cy="140" r="1.6"/></g><circle cx="240" cy="86" r="46" fill="#C79A3B" opacity=".1"/><path d="M120 86 L250 40 L250 132 Z" fill="#C79A3B" opacity=".33"/><rect x="210" y="52" width="60" height="68" rx="6" fill="#123b40"/><path d="M228 108 q10 -34 20 -2" stroke="#8fe3d8" stroke-width="4" fill="none"/><rect x="70" y="74" width="46" height="24" rx="6" fill="#0d6e6e"/><path d="M116 72 l16 -8 v40 l-16 -8 z" fill="#C79A3B"/></symbol>
+  <symbol id="ill-daynight" viewBox="0 0 320 172"><rect width="160" height="172" fill="#dff0ec"/><rect x="160" width="160" height="172" fill="#0e2a3a"/><circle cx="96" cy="80" r="42" fill="#C79A3B" opacity=".16"/><circle cx="96" cy="80" r="30" fill="#C79A3B"/><g stroke="#C79A3B" stroke-width="4" stroke-linecap="round"><line x1="96" y1="30" x2="96" y2="14"/><line x1="52" y1="80" x2="36" y2="80"/><line x1="64" y1="48" x2="52" y2="36"/><line x1="128" y1="48" x2="140" y2="36"/></g><g fill="#eae3c8"><circle cx="238" cy="86" r="30"/><circle cx="250" cy="80" r="30" fill="#0e2a3a"/></g><g fill="#fff"><circle cx="210" cy="46" r="2.5"/><circle cx="278" cy="120" r="2.5"/><circle cx="232" cy="132" r="2"/></g></symbol>
+  <symbol id="ill-solar" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="130" cy="156" rx="74" ry="6" fill="#003E45" opacity=".08"/><circle cx="232" cy="52" r="24" fill="#C79A3B"/><g stroke="#C79A3B" stroke-width="3" stroke-linecap="round"><line x1="232" y1="18" x2="232" y2="8"/><line x1="268" y1="52" x2="280" y2="52"/><line x1="258" y1="26" x2="266" y2="18"/></g><g transform="rotate(-8 130 112)"><rect x="72" y="86" width="116" height="60" rx="4" fill="#123b55"/><g stroke="#3d6f8a" stroke-width="3"><line x1="72" y1="106" x2="188" y2="106"/><line x1="72" y1="126" x2="188" y2="126"/><line x1="110" y1="86" x2="110" y2="146"/><line x1="150" y1="86" x2="150" y2="146"/></g></g><rect x="126" y="148" width="8" height="16" fill="#5f6f6c"/></symbol>
+  <symbol id="ill-sun-brush" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><circle cx="160" cy="86" r="50" fill="#fbeecb"/><circle cx="160" cy="86" r="38" fill="#C79A3B"/><circle cx="160" cy="86" r="26" fill="#e0b354"/><g stroke="#C79A3B" stroke-width="6" stroke-linecap="round"><line x1="160" y1="30" x2="160" y2="14"/><line x1="160" y1="158" x2="160" y2="166"/><line x1="104" y1="86" x2="88" y2="86"/><line x1="216" y1="86" x2="232" y2="86"/><line x1="120" y1="46" x2="109" y2="35"/><line x1="200" y1="46" x2="211" y2="35"/><line x1="120" y1="126" x2="109" y2="137"/><line x1="200" y1="126" x2="211" y2="137"/></g></symbol>
+  <symbol id="ill-register" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="150" cy="146" rx="72" ry="7" fill="#003E45" opacity=".1"/><rect x="96" y="78" width="96" height="58" rx="7" fill="#0d6e6e"/><rect x="96" y="78" width="96" height="12" rx="7" fill="#12857f"/><rect x="108" y="56" width="60" height="26" rx="5" fill="#0b5c5c"/><rect x="115" y="61" width="46" height="16" rx="2" fill="#cfe7e4"/><g fill="#eae3c8"><rect x="106" y="114" width="15" height="11" rx="2"/><rect x="127" y="114" width="15" height="11" rx="2"/><rect x="148" y="114" width="15" height="11" rx="2"/></g><circle cx="222" cy="116" r="17" fill="#e0b354"/><circle cx="222" cy="116" r="17" fill="none" stroke="#b98a2e" stroke-width="2"/><circle cx="240" cy="126" r="17" fill="#C79A3B"/><text x="222" y="122" font-family="sans-serif" font-size="15" font-weight="700" fill="#7a5a12" text-anchor="middle">٥</text></symbol>
+  <symbol id="ill-moon-phases" viewBox="0 0 320 172"><rect width="320" height="172" fill="#0e2a3a"/><g fill="#fff" opacity=".7"><circle cx="60" cy="36" r="1.6"/><circle cx="150" cy="30" r="1.6"/><circle cx="250" cy="40" r="1.4"/><circle cx="300" cy="120" r="1.6"/><circle cx="30" cy="122" r="1.4"/></g><g fill="#eef0e0"><g><circle cx="66" cy="88" r="21"/><circle cx="76" cy="86" r="21" fill="#0e2a3a"/></g><path d="M130 68 a21 21 0 0 1 0 42 z"/><g><circle cx="192" cy="88" r="21"/><circle cx="179" cy="85" r="16" fill="#0e2a3a"/></g><circle cx="252" cy="88" r="21"/></g></symbol>
+  <symbol id="ill-house-moon" viewBox="0 0 320 172"><rect width="320" height="172" fill="#0e2a3a"/><g fill="#fff" opacity=".55"><circle cx="120" cy="40" r="1.6"/><circle cx="288" cy="104" r="1.4"/></g><circle cx="250" cy="52" r="30" fill="#eae3c8" opacity=".14"/><ellipse cx="160" cy="146" rx="66" ry="6" fill="#000" opacity=".22"/><g fill="#eae3c8"><circle cx="250" cy="52" r="18"/><circle cx="258" cy="48" r="18" fill="#0e2a3a"/></g><rect x="118" y="88" width="84" height="56" fill="#0d6e6e"/><path d="M110 88 l50 -34 50 34 z" fill="#C79A3B"/><rect x="150" y="110" width="20" height="34" fill="#eae3c8"/><rect x="128" y="100" width="16" height="16" fill="#cfe7e4"/><g fill="#fff"><circle cx="70" cy="46" r="2"/><circle cx="300" cy="120" r="2"/></g></symbol>
+  <symbol id="ill-harakat" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><rect x="112" y="44" width="104" height="92" rx="10" fill="#003E45" opacity=".07"/><rect x="108" y="40" width="104" height="92" rx="10" fill="#fff" stroke="#0d6e6e" stroke-width="4"/><text x="160" y="106" font-family="serif" font-size="60" font-weight="700" fill="#003E45" text-anchor="middle">بَ</text><g font-family="serif" font-size="30" fill="#C79A3B" text-anchor="middle"><text x="244" y="62">ـَ</text><text x="244" y="96">ـُ</text><text x="244" y="130">ـِ</text></g></symbol>
+  <symbol id="ill-sand" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="160" cy="146" rx="98" ry="6" fill="#003E45" opacity=".08"/><rect x="70" y="66" width="180" height="72" rx="10" fill="#e8d3a6"/><rect x="70" y="66" width="180" height="72" rx="10" fill="none" stroke="#C79A3B" stroke-width="4"/><path d="M116 120 q22 -42 44 0" stroke="#b98a52" stroke-width="5" fill="none" stroke-linecap="round"/><text x="188" y="116" font-family="serif" font-size="44" fill="#8a6a4a" text-anchor="middle">بَ</text></symbol>
+  <symbol id="ill-pipe-letter" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="160" cy="150" rx="80" ry="6" fill="#003E45" opacity=".07"/><path d="M96 120 q4 -62 64 -62 q60 0 64 62" fill="none" stroke="#cf6f5f" stroke-width="12" stroke-linecap="round"/><path d="M96 120 q4 -62 64 -62 q60 0 64 62" fill="none" stroke="#e0b354" stroke-width="4" stroke-dasharray="2 9" stroke-linecap="round"/><circle cx="160" cy="132" r="7" fill="#6a9c78"/></symbol>
+  <symbol id="ill-punch" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="160" cy="150" rx="80" ry="6" fill="#003E45" opacity=".07"/><g transform="translate(122,84)"><g fill="#cf6f5f"><circle cx="0" cy="-16" r="10"/><circle cx="16" cy="0" r="10"/><circle cx="0" cy="16" r="10"/><circle cx="-16" cy="0" r="10"/></g><circle r="9" fill="#C79A3B"/></g><path d="M206 54 l7 20 21 1 -16 14 6 21 -18 -12 -18 12 6 -21 -16 -14 21 -1 z" fill="#5b86a8"/><text x="206" y="142" font-family="serif" font-size="30" fill="#003E45" text-anchor="middle">ـُ</text></symbol>
+  <symbol id="ill-soap" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="160" cy="146" rx="78" ry="6" fill="#003E45" opacity=".08"/><path d="M118 44 c22 30 22 44 0 58 c-22 -14 -22 -28 0 -58 z" fill="#5b86a8"/><rect x="90" y="106" width="56" height="30" rx="10" fill="#8fd0c8"/><ellipse cx="118" cy="106" rx="20" ry="7" fill="#bfeae3"/><circle cx="212" cy="98" r="26" fill="#6a9c78"/><rect x="210" y="66" width="5" height="12" fill="#8a6a4a"/></symbol>
+  <symbol id="ill-abacus" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="160" cy="146" rx="80" ry="7" fill="#003E45" opacity=".1"/><rect x="82" y="126" width="156" height="12" rx="5" fill="#7a5a3a"/><rect x="86" y="46" width="148" height="80" rx="10" fill="none" stroke="#8a6a4a" stroke-width="8"/><g stroke="#8a6a4a" stroke-width="3"><line x1="90" y1="66" x2="230" y2="66"/><line x1="90" y1="86" x2="230" y2="86"/><line x1="90" y1="106" x2="230" y2="106"/></g><g><circle cx="108" cy="66" r="8" fill="#cf6f5f"/><circle cx="128" cy="66" r="8" fill="#C79A3B"/><circle cx="148" cy="66" r="8" fill="#0d6e6e"/></g><g><circle cx="108" cy="86" r="8" fill="#0d6e6e"/><circle cx="128" cy="86" r="8" fill="#cf6f5f"/><circle cx="148" cy="86" r="8" fill="#C79A3B"/><circle cx="168" cy="86" r="8" fill="#6a9c78"/></g><g><circle cx="108" cy="106" r="8" fill="#C79A3B"/><circle cx="128" cy="106" r="8" fill="#6a9c78"/></g></symbol>
+  <symbol id="ill-senses" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="160" cy="150" rx="86" ry="6" fill="#003E45" opacity=".07"/><g fill="#e0b98f"><rect x="118" y="86" width="46" height="42" rx="10"/><rect x="120" y="58" width="9" height="34" rx="4"/><rect x="132" y="52" width="9" height="40" rx="4"/><rect x="144" y="56" width="9" height="38" rx="4"/><rect x="156" y="62" width="9" height="32" rx="4"/><rect x="110" y="92" width="16" height="9" rx="4"/></g><path d="M206 60 a20 20 0 0 1 20 34 c-8 8 -6 18 -14 20" fill="none" stroke="#C79A3B" stroke-width="6" stroke-linecap="round"/><path d="M252 108 c10 12 10 20 0 26 c-10 -6 -10 -14 0 -26z" fill="#5b86a8"/></symbol>
+  <symbol id="ill-daynight-build" viewBox="0 0 320 172"><rect width="160" height="172" fill="#dff0ec"/><rect x="160" width="160" height="172" fill="#12314a"/><ellipse cx="160" cy="148" rx="72" ry="5" fill="#00151f" opacity=".3"/><circle cx="70" cy="44" r="18" fill="#C79A3B"/><g fill="#eae3c8"><circle cx="250" cy="44" r="16"/><circle cx="258" cy="40" r="16" fill="#12314a"/></g><rect x="96" y="104" width="38" height="40" rx="4" fill="#0d6e6e"/><rect x="138" y="104" width="38" height="40" rx="4" fill="#C79A3B"/><rect x="186" y="104" width="38" height="40" rx="4" fill="#cf6f5f"/><path d="M112 104 l19 -26 19 26 z" fill="#6a9c78"/></symbol>
+  <symbol id="ill-magnify" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="158" cy="150" rx="70" ry="6" fill="#003E45" opacity=".07"/><circle cx="150" cy="76" r="42" fill="none" stroke="#0d6e6e" stroke-width="10"/><circle cx="150" cy="76" r="34" fill="#eaf6f3"/><circle cx="140" cy="66" r="14" fill="#C79A3B"/><g fill="#eae3c8"><circle cx="166" cy="90" r="10"/><circle cx="171" cy="87" r="10" fill="#eaf6f3"/></g><rect x="182" y="108" width="46" height="14" rx="7" transform="rotate(40 182 108)" fill="#003E45"/></symbol>
+  <symbol id="ill-night-read" viewBox="0 0 320 172"><rect width="320" height="172" fill="#12314a"/><circle cx="240" cy="52" r="30" fill="#eae3c8" opacity=".13"/><g fill="#eae3c8"><circle cx="240" cy="52" r="20"/><circle cx="249" cy="47" r="20" fill="#12314a"/></g><g fill="#fff"><circle cx="80" cy="44" r="2"/><circle cx="140" cy="34" r="2"/><circle cx="280" cy="110" r="2"/></g><path d="M150 96 l-46 12 v30 l46 -10 z" fill="#0d6e6e"/><path d="M150 96 l46 12 v30 l-46 -10 z" fill="#12857f"/><line x1="150" y1="96" x2="150" y2="128" stroke="#eae3c8" stroke-width="3"/></symbol>
+  <symbol id="ill-home" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="160" cy="150" rx="80" ry="7" fill="#003E45" opacity=".1"/><rect x="104" y="86" width="112" height="60" fill="#0d6e6e"/><rect x="104" y="86" width="112" height="12" fill="#12857f"/><path d="M92 86 l68 -44 68 44 z" fill="#C79A3B"/><rect x="150" y="112" width="24" height="34" rx="2" fill="#eae3c8"/><circle cx="168" cy="130" r="2.5" fill="#8a6a4a"/><rect x="118" y="102" width="20" height="18" rx="2" fill="#cfe7e4"/><rect x="182" y="102" width="20" height="18" rx="2" fill="#cfe7e4"/></symbol>
+  <symbol id="ill-clock" viewBox="0 0 320 172"><rect width="320" height="172" fill="#f2faf9"/><ellipse cx="160" cy="150" rx="52" ry="6" fill="#003E45" opacity=".08"/><circle cx="160" cy="82" r="52" fill="#fff" stroke="#0d6e6e" stroke-width="7"/><circle cx="160" cy="82" r="52" fill="none" stroke="#C79A3B" stroke-width="2"/><g fill="#003E45"><circle cx="160" cy="40" r="3"/><circle cx="202" cy="82" r="3"/><circle cx="160" cy="124" r="3"/><circle cx="118" cy="82" r="3"/></g><line x1="160" y1="82" x2="160" y2="54" stroke="#003E45" stroke-width="5" stroke-linecap="round"/><line x1="160" y1="82" x2="184" y2="94" stroke="#C79A3B" stroke-width="5" stroke-linecap="round"/><circle cx="160" cy="82" r="5" fill="#0d6e6e"/></symbol>
+</defs></svg>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="cover-photo" style="background-image:url('units-art/unit-maskan.jpg?v=10')"></div>
+    <div class="cover-main">
+      <div class="cover-l">
+        <span class="c-badge">دليل تطبيقي · الأركان التعليمية</span>
+        <h1>الأركان التطبيقية لوحدة المسكن<br/>لكل درس ركنان تختار المعلمة بينهما</h1>
+        <div class="c-meta">المرحلة: تمهيدي (5–6 سنوات) · ١٩ درسًا · لكل درس نشاطان تطبيقيّان في ركنين مختلفين، تُنفَّذ الأركان بعد الدرس لا بدلًا منه.</div>
+      </div>
+      <div class="cover-r">
+        <div class="c-unit" style="background:#fff;padding:8px 10px;display:grid;place-items:center;border-radius:14px"><img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة" style="display:block;width:84px;height:84px;object-fit:contain"/></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="chips">
+    <div class="chip"><strong>فكرة الصفحة</strong>لكل درس في الوحدة <b>ركنان تطبيقيّان</b> — خيار ١ وخيار ٢ — بنشاط مبنيّ على أدوات الركن الفعلية. لكل نشاط: مدته وأهدافه وأدواته وخطواته والمعنى المركزي للدرس، مع رسمٍ توضيحيٍّ لأدواته و<b>ملفِّ طباعةٍ جاهز</b>. تختار المعلمة الأنسب بحسب الإتاحة وجدول الأركان.</div>
+    <div class="chip"><strong>التسلسل في كل ركن</strong>مراجعة قوانين الركن ← تنفيذ النشاط التطبيقي الموجّه ← اللعب الحرّ بأدوات الركن ← إعادة الأدوات. (انظري كتلة «روتين تنفيذ الركن» أدناه.)</div>
+    <div class="chip"><strong>مصدر الصور والأدوات</strong>الصور والأدوات من صور الأركان الثمانية الفعلية في الروضة، فالنشاط قابل للتنفيذ بما هو موجود بالفعل.</div>
+    <div class="chip"><strong>قبل التنفيذ</strong>راجعي <a href="#note-fin">تنبيه الملاءمة العقدية</a> في آخر الصفحة لتغطية أو استبعاد ما لا يناسب المنهج في بعض الأدوات (رموز أو مجسّمات).</div>
+  </section>
+
+  <section class="routine">
+    <h2>روتين تنفيذ الركن — التسلسل الموحّد</h2>
+    <p>يُطبَّق هذا التسلسل نفسه في جميع الأركان بعد كل درس:</p>
+    <div class="routine-steps">
+      <div class="rstep"><span class="num">١</span><b>مراجعة القوانين</b><p>٢–٣ دقائق: تذكّر المعلمة الأطفال بقوانين الركن المعروضة (وهي مثبتة في بطاقة كل ركن أدناه) قبل البدء.</p></div>
+      <div class="rstep"><span class="num">٢</span><b>النشاط التطبيقي</b><p>تنفيذ نشاط الدرس الموجّه بأهدافه وخطواته لتثبيت المعنى المركزي.</p></div>
+      <div class="rstep"><span class="num">٣</span><b>اللعب الحرّ</b><p>يُترك الأطفال للاستكشاف واللعب الحرّ بأدوات الركن مع الالتزام بالقوانين.</p></div>
+      <div class="rstep"><span class="num">٤</span><b>إعادة الأدوات</b><p>يعيد كل طفل الأدوات إلى مكانها مرتّبة — وهو من قوانين كل ركن.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>لوحة الأركان الثمانية — الأدوات والقوانين</h2>
+    <div class="legend">
+      <div class="lg"><h4><span class="ic">🧩</span> ركن أدرك وأستمتع</h4><p>ركن إدراكي منطقي: معداد، ميزان كفّتين، أشكال هندسية، هرم تدرّج، باترن بلوكس، تانجرام، بطاقات مطابقة وتسلسل، ساعة، لوحة مهن وفصول.</p><div class="rules"><b>قوانين الركن</b><ul><li>أبقى في الركن إلى حين انتهاء الوقت.</li><li>أحافظ على أدوات الركن.</li><li>أتشارك وأتعاون مع أصدقائي.</li><li>أنتظر دوري وأحترم دور صديقي.</li><li>أعيد الأدوات إلى مكانها بطريقة مرتّبة.</li></ul></div></div>
+      <div class="lg"><h4><span class="ic">📚</span> ركن أقرأ لأتعلم</h4><p>ركن قرائي مكتبي: قصص مصوّرة، كتب علمية (الجسم/الماء)، بطاقات حروف، بيئة هدوء ووسائد، حقيبة قصة متنقّلة، مصاحف تُصان.</p><div class="rules"><b>قوانين الركن</b><ul><li>أبقى في الركن إلى حين انتهاء الوقت.</li><li>أمسك الكتاب بطريقة صحيحة.</li><li>أتصفّح الكتاب بهدوء.</li><li>أحافظ على الكتب ونظافة المكان.</li><li>أعيد الكتاب إلى مكانه بطريقة مرتّبة.</li></ul></div></div>
+      <div class="lg"><h4><span class="ic">🔎</span> ركن أكتشف ما حولي</h4><p>ركن اكتشاف علمي: عدسات ومجاهر، مغناطيس وبوصلة، دائرة كهربائية ومصباح، طاقة شمسية، مجموعة شمسية، كشّاف ولوح UV، دورات حياة، أدوات قياس.</p><div class="rules"><b>قوانين الركن</b><ul><li>أبقى في الركن إلى حين انتهاء الوقت.</li><li>أحافظ على أدوات الاكتشاف.</li><li>ألاحظ وأجرّب بهدوء.</li><li>أتعاون وأنتظر دوري.</li><li>أعيد الأدوات إلى مكانها بطريقة مرتّبة.</li></ul></div></div>
+      <div class="lg"><h4><span class="ic">🛒</span> ركن الدكان</h4><p>لعب إيهامي للبيع والشراء: سلع (فواكه/خضار/ألبان)، كاشير ودرج نقود، ماسح، ميزان رقمي وكفّتين، معداد، لوحة أسعار، سلال وعربة، لافتات تصنيف.</p><div class="rules"><b>قوانين الركن</b><ul><li>أبقى في الركن إلى حين انتهاء الوقت.</li><li>أحافظ على أدوات الركن.</li><li>أتشارك وأتعاون مع أصدقائي.</li><li>أعيد الأدوات إلى مكانها بطريقة مرتّبة.</li></ul></div></div>
+      <div class="lg"><h4><span class="ic">🏠</span> ركن المسكن</h4><p>بيت أسري: بيت دمى، مطبخ (موقد/فرن/ميكروويف)، أطعمة، أدوات مائدة، غسّالة وعلاقات، أدوات نظافة واستحمام، ساعة، هاتف.</p><div class="rules"><b>قوانين الركن</b><ul><li>أبقى في الركن إلى حين انتهاء الوقت.</li><li>أحافظ على أدوات الركن.</li><li>أشارك وأتعاون مع أصدقائي.</li><li>أنتظر دوري وأحترم دور صديقي.</li><li>أعيد الأدوات مرتّبة · وأخلع حذائي قبل الدخول.</li></ul></div></div>
+      <div class="lg"><h4><span class="ic">🎨</span> ركن فنوني الجميلة</h4><p>فن وتشكيل: ألوان ودهان وفُرش وكانفاس، أعواد آيس كريم، فوم وقصاصات، خرّامات أشكال، أختام، فرش رشّ، لباد، خرز، مقصّات، ورقة الشجرة العارية.</p><div class="rules"><b>قوانين الركن</b><ul><li>أبقى في الركن إلى حين انتهاء الوقت.</li><li>أحافظ على أدوات الركن.</li><li>أعمل في المساحة المخصّصة لي.</li><li>أحافظ على نظافة المكان.</li><li>أعيد الأدوات إلى مكانها بطريقة مرتّبة.</li></ul></div></div>
+      <div class="lg"><h4><span class="ic">🧱</span> ساحة البناء</h4><p>مكعبات وهندسة: وحدات خشبية (أقواس/أسطوانات/ألواح)، فوم مفروز، بلاستيك تركيب، وصلات مسنّنة، بلاط مغناطيسي، مسار كرة، مركبات، بطاقات نماذج بناء.</p><div class="rules"><b>قوانين الركن</b><ul><li>أبقى في الركن إلى حين انتهاء الوقت.</li><li>أحافظ على أدوات الركن.</li><li>أحافظ على بناء أصدقائي.</li><li>أتشارك وأتعاون مع أصدقائي.</li><li>أعيد الأدوات إلى مكانها بطريقة مرتّبة.</li></ul></div></div>
+      <div class="lg"><h4><span class="ic">🪣</span> ساحة الرمل</h4><p>لعب حسّي بالرمل والماء: حوض رمل، مجرفة، قوالب، دلاء وأكواب كيل، ماء، عناصر مخبّأة (حروف/أرقام).</p><div class="rules"><b>قوانين الركن</b><ul><li>ألعب داخل حوض الرمل.</li><li>أشارك إخوتي الأدوات وأحافظ على بنائهم.</li><li>لا أنثر الرمل على نفسي وإخوتي.</li><li>لا ألمس عيني أثناء اللعب.</li><li>أنظّف قدمي وأغسل يدي بعد اللعب.</li></ul></div></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>فهرس مواد الوحدة</h2>
+    <div class="toc">
+      <a href="#allamni">علّمني ربي · المسكن (٤)</a>
+      <a href="#kitabi">كتابي المنير · سورة الإنفطار (٥)</a>
+      <a href="#lisani">لساني عربي · الحروف (٢)</a>
+      <a href="#maharati">مهاراتي · العدد والوقت (٢)</a>
+      <a href="#adab">أدب واقتداء · الاستئذان</a>
+      <a href="#rasuli">قال رسولي · خصال الإيمان</a>
+      <a href="#markaz-lugha">مركز اللغة (٢)</a>
+      <a href="#markaz-math">مركز الرياضيات (٢)</a>
+    </div>
+  </section>
+
+  <!-- ============ علّمني ربي ============ -->
+  <section class="subj" id="allamni">
+    <div class="subj-h"><span class="n">علّمني ربي</span><h3>المسكن نعمة · أربعة دروس</h3></div>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الأول · مفهوم المسكن</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🏠 ركن المسكن</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بيت بجدران وسقف ونافذتين"><use href="#ill-home"/></svg></div>
+          <div class="rk">بيتي نعمة</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يذكر ما في بيته من نِعَم الأمان (سقف، باب، فراش).</li><li>يشكر الله على نعمة المسكن.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بيت الدمى، الأثاث الصغير، أدوات البيت.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يرتّب الطفل البيت ويسمّي أجزاءه.</li><li>يذكر ما يجعله آمنًا مطمئنًّا فيه.</li><li>يقول: «الحمد لله على نعمة بيتي».</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>لعب أدوار أسري حرّ بأدوات البيت مع التزام القوانين.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> المسكن نعمةٌ من الله فيها الأمان والطمأنينة والمودّة، تستوجب الشكر وحُسن العيش فيه.</div>
+          <a class="print-link" href="mk-print-e1a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات نِعَم البيت</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 🎨 ركن فنوني الجميلة</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="لوحة كانفاس وفرشاة وألوان"><use href="#ill-canvas"/></svg></div>
+          <div class="rk">لوحة بيتي الآمن</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يعبّر فنيًّا عن بيته ومعنى الأمان فيه.</li><li>يربط جمال البيت بنعمة الله.</li></ul></dd>
+          <dt>الأدوات</dt><dd>ورق/كانفاس، ألوان، خامات لصق.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يرسم الطفل بيته (سقف، باب، نافذة).</li><li>يزيّنه بما يشعره بالأمان.</li><li>يتحدّث عن أحبّ ركنٍ في بيته.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>تعبير فنّي حرّ بالخامات مع تنظيف المكان بعده.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> المسكن نعمةٌ من الله فيها الأمان والطمأنينة والمودّة، تستوجب الشكر وحُسن العيش فيه.</div>
+          <a class="print-link" href="mk-print-e1b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — ورقة «لوحة بيتي»</a></div>
+      </div>
+    </article>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الثاني · أنواع المساكن</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🧱 ساحة البناء</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="مكعبات بناء"><use href="#ill-blocks"/></svg></div>
+          <div class="rk">أبني مسكنًا</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يبني أنواعًا من المساكن (بيت، خيمة، عمارة).</li><li>يدرك أنّ المسكن نعمة على اختلاف أنواعه.</li></ul></dd>
+          <dt>الأدوات</dt><dd>المكعبات الخشبية/الفوم، بطاقات نماذج.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يختار نوع مسكنٍ ويبنيه بالمكعبات.</li><li>يسمّيه ويصف من يسكن فيه.</li><li>نتحدّث: كلّها مساكن أنعم الله بها.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>بناء حرّ بالمكعبات مع الحفاظ على بناء الأصدقاء.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> المسكن نعمةٌ من الله على اختلاف أنواعه (طينٌ وخيامٌ وعماراتٌ)، تستوجب الشكر.</div>
+          <a class="print-link" href="mk-print-e2a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات نماذج المساكن</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 🔎 ركن أكتشف ما حولي</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="عدسة استكشاف"><use href="#ill-magnify"/></svg></div>
+          <div class="rk">صنّف أنواع المساكن</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يميّز أنواع المساكن ويصنّفها.</li><li>يربط تنوّعها بحكمة الله ورزقه.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بطاقات مساكن مصوّرة (بادية/حضر)، لوحة تصنيف.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يتأمّل الطفل بطاقات المساكن ويسمّيها.</li><li>يصنّفها حسب النوع.</li><li>يختم: «كلّها نِعَمٌ من الله».</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>استكشاف حرّ لأدوات الركن بملاحظة هادئة.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> المسكن نعمةٌ من الله على اختلاف أنواعه، تستوجب الشكر.</div>
+          <a class="print-link" href="mk-print-e2b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات تصنيف المساكن</a></div>
+      </div>
+    </article>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الثالث · أجزاء المسكن وآدابها</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🏠 ركن المسكن</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بيت"><use href="#ill-home"/></svg></div>
+          <div class="rk">جولة آداب البيت</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يربط كلَّ جزءٍ من البيت باستخدامه وأدبه.</li><li>يطبّق آدابًا (الاستئذان، الضيافة، النظافة).</li></ul></dd>
+          <dt>الأدوات</dt><dd>بيت الدمى وغرفه، أدوات المطبخ والاستقبال والنظافة.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يتنقّل بين أجزاء البيت (راحة، استقبال، خدمات).</li><li>يمثّل أدب كل جزء.</li><li>نربط الأداة بمكانها وأدبها.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>لعب أدوار أسري حرّ بأدوات البيت مع التزام القوانين.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> لكلّ جزءٍ من المسكن استخدامٌ وآدابٌ نتأدّب بها (الاستئذان، الضيافة، النظافة).</div>
+          <a class="print-link" href="mk-print-e3a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات أجزاء البيت وآدابها</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 🧩 ركن أدرك وأستمتع</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بطاقات مطابقة"><use href="#ill-cards"/></svg></div>
+          <div class="rk">طابِق الأداة بغرفتها</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يطابق كلَّ أداةٍ بالغرفة المناسبة.</li><li>يتعرّف على وظيفة كل جزء.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بطاقات غرف + بطاقات أدوات للمطابقة.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يسحب بطاقة أداة (ملعقة، وسادة، صابون).</li><li>يضعها تحت الغرفة المناسبة (مطبخ، نوم، حمّام).</li><li>يذكر أدبًا لتلك الغرفة.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>استكشاف حرّ لألعاب الإدراك والفرز مع إعادة الأدوات.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> لكلّ جزءٍ من المسكن استخدامٌ وآدابٌ نتأدّب بها.</div>
+          <a class="print-link" href="mk-print-e3b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات مطابقة الأدوات بالغرف</a></div>
+      </div>
+    </article>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الرابع · هداية الله للمخلوقات في بناء مساكنها</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🔎 ركن أكتشف ما حولي</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="عدسة استكشاف"><use href="#ill-magnify"/></svg></div>
+          <div class="rk">مساكن المخلوقات</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يتعرّف على مساكن المخلوقات (عُشّ، جُحر، خليّة).</li><li>يتفكّر في هداية الله لها فيعظّم الخالق.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بطاقات/مجسّمات مساكن الكائنات، عدسة.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يفحص الطفل بطاقات مساكن الكائنات.</li><li>يطابق كلَّ مخلوقٍ بمسكنه.</li><li>نتفكّر: مَن علّمها بناءه؟ فنعظّم الله.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>استكشاف حرّ لأدوات الركن بملاحظة هادئة.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> الله هدى كلَّ مخلوقٍ لبناء مسكنه؛ نتفكّر في صنعه ونعظّم الخالق.</div>
+          <a class="print-link" href="mk-print-e4a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات مساكن المخلوقات</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 🧱 ساحة البناء</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="مكعبات بناء"><use href="#ill-blocks"/></svg></div>
+          <div class="rk">أحاكي عشًّا وجُحرًا</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يحاكي مسكن مخلوقٍ بالخامات.</li><li>يتفكّر في دقّة هداية الله.</li></ul></dd>
+          <dt>الأدوات</dt><dd>المكعبات، أعواد، خامات طبيعية.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يختار مخلوقًا (طائر/نحلة) ويحاكي مسكنه.</li><li>يصف كيف يبنيه المخلوق.</li><li>يختم: «سبحان مَن هداه لذلك».</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>بناء حرّ بالمكعبات مع الحفاظ على بناء الأصدقاء.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> الله هدى كلَّ مخلوقٍ لبناء مسكنه؛ نتفكّر في صنعه ونعظّم الخالق.</div>
+          <a class="print-link" href="mk-print-e4b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقة نشاط محاكاة المساكن</a></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ كتابي المنير ============ -->
+  <section class="subj" id="kitabi">
+    <div class="subj-h"><span class="n">كتابي المنير</span><h3>سورة الإنفطار · خمسة دروس</h3></div>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الأول · الإنفطار (٩–١٢)</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🧩 ركن أدرك وأستمتع</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بطاقات فرز"><use href="#ill-cards"/></svg></div>
+          <div class="rk">أعمالي مكتوبة</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يميّز العمل الصالح من غيره.</li><li>يدرك أنّ الملكين يكتبان أعماله.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بطاقات أعمال يومية (خير/غيره)، لوحة فرز.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يسحب بطاقة عمل ويصفه.</li><li>يضعه في «عملٌ صالح» أو «أتجنّبه».</li><li>نربط: الكاتبان يكتبان، فأختار الخير.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>استكشاف حرّ لألعاب الإدراك والفرز مع إعادة الأدوات.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> نجعل المسكن موطنًا للطاعة والعمل الصالح؛ وأعمالنا مكتوبةٌ يحفظها الكرام الكاتبون.</div>
+          <a class="print-link" href="mk-print-b1a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات فرز الأعمال</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 📚 ركن أقرأ لأتعلم</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="كتاب مفتوح"><use href="#ill-book"/></svg></div>
+          <div class="rk">صحيفةُ أعمالي الصالحة</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يذكر أعمالًا صالحة يفعلها في بيته.</li><li>يحرص على تسجيل الخير في صحيفته.</li></ul></dd>
+          <dt>الأدوات</dt><dd>دفتر «صحيفتي»، بطاقات أعمال صالحة، بيئة هدوء.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يختار الطفل عملًا صالحًا (برّ، صدق، مساعدة).</li><li>يضيفه إلى «صحيفتي».</li><li>نتحدّث: أحبّ أن تكون صحيفتي عامرة بالخير.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>تصفّح حرّ للقصص في هدوء مع حسن الإمساك بالكتاب.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> نجعل المسكن موطنًا للطاعة والعمل الصالح؛ وأعمالنا مكتوبةٌ يحفظها الكرام الكاتبون.</div>
+          <a class="print-link" href="mk-print-b1b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — دفتر «صحيفتي»</a></div>
+      </div>
+    </article>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الثاني · الإنفطار (١٣–١٦)</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🏠 ركن المسكن</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بيت"><use href="#ill-home"/></svg></div>
+          <div class="rk">أعمالُ برٍّ في بيتي</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يمثّل أعمال برٍّ داخل البيت.</li><li>يدرك أنّ البرّ سبيل الأبرار.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بيت الدمى، أدوات البيت.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يمثّل الطفل عمل برٍّ (طاعة الوالدين، صدق، إكرام).</li><li>يذكر أثره الطيّب في البيت.</li><li>نربط: الأبرارُ لهم نعيمٌ عند ربهم.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>لعب أدوار أسري حرّ بأدوات البيت مع التزام القوانين.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> نجعل المسكن موطنًا للبرّ والطاعة بفضل الله؛ فالأبرار في نعيم.</div>
+          <a class="print-link" href="mk-print-b2a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات أعمال البرّ</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 🎨 ركن فنوني الجميلة</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="كانفاس وفرشاة"><use href="#ill-canvas"/></svg></div>
+          <div class="rk">لوحةُ طريق الأبرار</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يعبّر فنيًّا عن أعمال الأبرار.</li><li>يربط البرّ بجمال الجزاء.</li></ul></dd>
+          <dt>الأدوات</dt><dd>ورق، ألوان، خامات.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يرسم الطفل «طريقًا» بأعمال برٍّ يزيّنه.</li><li>يسمّي عملًا في كل خطوة.</li><li>يعرض لوحته ويشرحها.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>تعبير فنّي حرّ بالخامات مع تنظيف المكان بعده.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> نجعل المسكن موطنًا للبرّ والطاعة بفضل الله؛ فالأبرار في نعيم.</div>
+          <a class="print-link" href="mk-print-b2b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — ورقة «طريق الأبرار»</a></div>
+      </div>
+    </article>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الثالث · الإنفطار (١٧–١٩)</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🏠 ركن المسكن</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بيت"><use href="#ill-home"/></svg></div>
+          <div class="rk">تعاونُ أهل البيت</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يتعاون في أعمال البيت مع «أهله».</li><li>يدرك أنّ الأهل عونٌ نعمة من الله.</li></ul></dd>
+          <dt>الأدوات</dt><dd>أدوات البيت (تنظيف، مائدة).</dd>
+          <dt>الخطوات</dt><dd><ol><li>توزّع أدوار أسرية (ترتيب، إعداد المائدة).</li><li>يتعاون الأطفال لإنجازها.</li><li>نتحدّث: أهلي يعينونني، والفضل لله.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>لعب أدوار أسري حرّ بأدوات البيت مع التزام القوانين.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> أنعم الله علينا بأهلٍ يعينوننا، والأمرُ كلُّه لله يوم الدين.</div>
+          <a class="print-link" href="mk-print-b3a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات أدوار التعاون الأسري</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 📚 ركن أقرأ لأتعلم</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="كتاب مفتوح"><use href="#ill-book"/></svg></div>
+          <div class="rk">قصةُ التعاون الأسري</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يستخلص قيمة التعاون من قصة.</li><li>يذكر كيف يعين أهله.</li></ul></dd>
+          <dt>الأدوات</dt><dd>قصة عن التعاون، بيئة هدوء.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يتصفّح/يستمع لقصة تعاون أسري.</li><li>يذكر فائدة منها.</li><li>يعِد بعملٍ يعين به أهله.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>تصفّح حرّ للقصص في هدوء مع حسن الإمساك بالكتاب.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> أنعم الله علينا بأهلٍ يعينوننا، والأمرُ كلُّه لله يوم الدين.</div>
+          <a class="print-link" href="mk-print-b3b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقة «فائدة القصة»</a></div>
+      </div>
+    </article>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الرابع · خريطة معاني سورة الإنفطار</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 📚 ركن أقرأ لأتعلم</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="كتاب مفتوح"><use href="#ill-book"/></svg></div>
+          <div class="rk">مجلسُ القرآن في بيتي</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يجلس بأدبٍ في مجلس القرآن.</li><li>يستحضر أنّ للبيت وقتًا للقرآن.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بيئة الهدوء، المصحف (يُصان)، لوحة القوانين.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يهيّئ الطفل «مجلس قرآن» هادئًا.</li><li>يذكر ما تعلّمه من معاني السورة.</li><li>نؤكّد تعظيم كلام الله.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>تصفّح حرّ للقصص في هدوء مع حسن الإمساك بالكتاب.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> نجعل في مسكننا وقتًا لتلاوة القرآن وتذكّر معانيه.</div>
+          <a class="print-link" href="mk-print-b4a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقة «مجلس القرآن»</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 🧩 ركن أدرك وأستمتع</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بطاقات ترتيب"><use href="#ill-cards"/></svg></div>
+          <div class="rk">رتّب معاني السورة</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يرتّب مقاطع معاني السورة بالتسلسل.</li><li>يربط كل مقطع بمعناه المبسّط.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بطاقات معاني مقاطع السورة (يعدّها المعلّم).</dd>
+          <dt>الخطوات</dt><dd><ol><li>تُخلط البطاقات فيرتّبها الطفل.</li><li>يذكر معنى كل مقطع بجملة.</li><li>يطابق المقطع بصورته المعبّرة.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>استكشاف حرّ لألعاب الإدراك والفرز مع إعادة الأدوات.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> نجعل في مسكننا وقتًا لتلاوة القرآن وتذكّر معانيه.</div>
+          <a class="print-link" href="mk-print-b4b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات ترتيب المعاني</a></div>
+      </div>
+    </article>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الخامس · أرتّل سورة الإنفطار وأبيّن ما علّمنا الله</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 📚 ركن أقرأ لأتعلم</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="كتاب مفتوح"><use href="#ill-book"/></svg></div>
+          <div class="rk">مجلسُ الترتيل</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يرتّل مقطعًا بأدبٍ وإنصات.</li><li>يُنصت لغيره باحترام.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بيئة الهدوء والوسائد، المصحف (يُصان).</dd>
+          <dt>الخطوات</dt><dd><ol><li>يجلس الأطفال بأدب.</li><li>يرتّل كلٌّ مقطعًا بهدوء.</li><li>يُنصت البقية دون مقاطعة.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>تصفّح حرّ للقصص في هدوء مع حسن الإمساك بالكتاب.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> يكون في مسكننا مجلسٌ هادئ لتلاوة القرآن وترتيله وتعلّمه.</div>
+          <a class="print-link" href="mk-print-b5a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات آداب الترتيل</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 🧩 ركن أدرك وأستمتع</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بطاقات ترتيب"><use href="#ill-cards"/></svg></div>
+          <div class="rk">ترتيبُ مقاطع السورة</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يرتّب مقاطع السورة بالتسلسل.</li><li>يثبّت حفظها بالمطابقة.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بطاقات مقاطع السورة، حامل مطابقة.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يرتّب البطاقات بالتسلسل الصحيح.</li><li>يردّد كل مقطع عند وضعه.</li><li>يطابق مقطعًا بمعناه المبسّط.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>استكشاف حرّ لألعاب الإدراك والفرز مع إعادة الأدوات.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> يكون في مسكننا مجلسٌ هادئ لتلاوة القرآن وترتيله وتعلّمه.</div>
+          <a class="print-link" href="mk-print-b5b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات مقاطع السورة</a></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ لساني عربي ============ -->
+  <section class="subj" id="lisani">
+    <div class="subj-h"><span class="n">لساني عربي</span><h3>الحروف · درسان</h3></div>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الأول · حرف الشين ومواضعه</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🧩 ركن أدرك وأستمتع</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بطاقة حرف بحركاته"><use href="#ill-harakat"/></svg></div>
+          <div class="rk">موضعُ الشين</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يحدّد موضع الشين (أول/وسط/آخر).</li><li>يربط اسم شيءٍ في البيت بالحرف.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بطاقات كلمات من المسكن فيها الشين (شبّاك، فِراش)، جدول مواضع.</dd>
+          <dt>الخطوات</dt><dd><ol><li>ينطق الطفل كلمة فيها الشين.</li><li>يحدّد موضع الشين فيها.</li><li>يطابقها بصورتها من البيت.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>استكشاف حرّ لألعاب الإدراك والفرز مع إعادة الأدوات.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> نتعلّم أسماء ما في المسكن بلغتنا العربية لغةِ القرآن ونعتني بها.</div>
+          <a class="print-link" href="mk-print-s1a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات مواضع الشين</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 🪣 ساحة الرمل</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="حوض رمل وحرف"><use href="#ill-sand"/></svg></div>
+          <div class="rk">اكتبِ الشين في الرمل</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يكتب الشين بنقاطها في الرمل.</li><li>ينطقها بحركتها.</li></ul></dd>
+          <dt>الأدوات</dt><dd>حوض الرمل، بطاقة نموذج الشين.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يكتب الطفل الشين في الرمل بإصبعه.</li><li>يضع نقاطها الثلاث.</li><li>ينطقها ثم يمسح ويعيد.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>لعب حسّي حرّ داخل حوض الرمل مع التزام قوانين اللعب.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> نتعلّم أسماء ما في المسكن بلغتنا العربية لغةِ القرآن ونعتني بها.</div>
+          <a class="print-link" href="mk-print-s1b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات نماذج الشين</a></div>
+      </div>
+    </article>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الثاني · حرفا التاء والهاء وصوتهما بالفتح</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🪣 ساحة الرمل</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="حوض رمل وحرف"><use href="#ill-sand"/></svg></div>
+          <div class="rk">اطبعْ تَ · هَ</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يكتب التاء والهاء بالفتح في الرمل.</li><li>يهجّي كلمةً من البيت بهما.</li></ul></dd>
+          <dt>الأدوات</dt><dd>حوض الرمل، بطاقات كلمات (تنّور، هدية).</dd>
+          <dt>الخطوات</dt><dd><ol><li>يكتب الحرف ويضع الفتحة فوقه في الرمل.</li><li>ينطقه مفتوحًا.</li><li>يهجّي كلمة من البيت.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>لعب حسّي حرّ داخل حوض الرمل مع التزام قوانين اللعب.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> في المسكن نِعمٌ نشكر الله عليها ونتعلّم أسماءها بلغتنا العربية.</div>
+          <a class="print-link" href="mk-print-s2a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات كلمات تَ · هَ</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 🎨 ركن فنوني الجميلة</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="تشكيل حرف بالخامة"><use href="#ill-pipe-letter"/></svg></div>
+          <div class="rk">أشكّلُ الحرف</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يشكّل التاء/الهاء بالخامة ويضيف الفتحة.</li><li>ينطق الحرف مفتوحًا.</li></ul></dd>
+          <dt>الأدوات</dt><dd>منظّفات الأنابيب/العجين، بطاقة الحرف نموذجًا.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يشكّل الحرف بالخامة.</li><li>يضيف علامة الفتحة فوقه.</li><li>يهجّي كلمة من البيت وينطقها.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>تعبير فنّي حرّ بالخامات مع تنظيف المكان بعده.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> في المسكن نِعمٌ نشكر الله عليها ونتعلّم أسماءها بلغتنا العربية.</div>
+          <a class="print-link" href="mk-print-s2b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — قوالب تشكيل تَ · هَ</a></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ مهاراتي ============ -->
+  <section class="subj" id="maharati">
+    <div class="subj-h"><span class="n">مهاراتي</span><h3>العدد والوقت · درسان</h3></div>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الأول · أتعرّف العدد خمسة عشر</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🛒 ركن الدكان</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="كاشير ونقود"><use href="#ill-register"/></svg></div>
+          <div class="rk">عُدّ حتى ١٥</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يعدّ حتى ١٥ ويميّز رمزه.</li><li>يشتري ما يحتاجه بلا إسراف.</li></ul></dd>
+          <dt>الأدوات</dt><dd>سلع، درج نقود، بطاقة العدد ١٥.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يعدّ الطفل ١٥ قطعة/عملة.</li><li>يشتري حاجته ويعدّ الباقي.</li><li>نتحدّث: العلم للخير، ولا إسراف.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>بيع وشراء حرّ بأدوات الدكان مع التزام القوانين.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> نستخدم الأعداد لتنظيم المسكن وعدّ أدواته دون عبثٍ أو إسراف، فالعلم للخير.</div>
+          <a class="print-link" href="mk-print-h1a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات العدّ حتى ١٥</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 🧩 ركن أدرك وأستمتع</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="معداد"><use href="#ill-abacus"/></svg></div>
+          <div class="rk">المعداد: عشرة وخمسة</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يبني ١٥ على أنها عشرة وخمسة.</li><li>يطابق الرمز بالكمية.</li></ul></dd>
+          <dt>الأدوات</dt><dd>المعداد، بطاقة العدد ١٥، عدّادات.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يعدّ عشرة ثم خمسة على المعداد.</li><li>يطابق الرمز ١٥ بالكمية.</li><li>يقارن قبل/بعد ١٥.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>استكشاف حرّ لألعاب الإدراك والفرز مع إعادة الأدوات.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> نستخدم الأعداد لتنظيم المسكن وعدّ أدواته دون عبثٍ أو إسراف.</div>
+          <a class="print-link" href="mk-print-h1b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات ١٥ (عشرة وخمسة)</a></div>
+      </div>
+    </article>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الثاني · التعرّف على مفهوم الوقت</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🏠 ركن المسكن</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="ساعة"><use href="#ill-clock"/></svg></div>
+          <div class="rk">ساعةُ بيتي وروتينه</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يعرف أوقات اليوم في البيت.</li><li>يدرك أنّ الوقت نعمة تُنظَّم للخير.</li></ul></dd>
+          <dt>الأدوات</dt><dd>الساعة الخشبية، بطاقات روتين اليوم.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يضبط الطفل الساعة على وقتٍ (فطور/نوم).</li><li>يذكر ما يفعله في هذا الوقت.</li><li>نربط: ننظّم أوقاتنا في البيت.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>لعب أدوار أسري حرّ بأدوات البيت مع التزام القوانين.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> ننظّم أوقاتنا في المسكن بمعرفة الوقت، والوقتُ نعمةٌ سُخّرت للخير.</div>
+          <a class="print-link" href="mk-print-h2a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — قرص الساعة وبطاقات الأوقات</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 🧩 ركن أدرك وأستمتع</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بطاقات ترتيب"><use href="#ill-cards"/></svg></div>
+          <div class="rk">رتّب أحداث اليوم</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يرتّب أحداث اليوم بالتسلسل.</li><li>يميّز الصباح والظهر والمساء والليل.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بطاقات أحداث اليوم، شريط ترتيب.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يرتّب بطاقات اليوم بالتسلسل.</li><li>يسمّي وقت كل حدث.</li><li>يربطه بعملٍ صالح.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>استكشاف حرّ لألعاب الإدراك والفرز مع إعادة الأدوات.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> ننظّم أوقاتنا في المسكن بمعرفة الوقت، والوقتُ نعمةٌ سُخّرت للخير.</div>
+          <a class="print-link" href="mk-print-h2b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات ترتيب اليوم</a></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ أدب واقتداء ============ -->
+  <section class="subj" id="adab">
+    <div class="subj-h"><span class="n">أدب واقتداء</span><h3>آداب الاستئذان · درس واحد</h3></div>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس · آداب الاستئذان — إذا لم يُؤذن لي</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🏠 ركن المسكن</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بيت بباب"><use href="#ill-home"/></svg></div>
+          <div class="rk">أستأذنُ عند الباب</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يستأذن قبل الدخول بأدب.</li><li>يرجع بهدوءٍ إذا لم يُؤذن له.</li></ul></dd>
+          <dt>الأدوات</dt><dd>باب البيت/الغرفة، بيت الدمى.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يطرق الطفل الباب ويسلّم ويستأذن.</li><li>ينتظر الإذن.</li><li>إن لم يُؤذن رجع بهدوءٍ بلا انزعاج.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>لعب أدوار أسري حرّ بأدوات البيت مع التزام القوانين.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> من أدب المسكن أن نستأذن عند الدخول ونرجع بهدوءٍ إذا لم يُؤذن لنا.</div>
+          <a class="print-link" href="mk-print-d1a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات مواقف الاستئذان</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 📚 ركن أقرأ لأتعلم</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بطاقات"><use href="#ill-cards"/></svg></div>
+          <div class="rk">بطاقاتُ آداب الاستئذان</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يرتّب خطوات الاستئذان بالتسلسل.</li><li>يربط كل خطوة بأدبها.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بطاقات خطوات الاستئذان، بيئة هدوء.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يرتّب: أطرق ← أسلّم ← أستأذن ← أنتظر ← أرجع إن لم يُؤذن.</li><li>يمثّلها بجملة.</li><li>يتعهّد بتطبيقها في بيته.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>تصفّح حرّ للقصص في هدوء مع حسن الإمساك بالكتاب.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> من أدب المسكن أن نستأذن عند الدخول ونرجع بهدوءٍ إذا لم يُؤذن لنا.</div>
+          <a class="print-link" href="mk-print-d1b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات ترتيب الاستئذان</a></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ قال رسولي ============ -->
+  <section class="subj" id="rasuli">
+    <div class="subj-h"><span class="n">قال رسولي</span><h3>خصال الإيمان · درس واحد</h3></div>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس · حديث من خصال الإيمان وراويه</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🏠 ركن المسكن</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بيت"><use href="#ill-home"/></svg></div>
+          <div class="rk">إكرامُ الضيف</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يمثّل إكرام الضيف في بيته.</li><li>يدرك أنّ الضيافة من خصال الإيمان.</li></ul></dd>
+          <dt>الأدوات</dt><dd>أدوات الضيافة (فناجين، تمر/حلوى تمثيلية)، مجلس.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يستقبل الطفل «ضيفًا» بالسلام والبِشر.</li><li>يقدّم له الضيافة بأدب.</li><li>يودّعه بلطف.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>لعب أدوار أسري حرّ بأدوات البيت مع التزام القوانين.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> علّمنا النبي ﷺ أعمالًا تعمر المسكن: إكرام الضيف وصلة الرحم والكلمة الطيبة.</div>
+          <a class="print-link" href="mk-print-r1a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقة نشاط إكرام الضيف</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 📚 ركن أقرأ لأتعلم</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بطاقات"><use href="#ill-cards"/></svg></div>
+          <div class="rk">بطاقاتُ خصال الإيمان</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يميّز خصال الإيمان الثلاث.</li><li>يذكر مثالًا لكلٍّ في بيته.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بطاقات (إكرام الضيف · صلة الرحم · الكلمة الطيبة).</dd>
+          <dt>الخطوات</dt><dd><ol><li>يقرأ/يتأمّل بطاقات الخصال.</li><li>يذكر موقفًا يطبّقها في بيته.</li><li>يختار خصلةً يتعهّد بها.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>تصفّح حرّ للقصص في هدوء مع حسن الإمساك بالكتاب.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> علّمنا النبي ﷺ أعمالًا تعمر المسكن: إكرام الضيف وصلة الرحم والكلمة الطيبة.</div>
+          <a class="print-link" href="mk-print-r1b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات خصال الإيمان</a></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ مركز اللغة ============ -->
+  <section class="subj" id="markaz-lugha">
+    <div class="subj-h"><span class="n">مركز اللغة</span><h3>الحروف · درسان تطبيقيّان</h3></div>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الأول · حرف الشين (ش)</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🧩 ركن أدرك وأستمتع</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بطاقة حرف"><use href="#ill-harakat"/></svg></div>
+          <div class="rk">تمييزُ الشين وبناؤها</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يميّز الشين ويبني شكلها بنقاطها.</li><li>يطابقها بكلمةٍ من المسكن.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بطاقات حروف، قطع بناء الحرف، كلمة «شبّاك».</dd>
+          <dt>الخطوات</dt><dd><ol><li>يميّز الشين بين حروف.</li><li>يبني شكلها ويضع نقاطها الثلاث.</li><li>يطابقها بكلمة من البيت.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>استكشاف حرّ لألعاب الإدراك والفرز مع إعادة الأدوات.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> العربية بابٌ لفهم القرآن؛ ينتقل الطفل لأداءٍ عمليٍّ فيميّز الشين ويبنيها ويطابقها بكلمة من المسكن.</div>
+          <a class="print-link" href="mk-print-gl1a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات تمييز وبناء الشين</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 🎨 ركن فنوني الجميلة</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="تشكيل حرف"><use href="#ill-pipe-letter"/></svg></div>
+          <div class="rk">تشكيلُ الشين</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يشكّل الشين بالخامة بنقاطها.</li><li>يطابقها بكلمة من البيت.</li></ul></dd>
+          <dt>الأدوات</dt><dd>منظّفات الأنابيب/العجين، بطاقة نموذج الشين.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يشكّل جسم الشين بالخامة.</li><li>يضيف النقاط الثلاث.</li><li>يطابقها بكلمة «شبّاك» أو «فِراش».</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>تعبير فنّي حرّ بالخامات مع تنظيف المكان بعده.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> أداءٌ عمليٌّ لتمييز الشين وبنائها ومطابقتها بكلمةٍ من بيئة المسكن.</div>
+          <a class="print-link" href="mk-print-gl1b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — قالب تشكيل الشين</a></div>
+      </div>
+    </article>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الثاني · حرفا التاء والهاء (ت · هـ)</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🧩 ركن أدرك وأستمتع</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بطاقة حرف"><use href="#ill-harakat"/></svg></div>
+          <div class="rk">تمييزُ ت · هـ</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يميّز التاء والهاء ويبني شكلهما.</li><li>يطابق كلًّا بكلمةٍ من المسكن.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بطاقات حروف، قطع بناء، كلمتا «تنّور» و«هدية».</dd>
+          <dt>الخطوات</dt><dd><ol><li>يميّز ت·هـ بين حروف.</li><li>يبني شكل كلٍّ.</li><li>يطابقها بكلمتها من البيت.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>استكشاف حرّ لألعاب الإدراك والفرز مع إعادة الأدوات.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> أداءٌ عمليٌّ لتمييز ت·هـ وبناء أشكالها ومطابقتها بكلمةٍ من بيئة المسكن.</div>
+          <a class="print-link" href="mk-print-gl2a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات تمييز ت · هـ</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 🎨 ركن فنوني الجميلة</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="تشكيل حرف"><use href="#ill-pipe-letter"/></svg></div>
+          <div class="rk">تشكيلُ ومطابقةُ ت · هـ</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يشكّل ت·هـ بالخامة.</li><li>يطابق كلًّا بكلمةٍ من البيت.</li></ul></dd>
+          <dt>الأدوات</dt><dd>منظّفات الأنابيب/العجين، بطاقتا نموذج.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يشكّل التاء ثم الهاء.</li><li>يطابق كلًّا بكلمتها (تنّور/هدية).</li><li>يعرض عمله وينطق الحرف.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>تعبير فنّي حرّ بالخامات مع تنظيف المكان بعده.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> أداءٌ عمليٌّ لتمييز ت·هـ وبناء أشكالها ومطابقتها بكلمةٍ من بيئة المسكن.</div>
+          <a class="print-link" href="mk-print-gl2b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — قوالب تشكيل ت · هـ</a></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ مركز الرياضيات ============ -->
+  <section class="subj" id="markaz-math">
+    <div class="subj-h"><span class="n">مركز الرياضيات</span><h3>العدد والوقت · درسان تطبيقيّان</h3></div>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الأول · مسار الخمسة عشر</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🛒 ركن الدكان</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="كاشير ونقود"><use href="#ill-register"/></svg></div>
+          <div class="rk">الحصّالة حتى ١٥</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يعدّ ويضع ١٥ عملة في الحصّالة.</li><li>يثبّت تسلسل ١–١٥.</li></ul></dd>
+          <dt>الأدوات</dt><dd>حصّالة، عملات، بطاقات أعداد ١–١٥.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يعدّ الطفل حتى ١٥ ويضعها في الحصّالة.</li><li>يرتّب بطاقات ١–١٥ بالتسلسل.</li><li>يبني ١٥ = عشرة وخمسة.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>بيع وشراء حرّ بأدوات الدكان مع التزام القوانين.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> تثبيت تسلسل العدد ١٥ (عشرة وخمسة) عمليًّا وتطبيقه في عدّ النقود.</div>
+          <a class="print-link" href="mk-print-gm1a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — مسار ١–١٥ وبطاقات النقود</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 🧩 ركن أدرك وأستمتع</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="معداد"><use href="#ill-abacus"/></svg></div>
+          <div class="rk">بناءُ عشرة وخمسة</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يبني ١٥ على المعداد (١٠ + ٥).</li><li>يطابق الرمز ١٥ بالكمية.</li></ul></dd>
+          <dt>الأدوات</dt><dd>المعداد، بطاقة ١٥، عدّادات.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يحرّك عشرة خرزات ثم خمسًا.</li><li>يقرأ العدد ١٥.</li><li>يطابقه ببطاقة الكمية.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>استكشاف حرّ لألعاب الإدراك والفرز مع إعادة الأدوات.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> تثبيت تسلسل العدد ١٥ (عشرة وخمسة) عمليًّا دون قرينة اللون.</div>
+          <a class="print-link" href="mk-print-gm1b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات بناء ١٥</a></div>
+      </div>
+    </article>
+
+    <article class="lesson">
+      <div class="lesson-head"><div class="tt">الدرس الثاني · مفهوم الوقت</div></div>
+      <div class="opts">
+        <div class="opt a"><div class="head-row"><span class="tag">خيار ١ · 🏠 ركن المسكن</span><span class="dur">⏱ ٢٠ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="ساعة"><use href="#ill-clock"/></svg></div>
+          <div class="rk">تركيبُ الساعة</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يركّب أرقام الساعة ١–١٢.</li><li>يعرف أوقات اليوم في البيت.</li></ul></dd>
+          <dt>الأدوات</dt><dd>الساعة الخشبية، أرقام، بطاقات أوقات.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يركّب أرقام الساعة في مواضعها.</li><li>يضبط عقربها على وقتٍ من روتينه.</li><li>يسمّي الوقت (صباح/ظهر/مساء/ليل).</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>لعب أدوار أسري حرّ بأدوات البيت مع التزام القوانين.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> تثبيت معرفة الساعة عمليًّا وترتيب أحداث اليوم في المسكن بالتسلسل.</div>
+          <a class="print-link" href="mk-print-gm2a.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — قرص الساعة القابل للتركيب</a></div>
+        <div class="opt b"><div class="head-row"><span class="tag">خيار ٢ · 🧩 ركن أدرك وأستمتع</span><span class="dur">⏱ ١٥ دقيقة</span></div>
+          <div class="opt-ill"><svg viewBox="0 0 320 172" role="img" aria-label="بطاقات ترتيب"><use href="#ill-cards"/></svg></div>
+          <div class="rk">ترتيبُ روتين اليوم</div>
+          <dl><dt>الأهداف</dt><dd><ul><li>يرتّب أحداث اليوم في المسكن.</li><li>يميّز قبل/بعد.</li></ul></dd>
+          <dt>الأدوات</dt><dd>بطاقات روتين اليوم، شريط ترتيب.</dd>
+          <dt>الخطوات</dt><dd><ol><li>يرتّب بطاقات اليوم (استيقاظ ← … ← نوم).</li><li>يذكر ما قبل وما بعد كل حدث.</li><li>يربط الوقت بعملٍ نافع.</li></ol></dd>
+          <dt>لعب حرّ بعده</dt><dd>استكشاف حرّ لألعاب الإدراك والفرز مع إعادة الأدوات.</dd></dl>
+          <div class="mean"><b>المعنى المركزي للدرس:</b> تثبيت معرفة الساعة وترتيب أحداث اليوم في المسكن بالتسلسل.</div>
+          <a class="print-link" href="mk-print-gm2b.html" target="_blank" rel="noopener"><span class="ic">🖨️</span> ملف الطباعة — بطاقات ترتيب روتين اليوم</a></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ تنبيه عقدي ============ -->
+  <div class="note" id="note-fin">
+    <strong>تنبيه الملاءمة العقدية قبل التنفيذ:</strong> أثناء مسح أدوات الأركان، رُصدت عناصر قليلة تحتاج معالجة قبل عرضها على الأطفال — الغالبية من الأركان سليمة تمامًا، وهذه ملاحظات موضعية:
+    <ul>
+      <li><b>ركن أكتشف ما حولي:</b> لوحة الصور الكبيرة (I-Spy) تتضمّن <b>رموزًا موسيقية</b> (طبل/بوق/علامات نغمية) — تُغطّى تلك الصور أو تُستبعد اللوحة. كما توجد أغلفة عليها <b>شخصيات كرتونية بوجوه</b> ومجسّم جسم الإنسان بملامح وجه؛ يُكتفى بالمحتوى الداخلي (الطبقات التشريحية/الحواسّ) وتُغطّى الوجوه. (صور هذه الصفحة اختِيرت خاليةً من الوجوه.)</li>
+      <li><b>ساحة البناء:</b> توجد <b>مجسّمات حيوانات كاملة الملامح</b> على أحد الرفوف؛ يُنصح باستبعادها من النشاط والاكتفاء بالمكعبات والمركبات والمجسّمات الجمادية.</li>
+      <li><b>أركان سليمة بلا تحفّظ:</b> أدرك وأستمتع، أقرأ لأتعلم، الدكان، المسكن، فنوني الجميلة، ساحة الرمل — خالية من الرموز الموسيقية ومن مجسّمات ذوات الأرواح بالملامح. وفي ركن فنوني يُوجَّه التشكيل إلى الأزهار والأشجار والجمادات لا ملامح ذوات الأرواح.</li>
+      <li><b>عام:</b> المصاحف في ركن أقرأ لأتعلم تُصان وتُخصَّص للتلاوة، ولا تُدرَج ضمن أدوات التداول اليومي.</li>
+    </ul>
+  </div>
+
+  <div class="gq-dev-credit" style="margin:22px auto 0;max-width:540px;padding:18px 16px 4px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center"><span style="font-size:11.5px;color:var(--muted);letter-spacing:.3px">إعداد وتطوير وإخراج دليل المعلمة</span><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="display:inline-block;line-height:0"><img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية" style="width:104px;height:auto;display:block"/></a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-family:var(--fd);font-size:14.5px;color:#1e5631;text-decoration:none;font-weight:700">شركة حضارة للاستشارات التربوية والتعليمية</a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--elm,#0E7C86);text-decoration:none">www.hadarah-consulting.com</a></div>
+</div>
+<!--gq-credit-embed-hide--><script>try{if(window.self!==window.top){var _c=document.querySelector(".gq-dev-credit");if(_c)_c.style.display="none";}}catch(e){}</script>
+</body>
+</html>
