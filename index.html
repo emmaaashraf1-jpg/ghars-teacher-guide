@@ -187,6 +187,21 @@
     .sfoot b{font-size:12px}
   }
 
+  /* ============ معرض: من داخل روضة غرس القيم ============ */
+  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,16px);margin-top:clamp(24px,3vw,42px)}
+  .shot{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:var(--cream);
+    border:1px solid var(--line);box-shadow:0 14px 30px rgba(20,40,35,.10);margin:0}
+  .shot::before{content:"";position:absolute;inset:0;z-index:2;border-radius:16px;pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(199,154,59,.18)}
+  .shot::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .4s ease;
+    background:linear-gradient(to top,rgba(18,53,43,.34),transparent 44%)}
+  .shot img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06);
+    transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+  .shot:hover img{transform:scale(1.14)}
+  .shot:hover::after{opacity:1}
+  @media(max-width:860px){.shots{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:540px){.shots{grid-template-columns:repeat(2,1fr);gap:9px}}
+
   /* ============ General guide feature ============ */
   .feature{background:linear-gradient(160deg,#20493a,#12352b 70%);color:#fff;border-radius:30px;overflow:hidden;
     display:grid;grid-template-columns:1.02fr .98fr;box-shadow:0 34px 70px rgba(18,53,43,.28)}
@@ -400,6 +415,31 @@
       </div>
     </div>
     <p class="wahy-note reveal"><b>منهجنا لا يرفض العلم</b>، بل يعيد للوحي مرجعيّته، وللعلم بوصلته، وللإنسان غايته — فيكون العلمُ خادمًا للإنسان في طريق عبوديّته لله.</p>
+  </div>
+</section>
+
+<!-- ============ معرض: من داخل روضة غرس القيم ============ -->
+<section class="band band-line gallery" id="gallery">
+  <div class="shell">
+    <div class="sec-head reveal">
+      <span class="eyebrow">من الميدان</span>
+      <h2>من داخل روضة غرس القيم</h2>
+      <p>لقطاتٌ حقيقيّة من بيئة التعلّم وأركانها وأنشطة الأطفال — حيث تصير القيمُ ممارسةً يوميّةً محسوسة.</p>
+    </div>
+    <div class="shots reveal">
+      <figure class="shot"><img src="assets/gallery/photo-04.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/gallery/photo-02.jpg" alt="ركن اللغة داخل روضة غرس القيم" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/gallery/photo-08.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/gallery/photo-14.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/gallery/photo-09.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/gallery/photo-05.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/gallery/photo-10.jpg" alt="ركن سوق غرس القيم" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/gallery/photo-13.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/gallery/photo-11.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/gallery/photo-06.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/gallery/photo-12.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/gallery/photo-15.jpg" alt="لمحة من روضة غرس القيم" loading="lazy"></figure>
+    </div>
   </div>
 </section>
 
