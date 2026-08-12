@@ -13,20 +13,20 @@
   --fd:'AlAwwal','Noto Naskh Arabic',serif;   /* خط العناوين */
   --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif; /* خط المتن */
   --t1:#1b5e34; --t2:#2D7A4B; --grn:#2D7A4B;
-  --gold:#C79A3B; --gold2:#C8A200; --cream:#FFF7E8;
-  --ink:#1e2b2a; --muted:#5f6f6c;
+  --gold:#C79A3B; --gold2:#C8A200; --cream:#F4EDDE;
+  --ink:#1E2E29; --muted:#6C776F;
   --elm:#2D7A4B; --elm-soft:#EAF5EE;
-  --line:#e8dfd0; --card:#fff;
-  --shadow:0 8px 26px rgba(0,50,55,.08);
-  --shadow-sm:0 3px 12px rgba(0,50,55,.06);
+  --line:#E9E1D2; --card:#fff;
+  --shadow:0 8px 26px rgba(20,40,35,.08);
+  --shadow-sm:0 3px 12px rgba(20,40,35,.06);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{
   font-family:var(--fb);
   color:var(--ink);line-height:1.95;font-size:16.5px;
   background:
-    radial-gradient(1200px 520px at 82% -12%,#eef8f6 0,transparent 60%),
-    linear-gradient(#fbf7ee,#f4eddd);
+    radial-gradient(1200px 520px at 82% -12%,#EFF4EC 0,transparent 60%),
+    linear-gradient(#FBF9F2,#F4EDDE);
 }
 .wrap{max-width:1020px;margin:0 auto;padding:20px 16px 60px}
 b,strong{font-weight:700}
@@ -55,7 +55,7 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 /* ===== شريط التبويبات ===== */
 .tabs{position:sticky;top:0;z-index:40;display:flex;flex-wrap:wrap;gap:8px;
   margin:16px 0 24px;padding:10px;background:rgba(255,251,242,.94);backdrop-filter:blur(6px);
-  border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 14px rgba(0,50,55,.05)}
+  border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 14px rgba(20,40,35,.05)}
 .tab{background:#fff;border:1px solid var(--line);color:var(--t2);border-radius:999px;
   padding:8px 15px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s}
 .tab:hover{background:var(--elm-soft);border-color:var(--elm);color:var(--elm)}
@@ -85,7 +85,7 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{border-radius:999px;padding:6px 13px;font-size:15px;border:1px solid var(--line);background:#fff}
-.chip.v{background:#fff7e8;border-color:#ebd9a8;color:#8a6410}
+.chip.v{background:#F4EDDE;border-color:#ebd9a8;color:#8a6410}
 .chip.c{background:var(--elm-soft);border-color:#bcdcc7;color:#17563a}
 
 /* مسار البدء */
@@ -177,7 +177,7 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 .adab .row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:15.5px;line-height:1.8}
 .tag{flex:none;border-radius:8px;font-weight:700;font-size:13.5px;padding:3px 11px;color:#fff}
 .tag.s{background:#c46b2e}.tag.r{background:var(--t2)}.tag.v{background:var(--grn)}
-.adab .link{background:#fff7e8;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;font-size:15px;padding:8px 12px;margin-top:6px}
+.adab .link{background:#F4EDDE;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;font-size:15px;padding:8px 12px;margin-top:6px}
 
 /* تحضيرات ولي الأمر */
 .par{margin-bottom:12px}
@@ -209,7 +209,7 @@ table.voc .w{color:var(--elm);font-weight:700}
 /* الأركان */
 .chero h2{margin-bottom:6px}
 .chero p{color:var(--muted);font-size:15.5px}
-.caution{background:#fff7e8;border:1px dashed #ebd9a8;border-radius:12px;padding:11px 15px;color:#8a6410;font-size:15px;margin:12px 0}
+.caution{background:#F4EDDE;border:1px dashed #ebd9a8;border-radius:12px;padding:11px 15px;color:#8a6410;font-size:15px;margin:12px 0}
 .corner{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:16px;background:#fff}
 .corner .h{padding:13px 18px;color:#fff;display:flex;justify-content:space-between;align-items:center}
 .corner .h .k{background:rgba(255,255,255,.2);border-radius:999px;padding:4px 13px;font-size:14.5px}
@@ -219,7 +219,7 @@ table.voc .w{color:var(--elm);font-weight:700}
 .cfield b{color:var(--elm);font-size:15px;display:block;margin-bottom:2px}
 .cfield p,.cfield li{font-size:15px;line-height:1.8}
 .cfield ol{margin-inline-start:20px}
-.faith{background:#fff7e8;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;padding:10px 14px;margin-top:8px;font-size:15px}
+.faith{background:#F4EDDE;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;padding:10px 14px;margin-top:8px;font-size:15px}
 
 .foot{text-align:center;color:var(--muted);font-size:14.5px;margin-top:34px}
 /* ==== إثراء الدليل ==== */
@@ -232,7 +232,7 @@ table.plan th{background:var(--t2);color:#fff;font-size:14.5px;padding:9px 12px;
 table.plan td{font-size:14.5px;padding:9px 12px;border-top:1px solid var(--line);line-height:1.7}
 table.plan td:first-child{font-weight:700;color:var(--t1);white-space:nowrap}
 table.plan td.z{color:var(--gold2);font-weight:700;white-space:nowrap;text-align:center}
-table.plan tr.tot td{background:#fff7e8;font-weight:700;color:#8a6410}
+table.plan tr.tot td{background:#F4EDDE;font-weight:700;color:#8a6410}
 .central{background:linear-gradient(135deg,#1b5e34,#2D7A4B);color:#fff;border-radius:14px;padding:14px 18px;margin:6px 0 2px;box-shadow:var(--shadow-sm)}
 .central b{color:#ffe9b8;display:block;margin-bottom:3px}
 .cues{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
@@ -317,7 +317,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 .kitabi-hijri-sub{font-size:11px;line-height:1.7;color:#5e6d70;margin-top:2px}
 .kitabi-hijri-actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
 .kitabi-hijri-actions button{border:1px solid #dcc79c;background:#fff;color:#102d36;border-radius:999px;padding:5px 9px;font-family:inherit;font-size:11px;font-weight:700;cursor:pointer}
-.kitabi-hijri-actions button:hover{background:#fff7e8;border-color:var(--gold)}
+.kitabi-hijri-actions button:hover{background:#F4EDDE;border-color:var(--gold)}
 .kitabi-hijri-status{font-size:10.5px;color:var(--t2);font-weight:800;min-width:40px;text-align:center}
 .kitabi-hijri-prompt{border-top:1px dashed #e1c991;background:#fffdf7;padding:10px 15px;font-size:12px;line-height:1.9;color:#5a3e00}
 .kitabi-hijri-prompt strong{color:var(--t2)}
@@ -353,7 +353,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 .flow-card.belief h3{color:var(--t1);font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
 
 /* ===== توحيد أيقونات الدليل (الخيار أ) ===== */
-.sec-head .num{background:#EEF4F1!important;border:1px solid #D6E5DF;color:#00575C!important;box-shadow:none!important}
+.sec-head .num{background:#EEF4F1!important;border:1px solid #D6E5DF;color:#1F4A39!important;box-shadow:none!important}
 .sec-head .num .gi-svg,.sec-head .num .gi{width:22px;height:22px}
 h2 .gi,h3 .gi{vertical-align:-.18em}
 </style>
@@ -545,7 +545,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
           <div class="lbl" style="color:#8a6a12"> المثير</div>
           <div class="mini"> لوحة سورة الإنفطار</div>
           <div class="mini" style="margin-top:6px"> «اليوم نتعلّم سورة جديدة من جزء عمّ بطريقة: ضع البطاقة عند العنوان»</div>
-          <div class="mini" style="margin-top:6px;color:var(--muted,#5f6f6c)">تمهيدًا بوصف القرآن: نورٌ وبرهانٌ من ربّنا.</div>
+          <div class="mini" style="margin-top:6px;color:var(--muted,#6C776F)">تمهيدًا بوصف القرآن: نورٌ وبرهانٌ من ربّنا.</div>
         </div>
         <div class="card">
           <div class="lbl">المواد المساعدة</div>
@@ -920,19 +920,19 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
     <div class="chero"><p style="margin-bottom:6px">الأركان مساحاتٌ غنيّة بأدوات التعلّم، مدّتها ٣٠ دقيقة، يستكشف فيها الأطفال الأدوات <strong>بحرّية ومرح</strong> — لا التزام بآداب مجالس العلم كالمواد الأساسية، مع بقاء المصحف والنصّ القرآني في موضع التلاوة والتعظيم. وتستقطع المعلمة وقتًا يسيرًا لتنفيذ <strong>نشاط تطبيقي سريع على الفكرة المركزية للدرس</strong>: التعرّف على علوم سورة الإنفطار تعظيمًا لكلام الله. أمام المعلمة <strong>ركنان مقترحان تختار بينهما</strong> (أو تنفّذهما معًا) بحسب جاهزية البيئة.</p></div>
     <div class="caution"><strong>ضابط منهجي:</strong> تُقدَّم علوم السورة مدخلًا لتعظيم كلام الله لا مسابقة معلومات؛ ويُحافظ على آداب التعامل مع المصحف وعدم وضع البطاقات فوق صفحاته.</div>
 
-    <div style="border:2px solid #0d6e6e;border-radius:16px;overflow:hidden;margin:16px 0 18px;box-shadow:0 5px 16px rgba(0,50,55,.1)">
-      <div style="background:linear-gradient(135deg,#003E45,#0d6e6e);color:#fff;padding:12px 16px;font-weight:700;display:flex;align-items:center;gap:9px;font-size:15px"><span style="font-size:19px">🧩</span> الأركان التطبيقية المطوّرة — خياران جاهزان بملفات طباعة</div>
+    <div style="border:2px solid #0d6e6e;border-radius:16px;overflow:hidden;margin:16px 0 18px;box-shadow:0 5px 16px rgba(20,40,35,.1)">
+      <div style="background:linear-gradient(135deg,#1F4A39,#0d6e6e);color:#fff;padding:12px 16px;font-weight:700;display:flex;align-items:center;gap:9px;font-size:15px"><span style="font-size:19px">🧩</span> الأركان التطبيقية المطوّرة — خياران جاهزان بملفات طباعة</div>
       <div style="padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
-        <div style="border:1px solid #e8dfd0;border-top:4px solid #0d6e6e;border-radius:12px;padding:12px 14px;background:#f7fbfa">
-          <div style="font-weight:700;color:#003E45;font-size:14.5px;line-height:1.6">خيار ١ · 📚 ركن أقرأ لأتعلم<br/>مجلس القرآن الأسري</div>
+        <div style="border:1px solid #E9E1D2;border-top:4px solid #0d6e6e;border-radius:12px;padding:12px 14px;background:#f7fbfa">
+          <div style="font-weight:700;color:#1F4A39;font-size:14.5px;line-height:1.6">خيار ١ · 📚 ركن أقرأ لأتعلم<br/>مجلس القرآن الأسري</div>
           <a href="fam-print-fb1a.html" target="_blank" rel="noopener" style="display:inline-block;margin-top:9px;background:#0d6e6e;color:#fff;border-radius:9px;padding:7px 13px;text-decoration:none;font-size:12.5px;font-weight:700">🖨️ ملف الطباعة</a>
         </div>
-        <div style="border:1px solid #e8dfd0;border-top:4px solid #C79A3B;border-radius:12px;padding:12px 14px;background:#fffdf7">
-          <div style="font-weight:700;color:#003E45;font-size:14.5px;line-height:1.6">خيار ٢ · 🧩 ركن أدرك وأستمتع<br/>بطاقات تعظيم القرآن</div>
+        <div style="border:1px solid #E9E1D2;border-top:4px solid #C79A3B;border-radius:12px;padding:12px 14px;background:#fffdf7">
+          <div style="font-weight:700;color:#1F4A39;font-size:14.5px;line-height:1.6">خيار ٢ · 🧩 ركن أدرك وأستمتع<br/>بطاقات تعظيم القرآن</div>
           <a href="fam-print-fb1b.html" target="_blank" rel="noopener" style="display:inline-block;margin-top:9px;background:#C79A3B;color:#3a2a06;border-radius:9px;padding:7px 13px;text-decoration:none;font-size:12.5px;font-weight:700">🖨️ ملف الطباعة</a>
         </div>
       </div>
-      <a href="family-arkan-tatbiqiyya.html#kitabi" target="_blank" rel="noopener" style="display:block;text-align:center;padding:11px;background:#eef6f4;color:#0d6e6e;text-decoration:none;font-weight:700;font-size:13px;border-top:1px solid #e8dfd0">افتحي صفحة الأركان التطبيقية الكاملة (الأهداف · الأدوات · الخطوات · القوانين · الروتين) ↗</a>
+      <a href="family-arkan-tatbiqiyya.html#kitabi" target="_blank" rel="noopener" style="display:block;text-align:center;padding:11px;background:#eef6f4;color:#0d6e6e;text-decoration:none;font-weight:700;font-size:13px;border-top:1px solid #E9E1D2">افتحي صفحة الأركان التطبيقية الكاملة (الأهداف · الأدوات · الخطوات · القوانين · الروتين) ↗</a>
     </div>
     <div class="corner">
       <div class="h" style="background:linear-gradient(90deg,#1b5e34,#2D7A4B)"><h4>أقرأ لأتعلّم علوم سورتي</h4><span class="k"> ركن أقرأ لأتعلّم</span></div>
@@ -958,7 +958,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
     </div>
 
     <div class="corner">
-      <div class="h" style="background:linear-gradient(90deg,#286A54,#0E7C86)"><h4>أُزيّن علوم سورتي</h4><span class="k"> ركن فنوني الجميلة</span></div>
+      <div class="h" style="background:linear-gradient(90deg,#286A54,#0E6E6B)"><h4>أُزيّن علوم سورتي</h4><span class="k"> ركن فنوني الجميلة</span></div>
       <div class="b">
         <div class="cfield"><b>الأدوات والوسائل التعليمية</b><p>بطاقة عنوان «سورة الإنفطار» وبطاقات علومها لتزيينها، أقلام وألوان آمنة، أختام وقصاصات وعناصر زخرفية إسلامية، أوراق مقوّاة وصمغ، لوحة عرض لأعمال الأطفال، وجواز مرور الركن.</p></div>
         <div class="cfield"><b>قوانين الركن</b><p>البقاء في مساحة الركن · استخدام الألوان بنظافة · عدم التلوين أو الكتابة فوق المصحف · انتظار الدور · إعادة الأدوات إلى مكانها بعد اللعب.</p></div>
@@ -982,7 +982,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
 </div>
 
   <div class="foot">وحدة العائلة · كتابي المنير · اللقاء الأول — علوم سورة الإنفطار · نادي غرس القيم لضيافة الأطفال</div>
-  <div class="gq-dev-credit" style="margin:22px auto 0;max-width:540px;padding:18px 16px 4px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center"><span style="font-size:11.5px;color:var(--muted);letter-spacing:.3px">إعداد وتطوير وإخراج دليل المعلمة</span><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="display:inline-block;line-height:0"><img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية" style="width:104px;height:auto;display:block"/></a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-family:var(--fd);font-size:14.5px;color:#1e5631;text-decoration:none;font-weight:700">شركة حضارة للاستشارات التربوية والتعليمية</a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--elm,#0E7C86);text-decoration:none">www.hadarah-consulting.com</a></div>
+  <div class="gq-dev-credit" style="margin:22px auto 0;max-width:540px;padding:18px 16px 4px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center"><span style="font-size:11.5px;color:var(--muted);letter-spacing:.3px">إعداد وتطوير وإخراج دليل المعلمة</span><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="display:inline-block;line-height:0"><img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية" style="width:104px;height:auto;display:block"/></a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-family:var(--fd);font-size:14.5px;color:#1e5631;text-decoration:none;font-weight:700">شركة حضارة للاستشارات التربوية والتعليمية</a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--elm,#0E6E6B);text-decoration:none">www.hadarah-consulting.com</a></div>
 </div>
 
 <script id="kitabi-hijri-tool-script">

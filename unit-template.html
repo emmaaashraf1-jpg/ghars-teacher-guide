@@ -12,17 +12,17 @@
 :root{
   --fd:'AlAwwal','Noto Naskh Arabic',serif;
   --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
-  --t1:#003E45; --t2:#006B69; --grn:#2D7A4B;
-  --gold:#C79A3B; --gold2:#C8A200; --cream:#FFF7E8;
-  --ink:#1e2b2a; --muted:#5f6f6c;
-  --elm:#0E7C86; --elm-soft:#E6F4F5;
-  --line:#e8dfd0; --card:#fff;
-  --shadow:0 8px 26px rgba(0,50,55,.08);
-  --shadow-sm:0 3px 12px rgba(0,50,55,.06);
+  --t1:#1F4A39; --t2:#2C6A4D; --grn:#2D7A4B;
+  --gold:#C79A3B; --gold2:#C8A200; --cream:#F4EDDE;
+  --ink:#1E2E29; --muted:#6C776F;
+  --elm:#0E6E6B; --elm-soft:#E4F1F0;
+  --line:#E9E1D2; --card:#fff;
+  --shadow:0 8px 26px rgba(20,40,35,.08);
+  --shadow-sm:0 3px 12px rgba(20,40,35,.06);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--fb);color:var(--ink);line-height:1.9;font-size:16px;
-  background:radial-gradient(1200px 520px at 82% -12%,#eef8f6 0,transparent 60%),linear-gradient(#fbf7ee,#f4eddd)}
+  background:radial-gradient(1200px 520px at 82% -12%,#EFF4EC 0,transparent 60%),linear-gradient(#FBF9F2,#F4EDDE)}
 b,strong{font-weight:700}
 h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .wrap{max-width:1080px;margin:0 auto;padding:18px 14px 70px}
@@ -31,7 +31,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .hero{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:18px;isolation:isolate}
 .hero-photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;transform:scale(1.02)}
 .hero::before{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(135deg,rgba(0,62,69,.93),rgba(0,107,105,.86) 60%,rgba(14,124,134,.82))}
+  background:linear-gradient(135deg,rgba(31,74,57,.93),rgba(44,106,77,.86) 60%,rgba(14,110,107,.82))}
 .hero-in{position:relative;z-index:2;padding:34px 30px 30px;color:#fff;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .hero-badge-logo{flex:0 0 auto;width:104px;height:104px;border-radius:22px;background:#fff;
   border:1px solid rgba(255,255,255,.65);display:grid;place-items:center;padding:9px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
@@ -53,7 +53,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .daytab .d-n{font-size:12.5px;color:var(--t2);font-weight:700}
 .daytab .d-t{font-size:15px;font-weight:700;color:var(--ink)}
 .daytab:hover{border-color:var(--t2);transform:translateY(-1px)}
-.daytab.active{background:linear-gradient(135deg,var(--t1),var(--t2));border-color:var(--t1);box-shadow:0 8px 22px rgba(0,62,69,.24)}
+.daytab.active{background:linear-gradient(135deg,var(--t1),var(--t2));border-color:var(--t1);box-shadow:0 8px 22px rgba(31,74,57,.24)}
 .daytab.active .d-n,.daytab.active .d-t{color:#fff}
 
 /* ===== لوحة اليوم ===== */
@@ -66,8 +66,8 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
   border-radius:14px;padding:10px;box-shadow:var(--shadow-sm)}
 .subtab{cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;
   font-size:13.5px;font-weight:700;color:#4a5a58;font-family:var(--fb);transition:.15s;white-space:nowrap}
-.subtab:hover{border-color:var(--sc,#006B69);color:var(--sc,#006B69)}
-.subtab.active{background:var(--sc,#006B69);border-color:var(--sc,#006B69);color:#fff}
+.subtab:hover{border-color:var(--sc,#2C6A4D);color:var(--sc,#2C6A4D)}
+.subtab.active{background:var(--sc,#2C6A4D);border-color:var(--sc,#2C6A4D);color:#fff}
 .subpanel{display:none}
 .subpanel.active{display:block;animation:fade .2s ease}
 
@@ -89,7 +89,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 
 /* العودة للأعلى */
 .gq-top{position:fixed;inset-inline-end:18px;bottom:18px;width:46px;height:46px;border-radius:50%;border:0;
-  background:var(--t2);color:#fff;font-size:20px;cursor:pointer;box-shadow:0 8px 22px rgba(0,62,69,.3);
+  background:var(--t2);color:#fff;font-size:20px;cursor:pointer;box-shadow:0 8px 22px rgba(31,74,57,.3);
   opacity:0;pointer-events:none;transition:.25s;z-index:40}
 .gq-top.show{opacity:1;pointer-events:auto}
 
@@ -100,8 +100,8 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .unitnav-label{font-family:var(--fd);font-size:11.5px;font-weight:700;color:var(--t2);background:var(--elm-soft);border:1px solid #d5ebec;border-radius:999px;padding:5px 12px;white-space:nowrap}
 .utab{cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 15px;font-size:13px;font-weight:700;color:#4a5a58;font-family:var(--fb);transition:.15s;white-space:nowrap}
 .utab:hover{border-color:var(--t2);color:var(--t2);transform:translateY(-1px)}
-.utab.active{background:linear-gradient(135deg,var(--t1),var(--t2));border-color:var(--t1);color:#fff;box-shadow:0 6px 16px rgba(0,62,69,.2)}
-.utab.days-tab{background:linear-gradient(135deg,#fff,#eef8f6);border-color:#cfe8e6;color:var(--t1)}
+.utab.active{background:linear-gradient(135deg,var(--t1),var(--t2));border-color:var(--t1);color:#fff;box-shadow:0 6px 16px rgba(31,74,57,.2)}
+.utab.days-tab{background:linear-gradient(135deg,#fff,#EFF4EC);border-color:#cfe8e6;color:var(--t1)}
 .utab.days-tab.active{background:linear-gradient(135deg,var(--gold),var(--gold2));border-color:var(--gold);color:#3a2c00}
 
 .upanel{display:none}
@@ -123,7 +123,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .u-subj{display:inline-block;background:var(--ac,var(--t2));color:#fff;border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;margin-bottom:8px}
 .u-note{background:var(--elm-soft);border:1px solid #d5ebec;border-radius:14px;padding:13px 16px;font-size:13.5px;color:#215c60;margin:12px 0;line-height:1.8}
 .u-note b{color:var(--t1)}
-.u-note.warn{background:#fff7e8;border-color:#ecd9a8;color:#7a5710}
+.u-note.warn{background:#F4EDDE;border-color:#ecd9a8;color:#7a5710}
 .u-note.warn b{color:#8a5a00}
 .u-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:13px;margin:10px 0}
 .u-table th{background:var(--t1);color:#fff;padding:10px;font-family:var(--fd);font-weight:700;font-size:13px;text-align:start}
@@ -176,7 +176,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 </style>
   <link rel="stylesheet" href="app.css"/>
   <link rel="manifest" href="manifest.json"/>
-  <meta name="theme-color" content="#00575C"/>
+  <meta name="theme-color" content="#1F4A39"/>
   <link rel="apple-touch-icon" href="brand/logo-ghars.webp"/>
 </head>
 <body>
@@ -246,8 +246,8 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
   <div class="daypanel active" id="d1">
     <div class="subtabs">
       <button class="subtab active" data-s="1" style="--sc:#2D7A4B">كتابي المنير</button>
-      <button class="subtab" data-s="2" style="--sc:#006B69">علّمني ربي</button>
-      <!-- ألوان المواد: كتابي #2D7A4B · علّمني #006B69 · قال رسولي #6B3F22 ·
+      <button class="subtab" data-s="2" style="--sc:#2C6A4D">علّمني ربي</button>
+      <!-- ألوان المواد: كتابي #2D7A4B · علّمني #2C6A4D · قال رسولي #6B3F22 ·
            أدب #55702B · أحبك #8660A8 · لساني #0d6e6e · مهاراتي #8B0000 -->
     </div>
 
@@ -256,7 +256,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
       <div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="كتابي المنير" data-src="LESSON-FILE.html" loading="lazy"></iframe></div>
     </div>
     <div class="subpanel" data-s="2">
-      <div class="day-head" style="--sc:#006B69"><span class="subj">علّمني ربي</span><h2>عنوان اللقاء</h2><a class="open" href="LESSON-FILE-2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div>
+      <div class="day-head" style="--sc:#2C6A4D"><span class="subj">علّمني ربي</span><h2>عنوان اللقاء</h2><a class="open" href="LESSON-FILE-2.html" target="_blank" rel="noopener">↗ فتح كصفحة كاملة</a></div>
       <div class="frame-wrap"><div class="frame-load"><span class="sp"></span><br/>يُحمّل دليل اللقاء…</div><iframe title="علّمني ربي" data-src="LESSON-FILE-2.html" loading="lazy"></iframe></div>
     </div>
   </div>
