@@ -603,6 +603,8 @@
     dotsWrap.appendChild(b);
   });
   var dots=[].slice.call(dotsWrap.children);
+  if(countEl) countEl.setAttribute('dir','ltr');
+  function toAr(x){ return String(x).replace(/[0-9]/g,function(d){ return '٠١٢٣٤٥٦٧٨٩'[+d]; }); }
   function norm(d){ d=((d%n)+n)%n; if(d>n/2) d-=n; return d; }
   function render(){
     slides.forEach(function(s,i){
@@ -618,7 +620,7 @@
       s.setAttribute('aria-hidden', rel===0?'false':'true');
     });
     dots.forEach(function(d,i){ d.classList.toggle('on',i===cur); d.setAttribute('aria-selected',i===cur?'true':'false'); });
-    if(countEl) countEl.textContent=(cur+1)+' / '+n;
+    if(countEl) countEl.textContent=toAr(cur+1)+' / '+toAr(n);
   }
   function go(i){ cur=((i%n)+n)%n; render(); }
   function step(d){ go(cur+d); }
