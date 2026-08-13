@@ -67,14 +67,28 @@
   .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
   /* ============ Hero ============ */
-  .hero{padding:clamp(46px,8vw,92px) 0 clamp(40px,7vw,80px)}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,68px);align-items:center}
-  .hero-copy .eyebrow{margin-bottom:22px}
+  .hero{position:relative;overflow:hidden;padding:clamp(46px,8vw,96px) 0 clamp(44px,7vw,88px)}
+  .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(680px 380px at 88% 6%,rgba(199,154,59,.13),transparent 60%),
+      radial-gradient(640px 440px at 4% 96%,rgba(46,106,77,.10),transparent 62%)}
+  .hero .shell{position:relative;z-index:1}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,72px);align-items:center}
+  .hero-copy .eyebrow{margin-bottom:20px}
   .hero h1{font-family:var(--display);font-weight:700;color:var(--forest);
-    font-size:clamp(64px,12vw,124px);line-height:.98;letter-spacing:-.5px;margin-bottom:18px}
+    font-size:clamp(60px,11.5vw,120px);line-height:.98;letter-spacing:-.5px;margin-bottom:16px}
+  .hero h1::after{content:"";display:block;width:92px;height:4px;border-radius:3px;margin-top:18px;
+    background:linear-gradient(90deg,var(--gold),rgba(199,154,59,0))}
   .hero .lede{font-family:var(--display);font-weight:700;font-size:clamp(21px,3.2vw,31px);
-    line-height:1.5;color:var(--ink);max-width:20ch;margin-bottom:16px}
-  .hero p{font-size:clamp(15px,1.7vw,17px);line-height:2.05;color:var(--gray);max-width:46ch;margin-bottom:30px}
+    line-height:1.5;color:var(--ink);max-width:22ch;margin-bottom:14px}
+  .hero p{font-size:clamp(15px,1.7vw,17px);line-height:2.05;color:var(--gray);max-width:46ch;margin-bottom:22px}
+  .hero-stats{list-style:none;display:flex;flex-wrap:wrap;align-items:center;margin:0 0 30px;padding:15px 0;
+    border-block:1px solid var(--line)}
+  .hero-stats li{position:relative;padding:0 clamp(16px,2.2vw,26px)}
+  .hero-stats li:first-child{padding-inline-start:0}
+  .hero-stats li+li::before{content:"";position:absolute;inset-inline-start:0;top:50%;transform:translateY(-50%);
+    width:1px;height:34px;background:var(--line)}
+  .hero-stats b{display:block;font-family:var(--display);font-weight:700;font-size:clamp(21px,2.5vw,27px);color:var(--forest);line-height:1.12}
+  .hero-stats span{font-size:12px;color:var(--gray);font-weight:600;letter-spacing:.2px}
   .actions{display:flex;flex-wrap:wrap;gap:14px}
   .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:16px;
     border-radius:999px;padding:14px 28px;transition:transform .18s var(--ease),box-shadow .18s var(--ease),background .2s}
@@ -82,20 +96,27 @@
   .btn-primary{background:var(--forest);color:#fff;box-shadow:0 12px 26px rgba(31,74,57,.22)}
   .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 34px rgba(31,74,57,.28)}
   .btn-primary:hover .ar{transform:translateX(-5px)}
-  .btn-ghost{background:transparent;color:var(--forest);border:1.5px solid var(--line)}
-  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--sage);background:var(--surface)}
+  .btn-ghost{background:var(--surface);color:var(--forest);border:1.5px solid var(--line)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 12px 24px rgba(31,74,57,.1)}
   /* hero artwork — editorial */
   .hero-art{position:relative}
-  .hero-art figure{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:5/4;
-    box-shadow:0 34px 70px rgba(31,74,57,.18);border:1px solid rgba(255,255,255,.6)}
-  .hero-art figure::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(31,74,57,.05)}
-  .hero-art img{width:100%;height:100%;object-fit:cover}
-  .hero-art .frame{position:absolute;inset:-14px -14px auto auto;width:64%;height:64%;
-    border:1.5px solid rgba(192,146,46,.5);border-radius:26px;z-index:-1}
-  .hero-art .chip{position:absolute;bottom:18px;inset-inline-start:18px;background:rgba(251,249,242,.92);
-    backdrop-filter:blur(6px);border-radius:14px;padding:10px 16px;box-shadow:0 10px 24px rgba(31,74,57,.14)}
-  .hero-art .chip b{font-family:var(--display);font-size:15px;color:var(--forest);display:block}
+  .hero-art figure{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:5/4;margin:0;
+    box-shadow:0 44px 84px rgba(31,74,57,.24),0 10px 26px rgba(31,74,57,.12);border:1px solid rgba(255,255,255,.7)}
+  .hero-art figure::after{content:"";position:absolute;inset:0;border-radius:28px;pointer-events:none;
+    box-shadow:inset 0 0 0 1.5px rgba(199,154,59,.3)}
+  .hero-art img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-art .frame{position:absolute;inset:-12px;border:1.5px solid rgba(199,154,59,.42);border-radius:34px;z-index:-1}
+  .hero-medallion{position:absolute;top:-22px;right:-22px;z-index:3;width:80px;height:80px;border-radius:50%;
+    background:#fff;display:grid;place-items:center;padding:13px;
+    box-shadow:0 0 0 1.5px var(--gold),0 16px 32px rgba(31,74,57,.22)}
+  .hero-medallion img{width:100%;height:100%;object-fit:contain}
+  .hero-art .chip{position:absolute;bottom:16px;left:16px;z-index:3;background:rgba(251,249,242,.94);
+    backdrop-filter:blur(6px);border-radius:14px;padding:11px 16px;box-shadow:0 12px 26px rgba(31,74,57,.16);
+    border:1px solid rgba(255,255,255,.6)}
+  .hero-art .chip b{font-family:var(--display);font-size:15px;color:var(--forest);display:block;line-height:1.3}
   .hero-art .chip span{font-size:11.5px;color:var(--gray)}
+  @media(max-width:560px){.hero-medallion{width:62px;height:62px;top:-16px;right:-16px;padding:10px}
+    .hero h1{font-size:clamp(52px,16vw,82px)}}
 
   /* ============ Section rhythm ============ */
   section{position:relative}
@@ -360,12 +381,18 @@
 
 <!-- ============ Hero ============ -->
 <section class="hero">
+  <span class="hero-bg" aria-hidden="true"></span>
   <div class="shell hero-grid">
     <div class="hero-copy reveal">
-      <span class="eyebrow">منهج غرس القيم</span>
+      <span class="eyebrow">منهجٌ متكامل لبناء الطفل</span>
       <h1>غرس القيم</h1>
       <p class="lede">غرسُ القيم الإسلامية في قلوب الأطفال.</p>
       <p>لصناعة جيلٍ صالحٍ راسخٍ في قيمه، متّزنٍ في سلوكه — في مرحلة التمهيدي (٥–٦ سنوات).</p>
+      <ul class="hero-stats">
+        <li><b>١٨</b><span>وحدة تكاملية</span></li>
+        <li><b>٣</b><span>فصول دراسية</span></li>
+        <li><b>تمهيدي</b><span>٥–٦ سنوات</span></li>
+      </ul>
       <div class="actions">
         <a class="btn btn-primary" href="#units">استكشفي المنهج <span class="ar">←</span></a>
         <a class="btn btn-ghost" href="intro-guide.html">ابدئي بالدليل العام</a>
@@ -376,6 +403,8 @@
       <figure>
         <img src="units-art/intro-cover.jpg?v=13" alt="لوحة مائية تعبّر عن منهج غرس القيم: مرجٌ ودربٌ نحو النور" />
       </figure>
+      <span class="hero-medallion"><img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة"></span>
+      <span class="chip"><b>دليل المعلمة</b><span>منهجٌ متكامل · تطبيقٌ عمليّ</span></span>
     </div>
   </div>
 </section>
