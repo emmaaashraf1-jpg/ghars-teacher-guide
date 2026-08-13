@@ -612,42 +612,38 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
   #signals .song-section-title{margin-top:20px!important}
   #signals .signal-material-grid{gap:13px!important;margin-top:14px!important}
 
-  /* ===== الآداب والمواقف (#manners): من جدارِ بطاقات (٩٢) إلى سجلٍّ مرجعيّ مُنضَّد — CSS فقط، دون مساس بالـDOM/JS =====
-     ملاحظة حَرِجة: البحث/التصنيف يبدّلان style.display على .manner-card/.mw-card؛ فلا !important على display لهما. */
+  /* ===== الآداب والمواقف (#manners): «دفتر المعلّمة» — كتيّبٌ مطبوعٌ أنيق، لا جدار بطاقات ولا جدول =====
+     CSS فقط فوق الـDOM القائم. ملاحظة حَرِجة: البحث/التصنيف يبدّلان style.display؛ فلا !important على display لبطاقات JS.
+     الحقول: الاسمُ أقوى عنصر · الدليلُ نسخيٌّ فسيح لكنه تابع · التطبيقُ لوحةٌ دافئة معنونة · الرقمُ مميَّزٌ لا ضخم · التصنيفُ يخفت. */
   #manners .manners-grid,#manners .mawaqif-grid{display:block!important;grid-template-columns:none!important}
 
-  /* (أ) الآداب: كل مدخل صفٌّ مرجعيّ بحقول محاذاة — رقم · تصنيف · الأدب والدليل · التطبيق */
-  #manners .manner-card{display:grid;position:static!important;grid-template-columns:34px 82px minmax(0,1.5fr) minmax(0,1fr)!important;column-gap:16px!important;row-gap:2px!important;align-items:start!important;border:none!important;border-bottom:1px solid rgba(31,74,57,.12)!important;border-radius:0!important;background:transparent!important;min-height:0!important;padding:15px 2px!important}
-  #manners .manner-no{position:static!important;grid-column:1;grid-row:1;font-size:15px!important;font-weight:700!important;color:#C79A3B!important}
-  #manners .manner-cat{grid-column:2;grid-row:1;align-self:start;display:block!important;margin:0!important;padding:0!important;background:transparent!important;border-radius:0!important;color:#2C6A4D!important;font-weight:700!important;font-size:10.5px!important;line-height:1.7!important}
-  #manners .manner-card>b{grid-column:3;grid-row:1;font-size:14.5px!important;color:#1F4A39!important;line-height:1.6!important}
-  #manners .manner-text{grid-column:3;background:transparent!important;border-radius:0!important;margin:5px 0 0!important;padding:0 0 0 11px!important;border-inline-start:2px solid rgba(199,154,59,.4)!important;font-family:'Amiri','Noto Naskh Arabic',serif!important;font-size:14px!important;line-height:2!important;color:#2c353f!important}
-  #manners .manner-ref{display:block!important;margin-top:3px!important;font-family:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif!important;font-size:11px!important;color:#9a8f7a!important;font-weight:400!important}
-  #manners .manner-use{grid-column:4;grid-row:1;align-self:start;margin:0!important;font-size:12px!important;line-height:1.8!important;color:#5b6570!important}
-  #manners .manner-use::before{content:"التطبيق: ";font-weight:700;color:#B07D2B}
+  /* (أ) الآداب: مدخلٌ عموديٌّ فسيح — رقمٌ في هامش هادئ، ثم الاسم فالأدلّة فلوحة التطبيق */
+  #manners .manner-card{display:grid;position:static!important;grid-template-columns:auto minmax(0,1fr)!important;column-gap:clamp(13px,2.4vw,18px)!important;row-gap:0!important;align-items:baseline!important;border:none!important;border-top:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;min-height:0!important;padding:clamp(22px,3.4vw,30px) 2px!important}
+  #manners .manner-no{position:static!important;grid-column:1;grid-row:1;font-family:'Amiri','Noto Naskh Arabic',serif!important;font-size:clamp(18px,3.8vw,22px)!important;font-weight:700!important;color:#C79A3B!important;font-variant-numeric:tabular-nums}
+  #manners .manner-card>b{grid-column:2;grid-row:1;font-family:'AlAwwal','Amiri','Noto Naskh Arabic',serif!important;font-size:clamp(20px,4.6vw,25px)!important;font-weight:700!important;color:#1F4A39!important;line-height:1.35!important}
+  #manners .manner-cat{grid-column:2;grid-row:2;align-self:start;display:block!important;margin:3px 0 0!important;padding:0!important;background:transparent!important;border:none!important;border-radius:0!important;color:#2C6A4D!important;font-weight:700!important;font-size:12px!important;letter-spacing:.6px!important;line-height:1.6!important}
+  #manners .manner-cat::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:#C79A3B;vertical-align:middle;margin-inline-end:7px}
+  #manners .manner-text{grid-column:2;background:transparent!important;border-radius:0!important;margin:14px 0 0!important;padding:0 0 0 15px!important;border-inline-start:2px solid rgba(199,154,59,.45)!important;font-family:'Amiri','Noto Naskh Arabic',serif!important;font-size:clamp(16px,3.6vw,18.5px)!important;line-height:2.05!important;color:#2B352E!important}
+  #manners .manner-ref{display:block!important;margin-top:4px!important;font-family:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif!important;font-size:13px!important;color:#9A8F79!important;font-weight:400!important}
+  #manners .manner-use{grid-column:2;align-self:start;background:#F6F1E4!important;border-radius:11px!important;margin:16px 0 0!important;padding:14px 17px!important;font-size:clamp(15px,3.3vw,16px)!important;line-height:1.82!important;color:#48534B!important;position:relative}
+  #manners .manner-use::before{content:"في التطبيق";display:block;font-size:12px;font-weight:700;letter-spacing:1px;color:#A9772E;margin-bottom:6px}
 
-  /* طيّ الآداب إلى مدخلاتٍ تحريريّة مكدّسة على الشاشات الأضيق (٧٦٨ وما دون) */
-  @media(max-width:860px){
-    #manners .manner-card{display:block;padding:14px 2px!important}
-    #manners .manner-no{display:inline!important;font-size:13px!important;margin-inline-end:8px!important}
-    #manners .manner-card>b{display:inline!important;font-size:14px!important}
-    #manners .manner-cat{display:inline-block!important;margin-inline-start:8px!important;vertical-align:middle}
-    #manners .manner-text{display:block!important;margin-top:7px!important}
-    #manners .manner-use{display:block!important;margin-top:7px!important}
-  }
-
-  /* (ب) المواقف: إزالة جدار البطاقات — صفوفٌ مُنضَّدة بفواصل رفيعة، وسمات محاذاة، وشواهد مقتبسة */
+  /* (ب) المواقف: بالإيقاع نفسه — عنوانٌ قويّ، «الموقف» مشهدٌ دافئ، القيمةُ والتوجيهُ معنونان، الدليلُ مقتبس */
   #manners .mawaqif-head{background:#1F4A39!important}
-  #manners .mw-card{border:none!important;border-top:none!important;border-bottom:1px solid rgba(31,74,57,.12)!important;border-radius:0!important;background:transparent!important;padding:13px 2px!important}
-  #manners .mw-title{font-size:14px!important;color:#1F4A39!important}
-  #manners .mw-no{color:#C79A3B!important;font-size:13px!important}
-  #manners .mw-row{display:flex!important;flex-wrap:wrap;gap:6px 12px!important;align-items:baseline!important;margin-top:7px!important}
-  #manners .mw-tag,#manners .mw-tag.mw-v,#manners .mw-tag.mw-g{flex:0 0 92px;background:transparent!important;padding:0!important;border-radius:0!important;font-size:10px!important;font-weight:700!important}
-  #manners .mw-tag{color:#2C6A4D!important}
-  #manners .mw-tag.mw-v{color:#4f7c49!important}
-  #manners .mw-tag.mw-g{color:#B07D2B!important}
-  #manners .mw-row p,#manners .mw-row ul{flex:1 1 240px;margin:0!important;font-size:12.5px!important;color:#4c5561!important;line-height:1.85!important}
-  #manners .mw-proof{flex:1 1 100%;background:transparent!important;border-radius:0!important;border-right:none!important;border-inline-start:2px solid rgba(199,154,59,.4)!important;padding:0 0 0 11px!important;margin-top:8px!important;font-family:'Amiri',serif!important;font-size:13px!important}
+  #manners .mw-card{border:none!important;border-top:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;padding:clamp(22px,3.4vw,30px) 2px!important}
+  #manners .mw-title{display:flex!important;align-items:baseline;gap:12px;font-family:'AlAwwal','Amiri','Noto Naskh Arabic',serif!important;font-size:clamp(19px,4vw,23px)!important;color:#1F4A39!important}
+  #manners .mw-no{color:#C79A3B!important;font-size:clamp(17px,3.2vw,20px)!important;font-variant-numeric:tabular-nums}
+  #manners .mw-row{display:block!important;margin-top:15px!important}
+  #manners .mw-tag,#manners .mw-tag.mw-v,#manners .mw-tag.mw-g{display:block!important;background:transparent!important;padding:0!important;border-radius:0!important;font-size:12px!important;font-weight:700!important;letter-spacing:.8px!important;margin-bottom:6px!important}
+  #manners .mw-tag{color:#A9772E!important}
+  #manners .mw-tag.mw-v,#manners .mw-tag.mw-g{color:#2C6A4D!important}
+  #manners .mw-row p,#manners .mw-row ul{margin:0!important;font-size:clamp(15px,3.3vw,16px)!important;color:#414C43!important;line-height:1.85!important}
+  #manners .mw-row ul{padding-inline-start:20px!important}
+  #manners .mw-row li{margin-bottom:4px!important}
+  #manners .mw-row:first-of-type{background:#F6F1E4!important;border-radius:11px!important;padding:15px 17px!important}
+  #manners .mw-row:first-of-type p{font-family:'Amiri','Noto Naskh Arabic',serif!important;font-size:clamp(16px,3.5vw,18px)!important;line-height:1.95!important;color:#2B352E!important}
+  #manners .mw-row:has(.mw-g){border-inline-start:3px solid rgba(44,106,77,.55);padding-inline-start:14px}
+  #manners .mw-proof{background:transparent!important;border-radius:0!important;border-right:none!important;border-inline-start:2px solid rgba(199,154,59,.45)!important;padding:0 0 0 14px!important;margin-top:12px!important;font-family:'Amiri','Noto Naskh Arabic',serif!important;font-size:clamp(15px,3.3vw,17px)!important;color:#413D37!important;line-height:2!important}
 
   /* إتاحة الوصول: إبراز التركيز على البحث وأزرار التصنيف */
   #manners .manner-search:focus-visible,#manners .filter-btn:focus-visible{outline:2px solid #C79A3B!important;outline-offset:1px}
