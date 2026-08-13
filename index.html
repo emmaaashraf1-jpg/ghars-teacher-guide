@@ -203,6 +203,37 @@
   .sfoot.ours b{color:var(--forest-2)}.sfoot.other b{color:#9aa0a8}
   .wahy-note{margin-top:28px;text-align:center;font-size:13.5px;color:var(--gray);line-height:2;max-width:72ch;margin-inline:auto}
   .wahy-note b{color:var(--forest);font-weight:700}
+  /* ===== حركة تجميع المقارنة عند الظهور ===== */
+  .sys.reveal{transform:none}
+  .sys .seal,.sys .shd,.sys .qn,.sys .ans,.sys .sfoot{opacity:0}
+  .sys .ans.ours{transform:translateX(20px)}
+  .sys .ans.other{transform:translateX(-20px)}
+  .sys .qn{transform:scale(.82)}
+  .sys-inner::before{transform:translateX(50%) scaleY(0);transform-origin:top center}
+  .sys.in .sys-inner::before{animation:axisDraw .72s var(--ease) .12s both}
+  .sys.in .seal{animation:sealPop .5s var(--ease) .18s both}
+  .sys.in .shd.ours{animation:sysFadeUp .6s var(--ease) .22s both}
+  .sys.in .shd.other{animation:sysFadeUp .6s var(--ease) .27s both}
+  .sys.in .qn{animation:qnPop .5s var(--ease) both}
+  .sys.in .ans.ours{animation:ansInR .55s var(--ease) both}
+  .sys.in .ans.other{animation:ansInL .55s var(--ease) both}
+  .sys.in .crow.r1 .qn,.sys.in .crow.r1 .ans{animation-delay:.35s}
+  .sys.in .crow.r2 .qn,.sys.in .crow.r2 .ans{animation-delay:.46s}
+  .sys.in .crow.r3 .qn,.sys.in .crow.r3 .ans{animation-delay:.57s}
+  .sys.in .crow.r4 .qn,.sys.in .crow.r4 .ans{animation-delay:.68s}
+  .sys.in .crow.r5 .qn,.sys.in .crow.r5 .ans{animation-delay:.79s}
+  .sys.in .crow.crown .qn,.sys.in .crow.crown .ans{animation-delay:.90s}
+  .sys.in .sfoot{animation:sysFadeUp .6s var(--ease) 1.05s both}
+  @keyframes axisDraw{from{transform:translateX(50%) scaleY(0)}to{transform:translateX(50%) scaleY(1)}}
+  @keyframes sealPop{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+  @keyframes sysFadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @keyframes qnPop{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}
+  @keyframes ansInR{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
+  @keyframes ansInL{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){
+    .sys .seal,.sys .shd,.sys .qn,.sys .ans,.sys .sfoot{opacity:1;transform:none;animation:none}
+    .sys-inner::before{transform:translateX(50%) scaleY(1);animation:none}
+  }
   @media(max-width:640px){
     .sys-heads,.crow,.sys-foot{grid-template-columns:1fr 92px 1fr}
     .sys-inner::before{top:118px;bottom:104px}
