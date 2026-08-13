@@ -594,6 +594,24 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
     .cover::after,.cover::before{display:none!important}
     .section-banner{break-inside:avoid}
   }
+
+  /* ===== طبقة توجيه منظومة الوحي (تحريريّة، فوق المقارنة — لا تبدّل أيّ محتوى) ===== */
+  .wahy-axis{margin:2px 0 22px;padding:24px 28px 20px;background:var(--paper);border:1px solid var(--line);border-radius:12px}
+  .wax-kicker{display:block;font-size:11px;font-weight:700;color:var(--gold);margin-bottom:22px}
+  .wax-flow{list-style:none;margin:0;padding:0;position:relative;display:flex;justify-content:space-between;gap:12px}
+  .wax-flow::before{content:"";position:absolute;bottom:4px;left:8px;right:8px;height:1px;background:rgba(199,154,59,.4)}
+  .wax-node{position:relative;flex:1 1 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:7px;padding-bottom:22px}
+  .wax-dot{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:var(--paper);border:1.5px solid var(--gold)}
+  .wax-n{font-family:var(--body);font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1px;line-height:1}
+  .wax-c{font-family:'AlAwwal','Amiri',serif;font-size:clamp(17px,1.9vw,22px);font-weight:700;color:var(--ink);line-height:1.25}
+  @media(max-width:640px){
+    .wahy-axis{padding:20px 20px 8px}
+    .wax-flow{flex-direction:column;align-items:stretch;gap:0}
+    .wax-flow::before{left:auto;right:6px;top:8px;bottom:8px;width:1px;height:auto}
+    .wax-node{flex-direction:row;align-items:baseline;justify-content:flex-start;gap:13px;padding:11px 26px 11px 0;text-align:start}
+    .wax-dot{bottom:auto;left:auto;right:2px;top:15px;transform:none}
+    .wax-c{font-size:19px}
+  }
 </style>
 <div class="gq-platform-crumb"><a href="index.html">منصّة غرس القيم</a><span>›</span>الدليل العام<span>›</span>الدليل التعريفي والتشغيلي</div>
 <main class="book" id="book">
@@ -689,6 +707,18 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-body">
 <div class="page-main">
 <!-- ═══ منظومة الوحي — منقولة من دليل وحدة الليل والنهار بتصميمها الأفضل ═══ -->
+<!-- طبقة توجيه تحريريّة للمفاهيم الستّة — فوق المقارنة، لا تبدّل أيّ محتوى -->
+<div class="wahy-axis" aria-label="المفاهيم الستّة لمنظومة الوحي">
+<span class="wax-kicker">منظومة الوحي · المفاهيم الستّة</span>
+<ol class="wax-flow">
+<li class="wax-node"><span class="wax-n">01</span><span class="wax-c">الإله</span><span class="wax-dot" aria-hidden="true"></span></li>
+<li class="wax-node"><span class="wax-n">02</span><span class="wax-c">المرجع</span><span class="wax-dot" aria-hidden="true"></span></li>
+<li class="wax-node"><span class="wax-n">03</span><span class="wax-c">القيمة</span><span class="wax-dot" aria-hidden="true"></span></li>
+<li class="wax-node"><span class="wax-n">04</span><span class="wax-c">الفعل</span><span class="wax-dot" aria-hidden="true"></span></li>
+<li class="wax-node"><span class="wax-n">05</span><span class="wax-c">الغاية</span><span class="wax-dot" aria-hidden="true"></span></li>
+<li class="wax-node"><span class="wax-n">06</span><span class="wax-c">الثمرة</span><span class="wax-dot" aria-hidden="true"></span></li>
+</ol>
+</div>
 <div style="margin-bottom:20px;">
 <!-- رأس القسم -->
 <div style="background:linear-gradient(135deg,#143528,#1F4A39);border-radius:10px 10px 0 0;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;">
