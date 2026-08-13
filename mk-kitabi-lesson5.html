@@ -75,7 +75,26 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 .sec-head .num.grn{background:var(--grn)}.sec-head .num.gold{background:var(--gold);color:#3a2a06}
 .sec-head h2{font-size:22px;color:var(--t1);font-weight:700}
 .sec-head .rule{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.sec-head .stage{flex:none;font-family:var(--fd);font-weight:700;font-size:13.5px;color:#08636b;
+  background:var(--elm-soft);border:1px solid #bfe3e6;border-radius:999px;padding:3px 12px}
+.sec-head .stage.s2{color:#8a6410;background:#F7EECB;border-color:#ebd9a8}
+.sec-head .stage.s3{color:var(--grn);background:#eaf5ee;border-color:#bfe0cd}
 .first{margin-top:6px}
+
+/* ترويسة الدرس — بوصلة اللقاء (سؤال التركيز + الفكرة المفتاح) · بنية مستفادة من أدلة هاركورت */
+.lhero{display:grid;grid-template-columns:1fr 1.35fr;gap:14px;margin:8px 0 20px}
+@media(max-width:760px){.lhero{grid-template-columns:1fr}}
+.lhero .lh{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px 18px;box-shadow:var(--shadow-sm)}
+.lhero .lh.focus{border-inline-start:5px solid var(--elm)}
+.lhero .lh.key{border-inline-start:5px solid var(--gold);background:#fffdf6}
+.lhero .lh-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:700;font-size:15px;margin-bottom:8px}
+.lhero .focus .lh-lbl{color:var(--elm)}
+.lhero .key .lh-lbl{color:#8a6410}
+.lhero .lh-q{font-size:18px;line-height:1.85;color:var(--t1);font-weight:700;font-family:var(--fd)}
+.lhero .lh-t{font-size:15.5px;line-height:1.95}
+.lhero .lh-foot{margin-top:9px;font-size:13.5px;line-height:1.7;color:var(--muted)}
+.lhero .lh-foot b{color:var(--t2)}
+
 
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow-sm)}
 .grid{display:grid;gap:15px}
@@ -393,6 +412,20 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
   <!-- ══════════ 1) دليل الدرس ══════════ -->
   <div class="panel active" id="p1">
 
+    <!-- ترويسة الدرس: بوصلة اللقاء — سؤالٌ يفتح، وفكرةٌ تبقى -->
+    <div class="lhero">
+      <div class="lh focus">
+        <div class="lh-lbl"><i class="gi" data-i="سؤال اليوم" data-size="20"></i> سؤال التركيز</div>
+        <div class="lh-q">كيف أُرتّلُ سورةَ الانفطار كاملةً وأبيّنُ ما علّمنا اللهُ فيها؟</div>
+        <div class="lh-foot">بوصلةُ اللقاء: تفتح به المعلمةُ الحوار وتعود إليه عند الغلق. <b>يقيسه</b> سؤالُ التغذية الراجعة الأول ومؤشراتُ النجاح.</div>
+      </div>
+      <div class="lh key">
+        <div class="lh-lbl"><i class="gi" data-i="الهدف" data-size="20"></i> الفكرة المفتاح</div>
+        <div class="lh-t">نُرتّل سورة الانفطار كاملةً ونبيّن ما علّمنا اللهُ فيها: تغيّرُ نظام الكون وظهورُ الأعمال، ونعمةُ الخلق وكتابةُ الملائكة، وجزاءُ الأبرار والفجّار وتعظيمُ يوم الدين.</div>
+        <div class="lh-foot">خلاصةٌ جامعةٌ لما تعلّمناه في السورة.</div>
+      </div>
+    </div>
+
     <div class="sec-head first"><div class="num gold"><i class="gi" data-i="مسار بداية اللقاء" data-size="22"></i></div><h2>تهيئة بداية اليوم</h2><div class="rule"></div></div>
     <div class="flow-card" style="border-inline-start:5px solid var(--gold)">
       <p style="margin-bottom:10px"><strong>تُنفَّذ تهيئة بداية اليوم في أوّل لقاء من اليوم فقط — وهو لقاء «كتابي المنير»</strong> — ثم تنتقل المعلمة في بقيّة اللقاءات مباشرةً إلى إشارة بدء اللقاء.</p>
@@ -424,7 +457,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
       <p>تقول المعلمة: نبدأ يومنا بذكر الله وشكره على نعمة القرآن الذي سنتعلّمه.</p>
     </div>
 
-    <div class="sec-head"><div class="num"><i class="gi" data-i="مسار بداية اللقاء" data-size="22"></i></div><h2>مسار بداية اللقاء</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num"><i class="gi" data-i="مسار بداية اللقاء" data-size="22"></i></div><h2>مسار بداية اللقاء</h2><span class="stage">① تهيئة</span><div class="rule"></div></div>
     <div class="flow-card sig">
       <h3><i class="gi" data-i="إشارات اللقاءات" data-size="20"></i> إشارة بدء اللقاء — نونية القحطاني</h3>
       <div class="greet">السلام عليكم ورحمة الله وبركاته يا أحباب القرآن. <strong>نستمع الآن إلى إشارة بدء اللقاء لنعرف ماذا سيكون لقاؤنا.</strong></div>
@@ -568,7 +601,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
       </aside>
 
       <div class="mainflow">
-        <div class="sec-head first"><div class="num"><i class="gi" data-i="مؤشر النجاح والتقويم" data-size="22"></i></div><h2>المراجعة الشاملة والتسميع</h2><div class="rule"></div></div>
+        <div class="sec-head first"><div class="num"><i class="gi" data-i="مؤشر النجاح والتقويم" data-size="22"></i></div><h2>المراجعة الشاملة والتسميع</h2><span class="stage s2">② تسميع وإغلاق</span><div class="rule"></div></div>
         <div class="flow">
           <div class="step"><b class="k">علوم السورة:</b> تراجع المعلمة مع الأطفال علوم <strong>سورة الإنفطار</strong>: اسمها <strong>الإنفطار</strong>، وعدد آياتها <strong>١٩ آية</strong>، وتنزيلها <strong>مكية</strong> أي نزلت قبل الهجرة، وأوّلها ﴿إِذَا السَّمَاءُ انْفَطَرَتْ﴾، وآخرها ﴿يَوْمَ لَا تَمْلِكُ نَفْسٌ لِنَفْسٍ شَيْئًا وَالْأَمْرُ يَوْمَئِذٍ لِلَّهِ﴾.
             <div class="step-media" style="max-width:680px"><img src="assets/gq_kitabi_surah_infitar.jpg" alt="لوحة سورة الإنفطار كاملة"/><div class="cap"> لوحة سورة الإنفطار كاملة — تعرضها المعلمة أثناء المراجعة والتسميع</div></div>

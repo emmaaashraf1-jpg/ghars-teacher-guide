@@ -75,7 +75,26 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 .sec-head .num.grn{background:var(--grn)}.sec-head .num.gold{background:var(--gold);color:#3a2a06}
 .sec-head h2{font-size:22px;color:var(--t1);font-weight:700}
 .sec-head .rule{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.sec-head .stage{flex:none;font-family:var(--fd);font-weight:700;font-size:13.5px;color:#08636b;
+  background:var(--elm-soft);border:1px solid #bfe3e6;border-radius:999px;padding:3px 12px}
+.sec-head .stage.s2{color:#8a6410;background:#F7EECB;border-color:#ebd9a8}
+.sec-head .stage.s3{color:var(--grn);background:#eaf5ee;border-color:#bfe0cd}
 .first{margin-top:6px}
+
+/* ترويسة الدرس — بوصلة اللقاء (سؤال التركيز + الفكرة المفتاح) · بنية مستفادة من أدلة هاركورت */
+.lhero{display:grid;grid-template-columns:1fr 1.35fr;gap:14px;margin:8px 0 20px}
+@media(max-width:760px){.lhero{grid-template-columns:1fr}}
+.lhero .lh{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px 18px;box-shadow:var(--shadow-sm)}
+.lhero .lh.focus{border-inline-start:5px solid var(--elm)}
+.lhero .lh.key{border-inline-start:5px solid var(--gold);background:#fffdf6}
+.lhero .lh-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:700;font-size:15px;margin-bottom:8px}
+.lhero .focus .lh-lbl{color:var(--elm)}
+.lhero .key .lh-lbl{color:#8a6410}
+.lhero .lh-q{font-size:18px;line-height:1.85;color:var(--t1);font-weight:700;font-family:var(--fd)}
+.lhero .lh-t{font-size:15.5px;line-height:1.95}
+.lhero .lh-foot{margin-top:9px;font-size:13.5px;line-height:1.7;color:var(--muted)}
+.lhero .lh-foot b{color:var(--t2)}
+
 
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow-sm)}
 .grid{display:grid;gap:15px}
@@ -378,7 +397,21 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
   <!-- ══════════ 1) دليل الدرس ══════════ -->
   <div class="panel active" id="p1">
 
-    <div class="sec-head first"><div class="num"><i class="gi" data-i="مسار بداية اللقاء" data-size="22"></i></div><h2>مسار بداية اللقاء</h2><div class="rule"></div></div>
+    <!-- ترويسة الدرس: بوصلة اللقاء — سؤالٌ يفتح، وفكرةٌ تبقى -->
+    <div class="lhero">
+      <div class="lh focus">
+        <div class="lh-lbl"><i class="gi" data-i="سؤال اليوم" data-size="20"></i> سؤال التركيز</div>
+        <div class="lh-q">ما الآدابُ التي علّمنا النبيُّ ﷺ في المساء، ولماذا نطبّقها؟</div>
+        <div class="lh-foot">بوصلةُ اللقاء: تفتح به المعلمةُ الحوار وتعود إليه عند الغلق. <b>يقيسه</b> سؤالُ التغذية الراجعة الأول ومؤشراتُ النجاح.</div>
+      </div>
+      <div class="lh key">
+        <div class="lh-lbl"><i class="gi" data-i="الهدف" data-size="20"></i> الفكرة المفتاح</div>
+        <div class="lh-t">علّمنا النبي ﷺ آدابًا نافعة في المساء: نكفّ الصبيان أول الليل، ونغلق الأبواب ونذكر اسم الله، ونوكئ القِرَب، ونخمّر الآنية، ونطفئ المصابيح؛ نطبّقها حفظًا للنعم واتباعًا للسنّة، وذكرُ الله حصنٌ حصينٌ يحفظنا بإذن الله.</div>
+        <div class="lh-foot">تظهر موسّعةً في «المعنى المركزي» بسير اللقاء؛ لو لم يبقَ من الدرس إلا جملةٌ فهي هذه.</div>
+      </div>
+    </div>
+
+    <div class="sec-head first"><div class="num"><i class="gi" data-i="مسار بداية اللقاء" data-size="22"></i></div><h2>مسار بداية اللقاء</h2><span class="stage">① تهيئة</span><div class="rule"></div></div>
     <div class="flow-card sig">
       <h3><i class="gi" data-i="إشارات اللقاءات" data-size="20"></i> إشارة بدء اللقاء — أدب واقتداء</h3>
       <div class="greet">السلام عليكم ورحمة الله وبركاته يا أحباب النبي ﷺ، هيا نستمع وننظر لنعرف ماذا سيكون لقاؤنا.</div>
@@ -493,7 +526,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
       </aside>
 
       <div class="mainflow">
-        <div class="sec-head first"><div class="num"><i class="gi" data-i="سير اللقاء" data-size="22"></i></div><h2>سير اللقاء</h2><div class="rule"></div></div>
+        <div class="sec-head first"><div class="num"><i class="gi" data-i="سير اللقاء" data-size="22"></i></div><h2>سير اللقاء</h2><span class="stage s2">② سير وإغلاق</span><div class="rule"></div></div>
         <div class="flow">
           <div class="step"><b class="k">المرحلة الأولى — البناء:</b> تذكّر المعلمة الأطفال بأن الله أرسل إلينا نبيّنا محمدًا ﷺ ليعلّمنا الآداب التي يحبها الله، ومن رحمته أنه علّمنا ما يحفظنا حين يأتي المساء. ثم تسأل: ماذا نفعل إذا جاء المساء في البيت؟ وتستقبل الإجابات دون أن تعجل بالتصحيح.</div>
           <div class="step"><b class="k">نصّ الحديث ودليله:</b> تعرض المعلمة بطاقة الحديث وتقرؤه بصوت واضح: عن جابر بن عبد الله رضي الله عنه أن النبي ﷺ قال: «إذا كان جُنحُ الليل أو أمسيتم فكُفّوا صبيانكم... وأغلقوا الأبواب واذكروا اسم الله... وخمّروا آنيتكم واذكروا اسم الله... وأطفئوا مصابيحكم». رواه البخاري ومسلم.<div class="step-media" style="max-width:680px"><img src="assets/gq_adab_iqtida_evening_hadith_card.webp" alt="بطاقة حديث آداب المساء — إذا كان جنح الليل فكفوا صبيانكم"/><div class="cap"> بطاقة حديث آداب المساء التي تعرضها المعلمة</div></div></div>

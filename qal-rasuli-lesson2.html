@@ -75,7 +75,26 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 .sec-head .num.grn{background:var(--grn)}.sec-head .num.gold{background:var(--gold);color:#3a2a06}
 .sec-head h2{font-size:22px;color:var(--t1);font-weight:700}
 .sec-head .rule{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.sec-head .stage{flex:none;font-family:var(--fd);font-weight:700;font-size:13.5px;color:#08636b;
+  background:var(--elm-soft);border:1px solid #bfe3e6;border-radius:999px;padding:3px 12px}
+.sec-head .stage.s2{color:#8a6410;background:#F7EECB;border-color:#ebd9a8}
+.sec-head .stage.s3{color:var(--grn);background:#eaf5ee;border-color:#bfe0cd}
 .first{margin-top:6px}
+
+/* ترويسة الدرس — بوصلة اللقاء (سؤال التركيز + الفكرة المفتاح) · بنية مستفادة من أدلة هاركورت */
+.lhero{display:grid;grid-template-columns:1fr 1.35fr;gap:14px;margin:8px 0 20px}
+@media(max-width:760px){.lhero{grid-template-columns:1fr}}
+.lhero .lh{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px 18px;box-shadow:var(--shadow-sm)}
+.lhero .lh.focus{border-inline-start:5px solid var(--elm)}
+.lhero .lh.key{border-inline-start:5px solid var(--gold);background:#fffdf6}
+.lhero .lh-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:700;font-size:15px;margin-bottom:8px}
+.lhero .focus .lh-lbl{color:var(--elm)}
+.lhero .key .lh-lbl{color:#8a6410}
+.lhero .lh-q{font-size:18px;line-height:1.85;color:var(--t1);font-weight:700;font-family:var(--fd)}
+.lhero .lh-t{font-size:15.5px;line-height:1.95}
+.lhero .lh-foot{margin-top:9px;font-size:13.5px;line-height:1.7;color:var(--muted)}
+.lhero .lh-foot b{color:var(--t2)}
+
 
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow-sm)}
 .grid{display:grid;gap:15px}
@@ -378,7 +397,21 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
   <!-- ══════════ 1) دليل الدرس ══════════ -->
   <div class="panel active" id="p1">
 
-    <div class="sec-head first"><div class="num"><i class="gi" data-i="مسار بداية اللقاء" data-size="22"></i></div><h2>مسار بداية اللقاء</h2><div class="rule"></div></div>
+    <!-- ترويسة الدرس: بوصلة اللقاء — سؤالٌ يفتح، وفكرةٌ تبقى -->
+    <div class="lhero">
+      <div class="lh focus">
+        <div class="lh-lbl"><i class="gi" data-i="سؤال اليوم" data-size="20"></i> سؤال التركيز</div>
+        <div class="lh-q">كيف يكونُ إكرامُ الضيف وطيبُ الكلام من كمال إيماني؟</div>
+        <div class="lh-foot">بوصلةُ اللقاء: تفتح به المعلمةُ الحوار وتعود إليه عند الغلق. <b>يقيسه</b> سؤالُ التغذية الراجعة الأول ومؤشراتُ النجاح.</div>
+      </div>
+      <div class="lh key">
+        <div class="lh-lbl"><i class="gi" data-i="الهدف" data-size="20"></i> الفكرة المفتاح</div>
+        <div class="lh-t">من ثمرات الإيمان وكماله أن أُكرم الضيف بما أقدر عليه مع أسرتي، وأصل أقاربي، وأقول كلامًا خيرًا؛ فإن لم يكن عندي خير أقوله سكتُّ. وهذه الأعمال من خصال الإيمان وكماله نقتدي فيها برسول الله ﷺ.</div>
+        <div class="lh-foot">تظهر موسّعةً في «المعنى المركزي» بسير اللقاء؛ لو لم يبقَ من الدرس إلا جملةٌ فهي هذه.</div>
+      </div>
+    </div>
+
+    <div class="sec-head first"><div class="num"><i class="gi" data-i="مسار بداية اللقاء" data-size="22"></i></div><h2>مسار بداية اللقاء</h2><span class="stage">① تهيئة</span><div class="rule"></div></div>
     <div class="flow-card sig">
       <h3><i class="gi" data-i="إشارات اللقاءات" data-size="20"></i> إشارة بدء اللقاء — منظومة الأرجوزة الميئية (السيرة النبوية)</h3>
       <div class="greet">السلام عليكم ورحمة الله وبركاته يا أحباب النبي ﷺ. <strong>نستمع الآن إلى إشارة بدء اللقاء لنعرف ماذا سيكون لقاؤنا.</strong></div>
@@ -500,7 +533,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
       </aside>
 
       <div class="mainflow">
-        <div class="sec-head first"><div class="num"><i class="gi" data-i="سير اللقاء" data-size="22"></i></div><h2>سير اللقاء</h2><div class="rule"></div></div>
+        <div class="sec-head first"><div class="num"><i class="gi" data-i="سير اللقاء" data-size="22"></i></div><h2>سير اللقاء</h2><span class="stage s2">② سير وإغلاق</span><div class="rule"></div></div>
         <div class="flow">
           <div class="step"><b class="k">المرحلة الأولى — الاستماع والترديد:</b> تراجع المعلمة الراوي والمتن والمصنف بالبطاقات الثلاث، ثم تقرأ الحديث كاملًا مرة واحدة ويستمع الأطفال بسكينة. وتوضّح بإيجاز: يؤمن بالله أي يصدّق بالله ربًّا وإلهًا ويعبده وحده، ويؤمن باليوم الآخر أي يصدّق بالبعث والحساب والجزاء — يُشرح بإجمال دون صور أو تمثيل للغيب.<div class="step-media" style="max-width:680px"><img src="assets/gq_qal_rasuli_khisal_card.jpg" alt="بطاقة حديث من خصال الإيمان — نص الحديث وخصاله الثلاث"/><div class="cap"> بطاقة الحديث التي تعرضها المعلمة — إكرام الضيف · صلة الرحم · قول الخير أو الصمت</div></div>
             <div class="gq-hadith-audio" style="margin:10px auto 0;max-width:680px;background:linear-gradient(135deg,#F7EFE5,#FFFDF8);border:1px solid #e0cdb8;border-right:6px solid #6B3F22;border-radius:16px;padding:12px 14px;text-align:right;box-shadow:var(--shadow-sm)"><div style="display:flex;align-items:center;gap:9px;margin-bottom:8px;color:#4a2a15;font-size:13px;font-weight:900;line-height:1.7"><span style="width:34px;height:34px;border-radius:12px;background:#6B3F22;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:0 0 auto"></span><span>قراءة حديث «من خصال الإيمان» بصوت واضح</span></div><audio controls preload="none" style="width:100%;height:42px;display:block"><source src="assets/khisal_iman_hadith_audio.mp3" type="audio/mpeg"/>المتصفح لا يدعم تشغيل الصوت.</audio></div></div>
