@@ -564,6 +564,37 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 .tab:hover{transform:translateY(-1px)}
 @media (prefers-reduced-motion: reduce){.cover,.page.active{animation:none !important}.tab{transition:none !important}}
 </style>
+<style id="gq-editorial-refine">
+  /* ===== تمريرة صقلٍ تحريريّ — طبقة إضافية لا تمسّ المحتوى ولا الوظائف ===== */
+
+  /* الغلاف: إطارٌ ذهبيّ أرقّ وأهدأ (فتحُ كتابٍ لا زخرفة) + نقشٌ أخفت */
+  .cover::after{box-shadow:none!important;border:1px solid rgba(231,193,105,.34)!important;inset:20px!important;border-radius:14px!important}
+  .cover::before{opacity:.045!important}
+  .cover-kicker{letter-spacing:.3px!important}
+  .cover-orn i{width:52px!important}
+  .cover-orn b{opacity:.85}
+
+  /* الطباعة الطويلة: مقاسٌ مريح، سطرٌ متنفّس، مسافاتٌ أسخى بين الفقرات */
+  .page-main{line-height:1.95}
+  .page-main p,.lead-box p,.page-main li{line-height:2}
+  .page-main>p{max-width:72ch}
+  .page-main p+p{margin-top:.85em}
+
+  /* تخفيف إرهاق البطاقات: ظلٌّ مقيّد، بلا قفزٍ لافت عند المرور */
+  .resource-card,.refs-helper-card,.teacher-tip,.quick-card,.reference-card{box-shadow:0 4px 14px rgba(20,40,35,.05)!important}
+  .resource-card:hover,.refs-helper-card:hover{transform:none!important;box-shadow:0 9px 22px rgba(20,40,35,.09)!important}
+
+  /* هدوءٌ في لون أزرار الأدوات (من البنّي إلى ذهبيّ مقيّد) */
+  .toolbar-actions button{color:#7a5a1e!important;border-color:#e7d9b6!important}
+
+  /* طباعة / PDF: إخفاء التنقّل والبحث، وتسطيح إطار الكتاب */
+  @media print{
+    .gq-platform-crumb,.toolbar,.toolbar-actions,.guide-search-panel{display:none!important}
+    .book{border:none!important;box-shadow:none!important;border-radius:0!important;width:100%!important;margin:0!important}
+    .cover::after,.cover::before{display:none!important}
+    .section-banner{break-inside:avoid}
+  }
+</style>
 <div class="gq-platform-crumb"><a href="index.html">منصّة غرس القيم</a><span>›</span>الدليل العام<span>›</span>الدليل التعريفي والتشغيلي</div>
 <main class="book" id="book">
 <div class="topline"></div>
