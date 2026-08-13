@@ -572,6 +572,28 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
   #subjects .subject-thesis b{color:#1F4A39;font-weight:700}
   @media(max-width:520px){#subjects .subject-thesis{padding:13px 15px;font-size:14px;line-height:1.85}}
 
+  /* ===== الأركان: تصحيح التسلسل البصريّ — تسلسلٌ واحد مُبرَز، والباقي إرشادٌ مساند (CSS فقط) ===== */
+  /* ١) المبادئ ← أفكارٌ مساندة: قائمة تحريريّة هادئة بعمودين، بلا بطاقات (تُبقي النصّ والترتيب) */
+  #corners .corner-principles{grid-template-columns:1fr 1fr!important;gap:7px 30px!important;margin-top:14px!important}
+  #corners .principle{border:none!important;border-top:none!important;border-radius:0!important;padding:6px 0 6px 16px!important;position:relative}
+  #corners .principle::before{content:"";position:absolute;inset-inline-start:0;top:11px;width:6px;height:6px;border-radius:50%;background:#C79A3B}
+  #corners .principle b{display:block;font-size:12.5px;color:#1F4A39;margin-bottom:1px}
+  #corners .principle span{display:block;font-size:11.5px;color:#5f6a63;line-height:1.7}
+  @media(max-width:640px){#corners .corner-principles{grid-template-columns:1fr!important;gap:2px 0!important}}
+
+  /* ٢) تشغيل الركن (١→٥) ← عمليّة القسم الوحيدة المُبرَزة: شريط تجميعٍ هادئ + ترقيمٌ أوضح (بلا زخرفة) */
+  #corners .corner-ops-grid{background:#F8F4EB!important;border:1px solid #ECE3D2;border-radius:16px;padding:14px!important;gap:10px!important;margin:16px 0!important}
+  #corners .corner-op{background:#fff!important;border:1px solid #EDE4D3!important}
+  #corners .corner-op b{font-size:12.5px!important;font-weight:800}
+  @media(max-width:640px){#corners .corner-ops-grid{padding:11px!important}}
+
+  /* ٣) القواعد/الخطوات ← إرشادٌ تشغيليّ مساند: قائمة مُدمجة قابلة للمسح، لا عمليّة ثانية */
+  #corners .corner-rules-steps{grid-template-columns:1fr!important;gap:0!important;margin:10px 0 2px!important}
+  #corners .corner-rule-step{border:none!important;border-radius:0!important;background:transparent!important;min-height:0!important;padding:8px 0 8px 15px!important;position:relative;border-bottom:1px solid rgba(31,74,57,.09)!important}
+  #corners .corner-rule-step:last-child{border-bottom:none!important}
+  #corners .corner-rule-step b{display:inline;font-size:12px!important;color:#8a5230;margin:0!important}
+  #corners .corner-rule-step span{display:inline!important;font-size:11px!important;color:#626c76;margin-inline-start:7px;line-height:1.75}
+
   /* الغلاف: إطارٌ ذهبيّ أرقّ وأهدأ (فتحُ كتابٍ لا زخرفة) + نقشٌ أخفت */
   .cover::after{box-shadow:none!important;border:1px solid rgba(231,193,105,.34)!important;inset:20px!important;border-radius:14px!important}
   .cover::before{opacity:.045!important}
