@@ -38,10 +38,8 @@
   ::selection{background:rgba(192,146,46,.22)}
   :focus-visible{outline:2.5px solid var(--teal);outline-offset:3px;border-radius:4px}
   .shell{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,52px)}
-  .eyebrow{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:3px;color:var(--ochre);
-    text-transform:uppercase}
-  .eyebrow::before{content:"";display:inline-block;width:22px;height:1.5px;background:var(--ochre);
-    vertical-align:middle;margin-inline-start:10px;opacity:.8}
+  .eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:12.5px;font-weight:700;letter-spacing:.3px;color:var(--ochre)}
+  .eyebrow::before{content:"";display:inline-block;width:28px;height:1px;background:currentColor;opacity:.5}
 
   /* ============ Header ============ */
   .nav{position:sticky;top:0;z-index:60;background:rgba(251,249,242,.82);backdrop-filter:blur(10px);
@@ -73,14 +71,14 @@
       radial-gradient(640px 440px at 4% 96%,rgba(46,106,77,.10),transparent 62%)}
   .hero .shell{position:relative;z-index:1}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,72px);align-items:center}
-  .hero-copy .eyebrow{margin-bottom:20px}
+  .hero-copy .eyebrow{margin-bottom:24px}
   .hero h1{font-family:var(--display);font-weight:700;color:var(--forest);
-    font-size:clamp(60px,11.5vw,120px);line-height:.98;letter-spacing:-.5px;margin-bottom:16px}
-  .hero h1::after{content:"";display:block;width:92px;height:4px;border-radius:3px;margin-top:18px;
+    font-size:clamp(56px,9.4vw,104px);line-height:1;letter-spacing:-.5px;margin-bottom:22px}
+  .hero h1::after{content:"";display:block;width:62px;height:3px;border-radius:3px;margin-top:22px;
     background:linear-gradient(90deg,var(--gold),rgba(199,154,59,0))}
-  .hero .lede{font-family:var(--display);font-weight:700;font-size:clamp(21px,3.2vw,31px);
-    line-height:1.5;color:var(--ink);max-width:22ch;margin-bottom:14px}
-  .hero p{font-size:clamp(15px,1.7vw,17px);line-height:2.05;color:var(--gray);max-width:46ch;margin-bottom:22px}
+  .hero .lede{font-family:var(--display);font-weight:700;font-size:clamp(20px,2.9vw,28px);
+    line-height:1.55;color:var(--ink);max-width:24ch;margin-bottom:16px}
+  .hero p{font-size:clamp(15px,1.7vw,16.5px);line-height:2.05;color:var(--gray);max-width:44ch;margin-bottom:26px}
   .hero-stats{list-style:none;display:flex;flex-wrap:wrap;align-items:center;margin:0 0 30px;padding:15px 0;
     border-block:1px solid var(--line)}
   .hero-stats li{position:relative;padding:0 clamp(16px,2.2vw,26px)}
@@ -128,11 +126,11 @@
   section{position:relative}
   .band{padding:clamp(56px,9vw,110px) 0}
   .band-line{border-top:1px solid var(--line-soft)}
-  .sec-head{max-width:640px;margin:0 auto clamp(34px,5vw,56px);text-align:center}
+  .sec-head{max-width:600px;margin:0 auto clamp(40px,5.5vw,64px);text-align:center}
   .sec-head.start{margin-inline:0;text-align:start}
   .sec-head h2{font-family:var(--display);font-weight:700;color:var(--forest);
-    font-size:clamp(28px,4.4vw,44px);line-height:1.2;margin:16px 0 12px}
-  .sec-head p{font-size:16px;color:var(--gray);line-height:2}
+    font-size:clamp(29px,4.2vw,42px);line-height:1.28;margin:18px 0 14px}
+  .sec-head p{font-size:16px;color:var(--gray);line-height:2.05}
 
   /* ============ Philosophy ============ */
   .philo{text-align:center}
@@ -172,7 +170,7 @@
   .shd .emblem{width:46px;height:46px;flex:0 0 auto;display:grid;place-items:center;border-radius:50%}
   .shd.ours .emblem{background:radial-gradient(circle at 40% 35%,#fff,#f3e2b8);box-shadow:0 0 0 1.5px var(--gold),0 0 28px rgba(199,154,59,.55)}
   .shd.other .emblem{background:#262b2f;box-shadow:0 0 0 1px #3a4046,inset 0 0 14px rgba(0,0,0,.6)}
-  .shd .nm small{display:block;font-size:10px;letter-spacing:2.5px;font-weight:700}
+  .shd .nm small{display:block;font-size:10.5px;letter-spacing:.4px;font-weight:700}
   .shd .nm b{font-family:var(--display);font-weight:700;font-size:clamp(17px,2.3vw,24px);line-height:1.2}
   .shd.ours .nm small{color:#b0821f}.shd.ours .nm b{color:var(--forest)}
   .shd.other .nm small{color:#7a828b}.shd.other .nm b{color:#b9bfc6}
@@ -196,7 +194,7 @@
     box-shadow:0 5px 14px rgba(20,40,35,.18)}
   .sys-foot{margin-top:12px;padding-top:18px;border-top:1px solid rgba(150,140,110,.2)}
   .sfoot{display:flex;flex-direction:column;gap:3px;text-align:center}
-  .sfoot small{font-size:9.5px;letter-spacing:2px;font-weight:700}
+  .sfoot small{font-size:10px;letter-spacing:.4px;font-weight:700}
   .sfoot.ours small{color:#b0821f}.sfoot.other small{color:#767e87}
   .sfoot b{font-family:var(--display);font-size:clamp(13.5px,1.8vw,18px);font-weight:700;line-height:1.35}
   .sfoot.ours b{color:var(--forest-2)}.sfoot.other b{color:#9aa0a8}
@@ -288,14 +286,14 @@
   @media(prefers-reduced-motion:reduce){.slide{transition-duration:.001s}}
 
   /* ============ General guide feature ============ */
-  .feature{background:linear-gradient(160deg,#20493a,#12352b 70%);color:#fff;border-radius:30px;overflow:hidden;
-    display:grid;grid-template-columns:1.02fr .98fr;box-shadow:0 34px 70px rgba(18,53,43,.28)}
-  .feature-copy{padding:clamp(34px,5vw,60px)}
+  .feature{background:linear-gradient(165deg,#22503f,#14382c 78%);color:#fff;border-radius:26px;overflow:hidden;
+    display:grid;grid-template-columns:1.05fr .95fr;box-shadow:0 30px 64px rgba(18,53,43,.24)}
+  .feature-copy{padding:clamp(40px,5.5vw,72px);display:flex;flex-direction:column;justify-content:center}
   .feature .eyebrow{color:#e7c98f}
   .feature .eyebrow::before{background:#e7c98f}
-  .feature h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.2vw,44px);line-height:1.18;
-    margin:16px 0 16px;color:#fff}
-  .feature p{font-size:16px;line-height:2.05;color:rgba(255,255,255,.82);max-width:44ch;margin-bottom:26px}
+  .feature h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,4.2vw,46px);line-height:1.2;
+    margin:20px 0 20px;color:#fff;max-width:15ch}
+  .feature p{font-size:16.5px;line-height:2.1;color:rgba(255,255,255,.8);max-width:42ch;margin-bottom:34px}
   .feature .fpts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
   .feature .fpts span{font-size:12.5px;color:rgba(255,255,255,.9);border:1px solid rgba(231,201,143,.32);
     border-radius:999px;padding:6px 14px}
@@ -310,28 +308,29 @@
   /* ============ Unit collection ============ */
   .chapter{margin-top:clamp(40px,6vw,66px)}
   .chapter:first-of-type{margin-top:0}
-  .ch-head{display:flex;align-items:baseline;gap:16px;padding-bottom:16px;margin-bottom:30px;
+  .chapter{margin-top:clamp(52px,7vw,84px)}
+  .ch-head{display:flex;align-items:baseline;gap:14px;padding-bottom:18px;margin-bottom:clamp(32px,4.5vw,50px);
     border-bottom:1px solid var(--line)}
-  .ch-head .idx{font-family:Georgia,serif;font-size:15px;color:var(--ochre);font-weight:700;letter-spacing:1px}
-  .ch-head h3{font-family:var(--display);font-weight:700;font-size:clamp(21px,3vw,28px);color:var(--forest)}
+  .ch-head .idx{font-size:12.5px;color:var(--ochre);font-weight:700;letter-spacing:.2px}
+  .ch-head h3{font-family:var(--display);font-weight:700;font-size:clamp(22px,3vw,30px);color:var(--forest)}
   .ch-head .count{margin-inline-start:auto;font-size:13px;color:var(--gray);font-weight:600;white-space:nowrap}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,30px)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,32px)}
 
-  .card{position:relative;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);
+  .card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;
     overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;
-    transition:transform .22s var(--ease),box-shadow .22s var(--ease),border-color .22s}
-  a.card:hover{transform:translateY(-5px);box-shadow:0 24px 46px rgba(31,74,57,.14);border-color:var(--line-soft)}
-  .card-art{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--cream)}
-  .card-art img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
-  a.card:hover .card-art img{transform:scale(1.045)}
-  .card-num{position:absolute;top:12px;inset-inline-end:12px;z-index:2;font-family:Georgia,serif;
-    font-size:14px;font-weight:700;color:#fff;background:rgba(31,74,57,.55);backdrop-filter:blur(4px);
-    width:34px;height:34px;border-radius:50%;display:grid;place-items:center;letter-spacing:.5px}
-  .soon-badge{position:absolute;top:14px;inset-inline-start:14px;z-index:2;font-size:11px;font-weight:700;
-    color:var(--gray);background:rgba(251,249,242,.9);backdrop-filter:blur(4px);border:1px solid var(--line);
-    padding:4px 11px;border-radius:999px;letter-spacing:.3px}
-  .card-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
-  .card-body h4{font-family:var(--display);font-weight:700;font-size:19px;color:var(--forest);line-height:1.35}
+    transition:transform .28s var(--ease),box-shadow .28s var(--ease),border-color .28s}
+  a.card:hover{transform:translateY(-4px);box-shadow:0 18px 38px rgba(31,74,57,.1);border-color:var(--line-soft)}
+  .card-art{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--cream)}
+  .card-art img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+  a.card:hover .card-art img{transform:scale(1.04)}
+  .card-num{position:absolute;top:12px;inset-inline-end:12px;z-index:2;font-family:var(--display);
+    font-size:13px;font-weight:700;color:var(--forest);background:rgba(251,249,242,.92);
+    width:29px;height:29px;border-radius:50%;display:grid;place-items:center;box-shadow:0 2px 8px rgba(31,74,57,.08)}
+  .soon-badge{position:absolute;top:14px;inset-inline-start:14px;z-index:2;font-size:11px;font-weight:600;
+    color:var(--gray);background:rgba(251,249,242,.92);border:1px solid var(--line);
+    padding:4px 11px;border-radius:999px}
+  .card-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .card-body h4{font-family:var(--display);font-weight:700;font-size:19.5px;color:var(--forest);line-height:1.4}
   .card-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px}
   .open{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:14px;color:var(--teal)}
   .open .ar{transition:transform .2s var(--ease)}
@@ -351,10 +350,10 @@
   .credit .name{font-family:var(--display);font-size:17px;color:var(--forest-2);text-decoration:none;font-weight:700}
   .credit .name:hover{text-decoration:underline}
   .credit .site{font-size:12.5px;color:var(--teal);text-decoration:none}
-  .foot{background:var(--forest);color:#fff;padding:clamp(44px,6vw,72px) 0 34px}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:start}
-  .foot h3{font-family:var(--display);font-size:34px;margin-bottom:12px}
-  .foot .tag{font-size:15.5px;color:rgba(255,255,255,.72);line-height:2;max-width:40ch}
+  .foot{background:var(--forest);color:#fff;padding:clamp(48px,6vw,76px) 0 34px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:start}
+  .foot h3{font-family:var(--display);font-weight:700;font-size:28px;margin-bottom:14px;color:#fff}
+  .foot .tag{font-size:15px;color:rgba(255,255,255,.68);line-height:2.05;max-width:38ch}
   .foot-links{display:flex;flex-direction:column;gap:12px;justify-self:end}
   .foot-links a{color:rgba(255,255,255,.82);text-decoration:none;font-size:15px;transition:color .2s}
   .foot-links a:hover{color:#e7c98f}
@@ -362,7 +361,7 @@
     font-size:12.5px;color:rgba(255,255,255,.6);text-align:center;line-height:2}
 
   /* ============ Motion ============ */
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .66s var(--ease),transform .66s var(--ease)}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto}
@@ -556,9 +555,6 @@
         <span class="eyebrow">ابدئي من هنا</span>
         <h2>الدليل العام للمنهج</h2>
         <p>البوصلة التي تشرح فلسفة غرس القيم، وبنيته، ومكوّناته السبعة، وطريقة تطبيقه وتقويمه — يُقرأ أولًا قبل الدخول إلى الوحدات.</p>
-        <div class="fpts">
-          <span>الرؤية والمنظومة</span><span>مكوّنات المنهج</span><span>خريطة المواد</span><span>المخطط الدراسي</span><span>التقويم والمتابعة</span>
-        </div>
         <a class="btn btn-gold" href="intro-guide.html">افتحي الدليل العام <span class="ar">←</span></a>
       </div>
       <div class="feature-art">
