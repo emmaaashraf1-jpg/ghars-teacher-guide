@@ -643,54 +643,8 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
   /* الخليّة الأخيرة (شيطان · الثمرة) بقيت أعلى صخبًا — تُهدّأ لتوحيد نبرة الجدول */
   .wahy-cmp [style*="#FFE0D4"]{background:#F6EFEC!important}
   .wahy-cmp [style*="color:#B02020"]{color:#8a726b!important}
-
-  /* ===== فهرس فصول جانبيّ للقراءة الطويلة (شاشات عريضة فقط ≥1500px) ===== */
-  /* الطبقة إضافيّة تمامًا: دون ١٥٠٠px تختفي، ويبقى الكتاب والتبويبات كما هي حرفيًّا */
-  .chapter-rail{display:none}
-  @media(min-width:1500px){
-    .guide-layout{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:26px;align-items:start;max-width:1500px;margin:0 auto}
-    .guide-layout>.book{width:auto;max-width:1280px;margin:22px 0 50px;justify-self:stretch}
-    .chapter-rail{display:block;position:sticky;top:100px;align-self:start;max-height:calc(100vh - 120px);overflow:auto;padding:6px 2px 12px}
-    .rail-head{font-size:10.5px;font-weight:700;color:var(--gold);margin:12px 4px 12px}
-    .chapter-rail ol{list-style:none;margin:0;padding:0}
-    .chapter-rail li{margin:0}
-    .chapter-rail a{display:grid;grid-template-columns:20px 1fr;column-gap:9px;align-items:baseline;text-decoration:none;
-      padding:6px 6px 6px 2px;border-inline-start:2px solid transparent;transition:border-color .15s,color .15s}
-    .chapter-rail .rn{font-size:10px;font-weight:700;color:#bcb5a6;font-variant-numeric:tabular-nums}
-    .chapter-rail .rt{font-size:12.5px;line-height:1.5;color:#5f6b66}
-    .chapter-rail a:hover .rt{color:var(--ink)}
-    .chapter-rail a:hover .rn{color:var(--gold)}
-    .chapter-rail a.is-current{border-inline-start-color:var(--gold)}
-    .chapter-rail a.is-current .rt{color:#1F4A39;font-weight:700}
-    .chapter-rail a.is-current .rn{color:var(--gold)}
-    .chapter-rail a:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:5px}
-  }
-  @media print{ .chapter-rail{display:none!important} .guide-layout{display:block!important} }
-  @media(prefers-reduced-motion:reduce){ .chapter-rail a{transition:none} }
 </style>
 <div class="gq-platform-crumb"><a href="index.html">منصّة غرس القيم</a><span>›</span>الدليل العام<span>›</span>الدليل التعريفي والتشغيلي</div>
-<div class="guide-layout">
-<nav class="chapter-rail" aria-label="فهرس فصول الدليل">
-<div class="rail-head">المحتويات</div>
-<ol>
-<li><a href="#start" data-page="start"><span class="rn">01</span><span class="rt">ابدئي من هنا</span></a></li>
-<li><a href="#vision" data-page="vision"><span class="rn">02</span><span class="rt">الرؤية والمنظومة</span></a></li>
-<li><a href="#components" data-page="components"><span class="rn">03</span><span class="rt">مكونات المنهج</span></a></li>
-<li><a href="#subjects" data-page="subjects"><span class="rn">04</span><span class="rt">خريطة المواد</span></a></li>
-<li><a href="#annual-plan" data-page="annual-plan"><span class="rn">05</span><span class="rt">المخطط الدراسي للمنهج</span></a></li>
-<li><a href="#dayflow" data-page="dayflow"><span class="rn">06</span><span class="rt">مسار اليوم الدراسي</span></a></li>
-<li><a href="#fitness" data-page="fitness"><span class="rn">07</span><span class="rt">اللياقة البدنية</span></a></li>
-<li><a href="#lesson" data-page="lesson"><span class="rn">08</span><span class="rt">بنية اللقاء التعليمي</span></a></li>
-<li><a href="#signals" data-page="signals"><span class="rn">09</span><span class="rt">إشارات اللقاءات</span></a></li>
-<li><a href="#corners" data-page="corners"><span class="rn">10</span><span class="rt">الأركان والتعلم باللعب</span></a></li>
-<li><a href="#songs" data-page="songs"><span class="rn">11</span><span class="rt">الأناشيد والمنظومات</span></a></li>
-<li><a href="#manners" data-page="manners"><span class="rn">12</span><span class="rt">الآداب الصفية</span></a></li>
-<li><a href="#assessment" data-page="assessment"><span class="rn">13</span><span class="rt">التقييم والأسرة</span></a></li>
-<li><a href="#scope" data-page="scope"><span class="rn">14</span><span class="rt">النطاق والتسلسل</span></a></li>
-<li><a href="#unit" data-page="unit"><span class="rn">15</span><span class="rt">نموذج وحدة متكاملة</span></a></li>
-<li><a href="#nutrition" data-page="nutrition"><span class="rn">16</span><span class="rt">التغذية والنمو السليم</span></a></li>
-</ol>
-</nav>
 <main class="book" id="book">
 <div class="topline"></div>
 <section class="cover">
@@ -1972,7 +1926,6 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </section>
 <footer style="padding:24px;text-align:center;background:#f3f5f7;border-top:1px solid var(--line);color:#6d7681;font-size:10px">نادي غرس القيم للطفولة · الدليل التعريفي والتشغيلي للمنهج · إصدار المعلمة</footer>
 </main>
-</div>
 <div class="qr-modal" id="qrModal" onclick="if(event.target===this)closeQr()">
 <div aria-label="رمز QR" aria-modal="true" class="qr-box" role="dialog">
 <div class="qr-frame">
@@ -2046,32 +1999,4 @@ td,th,dd,dt{font-size:14.5px!important}
 .tab{font-size:13.5px!important;padding:8px 12px!important}
 </style>
 <script src="brand/guide-icons.js?v=2"></script>
-<script>
-/* فهرس الفصول الجانبيّ — طبقة توجيه إضافية تستعمل showPage القائمة دون تعديلها */
-(function(){
-  var rail=document.querySelector('.chapter-rail');
-  if(!rail || typeof showPage!=='function') return;
-  var links=[].slice.call(rail.querySelectorAll('a[data-page]'));
-  function setCurrent(id){ links.forEach(function(a){ var on=a.dataset.page===id;
-    a.classList.toggle('is-current',on); if(on){a.setAttribute('aria-current','true');} else {a.removeAttribute('aria-current');} }); }
-  links.forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); showPage(a.dataset.page); setCurrent(a.dataset.page); }); });
-  /* إبقاء الفهرس أسفل الشريط اللاصق */
-  var toolbar=document.querySelector('.toolbar');
-  function fit(){ if(toolbar){ rail.style.top=(Math.round(toolbar.getBoundingClientRect().height)+14)+'px'; } }
-  fit(); window.addEventListener('resize',fit,{passive:true});
-  /* كشف الفصل النشط عبر IntersectionObserver (يعمل في وضع التبويب ووضع «عرض كل الصفحات») */
-  var ids=links.map(function(a){return a.dataset.page;});
-  var secs=ids.map(function(id){return document.getElementById(id);}).filter(Boolean);
-  if('IntersectionObserver' in window){
-    var vis={};
-    var io=new IntersectionObserver(function(ents){
-      ents.forEach(function(en){ if(en.isIntersecting){ vis[en.target.id]=en.boundingClientRect.top; } else { delete vis[en.target.id]; } });
-      var bId=null,bTop=1e9; Object.keys(vis).forEach(function(id){ if(vis[id]<bTop){bTop=vis[id];bId=id;} });
-      if(bId) setCurrent(bId);
-    },{rootMargin:'-110px 0px -55% 0px',threshold:0});
-    secs.forEach(function(s){ io.observe(s); });
-  }
-  var act=document.querySelector('.page.active'); if(act){ setCurrent(act.id); }
-})();
-</script>
 </body></html>
