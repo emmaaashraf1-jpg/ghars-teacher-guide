@@ -210,7 +210,7 @@
   .sys .ans.other{transform:translateX(-20px)}
   .sys .qn{transform:scale(.82)}
   .sys-inner::before{transform:translateX(50%) scaleY(0);transform-origin:top center}
-  .sys.in .sys-inner::before{animation:axisDraw .72s var(--ease) .12s both}
+  .sys.in .sys-inner::before{animation:axisDraw .72s var(--ease) .12s both,axisGlow 3.4s ease-in-out 1s infinite}
   .sys.in .seal{animation:sealPop .5s var(--ease) .18s both}
   .sys.in .shd.ours{animation:sysFadeUp .6s var(--ease) .22s both}
   .sys.in .shd.other{animation:sysFadeUp .6s var(--ease) .27s both}
@@ -224,6 +224,14 @@
   .sys.in .crow.r5 .qn,.sys.in .crow.r5 .ans{animation-delay:.79s}
   .sys.in .crow.crown .qn,.sys.in .crow.crown .ans{animation-delay:.90s}
   .sys.in .sfoot{animation:sysFadeUp .6s var(--ease) 1.05s both}
+  /* ===== حركة حيّة دائمة — النور يحيا والظلمة ساكنة ===== */
+  .sys.in .shd.ours .emblem{animation:sunGlow 3.2s ease-in-out 1s infinite}
+  .sys.in .shd.ours .emblem svg{animation:slowSpin 46s linear infinite;transform-origin:50% 50%}
+  .sys.in .crow.crown .ans.ours{animation:ansInR .55s var(--ease) .9s both,fruitGlow 2.8s ease-in-out 1.7s infinite}
+  @keyframes axisGlow{0%,100%{box-shadow:0 0 12px rgba(199,154,59,.32)}50%{box-shadow:0 0 24px rgba(199,154,59,.62)}}
+  @keyframes sunGlow{0%,100%{box-shadow:0 0 0 1.5px var(--gold),0 0 18px rgba(199,154,59,.42)}50%{box-shadow:0 0 0 1.5px var(--gold),0 0 34px rgba(199,154,59,.74)}}
+  @keyframes slowSpin{to{transform:rotate(360deg)}}
+  @keyframes fruitGlow{0%,100%{text-shadow:0 0 20px rgba(199,154,59,.4)}50%{text-shadow:0 0 42px rgba(199,154,59,.78)}}
   @keyframes axisDraw{from{transform:translateX(50%) scaleY(0)}to{transform:translateX(50%) scaleY(1)}}
   @keyframes sealPop{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
   @keyframes sysFadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
@@ -231,8 +239,8 @@
   @keyframes ansInR{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
   @keyframes ansInL{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:reduce){
-    .sys .seal,.sys .shd,.sys .qn,.sys .ans,.sys .sfoot{opacity:1;transform:none;animation:none}
-    .sys-inner::before{transform:translateX(50%) scaleY(1);animation:none}
+    .sys .seal,.sys .shd,.sys .qn,.sys .ans,.sys .sfoot,.sys .emblem,.sys .emblem svg{opacity:1;transform:none;animation:none!important}
+    .sys-inner::before{transform:translateX(50%) scaleY(1);animation:none!important}
   }
   @media(max-width:640px){
     .sys-heads,.crow,.sys-foot{grid-template-columns:1fr 92px 1fr}
