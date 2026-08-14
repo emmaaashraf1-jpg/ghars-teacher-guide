@@ -840,10 +840,10 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #start .gp-card-foot .gp-ar{transition:transform .2s var(--gp-ease)}
 #start .gp-card:hover .gp-card-foot .gp-ar{transform:translateX(-5px)}
 #start .gp-newbadge{display:inline-block;font-size:9.5px;font-weight:700;color:#fff;background:var(--gp-forest2);border-radius:6px;padding:1px 7px;margin-inline-start:6px;vertical-align:middle}
+/* حركة ظهورٍ آمنة: المحتوى مرئيٌّ افتراضيًّا (opacity:1)، وتُضاف حركةٌ لطيفة عبر JS فقط عند التمرير — فلا يختفي النصّ أبدًا إن لم تعمل الحركة */
 @keyframes gpRise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-#start .gp-reveal{animation:gpRise .6s var(--gp-ease) both}
-#start .gp-reveal.d2{animation-delay:.08s}#start .gp-reveal.d3{animation-delay:.16s}#start .gp-reveal.d4{animation-delay:.24s}
-@media(prefers-reduced-motion:reduce){#start .gp-reveal{animation:none}}
+#start .gp-reveal.gp-anim{animation:gpRise .6s var(--gp-ease) both}
+@media(prefers-reduced-motion:reduce){#start .gp-reveal.gp-anim{animation:none}}
 </style>
 <nav class="toolbar">
 <div class="mini-brand"><img alt="" src="intro-assets/img_f995567352da.png"/><b>غرس القيم</b></div>
