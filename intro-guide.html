@@ -785,9 +785,10 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </template>
 <style id="gp-inkfix">
 /* منع قصّ حروف AlAwwal في التبويبات ٣-٥: ارتفاع سطرٍ سخيّ + إظهار فيض البطاقات النصّية */
-#components .gp-head h1,#subjects .gp-head h1,#annual-plan .gp-head h1{line-height:1.46!important;padding-block:9px!important}
-#components .gp-sechead h2,#subjects .gp-sechead h2,#annual-plan .gp-sechead h2{line-height:1.5!important;padding-block:7px!important}
-#components .gp-head .gp-lede,#subjects .gp-head .gp-lede,#annual-plan .gp-head .gp-lede{line-height:1.74!important}
+#components .gp-head,#subjects .gp-head,#annual-plan .gp-head,#components .gp-sechead,#subjects .gp-sechead,#annual-plan .gp-sechead{overflow:visible!important}
+#components .gp-head h1,#subjects .gp-head h1,#annual-plan .gp-head h1{line-height:1.62!important;padding-block:16px!important;overflow:visible!important}
+#components .gp-sechead h2,#subjects .gp-sechead h2,#annual-plan .gp-sechead h2{line-height:1.6!important;padding-block:12px!important;overflow:visible!important}
+#components .gp-head .gp-lede,#subjects .gp-head .gp-lede,#annual-plan .gp-head .gp-lede{line-height:1.85!important}
 /* تبويب ٣ — مكوّنات */
 #components .resource-card,#components .refs-helper-card{overflow:visible!important}
 #components .resource-card h4{line-height:1.6!important;padding-block:3px!important}
