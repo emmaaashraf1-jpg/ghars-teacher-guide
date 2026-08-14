@@ -784,20 +784,41 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </svg>
 </template>
 <style id="gp-inkfix">
-/* توسيع ارتفاع السطر لخطّ AlAwwal في التبويبين ٣ و٤ حتى لا تُقصّ أطراف الحروف */
-#components .gp-head h1,#subjects .gp-head h1{line-height:1.44!important;padding-block:8px!important}
-#components .gp-sechead h2,#subjects .gp-sechead h2{line-height:1.48!important;padding-block:6px!important}
-#components .gp-head .gp-lede,#subjects .gp-head .gp-lede{line-height:1.72!important}
-#components .resource-card h4{line-height:1.6!important;padding-block:2px!important}
-#components .refs-helper-card b{line-height:1.6!important}
-#components .components-matrix th,#components .asset-table th,#components tbody td:first-child{line-height:1.7!important;padding-block:2px!important}
-#subjects .center-brief-card h4{line-height:1.55!important;padding-block:2px!important}
+/* منع قصّ حروف AlAwwal في التبويبات ٣-٥: ارتفاع سطرٍ سخيّ + إظهار فيض البطاقات النصّية */
+#components .gp-head h1,#subjects .gp-head h1,#annual-plan .gp-head h1{line-height:1.46!important;padding-block:9px!important}
+#components .gp-sechead h2,#subjects .gp-sechead h2,#annual-plan .gp-sechead h2{line-height:1.5!important;padding-block:7px!important}
+#components .gp-head .gp-lede,#subjects .gp-head .gp-lede,#annual-plan .gp-head .gp-lede{line-height:1.74!important}
+/* تبويب ٣ — مكوّنات */
+#components .resource-card,#components .refs-helper-card{overflow:visible!important}
+#components .resource-card h4{line-height:1.6!important;padding-block:3px!important}
+#components .refs-helper-card b{line-height:1.6!important;padding-block:2px!important}
+#components .components-matrix th,#components .asset-table th,#components tbody td{line-height:1.7!important}
+/* تبويب ٤ — خريطة المواد */
+#subjects .center-brief-card{overflow:visible!important}
+#subjects .center-brief-card h4{line-height:1.6!important;padding-block:3px!important}
 #subjects .subject-tab b{line-height:1.6!important;padding-block:2px!important;white-space:normal!important}
-#subjects .subject-detail-head h3{line-height:1.5!important;padding-block:2px!important}
+#subjects .subject-detail-head{padding-block:20px!important}
+#subjects .subject-detail-head h3{line-height:1.55!important;padding-block:3px!important}
 #subjects .subject-detail-head p{line-height:1.7!important}
-#subjects .subject-box b{line-height:1.55!important;padding-block:1px!important}
+#subjects .subject-box b{line-height:1.6!important;padding-block:2px!important}
 #subjects .subject-thesis{line-height:1.95!important}
 #subjects .central-thread{line-height:1.85!important}
+/* تبويب ٥ — المخطط الدراسي */
+#annual-plan .adab-term-card{overflow:visible!important}
+#annual-plan .adab-visible-summary h3{line-height:1.5!important;padding-block:3px!important}
+#annual-plan .adab-term-card b{line-height:1.55!important;padding-block:2px!important}
+#annual-plan .atlas-copy h3{line-height:1.5!important;padding-block:3px!important}
+#annual-plan .subjects-plan-head h2{line-height:1.5!important;padding-block:3px!important}
+#annual-plan .journey-term b{line-height:1.5!important;padding-block:2px!important}
+#annual-plan .subject-map-hero{min-height:0!important;padding-block:20px!important}
+#annual-plan .subject-map-hero h3{line-height:1.55!important;padding-block:3px!important}
+#annual-plan .subject-map-hero p{line-height:1.7!important}
+#annual-plan .subject-term-card>header{min-height:0!important;padding-block:13px!important}
+#annual-plan .term-card-heading b{line-height:1.55!important;padding-block:2px!important}
+#annual-plan .lesson-group h5{line-height:1.55!important;padding-block:2px!important}
+#annual-plan .subjects-matrix th,#annual-plan .subjects-matrix td{line-height:1.65!important}
+#annual-plan .compass-core b{line-height:1.4!important}
+#annual-plan .compass-node span{line-height:1.45!important}
 </style>
 <style id="gp-annual">
 #annual-plan{--gp-forest:#1F4A39;--gp-forest2:#2C6A4D;--gp-teal:#0E6E6B;--gp-gold:#C79A3B;--gp-ochre:#C0922E;--gp-gray:#6C776F;--gp-line:#E9E1D2;--gp-linesoft:#F0E9DB;--gp-sage:#8AA48F;--gp-ease:cubic-bezier(.22,.61,.36,1);--gp-display:'AlAwwal','Amiri','Noto Naskh Arabic',serif}
