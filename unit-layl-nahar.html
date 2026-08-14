@@ -1498,6 +1498,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
   var DKEY=KEY+'-done', doneSet;
   try{ doneSet=new Set(JSON.parse(localStorage.getItem(DKEY)||'[]')); }catch(e){ doneSet=new Set(); }
   function saveDone(){ try{ localStorage.setItem(DKEY, JSON.stringify([].slice.call(doneSet))); }catch(e){} }
+  doc.addEventListener('gq:resetdone',function(){ doneSet.clear(); saveDone(); [].forEach.call(doc.querySelectorAll('.subtab.pdone'),function(el){el.classList.remove('pdone');}); });
   daypanels.forEach(function(panel){
     panel.querySelectorAll('.subtab').forEach(function(t){
       var id=panel.id+':'+t.dataset.s;
@@ -1539,7 +1540,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
   window.addEventListener('scroll',function(){ var sc=window.pageYOffset||root.scrollTop; if(sc>320) top.classList.add('show'); else top.classList.remove('show'); },{passive:true});
 })();
 </script>
-<script src="app.js?v=dp2"></script>
+<script src="app.js?v=dp3"></script>
 <script src="brand/guide-icons.js?v=2"></script>
 </body>
 </html>

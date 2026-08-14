@@ -249,7 +249,7 @@
     injectIcons(); buildTopbar(); markToday(); buildIndex(); mountJourney();
     doc.getElementById('btnTeach').addEventListener('click',openTeach);
     doc.getElementById('btnDash').addEventListener('click',openDash);
-    var rp=doc.getElementById('resetProg'); if(rp) rp.addEventListener('click',function(){ if(confirm('تصفير كل علامات الإنجاز لهذه الوحدة؟')){ saveProg({}); [].forEach.call(doc.querySelectorAll('.subtab.done,.daytab.done'),function(el){el.classList.remove('done');}); refreshProg(); trialToast('أُعيد ضبط التقدّم'); } });
+    var rp=doc.getElementById('resetProg'); if(rp) rp.addEventListener('click',function(){ if(confirm('تصفير كل علامات الإنجاز لهذه الوحدة؟')){ saveProg({}); [].forEach.call(doc.querySelectorAll('.subtab.done,.daytab.done'),function(el){el.classList.remove('done');}); doc.dispatchEvent(new CustomEvent('gq:resetdone')); refreshProg(); trialToast('أُعيد ضبط التقدّم'); } });
     var q=doc.getElementById('q'); q.addEventListener('input',function(){runSearch(this.value);});
     doc.addEventListener('click',function(e){ if(!e.target.closest('.searchbox')) doc.getElementById('sr').classList.remove('open'); });
     // اربط النقر على التبويبات لتحديث كل شيء
