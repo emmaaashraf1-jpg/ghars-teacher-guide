@@ -783,6 +783,40 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <text x="600" y="640" text-anchor="middle" font-family="Amiri, serif" font-size="72" fill="#F4EDDE">غرس القيم</text>
 </svg>
 </template>
+<style id="gp-components">
+#components{--gp-forest:#1F4A39;--gp-forest2:#2C6A4D;--gp-teal:#0E6E6B;--gp-gold:#C79A3B;--gp-ochre:#C0922E;--gp-gray:#6C776F;--gp-line:#E9E1D2;--gp-linesoft:#F0E9DB;--gp-ease:cubic-bezier(.22,.61,.36,1);--gp-display:'AlAwwal','Amiri','Noto Naskh Arabic',serif}
+#components .gp-eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:12.5px;font-weight:700;letter-spacing:.3px;color:var(--gp-ochre)}
+#components .gp-eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.5}
+#components .gp-head{max-width:820px;margin:6px 0 4px}
+#components .gp-head h1{font-family:var(--gp-display);font-weight:700;color:var(--gp-forest);font-size:clamp(34px,5vw,54px);line-height:1.3;letter-spacing:-.3px;margin:15px 0 0;padding-block:4px}
+#components .gp-head h1::after{content:"";display:block;width:60px;height:3px;border-radius:3px;margin-top:16px;background:linear-gradient(90deg,var(--gp-gold),rgba(199,154,59,0))}
+#components .gp-lede{font-family:var(--gp-display);font-weight:700;font-size:clamp(16px,2.2vw,21px);line-height:1.62;color:#1E2E29;max-width:56ch;margin-top:20px}
+#components .gp-lede b{color:var(--gp-teal)}
+#components .gp-sechead{margin:clamp(40px,5vw,58px) 0 clamp(18px,2.4vw,24px)}
+#components .gp-sechead h2{font-family:var(--gp-display);font-weight:700;color:var(--gp-forest);font-size:clamp(23px,3.2vw,32px);line-height:1.35;margin-top:12px;padding-block:2px}
+#components .gp-sechead p{font-size:14.5px;color:var(--gp-gray);line-height:2;margin-top:6px;max-width:56ch}
+#components .matrix-wrap,#components .asset-table-wrap{overflow-x:auto;border:1px solid var(--gp-line);border-radius:16px;box-shadow:0 18px 40px -30px rgba(31,74,57,.4);margin:0}
+#components .components-matrix,#components .asset-table{width:100%;border-collapse:collapse;font-size:13px;min-width:560px;background:#fff}
+#components .components-matrix thead th,#components .asset-table thead th{background:var(--gp-forest)!important;color:#fff!important;font-family:var(--gp-display)!important;font-weight:700;padding:12px 10px!important;font-size:12.5px!important;text-align:center;white-space:nowrap;border:none!important}
+#components .components-matrix thead th:first-child,#components .asset-table thead th:first-child{text-align:start;padding-inline-start:18px!important}
+#components .components-matrix tbody td,#components .asset-table tbody td{padding:11px 10px!important;border:none!important;border-bottom:1px solid var(--gp-linesoft)!important;text-align:center;color:var(--gp-gray)!important;font-size:12.5px!important;line-height:1.7}
+#components tbody tr:last-child td{border-bottom:0!important}
+#components tbody td:first-child{text-align:start;padding-inline-start:18px!important;font-weight:700;color:var(--gp-forest)!important;font-family:var(--gp-display)!important;font-size:13.5px!important}
+#components tbody tr:nth-child(even){background:#FCFAF4}
+#components .matrix-dot{color:var(--gp-gold)!important;font-size:13px}
+#components .asset-table tbody td:not(:first-child){text-align:start;color:#586258!important}
+#components .asset-table tbody td:first-child{color:var(--gp-teal)!important}
+#components .resource-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:13px;margin:0}
+#components .resource-card{background:#fff!important;border:1px solid var(--gp-line)!important;border-top:3px solid var(--gp-teal)!important;border-radius:15px!important;padding:16px 18px!important;transition:transform .2s var(--gp-ease),box-shadow .2s;box-shadow:none!important;min-height:0!important}
+#components .resource-card:hover{transform:translateY(-3px);box-shadow:0 16px 30px -20px rgba(14,110,107,.3)!important}
+#components .resource-card h4{font-family:var(--gp-display)!important;font-weight:700;color:var(--gp-forest)!important;font-size:16px!important;line-height:1.45!important;margin:0 0 6px!important}
+#components .resource-card p{font-size:12.5px!important;color:var(--gp-gray)!important;line-height:1.8!important;margin:0!important}
+#components .refs-helper-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:0}
+#components .refs-helper-card{background:linear-gradient(162deg,#fff,#FBF9F2)!important;border:1px solid var(--gp-line)!important;border-radius:15px!important;padding:16px 18px 16px 20px!important;position:relative;box-shadow:none!important}
+#components .refs-helper-card::before{content:"؟";position:absolute;inset-inline-start:0;top:0;bottom:0;width:34px;display:grid;place-items:center;font-family:var(--gp-display);font-weight:700;font-size:20px;color:#fff;background:var(--gp-gold);border-radius:15px 0 0 15px}
+#components .refs-helper-card b{display:block;font-family:var(--gp-display)!important;font-weight:700;color:var(--gp-forest)!important;font-size:15px!important;line-height:1.5;margin:0 0 6px 18px!important}
+#components .refs-helper-card p{font-size:12.5px!important;color:var(--gp-gray)!important;line-height:1.8!important;margin:0 18px 0 0!important}
+</style>
 <style id="gp-vision">
 #vision{--gp-forest:#1F4A39;--gp-forest2:#2C6A4D;--gp-gold:#C79A3B;--gp-ochre:#C0922E;--gp-gray:#6C776F;--gp-line:#E9E1D2;--gp-ease:cubic-bezier(.22,.61,.36,1);--gp-display:'AlAwwal','Amiri','Noto Naskh Arabic',serif}
 #vision .gp-eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:12.5px;font-weight:700;letter-spacing:.3px;color:var(--gp-ochre)}
@@ -1022,10 +1056,14 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </section>
 <section class="page" id="components" style="--accent:#0E6E6B">
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>مكونات المنهج</strong></div>
-<div class="section-banner"><div class="section-number">03</div><div class="section-title"><div><h2>مكونات المنهج</h2><p>ما الذي تستخدمه المعلمة، ومتى، ولماذا.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="مكونات المنهج" data-size="24"></i></div></div></div>
+<div class="gp-head gp-reveal">
+<span class="gp-eyebrow">نظامٌ واحد · التبويب ٠٣</span>
+<h1>مكوّنات المنهج</h1>
+<p class="gp-lede">تُقرأ المكونات بوصفها <b>نظامًا واحدًا</b>: التخطيط يحدد الوجهة، واللقاء يبني المعنى، والبطاقات توضحه، والركن يثبته، والمنظومات ترافق الانتقال، والمراجع الإثرائية تعين المعلمة، والتقييم يرصد الأثر.</p>
+</div>
 <div class="page-body">
 <div class="page-main">
-<div class="lead-box">تُقرأ المكونات بوصفها <strong>نظامًا واحدًا</strong>: التخطيط يحدد الوجهة، واللقاء يبني المعنى، والبطاقات توضحه، والركن يثبته، والمنظومات ترافق الانتقال، والمراجع الإثرائية تعين المعلمة، والتقييم يرصد الأثر.</div>
+<div class="gp-sechead gp-reveal"><span class="gp-eyebrow">متى يُستخدم كلّ مكوّن</span><h2>مصفوفة المكوّنات والمراحل</h2><p>أين يظهر كلّ مكوّنٍ عبر مراحل العمل — من التخطيط إلى الأسرة.</p></div>
 <div class="matrix-wrap">
 <table class="components-matrix"><thead><tr><th>المكوّن</th><th>التخطيط</th><th>التهيئة</th><th>التنفيذ</th><th>التطبيق</th><th>التقويم</th><th>الأسرة</th></tr></thead><tbody>
 <tr><td>دليل الوحدة التكاملي</td><td><span class="matrix-dot">●</span></td><td><span class="matrix-dot">●</span></td><td><span class="matrix-dot">●</span></td><td><span class="matrix-dot">●</span></td><td></td><td></td></tr>
@@ -1039,6 +1077,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <tr><td>التقييم والشراكة مع الأسرة</td><td></td><td></td><td></td><td><span class="matrix-dot">●</span></td><td><span class="matrix-dot">●</span></td><td><span class="matrix-dot">●</span></td></tr>
 </tbody></table>
 </div>
+<div class="gp-sechead gp-reveal"><span class="gp-eyebrow">ما الذي تستخدمه المعلمة</span><h2>المكوّنات العشرة</h2><p>وظيفة كل مكوّنٍ في جملةٍ واضحة.</p></div>
 <div class="resource-grid">
 <div class="resource-card"><h4>دليل الوحدة التكاملي</h4><p>هو الملف التنفيذي للوحدة: الفكرة الناظمة، برنامج الأسبوع، لقاءات المواد، الأركان، التقويم، ورسالة الأسرة.</p></div>
 <div class="resource-card"><h4>المخطط الدراسي للمنهج</h4><p>يوضح امتداد المواد عبر الفصول الثلاثة، ويمنع قراءة الوحدة بمعزل عن البناء السنوي المتدرج.</p></div>
@@ -1049,11 +1088,13 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="resource-card"><h4>استمارات تقييم الطفل</h4><p>نماذج فصلية ترسل لولي الأمر لتقديم صورة موجزة عن نمو الطفل في جوانب المنهج، وربط الملاحظة الصفية بخطوة متابعة منزلية واضحة.</p></div>
 <div class="resource-card"><h4>مساعد المعلمة للبحث</h4><p>أداة في صفحة البداية للبحث بالكلمة المفتاحية، مثل اسم المادة أو الركن أو القيمة أو المرجع؛ لتصل المعلمة بسرعة إلى التبويب المطلوب.</p></div>
 </div>
+<div class="gp-sechead gp-reveal"><span class="gp-eyebrow">كيف أستخدمها</span><h2>ثلاثة أسئلة عمليّة</h2></div>
 <div class="refs-helper-grid">
 <div class="refs-helper-card"><b>كيف أستخدم المراجع الإثرائية؟</b><p>تقرأها المعلمة قبل اللقاء لتتقن الخلفية الشرعية أو التربوية، ثم تختار منها ما يناسب عمر الطفل ولغة الصف.</p></div>
 <div class="refs-helper-card"><b>كيف أستخدم البطاقات؟</b><p>تُحضّر البطاقات قبل اليوم، وتعرض عند الحاجة فقط، ثم تنتقل إلى نشاط محسوس أو ركن يثبت المعنى.</p></div>
 <div class="refs-helper-card"><b>كيف أستخدم النماذج؟</b><p>النموذج يساعد المعلمة على ضبط المخرج: بطاقة، لوحة، تسلسل، تصنيف، تمثيل، أو ملاحظة تقويمية.</p></div>
 </div>
+<div class="gp-sechead gp-reveal"><span class="gp-eyebrow">من المورد إلى المخرج</span><h2>جدول الموارد والمخرجات</h2><p>لكلّ موردٍ موضعُ استخدامه ومخرجه المتوقّع.</p></div>
 <div class="asset-table-wrap"><table class="asset-table"><thead><tr><th>نوع المورد</th><th>موضع الاستخدام</th><th>المخرج المتوقع</th></tr></thead><tbody>
 <tr><td>بطاقة نص شرعي</td><td>بداية اللقاء أو لحظة الربط</td><td>يعرف الطفل أن المعنى مستند إلى الوحي.</td></tr>
 <tr><td>بطاقات مصورة</td><td>التهيئة، العرض، الركن، أو التقييم</td><td>تصنيف أو مطابقة أو حوار قصير حول المعنى.</td></tr>
