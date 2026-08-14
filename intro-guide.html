@@ -783,6 +783,52 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <text x="600" y="640" text-anchor="middle" font-family="Amiri, serif" font-size="72" fill="#F4EDDE">غرس القيم</text>
 </svg>
 </template>
+<style id="gp-subjects">
+#subjects{--gp-forest:#1F4A39;--gp-teal:#0E6E6B;--gp-gold:#C79A3B;--gp-ochre:#C0922E;--gp-gray:#6C776F;--gp-line:#E9E1D2;--gp-linesoft:#F0E9DB;--gp-ease:cubic-bezier(.22,.61,.36,1);--gp-display:'AlAwwal','Amiri','Noto Naskh Arabic',serif}
+#subjects .gp-eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:12.5px;font-weight:700;letter-spacing:.3px;color:var(--gp-ochre)}
+#subjects .gp-eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.5}
+#subjects .gp-head{max-width:820px;margin:6px 0 4px}
+#subjects .gp-head h1{font-family:var(--gp-display);font-weight:700;color:var(--gp-forest);font-size:clamp(32px,4.6vw,50px);line-height:1.3;letter-spacing:-.3px;margin:15px 0 0;padding-block:4px}
+#subjects .gp-head h1::after{content:"";display:block;width:60px;height:3px;border-radius:3px;margin-top:16px;background:linear-gradient(90deg,var(--gp-gold),rgba(199,154,59,0))}
+#subjects .gp-head .gp-lede{font-family:var(--gp-display);font-weight:700;font-size:clamp(16px,2.2vw,20px);line-height:1.62;color:#1E2E29;max-width:62ch;margin-top:20px}
+#subjects .gp-head .gp-lede b{color:var(--gp-teal)}
+#subjects .gp-sechead{margin:clamp(36px,5vw,54px) 0 clamp(16px,2.2vw,22px)}
+#subjects .gp-sechead h2{font-family:var(--gp-display);font-weight:700;color:var(--gp-forest);font-size:clamp(22px,3vw,30px);line-height:1.35;margin-top:11px;padding-block:2px}
+#subjects .gp-sechead p{font-size:14px;color:var(--gp-gray);line-height:1.9;margin-top:6px;max-width:54ch}
+#subjects .meeting-duration-note{background:linear-gradient(162deg,#fff,#FBF9F2)!important;border:1px solid var(--gp-line)!important;border-inline-start:3px solid var(--gp-gold)!important;border-radius:12px!important;padding:13px 16px!important;font-size:13px!important;color:#4c574e!important;line-height:1.85!important;margin-top:16px!important}
+#subjects .meeting-duration-note strong{color:var(--gp-forest)!important}
+#subjects .centers-brief-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+@media(max-width:620px){#subjects .centers-brief-grid{grid-template-columns:1fr}}
+#subjects .center-brief-card{background:#fff!important;border:1px solid var(--gp-line)!important;border-top:3px solid var(--gp-teal)!important;border-radius:15px!important;padding:16px 18px!important;min-height:0!important}
+#subjects .center-brief-card h4{font-family:var(--gp-display)!important;color:var(--gp-forest)!important;font-size:16.5px!important;margin:0 0 6px!important}
+#subjects .center-brief-card p{font-size:12.5px!important;color:var(--gp-gray)!important;line-height:1.8!important;margin:0 0 10px!important}
+#subjects .center-tags{display:flex;flex-wrap:wrap;gap:6px}
+#subjects .center-tags span{font-size:10.5px!important;font-weight:700;color:var(--gp-teal)!important;background:color-mix(in srgb,var(--gp-teal) 9%,#fff)!important;border:1px solid color-mix(in srgb,var(--gp-teal) 20%,#fff)!important;border-radius:999px!important;padding:3px 10px!important}
+#subjects .subject-layout{display:grid;grid-template-columns:240px 1fr;gap:16px;align-items:start}
+@media(max-width:760px){#subjects .subject-layout{grid-template-columns:1fr}}
+#subjects .subject-list{display:flex!important;flex-direction:column;gap:7px}
+@media(max-width:760px){#subjects .subject-list{flex-direction:row;flex-wrap:wrap}}
+#subjects .subject-tab{display:flex!important;align-items:center;gap:10px;grid-template-columns:none!important;border:1px solid var(--gp-line)!important;border-radius:13px!important;background:#fff!important;padding:10px 12px!important;cursor:pointer;text-align:start;transition:transform .16s,border-color .16s;color:var(--gp-forest)!important;box-shadow:none!important}
+#subjects .subject-tab:hover{border-color:var(--subject-color)!important;transform:translateX(-2px)}
+#subjects .subject-tab .sicon{width:32px;height:32px;flex:0 0 auto;border-radius:9px;display:grid;place-items:center;background:color-mix(in srgb,var(--subject-color) 12%,#fff)!important;color:var(--subject-color)!important;font-size:17px!important}
+#subjects .subject-tab b{font-family:var(--gp-display)!important;font-size:13.5px!important;color:var(--gp-forest)!important;font-weight:700}
+#subjects .subject-tab>span:last-child{margin-inline-start:auto;color:var(--subject-color)!important;opacity:.5}
+#subjects .subject-tab.active{background:var(--subject-color)!important;border-color:var(--subject-color)!important;box-shadow:0 10px 22px -12px var(--subject-color)!important}
+#subjects .subject-tab.active .sicon{background:rgba(255,255,255,.22)!important;color:#fff!important}
+#subjects .subject-tab.active b{color:#fff!important}
+#subjects .subject-tab.active>span:last-child{color:#fff!important;opacity:1}
+#subjects .subject-detail{border:1px solid var(--gp-line)!important;border-radius:18px!important;overflow:hidden;box-shadow:0 20px 44px -32px rgba(31,74,57,.4)}
+#subjects .subject-detail-head{background:color-mix(in srgb,var(--subject-color) 10%,#fff)!important;border-bottom:1px solid var(--gp-line)!important;color:var(--gp-forest)!important;padding:18px 22px!important;display:flex;align-items:center;gap:14px}
+#subjects .subject-detail-head .big-icon{width:52px;height:52px;flex:0 0 auto;border-radius:14px;display:grid;place-items:center;background:color-mix(in srgb,var(--subject-color) 16%,#fff)!important;color:var(--subject-color)!important;font-size:24px!important}
+#subjects .subject-detail-head h3{font-family:var(--gp-display)!important;color:var(--gp-forest)!important;font-size:22px!important;line-height:1.35;margin:0}
+#subjects .subject-detail-head p{color:var(--gp-gray)!important;font-size:12.5px!important;margin:2px 0 0!important}
+#subjects .subject-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:18px 20px}
+@media(max-width:640px){#subjects .subject-columns{grid-template-columns:1fr}}
+#subjects .subject-box{border:1px solid var(--gp-linesoft)!important;border-top:3px solid var(--subject-color)!important;border-radius:0 0 12px 12px!important;padding:13px 14px!important}
+#subjects .subject-box b{font-family:var(--gp-display)!important;color:var(--subject-color)!important;font-size:13px!important;display:block;margin-bottom:5px}
+#subjects .subject-box p{font-size:12px!important;color:#586258!important;line-height:1.8!important;margin:0!important}
+#subjects .central-thread{margin:0 20px 18px!important;padding:11px 15px!important;border-radius:11px!important;background:color-mix(in srgb,var(--subject-color) 7%,#fff)!important;color:#48534b!important;font-size:12.5px!important;line-height:1.75!important}
+</style>
 <style id="gp-components">
 #components{--gp-forest:#1F4A39;--gp-forest2:#2C6A4D;--gp-teal:#0E6E6B;--gp-gold:#C79A3B;--gp-ochre:#C0922E;--gp-gray:#6C776F;--gp-line:#E9E1D2;--gp-linesoft:#F0E9DB;--gp-ease:cubic-bezier(.22,.61,.36,1);--gp-display:'AlAwwal','Amiri','Noto Naskh Arabic',serif}
 #components .gp-eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:12.5px;font-weight:700;letter-spacing:.3px;color:var(--gp-ochre)}
@@ -1113,15 +1159,20 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </section>
 <section class="page" id="subjects" style="--accent:#0E6E6B">
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>خريطة المواد والمراكز</strong></div>
-<div class="section-banner"><div class="section-number">04</div><div class="section-title"><div><h2>خريطة المواد والمراكز</h2><p>وظيفة كل مادة ومركز تطبيقي وعلاقته بالمعنى المركزي للوحدة.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="خريطة المواد والمراكز" data-size="24"></i></div></div></div>
+<div class="gp-head gp-reveal">
+<span class="gp-eyebrow">وظيفة كل مادة ومركز · التبويب ٠٤</span>
+<h1>خريطة المواد والمراكز</h1>
+<p class="gp-lede"><b>علّمني ربي</b> هو المحور المركزي الذي يعرّف الطفل بالله وآياته، بينما تعمق بقية المواد والمراكز التطبيقية المعنى نفسه من القرآن والسنة واللغة والرياضيات والسلوك.</p>
+</div>
 <div class="page-body"><div class="page-main">
-<div class="lead-box"><strong>علّمني ربي</strong> هو المحور المركزي الذي يعرّف الطفل بالله وآياته، بينما تعمق بقية المواد والمراكز التطبيقية المعنى نفسه من القرآن والسنة واللغة والرياضيات والسلوك. وتظل <strong>مدة كل لقاء أو مركز تطبيقي 30 دقيقة (نصف ساعة)</strong> في جميع مواد المنهج.</div>
 <div class="meeting-duration-note"><strong>قاعدة زمن اللقاء:</strong> مدة كل لقاء تعليمي أو مركز تطبيقي في هذا الدليل 30 دقيقة (نصف ساعة). ويُبنى المركز على شرح قصير جدًا ثم تطبيق عملي وتعلم باللعب.</div>
+<div class="gp-sechead gp-reveal"><span class="gp-eyebrow">مركزان تطبيقيّان مساندان</span><h2>مركزا اللغة والرياضيات</h2></div>
 <div class="centers-brief-grid">
 <div class="center-brief-card" style="--c:#0E6E6B"><h4>مركز اللغة</h4><p>مركز تطبيقي مساند للغة، يعمل على الإدراك السمعي والبصري والحروف والتهجئة والقراءة من خلال ألعاب ومهام محسوسة.</p><div class="center-tags"><span>إدراك سمعي</span><span>إدراك بصري</span><span>حروف</span><span>تهجئة</span><span>قراءة</span></div></div>
 <div class="center-brief-card" style="--c:#0E6E6B"><h4>مركز الرياضيات</h4><p>مركز تطبيقي مساند للرياضيات، يعمل على الأرقام والعد والاتجاهات والأشكال الهندسية والأنماط من خلال اللعب بالأدوات.</p><div class="center-tags"><span>أرقام</span><span>عد</span><span>اتجاهات</span><span>أشكال</span><span>أنماط</span></div></div>
 </div>
 <p class="subject-thesis"><b>الخيط الجامع:</b> المعرفة لا تبقى معلومة؛ بل تنتقل إلى تعظيم، وعبادة، ولسان، ومهارة، وسلوك.</p>
+<div class="gp-sechead gp-reveal"><span class="gp-eyebrow">اضغطي أيّ مادة لتُفتح لوحتها</span><h2>المواد التسع ولوحاتها</h2><p>لكل مادة: ماذا يدرس الطفل؟ كيف يبدأ اللقاء؟ والناتج المتوقّع.</p></div>
 <div class="subject-layout"><div class="subject-list">
 <button class="subject-tab active" data-subject="alamani" style="--subject-color:#B15230"><span class="sicon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em"><path d="M20 15.5A8 8 0 1 1 11 4a6.5 6.5 0 0 0 9 11.5z"/></svg></span><b>علّمني ربي</b><span>←</span></button><button class="subject-tab" data-subject="kitabi" style="--subject-color:#1E5631"><span class="sicon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em"><path d="M12 6.5C10 5 6.5 5 4.5 6v12c2-1 5.5-1 7.5.5 2-1.5 5.5-1.5 7.5-.5V6c-2-1-5.5-1-7.5.5z"/><path d="M12 6.5V19"/></svg></span><b>كتابي المنير</b><span>←</span></button><button class="subject-tab" data-subject="ohibuka" style="--subject-color:#0E6E6B"><span class="sicon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em"><path d="M9 3h6"/><path d="M10.5 3v2M13.5 3v2"/><path d="M7 7h10l-.8 10a2 2 0 0 1-2 1.8H9.8a2 2 0 0 1-2-1.8z"/><path d="M12 10.5v5"/><path d="M11 21h2"/></svg></span><b>أحبك ربي</b><span>←</span></button><button class="subject-tab" data-subject="lisan" style="--subject-color:#0E6E6B"><span class="sicon"><span style="font-family:'AlAwwal','Amiri',serif;font-weight:700;line-height:1;display:inline-block;vertical-align:-.02em">ض</span></span><b>لساني عربي</b><span>←</span></button><button class="subject-tab" data-subject="language-center" style="--subject-color:#0E6E6B"><span class="sicon"><span style="font-family:'AlAwwal','Amiri',serif;font-weight:700;line-height:1;display:inline-block;vertical-align:-.02em">ض</span></span><b>مركز اللغة</b><span>←</span></button>
 <button class="subject-tab" data-subject="maharati" style="--subject-color:#A9772E"><span class="sicon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em"><circle cx="8" cy="8" r="3"/><rect x="13" y="5" width="6" height="6" rx="1"/><path d="M8 14l4 6H4z"/></svg></span><b>مهاراتي</b><span>←</span></button><button class="subject-tab" data-subject="math-center" style="--subject-color:#0E6E6B"><span class="sicon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M4 10h16M4 15h16"/><circle cx="8" cy="7" r="1.1" fill="currentColor"/><circle cx="13" cy="12.5" r="1.1" fill="currentColor"/><circle cx="16" cy="17.5" r="1.1" fill="currentColor"/></svg></span><b>مركز الرياضيات</b><span>←</span></button>
