@@ -783,6 +783,22 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <text x="600" y="640" text-anchor="middle" font-family="Amiri, serif" font-size="72" fill="#F4EDDE">غرس القيم</text>
 </svg>
 </template>
+<style id="gp-inkfix">
+/* توسيع ارتفاع السطر لخطّ AlAwwal في التبويبين ٣ و٤ حتى لا تُقصّ أطراف الحروف */
+#components .gp-head h1,#subjects .gp-head h1{line-height:1.44!important;padding-block:8px!important}
+#components .gp-sechead h2,#subjects .gp-sechead h2{line-height:1.48!important;padding-block:6px!important}
+#components .gp-head .gp-lede,#subjects .gp-head .gp-lede{line-height:1.72!important}
+#components .resource-card h4{line-height:1.6!important;padding-block:2px!important}
+#components .refs-helper-card b{line-height:1.6!important}
+#components .components-matrix th,#components .asset-table th,#components tbody td:first-child{line-height:1.7!important;padding-block:2px!important}
+#subjects .center-brief-card h4{line-height:1.55!important;padding-block:2px!important}
+#subjects .subject-tab b{line-height:1.6!important;padding-block:2px!important;white-space:normal!important}
+#subjects .subject-detail-head h3{line-height:1.5!important;padding-block:2px!important}
+#subjects .subject-detail-head p{line-height:1.7!important}
+#subjects .subject-box b{line-height:1.55!important;padding-block:1px!important}
+#subjects .subject-thesis{line-height:1.95!important}
+#subjects .central-thread{line-height:1.85!important}
+</style>
 <style id="gp-annual">
 #annual-plan{--gp-forest:#1F4A39;--gp-forest2:#2C6A4D;--gp-teal:#0E6E6B;--gp-gold:#C79A3B;--gp-ochre:#C0922E;--gp-gray:#6C776F;--gp-line:#E9E1D2;--gp-linesoft:#F0E9DB;--gp-sage:#8AA48F;--gp-ease:cubic-bezier(.22,.61,.36,1);--gp-display:'AlAwwal','Amiri','Noto Naskh Arabic',serif}
 #annual-plan .gp-eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:12.5px;font-weight:700;letter-spacing:.3px;color:var(--gp-ochre)}
