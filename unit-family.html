@@ -89,6 +89,12 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .subtabs.seq .subtab.routine:hover{color:#5f6560;border-color:#8a8f98}
 .subtabs.seq .subtab.routine.active{background:#8a8f98;border-color:#8a8f98;color:#fff}
 .subtabs.seq .pconn{flex:1 1 22px;min-width:22px;height:4px;background:#d6ded9;border-radius:3px;align-self:center}
+.subtabs.seq .subtab .pchk{width:19px;height:19px;border-radius:50%;border:2px solid #c4cfc9;background:#fff;display:grid;place-items:center;flex:0 0 auto;cursor:pointer;font-size:11px;line-height:1;color:transparent;transition:.15s;margin-inline-start:1px}
+.subtabs.seq .subtab .pchk::before{content:"✓";font-weight:700}
+.subtabs.seq .subtab .pchk:hover{border-color:#1E5631;transform:scale(1.12)}
+.subtabs.seq .subtab.done{opacity:.55}
+.subtabs.seq .subtab.done .pchk{background:#1E5631;border-color:#1E5631;color:#fff;opacity:1}
+@media print{.subtabs.seq .subtab .pchk{display:none}}
 .subtabs.seq .pconn.mnz{position:relative;background:#b9a3e0}
 .subtabs.seq .pconn.mnz::before{content:"📜";position:absolute;top:-19px;left:50%;transform:translateX(-50%);font-size:13px;line-height:1;z-index:2;filter:drop-shadow(0 1px 1px rgba(0,0,0,.18))}
 /* ===== بطاقة فترة روتينية ===== */
@@ -275,6 +281,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
       <span class="k"><i style="background:#8a8f98"></i>فترات روتينية (أذكار · وجبة · ساحة · أركان)</span>
       <span class="k"><i style="background:#6d4aa7"></i>المنظومة</span>
       <span class="k"><span style="font-size:14px;margin-inline-end:5px">📜</span>المنظومة عند الانتقال إلى الأركان والعودة</span>
+      <span class="k" style="font-weight:700;color:#1E5631"><span style="display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:#1E5631;color:#fff;font-size:10px;margin-inline-end:5px">✓</span>اضغطي الدائرة على البلّورة لوسم اللقاء كمُنجَز</span>
     </div>
     <div class="subtabs seq">
       <button class="subtab routine active" data-s="r1">أذكار وتربية بدنية</button>
@@ -355,6 +362,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
       <span class="k"><i style="background:#8a8f98"></i>فترات روتينية (أذكار · وجبة · ساحة · أركان)</span>
       <span class="k"><i style="background:#6d4aa7"></i>المنظومة</span>
       <span class="k"><span style="font-size:14px;margin-inline-end:5px">📜</span>المنظومة عند الانتقال إلى الأركان والعودة</span>
+      <span class="k" style="font-weight:700;color:#1E5631"><span style="display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:#1E5631;color:#fff;font-size:10px;margin-inline-end:5px">✓</span>اضغطي الدائرة على البلّورة لوسم اللقاء كمُنجَز</span>
     </div>
     <div class="subtabs seq">
       <button class="subtab routine active" data-s="r1">أذكار وتربية بدنية</button>
@@ -438,6 +446,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
       <span class="k"><i style="background:#8a8f98"></i>فترات روتينية (أذكار · وجبة · ساحة · أركان)</span>
       <span class="k"><i style="background:#6d4aa7"></i>المنظومة</span>
       <span class="k"><span style="font-size:14px;margin-inline-end:5px">📜</span>المنظومة عند الانتقال إلى الأركان والعودة</span>
+      <span class="k" style="font-weight:700;color:#1E5631"><span style="display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:#1E5631;color:#fff;font-size:10px;margin-inline-end:5px">✓</span>اضغطي الدائرة على البلّورة لوسم اللقاء كمُنجَز</span>
     </div>
     <div class="subtabs seq">
       <button class="subtab routine active" data-s="r1">أذكار وتربية بدنية</button>
@@ -515,6 +524,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
       <span class="k"><i style="background:#8a8f98"></i>فترات روتينية (أذكار · وجبة · ساحة · أركان)</span>
       <span class="k"><i style="background:#6d4aa7"></i>المنظومة</span>
       <span class="k"><span style="font-size:14px;margin-inline-end:5px">📜</span>المنظومة عند الانتقال إلى الأركان والعودة</span>
+      <span class="k" style="font-weight:700;color:#1E5631"><span style="display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:#1E5631;color:#fff;font-size:10px;margin-inline-end:5px">✓</span>اضغطي الدائرة على البلّورة لوسم اللقاء كمُنجَز</span>
     </div>
     <div class="subtabs seq">
       <button class="subtab routine active" data-s="r1">أذكار وتربية بدنية</button>
@@ -595,6 +605,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
       <span class="k"><i style="background:#8a8f98"></i>فترات روتينية (أذكار · وجبة · ساحة · أركان)</span>
       <span class="k"><i style="background:#6d4aa7"></i>المنظومة</span>
       <span class="k"><span style="font-size:14px;margin-inline-end:5px">📜</span>المنظومة عند الانتقال إلى الأركان والعودة</span>
+      <span class="k" style="font-weight:700;color:#1E5631"><span style="display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:#1E5631;color:#fff;font-size:10px;margin-inline-end:5px">✓</span>اضغطي الدائرة على البلّورة لوسم اللقاء كمُنجَز</span>
     </div>
     <div class="subtabs seq">
       <button class="subtab routine active" data-s="r1">أذكار وتربية بدنية</button>
@@ -1541,6 +1552,25 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
       t.addEventListener('click',function(){ selectSub(panel, t.dataset.s); });
     });
   });
+
+  // ===== علامة «تمّ» على بلّورات المسار (تتبّع إنجاز المعلمة، حفظ محلّي) =====
+  var DKEY=KEY+'-done', doneSet;
+  try{ doneSet=new Set(JSON.parse(localStorage.getItem(DKEY)||'[]')); }catch(e){ doneSet=new Set(); }
+  function saveDone(){ try{ localStorage.setItem(DKEY, JSON.stringify([].slice.call(doneSet))); }catch(e){} }
+  daypanels.forEach(function(panel){
+    panel.querySelectorAll('.subtab').forEach(function(t){
+      var id=panel.id+':'+t.dataset.s;
+      if(doneSet.has(id)) t.classList.add('done');
+      var chk=doc.createElement('span');
+      chk.className='pchk'; chk.setAttribute('role','button'); chk.setAttribute('tabindex','0');
+      chk.setAttribute('aria-label','وسم اللقاء كمُنجَز'); chk.setAttribute('title','اضغطي لوسم هذا اللقاء كمُنجَز');
+      function toggle(e){ e.stopPropagation(); e.preventDefault(); if(doneSet.has(id)){ doneSet.delete(id); t.classList.remove('done'); } else { doneSet.add(id); t.classList.add('done'); } saveDone(); }
+      chk.addEventListener('click', toggle);
+      chk.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') toggle(e); });
+      t.appendChild(chk);
+    });
+  });
+
 
   // ربط تبويبات الأيام
   daytabs.forEach(function(t,i){
