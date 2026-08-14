@@ -42,6 +42,16 @@ h1,h2,h3,.badge{font-family:var(--fd)}
 .cups{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:560px;margin:0 auto}
 .countbox{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;font-weight:700;color:var(--t1)}
 .countbox .b{width:56px;height:56px;border:2px solid var(--t2);border-radius:12px;background:#fff}
+/* مستويات الملء */
+.levels{display:flex;flex-wrap:wrap;gap:28px;justify-content:center}
+.lvcol{display:flex;flex-direction:column;align-items:center;gap:9px}
+.lvbox{width:92px;height:30px;border:2px dashed var(--t2);border-radius:9px;background:var(--soft)}
+/* كم كوبًا يملأ الوعاء */
+.fillrows{display:flex;flex-direction:column;gap:13px;max-width:600px;margin:0 auto}
+.fillrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;border:1px solid var(--line);border-radius:12px;background:var(--soft);padding:10px 14px}
+.fillrow .eq{font-family:var(--fd);font-size:20px;color:var(--t2);font-weight:700}
+.fillrow .cuprow{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
+.fillrow .cbx{width:46px;height:46px;border:2px solid var(--t2);border-radius:11px;background:#fff;flex:0 0 auto}
 .foot{margin-top:20px;border-top:1px dashed var(--line);padding-top:9px;font-size:11.5px;color:var(--muted);text-align:center}
 .printbtn{display:block;margin:14px auto 0;background:var(--t2);color:#fff;border:0;border-radius:999px;padding:9px 22px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
 @media print{body{background:#fff;padding:0}.sheet{box-shadow:none;border:0;border-radius:0;max-width:100%}.printbtn{display:none}}
@@ -154,21 +164,66 @@ h1,h2,h3,.badge{font-family:var(--fd)}
     </div>
   </div>
 
-  <!-- ٣: عُدّ الأوعية -->
+  <!-- ٣: ممتلئ · نصف · فارغ -->
   <div class="act">
-    <div class="act-h"><span class="n">٣</span><h2>عُدّ الأوعية</h2></div>
-    <p class="hint">عُدّ الأكواب ثمّ اكتب العدد في المربّع.</p>
-    <div class="cups">
-      <svg width="46" height="56" viewBox="0 0 46 56" xmlns="http://www.w3.org/2000/svg" aria-label="كوب"><polygon points="12,12 34,12 30,48 16,48" fill="#fff" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/><line x1="13" y1="21" x2="33" y2="21" stroke="var(--t2)" stroke-width="1.5" opacity="0.5"/></svg>
-      <svg width="46" height="56" viewBox="0 0 46 56" xmlns="http://www.w3.org/2000/svg" aria-label="كوب"><polygon points="12,12 34,12 30,48 16,48" fill="#fff" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/><line x1="13" y1="21" x2="33" y2="21" stroke="var(--t2)" stroke-width="1.5" opacity="0.5"/></svg>
-      <svg width="46" height="56" viewBox="0 0 46 56" xmlns="http://www.w3.org/2000/svg" aria-label="كوب"><polygon points="12,12 34,12 30,48 16,48" fill="#fff" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/><line x1="13" y1="21" x2="33" y2="21" stroke="var(--t2)" stroke-width="1.5" opacity="0.5"/></svg>
-      <svg width="46" height="56" viewBox="0 0 46 56" xmlns="http://www.w3.org/2000/svg" aria-label="كوب"><polygon points="12,12 34,12 30,48 16,48" fill="#fff" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/><line x1="13" y1="21" x2="33" y2="21" stroke="var(--t2)" stroke-width="1.5" opacity="0.5"/></svg>
-      <svg width="46" height="56" viewBox="0 0 46 56" xmlns="http://www.w3.org/2000/svg" aria-label="كوب"><polygon points="12,12 34,12 30,48 16,48" fill="#fff" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/><line x1="13" y1="21" x2="33" y2="21" stroke="var(--t2)" stroke-width="1.5" opacity="0.5"/></svg>
-      <svg width="46" height="56" viewBox="0 0 46 56" xmlns="http://www.w3.org/2000/svg" aria-label="كوب"><polygon points="12,12 34,12 30,48 16,48" fill="#fff" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/><line x1="13" y1="21" x2="33" y2="21" stroke="var(--t2)" stroke-width="1.5" opacity="0.5"/></svg>
-      <svg width="46" height="56" viewBox="0 0 46 56" xmlns="http://www.w3.org/2000/svg" aria-label="كوب"><polygon points="12,12 34,12 30,48 16,48" fill="#fff" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/><line x1="13" y1="21" x2="33" y2="21" stroke="var(--t2)" stroke-width="1.5" opacity="0.5"/></svg>
-      <svg width="46" height="56" viewBox="0 0 46 56" xmlns="http://www.w3.org/2000/svg" aria-label="كوب"><polygon points="12,12 34,12 30,48 16,48" fill="#fff" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/><line x1="13" y1="21" x2="33" y2="21" stroke="var(--t2)" stroke-width="1.5" opacity="0.5"/></svg>
+    <div class="act-h"><span class="n">٣</span><h2>ممتلئ · نصف · فارغ</h2></div>
+    <p class="hint">انظر إلى الماء في كلّ كوب، ثمّ اكتب تحته: <b>ممتلئ</b> أو <b>نصف</b> أو <b>فارغ</b>.</p>
+    <div class="levels">
+      <div class="lvcol">
+        <svg width="60" height="76" viewBox="0 0 52 68" xmlns="http://www.w3.org/2000/svg" aria-label="كوب">
+          <polygon points="12.8,18 39.2,18 35,60 17,60" fill="#cfe6ef"/>
+          <polygon points="12,10 40,10 35,60 17,60" fill="none" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+        <span class="lvbox"></span>
+      </div>
+      <div class="lvcol">
+        <svg width="60" height="76" viewBox="0 0 52 68" xmlns="http://www.w3.org/2000/svg" aria-label="كوب">
+          <polygon points="12,10 40,10 35,60 17,60" fill="none" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+        <span class="lvbox"></span>
+      </div>
+      <div class="lvcol">
+        <svg width="60" height="76" viewBox="0 0 52 68" xmlns="http://www.w3.org/2000/svg" aria-label="كوب">
+          <polygon points="14.8,38 37.2,38 35,60 17,60" fill="#cfe6ef"/>
+          <polygon points="12,10 40,10 35,60 17,60" fill="none" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+        <span class="lvbox"></span>
+      </div>
     </div>
-    <div class="countbox">عددها = <span class="b"></span></div>
+  </div>
+
+  <!-- ٤: كم كوبًا يملأ الوعاء؟ -->
+  <div class="act">
+    <div class="act-h"><span class="n">٤</span><h2>كم كوبًا يملأ الوعاء؟</h2></div>
+    <p class="hint">الوعاء الأكبر يملأ أكوابًا أكثر. عُدّ الأكواب بجانب كلّ وعاء، ثمّ اكتب عددها في المربّع.</p>
+    <div class="fillrows">
+      <div class="fillrow">
+        <svg width="66" height="72" viewBox="0 0 92 98" xmlns="http://www.w3.org/2000/svg" aria-label="إبريق كبير">
+          <rect x="16" y="20" width="44" height="66" rx="6" fill="#fff" stroke="var(--t2)" stroke-width="2.5"/>
+          <path d="M60 34 q20 3 20 22 q0 12 -20 12" fill="none" stroke="var(--t2)" stroke-width="2.5"/>
+          <rect x="22" y="12" width="32" height="10" rx="4" fill="#fff" stroke="var(--t2)" stroke-width="2.5"/>
+        </svg>
+        <span class="eq">يملأ</span>
+        <div class="cuprow">
+          <svg width="34" height="42" viewBox="0 0 46 56" xmlns="http://www.w3.org/2000/svg" aria-label="كوب"><polygon points="12,12 34,12 30,48 16,48" fill="#fff" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          <svg width="34" height="42" viewBox="0 0 46 56" xmlns="http://www.w3.org/2000/svg" aria-label="كوب"><polygon points="12,12 34,12 30,48 16,48" fill="#fff" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          <svg width="34" height="42" viewBox="0 0 46 56" xmlns="http://www.w3.org/2000/svg" aria-label="كوب"><polygon points="12,12 34,12 30,48 16,48" fill="#fff" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          <svg width="34" height="42" viewBox="0 0 46 56" xmlns="http://www.w3.org/2000/svg" aria-label="كوب"><polygon points="12,12 34,12 30,48 16,48" fill="#fff" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="cbx"></span>
+      </div>
+      <div class="fillrow">
+        <svg width="52" height="60" viewBox="0 0 60 70" xmlns="http://www.w3.org/2000/svg" aria-label="وعاء متوسّط">
+          <polygon points="18,16 42,16 38,58 22,58" fill="#fff" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+        <span class="eq">يملأ</span>
+        <div class="cuprow">
+          <svg width="34" height="42" viewBox="0 0 46 56" xmlns="http://www.w3.org/2000/svg" aria-label="كوب"><polygon points="12,12 34,12 30,48 16,48" fill="#fff" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          <svg width="34" height="42" viewBox="0 0 46 56" xmlns="http://www.w3.org/2000/svg" aria-label="كوب"><polygon points="12,12 34,12 30,48 16,48" fill="#fff" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="cbx"></span>
+      </div>
+    </div>
   </div>
 
   <div class="foot">نادي غرس القيم لضيافة الأطفال · وحدة العائلة — مركز الرياضيات (أوعية المسكن) · تُنفَّذ بعد المحسوس، والقياس والمقارنة نعمةٌ نشكر الله عليها.</div>
