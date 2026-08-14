@@ -50,6 +50,15 @@ h1,h2,h3,.badge{font-family:var(--fd)}
 .match .cell .ic{font-size:22px}
 .match .dot{width:11px;height:11px;border-radius:50%;background:var(--t2);justify-self:center}
 .match .mid{width:26px}
+/* ارسم العقارب */
+.clocks3{display:flex;flex-wrap:wrap;gap:22px;justify-content:center}
+.ccol{display:flex;flex-direction:column;align-items:center;gap:8px}
+.clbl{font-family:var(--fd);font-weight:700;color:var(--t1);font-size:16px;border:2px solid var(--t2);border-radius:999px;padding:3px 18px;background:var(--soft)}
+.mclock{width:132px;height:132px}
+.mclock .fc{fill:#fff;stroke:var(--t2);stroke-width:2.5}
+.mclock .tk{stroke:#c9b79a;stroke-width:2}
+.mclock .cnum{font-family:var(--fd);fill:var(--t1);font-size:15px;font-weight:700;text-anchor:middle;dominant-baseline:middle}
+.mclock .cdot{fill:var(--t2)}
 .foot{margin-top:20px;border-top:1px dashed var(--line);padding-top:9px;font-size:11.5px;color:var(--muted);text-align:center}
 .printbtn{display:block;margin:14px auto 0;background:var(--t2);color:#fff;border:0;border-radius:999px;padding:9px 22px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
 @media print{body{background:#fff;padding:0}.sheet{box-shadow:none;border:0;border-radius:0;max-width:100%}.printbtn{display:none}}
@@ -119,6 +128,41 @@ h1,h2,h3,.badge{font-family:var(--fd)}
       <div class="cell"><span class="ic">🍚</span> الغداء</div><span class="dot"></span><div class="cell tm">المساء</div>
       <div class="cell"><span class="ic">🕌</span> صلاة المغرب</div><span class="dot"></span><div class="cell tm">الظّهر</div>
       <div class="cell"><span class="ic">🌙</span> النوم</div><span class="dot"></span><div class="cell tm">الصّباح</div>
+    </div>
+  </div>
+
+  <!-- النشاط ٤: ارسم عقارب الساعة -->
+  <div class="act">
+    <div class="act-h"><span class="n">٤</span><h2>ارسم عقارب الساعة</h2></div>
+    <p class="hint">ارسم العقرب الكبير على الرقم ١٢، والعقرب الصغير على الرقم المطلوب، ليصير الوقت كما هو مكتوبٌ تحت كلّ ساعة.</p>
+    <div class="clocks3">
+      <div class="ccol">
+        <svg class="mclock" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="قرص ساعة">
+          <circle class="fc" cx="60" cy="60" r="52"/>
+          <line class="tk" x1="60" y1="8" x2="60" y2="15"/><line class="tk" x1="86" y1="15" x2="82.5" y2="21"/><line class="tk" x1="105" y1="34" x2="99" y2="37.5"/><line class="tk" x1="112" y1="60" x2="105" y2="60"/><line class="tk" x1="105" y1="86" x2="99" y2="82.5"/><line class="tk" x1="86" y1="105" x2="82.5" y2="99"/><line class="tk" x1="60" y1="112" x2="60" y2="105"/><line class="tk" x1="34" y1="105" x2="37.5" y2="99"/><line class="tk" x1="15" y1="86" x2="21" y2="82.5"/><line class="tk" x1="8" y1="60" x2="15" y2="60"/><line class="tk" x1="15" y1="34" x2="21" y2="37.5"/><line class="tk" x1="34" y1="15" x2="37.5" y2="21"/>
+          <text class="cnum" x="60" y="24">١٢</text><text class="cnum" x="100" y="60">٣</text><text class="cnum" x="60" y="98">٦</text><text class="cnum" x="20" y="60">٩</text>
+          <circle class="cdot" cx="60" cy="60" r="4"/>
+        </svg>
+        <span class="clbl">الساعة ٣</span>
+      </div>
+      <div class="ccol">
+        <svg class="mclock" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="قرص ساعة">
+          <circle class="fc" cx="60" cy="60" r="52"/>
+          <line class="tk" x1="60" y1="8" x2="60" y2="15"/><line class="tk" x1="86" y1="15" x2="82.5" y2="21"/><line class="tk" x1="105" y1="34" x2="99" y2="37.5"/><line class="tk" x1="112" y1="60" x2="105" y2="60"/><line class="tk" x1="105" y1="86" x2="99" y2="82.5"/><line class="tk" x1="86" y1="105" x2="82.5" y2="99"/><line class="tk" x1="60" y1="112" x2="60" y2="105"/><line class="tk" x1="34" y1="105" x2="37.5" y2="99"/><line class="tk" x1="15" y1="86" x2="21" y2="82.5"/><line class="tk" x1="8" y1="60" x2="15" y2="60"/><line class="tk" x1="15" y1="34" x2="21" y2="37.5"/><line class="tk" x1="34" y1="15" x2="37.5" y2="21"/>
+          <text class="cnum" x="60" y="24">١٢</text><text class="cnum" x="100" y="60">٣</text><text class="cnum" x="60" y="98">٦</text><text class="cnum" x="20" y="60">٩</text>
+          <circle class="cdot" cx="60" cy="60" r="4"/>
+        </svg>
+        <span class="clbl">الساعة ٦</span>
+      </div>
+      <div class="ccol">
+        <svg class="mclock" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="قرص ساعة">
+          <circle class="fc" cx="60" cy="60" r="52"/>
+          <line class="tk" x1="60" y1="8" x2="60" y2="15"/><line class="tk" x1="86" y1="15" x2="82.5" y2="21"/><line class="tk" x1="105" y1="34" x2="99" y2="37.5"/><line class="tk" x1="112" y1="60" x2="105" y2="60"/><line class="tk" x1="105" y1="86" x2="99" y2="82.5"/><line class="tk" x1="86" y1="105" x2="82.5" y2="99"/><line class="tk" x1="60" y1="112" x2="60" y2="105"/><line class="tk" x1="34" y1="105" x2="37.5" y2="99"/><line class="tk" x1="15" y1="86" x2="21" y2="82.5"/><line class="tk" x1="8" y1="60" x2="15" y2="60"/><line class="tk" x1="15" y1="34" x2="21" y2="37.5"/><line class="tk" x1="34" y1="15" x2="37.5" y2="21"/>
+          <text class="cnum" x="60" y="24">١٢</text><text class="cnum" x="100" y="60">٣</text><text class="cnum" x="60" y="98">٦</text><text class="cnum" x="20" y="60">٩</text>
+          <circle class="cdot" cx="60" cy="60" r="4"/>
+        </svg>
+        <span class="clbl">الساعة ٩</span>
+      </div>
     </div>
   </div>
 
