@@ -783,6 +783,65 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <text x="600" y="640" text-anchor="middle" font-family="Amiri, serif" font-size="72" fill="#F4EDDE">غرس القيم</text>
 </svg>
 </template>
+<style id="gp-vision">
+#vision{--gp-forest:#1F4A39;--gp-forest2:#2C6A4D;--gp-gold:#C79A3B;--gp-ochre:#C0922E;--gp-gray:#6C776F;--gp-line:#E9E1D2;--gp-ease:cubic-bezier(.22,.61,.36,1);--gp-display:'AlAwwal','Amiri','Noto Naskh Arabic',serif}
+#vision .gp-eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:12.5px;font-weight:700;letter-spacing:.3px;color:var(--gp-ochre)}
+#vision .gp-eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.5}
+#vision .gp-head{max-width:820px;margin:6px auto 6px}
+#vision .gp-head h1{font-family:var(--gp-display);font-weight:700;color:var(--gp-forest);font-size:clamp(34px,5vw,54px);line-height:1.3;letter-spacing:-.3px;margin:15px 0 0;padding-block:4px}
+#vision .gp-head h1::after{content:"";display:block;width:60px;height:3px;border-radius:3px;margin-top:16px;background:linear-gradient(90deg,var(--gp-gold),rgba(199,154,59,0))}
+#vision .gp-lede{font-family:var(--gp-display);font-weight:700;font-size:clamp(17px,2.3vw,22px);line-height:1.6;color:#1E2E29;max-width:44ch;margin-top:20px}
+#vision .gp-intro{font-size:15px;line-height:2.05;color:var(--gp-gray);max-width:70ch;margin-top:12px}
+#vision .gp-intro b{color:var(--gp-forest);font-weight:700}
+#vision .gp-sechead{margin:clamp(46px,6vw,72px) 0 clamp(20px,3vw,30px)}
+#vision .gp-sechead h2{font-family:var(--gp-display);font-weight:700;color:var(--gp-forest);font-size:clamp(24px,3.4vw,34px);line-height:1.35;margin-top:13px;padding-block:2px}
+#vision .gp-sechead p{font-size:14.5px;color:var(--gp-gray);line-height:2;margin-top:7px;max-width:56ch}
+/* منظومة .sys — منقولة من الرئيسية */
+#vision .sys{position:relative;max-width:900px;margin:8px auto 0;border-radius:26px;overflow:hidden;box-shadow:0 40px 90px rgba(20,40,35,.30);isolation:isolate}
+#vision .sys::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(to left,#FCF9F0 0 50%,#1C2226 50% 100%)}
+#vision .sys::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(520px 300px at 76% 122%,rgba(199,154,59,.32),transparent 60%),radial-gradient(440px 280px at 12% -12%,rgba(0,0,0,.5),transparent 60%)}
+#vision .sys-inner{position:relative;z-index:2;padding:clamp(22px,3vw,38px) clamp(14px,3vw,30px)}
+#vision .sys-inner::before{content:"";position:absolute;z-index:1;top:96px;bottom:92px;right:50%;transform:translateX(50%);width:2px;background:linear-gradient(180deg,rgba(199,154,59,0),#cBA24E 12%,#cBA24E 88%,rgba(199,154,59,0));box-shadow:0 0 16px rgba(199,154,59,.45)}
+#vision .sys-heads,#vision .crow,#vision .sys-foot{display:grid;grid-template-columns:1fr 168px 1fr;align-items:center}
+#vision .sys-heads{margin-bottom:14px;position:relative;z-index:3}
+#vision .shd{display:flex;align-items:center;gap:11px;justify-content:center}
+#vision .shd .emblem{width:44px;height:44px;flex:0 0 auto;display:grid;place-items:center;border-radius:50%}
+#vision .shd.ours .emblem{background:radial-gradient(circle at 40% 35%,#fff,#f3e2b8);box-shadow:0 0 0 1.5px var(--gp-gold),0 0 26px rgba(199,154,59,.5)}
+#vision .shd.other .emblem{background:#262b2f;box-shadow:0 0 0 1px #3a4046,inset 0 0 14px rgba(0,0,0,.6)}
+#vision .shd .nm{text-align:center}
+#vision .shd .nm small{display:block;font-size:10px;letter-spacing:.4px;font-weight:700}
+#vision .shd .nm b{font-family:var(--gp-display);font-weight:700;font-size:clamp(16px,2.2vw,22px);line-height:1.3}
+#vision .shd.ours .nm small{color:#b0821f}#vision .shd.ours .nm b{color:var(--gp-forest)}
+#vision .shd.other .nm small{color:#7a828b}#vision .shd.other .nm b{color:#b9bfc6}
+#vision .seal{justify-self:center;width:50px;height:50px;border-radius:50%;background:#fff;border:1.5px solid var(--gp-gold);color:var(--gp-ochre);display:grid;place-items:center;font-weight:700;font-size:11.5px;box-shadow:0 12px 26px rgba(31,74,35,.2);position:relative;z-index:3}
+#vision .crow{padding:12px 0;position:relative}
+#vision .ans{font-family:var(--gp-display);font-weight:700;line-height:1.34;text-align:center}
+#vision .ans .sub{display:block;font-family:var(--gp-display);font-weight:400;font-size:10px;line-height:1.5;margin-top:2px;opacity:.75}
+#vision .ans.ours{color:var(--gp-forest);font-size:clamp(17px,2.3vw,26px)}
+#vision .ans.other{color:#a9afb6;font-size:clamp(14px,1.8vw,19px)}
+#vision .crow.r2 .ans.other{opacity:.9}#vision .crow.r3 .ans.other{opacity:.84}#vision .crow.r4 .ans.other{opacity:.76}#vision .crow.r5 .ans.other{opacity:.7}
+#vision .crow.crown .ans.ours{color:var(--gp-gold);text-shadow:0 0 26px rgba(199,154,59,.5)}
+#vision .crow.crown .ans.other{opacity:.55}
+#vision .qn{justify-self:center;position:relative;display:flex;justify-content:center;z-index:2}
+#vision .qn::before,#vision .qn::after{content:"";position:absolute;top:50%;height:1px;width:26px;z-index:0}
+#vision .qn::before{right:100%;background:linear-gradient(to left,rgba(199,154,59,.6),transparent)}
+#vision .qn::after{left:100%;background:linear-gradient(to right,rgba(120,130,140,.45),transparent)}
+#vision .qn i{font-style:normal;font-size:9.5px;letter-spacing:.3px;font-weight:700;color:#8a7f5c;white-space:nowrap;line-height:1.4;background:#FBF6EA;border:1px solid #e7d9ba;border-radius:999px;padding:5px 12px;position:relative;z-index:2;box-shadow:0 5px 14px rgba(20,40,35,.18)}
+#vision .sys-foot{margin-top:12px;padding-top:16px;border-top:1px solid rgba(150,140,110,.2)}
+#vision .sfoot{display:flex;flex-direction:column;gap:3px;text-align:center}
+#vision .sfoot small{font-size:10px;letter-spacing:.4px;font-weight:700}
+#vision .sfoot.ours small{color:#b0821f}#vision .sfoot.other small{color:#767e87}
+#vision .sfoot b{font-family:var(--gp-display);font-size:clamp(13px,1.8vw,17px);font-weight:700;line-height:1.35}
+#vision .sfoot.ours b{color:var(--gp-forest2)}#vision .sfoot.other b{color:#9aa0a8}
+#vision .wahy-note{margin:26px auto 0;text-align:center;font-size:14px;color:var(--gp-gray);line-height:2;max-width:70ch}
+#vision .wahy-note b{color:var(--gp-forest);font-weight:700}
+@media(max-width:640px){#vision .sys-heads,#vision .crow,#vision .sys-foot{grid-template-columns:1fr 84px 1fr}#vision .sys-inner::before{top:110px;bottom:100px}#vision .qn i{font-size:8px;padding:4px 7px}#vision .qn::before,#vision .qn::after{width:9px}#vision .shd .emblem{width:36px;height:36px}#vision .ans .sub{display:none}}
+/* أثر التطبيق */
+#vision .gp-effects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+#vision .gp-eff{background:#fff;border:1px solid var(--gp-line);border-radius:16px;border-top:3px solid var(--c,var(--gp-gold));padding:18px 18px 16px}
+#vision .gp-eff h4{font-family:var(--gp-display);font-weight:700;font-size:17px;color:var(--gp-forest);line-height:1.45;margin-bottom:6px}
+#vision .gp-eff p{font-size:13px;color:var(--gp-gray);line-height:1.85}
+</style>
 <style id="gp-design">
 #start{--gp-forest:#1F4A39;--gp-forest2:#2C6A4D;--gp-ochre:#C0922E;--gp-gold:#C79A3B;--gp-gray:#6C776F;--gp-line:#E9E1D2;--gp-linesoft:#F0E9DB;--gp-sage:#8AA48F;--gp-ease:cubic-bezier(.22,.61,.36,1);--gp-display:'AlAwwal','Amiri','Noto Naskh Arabic',serif}
 #start .gp-eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:12.5px;font-weight:700;letter-spacing:.3px;color:var(--gp-ochre)}
@@ -919,168 +978,39 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </section>
 <section class="page" id="vision" style="--accent:#B15230">
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>الرؤية والمنظومة</strong></div>
-<div class="section-banner"><div class="section-number">02</div><div class="section-title"><div><h2>الرؤية والمنظومة</h2><p>منظومة الوحي كما تظهر في التخطيط والتشغيل والتقويم.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="الرؤية والمنظومة" data-size="24"></i></div></div></div>
+<div class="gp-head gp-reveal">
+<span class="gp-eyebrow">الأساس الفلسفيّ · التبويب ٠٢</span>
+<h1>الرؤية والمنظومة</h1>
+<p class="gp-lede">منهجٌ يعيد للوحي مرجعيّته، وللعلم بوصلته، وللإنسان غايته.</p>
+<p class="gp-intro">يقوم منهج غرس القيم على <b>منظومة الوحي</b> بوصفها المرجع الأعلى في بناء الإنسان وتنمية وجدانه؛ في مقابل <b>منظومة الشيطان</b> التي تتمحور حول الإنسان والعقل المجرّد فتغدو الحرية قيمةً مطلقة والمتعة غاية. والمنهج لا يرفض العلم، بل يعيد ربطه بالوحي ليكون خادمًا للإنسان في طريق عبوديّته لله.</p>
+</div>
 <div class="page-body">
 <div class="page-main">
-<!-- ═══ منظومة الوحي — منقولة من دليل وحدة الليل والنهار بتصميمها الأفضل ═══ -->
-<!-- طبقة توجيه تحريريّة للمفاهيم الستّة — فوق المقارنة، لا تبدّل أيّ محتوى -->
-<div class="wahy-axis" aria-label="المفاهيم الستّة لمنظومة الوحي">
-<span class="wax-kicker">منظومة الوحي · المفاهيم الستّة</span>
-<ol class="wax-flow">
-<li class="wax-node"><span class="wax-n">01</span><span class="wax-c">الإله</span><span class="wax-dot" aria-hidden="true"></span></li>
-<li class="wax-node"><span class="wax-n">02</span><span class="wax-c">المرجع</span><span class="wax-dot" aria-hidden="true"></span></li>
-<li class="wax-node"><span class="wax-n">03</span><span class="wax-c">القيمة</span><span class="wax-dot" aria-hidden="true"></span></li>
-<li class="wax-node"><span class="wax-n">04</span><span class="wax-c">الفعل</span><span class="wax-dot" aria-hidden="true"></span></li>
-<li class="wax-node"><span class="wax-n">05</span><span class="wax-c">الغاية</span><span class="wax-dot" aria-hidden="true"></span></li>
-<li class="wax-node"><span class="wax-n">06</span><span class="wax-c">الثمرة</span><span class="wax-dot" aria-hidden="true"></span></li>
-</ol>
+<div class="sys">
+<div class="sys-inner">
+<div class="sys-heads">
+<div class="shd ours"><span class="emblem"><svg width="24" height="24" viewBox="0 0 30 30" fill="none"><g stroke="#C79A3B" stroke-width="1.5" stroke-linecap="round"><line x1="15" y1="2.5" x2="15" y2="6"/><line x1="15" y1="24" x2="15" y2="27.5"/><line x1="2.5" y1="15" x2="6" y2="15"/><line x1="24" y1="15" x2="27.5" y2="15"/><line x1="6.2" y1="6.2" x2="8.7" y2="8.7"/><line x1="21.3" y1="21.3" x2="23.8" y2="23.8"/><line x1="23.8" y1="6.2" x2="21.3" y2="8.7"/><line x1="8.7" y1="21.3" x2="6.2" y2="23.8"/></g><circle cx="15" cy="15" r="5.5" fill="#C79A3B"/><circle cx="15" cy="15" r="2.3" fill="#fff8ea"/></svg></span><div class="nm"><small>منهجنا</small><b>منظومة الوحي</b></div></div>
+<div class="seal">مقابل</div>
+<div class="shd other"><div class="nm"><small>مناهج أخرى</small><b>منظومة الشيطان</b></div><span class="emblem"><svg width="24" height="24" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="8.5" stroke="#4a5158" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="9.5" y1="9.5" x2="20.5" y2="20.5" stroke="#3f464c" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
 </div>
-<div class="wahy-cmp" style="margin-bottom:20px;">
-<!-- رأس القسم -->
-<div style="background:linear-gradient(135deg,#143528,#1F4A39);border-radius:10px 10px 0 0;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;">
-<div style="color:#fff;">
-<div style="font-size:10px;color:#C79A3B;font-weight:700;letter-spacing:1px;margin-bottom:3px;">الأساس الفلسفي للمنهج</div>
-<div style="font-size:14px;font-weight:700;color:#fff;font-family:'Amiri',serif;">منظومة الوحي — المرجعية التي يقوم عليها منهج غرس القيم</div>
-</div>
-<div style="background:rgba(200,162,0,.2);border:1px solid #C79A3B;border-radius:6px;padding:6px 12px;text-align:center;color:#C79A3B;font-size:11px;font-weight:700;">منهجٌ يُعيد<br>للوحي مرجعيته</div>
-</div>
-<!-- البيان التمهيدي -->
-<div style="background:#1F4A39;padding:11px 18px;font-size:11.5px;line-height:2;color:rgba(255,255,255,.88);border-bottom:2px solid #C79A3B;">
-      منهج غرس القيم يقوم على <strong style="color:#C79A3B;">منظومة الوحي</strong> بوصفها المرجع الأعلى في بناء الإنسان وتنمية وجدانه. في المقابل، المناهج الإنسانية والعلمانية تتبنّى <strong style="color:#F0A080;">منظومة الشيطان</strong> التي تتمحور حول الإنسان والعقل المجرد فتغدو الحرية هي القيمة المطلقة والمتعة هي الغاية. المنهج لا يرفض العلم الأكاديمي بل يُعيد ربطه بالوحي ليكون العلم خادمًا للإنسان في طريق عبوديته لله، وللعلم بوصلة، وللإنسان غاية.
-    </div>
-<!-- المخطط البصري الرئيسي بالتدفق العمودي -->
-<div style="display:grid;grid-template-columns:1fr 60px 1fr;background:#faf6ea;border:1px solid #E9E1D2;border-top:none;">
-<!-- رأس العمود الأيمن -->
-<div style="background:linear-gradient(180deg,#143528,#0A5C58);color:#C79A3B;padding:10px 6px;text-align:center;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:5px;">
-        منظومة الوحي
-      </div>
-<div style="background:#C79A3B;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#143528;text-align:center;padding:4px;">المحور</div>
-<div style="background:linear-gradient(180deg,#3B0000,#5A1010);color:#F0A080;padding:10px 6px;text-align:center;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:5px;">
-        منظومة الشيطان
-      </div>
-<!-- الصف 1 -->
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #E9E1D2;border-left:none;background:#EAF5EE;">
-<div style="font-size:18px;margin-bottom:3px;"></div>
-<div style="font-size:12px;font-weight:700;color:#0A5030;">الله</div>
-<div style="font-size:10px;color:#555;margin-top:2px;">الخالق الواحد القهار</div>
-</div>
-<div style="background:#FEF7E6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-bottom:1px solid #E9E1D2;padding:4px;">
-<div style="font-size:9px;font-weight:700;color:#7A4A00;">الإله</div>
-<div style="font-size:14px;color:#C79A3B;">⇆</div>
-</div>
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #E9E1D2;background:#FFF0EC;">
-<div style="font-size:18px;margin-bottom:3px;"></div>
-<div style="font-size:12px;font-weight:700;color:#8B2020;">الإنسان</div>
-<div style="font-size:10px;color:#888;margin-top:2px;">محور الكون ومقياسه</div>
-</div>
-<!-- سهم تدفق -->
-<div style="padding:5px;text-align:center;background:#EAF5EE;font-size:13px;color:#1A7A4C;">↓</div>
-<div style="background:#FFF8E6;padding:2px;"></div>
-<div style="padding:5px;text-align:center;background:#FFF0EC;font-size:13px;color:#8B2020;">↓</div>
-<!-- الصف 2 -->
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #E9E1D2;background:#EAF5EE;">
-<div style="font-size:18px;margin-bottom:3px;"></div>
-<div style="font-size:12px;font-weight:700;color:#0A5030;">الوحي</div>
-<div style="font-size:10px;color:#555;margin-top:2px;">قرآن كريم وسنة نبوية</div>
-</div>
-<div style="background:#FEF7E6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-bottom:1px solid #E9E1D2;padding:4px;">
-<div style="font-size:9px;font-weight:700;color:#7A4A00;">المرجع</div>
-<div style="font-size:14px;color:#C79A3B;">⇆</div>
-</div>
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #E9E1D2;background:#FFF0EC;">
-<div style="font-size:18px;margin-bottom:3px;"></div>
-<div style="font-size:12px;font-weight:700;color:#8B2020;">العقل</div>
-<div style="font-size:10px;color:#888;margin-top:2px;">العقل المجرد والمادة</div>
-</div>
-<!-- سهم تدفق -->
-<div style="padding:5px;text-align:center;background:#EAF5EE;font-size:13px;color:#1A7A4C;">↓</div>
-<div style="background:#FFF8E6;padding:2px;"></div>
-<div style="padding:5px;text-align:center;background:#FFF0EC;font-size:13px;color:#8B2020;">↓</div>
-<!-- الصف 3 -->
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #E9E1D2;background:#EAF5EE;">
-<div style="font-size:18px;margin-bottom:3px;"></div>
-<div style="font-size:12px;font-weight:700;color:#0A5030;">التوحيد</div>
-<div style="font-size:10px;color:#555;margin-top:2px;">القيمة المحورية</div>
-</div>
-<div style="background:#FEF7E6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-bottom:1px solid #E9E1D2;padding:4px;">
-<div style="font-size:9px;font-weight:700;color:#7A4A00;">القيمة</div>
-<div style="font-size:14px;color:#C79A3B;">⇆</div>
-</div>
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #E9E1D2;background:#FFF0EC;">
-<div style="font-size:18px;margin-bottom:3px;"></div>
-<div style="font-size:12px;font-weight:700;color:#8B2020;">الحرية</div>
-<div style="font-size:10px;color:#888;margin-top:2px;">الحرية المطلقة كغاية</div>
-</div>
-<!-- سهم تدفق -->
-<div style="padding:5px;text-align:center;background:#EAF5EE;font-size:13px;color:#1A7A4C;">↓</div>
-<div style="background:#FFF8E6;padding:2px;"></div>
-<div style="padding:5px;text-align:center;background:#FFF0EC;font-size:13px;color:#8B2020;">↓</div>
-<!-- الصف 4 -->
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #E9E1D2;background:#EAF5EE;">
-<div style="font-size:18px;margin-bottom:3px;"></div>
-<div style="font-size:12px;font-weight:700;color:#0A5030;">التسليم</div>
-<div style="font-size:10px;color:#555;margin-top:2px;">العبودية الاختيارية لله</div>
-</div>
-<div style="background:#FEF7E6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-bottom:1px solid #E9E1D2;padding:4px;">
-<div style="font-size:9px;font-weight:700;color:#7A4A00;">الفعل</div>
-<div style="font-size:14px;color:#C79A3B;">⇆</div>
-</div>
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #E9E1D2;background:#FFF0EC;">
-<div style="font-size:18px;margin-bottom:3px;"></div>
-<div style="font-size:12px;font-weight:700;color:#8B2020;">الطغيان</div>
-<div style="font-size:10px;color:#888;margin-top:2px;">اتباع الهوى والنفس</div>
-</div>
-<!-- سهم تدفق -->
-<div style="padding:5px;text-align:center;background:#EAF5EE;font-size:13px;color:#1A7A4C;">↓</div>
-<div style="background:#FFF8E6;padding:2px;"></div>
-<div style="padding:5px;text-align:center;background:#FFF0EC;font-size:13px;color:#8B2020;">↓</div>
-<!-- الصف 5 -->
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #E9E1D2;background:#EAF5EE;">
-<div style="font-size:18px;margin-bottom:3px;"></div>
-<div style="font-size:12px;font-weight:700;color:#0A5030;">الدار الآخرة</div>
-<div style="font-size:10px;color:#555;margin-top:2px;">الغاية الحقيقية للوجود</div>
-</div>
-<div style="background:#FEF7E6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-bottom:1px solid #E9E1D2;padding:4px;">
-<div style="font-size:9px;font-weight:700;color:#7A4A00;">الغاية</div>
-<div style="font-size:14px;color:#C79A3B;">⇆</div>
-</div>
-<div style="padding:11px 14px;text-align:center;border-bottom:1px solid #E9E1D2;background:#FFF0EC;">
-<div style="font-size:18px;margin-bottom:3px;"></div>
-<div style="font-size:12px;font-weight:700;color:#8B2020;">الدار الدنيا</div>
-<div style="font-size:10px;color:#888;margin-top:2px;">الدنيا نهاية المطاف</div>
-</div>
-<!-- سهم تدفق -->
-<div style="padding:5px;text-align:center;background:#EAF5EE;font-size:13px;color:#1A7A4C;">↓</div>
-<div style="background:#FFF8E6;padding:2px;"></div>
-<div style="padding:5px;text-align:center;background:#FFF0EC;font-size:13px;color:#8B2020;">↓</div>
-<!-- الصف 6 — الثمرة -->
-<div style="padding:13px 14px;text-align:center;background:linear-gradient(135deg,#EAF5EE,#D4EDDA);">
-<div style="font-size:20px;margin-bottom:4px;"></div>
-<div style="font-size:12px;font-weight:700;color:#0A5030;">حلاوة الإيمان</div>
-<div style="font-size:10px;color:#1A7A4C;margin-top:2px;font-weight:600;">وسمو السلوك · واتزان الشخصية</div>
-</div>
-<div style="background:linear-gradient(180deg,#C79A3B,#A07800);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px;">
-<div style="font-size:9px;font-weight:700;color:#143528;">الثمرة</div>
-<div style="font-size:14px;color:#143528;">⇆</div>
-</div>
-<div style="padding:13px 14px;text-align:center;background:linear-gradient(135deg,#FFF0EC,#FFE0D4);">
-<div style="font-size:20px;margin-bottom:4px;"></div>
-<div style="font-size:12px;font-weight:700;color:#8B2020;">المتعة واللذة</div>
-<div style="font-size:10px;color:#B02020;margin-top:2px;font-weight:600;">فراغ الروح · فقدان المعنى</div>
+<div class="crow r1"><div class="ans ours">الله<span class="sub">الخالق الواحد القهّار</span></div><div class="qn"><i>الإله</i></div><div class="ans other">الإنسان<span class="sub">محور الكون ومقياسه</span></div></div>
+<div class="crow r2"><div class="ans ours">الوحي<span class="sub">قرآنٌ وسنّة</span></div><div class="qn"><i>المرجع والمصدر</i></div><div class="ans other">العقل<span class="sub">العقل المجرّد</span></div></div>
+<div class="crow r3"><div class="ans ours">التوحيد<span class="sub">إفراد الله بالعبادة</span></div><div class="qn"><i>القيمة المركزية</i></div><div class="ans other">الحرية<span class="sub">الحرية المطلقة</span></div></div>
+<div class="crow r4"><div class="ans ours">التسليم لله<span class="sub">عبوديّةٌ واختيار</span></div><div class="qn"><i>الفعل</i></div><div class="ans other">الطغيان<span class="sub">اتّباع الهوى</span></div></div>
+<div class="crow r5"><div class="ans ours">الدار الآخرة<span class="sub">إليها المصير</span></div><div class="qn"><i>الغاية</i></div><div class="ans other">الدار الدنيا<span class="sub">الدنيا نهاية المطاف</span></div></div>
+<div class="crow crown"><div class="ans ours">حلاوة الإيمان<span class="sub">وسموّ السلوك واتّزان الشخصية</span></div><div class="qn"><i>الثمرة</i></div><div class="ans other">المتعة واللذّة<span class="sub">فراغ الروح وفقدان المعنى</span></div></div>
+<div class="sys-foot"><div class="sfoot ours"><small>المآل</small><b>طمأنينةٌ واتّزانٌ وسموُّ سلوك</b></div><div></div><div class="sfoot other"><small>المآل</small><b>لذّةٌ عابرة وفقدانُ المعنى</b></div></div>
 </div>
 </div>
-<!-- خاتمة عامة (بدل الشريط الخاص بالوحدة) -->
-<div style="background:#FEF7E6;border:1px solid #C79A3B;border-top:3px solid #C79A3B;border-radius:0 0 10px 10px;padding:14px 18px;font-size:11.8px;line-height:2;color:#5A3E00;">
-<strong style="color:#1E5631;">هذه المحاور الستة</strong> — الإله، المرجع، القيمة، الفعل، الغاية، الثمرة — تُقرأ في <strong>كل مادة، وكل ركن، وكل نموذج تقويم</strong>؛ فيبدأ كل درس من الإله والمرجع، ويمرّ بالقيمة والفعل والغاية، لينتهي إلى الثمرة في وجدان الطفل وسلوكه. وهي البوصلة التي تُعرض من خلالها أدلة الوحدات جميعها.
+<p class="wahy-note"><b>منهجنا لا يرفض العلم</b>، بل يعيد للوحي مرجعيّته، وللعلم بوصلته، وللإنسان غايته — فيكون العلمُ خادمًا للإنسان في طريق عبوديّته لله.</p>
+<div class="gp-sechead gp-reveal"><span class="gp-eyebrow">من المنظومة إلى الأثر</span><h2>كيف تظهر منظومة الوحي في التشغيل؟</h2><p>لا تبقى المنظومة فكرةً؛ بل تتحوّل إلى تخطيطٍ وتشغيلٍ وتقويمٍ داخل الصفّ.</p></div>
+<div class="gp-effects">
+<div class="gp-eff" style="--c:#0E6E6B"><h4>في التخطيط</h4><p>يبدأ الدليل بسؤال: ما المعنى الإيماني الذي ستخدمه المادة أو الوحدة؟</p></div>
+<div class="gp-eff" style="--c:#2C6A4D"><h4>في اللقاء</h4><p>تتدرج المعلمة من الملاحظة إلى السؤال ثم النص الشرعي ثم التطبيق.</p></div>
+<div class="gp-eff" style="--c:#C0922E"><h4>في الركن</h4><p>يتحول المعنى إلى لعب محسوس: تصنيف، تمثيل، بناء، قراءة، أو تجربة آمنة.</p></div>
+<div class="gp-eff" style="--c:#B15230"><h4>في التقويم</h4><p>لا يكفي أن يعرف الطفل الجواب؛ نلاحظ أثر المعرفة في قوله واختياره وتعامله.</p></div>
 </div>
-</div>
-<h3 class="song-section-title"><span><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em"><path d="M12 3.2l2.3 5.6 6 .5-4.6 3.9 1.4 5.9L12 16.4 6.5 19.6l1.4-5.9L3.3 9.8l6-.5z"/></svg></span>كيف تظهر منظومة الوحي في التشغيل؟</h3>
-<div class="faith-application">
-<div class="effect"><b>في التخطيط</b><span>يبدأ الدليل بسؤال: ما المعنى الإيماني الذي ستخدمه المادة أو الوحدة؟</span></div>
-<div class="effect"><b>في اللقاء</b><span>تتدرج المعلمة من الملاحظة إلى السؤال ثم النص الشرعي ثم التطبيق.</span></div>
-<div class="effect"><b>في الركن</b><span>يتحول المعنى إلى لعب محسوس: تصنيف، تمثيل، بناء، قراءة، أو تجربة آمنة.</span></div>
-<div class="effect"><b>في التقويم</b><span>لا يكفي أن يعرف الطفل الجواب؛ نلاحظ أثر المعرفة في قوله واختياره وتعامله.</span></div>
-</div>
+<p class="wahy-note" style="margin-top:24px"><b>هذه المحاور الستّة</b> — الإله، المرجع، القيمة، الفعل، الغاية، الثمرة — تُقرأ في كل مادة، وكل ركن، وكل نموذج تقويم؛ فيبدأ كل درس من الإله والمرجع، ويمرّ بالقيمة والفعل والغاية، لينتهي إلى الثمرة في وجدان الطفل وسلوكه. وهي البوصلة التي تُعرض من خلالها أدلة الوحدات جميعها.</p>
 </div>
 <aside class="page-aside">
 <div class="teacher-tip"><span class="tip-label">معيار القرار</span><h3>قبل إضافة أي نشاط</h3><p>اسألي: هل يقود هذا النشاط إلى المعنى؟ وهل يربط العلم بالوحي؟ وهل يناسب عمر الطفل؟</p></div>
