@@ -783,6 +783,68 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <text x="600" y="640" text-anchor="middle" font-family="Amiri, serif" font-size="72" fill="#F4EDDE">غرس القيم</text>
 </svg>
 </template>
+<style id="gp-design">
+#start{--gp-forest:#1F4A39;--gp-forest2:#2C6A4D;--gp-ochre:#C0922E;--gp-gold:#C79A3B;--gp-gray:#6C776F;--gp-line:#E9E1D2;--gp-linesoft:#F0E9DB;--gp-sage:#8AA48F;--gp-ease:cubic-bezier(.22,.61,.36,1);--gp-display:'AlAwwal','Amiri','Noto Naskh Arabic',serif}
+#start .gp-eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:12.5px;font-weight:700;letter-spacing:.3px;color:var(--gp-ochre)}
+#start .gp-eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.5}
+#start .gp-head{max-width:820px;margin:6px 0 4px}
+#start .gp-head h1{font-family:var(--gp-display);font-weight:700;color:var(--gp-forest);font-size:clamp(36px,6vw,62px);line-height:1.05;letter-spacing:-.5px;margin:15px 0 0}
+#start .gp-head h1::after{content:"";display:block;width:60px;height:3px;border-radius:3px;margin-top:18px;background:linear-gradient(90deg,var(--gp-gold),rgba(199,154,59,0))}
+#start .gp-lede{font-family:var(--gp-display);font-weight:700;font-size:clamp(17px,2.3vw,22px);line-height:1.6;color:#1E2E29;max-width:40ch;margin-top:20px}
+#start .gp-intro{font-size:15px;line-height:2.05;color:var(--gp-gray);max-width:64ch;margin-top:12px}
+#start .gp-stats{list-style:none;display:flex;flex-wrap:wrap;align-items:center;margin:22px 0 0;padding:14px 0;border-block:1px solid var(--gp-line)}
+#start .gp-stats li{position:relative;padding:0 clamp(15px,2.2vw,26px)}
+#start .gp-stats li:first-child{padding-inline-start:0}
+#start .gp-stats li+li::before{content:"";position:absolute;inset-inline-start:0;top:50%;transform:translateY(-50%);width:1px;height:30px;background:var(--gp-line)}
+#start .gp-stats b{display:block;font-family:var(--gp-display);font-weight:700;font-size:clamp(19px,2.3vw,25px);color:var(--gp-forest);line-height:1.12}
+#start .gp-stats span{font-size:12px;color:var(--gp-gray);font-weight:600}
+#start .gp-search{max-width:700px;margin:24px 0 4px}
+#start .gp-search .gp-eyebrow{margin-bottom:12px}
+#start .gp-searchbox{display:flex;gap:8px;background:#fff;border:1.5px solid var(--gp-line);border-radius:16px;padding:6px 6px 6px 15px;transition:border-color .2s,box-shadow .2s}
+#start .gp-searchbox:focus-within{border-color:var(--gp-gold);box-shadow:0 10px 26px -16px rgba(199,154,59,.5)}
+#start .gp-searchbox svg{width:20px;height:20px;color:var(--gp-ochre);align-self:center;flex:0 0 auto}
+#start .gp-searchbox input{flex:1;border:0;outline:0;font-family:inherit;font-size:14.5px;color:#1E2E29;background:transparent}
+#start .gp-searchbox button{border:0;background:var(--gp-forest);color:#fff;border-radius:11px;padding:0 22px;font-family:inherit;font-weight:700;font-size:13.5px;cursor:pointer;transition:.2s}
+#start .gp-searchbox button:hover{background:var(--gp-forest2)}
+#start .gp-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+#start .gp-chips .guide-chip{background:#fff;border:1px solid var(--gp-line);color:var(--gp-gray);border-radius:999px;padding:6px 14px;font-size:12px;font-family:inherit;font-weight:600;cursor:pointer;transition:.16s}
+#start .gp-chips .guide-chip:hover{border-color:var(--gp-gold);color:var(--gp-forest)}
+#start .gp-search .guide-search-results{margin-top:12px}
+#start .gp-sechead{margin:clamp(40px,5vw,62px) 0 clamp(22px,3vw,30px)}
+#start .gp-sechead h2{font-family:var(--gp-display);font-weight:700;color:var(--gp-forest);font-size:clamp(25px,3.6vw,36px);line-height:1.28;margin-top:13px}
+#start .gp-sechead p{font-size:14.5px;color:var(--gp-gray);line-height:2;margin-top:7px;max-width:56ch}
+#start .gp-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(15px,2.2vw,28px)}
+#start .gp-fstep{position:relative}
+#start .gp-fstep .gp-n{font-family:Georgia,serif;font-size:13px;color:var(--gp-ochre);font-weight:700;letter-spacing:1.5px}
+#start .gp-fstep .gp-dot{width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--gp-sage);margin:11px 0;position:relative;z-index:1}
+#start .gp-fstep:not(:last-child) .gp-dot::after{content:"";position:absolute;top:50%;inset-inline-start:14px;width:calc(100% + clamp(15px,2.2vw,28px) - 14px);height:2px;background:var(--gp-line)}
+#start .gp-fstep h3{font-family:var(--gp-display);font-weight:700;font-size:19px;color:var(--gp-forest);line-height:1.35;margin-bottom:8px}
+#start .gp-fstep>p{font-size:13px;color:var(--gp-gray);line-height:1.85;margin-bottom:9px}
+#start .gp-fstep ul{list-style:none;margin:0;padding:0}
+#start .gp-fstep li{position:relative;font-size:12.5px;color:var(--gp-forest2);line-height:1.7;padding-inline-start:16px;margin-bottom:5px}
+#start .gp-fstep li::before{content:"";position:absolute;inset-inline-start:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--gp-gold)}
+@media(max-width:820px){#start .gp-flow{grid-template-columns:1fr 1fr}#start .gp-fstep:not(:last-child) .gp-dot::after{display:none}}
+@media(max-width:460px){#start .gp-flow{grid-template-columns:1fr}}
+#start .gp-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:clamp(13px,1.8vw,20px)}
+#start .gp-card{position:relative;background:#fff;border:1px solid var(--gp-line);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;cursor:pointer;transition:transform .28s var(--gp-ease),box-shadow .28s var(--gp-ease),border-color .28s}
+#start .gp-card:hover{transform:translateY(-5px);box-shadow:0 22px 44px -22px rgba(31,74,57,.28);border-color:var(--gp-linesoft)}
+#start .gp-card-art{position:relative;aspect-ratio:16/7;display:grid;place-items:center;background:radial-gradient(120% 130% at 80% 10%,color-mix(in srgb,var(--c) 16%,#fff),color-mix(in srgb,var(--c) 7%,#F4EDDE));border-bottom:1px solid var(--gp-linesoft)}
+#start .gp-card-art .gp-ic{width:44px;height:44px;color:var(--c);transition:transform .5s var(--gp-ease)}
+#start .gp-card-art .gp-ic svg{width:100%;height:100%}
+#start .gp-card:hover .gp-ic{transform:scale(1.1) rotate(-4deg)}
+#start .gp-card-num{position:absolute;top:11px;inset-inline-end:11px;font-family:var(--gp-display);font-size:13px;font-weight:700;color:var(--gp-forest);background:rgba(251,249,242,.94);width:29px;height:29px;border-radius:50%;display:grid;place-items:center;box-shadow:0 2px 8px rgba(31,74,57,.1)}
+#start .gp-card-body{padding:14px 16px 15px;display:flex;flex-direction:column;gap:5px;flex:1}
+#start .gp-card-body h4{font-family:var(--gp-display);font-weight:700;font-size:17.5px;color:var(--gp-forest);line-height:1.4}
+#start .gp-card-body small{font-size:11.5px;color:var(--gp-gray);line-height:1.6}
+#start .gp-card-foot{margin-top:7px;display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--c)}
+#start .gp-card-foot .gp-ar{transition:transform .2s var(--gp-ease)}
+#start .gp-card:hover .gp-card-foot .gp-ar{transform:translateX(-5px)}
+#start .gp-newbadge{display:inline-block;font-size:9.5px;font-weight:700;color:#fff;background:var(--gp-forest2);border-radius:6px;padding:1px 7px;margin-inline-start:6px;vertical-align:middle}
+@keyframes gpRise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+#start .gp-reveal{animation:gpRise .6s var(--gp-ease) both}
+#start .gp-reveal.d2{animation-delay:.08s}#start .gp-reveal.d3{animation-delay:.16s}#start .gp-reveal.d4{animation-delay:.24s}
+@media(prefers-reduced-motion:reduce){#start .gp-reveal{animation:none}}
+</style>
 <nav class="toolbar">
 <div class="mini-brand"><img alt="" src="intro-assets/img_f995567352da.png"/><b>غرس القيم</b></div>
 <div class="tabs">
@@ -792,20 +854,20 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </nav>
 <section class="page active" id="start" style="--accent:#1E5631">
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>ابدئي من هنا</strong></div>
-<div class="section-banner">
-<div class="section-number">01</div>
-<div class="section-title"><div><h2>ابدئي من هنا</h2><p>كيف تنتقل المعلمة من التخطيط إلى التنفيذ بثقة ووضوح.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="ابدئي من هنا" data-size="24"></i></div></div>
+<div class="gp-head gp-reveal">
+<span class="gp-eyebrow">صفحة الاستقبال · التبويب ٠١</span>
+<h1>ابدئي من هنا</h1>
+<p class="gp-lede">كيف تنتقل المعلمة من التخطيط إلى التنفيذ بثقةٍ ووضوح.</p>
+<p class="gp-intro">ملفٌّ تعريفيٌّ وتشغيليٌّ شاملٌ لمنهج غرس القيم؛ يعرّف فلسفة المنهج ومكوناته ومخططه السنوي، ثم يوضح كيف تنتقل المعلمة من الخطة إلى اللقاء، ومن اللقاء إلى الأركان، ومن الأركان إلى السلوك والتقييم. ومن ضمن منظومة المتابعة توجد <strong>استمارات تقييم فصلية تُرسل لولي الأمر</strong> لتوضيح جوانب نمو الطفل وخطوات الدعم المنزلية المناسبة.</p>
+<ul class="gp-stats"><li><b>١٦</b><span>فصلًا</span></li><li><b>٣</b><span>مراحل</span></li><li><b>تمهيدي</b><span>٥–٦ سنوات</span></li></ul>
 </div>
 <div class="page-body">
 <div class="page-main">
-<div class="lead-box"><strong>فكرة الدليل:</strong> هذا ملف تعريفي وتشغيلي شامل لمنهج غرس القيم؛ يعرّف فلسفة المنهج ومكوناته ومخططه السنوي، ثم يوضح كيف تنتقل المعلمة من الخطة إلى اللقاء، ومن اللقاء إلى الأركان، ومن الأركان إلى السلوك والتقييم. ومن ضمن منظومة المتابعة توجد <strong>استمارات تقييم فصلية تُرسل لولي الأمر</strong> لتوضيح جوانب نمو الطفل وخطوات الدعم المنزلية المناسبة.</div>
-<div class="guide-search-panel" aria-label="مساعد المعلمة للبحث">
-<div class="guide-search-head">
-<div><span class="guide-search-kicker">مساعد المعلمة للبحث</span><h3>ابحثي بدل التنقل الطويل</h3><p>اكتبي اسم مادة، ركن، قيمة، بطاقة، نموذج، مرجع إثرائي، أو كلمة من الدرس؛ فيعرض لك الدليل أقرب التبويبات ويقفز إليها مباشرة.</p></div>
-<div class="faith-badge">بحث داخل<br>الدليل العام</div>
-</div>
-<div class="guide-search-row"><input id="guideSearchInput" type="search" placeholder="مثال: أدب واقتداء، ركن المسكن، مراجع إثرائية، إشارات اللقاءات"><button type="button" onclick="runGuideSearch()">بحث</button></div>
-<div class="guide-search-chips">
+<div class="gp-search gp-reveal d2">
+<span class="gp-eyebrow">مساعد المعلمة للبحث</span>
+<p style="font-size:13.5px;color:#6C776F;line-height:1.9;margin:10px 0 14px;max-width:58ch">اكتبي اسم مادة، ركن، قيمة، بطاقة، نموذج، مرجع إثرائي، أو كلمة من الدرس؛ فيعرض لك الدليل أقرب التبويبات ويقفز إليها مباشرة.</p>
+<div class="gp-searchbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4-4"></path></svg><input id="guideSearchInput" type="search" placeholder="مثال: أدب واقتداء، ركن المسكن، مراجع إثرائية، إشارات اللقاءات"><button type="button" onclick="runGuideSearch()">بحث</button></div>
+<div class="gp-chips">
 <button class="guide-chip" type="button" data-guide-query="أدب واقتداء">أدب واقتداء</button>
 <button class="guide-chip" type="button" data-guide-query="الأركان">الأركان</button>
 <button class="guide-chip" type="button" data-guide-query="اللياقة البدنية">اللياقة البدنية</button>
@@ -815,27 +877,30 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </div>
 <div class="guide-search-results" id="guideSearchResults"><div class="guide-search-empty">ابدئي بالبحث أو اختاري كلمة جاهزة من الأزرار أعلاه.</div></div>
 </div>
-<div class="route-steps">
-<div class="route-step" data-no="01"><div class="icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg></div><h3>قبل الأسبوع</h3><p>راجعي المخطط الدراسي للمنهج، ثم خريطة الوحدة وخيطها القيمي، وحددي البطاقات والأركان والمنظومات والمراجع الإثرائية التي ستحتاجينها.</p><ul><li>حددي موضع الوحدة في العام.</li><li>جهزي أدوات الأركان والصور.</li><li>اختاري قيمة صفية للمتابعة.</li></ul></div>
-<div class="route-step" data-no="02"><div class="icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em"><path d="M12 21s6-5.4 6-10a6 6 0 0 0-12 0c0 4.6 6 10 6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></div><h3>قبل اللقاء</h3><p>افتحي صفحة المادة واقرئي الهدف والمدخل وسير اللقاء والنشاط ومؤشر النجاح، ثم استخدمي مساعد البحث عند الحاجة.</p><ul><li>احفظي تسلسل المعنى.</li><li>افصلي ما هو مرجع للمعلمة عما يعرض للطفل.</li></ul></div>
-<div class="route-step" data-no="03"><div class="icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.1" fill="currentColor"/><circle cx="15" cy="15" r="1.1" fill="currentColor"/><circle cx="15" cy="9" r="1.1" fill="currentColor"/><circle cx="9" cy="15" r="1.1" fill="currentColor"/></svg></div><h3>أثناء التنفيذ</h3><p>اجعلي الشرح قصيرًا، ثم انتقلي إلى الحركة أو التصنيف أو اللعب أو التمثيل في الركن المناسب، مع منظومة انتقال قصيرة.</p><ul><li>اسألي أكثر مما تلقنين.</li><li>اربطي المعرفة بالله وبالوحي.</li></ul></div>
-<div class="route-step" data-no="04"><div class="icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h4"/></svg></div><h3>بعد اللقاء</h3><p>سجلي ملاحظة واحدة ذات معنى، وراجعي مؤشر النجاح، ثم اربطي المخرج بسلوك أو عبارة أو مهمة أسرية بسيطة.</p><ul><li>ما الذي فهمه الطفل؟</li><li>ما الذي طبقه في اللعب أو التعامل؟</li></ul></div>
+<div class="gp-sechead gp-reveal d3"><span class="gp-eyebrow">من التخطيط إلى الأثر</span><h2>مسار المعلمة</h2><p>أربع محطّاتٍ متّصلة تنقل المعلمة من التحضير إلى الملاحظة والدعم.</p></div>
+<div class="gp-flow gp-reveal d3">
+<div class="gp-fstep"><span class="gp-n">٠١</span><div class="gp-dot"></div><h3>قبل الأسبوع</h3><p>راجعي المخطط الدراسي للمنهج، ثم خريطة الوحدة وخيطها القيمي، وحددي البطاقات والأركان والمنظومات والمراجع الإثرائية التي ستحتاجينها.</p><ul><li>حددي موضع الوحدة في العام.</li><li>جهزي أدوات الأركان والصور.</li><li>اختاري قيمة صفية للمتابعة.</li></ul></div>
+<div class="gp-fstep"><span class="gp-n">٠٢</span><div class="gp-dot"></div><h3>قبل اللقاء</h3><p>افتحي صفحة المادة واقرئي الهدف والمدخل وسير اللقاء والنشاط ومؤشر النجاح، ثم استخدمي مساعد البحث عند الحاجة.</p><ul><li>احفظي تسلسل المعنى.</li><li>افصلي ما هو مرجع للمعلمة عما يعرض للطفل.</li></ul></div>
+<div class="gp-fstep"><span class="gp-n">٠٣</span><div class="gp-dot"></div><h3>أثناء التنفيذ</h3><p>اجعلي الشرح قصيرًا، ثم انتقلي إلى الحركة أو التصنيف أو اللعب أو التمثيل في الركن المناسب، مع منظومة انتقال قصيرة.</p><ul><li>اسألي أكثر مما تلقنين.</li><li>اربطي المعرفة بالله وبالوحي.</li></ul></div>
+<div class="gp-fstep"><span class="gp-n">٠٤</span><div class="gp-dot"></div><h3>بعد اللقاء</h3><p>سجلي ملاحظة واحدة ذات معنى، وراجعي مؤشر النجاح، ثم اربطي المخرج بسلوك أو عبارة أو مهمة أسرية بسيطة.</p><ul><li>ما الذي فهمه الطفل؟</li><li>ما الذي طبقه في اللعب أو التعامل؟</li></ul></div>
 </div>
-<div class="contents-grid">
-<a class="toc-item" href="#vision" onclick="showPage('vision')"><span class="toc-no">02</span><span><b>الرؤية والمنظومة</b><small>منظومة الوحي، القيمة المركزية، الغاية، والثمرة.</small></span><span class="toc-arrow">←</span></a>
-<a class="toc-item" href="#components" onclick="showPage('components')"><span class="toc-no">03</span><span><b>مكونات المنهج</b><small>ما الذي تستخدمه المعلمة، ومتى، ولماذا.</small></span><span class="toc-arrow">←</span></a>
-<a class="toc-item" href="#subjects" onclick="showPage('subjects')"><span class="toc-no">04</span><span><b>خريطة المواد</b><small>وظيفة كل مادة وعلاقتها بالمعنى المركزي.</small></span><span class="toc-arrow">←</span></a>
-<a class="toc-item" href="#annual-plan" onclick="showPage('annual-plan')"><span class="toc-no">05</span><span><b>المخطط الدراسي للمنهج</b><small>خريطة المواد والدروس السنوية.</small></span><span class="toc-arrow">←</span></a>
-<a class="toc-item" href="#dayflow" onclick="showPage('dayflow')"><span class="toc-no">06</span><span><b>مسار اليوم الدراسي</b><small>الثوابت واللقاءات والأركان والحركة والراحة.</small></span><span class="toc-arrow">←</span></a>
-<a class="toc-item" href="#fitness" onclick="showPage('fitness')"><span class="toc-no">07</span><span><b>اللياقة البدنية</b><small>تمارين وأنشطة حركية آمنة مع صور وخطوات تشغيل.</small></span><span class="toc-arrow">←</span></a>
-<a class="toc-item" href="#lesson" onclick="showPage('lesson')"><span class="toc-no">08</span><span><b>بنية اللقاء التعليمي</b><small>قالب موحد للهدف والنشاط والتقويم.</small></span><span class="toc-arrow">←</span></a>
-<a class="toc-item" href="#signals" onclick="showPage('signals')"><span class="toc-no">09</span><span><b>إشارات اللقاءات</b><small>افتتاحات محدثة تمنح كل مادة هويتها.</small></span><span class="toc-arrow">←</span></a>
-<a class="toc-item" href="#corners" onclick="showPage('corners')"><span class="toc-no">10</span><span><b>الأركان والتعلم باللعب</b><small>الأركان العامة المصورة وتشغيلها في المنهج.</small></span><span class="toc-arrow">←</span></a>
-<a class="toc-item" href="#songs" onclick="showPage('songs')"><span class="toc-no">11</span><span><b>الأناشيد والمنظومات</b><small>ذاكرة سمعية وحركية ترافق الطفل.</small></span><span class="toc-arrow">←</span></a>
-<a class="toc-item" href="#manners" onclick="showPage('manners')"><span class="toc-no">12</span><span><b>الآداب الصفية</b><small>تربية بالموقف ونص شرعي وبديل سلوكي.</small></span><span class="toc-arrow">←</span></a>
-<a class="toc-item" href="#assessment" onclick="showPage('assessment')"><span class="toc-no">13</span><span><b>التقييم والأسرة</b><small>ملاحظة متكاملة وشراكة هادفة.</small></span><span class="toc-arrow">←</span></a>
-<a class="toc-item" href="#scope" onclick="showPage('scope')"><span class="toc-no">14</span><span><b>النطاق والتسلسل</b><small>خريطة نمو المواد عبر الفصول الثلاثة.</small></span><span class="toc-arrow">←</span></a>
-<a class="toc-item" href="#unit" onclick="showPage('unit')"><span class="toc-no">15</span><span><b>نموذج وحدة متكاملة</b><small>وحدة الليل والنهار مثال تطبيقي لا يحصر المنهج.</small></span><span class="toc-arrow">←</span></a>
+<div class="gp-sechead gp-reveal d4"><span class="gp-eyebrow">خريطة الدليل</span><h2>فصول الدليل</h2><p>ستة عشر فصلًا في ثلاث مراحل — اضغطي أيّ فصلٍ لتفتحيه.</p></div>
+<div class="gp-cards gp-reveal d4">
+<a class="gp-card" href="#vision" onclick="showPage('vision')" style="--c:#C57B57"><div class="gp-card-art"><span class="gp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></span><span class="gp-card-num">٠٢</span></div><div class="gp-card-body"><h4>الرؤية والمنظومة</h4><small>منظومة الوحي، القيمة المركزية، الغاية، والثمرة.</small><span class="gp-card-foot">افتحي الفصل <span class="gp-ar">←</span></span></div></a>
+<a class="gp-card" href="#components" onclick="showPage('components')" style="--c:#0E6E6B"><div class="gp-card-art"><span class="gp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5-8 4.5-8-4.5z"/><path d="M4 12l8 4.5 8-4.5"/><path d="M4 16.5l8 4.5 8-4.5"/></svg></span><span class="gp-card-num">٠٣</span></div><div class="gp-card-body"><h4>مكونات المنهج</h4><small>ما الذي تستخدمه المعلمة، ومتى، ولماذا.</small><span class="gp-card-foot">افتحي الفصل <span class="gp-ar">←</span></span></div></a>
+<a class="gp-card" href="#subjects" onclick="showPage('subjects')" style="--c:#0E6E6B"><div class="gp-card-art"><span class="gp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L4 6v14l5-2 6 2 5-2V4l-5 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg></span><span class="gp-card-num">٠٤</span></div><div class="gp-card-body"><h4>خريطة المواد</h4><small>وظيفة كل مادة وعلاقتها بالمعنى المركزي.</small><span class="gp-card-foot">افتحي الفصل <span class="gp-ar">←</span></span></div></a>
+<a class="gp-card" href="#annual-plan" onclick="showPage('annual-plan')" style="--c:#2C6A4D"><div class="gp-card-art"><span class="gp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/><path d="M8 13h3M13 13h3M8 17h3"/></svg></span><span class="gp-card-num">٠٥</span></div><div class="gp-card-body"><h4>المخطط الدراسي للمنهج</h4><small>خريطة المواد والدروس السنوية.</small><span class="gp-card-foot">افتحي الفصل <span class="gp-ar">←</span></span></div></a>
+<a class="gp-card" href="#dayflow" onclick="showPage('dayflow')" style="--c:#0E6E6B"><div class="gp-card-art"><span class="gp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg></span><span class="gp-card-num">٠٦</span></div><div class="gp-card-body"><h4>مسار اليوم الدراسي</h4><small>الثوابت واللقاءات والأركان والحركة والراحة.</small><span class="gp-card-foot">افتحي الفصل <span class="gp-ar">←</span></span></div></a>
+<a class="gp-card" href="#fitness" onclick="showPage('fitness')" style="--c:#1F4A39"><div class="gp-card-art"><span class="gp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span><span class="gp-card-num">٠٧</span></div><div class="gp-card-body"><h4>اللياقة البدنية</h4><small>تمارين وأنشطة حركية آمنة مع صور وخطوات تشغيل.</small><span class="gp-card-foot">افتحي الفصل <span class="gp-ar">←</span></span></div></a>
+<a class="gp-card" href="#lesson" onclick="showPage('lesson')" style="--c:#1F4A39"><div class="gp-card-art"><span class="gp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 10v10"/></svg></span><span class="gp-card-num">٠٨</span></div><div class="gp-card-body"><h4>بنية اللقاء التعليمي</h4><small>قالب موحد للهدف والنشاط والتقويم.</small><span class="gp-card-foot">افتحي الفصل <span class="gp-ar">←</span></span></div></a>
+<a class="gp-card" href="#signals" onclick="showPage('signals')" style="--c:#1F4A39"><div class="gp-card-art"><span class="gp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M7.5 7.5a6.4 6.4 0 0 0 0 9M16.5 7.5a6.4 6.4 0 0 1 0 9M4.7 4.7a10.3 10.3 0 0 0 0 14.6M19.3 4.7a10.3 10.3 0 0 1 0 14.6"/></svg></span><span class="gp-card-num">٠٩</span></div><div class="gp-card-body"><h4>إشارات اللقاءات</h4><small>افتتاحات محدثة تمنح كل مادة هويتها.</small><span class="gp-card-foot">افتحي الفصل <span class="gp-ar">←</span></span></div></a>
+<a class="gp-card" href="#corners" onclick="showPage('corners')" style="--c:#C57B57"><div class="gp-card-art"><span class="gp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.4"/><rect x="13" y="4" width="7" height="7" rx="1.4"/><rect x="4" y="13" width="7" height="7" rx="1.4"/><rect x="13" y="13" width="7" height="7" rx="1.4"/></svg></span><span class="gp-card-num">١٠</span></div><div class="gp-card-body"><h4>الأركان والتعلم باللعب</h4><small>الأركان العامة المصورة وتشغيلها في المنهج.</small><span class="gp-card-foot">افتحي الفصل <span class="gp-ar">←</span></span></div></a>
+<a class="gp-card" href="#songs" onclick="showPage('songs')" style="--c:#0E6E6B"><div class="gp-card-art"><span class="gp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6c-2-1.5-5.5-1.5-7.5-.5v12c2-1 5.5-1 7.5.5 2-1.5 5.5-1.5 7.5-.5v-12C17.5 4.5 14 4.5 12 6z"/><path d="M12 6v12"/></svg></span><span class="gp-card-num">١١</span></div><div class="gp-card-body"><h4>الأناشيد والمنظومات</h4><small>ذاكرة سمعية وحركية ترافق الطفل.</small><span class="gp-card-foot">افتحي الفصل <span class="gp-ar">←</span></span></div></a>
+<a class="gp-card" href="#manners" onclick="showPage('manners')" style="--c:#2C6A4D"><div class="gp-card-art"><span class="gp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.4 5.6 6 .5-4.6 3.9 1.4 5.9L12 16.6 6.4 19.4l1.4-5.9L3.2 9.6l6-.5z"/></svg></span><span class="gp-card-num">١٢</span></div><div class="gp-card-body"><h4>الآداب الصفية</h4><small>تربية بالموقف ونص شرعي وبديل سلوكي.</small><span class="gp-card-foot">افتحي الفصل <span class="gp-ar">←</span></span></div></a>
+<a class="gp-card" href="#assessment" onclick="showPage('assessment')" style="--c:#8A5A9E"><div class="gp-card-art"><span class="gp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9z"/><path d="M8.5 12.5l2 2 4-4"/></svg></span><span class="gp-card-num">١٣</span></div><div class="gp-card-body"><h4>التقييم والأسرة</h4><small>ملاحظة متكاملة وشراكة هادفة.</small><span class="gp-card-foot">افتحي الفصل <span class="gp-ar">←</span></span></div></a>
+<a class="gp-card" href="#scope" onclick="showPage('scope')" style="--c:#5C7B90"><div class="gp-card-art"><span class="gp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h12M8 12h12M8 18h12"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg></span><span class="gp-card-num">١٤</span></div><div class="gp-card-body"><h4>النطاق والتسلسل</h4><small>خريطة نمو المواد عبر الفصول الثلاثة.</small><span class="gp-card-foot">افتحي الفصل <span class="gp-ar">←</span></span></div></a>
+<a class="gp-card" href="#unit" onclick="showPage('unit')" style="--c:#3A4C6B"><div class="gp-card-art"><span class="gp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 4v16M4 12h16"/></svg></span><span class="gp-card-num">١٥</span></div><div class="gp-card-body"><h4>نموذج وحدة متكاملة</h4><small>وحدة الليل والنهار مثال تطبيقي لا يحصر المنهج.</small><span class="gp-card-foot">افتحي الفصل <span class="gp-ar">←</span></span></div></a>
+<a class="gp-card" href="#nutrition" onclick="showPage('nutrition')" style="--c:#2E7D46"><div class="gp-card-art"><span class="gp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4C9 4 4 9 4 17c0 1 .3 2 .8 3C6 14 11 9 18 8c-5 2-8 6-9 12 8 0 11-6 11-16z"/></svg></span><span class="gp-card-num">١٦</span></div><div class="gp-card-body"><h4>التغذية والنمو السليم</h4><small>تغذية الطفل ونموه السليم.</small><span class="gp-card-foot">افتحي الفصل <span class="gp-ar">←</span></span></div></a>
 </div>
 </div>
 <aside class="page-aside">
