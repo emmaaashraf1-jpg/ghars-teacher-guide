@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ورقة عمل: حرف الواو (و) — مركز اللغة · وحدة العائلة</title>
+<title>ورقة عمل: حرف الثاء (ث) — صيدٌ وموضع · مركز اللغة · وحدة العائلة</title>
 <style>
 @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
@@ -33,15 +33,12 @@ h1,h2,h3,.badge{font-family:var(--fd)}
 .trace .big{font-family:var(--fd);font-size:96px;font-weight:700;line-height:1;color:#fff;-webkit-text-stroke:2px #bcd6d6}
 .wbox{display:flex;gap:10px}
 .wbox i{width:58px;height:70px;border:2px dashed #a9cccc;border-radius:10px;background:var(--soft);display:block}
-/* شبكة تمييز الحرف */
+/* شبكة الصيد */
 .lgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(52px,1fr));gap:8px;max-width:560px;margin:0 auto}
 .lc{height:56px;border-radius:12px;border:2px solid var(--line);display:grid;place-items:center;font-family:var(--fd);font-weight:700;font-size:26px;color:var(--t1);background:#fff}
-/* علامة النقاط */
-.dotsrow{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;align-items:center}
-.baseL{position:relative;width:90px;height:84px;border:2px solid var(--line);border-radius:12px;background:var(--soft);display:grid;place-items:center;font-family:var(--fd);font-size:52px;color:#9fbcbc;font-weight:700}
-.countbox{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;font-weight:700;color:var(--t1)}
+.countbox{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;font-weight:700;color:var(--t1)}
 .countbox .b{width:56px;height:56px;border:2px solid var(--t2);border-radius:12px;background:#fff}
-/* الحرف في كلمة */
+/* الحرف في كلمة + الموضع */
 .wordwrap{display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:center}
 .wordcard{border:2px solid var(--line);border-radius:14px;background:var(--soft);padding:12px 22px;font-family:var(--fd);font-size:40px;font-weight:700;color:var(--t1);letter-spacing:2px}
 .poswrap{display:flex;gap:9px;justify-content:center;margin-top:12px;flex-wrap:wrap}
@@ -50,12 +47,7 @@ h1,h2,h3,.badge{font-family:var(--fd)}
 .wordcol .pos{font-size:12px;padding:5px 10px}
 .pos{border:2px dashed var(--t2);border-radius:12px;background:#fff;padding:8px 16px;font-family:var(--fd);font-weight:700;color:var(--t1);font-size:15px;display:flex;align-items:center;gap:8px}
 .pos b{width:18px;height:18px;border:2px solid var(--t2);border-radius:5px;display:inline-block}
-/* توصيل */
-.match{display:flex;justify-content:space-between;gap:34px;max-width:430px;margin:0 auto}
-.mcol{display:flex;flex-direction:column;gap:13px;flex:1}
-.mrow{display:flex;align-items:center;gap:8px}
-.mitem{flex:1;border:2px solid var(--line);border-radius:12px;background:var(--soft);padding:9px 8px;text-align:center;font-family:var(--fd);font-weight:700;color:var(--t1);font-size:21px;min-height:46px;display:flex;align-items:center;justify-content:center}
-.mdot{width:12px;height:12px;border-radius:50%;background:var(--t2);flex:0 0 auto}
+.blankbox{display:inline-block;width:26px;height:32px;border:2px dashed var(--t2);border-radius:7px;vertical-align:-6px;margin:0 3px;background:#fff}
 .foot{margin-top:20px;border-top:1px dashed var(--line);padding-top:9px;font-size:11.5px;color:var(--muted);text-align:center}
 .printbtn{display:block;margin:14px auto 0;background:var(--t2);color:#fff;border:0;border-radius:999px;padding:9px 22px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
 @media print{body{background:#fff;padding:0}.sheet{box-shadow:none;border:0;border-radius:0;max-width:100%}.printbtn{display:none}}
@@ -68,8 +60,8 @@ h1,h2,h3,.badge{font-family:var(--fd)}
     <img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم"/>
     <div class="t">
       <span class="badge">مركز اللغة · وحدة العائلة</span>
-      <h1>ورقة عمل: حرف الواو (و)</h1>
-      <div class="sub">المرتبط بدرس مركز اللغة — حرف الواو · المرحلة التمهيدية (5–6 سنوات) · حرفٌ بلا نقاط</div>
+      <h1>ورقة عمل: أصطاد حرف الثاء (ث) وأحدّد موضعه</h1>
+      <div class="sub">اللقاء التطبيقيّ الثاني — حرف الثاء · المرحلة التمهيدية (5–6 سنوات) · نبحث عن الثاء في الكلمة ونعرف مكانه</div>
     </div>
   </div>
   <div class="namerow"><span>الاسم: ⋯⋯⋯⋯⋯⋯⋯⋯</span><span>التاريخ: ⋯⋯⋯⋯⋯⋯</span></div>
@@ -77,47 +69,45 @@ h1,h2,h3,.badge{font-family:var(--fd)}
   <!-- ١: تتبّع واكتب -->
   <div class="act">
     <div class="act-h"><span class="n">١</span><h2>تتبّع واكتب</h2></div>
-    <p class="hint">تتبّع حرف الواو ثمّ اكتبه في المربّعات.</p>
-    <div class="trace"><span class="big">و</span><div class="wbox"><i></i><i></i><i></i></div></div>
+    <p class="hint">تتبّع حرف الثاء ثمّ اكتبه في المربّعات (لا تنسَ نقاطه الثلاث فوقه).</p>
+    <div class="trace"><span class="big">ث</span><div class="wbox"><i></i><i></i><i></i></div></div>
   </div>
 
-  <!-- ٢: ميّز الحرف -->
+  <!-- ٢: اصطَد الثاء (عدّ) -->
   <div class="act">
-    <div class="act-h"><span class="n">٢</span><h2>ميّز حرف الواو</h2></div>
-    <p class="hint">ضع دائرةً حول كلّ حرف واو (و) بين الحروف المشابهة.</p>
+    <div class="act-h"><span class="n">٢</span><h2>اصطَد حرف الثاء</h2></div>
+    <p class="hint">طُف بعينك على الحروف، وضع دائرةً حول كلّ حرف ثاء (ث)، ثمّ اكتب عددها في المربّع. (انتبه: التاء نقطتان، والباء نقطة.)</p>
     <div class="lgrid">
-      <div class="lc">ر</div><div class="lc">و</div><div class="lc">د</div><div class="lc">و</div><div class="lc">ن</div>
-      <div class="lc">و</div><div class="lc">ز</div><div class="lc">و</div><div class="lc">م</div><div class="lc">هـ</div>
-      <div class="lc">و</div><div class="lc">ب</div><div class="lc">و</div><div class="lc">ر</div><div class="lc">و</div>
+      <div class="lc">ث</div><div class="lc">ت</div><div class="lc">ن</div><div class="lc">ث</div><div class="lc">ب</div>
+      <div class="lc">ت</div><div class="lc">ث</div><div class="lc">ث</div><div class="lc">ي</div><div class="lc">ث</div>
+      <div class="lc">ن</div><div class="lc">ث</div><div class="lc">ب</div><div class="lc">ث</div><div class="lc">ت</div>
+    </div>
+    <div class="countbox">عدد حروف الثاء = <span class="b"></span></div>
+  </div>
+
+  <!-- ٣: موضع الثاء -->
+  <div class="act">
+    <div class="act-h"><span class="n">٣</span><h2>أين تقع الثاء في الكلمة؟</h2></div>
+    <p class="hint">اقرأ كلّ كلمة، وضع دائرةً حول الثاء، ثمّ علّم على موضعها: أوّل الكلمة أو وسطها أو آخرها.</p>
+    <div class="wordwrap">
+      <div class="wordcol"><span class="wordcard">ثَعلَب</span><div class="poswrap"><span class="pos"><b></b>أوّل</span><span class="pos"><b></b>وسط</span><span class="pos"><b></b>آخر</span></div></div>
+      <div class="wordcol"><span class="wordcard">كَثير</span><div class="poswrap"><span class="pos"><b></b>أوّل</span><span class="pos"><b></b>وسط</span><span class="pos"><b></b>آخر</span></div></div>
+      <div class="wordcol"><span class="wordcard">حارِث</span><div class="poswrap"><span class="pos"><b></b>أوّل</span><span class="pos"><b></b>وسط</span><span class="pos"><b></b>آخر</span></div></div>
     </div>
   </div>
 
-  <!-- ٣: توصيل -->
+  <!-- ٤: إكمال بمواضع مختلفة -->
   <div class="act">
-    <div class="act-h"><span class="n">٣</span><h2>صِل الحرف بكلمته</h2></div>
-    <p class="hint">صِل كلّ حرفٍ بخطٍّ إلى الكلمة التي يبدأ بها.</p>
-    <div class="match">
-      <div class="mcol">
-        <div class="mrow"><span class="mitem">و</span><span class="mdot"></span></div>
-        <div class="mrow"><span class="mitem">ر</span><span class="mdot"></span></div>
-        <div class="mrow"><span class="mitem">د</span><span class="mdot"></span></div>
-      </div>
-      <div class="mcol">
-        <div class="mrow"><span class="mdot"></span><span class="mitem">دَلو</span></div>
-        <div class="mrow"><span class="mdot"></span><span class="mitem">وَرد</span></div>
-        <div class="mrow"><span class="mdot"></span><span class="mitem">رُمّان</span></div>
-      </div>
+    <div class="act-h"><span class="n">٤</span><h2>اكتب حرف الثاء الناقص</h2></div>
+    <p class="hint">اكتب حرف الثاء (ث) في المكان الفارغ لتُكمل كلَّ كلمة، وانتبه لمكانه: أوّلًا أو وسطًا أو آخرًا.</p>
+    <div class="wordwrap">
+      <span class="wordcard"><span class="blankbox"></span>َلاثة</span>
+      <span class="wordcard">كَ<span class="blankbox"></span>ير</span>
+      <span class="wordcard">حارِ<span class="blankbox"></span></span>
     </div>
   </div>
 
-  <!-- ٤: لوّن الكلمات -->
-  <div class="act">
-    <div class="act-h"><span class="n">٤</span><h2>لوّن الكلمات التي فيها حرف الواو</h2></div>
-    <p class="hint">لوّن فقط الكلمات التي تحوي حرف الواو، واترك غيرها.</p>
-    <div class="wordwrap"><span class="wordcard">وِسادة</span><span class="wordcard">بيت</span><span class="wordcard">ضَوء</span><span class="wordcard">شَمس</span></div>
-  </div>
-
-  <div class="foot">نادي غرس القيم لضيافة الأطفال · وحدة العائلة — مركز اللغة (حرف الواو) · تدريبٌ يضبط اللسان لخدمة القراءة الصحيحة، بعد المحسوس؛ واللغةُ نعمةٌ نشكر الله عليها.</div>
+  <div class="foot">نادي غرس القيم لضيافة الأطفال · وحدة العائلة — مركز اللغة (حرف الثاء · صيدٌ وموضع) · تدريبٌ يضبط اللسان لخدمة القراءة الصحيحة، بعد المحسوس؛ واللغةُ نعمةٌ نشكر الله عليها.</div>
   <button class="printbtn" onclick="window.print()"><i class="gi gi-dark" data-i="طباعة / PDF" data-size="18"></i> طباعة الورقة</button>
 </div>
 <script src="brand/guide-icons.js?v=2"></script>
