@@ -45,7 +45,11 @@ h1,h2,h3,.badge{font-family:var(--fd)}
 /* مستويات الملء */
 .levels{display:flex;flex-wrap:wrap;gap:28px;justify-content:center}
 .lvcol{display:flex;flex-direction:column;align-items:center;gap:9px}
-.lvbox{width:92px;height:30px;border:2px dashed var(--t2);border-radius:9px;background:var(--soft)}
+.lvbox{width:92px;height:38px;border:2px dashed var(--t2);border-radius:9px;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--muted);font-weight:700}
+/* بطاقات القصّ واللصق */
+.cutcards{display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:center;margin-top:16px;border-top:1px dashed var(--line);padding-top:13px}
+.cardlbl{font-size:12px;color:var(--muted);font-weight:700}
+.lcard{border:2px dashed var(--t2);border-radius:10px;background:#fff;padding:8px 22px;font-family:var(--fd);font-weight:700;color:var(--t1);font-size:19px}
 /* كم كوبًا يملأ الوعاء */
 .fillrows{display:flex;flex-direction:column;gap:13px;max-width:600px;margin:0 auto}
 .fillrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;border:1px solid var(--line);border-radius:12px;background:var(--soft);padding:10px 14px}
@@ -167,28 +171,34 @@ h1,h2,h3,.badge{font-family:var(--fd)}
   <!-- ٣: ممتلئ · نصف · فارغ -->
   <div class="act">
     <div class="act-h"><span class="n">٣</span><h2>ممتلئ · نصف · فارغ</h2></div>
-    <p class="hint">انظر إلى الماء في كلّ كوب، ثمّ اكتب تحته: <b>ممتلئ</b> أو <b>نصف</b> أو <b>فارغ</b>.</p>
+    <p class="hint">انظر إلى الماء في كلّ كوب، ثمّ الصق تحته البطاقة المناسبة من البطاقات في الأسفل.</p>
     <div class="levels">
       <div class="lvcol">
         <svg width="60" height="76" viewBox="0 0 52 68" xmlns="http://www.w3.org/2000/svg" aria-label="كوب">
           <polygon points="12.8,18 39.2,18 35,60 17,60" fill="#cfe6ef"/>
           <polygon points="12,10 40,10 35,60 17,60" fill="none" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/>
         </svg>
-        <span class="lvbox"></span>
+        <span class="lvbox">ألصق هنا</span>
       </div>
       <div class="lvcol">
         <svg width="60" height="76" viewBox="0 0 52 68" xmlns="http://www.w3.org/2000/svg" aria-label="كوب">
           <polygon points="12,10 40,10 35,60 17,60" fill="none" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/>
         </svg>
-        <span class="lvbox"></span>
+        <span class="lvbox">ألصق هنا</span>
       </div>
       <div class="lvcol">
         <svg width="60" height="76" viewBox="0 0 52 68" xmlns="http://www.w3.org/2000/svg" aria-label="كوب">
           <polygon points="14.8,38 37.2,38 35,60 17,60" fill="#cfe6ef"/>
           <polygon points="12,10 40,10 35,60 17,60" fill="none" stroke="var(--t2)" stroke-width="2.5" stroke-linejoin="round"/>
         </svg>
-        <span class="lvbox"></span>
+        <span class="lvbox">ألصق هنا</span>
       </div>
+    </div>
+    <div class="cutcards">
+      <span class="cardlbl">✂ بطاقات للقصّ واللصق:</span>
+      <span class="lcard">مُمتلئ</span>
+      <span class="lcard">نِصف</span>
+      <span class="lcard">فارغ</span>
     </div>
   </div>
 
