@@ -792,12 +792,11 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #start .gp-head h1::after{content:"";display:block;width:60px;height:3px;border-radius:3px;margin-top:18px;background:linear-gradient(90deg,var(--gp-gold),rgba(199,154,59,0))}
 #start .gp-lede{font-family:var(--gp-display);font-weight:700;font-size:clamp(17px,2.3vw,22px);line-height:1.6;color:#1E2E29;max-width:40ch;margin-top:20px}
 #start .gp-intro{font-size:15px;line-height:2.05;color:var(--gp-gray);max-width:64ch;margin-top:12px}
-#start .gp-stats{list-style:none;display:flex;flex-wrap:wrap;align-items:center;margin:22px 0 0;padding:14px 0;border-block:1px solid var(--gp-line)}
-#start .gp-stats li{position:relative;padding:0 clamp(15px,2.2vw,26px)}
-#start .gp-stats li:first-child{padding-inline-start:0}
-#start .gp-stats li+li::before{content:"";position:absolute;inset-inline-start:0;top:50%;transform:translateY(-50%);width:1px;height:30px;background:var(--gp-line)}
-#start .gp-stats b{display:block;font-family:var(--gp-display);font-weight:700;font-size:clamp(19px,2.3vw,25px);color:var(--gp-forest);line-height:1.12}
-#start .gp-stats span{font-size:12px;color:var(--gp-gray);font-weight:600}
+#start .gp-stats{list-style:none;display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 0;padding:0;border:0}
+#start .gp-stats li{display:flex;align-items:baseline;gap:9px;background:linear-gradient(160deg,#fff,#FBF9F2);border:1px solid var(--gp-line);border-radius:15px;padding:14px 20px 14px 18px;position:relative;box-shadow:0 12px 26px -22px rgba(31,74,57,.45)}
+#start .gp-stats li::before{content:"";position:absolute;inset-inline-start:0;top:15%;bottom:15%;width:3px;border-radius:0 3px 3px 0;background:var(--gp-gold)}
+#start .gp-stats b{font-family:var(--gp-display);font-weight:700;font-size:clamp(23px,2.6vw,29px);color:var(--gp-forest);line-height:1;white-space:nowrap}
+#start .gp-stats span{font-size:12.5px;color:var(--gp-gray);font-weight:600;white-space:nowrap}
 #start .gp-search{max-width:700px;margin:24px 0 4px}
 #start .gp-search .gp-eyebrow{margin-bottom:12px}
 #start .gp-searchbox{display:flex;gap:8px;background:#fff;border:1.5px solid var(--gp-line);border-radius:16px;padding:6px 6px 6px 15px;transition:border-color .2s,box-shadow .2s}
