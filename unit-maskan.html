@@ -92,8 +92,8 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .subtabs.seq .subtab .pchk{width:19px;height:19px;border-radius:50%;border:2px solid #c4cfc9;background:#fff;display:grid;place-items:center;flex:0 0 auto;cursor:pointer;font-size:11px;line-height:1;color:transparent;transition:.15s;margin-inline-start:1px}
 .subtabs.seq .subtab .pchk::before{content:"✓";font-weight:700}
 .subtabs.seq .subtab .pchk:hover{border-color:#1E5631;transform:scale(1.12)}
-.subtabs.seq .subtab.done{opacity:.55}
-.subtabs.seq .subtab.done .pchk{background:#1E5631;border-color:#1E5631;color:#fff;opacity:1}
+.subtabs.seq .subtab.pdone{opacity:.55}
+.subtabs.seq .subtab.pdone .pchk{background:#1E5631;border-color:#1E5631;color:#fff;opacity:1}
 @media print{.subtabs.seq .subtab .pchk{display:none}}
 .subtabs.seq .pconn.mnz{position:relative;background:#b9a3e0}
 .subtabs.seq .pconn.mnz::before{content:"📜";position:absolute;top:-19px;left:50%;transform:translateX(-50%);font-size:13px;line-height:1;z-index:2;filter:drop-shadow(0 1px 1px rgba(0,0,0,.18))}
@@ -678,7 +678,6 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 
   <!-- ═══════════ دروس الوحدة (تبويبات الأيام) ═══════════ -->
   <div class="upanel active" id="u-days">
-  <a href="mk-arkan-tatbiqiyya.html" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:13px;justify-content:center;margin:0 0 14px;padding:16px 18px;background:linear-gradient(135deg,#1F4A39,#0d6e6e);color:#fff;border-radius:16px;text-decoration:none;font-weight:700;font-size:15px;box-shadow:0 6px 18px rgba(31,74,57,.2);line-height:1.55"><span style="font-size:24px">🧩</span><span>الأركان التطبيقية لوحدة المسكن — لكل درس <b>ركنان (خيار ١ / ٢)</b> بأدواتٍ ورسومٍ توضيحية ومدّةٍ وأهدافٍ و<b>ملفِّ طباعةٍ جاهزٍ</b> لكل نشاط، مع قوانين كل ركن وروتين تنفيذه ↗</span></a>
   <div class="daytabs" role="tablist">
     <button class="daytab active" data-d="1"><span class="d-n">اليوم الأول</span><span class="d-t">مفهوم المسكن</span></button>
     <button class="daytab" data-d="2"><span class="d-n">اليوم الثاني</span><span class="d-t">أنواع المساكن</span></button>
@@ -1126,11 +1125,11 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
   daypanels.forEach(function(panel){
     panel.querySelectorAll('.subtab').forEach(function(t){
       var id=panel.id+':'+t.dataset.s;
-      if(doneSet.has(id)) t.classList.add('done');
+      if(doneSet.has(id)) t.classList.add('pdone');
       var chk=doc.createElement('span');
       chk.className='pchk'; chk.setAttribute('role','button'); chk.setAttribute('tabindex','0');
       chk.setAttribute('aria-label','وسم اللقاء كمُنجَز'); chk.setAttribute('title','اضغطي لوسم هذا اللقاء كمُنجَز');
-      function toggle(e){ e.stopPropagation(); e.preventDefault(); if(doneSet.has(id)){ doneSet.delete(id); t.classList.remove('done'); } else { doneSet.add(id); t.classList.add('done'); } saveDone(); }
+      function toggle(e){ e.stopPropagation(); e.preventDefault(); if(doneSet.has(id)){ doneSet.delete(id); t.classList.remove('pdone'); } else { doneSet.add(id); t.classList.add('pdone'); } saveDone(); }
       chk.addEventListener('click', toggle);
       chk.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') toggle(e); });
       t.appendChild(chk);
