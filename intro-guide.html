@@ -649,6 +649,8 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
   #manners .manner-search:focus-visible,#manners .filter-btn:focus-visible{outline:2px solid #C79A3B!important;outline-offset:1px}
 
   /* ===== تنقّل الدليل: فهرسُ فصولٍ مُجمّع بأيقونات وألوان وحالة نشِطة (لا يمسّ showPage/data-page/JS) ===== */
+  /* فهرسٌ ثابت أعلى الصفحة يمرّ مع القراءة (showPage يعيد التمرير إليه عند التبديل) — لا شريطٌ لاصقٌ يبتلع ثلث الشاشة */
+  .toolbar{position:static!important}
   .toolbar .tabs{display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;gap:14px!important;overflow:visible!important}
   .toolbar .tab-phase{display:flex;flex-direction:column;gap:8px}
   .toolbar .tab-phase-label{display:flex;align-items:center;gap:9px;margin:0 2px;font-size:12px;font-weight:800;letter-spacing:.4px;color:#A9772E}
