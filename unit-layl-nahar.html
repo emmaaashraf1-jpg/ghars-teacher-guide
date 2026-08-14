@@ -9,7 +9,7 @@
 @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
 @font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
-:root{
+:root{--uimg:url('units-art/unit-layl-nahar.jpg?v=13');
   --fd:'AlAwwal','Noto Naskh Arabic',serif;
   --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
   --t1:#1F4A39; --t2:#2C6A4D; --grn:#1E5631;
@@ -146,7 +146,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .upanel.active{display:block;animation:fade .25s ease}
 
 /* مكوّنات محتوى لوحات الوحدة */
-.u-hero{background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff;border-radius:20px;padding:22px 24px;margin-bottom:16px;box-shadow:var(--shadow-sm)}
+.u-hero{background:linear-gradient(135deg,rgba(16,52,38,.82),rgba(11,36,27,.70)),var(--uimg) center/cover;text-shadow:0 2px 10px rgba(0,0,0,.35);color:#fff;border-radius:20px;padding:22px 24px;margin-bottom:16px;box-shadow:var(--shadow-sm)}
 .u-hero h2{font-family:var(--fd);font-size:24px;color:#fff;margin-bottom:6px}
 .u-hero p{font-size:14px;opacity:.96;max-width:860px;line-height:1.85}
 .u-h3{font-family:var(--fd);font-size:19px;color:var(--t1);margin:22px 0 12px;padding-inline-start:13px;border-inline-start:5px solid var(--gold)}
@@ -221,12 +221,12 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
   font-family:var(--fb);color:var(--ink)}
 .mpv h2,.mpv h3,.mpv .mpv-theme,.mpv .mpv-num,.mpv .mpv-medday,.mpv .mpv-gh{font-family:var(--fd)}
 .mpv-hero{position:relative;overflow:hidden;color:#fff;border-radius:20px;padding:30px 30px 26px;margin-bottom:10px;
-  background:radial-gradient(120% 140% at 88% 0%,#1c563c 0%,var(--green) 55%,#0f3325 100%);
+  background:linear-gradient(135deg,rgba(16,52,38,.82),rgba(11,36,27,.70)),var(--uimg) center/cover;
   box-shadow:0 18px 40px -22px rgba(20,64,46,.6)}
 .mpv-star{position:absolute;inset:0;opacity:.10;background-repeat:repeat;background-size:66px 66px;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='66' height='66' viewBox='0 0 66 66'><g fill='none' stroke='%23ffffff' stroke-width='1'><path d='M33 4 L41 25 L62 33 L41 41 L33 62 L25 41 L4 33 L25 25 Z'/><circle cx='33' cy='33' r='9'/></g></svg>")}
-.mpv-kicker{position:relative;font-size:12px;letter-spacing:3px;color:var(--gold-soft);font-weight:700;margin-bottom:9px}
-.mpv-hero h2{position:relative;font-size:29px;line-height:1.25;text-wrap:balance;margin:0 0 10px;color:#fff}
+.mpv-kicker{position:relative;text-shadow:0 1px 6px rgba(0,0,0,.4);font-size:12px;letter-spacing:3px;color:var(--gold-soft);font-weight:700;margin-bottom:9px}
+.mpv-hero h2{position:relative;text-shadow:0 2px 10px rgba(0,0,0,.4);font-size:29px;line-height:1.25;text-wrap:balance;margin:0 0 10px;color:#fff}
 .mpv-hero p{position:relative;font-size:13.5px;max-width:62ch;color:#e9f0ea;opacity:.94}
 .mpv-rule{position:relative;height:2px;width:66px;margin-top:16px;border-radius:2px;background:linear-gradient(90deg,var(--gold),transparent)}
 .mpv-legend{display:flex;flex-wrap:wrap;gap:5px 16px;align-items:center;font-size:11.5px;color:var(--muted);padding:13px 6px 4px}
@@ -1187,7 +1187,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 
   <!-- ═══════════ لوحة: منظومة أحسن الأخلاق ═══════════ -->
   <section class="upanel" id="u-manzooma"><div class="mpv">
-    <header class="mpv-hero" style="background:radial-gradient(120% 140% at 88% 0%,#7a5aa8 0%,#5b3f86 55%,#3a2560 100%)"><div class="mpv-star"></div>
+    <header class="mpv-hero"><div class="mpv-star"></div>
       <div class="mpv-kicker">الصوت الجامع للوحدة</div>
       <h2>منظومة الوحدة — نشيد التفكّر</h2>
       <p>المنظومة الشعريّة الجامعة لوحدة الليل والنهار؛ تربط تعاقب الليل والنهار وتسخير الشمس والقمر بالتفكّر في آيات الله وشكرِ نعمته. تُشغّلها المعلمة للأطفال ليستمعوا إليها فيبقوا مندمجين في معنى الوحدة، دون مشاهدة الشاشة.</p>
