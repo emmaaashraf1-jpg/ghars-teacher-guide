@@ -290,7 +290,14 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
   <link rel="stylesheet" href="app.css?v=dp2"/>
   <link rel="manifest" href="manifest.json"/>
   <meta name="theme-color" content="#1F4A39"/>
-  <link rel="apple-touch-icon" href="brand/logo-ghars.webp"/>
+  <link rel="icon" href="favicon.ico" sizes="any"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png"/>
+  <link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="غرس القيم"/>
 </head>
 <body>
 <div class="wrap">
@@ -321,7 +328,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
       <button class="utab days-tab active" data-u="days">دروس الوحدة</button>
       <button class="utab" data-u="usage">دليل الاستخدام</button>
       <button class="utab" data-u="theme">الفكرة الناظمة والتكامل</button>
-      <button class="utab" data-u="about">عن الوحدة</button>
+      <button class="utab" data-u="unit">الوحدة</button>
       <button class="utab" data-u="week">خريطة الأسبوع</button>
     </div>
     <div class="unitnav-row">
@@ -671,11 +678,76 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
   </div></div>
 
   <!-- ═══════════ لوحة تعريفية (نموذج) ═══════════ -->
-  <div class="upanel" id="u-about">
-    <div class="u-hero"><h2>عن وحدة المسكن</h2></div>
-    <p style="max-width:74ch"><b>الفكرة الناظمة:</b> المسكن نعمةٌ من الله يجمعنا بعائلتنا في مكانٍ آمن، فنشكره عليها ونعمّره بالطاعة والعمل الصالح، ونتأمّل هدايته لكلّ مخلوق في بناء مسكنه.</p>
-    <p style="max-width:74ch;margin-top:10px"><b>المواد وتكاملها عبر الأيام الخمسة:</b> يُكمل <b>كتابي المنير</b> سورة الإنفطار (الآيات ٩–١٩ ثم المعنى الجامع والمراجعة)؛ ويعرّف <b>علّمني ربي</b> مفهوم المسكن وأنواعه وأجزاءه وهداية الله للمخلوقات؛ ويربط <b>قال رسولي</b> إكرام الضيف وصلة الرحم بالبيت؛ ويعلّم <b>أدب واقتداء</b> آداب الاستئذان؛ ويتناول <b>لساني عربي</b> حروف (ش · ت · هـ)؛ و<b>مهاراتي</b> العدد ١٥ ومفهوم الوقت.</p>
-    <p style="max-width:74ch;margin-top:10px;color:var(--muted);font-size:14.5px">📌 يرافق كلَّ حرف ورقمٍ مركزٌ تطبيقيّ في يومه نفسه: مركز اللغة (الشين) ومركز الرياضيات (١٥) في اليوم الأول، ومركز اللغة (التاء والهاء) في اليوم الثاني، ومركز الرياضيات (الوقت) في اليوم الرابع. وتُختَم كلُّ يوم بمنظومة الوحدة «أحسن الأخلاق».</p>
+  <div class="upanel" id="u-unit"><div class="u-hero">
+    <h2>وحدة المسكن</h2>
+    <p>وحدةٌ تغرس شكرَ نعمة المسكن وآدابَ البيت وأهله، وتأمُّلَ هداية الله لكلّ مخلوقٍ في بناء مسكنه — عبر ستّ موادّ ومركزين تطبيقيّين خلال خمسة أيّام.</p>
+  </div>
+
+    <h3 class="u-h3">الأساس الفلسفي: منظومة الوحي مقابل منظومة الشيطان</h3>
+    <div class="u-note"><b>الأساس الفلسفي للمنهج:</b> يقوم منهج غرس القيم على <b>منظومة الوحي</b> بوصفها المرجع الأعلى في بناء الإنسان وتنمية وجدانه. وفي المقابل تتبنّى المناهج الإنسانية والعلمانية <b>منظومة الشيطان</b> التي تتمحور حول الإنسان والعقل المجرّد، فتغدو الحرية هي القيمة المطلقة والمتعة هي الغاية. والمنهج لا يرفض العلم الأكاديمي بل يُعيد ربطه بالوحي ليكون العلم خادمًا للإنسان في طريق عبوديته لله؛ فللعلم بوصلة، وللإنسان غاية.</div>
+    <div style="overflow-x:auto">
+    <table class="msys-table">
+      <thead><tr><th class="dim">البُعد</th><th class="wahy">🌙 منظومة الوحي</th><th class="shaytan">⚠️ منظومة الشيطان</th></tr></thead>
+      <tbody>
+        <tr><td class="dim">الإله</td><td class="wahy"><span class="ic">🕌</span><span class="lb">الله</span><span class="sub">الخالق الواحد القهار</span></td><td class="shaytan"><span class="ic">👤</span><span class="lb">الإنسان</span><span class="sub">محور الكون ومقياسه</span></td></tr>
+        <tr><td class="dim">المرجع</td><td class="wahy"><span class="ic">📖</span><span class="lb">الوحي</span><span class="sub">قرآن كريم وسنة نبوية</span></td><td class="shaytan"><span class="ic">🧠</span><span class="lb">العقل</span><span class="sub">العقل المجرّد والمادة</span></td></tr>
+        <tr><td class="dim">القيمة</td><td class="wahy"><span class="ic">☝️</span><span class="lb">التوحيد</span><span class="sub">القيمة المحورية</span></td><td class="shaytan"><span class="ic">🔓</span><span class="lb">الحرية</span><span class="sub">الحرية المطلقة كغاية</span></td></tr>
+        <tr><td class="dim">الفعل</td><td class="wahy"><span class="ic">🤲</span><span class="lb">التسليم</span><span class="sub">العبودية الاختيارية لله</span></td><td class="shaytan"><span class="ic">⚡</span><span class="lb">الطغيان</span><span class="sub">اتباع الهوى والنفس</span></td></tr>
+        <tr><td class="dim">الغاية</td><td class="wahy"><span class="ic">🌟</span><span class="lb">الدار الآخرة</span><span class="sub">الغاية الحقيقية للوجود</span></td><td class="shaytan"><span class="ic">💰</span><span class="lb">الدار الدنيا</span><span class="sub">الدنيا نهاية المطاف</span></td></tr>
+        <tr><td class="dim">الثمرة</td><td class="wahy"><span class="ic">💚</span><span class="lb">حلاوة الإيمان</span><span class="sub">سموّ السلوك واتزان الشخصية</span></td><td class="shaytan"><span class="ic">🕳️</span><span class="lb">المتعة واللذة</span><span class="sub">فراغ الروح وفقدان المعنى</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 class="u-h3">كيف تتجلّى الأبعاد الستة في وحدة المسكن؟</h3>
+    <div class="u-grid">
+      <div class="u-card" style="--ac:#0A5030"><h4>① الإله — الله وحده</h4><p>المسكن والمأوى والأمان نعمةٌ من الله الخالق، لا من الطبيعة ولا كسب الإنسان وحده — يفتح كلّ لقاء بأنّ الله جعل لنا من بيوتنا سكنًا.</p></div>
+      <div class="u-card" style="--ac:#1B4D7E"><h4>② المرجع — الوحي</h4><p>كلّ قيمة مستندة لآية أو حديث: ﴿وَاللَّهُ جَعَلَ لَكُم مِّن بُيُوتِكُمْ سَكَنًا﴾ · ﴿لَا تَدْخُلُوا بُيُوتًا غَيْرَ بُيُوتِكُمْ حَتَّىٰ تَسْتَأْنِسُوا﴾ · وأحاديث إكرام الضيف وصلة الرحم.</p></div>
+      <div class="u-card" style="--ac:#7A4A00"><h4>③ القيمة — التوحيد</h4><p>شكرُ نعمة المسكن وتعميرُه بالطاعة والعمل الصالح عبادةٌ لله وحده — هذا قلب الوحدة.</p></div>
+      <div class="u-card" style="--ac:#5B2D8E"><h4>④ الفعل — التسليم</h4><p>الاستئذان وإكرام الضيف وصلة الرحم والمحافظة على نظافة البيت وترتيبه كلّها تسليمٌ وطاعة.</p></div>
+      <div class="u-card" style="--ac:#D05A1A"><h4>⑤ الغاية — الدار الآخرة</h4><p>المسكن الدنيويّ دارُ ممرٍّ، والدارُ الآخرة دار المقرّ؛ نعمّر بيتنا بالطاعة استعدادًا لها لا لتكون الدنيا غايتنا.</p></div>
+      <div class="u-card" style="--ac:#1A7A4C"><h4>⑥ الثمرة — حلاوة الإيمان</h4><p>الطفل يشكر الله على مأواه، ويستأذن، ويكرم ضيفه، ويراقب الله في بيته وخلوته محبةً لا خوفًا فحسب — هذا الأثر الوجداني هو هدف الوحدة.</p></div>
+    </div>
+
+    <h3 class="u-h3">أهداف الوحدة</h3>
+    <div class="u-grid">
+      <div class="u-card" style="--ac:#C79A3B"><h4><span class="u-subj" style="--ac:#C79A3B">وجدانية</span></h4><p>أن يشعر الطفل بأنّ المسكن نعمةٌ من الله يأوي إليها مع أهله في أمان، فيشكر الله عليها ويطمئنّ لرعايته؛ ويتأمّل هدايةَ الله لكلّ مخلوقٍ في بناء مسكنه فيزداد إيمانًا وتعظيمًا لخالقه.</p></div>
+      <div class="u-card" style="--ac:#2C6A4D"><h4><span class="u-subj" style="--ac:#2C6A4D">معرفية</span></h4><p>أن يعرف معنى المسكن وأنواعه وأجزاءه، وأنّ الله جعل لنا من بيوتنا سكنًا، وآدابَ البيت (الاستئذان وإكرام الضيف)، ويتعرّف على مساكن المخلوقات وهداية الله لها في بنائها.</p></div>
+      <div class="u-card" style="--ac:#1E5631"><h4><span class="u-subj" style="--ac:#1E5631">مهارية</span></h4><p>أن يصنّف صور المساكن وأجزاء البيت، ويمثّل آداب الاستئذان وإكرام الضيف، ويتعرّف حروف (ش · ت · هـ) والعددَ خمسة عشر ومفهومَ الوقت في سياق البيت والروتين اليوميّ.</p></div>
+      <div class="u-card" style="--ac:#8660A8"><h4><span class="u-subj" style="--ac:#8660A8">سلوكية / إجرائية</span></h4><p>أن يقول «الحمد لله على نعمة المسكن»، ويستأذن قبل الدخول، ويكرم ضيفه، ويحافظ على نظافة بيته وترتيبه، ويصل رحمه، ويؤدّي دورًا بسيطًا في بيته.</p></div>
+    </div>
+
+    <h3 class="u-h3">مواد الوحدة</h3>
+    <div class="u-grid">
+      <div class="u-card" style="--ac:#2C6A4D"><h4><span class="u-subj" style="--ac:#2C6A4D">علّمني ربي</span></h4><p>المادة المحورية للوحدة؛ خمسة لقاءات تبني مفهوم المسكن وأنواعه وأجزاءه وأهلَ البيت، وهدايةَ الله للمخلوقات في بناء مساكنها.</p></div>
+      <div class="u-card" style="--ac:#14402E"><h4><span class="u-subj" style="--ac:#14402E">كتابي المنير</span></h4><p>علوم سورة الإنفطار (الآيات ٩–١٩)؛ يتلو الطفل ويتذكّر أنّ لله ملائكةً كرامًا كاتبين يحفظون الأعمال، فيراقب الله ويُحسن حتى في بيته وخلوته.</p></div>
+      <div class="u-card" style="--ac:#6B3F22"><h4><span class="u-subj" style="--ac:#6B3F22">قال رسولي</span></h4><p>هديُ النبيّ ﷺ في إكرام الضيف وصلة الرحم؛ يتعلّم الطفل أنّ حسن الجوار وإكرام الأهل والضيف في البيت من الإيمان.</p></div>
+      <div class="u-card" style="--ac:#55702B"><h4><span class="u-subj" style="--ac:#55702B">أدب واقتداء</span></h4><p>أدب الاستئذان قبل الدخول؛ يطبّق الطفل الاستئذان في بيته اقتداءً بهدي النبيّ ﷺ وأدبِ القرآن.</p></div>
+      <div class="u-card" style="--ac:#1E6E63"><h4><span class="u-subj" style="--ac:#1E6E63">لساني عربي</span></h4><p>حروف (ش · ت · هـ) وأصواتها؛ يتعرّف الطفل عليها ضمن كلماتٍ من عالم المسكن والبيت.</p></div>
+      <div class="u-card" style="--ac:#8B3A2E"><h4><span class="u-subj" style="--ac:#8B3A2E">مهاراتي</span></h4><p>العدد خمسة عشر ومفهوم الوقت؛ مهاراتٌ حسّية يوظّفها الطفل في عدّ أدوات البيت وترتيب روتين يومه.</p></div>
+    </div>
+    <p class="u-note">ويكمِّل الوحدةَ مركزان تطبيقيّان: <strong>مركز اللغة</strong> (حروف ش · ت · هـ) و<strong>مركز الرياضيات</strong> (العدد ١٥ ومفهوم الوقت)؛ لقاءاتٌ عملية تُرسّخ ما تعلّمه الطفل بأنشطة تطبيقية.</p>
+
+    <h3 class="u-h3">فلسفة الدليل التكاملي</h3>
+    <p class="u-note">في وحدة المسكن تدور الموادُّ الستُّ والمركزان حول محورٍ واحد: <b>المسكن نعمةٌ نشكرها ونعمّرها بالطاعة</b>. مادة «علّمني ربي» هي القلب الذي يبني مفهوم المسكن وأنواعه وأهله وهداية الله للمخلوقات، وتلتفّ حولها بقيّة المواد؛ فـ«كتابي المنير» بسورة الإنفطار يربط الطفل بمراقبة الله والكرام الكاتبين حتى في بيته وخلوته، و«قال رسولي» يجعل إكرام الضيف وصلة الرحم عبادة، و«أدب واقتداء» يترجم ذلك إلى استئذانٍ وأدبٍ داخل البيت، و«لساني عربي» و«مهاراتي» يستمدّان حروفَهما وأعدادَهما من عالم المسكن، ثمّ يثبّت المركزان ذلك كلَّه بالممارسة. فيخرج الطفل شاكرًا لنعمة مأواه، محسنًا في بيته، مراقبًا لله.</p>
+
+    <h3 class="u-h3">مفردات الوحدة بالفئات</h3>
+    <div class="u-grid">
+      <div class="u-card" style="--ac:#8660A8"><h4><span class="u-subj" style="--ac:#8660A8">مفردات إيمانية</span></h4><p>النعمة · الشكر · مراقبة الله · الكرام الكاتبون · هداية الله · التقدير · الأمان · الرضا · الطمأنينة · تعظيم الخالق.</p></div>
+      <div class="u-card" style="--ac:#2C6A4D"><h4><span class="u-subj" style="--ac:#2C6A4D">مفردات أسرية / سلوكية</span></h4><p>المسكن · البيت · الاستئذان · إكرام الضيف · صلة الرحم · حسن الجوار · النظافة · الترتيب · أهل البيت · التعاون.</p></div>
+      <div class="u-card" style="--ac:#1E6E63"><h4><span class="u-subj" style="--ac:#1E6E63">مفردات لغوية / معرفية</span></h4><p>حروف ش · ت · هـ وأصواتها · العدد خمسة عشر · مفهوم الوقت · أنواع المساكن · أجزاء البيت · التصنيف والتمييز.</p></div>
+    </div>
+
+    <h3 class="u-h3">محاور تكامل الوحدة</h3>
+    <div class="u-grid two">
+      <div class="u-card" style="--ac:#14402E"><h4><span class="u-subj" style="--ac:#14402E">المحور القرآني</span></h4><p>«كتابي المنير» بسورة الإنفطار يربط قلب الطفل بمراقبة الله والكرام الكاتبين، فيحسن ويصدق حتى في بيته وخلوته.</p></div>
+      <div class="u-card" style="--ac:#6B3F22"><h4><span class="u-subj" style="--ac:#6B3F22">المحور النبوي</span></h4><p>«قال رسولي» (إكرام الضيف وصلة الرحم) يجعل الطفل يقتدي بهدي النبيّ ﷺ في معاملة أهله وضيفه وجيرانه.</p></div>
+      <div class="u-card" style="--ac:#2C6A4D"><h4><span class="u-subj" style="--ac:#2C6A4D">المحور السلوكي / القيمي</span></h4><p>«علّمني ربي» المحور الذي تدور حوله الوحدة؛ مفهوم المسكن وأنواعه وأجزاءه وأهله وهداية الله للمخلوقات.</p></div>
+      <div class="u-card" style="--ac:#55702B"><h4><span class="u-subj" style="--ac:#55702B">محور الأدب</span></h4><p>«أدب واقتداء» (الاستئذان قبل الدخول) يترجم احترام البيت وأهله إلى آدابٍ عملية اقتداءً بهدي النبيّ ﷺ.</p></div>
+      <div class="u-card" style="--ac:#1E6E63"><h4><span class="u-subj" style="--ac:#1E6E63">المحور اللغوي</span></h4><p>«لساني عربي» (حروف ش · ت · هـ) يبني الحصيلة اللغوية عبر كلماتٍ مألوفة من عالم المسكن والبيت.</p></div>
+      <div class="u-card" style="--ac:#8B3A2E"><h4><span class="u-subj" style="--ac:#8B3A2E">المحور الرياضي</span></h4><p>«مهاراتي» (العدد خمسة عشر والوقت) يوظّف المهارة الحسّية في عدّ أدوات البيت وترتيب روتين اليوم.</p></div>
+      <div class="u-card" style="--ac:#0E6E6B"><h4><span class="u-subj" style="--ac:#0E6E6B">المراكز التطبيقية</span></h4><p>مركزا اللغة والرياضيات يثبّتان ما تعلّمه الطفل بالممارسة واللعب الهادف، فتترسّخ المهارة والقيمة معًا حول محور المسكن.</p></div>
+    </div>
   </div>
 
   <!-- ═══════════ دروس الوحدة (تبويبات الأيام) ═══════════ -->
