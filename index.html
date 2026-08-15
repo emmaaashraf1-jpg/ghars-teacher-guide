@@ -105,11 +105,12 @@
   .btn-ghost:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 12px 24px rgba(31,74,57,.1)}
   /* hero artwork — editorial */
   .hero-art{position:relative}
-  .hero-art figure{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:5/4;margin:0;
-    box-shadow:0 34px 70px rgba(31,74,57,.18),0 8px 20px rgba(31,74,57,.09);border:1px solid rgba(31,74,57,.06)}
+  /* صورة الغلاف: بلا إطار ولا أبعاد محدّدة — حافّة مائية عشوائية (feTurbulence) + تلاشٍ شعاعيّ فتذوب في الخلفيّة */
+  .hero-art figure{position:relative;aspect-ratio:5/4;margin:0;filter:url(#wcFree);
+    -webkit-mask-image:radial-gradient(130% 122% at 50% 44%,#000 47%,transparent 97%);
+    mask-image:radial-gradient(130% 122% at 50% 44%,#000 47%,transparent 97%)}
   .hero-art img{width:100%;height:100%;object-fit:cover;display:block}
-  .hero-art .frame{position:absolute;z-index:-1;inset:-16px 26px 26px -16px;
-    border:1.5px solid rgba(199,154,59,.55);border-radius:24px}
+  .hero-art .frame{display:none}
   .hero-medallion{position:absolute;top:-22px;right:-22px;z-index:3;width:80px;height:80px;border-radius:50%;
     background:#fff;display:grid;place-items:center;padding:13px;
     box-shadow:0 0 0 1.5px var(--gold),0 16px 32px rgba(31,74,57,.22)}
@@ -485,7 +486,14 @@
       </div>
     </div>
     <div class="hero-art reveal">
-      <span class="frame" aria-hidden="true"></span>
+      <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+        <filter id="wcFree" x="-16%" y="-16%" width="132%" height="132%" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="3" seed="8" result="n"/>
+          <feDisplacementMap in="SourceAlpha" in2="n" scale="48" xChannelSelector="R" yChannelSelector="G" result="d"/>
+          <feGaussianBlur in="d" stdDeviation="6" result="s"/>
+          <feComposite in="SourceGraphic" in2="s" operator="in"/>
+        </filter>
+      </svg>
       <figure>
         <img src="units-art/intro-cover.jpg?v=13" alt="لوحة مائية تعبّر عن منهج غرس القيم: مرجٌ ودربٌ نحو النور" />
       </figure>
