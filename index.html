@@ -61,12 +61,15 @@
   .brand img{width:42px;height:42px;border-radius:50%;background:#fff;padding:3px;box-shadow:0 3px 10px rgba(31,74,57,.12)}
   .brand b{font-family:var(--display);font-size:22px;color:var(--forest);line-height:1;letter-spacing:.3px}
   .brand small{display:block;font-size:10.5px;color:var(--gray);font-weight:400;margin-top:3px;letter-spacing:.4px}
-  .menu{display:flex;align-items:center;gap:6px}
-  .menu a{font-size:15px;font-weight:600;color:var(--ink);text-decoration:none;padding:8px 15px;border-radius:999px;
-    transition:background .2s,color .2s}
+  .menu{display:flex;align-items:center;gap:3px}
+  .menu a{font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;padding:7px 11px;border-radius:999px;
+    white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
   .menu a:hover{background:rgba(31,74,57,.06);color:var(--forest)}
-  .menu a.cta{background:var(--forest);color:#fff;padding:9px 20px}
+  .menu a.cta{background:var(--forest);color:#fff;padding:8px 16px;margin-inline-start:4px}
   .menu a.cta:hover{background:var(--forest-2);color:#fff}
+  .menu a.cta-ghost{background:transparent;color:var(--forest);border:1.5px solid rgba(31,74,57,.45);
+    padding:6.5px 14px;margin-inline-start:8px}
+  .menu a.cta-ghost:hover{background:rgba(31,74,57,.06);border-color:var(--forest);color:var(--forest)}
   .burger{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--surface);
     cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px}
   .burger span{width:19px;height:2px;background:var(--forest);border-radius:2px;transition:.25s}
@@ -427,7 +430,7 @@
       box-shadow:0 24px 50px rgba(31,74,57,.16);transform:translateY(-12px);opacity:0;pointer-events:none;transition:.25s}
     .menu.open{transform:none;opacity:1;pointer-events:auto}
     .menu a{padding:12px 16px;font-size:16px}
-    .menu a.cta{text-align:center;margin-top:4px}
+    .menu a.cta,.menu a.cta-ghost{text-align:center;margin-top:4px;margin-inline-start:0}
     .burger{display:flex}
     .hero-grid{grid-template-columns:1fr;gap:36px}
     .hero-art{order:-1;max-width:460px;margin-inline:auto}
@@ -460,9 +463,11 @@
     </button>
     <nav class="menu" id="menu" aria-label="القائمة الرئيسية">
       <a href="#top">الرئيسية</a>
-      <a href="#philosophy">المنهج</a>
-      <a href="#units">الوحدات</a>
-      <a class="cta" href="intro-guide.html">الدليل العام</a>
+      <a href="#philosophy">فلسفة المنهج</a>
+      <a href="#wahy">منظومة الوحي</a>
+      <a href="#gallery">من الميدان</a>
+      <a class="cta cta-ghost" href="#units">أدلة الوحدات</a>
+      <a class="cta" href="intro-guide.html">الدليل التعريفي</a>
     </nav>
   </div>
 </header>
@@ -478,7 +483,7 @@
       <span class="eyebrow">منهجٌ متكامل لبناء الطفل</span>
       <h1>غرس القيم</h1>
       <p class="lede">غرسُ القيم الإسلامية في قلوب الأطفال.</p>
-      <p>لصناعة جيلٍ صالحٍ راسخٍ في قيمه، متّزنٍ في سلوكه — في مرحلة التمهيدي (٥–٦ سنوات).</p>
+      <p>لبناء جيل صالح راسخ في قيمه متزن في سلوكه — في مرحلة التمهيدي (٥–٦ سنوات).</p>
       <ul class="hero-stats">
         <li><b>١٨</b><span>وحدة تكاملية</span></li>
         <li><b>٣</b><span>فصول دراسية</span></li>
@@ -712,8 +717,10 @@
       <nav class="foot-links" aria-label="روابط سريعة">
         <a href="#top">الرئيسية</a>
         <a href="#philosophy">فلسفة المنهج</a>
+        <a href="#wahy">منظومة الوحي</a>
+        <a href="#gallery">من الميدان</a>
         <a href="#units">أدلة الوحدات</a>
-        <a href="intro-guide.html">الدليل العام</a>
+        <a href="intro-guide.html">الدليل التعريفي</a>
       </nav>
     </div>
     <div class="foot-base">نادي غرس القيم لضيافة الأطفال · جميع الحقوق محفوظة © ٢٠٢٦</div>
