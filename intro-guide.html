@@ -1902,15 +1902,21 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 @media(max-width:820px){#vision .page-aside,#components .page-aside,#subjects .page-aside{grid-template-columns:1fr!important}}
 </style>
 <style id="gp-cover-blend">
-/* غلاف الدليل التعريفي والتشغيلي: يتماهى كأنه مرسوم على الصفحة — الخلفية طبقةٌ مُقنَّعة تتلاشى حوافّها، والنصّ فوقها حادّ */
-.cover{background:transparent!important;position:relative;overflow:hidden}
+/* غلاف الدليل: لوحةٌ مائية مضيئة متماهية (كالرئيسية) — بلا تعتيم + نصّ غابيّ غامق بهالة فاتحة */
+.cover{background:#FBF9F2!important;position:relative;overflow:hidden}
 .cover>.hero-x{position:relative;z-index:2}
 .cover::before{display:none!important}
 .cover::after{display:block!important;content:"";position:absolute;inset:0;z-index:0;
-  background:linear-gradient(to top,rgba(20,40,35,.6),rgba(20,40,35,.05) 42%,transparent 62%),radial-gradient(760px 340px at 50% -10%,rgba(231,193,105,.14),transparent 60%),linear-gradient(162deg,rgba(20,40,35,.76),rgba(44,106,77,.54) 50%,rgba(14,110,107,.42)),url('units-art/intro-cover.jpg?v=1') center center/cover no-repeat;
-  -webkit-mask-image:radial-gradient(80% 84% at 50% 45%,#000 56%,rgba(0,0,0,0) 100%);
-  mask-image:radial-gradient(80% 84% at 50% 45%,#000 56%,rgba(0,0,0,0) 100%);
+  background:radial-gradient(120% 96% at 50% 46%,rgba(251,249,242,.6),rgba(251,249,242,.24) 45%,rgba(251,249,242,0) 72%),url('units-art/intro-cover.jpg?v=1') center 42%/cover no-repeat;
+  -webkit-mask-image:radial-gradient(84% 88% at 50% 46%,#000 55%,rgba(0,0,0,0) 100%);
+  mask-image:radial-gradient(84% 88% at 50% 46%,#000 55%,rgba(0,0,0,0) 100%);
   border:0!important;box-shadow:none!important;border-radius:0!important}
+/* نصّ غامق مقروء على اللوحة المضيئة */
+.cover .cover-kicker{color:#8a5d12!important;background:rgba(255,255,255,.68)!important;text-shadow:none!important}
+.cover .hero-copy-x h1{color:#1F4A39!important;text-shadow:0 1px 10px rgba(255,253,246,.92),0 0 26px rgba(255,253,246,.8)!important}
+.cover .cover-orn,.cover .cover-orn *{color:#2C6A4D!important}
+.cover .subtitle{color:#3d4a40!important;text-shadow:0 1px 8px rgba(255,253,246,.82)!important}
+.cover .cover-tags span{color:#1F4A39!important;background:rgba(255,255,255,.68)!important;border:1px solid rgba(31,74,57,.2)!important;text-shadow:none!important}
 </style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
