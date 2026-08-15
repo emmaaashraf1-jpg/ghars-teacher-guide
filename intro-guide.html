@@ -921,6 +921,66 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 @media(max-width:820px){#fitness .fitness-overview{grid-template-columns:1fr}#fitness .page-aside{grid-template-columns:1fr!important}}
 @media(max-width:620px){#fitness .fitness-gallery,#fitness .fitness-purpose-grid,#fitness .fitness-routine{grid-template-columns:1fr}}
 </style>
+<style id="gp-lesson">
+/* التبويب ٨ بنية اللقاء — لغة الرئيسية: عمود واحد، تدفّق مرقّم، قالب صفحة درس */
+#lesson .section-banner{display:none!important}
+#lesson .gp-head{max-width:none!important;margin:0!important;padding:0 32px!important;box-sizing:border-box!important}
+#lesson .gp-eyebrow{display:flex;align-items:center;gap:12px;color:#C0922E;font-weight:700;font-size:14px;letter-spacing:.02em;margin:6px 0 14px}
+#lesson .gp-eyebrow::before{content:"";width:30px;height:2px;background:#C0922E;border-radius:2px}
+#lesson .gp-head h1{font-family:"AlAwwal","Amiri","Noto Naskh Arabic",serif;font-size:clamp(34px,5vw,54px);color:#1F4A39;margin:0;line-height:1.6;font-weight:700;padding-block:12px;overflow:visible!important}
+#lesson .gp-head h1::after{content:"";display:block;width:66px;height:4px;background:linear-gradient(90deg,#C79A3B,transparent);border-radius:3px;margin-top:14px}
+#lesson .gp-lede{max-width:680px;color:#43483f;font-size:17.5px;margin:16px 0 0;line-height:1.9}
+#lesson .gp-stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}
+#lesson .gp-stat{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #E9E1D2;border-radius:14px;padding:12px 18px}
+#lesson .gp-stat i{width:3px;align-self:stretch;background:#C79A3B;border-radius:2px}
+#lesson .gp-stat b{font-family:"AlAwwal","Amiri",serif;font-size:23px;color:#1F4A39;line-height:1;font-weight:700}
+#lesson .gp-stat span{color:#6C776F;font-size:13.5px}
+#lesson .page-body{display:block!important;padding:0 32px!important}
+#lesson .page-main{width:auto!important;max-width:none!important}
+#lesson .gp-sechead{margin:56px 0 22px;padding-top:8px}
+#lesson .gp-sechead .k{color:#C0922E;font-weight:700;font-size:13px;letter-spacing:.03em;display:flex;align-items:center;gap:10px;margin-bottom:8px}
+#lesson .gp-sechead .k::before{content:"";width:22px;height:1.5px;background:#C0922E}
+#lesson .gp-sechead h2{font-family:"AlAwwal","Amiri",serif;font-size:28px;color:#1F4A39;margin:0;line-height:1.6;font-weight:700;overflow:visible!important;padding-block:4px}
+#lesson .gp-sechead p{color:#6C776F;margin:8px 0 0;font-size:15px;max-width:660px}
+/* duration note */
+#lesson .meeting-duration-note{background:#F4EDDE!important;border:1px solid #E9E1D2!important;border-right:4px solid #0E6E6B!important;border-radius:14px!important;padding:18px 22px!important;color:#43483f!important;font-size:15.5px!important;line-height:1.95!important;margin:34px 0 0!important}
+#lesson .meeting-duration-note strong{color:#1F4A39!important}
+/* 7 steps flow */
+#lesson .lesson-framework{display:block!important;margin:0!important}
+#lesson .lesson-steps{display:flex!important;flex-direction:column;gap:12px;max-width:760px;margin:0!important}
+#lesson .lesson-step{display:grid!important;grid-template-columns:48px 1fr;gap:18px;align-items:center;margin:0!important;padding:0!important;border:0!important;background:none!important}
+#lesson .lesson-step .no{width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid #E6D9B8;color:#C0922E;font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center;flex:none}
+#lesson .lesson-step>div:last-child{background:#fff;border:1px solid #E9E1D2;border-right:4px solid #2C6A4D;border-radius:14px;padding:13px 18px}
+#lesson .lesson-step>div:last-child b{font-family:"AlAwwal","Amiri",serif;font-size:18px;color:#1F4A39;display:block;overflow:visible}
+#lesson .lesson-step>div:last-child p{color:#6C776F;font-size:14px;line-height:1.7;margin:5px 0 0}
+/* lesson page template mock */
+#lesson .lesson-mock{background:#fff!important;border:1px solid #E9E1D2!important;border-radius:18px!important;overflow:hidden!important;margin:0!important;box-shadow:none!important}
+#lesson .mock-head{background:#1F4A39!important;color:#fff!important;font-family:"AlAwwal","Amiri",serif!important;font-size:18px!important;padding:14px 22px!important}
+#lesson .mock-body{display:grid!important;grid-template-columns:1.6fr .9fr;gap:20px;padding:22px!important}
+#lesson .mock-main{display:grid!important;gap:12px;align-content:start}
+#lesson .mock-aside{display:grid!important;gap:12px;align-content:start;margin:0!important}
+#lesson .mock-block{background:#FBF9F2!important;border:1px solid #F0E9DB!important;border-radius:12px!important;padding:13px 16px!important}
+#lesson .mock-main .mock-block{border-right:3px solid #0E6E6B!important}
+#lesson .mock-aside .mock-block{border-right:3px solid #C79A3B!important;background:#F4EDDE!important}
+#lesson .mock-block b{font-family:"AlAwwal","Amiri",serif!important;color:#1F4A39!important;font-size:15px!important;display:block;margin-bottom:4px;overflow:visible}
+#lesson .mock-block span{color:#555!important;font-size:13px!important;line-height:1.7!important}
+/* teacher cycle */
+#lesson .teacher-cycle{display:grid!important;grid-template-columns:repeat(3,1fr);gap:18px;margin:0!important}
+#lesson .cycle-card{background:#F4EDDE!important;border:1px solid #E9E1D2!important;border-top:3px solid #C79A3B!important;border-radius:16px!important;padding:20px!important}
+#lesson .cycle-card b{font-family:"AlAwwal","Amiri",serif!important;font-size:18px!important;color:#1F4A39!important;display:block;margin-bottom:8px;overflow:visible}
+#lesson .cycle-card span{color:#454a41!important;font-size:14px!important;line-height:1.8!important}
+/* closing */
+#lesson .closing-statement{text-align:center!important;font-family:"AlAwwal","Amiri",serif!important;color:#1F4A39!important;font-size:18px!important;background:#F4EDDE!important;border:1px solid #E9E1D2!important;border-radius:14px!important;padding:20px 24px!important;margin:40px auto 0!important;max-width:640px!important;line-height:1.9!important}
+/* aside */
+#lesson .gp-aside-head{grid-column:1/-1!important;margin:56px 0 22px!important}
+#lesson .page-aside{display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:20px!important;align-items:start}
+#lesson .page-aside>.teacher-tip,#lesson .page-aside>.quick-card,#lesson .page-aside>.reference-card{background:#F4EDDE!important;border:1px solid #E9E1D2!important;border-radius:16px!important;padding:22px!important;position:relative;overflow:hidden;box-shadow:none!important;margin:0!important}
+#lesson .page-aside>.teacher-tip::before,#lesson .page-aside>.quick-card::before,#lesson .page-aside>.reference-card::before{content:"";position:absolute;top:0;right:0;left:0;height:4px;background:linear-gradient(90deg,#C79A3B,transparent)}
+#lesson .page-aside .tip-label{display:block!important;color:#C0922E!important;font-weight:700;font-size:12.5px;letter-spacing:.03em;margin-bottom:6px;background:none!important;padding:0!important}
+#lesson .page-aside h3{font-family:"AlAwwal","Amiri",serif!important;font-size:21px!important;color:#1F4A39!important;margin:0 0 9px!important;font-weight:700;line-height:1.6;overflow:visible!important}
+#lesson .page-aside p{color:#454a41!important;font-size:14px!important;margin:0!important;line-height:1.85!important}
+@media(max-width:820px){#lesson .mock-body{grid-template-columns:1fr}#lesson .teacher-cycle{grid-template-columns:1fr}#lesson .page-aside{grid-template-columns:1fr!important}}
+</style>
 <style id="gp-inkfix">
 /* منع قصّ حروف AlAwwal في التبويبات ٣-٥: ارتفاع سطرٍ سخيّ + إظهار فيض البطاقات النصّية */
 #components .gp-head,#subjects .gp-head,#annual-plan .gp-head,#components .gp-sechead,#subjects .gp-sechead,#annual-plan .gp-sechead{overflow:visible!important}
@@ -1829,14 +1889,17 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <section class="page" id="lesson" style="--accent:#1E5631">
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>بنية اللقاء التعليمي</strong></div>
 <div class="section-banner"><div class="section-number">08</div><div class="section-title"><div><h2>بنية اللقاء التعليمي</h2><p>قالب موحد يضمن وضوح الهدف وفاعلية النشاط والتقويم.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="بنية اللقاء التعليمي" data-size="24"></i></div></div></div>
+<div class="gp-head"><div class="gp-eyebrow">بنية اللقاء · التبويب ٠٨</div><h1>بنية اللقاء التعليمي</h1><p class="gp-lede">قالب موحد يضمن وضوح الهدف وفاعلية النشاط والتقويم — سبع محطات متتابعة في كل لقاء.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٧</b><span>خطوات متتابعة</span></div><div class="gp-stat"><i></i><b>٣٠ د</b><span>لكل لقاء</span></div><div class="gp-stat"><i></i><b>٣</b><span>أسئلة الدورة</span></div></div></div>
 <div class="page-body"><div class="page-main">
 <div class="meeting-duration-note" id="lesson-duration-rule"><strong>مدة كل لقاء:</strong> 30 دقيقة (نصف ساعة) قاعدة ثابتة في المنهج كله. يبدأ اللقاء بتهيئة وإشارة قصيرة، ثم بناء معنى مركز، ثم نشاط تطبيقي أو تعلم باللعب، ثم تغذية راجعة وخاتمة.</div>
+<div class="gp-sechead"><div class="k">خطوات اللقاء</div><h2>سبع محطات متتابعة</h2><p>من التحية إلى الخاتمة، يسير كل لقاء على المسار نفسه فيألفه الطفل.</p></div>
 <div class="lesson-framework"><div class="lesson-steps">
 <div class="lesson-step"><div class="no">1</div><div><b>التحية والقوانين</b><p>السلام عليكم، ثم تذكير مختصر بقوانين مكان العلم.</p></div></div><div class="lesson-step"><div class="no">2</div><div><b>إشارة المادة</b><p>آية أو نشيد أو أبيات يعرف الطفل من خلالها نوع اللقاء.</p></div></div><div class="lesson-step"><div class="no">3</div><div><b>استدعاء السابق</b><p>سؤال قصير يربط الدرس الجديد بما تعلمه الطفل.</p></div></div><div class="lesson-step"><div class="no">4</div><div><b>بناء المعنى</b><p>شرح موجز، وأسئلة، ونص شرعي، ومحسوس أو صورة.</p></div></div><div class="lesson-step"><div class="no">5</div><div><b>النشاط التطبيقي</b><p>لعب، تصنيف، ترتيب، تمثيل، تجربة، أو بناء.</p></div></div><div class="lesson-step"><div class="no">6</div><div><b>التغذية الراجعة</b><p>تطبيق فردي أو سؤال يوضح مدى الفهم.</p></div></div><div class="lesson-step"><div class="no">7</div><div><b>الخاتمة</b><p>تلخيص المعنى، الدعاء، ثم كفارة المجلس.</p></div></div>
-</div><div class="lesson-mock"><div class="mock-head">قالب صفحة الدرس</div><div class="mock-body"><div class="mock-main"><div class="mock-block"><b>سير اللقاء</b><span>ما تقوله المعلمة وما تعرضه وتسأل عنه خطوة بخطوة.</span></div><div class="mock-block"><b>النشاط</b><span>تفاصيل التنفيذ، توزيع الأدوار، وكيفية استخدام الأدوات.</span></div><div class="mock-block"><b>التغذية الراجعة</b><span>تطبيق فردي أو جماعي قصير يبين الفهم.</span></div><div class="mock-block"><b>الربط القيمي</b><span>كيف ينتقل المفهوم إلى عبادة أو خلق أو اختيار.</span></div></div><aside class="mock-aside"><div class="mock-block"><b>الهدف</b><span>سلوك قابل للملاحظة.</span></div><div class="mock-block"><b>النص</b><span>آية أو حديث أو اعتقاد.</span></div><div class="mock-block"><b>الأدوات</b><span>ما يلزم فقط.</span></div><div class="mock-block"><b>المؤشر</b><span>كيف أعرف أنه تعلم؟</span></div></aside></div></div></div>
+</div><div class="gp-sechead"><div class="k">قالب الصفحة</div><h2>ماذا تحوي صفحة الدرس</h2></div><div class="lesson-mock"><div class="mock-head">قالب صفحة الدرس</div><div class="mock-body"><div class="mock-main"><div class="mock-block"><b>سير اللقاء</b><span>ما تقوله المعلمة وما تعرضه وتسأل عنه خطوة بخطوة.</span></div><div class="mock-block"><b>النشاط</b><span>تفاصيل التنفيذ، توزيع الأدوار، وكيفية استخدام الأدوات.</span></div><div class="mock-block"><b>التغذية الراجعة</b><span>تطبيق فردي أو جماعي قصير يبين الفهم.</span></div><div class="mock-block"><b>الربط القيمي</b><span>كيف ينتقل المفهوم إلى عبادة أو خلق أو اختيار.</span></div></div><aside class="mock-aside"><div class="mock-block"><b>الهدف</b><span>سلوك قابل للملاحظة.</span></div><div class="mock-block"><b>النص</b><span>آية أو حديث أو اعتقاد.</span></div><div class="mock-block"><b>الأدوات</b><span>ما يلزم فقط.</span></div><div class="mock-block"><b>المؤشر</b><span>كيف أعرف أنه تعلم؟</span></div></aside></div></div></div>
+<div class="gp-sechead"><div class="k">دورة المعلّمة</div><h2>في كل لقاء</h2></div>
 <div class="teacher-cycle"><div class="cycle-card"><b>ماذا أقول؟</b><span>لغة واضحة، وأسئلة قصيرة، ونص صحيح.</span></div><div class="cycle-card"><b>ماذا أفعل؟</b><span>أعرض، وأمثل، وأدع الطفل يجرب.</span></div><div class="cycle-card"><b>ماذا ألاحظ؟</b><span>الفهم، واللغة، والمهارة، والسلوك.</span></div></div>
 <div class="closing-statement" style="font-size:15px">سبحانك اللهم وبحمدك، أشهد أن لا إله إلا أنت، أستغفرك وأتوب إليك.</div>
-</div><aside class="page-aside"><div class="teacher-tip"><span class="tip-label">زمن الشرح</span><h3>الأقصر أفضل</h3><p>كلما قصرت المقدمة ووضحت، اتسع وقت الطفل للتجريب والتعبير والحركة.</p></div><div class="quick-card"><span class="tip-label">هدف النشاط</span><h3>ليس للزينة</h3><p>لا يُنفذ النشاط لأنه جميل فقط؛ بل لأنه يكشف الفهم ويثبت المعنى.</p></div></aside></div>
+</div><aside class="page-aside"><div class="gp-sechead gp-aside-head"><div class="k">للمعلّمة</div><h2>ملاحظتان</h2></div><div class="teacher-tip"><span class="tip-label">زمن الشرح</span><h3>الأقصر أفضل</h3><p>كلما قصرت المقدمة ووضحت، اتسع وقت الطفل للتجريب والتعبير والحركة.</p></div><div class="quick-card"><span class="tip-label">هدف النشاط</span><h3>ليس للزينة</h3><p>لا يُنفذ النشاط لأنه جميل فقط؛ بل لأنه يكشف الفهم ويثبت المعنى.</p></div></aside></div>
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>08 · بنية اللقاء التعليمي</b></div>
 </section>
 <section class="page" id="signals" style="--accent:#1E5631">
