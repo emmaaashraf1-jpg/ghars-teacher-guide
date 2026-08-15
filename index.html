@@ -159,22 +159,13 @@
   /* ===== اللوحة: تركيبٌ طبقيّ من رسومٍ مائية حقيقية ===== */
   .wscene-art{position:absolute;inset:0;overflow:hidden;isolation:isolate;opacity:.62;transition:opacity .8s var(--ease)}
   .ws-sky{position:absolute;inset:0;background:linear-gradient(175deg,#F1E9D6 0%,#F6F0E1 46%,#ECE3CE 100%)}
-  .ws-light{position:absolute;top:-14%;right:-10%;width:80%;height:80%;pointer-events:none;
-    background:url(assets/wahy/light.jpg?v=2) no-repeat top right/cover;
-    mix-blend-mode:screen;opacity:var(--light,.8)}
-  .ws-land{position:absolute;left:50%;bottom:0;transform:translateX(-50%);
-    width:132%;min-width:1080px;height:auto;opacity:var(--wash,1)}
-  .ws-tree{position:absolute;right:4%;bottom:19%;width:clamp(168px,26vw,360px);height:auto;
-    opacity:var(--wash,1);filter:drop-shadow(0 10px 16px rgba(20,40,35,.12))}
-  .ws-mist{position:absolute;left:-14%;bottom:-6%;width:66%;height:88%;pointer-events:none;
-    background:url(assets/wahy/fog.jpg?v=2) no-repeat left center/cover;
-    mix-blend-mode:screen;opacity:calc(var(--fog,.4) * .6)}
-  .ws-mute{position:absolute;left:0;bottom:0;width:50%;height:100%;pointer-events:none;
-    background:linear-gradient(90deg,rgba(158,158,148,.26),rgba(158,158,148,.08) 58%,transparent 82%);
-    -webkit-backdrop-filter:grayscale(.32) brightness(1.02);backdrop-filter:grayscale(.32) brightness(1.02);
-    -webkit-mask-image:linear-gradient(90deg,#000,#000 54%,transparent 86%);
-    mask-image:linear-gradient(90deg,#000,#000 54%,transparent 86%);
-    opacity:var(--fog,.5)}
+  /* لوحتان بنفس المشهد والأسلوب الحرّ: الوحي (نور) يمينًا، والشيطان (باهت) يسارًا يلتقيان في الوسط */
+  .ws-noor,.ws-zulm{position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+    width:132%;min-width:1080px;height:auto}
+  .ws-noor{opacity:var(--wash,1)}
+  .ws-zulm{opacity:var(--wash,1);
+    -webkit-mask-image:linear-gradient(to left,transparent 40%,#000 66%);
+    mask-image:linear-gradient(to left,transparent 40%,#000 66%)}
 
   /* ===== الوضع الثابت (بلا JS / بلا حركة) — مشهدٌ هادئ وقائمةٌ مقروءة ===== */
   .wscene-stage{padding:clamp(30px,5vw,52px) clamp(16px,4vw,30px)}
@@ -527,15 +518,11 @@
     <div class="wscene-track">
       <div class="wscene-stage" id="wsStage">
 
-        <!-- ===== اللوحة المائية الأصلية (مشهدٌ واحد يتحوّل عضويًّا) ===== -->
-        <!-- ===== اللوحة: تركيبٌ طبقيّ من رسومٍ مائية حقيقية ===== -->
+        <!-- ===== خلفيّة القسم: لوحةٌ واحدة حرّة — الوحي (نور) يمينًا، والشيطان (باهت) يسارًا ===== -->
         <div class="wscene-art" aria-hidden="true">
           <div class="ws-sky"></div>
-          <div class="ws-light"></div>
-          <img class="ws-land" src="assets/wahy/land.png?v=2" alt="" loading="lazy" decoding="async">
-          <img class="ws-tree" src="assets/wahy/tree.png?v=2" alt="" loading="lazy" decoding="async">
-          <div class="ws-mist"></div>
-          <div class="ws-mute"></div>
+          <img class="ws-noor" src="assets/wahy/scene-noor.png?v=1" alt="" loading="lazy" decoding="async">
+          <img class="ws-zulm" src="assets/wahy/scene-zulm.png?v=1" alt="" loading="lazy" decoding="async">
         </div>
 
         <!-- ===== الرؤوس + المقارنات: كتلةٌ واحدة تظهر معًا ===== -->
