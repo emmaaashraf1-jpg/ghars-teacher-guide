@@ -5,7 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="غرس القيم — منهج متكامل لبناء الطفل إيمانًا وقيمًا ومهارات في مرحلة التمهيدي. الدليل العام وأدلة الوحدات التكاملية." />
 <title>غرس القيم — منهج متكامل لبناء الطفل</title>
-<link rel="icon" href="brand/logo-ghars.webp" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#1F4A39" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="غرس القيم" />
+<meta name="application-name" content="غرس القيم" />
 <link rel="preload" href="assets/fonts/AlAwwal-Regular.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="assets/fonts/AlAwwal-Bold.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -176,9 +186,9 @@
   .whead .nm b{font-family:var(--display);font-weight:700;font-size:clamp(16px,2.2vw,23px);line-height:1.2;text-shadow:0 1px 2px rgba(251,249,242,.92),0 0 12px rgba(251,249,242,.7)}
   .whead-ours .nm{text-align:start}
   .whead-ours .nm small{color:#b0821f}.whead-ours .nm b{color:var(--forest)}
-  .whead-other{opacity:.82}
+  .whead-other{opacity:1}
   .whead-other .nm{text-align:end}
-  .whead-other .nm small{color:#8b8f88}.whead-other .nm b{color:#8f948c}
+  .whead-other .nm small{color:#565b52}.whead-other .nm b{color:#3f453c}
   .whead .emb{width:clamp(38px,5vw,54px);height:clamp(38px,5vw,54px);flex:0 0 auto;object-fit:contain}
   .emb-knot{mix-blend-mode:multiply;opacity:1}
 
@@ -193,7 +203,8 @@
   .wt{font-family:var(--display);font-weight:700;line-height:1.24;text-align:center;
     text-shadow:0 1px 2px rgba(251,249,242,.85),0 0 10px rgba(251,249,242,.6)}
   .wt-ours{color:var(--forest);font-size:clamp(21px,3.4vw,38px)}
-  .wt-other{color:#9aa096;font-size:clamp(15px,2.3vw,24px)}
+  .wt-other{color:#464b43;font-size:clamp(15px,2.3vw,24px);
+    text-shadow:0 1px 2px rgba(251,249,242,.98),0 0 8px rgba(251,249,242,.9),0 0 3px rgba(251,249,242,.9)}
   .wt-axis{position:relative;justify-self:center;white-space:nowrap;font-family:var(--body);
     font-size:clamp(9.5px,1.5vw,11px);font-weight:700;letter-spacing:.3px;color:#8a7f5c;
     background:#FBF6EA;border:1px solid #e7d9ba;border-radius:999px;padding:6px 14px;
@@ -210,7 +221,7 @@
   .wf b{font-family:var(--display);font-weight:700;font-size:clamp(14px,2.1vw,19px);line-height:1.45;
     text-shadow:0 1px 2px #FBF9F2,0 0 10px rgba(251,249,242,.95),0 0 3px rgba(251,249,242,.95)}
   .wf.ours small{color:#a5761a}.wf.ours b{color:var(--forest)}
-  .wf.other small{color:#7c8377}.wf.other b{color:#818779}
+  .wf.other small{color:#6a6f66}.wf.other b{color:#5d6359}
 
   /* مسار الخيط الذهبي — مؤشّر تقدّم يظهر في الوضع التفاعلي فقط */
   .wscene-rail{display:none;align-items:center;pointer-events:none}
@@ -234,30 +245,29 @@
   .is-scrolly .wscene-stage{position:sticky;top:0;height:100svh;min-height:520px;border-radius:0;
     box-shadow:none;padding:0}
   /* منظومةٌ واحدة تُبنى بالتمرير — كلّ خاصّية دالّةٌ خالصة لـ progress (scrubbed 1:1، ثنائيّة الاتجاه) */
-  .is-scrolly .wscene-core{position:absolute;inset:0}
+  .is-scrolly .wscene-core{position:absolute;inset:0;display:flex;flex-direction:column;
+    justify-content:center;align-items:center;gap:clamp(4px,0.9vw,10px);
+    padding:clamp(58px,8vh,86px) clamp(18px,4vw,30px) clamp(40px,6vh,68px)}
   .is-scrolly .wscene-core::before{content:"";position:absolute;inset:0;z-index:-1;
-    background:radial-gradient(128% 62% at 50% 40%,rgba(250,247,238,.9),rgba(250,247,238,.5) 54%,transparent 80%)}
-  .is-scrolly .wscene-cmps{position:absolute;inset:0;max-width:none;margin:0;
-    display:flex;flex-direction:column;justify-content:center;align-items:center;
-    padding:clamp(24px,5vh,54px) clamp(18px,4vw,30px) clamp(150px,26vh,240px)}
-  .is-scrolly .wcmp-list{display:flex;flex-direction:column;position:relative;
-    width:100%;max-width:min(820px,86vw);margin-inline:auto;gap:clamp(10px,1.9vw,21px)}
-  .is-scrolly .wspine{display:block;position:absolute;inset:-2% 0;z-index:0}
-  .is-scrolly .wscene-heads{position:absolute;inset-inline:0;bottom:clamp(62%,68vh,71%);margin:0;
-    display:flex;justify-content:space-between;align-items:center;padding:0 clamp(24px,6.5vw,80px);
+    background:radial-gradient(142% 80% at 50% 47%,rgba(250,247,238,.95),rgba(250,247,238,.7) 56%,rgba(250,247,238,.2) 82%,transparent 93%)}
+  .is-scrolly .wscene-heads{position:static;width:min(820px,86vw);margin:0;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:0 0 clamp(4px,0.9vw,8px);border-bottom:1px solid rgba(199,154,59,.24);
     opacity:var(--heads,1);transition:none}
+  .is-scrolly .wscene-cmps{position:static;inset:auto;max-width:none;margin:0;width:min(820px,86vw)}
+  .is-scrolly .wcmp-list{display:flex;flex-direction:column;position:relative;
+    width:100%;margin-inline:auto;gap:clamp(6px,1.3vw,15px)}
+  .is-scrolly .wspine{display:block;position:absolute;inset:-2% 0;z-index:0}
   .is-scrolly .wcmp{--r:0;position:relative;z-index:1;width:100%;margin:0;padding:0;
     background:none;border:0;box-shadow:none}
   .is-scrolly .wt-ours{font-size:clamp(21px,3vw,33px);opacity:var(--r);
     transform:translateY(calc((1 - var(--r)) * 9px));will-change:opacity,transform}
   .is-scrolly .wt-axis{opacity:var(--r);will-change:opacity}
   .is-scrolly .wt-axis::before,.is-scrolly .wt-axis::after{opacity:var(--r)}
-  .is-scrolly .wt-other{font-size:clamp(14px,2vw,21px);opacity:calc(var(--r) * .68);
+  .is-scrolly .wt-other{font-size:clamp(14px,2vw,21px);opacity:calc(var(--r) * .95);
     transform:translateX(calc((1 - var(--r)) * -7px));will-change:opacity,transform}
-  .is-scrolly .wscene-foot{position:absolute;inset-inline:0;bottom:clamp(84px,12vw,124px);margin:0;
-    opacity:var(--foot,0);pointer-events:none;padding:clamp(10px,1.6vw,16px) clamp(18px,4vw,30px)}
-  .is-scrolly .wscene-foot::before{content:"";position:absolute;inset:0;z-index:-1;
-    background:radial-gradient(78% 150% at 50% 50%,rgba(250,247,238,.94),rgba(250,247,238,.5) 58%,transparent 84%)}
+  .is-scrolly .wscene-foot{position:static;width:min(820px,86vw);margin:clamp(14px,2.4vh,26px) 0 0;
+    opacity:var(--foot,0);pointer-events:none;padding:clamp(6px,1vw,10px) clamp(12px,3vw,26px)}
 
   /* ============ استجابة الهاتف ============ */
   @media(max-width:640px){
@@ -270,12 +280,13 @@
     .wt-ours{grid-area:ours;font-size:clamp(21px,6.6vw,28px)}
     .wt-other{grid-area:other;font-size:clamp(14px,4.4vw,18px)}
     .wt-other::before{content:"·\00a0";color:#c3bdae;font-weight:700}
-    .is-scrolly .wscene-cmps{gap:clamp(4px,1.4vw,10px);padding:40px 14px 33vh}
+    .is-scrolly .wscene-core{gap:10px;padding:56px 14px 44px}
+    .is-scrolly .wcmp-list{gap:clamp(5px,1.4vw,11px)}
     .is-scrolly .wt-ours{font-size:clamp(20px,6.2vw,26px)}
     .is-scrolly .wt-other{font-size:clamp(13px,4.2vw,17px)}
-    .is-scrolly .wscene-heads{bottom:clamp(46%,52vh,56%);padding:0 16px}
+    .is-scrolly .wscene-heads{width:94vw}
     .whead .nm small{font-size:8.5px}
-    .whead-other{opacity:.8}
+    .whead-other{opacity:1}
     .wf b{font-size:12.5px}
     .wnode+.wnode{margin-inline-start:24px}
     .wseg{width:24px}
@@ -510,7 +521,7 @@
     <div class="sec-head reveal">
       <span class="eyebrow">مرجعيّة المنهج</span>
       <h2>منظومة الوحي — في مقابل غيرها</h2>
-      <p>يقوم منهجنا على منظومة الوحي مرجعًا أعلى؛ في مقابل مناهجَ تُقصي الوحي فتجعل الإنسانَ والعقلَ والحريةَ المطلقة مركزها.</p>
+      <p>يقوم منهجنا على منظومة الوحي مرجعًا أعلى؛ في مقابل مناهجَ تُقصي الوحي فتجعل الإنسانَ والعقلَ القاصر والحريةَ المطلقة مركزها.</p>
     </div>
   </div>
 
@@ -561,13 +572,12 @@
             <article class="wcmp" role="listitem"><b class="wt wt-ours">حلاوة الإيمان</b><span class="wt-axis">الثمرة</span><b class="wt wt-other">المتعة واللذة</b></article>
           </div>
         </div>
-        </div><!-- /.wscene-core -->
-
-        <!-- ===== المآل — يستقرّ مع المشهد ===== -->
+        <!-- ===== المآل — داخل الكتلة أسفل الصفوف (لا تراكب) ===== -->
         <div class="wscene-foot">
-          <div class="wf ours"><small>المآل</small><b>طمأنينةٌ واتزانٌ وسموُّ سلوك</b></div>
-          <div class="wf other"><small>المآل</small><b>لذّةٌ عابرة وفقدانُ المعنى</b></div>
+          <div class="wf ours"><small>المآل</small><b>تزكية نفس وتقوى قلب وسُموّ سلوك</b></div>
+          <div class="wf other"><small>المآل</small><b>تمحور حول الذات وعبادة الهوى</b></div>
         </div>
+        </div><!-- /.wscene-core -->
 
       </div>
     </div>
