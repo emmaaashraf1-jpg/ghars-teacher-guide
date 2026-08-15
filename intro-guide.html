@@ -1883,6 +1883,24 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 @media(max-width:900px){#nutrition .harm-grid{grid-template-columns:repeat(2,1fr)!important}#nutrition .nutri-hero{flex-direction:column;text-align:center}}
 @media(max-width:560px){#nutrition .harm-grid{grid-template-columns:1fr!important}}
 </style>
+<style id="gp-harmonize">
+/* توحيد التبويبات ٢-٥ مع نمط ٦-١٦: إحصاءات + عمود واحد + ملاحظات صفًّا سفليًّا */
+#vision .gp-stats,#components .gp-stats,#subjects .gp-stats,#annual-plan .gp-stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}
+#vision .gp-stat,#components .gp-stat,#subjects .gp-stat,#annual-plan .gp-stat{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #E9E1D2;border-radius:14px;padding:12px 18px}
+#vision .gp-stat i,#components .gp-stat i,#subjects .gp-stat i,#annual-plan .gp-stat i{width:3px;align-self:stretch;background:#C79A3B;border-radius:2px}
+#vision .gp-stat b,#components .gp-stat b,#subjects .gp-stat b,#annual-plan .gp-stat b{font-family:"AlAwwal","Amiri",serif;font-size:23px;color:#1F4A39;line-height:1;font-weight:700}
+#vision .gp-stat span,#components .gp-stat span,#subjects .gp-stat span,#annual-plan .gp-stat span{color:#6C776F;font-size:13.5px}
+#vision .page-body,#components .page-body,#subjects .page-body{display:block!important;padding:0 32px!important}
+#vision .page-main,#components .page-main,#subjects .page-main{width:auto!important;max-width:none!important}
+#vision .gp-aside-head,#components .gp-aside-head,#subjects .gp-aside-head{grid-column:1/-1!important;margin:52px 0 20px!important}
+#vision .page-aside,#components .page-aside,#subjects .page-aside{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:20px!important;align-items:start}
+#vision .page-aside>.teacher-tip,#vision .page-aside>.quick-card,#vision .page-aside>.reference-card,#components .page-aside>.teacher-tip,#components .page-aside>.quick-card,#components .page-aside>.reference-card,#subjects .page-aside>.teacher-tip,#subjects .page-aside>.quick-card,#subjects .page-aside>.reference-card{background:#F4EDDE!important;border:1px solid #E9E1D2!important;border-radius:16px!important;padding:22px!important;position:relative;overflow:hidden;box-shadow:none!important;margin:0!important}
+#vision .page-aside>.teacher-tip::before,#vision .page-aside>.quick-card::before,#vision .page-aside>.reference-card::before,#components .page-aside>.teacher-tip::before,#components .page-aside>.quick-card::before,#components .page-aside>.reference-card::before,#subjects .page-aside>.teacher-tip::before,#subjects .page-aside>.quick-card::before,#subjects .page-aside>.reference-card::before{content:"";position:absolute;top:0;right:0;left:0;height:4px;background:linear-gradient(90deg,#C79A3B,transparent)}
+#vision .page-aside .tip-label,#components .page-aside .tip-label,#subjects .page-aside .tip-label{display:block!important;font-weight:700;font-size:12.5px;letter-spacing:.03em;margin-bottom:6px;background:none!important;padding:0!important}
+#vision .page-aside h3,#components .page-aside h3,#subjects .page-aside h3{font-family:"AlAwwal","Amiri",serif!important;font-size:21px!important;color:#1F4A39!important;margin:0 0 9px!important;font-weight:700;line-height:1.6;overflow:visible!important}
+#vision .page-aside p,#components .page-aside p,#subjects .page-aside p{color:#454a41!important;font-size:14px!important;margin:0!important;line-height:1.85!important}
+@media(max-width:820px){#vision .page-aside,#components .page-aside,#subjects .page-aside{grid-template-columns:1fr!important}}
+</style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
 /* توقيعات وعناوين الأقسام الذهبيّة: تغميق للقراءة على العاجيّ/الكريميّ */
@@ -1989,7 +2007,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="gp-head gp-reveal">
 <span class="gp-eyebrow">الأساس الفلسفيّ · التبويب ٠٢</span>
 <h1>الرؤية والمنظومة</h1>
-<p class="gp-lede">منهجٌ يعيد للوحي مرجعيّته، وللعلم بوصلته، وللإنسان غايته.</p>
+<p class="gp-lede">منهجٌ يعيد للوحي مرجعيّته، وللعلم بوصلته، وللإنسان غايته.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٦</b><span>محاور المنظومة</span></div><div class="gp-stat"><i></i><b>٥</b><span>مواطن الأثر</span></div><div class="gp-stat"><i></i><b>٢</b><span>عالمان متقابلان</span></div></div>
 <p class="gp-intro">يقوم منهج غرس القيم على <b>منظومة الوحي</b> بوصفها المرجع الأعلى في بناء الإنسان وتنمية وجدانه؛ في مقابل <b>منظومة الشيطان</b> التي تتمحور حول الإنسان والعقل المجرّد فتغدو الحرية قيمةً مطلقة والمتعة غاية. والمنهج لا يرفض العلم، بل يعيد ربطه بالوحي ليكون خادمًا للإنسان في طريق عبوديّته لله.</p>
 </div>
 <div class="page-body">
@@ -2021,7 +2039,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <p class="wahy-note" style="margin-top:24px"><b>هذه المحاور الستّة</b> — الإله، المرجع، القيمة، الفعل، الغاية، الثمرة — تُقرأ في كل مادة، وكل ركن، وكل نموذج تقويم؛ فيبدأ كل درس من الإله والمرجع، ويمرّ بالقيمة والفعل والغاية، لينتهي إلى الثمرة في وجدان الطفل وسلوكه. وهي البوصلة التي تُعرض من خلالها أدلة الوحدات جميعها.</p>
 </div>
 <aside class="page-aside">
-<div class="teacher-tip"><span class="tip-label">معيار القرار</span><h3>قبل إضافة أي نشاط</h3><p>اسألي: هل يقود هذا النشاط إلى المعنى؟ وهل يربط العلم بالوحي؟ وهل يناسب عمر الطفل؟</p></div>
+<div class="gp-sechead gp-aside-head"><div class="k">للمعلّمة</div><h2>ثلاث ملاحظات</h2></div><div class="teacher-tip"><span class="tip-label">معيار القرار</span><h3>قبل إضافة أي نشاط</h3><p>اسألي: هل يقود هذا النشاط إلى المعنى؟ وهل يربط العلم بالوحي؟ وهل يناسب عمر الطفل؟</p></div>
 <div class="quick-card"><span class="tip-label">توازن</span><h3>العقل والإيمان</h3><p>الملاحظة والتجربة واللعب ليست بدائل عن الوحي؛ هي طرق يفهم بها الطفل آيات الله ونعمته.</p></div>
 <div class="reference-card"><span class="tip-label">جملة مركزية</span><h3>بوصلة المعلمة</h3><p>العلم خادم للإنسان في طريق عبوديته لله، لا بديل عن الهداية الربانية.</p></div>
 </aside>
@@ -2033,7 +2051,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="gp-head gp-reveal">
 <span class="gp-eyebrow">نظامٌ واحد · التبويب ٠٣</span>
 <h1>مكوّنات المنهج</h1>
-<p class="gp-lede">تُقرأ المكونات بوصفها <b>نظامًا واحدًا</b>: التخطيط يحدد الوجهة، واللقاء يبني المعنى، والبطاقات توضحه، والركن يثبته، والمنظومات ترافق الانتقال، والمراجع الإثرائية تعين المعلمة، والتقييم يرصد الأثر.</p>
+<p class="gp-lede">تُقرأ المكونات بوصفها <b>نظامًا واحدًا</b>: التخطيط يحدد الوجهة، واللقاء يبني المعنى، والبطاقات توضحه، والركن يثبته، والمنظومات ترافق الانتقال، والمراجع الإثرائية تعين المعلمة، والتقييم يرصد الأثر.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>١١</b><span>مكوّنًا في المصفوفة</span></div><div class="gp-stat"><i></i><b>١٠</b><span>موارد إثرائية</span></div><div class="gp-stat"><i></i><b>٣</b><span>مساعدات مرجعية</span></div></div>
 </div>
 <div class="page-body">
 <div class="page-main">
@@ -2078,7 +2096,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </tbody></table></div>
 </div>
 <aside class="page-aside">
-<div class="teacher-tip"><span class="tip-label">تنظيم</span><h3>لا تفتحي كل شيء</h3><p>في يوم التنفيذ تحتاجين فقط: صفحة اليوم، لقاء المادة، أدوات النشاط، ومكتبة الركن المناسبة.</p></div>
+<div class="gp-sechead gp-aside-head"><div class="k">للمعلّمة</div><h2>ثلاث ملاحظات</h2></div><div class="teacher-tip"><span class="tip-label">تنظيم</span><h3>لا تفتحي كل شيء</h3><p>في يوم التنفيذ تحتاجين فقط: صفحة اليوم، لقاء المادة، أدوات النشاط، ومكتبة الركن المناسبة.</p></div>
 <div class="quick-card"><span class="tip-label">قبل الطباعة</span><h3>ما يُجهّز مسبقًا</h3><p>بطاقات الاعتقاد، الآيات والأحاديث، رموز QR، أوراق العمل، وبطاقات الأركان.</p></div>
 <div class="reference-card"><span class="tip-label">مهم</span><h3>المراجع للمعلمة</h3><p>المراجع الإثرائية ترفع جودة التحضير، لكنها لا تعني زيادة زمن الشرح على الطفل.</p></div>
 </aside>
@@ -2090,7 +2108,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="gp-head gp-reveal">
 <span class="gp-eyebrow">وظيفة كل مادة ومركز · التبويب ٠٤</span>
 <h1>خريطة المواد والمراكز</h1>
-<p class="gp-lede"><b>علّمني ربي</b> هو المحور المركزي الذي يعرّف الطفل بالله وآياته، بينما تعمق بقية المواد والمراكز التطبيقية المعنى نفسه من القرآن والسنة واللغة والرياضيات والسلوك.</p>
+<p class="gp-lede"><b>علّمني ربي</b> هو المحور المركزي الذي يعرّف الطفل بالله وآياته، بينما تعمق بقية المواد والمراكز التطبيقية المعنى نفسه من القرآن والسنة واللغة والرياضيات والسلوك.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٩</b><span>مواد المنهج</span></div><div class="gp-stat"><i></i><b>٢</b><span>مركزان تطبيقيّان</span></div><div class="gp-stat"><i></i><b>٣</b><span>فصول دراسية</span></div></div>
 </div>
 <div class="page-body"><div class="page-main">
 <div class="meeting-duration-note"><strong>قاعدة زمن اللقاء:</strong> مدة كل لقاء تعليمي أو مركز تطبيقي في هذا الدليل 30 دقيقة (نصف ساعة). ويُبنى المركز على شرح قصير جدًا ثم تطبيق عملي وتعلم باللعب.</div>
@@ -2127,7 +2145,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <article class="subject-detail" id="subject-rasuli" style="--subject-color:#0E6E6B"><div class="subject-detail-head"><div class="big-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em"><path d="M4 21h16"/><path d="M6 21v-8"/><path d="M18 21v-8"/><path d="M6 13a6 6 0 0 1 12 0"/><path d="M12 7V3.5"/><path d="M11 4.2h2"/></svg></div><div><h3>قال رسولي</h3><p>السنة النبوية معرفة واقتداء وتطبيق في مواقف الطفل.</p></div></div><div class="subject-columns"><div class="subject-box"><b>ماذا يدرس الطفل؟</b><p>حديث مختار، الراوي، المتن، المعنى، والاقتداء العملي، مع بطاقة الاعتقاد في النبي ﷺ.</p></div><div class="subject-box"><b>كيف يبدأ اللقاء؟</b><p>تردد المعلمة مقدمة لقاء الحديث بصوت هادئ، ثم تسأل: ما اسم لقائنا؟ وماذا نتعلم في قال رسولي؟</p></div><div class="subject-box"><b>الناتج المتوقع</b><p>يردد الطفل الحديث أو جزءه، ويفهم المعنى، ويحدد موقفًا يقتدي فيه بالنبي ﷺ.</p></div></div></article><article class="subject-detail" id="subject-adab" style="--subject-color:#1E5631"><div class="subject-detail-head"><div class="big-icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-.15em"><path d="M12 3.2l2.3 5.6 6 .5-4.6 3.9 1.4 5.9L12 16.4 6.5 19.6l1.4-5.9L3.3 9.8l6-.5z"/></svg></div><div><h3>أدب واقتداء</h3><p>الآداب الإسلامية تتحول إلى ممارسة في الحياة اليومية.</p></div></div><div class="subject-columns"><div class="subject-box"><b>ماذا يدرس الطفل؟</b><p>آداب الطعام والنوم والسلام والاستئذان والوالدين والمساء وغيرها، مستمدة من القرآن والسنة الصحيحة.</p></div><div class="subject-box"><b>كيف يبدأ اللقاء؟</b><p>توضح المعلمة أن الله أرسل النبي ﷺ ليعلمنا أمور ديننا وآداب حياتنا، ثم تعرض صورًا مرتبطة بالأدب.</p></div><div class="subject-box"><b>الناتج المتوقع</b><p>يسمي الطفل الأدب، ويمثله عمليًا، ويستخدمه في الموقف الحقيقي.</p></div></div></article>
 </div></div>
 </div><aside class="page-aside">
-<div class="teacher-tip"><span class="tip-label">تكامل</span><h3>لا تعيدي الدرس نفسه</h3><p>كل مادة تعالج المعنى من زاويتها: القرآن يهدي، والاسم يعرّف بالله، والحديث يوجه، واللغة والرياضيات تبنيان المهارة.</p></div>
+<div class="gp-sechead gp-aside-head"><div class="k">للمعلّمة</div><h2>ثلاث ملاحظات</h2></div><div class="teacher-tip"><span class="tip-label">تكامل</span><h3>لا تعيدي الدرس نفسه</h3><p>كل مادة تعالج المعنى من زاويتها: القرآن يهدي، والاسم يعرّف بالله، والحديث يوجه، واللغة والرياضيات تبنيان المهارة.</p></div>
 <div class="quick-card"><span class="tip-label">ترتيب</span><h3>كتابي المنير أولًا</h3><p>هو أول لقاء في اليوم، وفيه التهيئة الزمنية والطقس، ثم يأتي علّمني ربي وبقية المواد وفق الجدول.</p></div>
 </aside></div>
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>04 · خريطة المواد</b></div>
@@ -2137,7 +2155,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="gp-head gp-reveal">
 <span class="gp-eyebrow">أطلس المنهج السنويّ · التبويب ٠٥</span>
 <h1>المخطط الدراسي للمنهج</h1>
-<p class="gp-lede">يضع أمام المعلمة <b>الخريطة السنوية التفصيلية</b> قبل الانتقال إلى مسار اليوم أو نموذج الوحدة؛ فتفهم أين تقع كل وحدة، وما الذي تنمّيه كل مادةٍ ومركزٍ عبر الفصول الثلاثة.</p>
+<p class="gp-lede">يضع أمام المعلمة <b>الخريطة السنوية التفصيلية</b> قبل الانتقال إلى مسار اليوم أو نموذج الوحدة؛ فتفهم أين تقع كل وحدة، وما الذي تنمّيه كل مادةٍ ومركزٍ عبر الفصول الثلاثة.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٩</b><span>مواد المنهج</span></div><div class="gp-stat"><i></i><b>٣٧٨</b><span>محطّة تعلّم</span></div><div class="gp-stat"><i></i><b>٣</b><span>فصول دراسية</span></div></div>
 </div>
 <div class="page-body"><div class="page-main">
 <div class="guide-update-note">أُضيف هذا القسم من ملف المخطط الدراسي السنوي المطوّر، مع الاحتفاظ بتبديل المواد وجدول المقارنة المرجعي حتى يكون الدليل التعريفي والتشغيلي جامعًا للتخطيط والتنفيذ.</div><div class="meeting-duration-note" id="annual-plan-operational-rule"><strong>ثابت تشغيلي:</strong> مدة كل لقاء أو مركز تطبيقي 30 دقيقة (نصف ساعة). وتُعرض مراكز اللغة والرياضيات داخل المخطط بعد مادتها الأصلية مباشرة؛ مركز اللغة بعد لساني عربي، ومركز الرياضيات بعد مهاراتي. كما أن الأركان تتخلل المواد الأساسية خلال اليوم لتثبيت المعنى بالتجربة واللعب، ولا تُعامل كوقت منفصل بلا ارتباط بالمادة.</div>
