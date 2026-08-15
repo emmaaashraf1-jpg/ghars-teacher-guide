@@ -1059,6 +1059,93 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 @media(max-width:900px){#signals .belief-routine-grid,#signals .signal-flow-grid{grid-template-columns:repeat(2,1fr)}#signals .signal-material-grid{grid-template-columns:1fr}#signals .page-aside{grid-template-columns:1fr!important}}
 @media(max-width:620px){#signals .belief-routine-grid,#signals .signal-flow-grid,#signals .belief-card-gallery{grid-template-columns:1fr}#signals .belief-cards-head{flex-direction:column}}
 </style>
+<style id="gp-corners">
+/* التبويب ١٠ الأركان — لغة الرئيسية: عمود واحد، مبادئ+تشغيل، لوحة قوانين، مكتبة أركان مصوّرة */
+#corners .section-banner{display:none!important}
+#corners .gp-head{max-width:none!important;margin:0!important;padding:0 32px!important;box-sizing:border-box!important}
+#corners .gp-eyebrow{display:flex;align-items:center;gap:12px;color:#C0922E;font-weight:700;font-size:14px;letter-spacing:.02em;margin:6px 0 14px}
+#corners .gp-eyebrow::before{content:"";width:30px;height:2px;background:#C0922E;border-radius:2px}
+#corners .gp-head h1{font-family:"AlAwwal","Amiri","Noto Naskh Arabic",serif;font-size:clamp(34px,5vw,54px);color:#1F4A39;margin:0;line-height:1.6;font-weight:700;padding-block:12px;overflow:visible!important}
+#corners .gp-head h1::after{content:"";display:block;width:66px;height:4px;background:linear-gradient(90deg,#C79A3B,transparent);border-radius:3px;margin-top:14px}
+#corners .gp-lede{max-width:680px;color:#43483f;font-size:17.5px;margin:16px 0 0;line-height:1.9}
+#corners .gp-stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}
+#corners .gp-stat{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #E9E1D2;border-radius:14px;padding:12px 18px}
+#corners .gp-stat i{width:3px;align-self:stretch;background:#C79A3B;border-radius:2px}
+#corners .gp-stat b{font-family:"AlAwwal","Amiri",serif;font-size:23px;color:#1F4A39;line-height:1;font-weight:700}
+#corners .gp-stat span{color:#6C776F;font-size:13.5px}
+#corners .page-body{display:block!important;padding:0 32px!important}
+#corners .page-main{width:auto!important;max-width:none!important}
+#corners .lead-box{background:#F4EDDE!important;border:1px solid #E9E1D2!important;border-right:4px solid #0E6E6B!important;border-radius:14px!important;padding:18px 22px!important;color:#43483f!important;font-size:15.5px!important;line-height:1.95!important;margin:34px 0 0!important}
+#corners .lead-box strong{color:#1F4A39!important}
+#corners .gp-sechead{margin:56px 0 22px;padding-top:8px}
+#corners .gp-sechead .k{color:#C0922E;font-weight:700;font-size:13px;letter-spacing:.03em;display:flex;align-items:center;gap:10px;margin-bottom:8px}
+#corners .gp-sechead .k::before{content:"";width:22px;height:1.5px;background:#C0922E}
+#corners .gp-sechead h2{font-family:"AlAwwal","Amiri",serif;font-size:28px;color:#1F4A39;margin:0;line-height:1.6;font-weight:700;overflow:visible!important;padding-block:4px}
+#corners .gp-sechead p{color:#6C776F;margin:8px 0 0;font-size:15px;max-width:660px}
+/* principles */
+#corners .corner-principles{display:grid!important;grid-template-columns:repeat(4,1fr);gap:18px;margin:0!important}
+#corners .principle{background:#F4EDDE!important;border:1px solid #E9E1D2!important;border-top:3px solid #0E6E6B!important;border-radius:16px!important;padding:20px!important}
+#corners .principle b{font-family:"AlAwwal","Amiri",serif!important;font-size:16px!important;color:#1F4A39!important;display:block;margin-bottom:8px;overflow:visible}
+#corners .principle span{color:#454a41!important;font-size:13.5px!important;line-height:1.8!important}
+/* ops */
+#corners .corner-ops-grid{display:grid!important;grid-template-columns:repeat(5,1fr);gap:14px;margin:0!important}
+#corners .corner-op{background:#fff!important;border:1px solid #E9E1D2!important;border-radius:14px!important;padding:16px 18px!important}
+#corners .corner-op b{font-family:"AlAwwal","Amiri",serif!important;color:#C0922E!important;font-size:15px!important;display:block;margin-bottom:6px}
+#corners .corner-op span{color:#6C776F!important;font-size:12.5px!important;line-height:1.7!important}
+/* rules panel */
+#corners .corner-rules-panel{background:#F4EDDE!important;border:1px solid #E9E1D2!important;border-radius:20px!important;padding:26px 28px!important;margin:40px 0 0!important;box-shadow:none!important}
+#corners .corner-rules-head{display:flex!important;justify-content:space-between;gap:22px;align-items:flex-start}
+#corners .corner-rules-head h3{font-family:"AlAwwal","Amiri",serif!important;font-size:22px!important;color:#1F4A39!important;margin:0 0 8px!important;overflow:visible!important}
+#corners .corner-rules-head p{color:#454a41!important;font-size:14.5px!important;line-height:1.85!important;margin:0!important}
+#corners .corner-rules-badge{background:#1F4A39!important;color:#fff!important;border-radius:12px!important;padding:12px 16px!important;font-family:"AlAwwal","Amiri",serif;text-align:center;font-size:14px;line-height:1.5;flex:none;align-self:center}
+#corners .corner-rules-steps{display:grid!important;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0 0!important}
+#corners .corner-rule-step{background:#fff!important;border:1px solid #E9E1D2!important;border-radius:12px!important;padding:16px!important}
+#corners .corner-rule-step b{font-family:"AlAwwal","Amiri",serif!important;color:#0E6E6B!important;font-size:15px!important;display:block;margin-bottom:6px}
+#corners .corner-rule-step span{color:#6C776F!important;font-size:13px!important;line-height:1.7!important}
+#corners .corner-rule-cards{display:grid!important;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0 0!important}
+#corners .corner-rule-card{background:#fff!important;border:1px solid #E9E1D2!important;border-radius:14px!important;overflow:hidden!important;margin:0!important}
+#corners .corner-rule-card figure{margin:0!important}
+#corners .corner-rule-card img{width:100%;height:132px;object-fit:cover;display:block}
+#corners .corner-rule-card>div{padding:12px 14px!important}
+#corners .corner-rule-card b{font-family:"AlAwwal","Amiri",serif!important;color:#1F4A39!important;font-size:14px!important;display:block;margin-bottom:6px}
+#corners .corner-rule-card a{color:#0E6E6B!important;font-weight:600;font-size:12.5px;text-decoration:none;border-bottom:1px solid #Bcdcd2}
+#corners .corner-rules-note{background:#FBF6E9!important;border:1px solid #E7D9B3!important;border-right:4px solid #C79A3B!important;border-radius:12px!important;padding:14px 18px!important;margin:16px 0 0!important;color:#4a4636!important;font-size:14px!important;line-height:1.85!important}
+#corners .corner-rules-note strong{color:#1F4A39!important}
+/* library heading */
+#corners .song-section-title{font-family:"AlAwwal","Amiri",serif!important;font-size:28px!important;color:#1F4A39!important;margin:0 0 6px!important;display:flex;align-items:center;gap:12px;border:0!important;padding:0!important;overflow:visible!important}
+#corners .song-section-title span{color:#C79A3B!important;background:none!important}
+#corners .song-section-title svg{width:26px;height:26px}
+/* library grid */
+#corners .corner-library-grid{display:grid!important;grid-template-columns:repeat(3,1fr);gap:22px;margin:22px 0 0!important}
+#corners .corner-library-card{background:#fff!important;border:1px solid #E9E1D2!important;border-top:4px solid #C79A3B!important;border-radius:18px!important;overflow:hidden!important;display:flex!important;flex-direction:column;margin:0!important;box-shadow:none!important}
+#corners .corner-library-thumb{margin:0!important;padding:0!important;position:relative}
+#corners .corner-library-thumb img{width:100%;height:190px;object-fit:cover;display:block}
+#corners .corner-library-thumb figcaption{font-size:11.5px!important;color:#6C776F!important;line-height:1.6;padding:8px 16px 0!important;background:none!important}
+#corners .corner-library-body{padding:14px 18px 20px!important;display:flex!important;flex-direction:column;gap:8px}
+#corners .corner-library-body>span{color:#C0922E!important;font-weight:700;font-size:12px;letter-spacing:.02em}
+#corners .corner-library-body h4{font-family:"AlAwwal","Amiri",serif!important;font-size:20px!important;color:#1F4A39!important;margin:0!important;overflow:visible!important}
+#corners .corner-library-body>p{color:#454a41!important;font-size:13.5px!important;line-height:1.8!important;margin:0!important}
+#corners .corner-library-meta{font-size:12.5px!important;color:#6C776F!important;line-height:1.6}
+#corners .corner-library-meta b{color:#1F4A39!important;font-weight:700;font-family:"AlAwwal","Amiri",serif}
+#corners .corner-library-meta em{font-style:normal!important;color:#555!important}
+#corners .corner-library-body a{color:#0E6E6B!important;font-weight:600;font-size:13px;margin-top:auto;text-decoration:none;border-bottom:1px solid #Bcdcd2;align-self:flex-start;padding-top:4px}
+/* transition */
+#corners .transition-system{background:#F4EDDE!important;border:1px solid #E9E1D2!important;border-radius:18px!important;padding:26px 28px!important;margin:40px 0 0!important}
+#corners .transition-system h3{font-family:"AlAwwal","Amiri",serif!important;font-size:22px!important;color:#1F4A39!important;margin:0 0 16px!important;overflow:visible!important}
+#corners .transition-system ol{margin:0!important;padding:0 22px 0 0!important;display:grid;gap:12px}
+#corners .transition-system li{color:#454a41!important;font-size:14.5px!important;line-height:1.8!important}
+#corners .transition-system strong{color:#1F4A39!important}
+/* aside */
+#corners .gp-aside-head{grid-column:1/-1!important;margin:56px 0 22px!important}
+#corners .page-aside{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:20px!important;align-items:start}
+#corners .page-aside>.teacher-tip,#corners .page-aside>.quick-card,#corners .page-aside>.reference-card{background:#F4EDDE!important;border:1px solid #E9E1D2!important;border-radius:16px!important;padding:22px!important;position:relative;overflow:hidden;box-shadow:none!important;margin:0!important}
+#corners .page-aside>.teacher-tip::before,#corners .page-aside>.quick-card::before,#corners .page-aside>.reference-card::before{content:"";position:absolute;top:0;right:0;left:0;height:4px;background:linear-gradient(90deg,#C79A3B,transparent)}
+#corners .page-aside .tip-label{display:block!important;color:#C0922E!important;font-weight:700;font-size:12.5px;letter-spacing:.03em;margin-bottom:6px;background:none!important;padding:0!important}
+#corners .page-aside h3{font-family:"AlAwwal","Amiri",serif!important;font-size:21px!important;color:#1F4A39!important;margin:0 0 9px!important;font-weight:700;line-height:1.6;overflow:visible!important}
+#corners .page-aside p{color:#454a41!important;font-size:14px!important;margin:0!important;line-height:1.85!important}
+@media(max-width:960px){#corners .corner-ops-grid{grid-template-columns:repeat(3,1fr)}#corners .corner-principles,#corners .corner-rules-steps,#corners .corner-rule-cards{grid-template-columns:repeat(2,1fr)}#corners .corner-library-grid{grid-template-columns:repeat(2,1fr)}#corners .page-aside{grid-template-columns:1fr!important}}
+@media(max-width:620px){#corners .corner-ops-grid,#corners .corner-principles,#corners .corner-rules-steps,#corners .corner-rule-cards,#corners .corner-library-grid{grid-template-columns:1fr}#corners .corner-rules-head{flex-direction:column}}
+</style>
 <style id="gp-inkfix">
 /* منع قصّ حروف AlAwwal في التبويبات ٣-٥: ارتفاع سطرٍ سخيّ + إظهار فيض البطاقات النصّية */
 #components .gp-head,#subjects .gp-head,#annual-plan .gp-head,#components .gp-sechead,#subjects .gp-sechead,#annual-plan .gp-sechead{overflow:visible!important}
@@ -2047,15 +2134,18 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <section class="page" id="corners" style="--accent:#B15230">
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>الأركان والتعلم باللعب</strong></div>
 <div class="section-banner"><div class="section-number">10</div><div class="section-title"><div><h2>الأركان والتعلم باللعب</h2><p>تعريف عام مصور للأركان وتشغيلها داخل منهج غرس القيم كله.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="خريطة الأركان" data-size="24"></i></div></div></div>
+<div class="gp-head"><div class="gp-eyebrow">الأركان والتعلم باللعب · التبويب ١٠</div><h1>الأركان والتعلم باللعب</h1><p class="gp-lede">الأركان ليست ملحقًا لوحدة، بل نظام تشغيل ثابت في المنهج كله يحوّل معنى المادة إلى خبرة محسوسة.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٩</b><span>مكتبات أركان</span></div><div class="gp-stat"><i></i><b>٨</b><span>بطاقات قوانين</span></div><div class="gp-stat"><i></i><b>٥</b><span>خطوات التشغيل</span></div></div></div>
 <div class="page-body">
 <div class="page-main">
 <div class="lead-box">الأركان في منهج غرس القيم ليست ملحقًا لوحدة الليل والنهار، بل نظام تشغيل ثابت في المنهج كله. وهي تتخلل المواد الأساسية خلال اليوم أو تأتي بعدها مباشرة لتثبيت المعنى بالتجربة. كل ركن يحوّل معنى المادة إلى خبرة محسوسة: يقرأ الطفل، يكتشف، يبني، يبيع ويشتري، يمثل الحياة المنزلية، يبدع، يتحرك، ويلعب لعبًا حرًا منضبطًا.</div>
+<div class="gp-sechead"><div class="k">لماذا الأركان</div><h2>أربعة تحوّلات</h2></div>
 <div class="corner-principles">
 <div class="principle"><b>من الدرس إلى الخبرة</b><span>كل مفهوم يجد تطبيقًا عمليًا في ركن أو أكثر.</span></div>
 <div class="principle"><b>من الحس إلى الإيمان</b><span>المشاهدة والتجريب تقود إلى التفكر والشكر والعمل.</span></div>
 <div class="principle"><b>من المنظومة إلى الطريق</b><span>الإنشاد والترديد يرافقان السير بين الفصل والركن والعودة.</span></div>
 <div class="principle"><b>من اللعب إلى السلوك</b><span>الطفل يلتزم بالدور، يعيد الأداة، يتعاون، ويطبق أدبًا تعلمه.</span></div>
 </div>
+<div class="gp-sechead"><div class="k">تشغيل الركن</div><h2>خمس خطوات في كل ركن</h2></div>
 <div class="corner-ops-grid">
 <div class="corner-op"><b>1 · قبل الركن</b><span>تبدأ المعلمة بتوضيح بطاقة قوانين الركن للأطفال، ثم تحدد المهمة والأداة والمخرج المتوقع: بطاقة، بناء، تصنيف، تمثيل، أو ملاحظة.</span></div>
 <div class="corner-op"><b>2 · في الطريق</b><span>تُشغّل منظومة الوحدة أو بيت قصير يضبط السير ويعيد المعنى إلى الذاكرة.</span></div>
@@ -2295,7 +2385,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="transition-system"><h3>تنبيه تشغيلي</h3><ol><li>تستخدم مكتبات الأركان كمرجع تحضير للمعلمة، ولا يلزم نقل كل أدوات المكتبة إلى اليوم الواحد.</li><li>تختار المعلمة من كل مكتبة ما يخدم هدف اليوم، وتترك مساحة لاختيار الطفل داخل الحدود الآمنة.</li><li>المنظومات أثناء السير بين الفصول والأركان جزء من التعلم؛ تضبط الحركة وتثبت المفردة والمعنى.</li></ol></div>
 </div>
 <aside class="page-aside">
-<div class="teacher-tip"><span class="tip-label">دور المعلمة</span><h3>موجهة لا منفذة</h3><p>تشرح المهمة وتترك مساحة للتجريب، ثم تتدخل بسؤال يقود الطفل إلى المعنى.</p></div>
+<div class="gp-sechead gp-aside-head"><div class="k">للمعلّمة</div><h2>ثلاث ملاحظات</h2></div><div class="teacher-tip"><span class="tip-label">دور المعلمة</span><h3>موجهة لا منفذة</h3><p>تشرح المهمة وتترك مساحة للتجريب، ثم تتدخل بسؤال يقود الطفل إلى المعنى.</p></div>
 <div class="quick-card"><span class="tip-label">مخرج الركن</span><h3>شيء يمكن رؤيته</h3><p>بطاقة مصنفة، مجسم، جملة إيمانية، تمثيل أدب، أو ملاحظة قصيرة في سجل الطفل.</p></div>
 <div class="reference-card"><span class="tip-label">سلامة</span><h3>اللعب الحر منضبط</h3><p>اللعب الحر لا يعني ترك الطفل دون متابعة؛ بل اختيار داخل حدود واضحة وإشراف يقظ.</p></div>
 </aside>
