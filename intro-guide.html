@@ -1830,6 +1830,59 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #start .gp-reveal.gp-anim{animation:gpRise .6s var(--gp-ease) both}
 @media(prefers-reduced-motion:reduce){#start .gp-reveal.gp-anim{animation:none}}
 </style>
+<style id="gp-nutrition2">
+/* التبويب ١٦ التغذية — تعميق التصميم: هيرو + تحذير + بطاقات مراجع/طب نبوي/أضرار تحريريّة */
+#nutrition .nutri-hero{background:linear-gradient(135deg,#FBF7EE,#F4EDDE)!important;border:1px solid #E9E1D2!important;border-radius:22px!important;padding:30px 34px!important;display:flex!important;align-items:center;gap:28px;margin:34px 0 0!important;box-shadow:none!important}
+#nutrition .nh-art{flex:none}
+#nutrition .nh-art svg{width:98px;height:98px}
+#nutrition .nh-txt h3{font-family:"AlAwwal","Amiri",serif!important;font-size:28px!important;color:#1F4A39!important;margin:0 0 12px!important;line-height:1.5;overflow:visible!important}
+#nutrition .nh-txt p{color:#43483f!important;font-size:15.5px!important;line-height:1.95!important;margin:0!important}
+#nutrition .nh-txt strong{color:#1F4A39!important}
+/* تحذير */
+#nutrition .nutri-warn{background:#FBF3E3!important;border:1px solid #EAD9AE!important;border-right:5px solid #E0912E!important;border-radius:16px!important;padding:18px 22px!important;display:flex!important;align-items:center;gap:18px;margin:26px 0 0!important}
+#nutrition .nw-ic{flex:none}
+#nutrition .nw-ic svg{width:46px;height:46px}
+#nutrition .nutri-warn b{color:#9a5a12!important}
+#nutrition .nutri-warn>div{color:#4a4636!important;font-size:15px!important;line-height:1.85!important}
+#nutrition .nutri-sub{font-size:20px!important;margin:38px 0 16px!important}
+/* شبكة أضرار */
+#nutrition .harm-grid{display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:16px!important;margin:10px 0 0!important}
+#nutrition .harm-card{background:#fff!important;border:1px solid #E9E1D2!important;border-top:3px solid #C2185B!important;border-radius:14px!important;padding:20px 16px!important;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
+#nutrition .harm-card .h-ic{width:54px;height:54px;background:#FBEEF3;border-radius:14px;display:flex;align-items:center;justify-content:center;flex:none}
+#nutrition .harm-card .h-ic svg{width:32px;height:32px}
+#nutrition .harm-card span{color:#1F4A39!important;font-weight:600;font-size:14px;font-family:"AlAwwal","Amiri",serif;line-height:1.5}
+/* نصائح */
+#nutrition .tips-list{display:grid!important;gap:10px!important;margin:10px 0 0!important}
+#nutrition .tip-row{background:#F4EDDE!important;border:1px solid #E9E1D2!important;border-radius:12px!important;padding:13px 16px!important;display:flex!important;align-items:flex-start;gap:12px}
+#nutrition .tip-check{flex:none;width:24px;height:24px;background:#0E6E6B!important;color:#fff!important;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:2px}
+#nutrition .tip-row p{color:#43483f!important;font-size:14.5px!important;line-height:1.8!important;margin:0!important}
+/* بطاقات مراجع الوزارة */
+#nutrition .dl-grid{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))!important;gap:20px!important;margin:10px 0 0!important}
+#nutrition .dl-card{background:#fff!important;border:1px solid #E9E1D2!important;border-radius:18px!important;padding:22px!important;display:flex!important;flex-direction:column;align-items:flex-start;gap:12px;transition:transform .25s cubic-bezier(.22,.61,.36,1),box-shadow .25s;box-shadow:none!important}
+#nutrition .dl-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(31,74,57,.1)}
+#nutrition .dl-illus{width:64px;height:64px;background:var(--il,#eef7f0)!important;border-radius:16px;display:flex;align-items:center;justify-content:center;flex:none}
+#nutrition .dl-illus svg{width:44px;height:44px}
+#nutrition .dl-body h4{font-family:"AlAwwal","Amiri",serif!important;font-size:18px!important;color:#1F4A39!important;margin:0 0 8px!important;line-height:1.55;overflow:visible!important}
+#nutrition .dl-body p{color:#555!important;font-size:13.5px!important;line-height:1.8!important;margin:0 0 14px!important}
+#nutrition .dl-open{color:#0E6E6B!important;font-weight:700;font-size:13px;text-decoration:none;border:1px solid #bcdcd2;padding:7px 14px;border-radius:20px;display:inline-block;background:#EDF5F1;transition:background .2s;margin-top:auto}
+#nutrition .dl-open:hover{background:#dcebe4}
+/* بطاقات الطب النبوي */
+#nutrition .pn-lead{color:#43483f!important;font-size:15.5px!important;line-height:1.95!important;margin:16px 0 0!important;max-width:760px}
+#nutrition .pn-grid{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))!important;gap:20px!important;margin:10px 0 0!important}
+#nutrition .pn-card{background:#fff!important;border:1px solid #E9E1D2!important;border-top:4px solid #C79A3B!important;border-radius:18px!important;padding:22px!important;display:flex!important;flex-direction:column;gap:7px;transition:transform .25s cubic-bezier(.22,.61,.36,1),box-shadow .25s;box-shadow:none!important}
+#nutrition .pn-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(31,74,57,.1)}
+#nutrition .pn-ic{width:54px;height:54px;background:#FBF3E0!important;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:6px;flex:none}
+#nutrition .pn-ic svg{width:34px;height:34px}
+#nutrition .pn-card h4{font-family:"AlAwwal","Amiri",serif!important;font-size:20px!important;color:#1F4A39!important;margin:0!important;overflow:visible!important}
+#nutrition .pn-card>span{color:#8a5d12!important;font-weight:700;font-size:12px;letter-spacing:.02em}
+#nutrition .pn-card p{color:#3d4a40!important;font-size:14px!important;line-height:1.9!important;margin:4px 0 0!important;font-family:"AlAwwal","Amiri",serif;border-right:3px solid #E6D9B8;padding-right:12px}
+/* أشكال الوزارة */
+#nutrition .moh-figure,#nutrition .moh-official{border:1px solid #E9E1D2!important;border-radius:16px!important;overflow:hidden!important;background:#fff!important;padding:0!important;margin:24px auto 0!important}
+#nutrition .moh-figure img,#nutrition .moh-official img{width:100%;height:auto;display:block}
+#nutrition .moh-cap,#nutrition .moh-illus-cap{display:block!important;padding:12px 18px!important;color:#6C776F!important;font-size:13px!important;line-height:1.7!important;background:#FBF9F2!important;margin:0!important}
+@media(max-width:900px){#nutrition .harm-grid{grid-template-columns:repeat(2,1fr)!important}#nutrition .nutri-hero{flex-direction:column;text-align:center}}
+@media(max-width:560px){#nutrition .harm-grid{grid-template-columns:1fr!important}}
+</style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
 /* توقيعات وعناوين الأقسام الذهبيّة: تغميق للقراءة على العاجيّ/الكريميّ */
