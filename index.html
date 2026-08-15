@@ -149,106 +149,149 @@
   .flow-step:not(:last-child)::after{content:"";position:absolute;top:calc(14px + 18px);inset-inline-start:-50%;
     width:100%;height:2px;background:linear-gradient(90deg,var(--line),var(--line));z-index:0}
 
-  /* ===== مقارنة المنظومتين — إطارٌ واحد، عالمان يلتقيان على محور ===== */
-  .wahy{background:linear-gradient(180deg,#F6F1E4,#F1EAD9)}
-  .sys{position:relative;max-width:940px;margin:clamp(30px,4.5vw,52px) auto 0;border-radius:28px;overflow:hidden;
-    box-shadow:0 40px 90px rgba(20,40,35,.30);isolation:isolate}
-  .sys::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(to left,#FCF9F0 0 50%,#1C2226 50% 100%)}
-  .sys::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-    background:radial-gradient(520px 300px at 76% 122%,rgba(199,154,59,.32),transparent 60%),
-              radial-gradient(420px 250px at 88% 2%,rgba(46,106,77,.14),transparent 62%),
-              radial-gradient(440px 280px at 12% -12%,rgba(0,0,0,.5),transparent 60%),
-              radial-gradient(340px 280px at 6% 112%,rgba(0,0,0,.32),transparent 62%)}
-  .sys-inner{position:relative;z-index:2;padding:clamp(24px,3.2vw,40px) clamp(16px,3vw,32px)}
-  .sys-inner::before{content:"";position:absolute;z-index:1;top:100px;bottom:96px;right:50%;transform:translateX(50%);width:2px;
-    background:linear-gradient(180deg,rgba(199,154,59,0),#cBA24E 12%,#cBA24E 88%,rgba(199,154,59,0));
-    box-shadow:0 0 16px rgba(199,154,59,.45)}
-  .sys-heads,.crow,.sys-foot{display:grid;grid-template-columns:1fr 176px 1fr;align-items:center}
-  .sys-heads{margin-bottom:16px;padding-bottom:6px;position:relative;z-index:3}
-  .shd{display:flex;align-items:center;gap:11px;justify-content:center}
-  .shd .nm{text-align:center}
-  .shd .emblem{width:46px;height:46px;flex:0 0 auto;display:grid;place-items:center;border-radius:50%}
-  .shd.ours .emblem{background:radial-gradient(circle at 40% 35%,#fff,#f3e2b8);box-shadow:0 0 0 1.5px var(--gold),0 0 28px rgba(199,154,59,.55)}
-  .shd.other .emblem{background:#262b2f;box-shadow:0 0 0 1px #3a4046,inset 0 0 14px rgba(0,0,0,.6)}
-  .shd .nm small{display:block;font-size:10.5px;letter-spacing:.4px;font-weight:700}
-  .shd .nm b{font-family:var(--display);font-weight:700;font-size:clamp(17px,2.3vw,24px);line-height:1.2}
-  .shd.ours .nm small{color:#b0821f}.shd.ours .nm b{color:var(--forest)}
-  .shd.other .nm small{color:#7a828b}.shd.other .nm b{color:#b9bfc6}
-  .seal{justify-self:center;width:52px;height:52px;border-radius:50%;background:#fff;border:1.5px solid var(--gold);
-    color:var(--ochre);display:grid;place-items:center;font-weight:700;font-size:12px;
-    box-shadow:0 12px 26px rgba(31,74,57,.2);position:relative;z-index:3}
-  .crow{padding:14px 0;position:relative}
-  .ans{font-family:var(--display);font-weight:700;line-height:1.22}
-  .ans.ours{text-align:center;color:var(--forest);font-size:clamp(19px,2.5vw,29px)}
-  .ans.other{text-align:center;color:#a9afb6;font-size:clamp(15px,1.9vw,20px)}
-  .crow.r2 .ans.other{opacity:.9}.crow.r3 .ans.other{opacity:.82}
-  .crow.r4 .ans.other{opacity:.74}.crow.r5 .ans.other{opacity:.66}
-  .crow.crown .ans.ours{color:var(--gold);text-shadow:0 0 28px rgba(199,154,59,.5)}
-  .crow.crown .ans.other{opacity:.5}
-  .qn{justify-self:center;position:relative;display:flex;justify-content:center;z-index:2}
-  .qn::before,.qn::after{content:"";position:absolute;top:50%;height:1px;width:30px;z-index:0}
-  .qn::before{right:100%;background:linear-gradient(to left,rgba(199,154,59,.6),transparent)}
-  .qn::after{left:100%;background:linear-gradient(to right,rgba(120,130,140,.45),transparent)}
-  .qn i{font-style:normal;font-size:9.5px;letter-spacing:.4px;font-weight:700;color:#8a7f5c;white-space:nowrap;line-height:1.4;
-    background:#FBF6EA;border:1px solid #e7d9ba;border-radius:999px;padding:5px 13px;position:relative;z-index:2;
-    box-shadow:0 5px 14px rgba(20,40,35,.18)}
-  .sys-foot{margin-top:12px;padding-top:18px;border-top:1px solid rgba(150,140,110,.2)}
-  .sfoot{display:flex;flex-direction:column;gap:3px;text-align:center}
-  .sfoot small{font-size:10px;letter-spacing:.4px;font-weight:700}
-  .sfoot.ours small{color:#b0821f}.sfoot.other small{color:#767e87}
-  .sfoot b{font-family:var(--display);font-size:clamp(13.5px,1.8vw,18px);font-weight:700;line-height:1.35}
-  .sfoot.ours b{color:var(--forest-2)}.sfoot.other b{color:#9aa0a8}
-  .wahy-note{margin-top:28px;text-align:center;font-size:13.5px;color:var(--gray);line-height:2;max-width:72ch;margin-inline:auto}
+  /* ===== منظومة الوحي — لوحةٌ مائية واحدة تتكشّف داخلها المنظومتان (Editorial scrollytelling) ===== */
+  .wahy{background:linear-gradient(180deg,#F6F1E4,#F1EAD9);position:relative}
+  .wscene{position:relative;margin-top:clamp(22px,3.4vw,40px)}
+  .wscene-track{position:relative}
+  .wscene-stage{position:relative;border-radius:26px;overflow:hidden;isolation:isolate;
+    box-shadow:0 40px 90px rgba(20,40,35,.24);background:#F3ECDA;contain:paint}
+  /* ===== اللوحة: تركيبٌ طبقيّ من رسومٍ مائية حقيقية ===== */
+  .wscene-art{position:absolute;inset:0;overflow:hidden;isolation:isolate;opacity:.62;transition:opacity .8s var(--ease)}
+  .ws-sky{position:absolute;inset:0;background:linear-gradient(175deg,#F1E9D6 0%,#F6F0E1 46%,#ECE3CE 100%)}
+  .ws-light{position:absolute;top:-14%;right:-10%;width:80%;height:80%;pointer-events:none;
+    background:url(assets/wahy/light.jpg?v=2) no-repeat top right/cover;
+    mix-blend-mode:screen;opacity:var(--light,.8)}
+  .ws-land{position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+    width:132%;min-width:1080px;height:auto;opacity:var(--wash,1)}
+  .ws-tree{position:absolute;right:4%;bottom:19%;width:clamp(168px,26vw,360px);height:auto;
+    opacity:var(--wash,1);filter:drop-shadow(0 10px 16px rgba(20,40,35,.12))}
+  .ws-mist{position:absolute;left:-14%;bottom:-6%;width:66%;height:88%;pointer-events:none;
+    background:url(assets/wahy/fog.jpg?v=2) no-repeat left center/cover;
+    mix-blend-mode:screen;opacity:calc(var(--fog,.4) * .6)}
+  .ws-mute{position:absolute;left:0;bottom:0;width:50%;height:100%;pointer-events:none;
+    background:linear-gradient(90deg,rgba(158,158,148,.26),rgba(158,158,148,.08) 58%,transparent 82%);
+    -webkit-backdrop-filter:grayscale(.32) brightness(1.02);backdrop-filter:grayscale(.32) brightness(1.02);
+    -webkit-mask-image:linear-gradient(90deg,#000,#000 54%,transparent 86%);
+    mask-image:linear-gradient(90deg,#000,#000 54%,transparent 86%);
+    opacity:var(--fog,.5)}
+
+  /* ===== الوضع الثابت (بلا JS / بلا حركة) — مشهدٌ هادئ وقائمةٌ مقروءة ===== */
+  .wscene-stage{padding:clamp(30px,5vw,52px) clamp(16px,4vw,30px)}
+  .wscene-heads{position:relative;z-index:4;display:flex;justify-content:center;gap:clamp(20px,6vw,70px);
+    flex-wrap:wrap;align-items:center;margin-bottom:clamp(26px,4vw,40px);opacity:var(--heads,1);transition:opacity .5s var(--ease)}
+  .whead{display:flex;align-items:center;gap:10px}
+  .whead .nm small{display:block;font-size:10px;font-weight:700;letter-spacing:.4px;line-height:1.5;text-shadow:0 1px 2px rgba(251,249,242,.85)}
+  .whead .nm b{font-family:var(--display);font-weight:700;font-size:clamp(16px,2.2vw,23px);line-height:1.2;text-shadow:0 1px 2px rgba(251,249,242,.92),0 0 12px rgba(251,249,242,.7)}
+  .whead-ours .nm{text-align:start}
+  .whead-ours .nm small{color:#b0821f}.whead-ours .nm b{color:var(--forest)}
+  .whead-other{opacity:.82}
+  .whead-other .nm{text-align:end}
+  .whead-other .nm small{color:#8b8f88}.whead-other .nm b{color:#8f948c}
+  .whead .emb{width:clamp(38px,5vw,54px);height:clamp(38px,5vw,54px);flex:0 0 auto;object-fit:contain}
+  .emb-knot{mix-blend-mode:multiply;opacity:1}
+
+  .wscene-cmps{position:relative;z-index:3;max-width:720px;margin:0 auto;
+    display:flex;flex-direction:column;gap:clamp(18px,2.6vw,26px)}
+  .wcmp-list{display:contents}            /* الوضع الثابت: الصفوف تتدفّق كما هي */
+  .wspine{display:none;pointer-events:none}
+  .wspine-line{stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--spine,1))}
+  .wcmp{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(10px,2.4vw,26px);
+    background:rgba(251,249,242,.82);border:1px solid rgba(199,154,59,.18);border-radius:18px;
+    padding:clamp(15px,2.4vw,20px) clamp(14px,3vw,26px);box-shadow:0 14px 34px rgba(20,40,35,.09)}
+  .wt{font-family:var(--display);font-weight:700;line-height:1.24;text-align:center;
+    text-shadow:0 1px 2px rgba(251,249,242,.85),0 0 10px rgba(251,249,242,.6)}
+  .wt-ours{color:var(--forest);font-size:clamp(21px,3.4vw,38px)}
+  .wt-other{color:#9aa096;font-size:clamp(15px,2.3vw,24px)}
+  .wt-axis{position:relative;justify-self:center;white-space:nowrap;font-family:var(--body);
+    font-size:clamp(9.5px,1.5vw,11px);font-weight:700;letter-spacing:.3px;color:#8a7f5c;
+    background:#FBF6EA;border:1px solid #e7d9ba;border-radius:999px;padding:6px 14px;
+    box-shadow:0 6px 16px rgba(20,40,35,.14)}
+  .wt-axis::before,.wt-axis::after{content:"";position:absolute;top:50%;height:2px;
+    width:clamp(14px,3.4vw,52px)}
+  .wt-axis::before{right:100%;margin-right:6px;background:linear-gradient(to left,rgba(199,154,59,.8),transparent)}
+  .wt-axis::after{left:100%;margin-left:6px;background:linear-gradient(to right,rgba(140,144,132,.55),transparent)}
+
+  .wscene-foot{position:relative;z-index:3;margin-top:clamp(26px,4vw,40px);
+    display:flex;justify-content:center;gap:clamp(18px,5vw,64px);flex-wrap:wrap;opacity:var(--foot,1)}
+  .wf{display:flex;flex-direction:column;gap:3px;text-align:center;max-width:250px}
+  .wf small{font-size:10.5px;font-weight:700;letter-spacing:.4px;text-shadow:0 1px 3px rgba(251,249,242,.95)}
+  .wf b{font-family:var(--display);font-weight:700;font-size:clamp(14px,2.1vw,19px);line-height:1.45;
+    text-shadow:0 1px 2px #FBF9F2,0 0 10px rgba(251,249,242,.95),0 0 3px rgba(251,249,242,.95)}
+  .wf.ours small{color:#a5761a}.wf.ours b{color:var(--forest)}
+  .wf.other small{color:#7c8377}.wf.other b{color:#818779}
+
+  /* مسار الخيط الذهبي — مؤشّر تقدّم يظهر في الوضع التفاعلي فقط */
+  .wscene-rail{display:none;align-items:center;pointer-events:none}
+  .wnode{width:9px;height:9px;border-radius:50%;background:transparent;
+    border:1.6px solid rgba(199,154,59,.5);position:relative;flex:0 0 auto;transition:.4s var(--ease)}
+  .wnode+.wnode{margin-inline-start:clamp(22px,5vw,46px)}
+  .wseg{position:absolute;top:50%;right:100%;width:clamp(22px,5vw,46px);height:2px;transform:translateY(-50%);
+    background:rgba(199,154,59,.26)}
+  .wnode.done{background:var(--gold);border-color:var(--gold)}
+  .wnode.done .wseg{background:var(--gold)}
+  .wnode.now{transform:scale(1.5);background:var(--gold);border-color:var(--gold);
+    box-shadow:0 0 0 5px rgba(199,154,59,.14)}
+
+  .wahy-note{margin-top:clamp(30px,4.6vw,52px);text-align:center;font-size:14px;color:var(--gray);
+    line-height:2.05;max-width:70ch;margin-inline:auto}
   .wahy-note b{color:var(--forest);font-weight:700}
-  /* ===== حركة تجميع المقارنة عند الظهور ===== */
-  .sys.reveal{transform:none}
-  .sys .seal,.sys .shd,.sys .qn,.sys .ans,.sys .sfoot{opacity:0}
-  .sys .ans.ours{transform:translateX(20px)}
-  .sys .ans.other{transform:translateX(-20px)}
-  .sys .qn{transform:scale(.82)}
-  .sys-inner::before{transform:translateX(50%) scaleY(0);transform-origin:top center}
-  .sys.in .sys-inner::before{animation:axisDraw .72s var(--ease) .12s both,axisGlow 3.4s ease-in-out 1s infinite}
-  .sys.in .seal{animation:sealPop .5s var(--ease) .18s both}
-  .sys.in .shd.ours{animation:sysFadeUp .6s var(--ease) .22s both}
-  .sys.in .shd.other{animation:sysFadeUp .6s var(--ease) .27s both}
-  .sys.in .qn{animation:qnPop .5s var(--ease) both}
-  .sys.in .ans.ours{animation:ansInR .55s var(--ease) both}
-  .sys.in .ans.other{animation:ansInL .55s var(--ease) both}
-  .sys.in .crow.r1 .qn,.sys.in .crow.r1 .ans{animation-delay:.35s}
-  .sys.in .crow.r2 .qn,.sys.in .crow.r2 .ans{animation-delay:.46s}
-  .sys.in .crow.r3 .qn,.sys.in .crow.r3 .ans{animation-delay:.57s}
-  .sys.in .crow.r4 .qn,.sys.in .crow.r4 .ans{animation-delay:.68s}
-  .sys.in .crow.r5 .qn,.sys.in .crow.r5 .ans{animation-delay:.79s}
-  .sys.in .crow.crown .qn,.sys.in .crow.crown .ans{animation-delay:.90s}
-  .sys.in .sfoot{animation:sysFadeUp .6s var(--ease) 1.05s both}
-  /* ===== حركة حيّة دائمة — النور يحيا والظلمة ساكنة ===== */
-  .sys.in .shd.ours .emblem{animation:sunGlow 3.2s ease-in-out 1s infinite}
-  .sys.in .shd.ours .emblem svg{animation:slowSpin 46s linear infinite;transform-origin:50% 50%}
-  .sys.in .crow.crown .ans.ours{animation:ansInR .55s var(--ease) .9s both,fruitGlow 2.8s ease-in-out 1.7s infinite}
-  @keyframes axisGlow{0%,100%{box-shadow:0 0 12px rgba(199,154,59,.32)}50%{box-shadow:0 0 24px rgba(199,154,59,.62)}}
-  @keyframes sunGlow{0%,100%{box-shadow:0 0 0 1.5px var(--gold),0 0 18px rgba(199,154,59,.42)}50%{box-shadow:0 0 0 1.5px var(--gold),0 0 34px rgba(199,154,59,.74)}}
-  @keyframes slowSpin{to{transform:rotate(360deg)}}
-  @keyframes fruitGlow{0%,100%{text-shadow:0 0 20px rgba(199,154,59,.4)}50%{text-shadow:0 0 42px rgba(199,154,59,.78)}}
-  @keyframes axisDraw{from{transform:translateX(50%) scaleY(0)}to{transform:translateX(50%) scaleY(1)}}
-  @keyframes sealPop{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
-  @keyframes sysFadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-  @keyframes qnPop{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}
-  @keyframes ansInR{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
-  @keyframes ansInL{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:none}}
-  @media(prefers-reduced-motion:reduce){
-    .sys .seal,.sys .shd,.sys .qn,.sys .ans,.sys .sfoot,.sys .emblem,.sys .emblem svg{opacity:1;transform:none;animation:none!important}
-    .sys-inner::before{transform:translateX(50%) scaleY(1);animation:none!important}
-  }
+
+  /* ============ الوضع التفاعلي (JS + حركة مسموحة): مشهدٌ ثابت والعناصر تتكشّف ============ */
+  .is-scrolly .wscene-art{opacity:1}
+  .is-scrolly .wscene-track{height:var(--track-h,180vh)}
+  .is-scrolly .wscene-stage{position:sticky;top:0;height:100svh;min-height:520px;border-radius:0;
+    box-shadow:none;padding:0}
+  /* منظومةٌ واحدة تُبنى بالتمرير — كلّ خاصّية دالّةٌ خالصة لـ progress (scrubbed 1:1، ثنائيّة الاتجاه) */
+  .is-scrolly .wscene-core{position:absolute;inset:0}
+  .is-scrolly .wscene-core::before{content:"";position:absolute;inset:0;z-index:-1;
+    background:radial-gradient(128% 62% at 50% 40%,rgba(250,247,238,.9),rgba(250,247,238,.5) 54%,transparent 80%)}
+  .is-scrolly .wscene-cmps{position:absolute;inset:0;max-width:none;margin:0;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:clamp(24px,5vh,54px) clamp(18px,4vw,30px) clamp(150px,26vh,240px)}
+  .is-scrolly .wcmp-list{display:flex;flex-direction:column;position:relative;
+    width:100%;max-width:min(820px,86vw);margin-inline:auto;gap:clamp(10px,1.9vw,21px)}
+  .is-scrolly .wspine{display:block;position:absolute;inset:-2% 0;z-index:0}
+  .is-scrolly .wscene-heads{position:absolute;inset-inline:0;bottom:clamp(62%,68vh,71%);margin:0;
+    display:flex;justify-content:space-between;align-items:center;padding:0 clamp(24px,6.5vw,80px);
+    opacity:var(--heads,1);transition:none}
+  .is-scrolly .wcmp{--r:0;position:relative;z-index:1;width:100%;margin:0;padding:0;
+    background:none;border:0;box-shadow:none}
+  .is-scrolly .wt-ours{font-size:clamp(21px,3vw,33px);opacity:var(--r);
+    transform:translateY(calc((1 - var(--r)) * 9px));will-change:opacity,transform}
+  .is-scrolly .wt-axis{opacity:var(--r);will-change:opacity}
+  .is-scrolly .wt-axis::before,.is-scrolly .wt-axis::after{opacity:var(--r)}
+  .is-scrolly .wt-other{font-size:clamp(14px,2vw,21px);opacity:calc(var(--r) * .68);
+    transform:translateX(calc((1 - var(--r)) * -7px));will-change:opacity,transform}
+  .is-scrolly .wscene-foot{position:absolute;inset-inline:0;bottom:clamp(84px,12vw,124px);margin:0;
+    opacity:var(--foot,0);pointer-events:none;padding:clamp(10px,1.6vw,16px) clamp(18px,4vw,30px)}
+  .is-scrolly .wscene-foot::before{content:"";position:absolute;inset:0;z-index:-1;
+    background:radial-gradient(78% 150% at 50% 50%,rgba(250,247,238,.94),rgba(250,247,238,.5) 58%,transparent 84%)}
+
+  /* ============ استجابة الهاتف ============ */
   @media(max-width:640px){
-    .sys-heads,.crow,.sys-foot{grid-template-columns:1fr 92px 1fr}
-    .sys-inner::before{top:118px;bottom:104px}
-    .ans.ours{font-size:17px;padding-inline-end:8px}.ans.other{font-size:13px;padding-inline-start:8px}
-    .qn i{font-size:8px;letter-spacing:0;padding:4px 7px}
-    .qn::before,.qn::after{width:10px}
-    .shd .emblem{width:38px;height:38px}
-    .shd .nm b{font-size:15px}.shd .nm small{font-size:9px;letter-spacing:1.5px}
-    .seal{width:42px;height:42px;font-size:10px}
-    .sfoot b{font-size:12px}
+    .is-scrolly .wscene-track{height:var(--track-h,175vh)}
+    .is-scrolly .wscene-stage{min-height:480px}
+    .wcmp{grid-template-columns:auto auto;grid-template-areas:"axis axis" "ours other";
+      justify-content:center;align-items:baseline;column-gap:12px;row-gap:3px;padding:12px 14px}
+    .wt-axis{grid-area:axis;justify-self:center}
+    .wt-axis::before,.wt-axis::after{display:none}
+    .wt-ours{grid-area:ours;font-size:clamp(21px,6.6vw,28px)}
+    .wt-other{grid-area:other;font-size:clamp(14px,4.4vw,18px)}
+    .wt-other::before{content:"·\00a0";color:#c3bdae;font-weight:700}
+    .is-scrolly .wscene-cmps{gap:clamp(4px,1.4vw,10px);padding:40px 14px 33vh}
+    .is-scrolly .wt-ours{font-size:clamp(20px,6.2vw,26px)}
+    .is-scrolly .wt-other{font-size:clamp(13px,4.2vw,17px)}
+    .is-scrolly .wscene-heads{bottom:clamp(46%,52vh,56%);padding:0 16px}
+    .whead .nm small{font-size:8.5px}
+    .whead-other{opacity:.8}
+    .wf b{font-size:12.5px}
+    .wnode+.wnode{margin-inline-start:24px}
+    .wseg{width:24px}
+  }
+
+  /* ============ الوضع الهادئ — لا حركة ============ */
+  @media(prefers-reduced-motion:reduce){
+    .wscene-art{opacity:.72}
   }
 
   /* ============ معرض قلّاب (coverflow) — من داخل روضة غرس القيم ============ */
@@ -479,32 +522,72 @@
       <h2>منظومة الوحي — في مقابل غيرها</h2>
       <p>يقوم منهجنا على منظومة الوحي مرجعًا أعلى؛ في مقابل مناهجَ تُقصي الوحي فتجعل الإنسانَ والعقلَ والحريةَ المطلقة مركزها.</p>
     </div>
-    <div class="sys reveal">
-      <div class="sys-inner">
-        <div class="sys-heads">
-          <div class="shd ours">
-            <span class="emblem"><svg width="26" height="26" viewBox="0 0 30 30" fill="none"><g stroke="#C79A3B" stroke-width="1.5" stroke-linecap="round"><line x1="15" y1="2.5" x2="15" y2="6"/><line x1="15" y1="24" x2="15" y2="27.5"/><line x1="2.5" y1="15" x2="6" y2="15"/><line x1="24" y1="15" x2="27.5" y2="15"/><line x1="6.2" y1="6.2" x2="8.7" y2="8.7"/><line x1="21.3" y1="21.3" x2="23.8" y2="23.8"/><line x1="23.8" y1="6.2" x2="21.3" y2="8.7"/><line x1="8.7" y1="21.3" x2="6.2" y2="23.8"/></g><circle cx="15" cy="15" r="5.5" fill="#C79A3B"/><circle cx="15" cy="15" r="2.3" fill="#fff8ea"/></svg></span>
+  </div>
+
+  <div class="wscene" id="wscene">
+    <div class="wscene-track">
+      <div class="wscene-stage" id="wsStage">
+
+        <!-- ===== اللوحة المائية الأصلية (مشهدٌ واحد يتحوّل عضويًّا) ===== -->
+        <!-- ===== اللوحة: تركيبٌ طبقيّ من رسومٍ مائية حقيقية ===== -->
+        <div class="wscene-art" aria-hidden="true">
+          <div class="ws-sky"></div>
+          <div class="ws-light"></div>
+          <img class="ws-land" src="assets/wahy/land.png?v=2" alt="" loading="lazy" decoding="async">
+          <img class="ws-tree" src="assets/wahy/tree.png?v=2" alt="" loading="lazy" decoding="async">
+          <div class="ws-mist"></div>
+          <div class="ws-mute"></div>
+        </div>
+
+        <!-- ===== الرؤوس + المقارنات: كتلةٌ واحدة تظهر معًا ===== -->
+        <div class="wscene-core">
+        <!-- ===== رأسا المنظومتين (مرساتان) ===== -->
+        <div class="wscene-heads">
+          <div class="whead whead-ours">
+            <img class="emb" src="assets/wahy/book.png?v=2" alt="" aria-hidden="true" loading="lazy" decoding="async">
             <div class="nm"><small>منهجنا</small><b>منظومة الوحي</b></div>
           </div>
-          <div class="seal">مقابل</div>
-          <div class="shd other">
+          <div class="whead whead-other">
             <div class="nm"><small>مناهج أخرى</small><b>منظومة الشيطان</b></div>
-            <span class="emblem"><svg width="26" height="26" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="8.5" stroke="#4a5158" stroke-width="1.5" stroke-dasharray="4 3"/><line x1="9.5" y1="9.5" x2="20.5" y2="20.5" stroke="#3f464c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <img class="emb emb-knot" src="assets/wahy/knot.png?v=2" alt="" aria-hidden="true" loading="lazy" decoding="async">
           </div>
         </div>
-        <div class="crow r1"><div class="ans ours">الله</div><div class="qn"><i>الإله</i></div><div class="ans other">الإنسان</div></div>
-        <div class="crow r2"><div class="ans ours">الوحي</div><div class="qn"><i>المرجع والمصدر</i></div><div class="ans other">العقل</div></div>
-        <div class="crow r3"><div class="ans ours">التوحيد</div><div class="qn"><i>القيمة المركزية</i></div><div class="ans other">الحرية</div></div>
-        <div class="crow r4"><div class="ans ours">التسليم لله</div><div class="qn"><i>الفعل</i></div><div class="ans other">الطغيان</div></div>
-        <div class="crow r5"><div class="ans ours">الدار الآخرة</div><div class="qn"><i>الغاية</i></div><div class="ans other">الدار الدنيا</div></div>
-        <div class="crow crown"><div class="ans ours">حلاوة الإيمان</div><div class="qn"><i>الثمرة</i></div><div class="ans other">المتعة واللذة</div></div>
-        <div class="sys-foot">
-          <div class="sfoot ours"><small>المآل</small><b>طمأنينةٌ واتزانٌ وسموُّ سلوك</b></div>
-          <div></div>
-          <div class="sfoot other"><small>المآل</small><b>لذّةٌ عابرة وفقدانُ المعنى</b></div>
+
+        <!-- ===== المنظومة: عمودٌ فقريّ واحد يُبنى بالتمرير ===== -->
+        <div class="wscene-cmps" role="list" aria-label="مقارنة منظومة الوحي بالمنظومة المقابلة">
+          <div class="wcmp-list">
+            <svg class="wspine" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="wspGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#C79A3B" stop-opacity="0"/>
+                  <stop offset=".1" stop-color="#C79A3B" stop-opacity=".6"/>
+                  <stop offset=".9" stop-color="#C79A3B" stop-opacity=".6"/>
+                  <stop offset="1" stop-color="#C79A3B" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <line class="wspine-line" x1="50" y1="2" x2="50" y2="98" pathLength="1" stroke="url(#wspGrad)" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <article class="wcmp" role="listitem"><b class="wt wt-ours">الله</b><span class="wt-axis">الإله</span><b class="wt wt-other">الإنسان</b></article>
+            <article class="wcmp" role="listitem"><b class="wt wt-ours">الوحي</b><span class="wt-axis">المرجع والمصدر</span><b class="wt wt-other">العقل</b></article>
+            <article class="wcmp" role="listitem"><b class="wt wt-ours">التوحيد</b><span class="wt-axis">القيمة المركزية</span><b class="wt wt-other">الحرية</b></article>
+            <article class="wcmp" role="listitem"><b class="wt wt-ours">التسليم لله</b><span class="wt-axis">الفعل</span><b class="wt wt-other">الطغيان</b></article>
+            <article class="wcmp" role="listitem"><b class="wt wt-ours">الدار الآخرة</b><span class="wt-axis">الغاية</span><b class="wt wt-other">الدار الدنيا</b></article>
+            <article class="wcmp" role="listitem"><b class="wt wt-ours">حلاوة الإيمان</b><span class="wt-axis">الثمرة</span><b class="wt wt-other">المتعة واللذة</b></article>
+          </div>
         </div>
+        </div><!-- /.wscene-core -->
+
+        <!-- ===== المآل — يستقرّ مع المشهد ===== -->
+        <div class="wscene-foot">
+          <div class="wf ours"><small>المآل</small><b>طمأنينةٌ واتزانٌ وسموُّ سلوك</b></div>
+          <div class="wf other"><small>المآل</small><b>لذّةٌ عابرة وفقدانُ المعنى</b></div>
+        </div>
+
       </div>
     </div>
+  </div>
+
+  <div class="shell">
     <p class="wahy-note reveal"><b>منهجنا لا يرفض العلم</b>، بل يعيد للوحي مرجعيّته، وللعلم بوصلته، وللإنسان غايته — فيكون العلمُ خادمًا للإنسان في طريق عبوديّته لله.</p>
   </div>
 </section>
@@ -661,6 +744,51 @@
   if(reduce||!('IntersectionObserver' in window)){ items.forEach(function(el){el.classList.add('in');}); return; }
   var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   items.forEach(function(el){ io.observe(el); });
+})();
+
+/* ===== منظومة الوحي — تجربة تحريرية مرتبطة بالتمرير ===== */
+(function(){
+  var wscene=document.getElementById('wscene');
+  var stage=document.getElementById('wsStage');
+  if(!wscene||!stage) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cmps=[].slice.call(stage.querySelectorAll('.wcmp'));
+  var N=cmps.length;
+  /* الوضع الهادئ / بلا دعم: مشهدٌ ثابت وقائمةٌ مقروءة (لا تفاعل) */
+  if(reduce||N===0||!('requestAnimationFrame' in window)) return;
+  wscene.classList.add('is-scrolly');
+  var track=wscene.querySelector('.wscene-track');
+  var clamp=function(v,a,b){ return v<a?a:(v>b?b:v); };
+  /* smoothstep: ربطٌ ناعم بلا قفزات */
+  var smooth=function(a,b,x){ x=clamp((x-a)/(b-a),0,1); return x*x*(3-2*x); };
+  /* نوافذ ظهورٍ متداخلة لكلّ عنصرٍ في العمود الفقريّ */
+  var START=0.10, STEP=0.125, WIN=0.21;
+  var ticking=false;
+  function frame(){
+    ticking=false;
+    var rect=track.getBoundingClientRect();
+    var vh=window.innerHeight||document.documentElement.clientHeight;
+    var total=track.offsetHeight-vh; if(total<=0) total=1;
+    /* التقدّم = موضع التمرير مباشرةً، ثنائيّ الاتجاه، بلا maxP → scrubbed 1:1 */
+    var p=clamp((0-rect.top)/total,0,1);
+    var set=function(k,v){ stage.style.setProperty(k,(+v).toFixed(4)); };
+    /* المشهد المحيط — هادئٌ وداعم، مشتقٌّ كلّه من p */
+    set('--wash', smooth(0.0,0.10,p));
+    set('--light', 0.44+0.56*smooth(0.05,0.95,p));
+    set('--fog', 0.20+0.50*smooth(0.10,0.72,p));
+    set('--heads', smooth(0.0,0.10,p));
+    set('--spine', smooth(0.06,0.90,p));          /* العمود يُرسَم نزولًا ويُمحى صعودًا */
+    set('--foot', smooth(0.90,1.0,p));
+    /* كلّ عنصرٍ دالّةٌ خالصة لـ p (بلا أصناف ولا انتقالات) → انعكاسٌ لحظيّ حتميّ */
+    for(var i=0;i<N;i++){
+      var a=START+STEP*i;
+      cmps[i].style.setProperty('--r', smooth(a,a+WIN,p).toFixed(4));
+    }
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(frame); } }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  frame();
 })();
 
 /* ===== معرض قلّاب (coverflow) — من داخل روضة غرس القيم ===== */
