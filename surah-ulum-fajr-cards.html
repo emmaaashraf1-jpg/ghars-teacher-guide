@@ -8,88 +8,99 @@
 @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
 :root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Noto Naskh Arabic',Tahoma,sans-serif;
-  --t1:#14402E;--elm:#1E5631;--gold:#C79A3B;--ink:#1E2E29;--muted:#6C776F;--line:#d8cdb5;--cream:#F7F1E2}
+  --t1:#14402E;--elm:#1E5631;--gold:#C79A3B;--ink:#1E2E29;--muted:#6C776F;--line:#d8cdb5;--cream:#F7F1E2;--soft:#eef4f0}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--fb);color:var(--ink);background:#e9efe8;padding:22px;line-height:1.6}
-.head{max-width:960px;margin:0 auto 14px;text-align:center}
+.head{max-width:1000px;margin:0 auto 14px;text-align:center}
 .head h1{font-family:var(--fd);color:var(--t1);font-size:23px}
 .head p{color:var(--muted);font-size:13px;margin-top:4px}
-.sec{max-width:960px;margin:24px auto 12px;display:flex;align-items:center;gap:10px}
+.sec{max-width:1000px;margin:26px auto 12px;display:flex;align-items:center;gap:10px}
 .sec b{font-family:var(--fd);color:var(--t1);font-size:16px;white-space:nowrap}
 .sec i{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
-.us-card{max-width:640px;margin:0 auto;display:flex;flex-wrap:wrap;background:#fff;border:2px solid var(--elm);border-radius:22px;overflow:hidden;box-shadow:0 12px 30px rgba(20,50,35,.16);break-inside:avoid}
-.us-side{flex:1 1 220px;position:relative;background:linear-gradient(140deg,var(--t1),var(--elm));color:#fff;padding:22px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;min-height:150px}
-.us-side .st{position:absolute;inset-inline-end:-26px;top:-26px;width:150px;height:150px;opacity:.15}
-.us-side .st2{position:absolute;inset-inline-start:-32px;bottom:-40px;width:126px;height:126px;opacity:.10}
-.us-kicker{font-family:var(--fd);font-size:15px;letter-spacing:1px;color:#cfe6d7;position:relative}
-.us-name{font-family:var(--fd);font-weight:700;font-size:36px;margin-top:3px;position:relative;text-shadow:0 2px 6px rgba(0,0,0,.18)}
-.us-main{flex:2 1 360px;padding:16px 18px;display:flex;flex-direction:column;gap:11px}
-.us-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.us-chip{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:10px 8px 9px;text-align:center}
-.us-chip .l{font-size:12.5px;color:#9a7d33;font-weight:700;font-family:var(--fd)}
-.us-chip .v{font-family:var(--fd);font-weight:700;color:var(--t1);font-size:21px;margin-top:1px}
-.us-chip .v small{font-size:12px;color:var(--muted);font-weight:400}
-.us-v{background:#eef4f0;border:1px solid #cfe0d5;border-radius:13px;padding:8px 12px;margin-top:2px}
-.us-v .t{font-family:var(--fd);font-weight:700;font-size:12.5px;color:var(--gold)}
-.us-v .a{font-family:'Noto Naskh Arabic',serif;font-size:18px;color:#12271d;line-height:1.9}
-.us-axis{text-align:center;font-size:13px;color:var(--muted);line-height:1.7}
-.us-axis b{color:var(--elm)}
-.match{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.mcard{border-radius:15px;overflow:hidden;border:2px solid var(--elm);text-align:center;break-inside:avoid}
+
+.uposter{max-width:900px;margin:0 auto;background:#fff;border:2.5px solid var(--elm);border-radius:22px;overflow:hidden;box-shadow:0 14px 34px rgba(20,50,35,.16);display:flex;flex-direction:column}
+.up-head{position:relative;background:linear-gradient(135deg,var(--t1),var(--elm));color:#fff;text-align:center;padding:20px 18px 22px;overflow:hidden}
+.up-head .orn{position:absolute;top:50%;width:74px;height:74px;opacity:.16;transform:translateY(-50%)}
+.up-head .orn.r{inset-inline-end:20px}.up-head .orn.l{inset-inline-start:20px}
+.up-kicker{position:relative;font-family:var(--fd);font-size:16px;letter-spacing:3px;color:#cfe6d7;display:inline-flex;align-items:center;gap:12px}
+.up-kicker svg{width:20px;height:20px;opacity:.9}
+.up-name{position:relative;font-family:var(--fd);font-weight:700;font-size:42px;margin-top:6px;text-shadow:0 2px 8px rgba(0,0,0,.2)}
+.up-rule{position:relative;width:120px;height:3px;margin:10px auto 0;border-radius:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.up-body{padding:18px;display:flex;flex-direction:column;gap:14px}
+.up-chips{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.up-chip{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:14px 8px 12px;text-align:center;box-shadow:0 2px 7px rgba(20,50,35,.05)}
+.up-chip .l{font-size:13.5px;color:#9a7d33;font-weight:700;font-family:var(--fd)}
+.up-chip .v{font-family:var(--fd);font-weight:700;color:var(--t1);font-size:26px;margin-top:3px}
+.up-chip .v small{font-size:14px;color:var(--muted);font-weight:400}
+.up-verses{display:flex;flex-wrap:wrap;gap:12px}
+.up-v{flex:1 1 300px;background:var(--soft);border:1px solid #cfe0d5;border-inline-start:5px solid var(--elm);border-radius:14px;padding:10px 14px}
+.up-v .t{font-family:var(--fd);font-weight:700;font-size:13px;color:var(--gold)}
+.up-v .a{font-family:'Noto Naskh Arabic',serif;font-size:20px;color:#12271d;line-height:1.9}
+.up-axis{text-align:center;font-size:14px;color:var(--muted);line-height:1.8;border-top:1px dashed var(--line);padding-top:11px}
+.up-axis b{color:var(--elm);font-family:var(--fd)}
+
+.match{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mcard{border-radius:16px;overflow:hidden;border:2.5px solid var(--elm);text-align:center;break-inside:avoid}
 .mcard.title .b{background:linear-gradient(135deg,var(--t1),var(--elm));color:#fff}
-.mcard .b{font-family:var(--fd);font-weight:700;padding:18px 8px;min-height:78px;display:grid;place-items:center;font-size:19px}
+.mcard .b{font-family:var(--fd);font-weight:700;padding:20px 8px;min-height:82px;display:grid;place-items:center;font-size:20px}
 .mcard.ans .b{background:#fff;color:var(--t1)}
 .mcard .cap{background:var(--cream);color:var(--muted);font-size:11.5px;padding:5px}
-.hint{max-width:960px;margin:12px auto 0;text-align:center;color:var(--muted);font-size:12.8px;line-height:1.8}
+.hint{max-width:1000px;margin:14px auto 0;text-align:center;color:var(--muted);font-size:12.8px;line-height:1.8}
 .printbtn{display:block;margin:22px auto 6px;background:var(--elm);color:#fff;border:0;border-radius:999px;padding:11px 28px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
+
 @media print{
-@page{size:A4 portrait;margin:9mm}
-body{background:#fff;padding:0}
-.head,.hint,.printbtn,.sec,.mcard .cap{display:none}
-.us-card{max-width:100%;margin:0;box-shadow:none;border-width:3px;min-height:250mm;align-items:stretch;page-break-after:always}
-.us-side{flex:1 1 40%;min-height:auto;justify-content:center;padding:26px}
-.us-kicker{font-size:28px}
-.us-name{font-size:56px}
-.us-main{flex:1 1 56%;justify-content:center;gap:20px;padding:26px}
-.us-grid{gap:16px}
-.us-chip{padding:20px 10px}
-.us-chip .l{font-size:21px}
-.us-chip .v{font-size:38px}
-.us-chip .v small{font-size:19px}
-.us-v{padding:16px 20px}
-.us-v .t{font-size:21px}
-.us-v .a{font-size:32px}
-.us-axis{font-size:21px}
-.match{display:block;margin:0}
-.mcard{margin:0;box-shadow:none;border:3px dashed #8fa89a;border-radius:24px;min-height:250mm;display:grid;page-break-after:always;overflow:hidden}
-.mcard .b{min-height:auto;font-size:96px;line-height:1.2;word-break:break-word;padding:24px}
-.match:last-of-type .mcard:last-child{page-break-after:auto}
+  @page{size:A4 landscape;margin:10mm}
+  body{background:#fff;padding:0}
+  .head,.hint,.printbtn,.sec,.mcard .cap{display:none}
+  .uposter{max-width:100%;margin:0;box-shadow:none;border-width:3px;min-height:186mm;justify-content:center;page-break-after:always}
+  .up-head{padding:26px 20px 28px}
+  .up-head .orn{width:120px;height:120px}
+  .up-kicker{font-size:26px;letter-spacing:5px}.up-kicker svg{width:30px;height:30px}
+  .up-name{font-size:78px;margin-top:10px}
+  .up-rule{width:220px;height:5px;margin-top:16px}
+  .up-body{padding:26px 34px;gap:22px}
+  .up-chips{gap:22px}
+  .up-chip{padding:24px 12px 20px;border-radius:20px}
+  .up-chip .l{font-size:22px}
+  .up-chip .v{font-size:46px;margin-top:6px}
+  .up-chip .v small{font-size:24px}
+  .up-v{padding:16px 24px;flex-basis:44%}
+  .up-v .t{font-size:22px}
+  .up-v .a{font-size:36px}
+  .up-axis{font-size:23px;padding-top:18px}
+  .match{display:block;margin:0}
+  .mcard{margin:0;box-shadow:none;border:3px dashed #8fa89a;border-radius:26px;min-height:186mm;display:grid;page-break-after:always;overflow:hidden}
+  .mcard .b{min-height:auto;font-size:150px;line-height:1.15;word-break:break-word;padding:24px}
+  .match:last-of-type .mcard:last-child{page-break-after:auto}
 }
 </style>
 </head>
 <body>
 <div class="head">
   <h1>بطاقات علوم السورة — سورة الفجر</h1>
-  <p>كتابي المنير · وحدة الليل والنهار · <strong>كلّ بطاقة تُطبع بحجمٍ كبير في صفحةٍ مستقلّة (A4)</strong> — اطبعيها وغلّفيها لعرضها على الأطفال</p>
+  <p>كتابي المنير · وحدة الليل والنهار · <strong>كلّ بطاقة تُطبع بالعرض (Landscape) بحجمٍ كبير في صفحة A4 مستقلّة</strong> — اطبعيها وغلّفيها لعرضها على الأطفال</p>
 </div>
 
-<div class="sec"><b>١) بطاقةُ العرض</b><i></i></div>
-<div class="us-card">
-  <div class="us-side">
-    <svg class="st" viewBox="0 0 100 100"><g fill="#fff"><rect x="27" y="27" width="46" height="46" rx="4"/><rect x="27" y="27" width="46" height="46" rx="4" transform="rotate(45 50 50)"/></g></svg>
-    <svg class="st2" viewBox="0 0 100 100"><g fill="#fff"><rect x="27" y="27" width="46" height="46" rx="4"/><rect x="27" y="27" width="46" height="46" rx="4" transform="rotate(45 50 50)"/></g></svg>
-    <div class="us-kicker">عُلومُ السُّورة</div>
-    <div class="us-name">سُورةُ الفَجْر</div>
+<div class="sec"><b>١) لوحةُ العرض</b><i></i></div>
+<div class="uposter">
+  <div class="up-head">
+    <svg class="orn r" viewBox="0 0 100 100"><g fill="#fff"><rect x="27" y="27" width="46" height="46" rx="4"/><rect x="27" y="27" width="46" height="46" rx="4" transform="rotate(45 50 50)"/></g></svg>
+    <svg class="orn l" viewBox="0 0 100 100"><g fill="#fff"><rect x="27" y="27" width="46" height="46" rx="4"/><rect x="27" y="27" width="46" height="46" rx="4" transform="rotate(45 50 50)"/></g></svg>
+    <div class="up-kicker"><svg viewBox="0 0 100 100"><g fill="#cfe6d7"><rect x="27" y="27" width="46" height="46" rx="6"/><rect x="27" y="27" width="46" height="46" rx="6" transform="rotate(45 50 50)"/></g></svg> عُلومُ السُّورة <svg viewBox="0 0 100 100"><g fill="#cfe6d7"><rect x="27" y="27" width="46" height="46" rx="6"/><rect x="27" y="27" width="46" height="46" rx="6" transform="rotate(45 50 50)"/></g></svg></div>
+    <div class="up-name">سُورةُ الفَجْر</div>
+    <div class="up-rule"></div>
   </div>
-  <div class="us-main">
-    <div class="us-grid">
-      <div class="us-chip"><div class="l">عددُ الآيات</div><div class="v">٣٠ <small>آية</small></div></div>
-      <div class="us-chip"><div class="l">التنزيل</div><div class="v">مكّيّة</div></div>
-      <div class="us-chip"><div class="l">الجزء</div><div class="v">عَمَّ <small>(الثلاثون)</small></div></div>
+  <div class="up-body">
+    <div class="up-chips">
+      <div class="up-chip"><div class="l">عددُ الآيات</div><div class="v">٣٠ <small>آية</small></div></div>
+      <div class="up-chip"><div class="l">التنزيل</div><div class="v">مكّيّة</div></div>
+      <div class="up-chip"><div class="l">الجزء</div><div class="v">عَمَّ <small>(الثلاثون)</small></div></div>
     </div>
-    <div class="us-v"><div class="t">أوّلُ آية</div><div class="a">﴿وَالْفَجْرِ﴾</div></div>
-    <div class="us-v"><div class="t">آخِرُ آية</div><div class="a">﴿وَادْخُلِي جَنَّتِي﴾</div></div>
-    <div class="us-axis">محورُها: <b>القَسَمُ بالفجر والليالي · مصارعُ الطُّغاة · النفسُ المطمئنّة</b></div>
+    <div class="up-verses">
+      <div class="up-v"><div class="t">أوّلُ آية</div><div class="a">﴿وَالْفَجْرِ﴾</div></div>
+      <div class="up-v"><div class="t">آخِرُ آية</div><div class="a">﴿وَادْخُلِي جَنَّتِي﴾</div></div>
+    </div>
+    <div class="up-axis">محورُها: <b>القَسَمُ بالفجر والليالي · مصارعُ الطُّغاة · النفسُ المطمئنّة</b></div>
   </div>
 </div>
 
