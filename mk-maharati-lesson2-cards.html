@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>بطاقات العرض — المسكن · مهاراتي — الوقت</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#14402E;--t2:#1E5631;--gold:#C79A3B;--ink:#1E2E29;--muted:#6C776F;--line:#d8cdb5;--soft:#f3f7f1}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#e7ece4;padding:20px;line-height:1.6}
+.head{max-width:1000px;margin:0 auto 16px;text-align:center}
+.head h1{font-family:var(--fd);color:var(--t1);font-size:24px}
+.head p{color:var(--muted);font-size:13.5px;margin-top:4px}
+.sheet{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fcard{background:#fff;border:2px solid var(--t2);border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(20,50,35,.12);break-inside:avoid;display:flex;flex-direction:column}
+.fcard .pic{position:relative;aspect-ratio:4/3;background:var(--soft);overflow:hidden}
+.fcard .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.fcard .letterpic{width:100%;height:100%;display:grid;place-items:center;font-family:var(--fd);font-weight:700;font-size:150px;color:var(--t1);background:var(--soft)}
+.fcard .corner-badge{position:absolute;top:10px;inset-inline-start:10px;background:rgba(20,64,46,.86);color:#fff;font-family:var(--fd);font-size:12.5px;padding:3px 12px;border-radius:999px}
+.fcard .lbl{background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff;font-family:var(--fd);font-weight:700;font-size:26px;text-align:center;padding:12px 10px}
+.fcard .sub{background:#fff;color:var(--muted);font-size:12.5px;text-align:center;padding:7px 12px 11px;border-top:1px solid var(--line);line-height:1.7}
+.printbtn{display:block;margin:20px auto 6px;background:var(--t2);color:#fff;border:0;border-radius:999px;padding:10px 26px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
+@media print{body{background:#fff;padding:0}.head p,.printbtn{display:none}.sheet{gap:8mm;max-width:100%}.fcard{box-shadow:none;border:1.5px dashed #9bb0a0}.fcard .pic{aspect-ratio:auto;height:78mm}.fcard .letterpic{font-size:120px}}
+</style>
+</head>
+<body>
+<div class="head">
+  <h1>بطاقات العرض — المسكن · مهاراتي — الوقت</h1>
+  <p>بطاقاتٌ تعرضها المعلمة على الأطفال أثناء اللقاء · اطبعيها ثمّ قُصّيها على الخطّ المتقطّع</p>
+</div>
+<div class="sheet">
+  <div class="fcard">
+    <div class="pic"><span class="corner-badge">الساعة</span><img src="assets/cards/mk-maharati-clock.jpg" alt="السَّاعة"/></div>
+    <div class="lbl">السَّاعة</div>
+    <div class="sub">بها ننظّم يومَنا في المسكن</div>
+  </div>
+</div>
+<button class="printbtn" onclick="window.print()">🖨️ طباعة البطاقات</button>
+</body>
+</html>
