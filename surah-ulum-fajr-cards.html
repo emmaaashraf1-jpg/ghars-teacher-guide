@@ -7,7 +7,9 @@
 <style>
 @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
-:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Noto Naskh Arabic',Tahoma,sans-serif;
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
   --t1:#1b5e34;--elm:#2D7A4B;--gold:#C79A3B;--ink:#1E2E29;--muted:#6C776F;--line:#d8cdb5;--cream:#F6F1E6;--soft:#eef4f0}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--fb);color:var(--ink);background:#e9efe8;padding:22px;line-height:1.6}
@@ -84,10 +86,17 @@ body{font-family:var(--fb);color:var(--ink);background:#e9efe8;padding:22px;line
 <div class="bcard">
   <svg class="wm" preserveAspectRatio="xMidYMid slice" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="stars" width="62" height="62" patternUnits="userSpaceOnUse"><g fill="#2D7A4B" opacity="0.06"><rect x="18" y="18" width="26" height="26" rx="2"/><rect x="18" y="18" width="26" height="26" rx="2" transform="rotate(45 31 31)"/></g></pattern></defs><rect width="100%" height="100%" fill="url(#stars)"/></svg>
   <div class="bc-top">
+    <div class="bc-brand"><img src="brand/logo-ghars.webp" alt="نادي غرس القيم"/><b>كتابي المنير</b></div>
     <div class="bc-badge">بطاقةُ علوم السورة</div>
-    <div class="bc-brand"><b>كتابي المنير</b><img src="brand/logo-ghars.webp" alt="نادي غرس القيم"/></div>
   </div>
   <div class="bc-grid">
+    <div class="bc-side">
+      <div class="bc-arch">
+        <div class="bc-fact"><div class="l">عددُ الآيات</div><div class="v">٣٠ <small>آية</small></div></div>
+        <div class="bc-fact"><div class="l">التنزيل</div><div class="v">مكّيّة</div></div>
+        <div class="bc-fact"><div class="l">الجزء</div><div class="v">عَمَّ <small>(الثلاثون)</small></div></div>
+      </div>
+    </div>
     <div class="bc-main">
       <div class="bc-kicker">عُلومُ السُّورة</div>
       <div class="bc-title">سُورةُ الفَجْر</div>
@@ -97,13 +106,6 @@ body{font-family:var(--fb);color:var(--ink);background:#e9efe8;padding:22px;line
         <div class="bc-vrow"><div class="t">آخِرُ آية</div><div class="a">﴿وَادْخُلِي جَنَّتِي﴾</div></div>
       </div>
       <div class="bc-axis">محورُها: <b>القَسَمُ بالفجر والليالي · مصارعُ الطُّغاة · النفسُ المطمئنّة</b></div>
-    </div>
-    <div class="bc-side">
-      <div class="bc-arch">
-        <div class="bc-fact"><div class="l">عددُ الآيات</div><div class="v">٣٠ <small>آية</small></div></div>
-        <div class="bc-fact"><div class="l">التنزيل</div><div class="v">مكّيّة</div></div>
-        <div class="bc-fact"><div class="l">الجزء</div><div class="v">عَمَّ <small>(الثلاثون)</small></div></div>
-      </div>
     </div>
   </div>
 </div>
