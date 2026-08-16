@@ -8,7 +8,7 @@
 @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
 :root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Noto Naskh Arabic',Tahoma,sans-serif;
-  --t1:#14402E;--elm:#1E5631;--gold:#C79A3B;--ink:#1E2E29;--muted:#6C776F;--line:#d8cdb5;--cream:#F7F1E2;--soft:#eef4f0}
+  --t1:#1b5e34;--elm:#2D7A4B;--gold:#C79A3B;--ink:#1E2E29;--muted:#6C776F;--line:#d8cdb5;--cream:#F6F1E6;--soft:#eef4f0}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--fb);color:var(--ink);background:#e9efe8;padding:22px;line-height:1.6}
 .head{max-width:1000px;margin:0 auto 14px;text-align:center}
@@ -18,27 +18,31 @@ body{font-family:var(--fb);color:var(--ink);background:#e9efe8;padding:22px;line
 .sec b{font-family:var(--fd);color:var(--t1);font-size:16px;white-space:nowrap}
 .sec i{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
 
-/* ===== لوحة علوم السورة (أفقيّة) ===== */
-.uposter{max-width:900px;margin:0 auto;background:#fff;border:2.5px solid var(--elm);border-radius:22px;overflow:hidden;box-shadow:0 14px 34px rgba(20,50,35,.16);display:flex;flex-direction:column}
-.up-head{position:relative;background:linear-gradient(135deg,var(--t1),var(--elm));color:#fff;text-align:center;padding:20px 18px 22px;overflow:hidden}
-.up-head .orn{position:absolute;top:50%;width:74px;height:74px;opacity:.16;transform:translateY(-50%)}
-.up-head .orn.r{inset-inline-end:20px}.up-head .orn.l{inset-inline-start:20px}
-.up-kicker{position:relative;font-family:var(--fd);font-size:16px;letter-spacing:3px;color:#cfe6d7;display:inline-flex;align-items:center;gap:12px}
-.up-kicker svg{width:20px;height:20px;opacity:.9}
-.up-name{position:relative;font-family:var(--fd);font-weight:700;font-size:42px;margin-top:6px;text-shadow:0 2px 8px rgba(0,0,0,.2)}
-.up-rule{position:relative;width:120px;height:3px;margin:10px auto 0;border-radius:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-.up-body{padding:18px;display:flex;flex-direction:column;gap:14px}
-.up-chips{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.up-chip{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:14px 8px 12px;text-align:center;box-shadow:0 2px 7px rgba(20,50,35,.05)}
-.up-chip .l{font-size:13.5px;color:#9a7d33;font-weight:700;font-family:var(--fd)}
-.up-chip .v{font-family:var(--fd);font-weight:700;color:var(--t1);font-size:26px;margin-top:3px}
-.up-chip .v small{font-size:14px;color:var(--muted);font-weight:400}
-.up-verses{display:flex;flex-wrap:wrap;gap:12px}
-.up-v{flex:1 1 300px;background:var(--soft);border:1px solid #cfe0d5;border-inline-start:5px solid var(--elm);border-radius:14px;padding:10px 14px}
-.up-v .t{font-family:var(--fd);font-weight:700;font-size:13px;color:var(--gold)}
-.up-v .a{font-family:'Noto Naskh Arabic',serif;font-size:20px;color:#12271d;line-height:1.9}
-.up-axis{text-align:center;font-size:14px;color:var(--muted);line-height:1.8;border-top:1px dashed var(--line);padding-top:11px}
-.up-axis b{color:var(--elm);font-family:var(--fd)}
+/* ===== لوحة علوم السورة — بروح بطاقة الاعتقاد ===== */
+.bcard{position:relative;max-width:920px;margin:0 auto;background:var(--cream);border:2.5px solid #ddcfa8;border-radius:22px;overflow:hidden;padding:24px 30px 28px;box-shadow:0 14px 34px rgba(20,50,35,.15);display:flex;flex-direction:column}
+.wm{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.bc-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.bc-badge{font-family:var(--fd);color:#4a5a50;font-size:15px;border:1.6px solid #9aa79d;border-radius:999px;padding:6px 20px;background:rgba(255,255,255,.55)}
+.bc-brand{display:flex;align-items:center;gap:11px}
+.bc-brand b{font-family:var(--fd);color:var(--t1);font-size:18px}
+.bc-brand img{height:56px;width:auto;display:block}
+.bc-grid{position:relative;z-index:2;display:flex;gap:26px;margin-top:18px;align-items:stretch}
+.bc-main{flex:1 1 56%;display:flex;flex-direction:column;justify-content:center;padding:4px 4px 4px 0}
+.bc-kicker{font-family:var(--fd);color:var(--elm);font-size:16px;letter-spacing:1px}
+.bc-title{font-family:var(--fd);font-weight:700;color:var(--t1);font-size:54px;line-height:1.15;margin-top:2px}
+.bc-quote{font-family:Georgia,'Times New Roman',serif;font-size:58px;color:#cdb680;line-height:0;height:20px;margin:16px 0 4px}
+.bc-verses{display:flex;flex-direction:column;gap:9px}
+.bc-vrow .t{font-family:var(--fd);color:var(--gold);font-weight:700;font-size:14px}
+.bc-vrow .a{font-family:'Noto Naskh Arabic',serif;color:#12271d;font-size:22px;line-height:1.85}
+.bc-axis{margin-top:14px;color:#3f5147;font-size:14.5px;line-height:1.8}
+.bc-axis b{color:var(--elm);font-family:var(--fd)}
+.bc-side{flex:1 1 40%;display:flex}
+.bc-arch{flex:1;background:var(--soft);border:2.5px solid var(--elm);border-radius:96px 96px 18px 18px;padding:26px 22px;display:flex;flex-direction:column;justify-content:center;gap:14px;box-shadow:0 8px 20px rgba(20,50,35,.12)}
+.bc-fact{text-align:center}
+.bc-fact+.bc-fact{border-top:1px dashed #c4d8cb;padding-top:14px}
+.bc-fact .l{font-family:var(--fd);color:#9a7d33;font-weight:700;font-size:15px}
+.bc-fact .v{font-family:var(--fd);color:var(--t1);font-weight:700;font-size:34px;margin-top:2px}
+.bc-fact .v small{font-size:16px;color:var(--muted);font-weight:400}
 
 /* ===== بطاقات المطابقة ===== */
 .match{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
@@ -55,22 +59,17 @@ body{font-family:var(--fb);color:var(--ink);background:#e9efe8;padding:22px;line
   @page{size:A4 landscape;margin:10mm}
   body{background:#fff;padding:0}
   .head,.hint,.printbtn,.sec,.mcard .cap{display:none}
-  .uposter{max-width:100%;margin:0;box-shadow:none;border-width:3px;min-height:186mm;justify-content:center;page-break-after:always}
-  .up-head{padding:26px 20px 28px}
-  .up-head .orn{width:120px;height:120px}
-  .up-kicker{font-size:26px;letter-spacing:5px}.up-kicker svg{width:30px;height:30px}
-  .up-name{font-size:78px;margin-top:10px}
-  .up-rule{width:220px;height:5px;margin-top:16px}
-  .up-body{padding:26px 34px;gap:22px}
-  .up-chips{gap:22px}
-  .up-chip{padding:24px 12px 20px;border-radius:20px}
-  .up-chip .l{font-size:22px}
-  .up-chip .v{font-size:46px;margin-top:6px}
-  .up-chip .v small{font-size:24px}
-  .up-v{padding:16px 24px;flex-basis:44%}
-  .up-v .t{font-size:22px}
-  .up-v .a{font-size:36px}
-  .up-axis{font-size:23px;padding-top:18px}
+  .bcard{max-width:100%;margin:0;box-shadow:none;min-height:186mm;justify-content:center;page-break-after:always;padding:32px 44px}
+  .bc-badge{font-size:22px;padding:9px 30px}
+  .bc-brand b{font-size:27px}.bc-brand img{height:86px}
+  .bc-grid{gap:44px;margin-top:26px}
+  .bc-title{font-size:82px}
+  .bc-quote{font-size:92px;height:30px;margin:24px 0 8px}
+  .bc-verses{gap:14px}
+  .bc-vrow .t{font-size:22px}.bc-vrow .a{font-size:38px}
+  .bc-axis{font-size:24px;margin-top:24px}
+  .bc-arch{border-radius:130px 130px 22px 22px;padding:44px 30px;gap:24px}
+  .bc-fact .l{font-size:25px}.bc-fact .v{font-size:58px}.bc-fact .v small{font-size:27px}
   .match{display:block;margin:0}
   .mcard{margin:0;box-shadow:none;border:3px dashed #8fa89a;border-radius:26px;min-height:186mm;display:grid;page-break-after:always;overflow:hidden}
   .mcard .b{min-height:auto;font-size:150px;line-height:1.15;word-break:break-word;padding:24px}
@@ -85,25 +84,30 @@ body{font-family:var(--fb);color:var(--ink);background:#e9efe8;padding:22px;line
 </div>
 
 <div class="sec"><b>١) لوحةُ العرض</b><i></i></div>
-<div class="uposter">
-  <div class="up-head">
-    <svg class="orn r" viewBox="0 0 100 100"><g fill="#fff"><rect x="27" y="27" width="46" height="46" rx="4"/><rect x="27" y="27" width="46" height="46" rx="4" transform="rotate(45 50 50)"/></g></svg>
-    <svg class="orn l" viewBox="0 0 100 100"><g fill="#fff"><rect x="27" y="27" width="46" height="46" rx="4"/><rect x="27" y="27" width="46" height="46" rx="4" transform="rotate(45 50 50)"/></g></svg>
-    <div class="up-kicker"><svg viewBox="0 0 100 100"><g fill="#cfe6d7"><rect x="27" y="27" width="46" height="46" rx="6"/><rect x="27" y="27" width="46" height="46" rx="6" transform="rotate(45 50 50)"/></g></svg> عُلومُ السُّورة <svg viewBox="0 0 100 100"><g fill="#cfe6d7"><rect x="27" y="27" width="46" height="46" rx="6"/><rect x="27" y="27" width="46" height="46" rx="6" transform="rotate(45 50 50)"/></g></svg></div>
-    <div class="up-name">سُورةُ الإنفِطار</div>
-    <div class="up-rule"></div>
+<div class="bcard">
+  <svg class="wm" preserveAspectRatio="xMidYMid slice" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="stars" width="62" height="62" patternUnits="userSpaceOnUse"><g fill="#2D7A4B" opacity="0.06"><rect x="18" y="18" width="26" height="26" rx="2"/><rect x="18" y="18" width="26" height="26" rx="2" transform="rotate(45 31 31)"/></g></pattern></defs><rect width="100%" height="100%" fill="url(#stars)"/></svg>
+  <div class="bc-top">
+    <div class="bc-badge">بطاقةُ علوم السورة</div>
+    <div class="bc-brand"><b>كتابي المنير</b><img src="brand/logo-ghars.webp" alt="نادي غرس القيم"/></div>
   </div>
-  <div class="up-body">
-    <div class="up-chips">
-      <div class="up-chip"><div class="l">عددُ الآيات</div><div class="v">١٩ <small>آية</small></div></div>
-      <div class="up-chip"><div class="l">التنزيل</div><div class="v">مكّيّة</div></div>
-      <div class="up-chip"><div class="l">الجزء</div><div class="v">عَمَّ <small>(الثلاثون)</small></div></div>
+  <div class="bc-grid">
+    <div class="bc-main">
+      <div class="bc-kicker">عُلومُ السُّورة</div>
+      <div class="bc-title">سُورةُ الإنفِطار</div>
+      <div class="bc-quote">”</div>
+      <div class="bc-verses">
+        <div class="bc-vrow"><div class="t">أوّلُ آية</div><div class="a">﴿إِذَا السَّمَاءُ انفَطَرَتْ﴾</div></div>
+        <div class="bc-vrow"><div class="t">آخِرُ آية</div><div class="a">﴿وَالْأَمْرُ يَوْمَئِذٍ لِّلَّهِ﴾</div></div>
+      </div>
+      <div class="bc-axis">محورُها: <b>عظمةُ يوم القيامة · الكِرامُ الكاتبون · إحسانُ الله للإنسان</b></div>
     </div>
-    <div class="up-verses">
-      <div class="up-v"><div class="t">أوّلُ آية</div><div class="a">﴿إِذَا السَّمَاءُ انفَطَرَتْ﴾</div></div>
-      <div class="up-v"><div class="t">آخِرُ آية</div><div class="a">﴿وَالْأَمْرُ يَوْمَئِذٍ لِّلَّهِ﴾</div></div>
+    <div class="bc-side">
+      <div class="bc-arch">
+        <div class="bc-fact"><div class="l">عددُ الآيات</div><div class="v">١٩ <small>آية</small></div></div>
+        <div class="bc-fact"><div class="l">التنزيل</div><div class="v">مكّيّة</div></div>
+        <div class="bc-fact"><div class="l">الجزء</div><div class="v">عَمَّ <small>(الثلاثون)</small></div></div>
+      </div>
     </div>
-    <div class="up-axis">محورُها: <b>عظمةُ يوم القيامة · الكِرامُ الكاتبون · إحسانُ الله للإنسان</b></div>
   </div>
 </div>
 
