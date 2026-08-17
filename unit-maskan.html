@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
 <head>
-<script>document.documentElement.className+=' hasjs';</script>
+<script>document.documentElement.className+=' hasjs';setTimeout(function(){document.documentElement.classList.add('gq-ready');},1500);</script>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>وحدة المسكن · دليل المعلمة · غرس القيم</title>
@@ -304,6 +304,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 @media print{.mpv-hero{box-shadow:none}.mpv-btn,.mpv-card,.mpv-gcard{box-shadow:none}}
 
 .hasjs #u-days .daytabs{display:none}
+html.hasjs:not(.gq-ready) #u-days{visibility:hidden}
 </style>
   <link rel="stylesheet" href="app.css?v=dp2"/>
   <link rel="manifest" href="manifest.json"/>
@@ -1258,7 +1259,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
   window.addEventListener('scroll',function(){ var sc=window.pageYOffset||root.scrollTop; if(sc>320) top.classList.add('show'); else top.classList.remove('show'); },{passive:true});
 })();
 </script>
-<script src="app.js?v=dp3"></script>
+<script src="app.js?v=dp4"></script>
 <script src="brand/guide-icons.js?v=2"></script>
 </body>
 </html>

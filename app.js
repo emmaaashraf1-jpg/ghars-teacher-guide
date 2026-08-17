@@ -258,8 +258,9 @@
     // حسّن كل إطار عند تحميله
     [].forEach.call(doc.querySelectorAll('.frame-wrap iframe'),function(fr){ fr.addEventListener('load',function(){enhanceFrame(fr);refreshProg();}); });
     afterNav();
+    try{doc.documentElement.classList.add('gq-ready');}catch(e){}
     // PWA
     if('serviceWorker' in navigator){ navigator.serviceWorker.register(BASE+'sw.js').catch(function(){}); }
   }
-  if(doc.readyState!=='loading') setTimeout(init,60); else doc.addEventListener('DOMContentLoaded',function(){setTimeout(init,60);});
+  if(doc.readyState!=='loading') requestAnimationFrame(init); else doc.addEventListener('DOMContentLoaded',function(){requestAnimationFrame(init);});
 })();
