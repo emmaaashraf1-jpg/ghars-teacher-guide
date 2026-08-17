@@ -1,5 +1,5 @@
 /* دليل غرس القيم — عامل الخدمة (شبكة أولًا للصفحات · كاش أولًا للأصول الثابتة) */
-var CACHE = 'ghars-v5-cards';
+var CACHE = 'ghars-v6-icons';
 
 self.addEventListener('install', function(e){ self.skipWaiting(); });
 

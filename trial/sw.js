@@ -1,5 +1,5 @@
 /* دليل غرس القيم — نسخة تجريبية · عامل الخدمة (تخزين مؤقّت للعمل دون اتصال) */
-var CACHE = 'ghars-trial-v1';
+var CACHE = 'ghars-trial-v2-icons';
 var CORE = ['index.html','unit-family.html','unit-layl-nahar.html','app.css','app.js','manifest.json'];
 
 self.addEventListener('install', function(e){

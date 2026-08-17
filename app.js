@@ -13,8 +13,9 @@
     var h=doc.head||doc.getElementsByTagName('head')[0]; if(!h) return;
     if(!doc.querySelector('link[rel="stylesheet"][href*="app.css"]')) h.insertAdjacentHTML('beforeend','<link rel="stylesheet" href="'+BASE+'app.css"/>');
     if(!doc.querySelector('link[rel="manifest"]')) h.insertAdjacentHTML('beforeend','<link rel="manifest" href="'+BASE+'manifest.json"/>');
-    if(!doc.querySelector('meta[name="theme-color"]')) h.insertAdjacentHTML('beforeend','<meta name="theme-color" content="#00575C"/>');
-    if(!doc.querySelector('link[rel="apple-touch-icon"]')) h.insertAdjacentHTML('beforeend','<link rel="apple-touch-icon" href="'+BASE+'brand/logo-ghars.webp"/>');
+    if(!doc.querySelector('meta[name="theme-color"]')) h.insertAdjacentHTML('beforeend','<meta name="theme-color" content="#1F4A39"/>');
+    if(!doc.querySelector('link[rel="icon"]')) h.insertAdjacentHTML('beforeend','<link rel="icon" href="'+BASE+'favicon.ico" sizes="any"/><link rel="icon" type="image/png" sizes="32x32" href="'+BASE+'icons/favicon-32.png"/>');
+    if(!doc.querySelector('link[rel="apple-touch-icon"]')) h.insertAdjacentHTML('beforeend','<link rel="apple-touch-icon" sizes="180x180" href="'+BASE+'apple-touch-icon.png"/>');
   })();
 
   function svg(p,cls){ return '<svg class="'+(cls||'tico')+'" viewBox="0 0 24 24" aria-hidden="true">'+p+'</svg>'; }
