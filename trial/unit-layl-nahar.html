@@ -175,6 +175,22 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .fitness-quick b{color:var(--t1)}
 </style>
   <link rel="stylesheet" href="app.css"/>
+  <style id="trial-dayline-v">
+/* تجربة (trial): مسار اليوم عموديًّا يمين الصفحة + المحتوى يسارًا */
+.daypanel.active{display:grid;grid-template-columns:250px minmax(0,1fr);gap:24px;align-items:start}
+.daypanel.active>.subtabs{grid-column:1;grid-row:1;position:static;top:auto;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:14px 12px;counter-reset:pstep;margin-bottom:0;height:fit-content}
+.daypanel.active>.subtabs::before{content:"مسارُ اليوم";display:block;font-family:var(--fd);font-weight:700;color:var(--t1);font-size:14.5px;margin:0 6px 12px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+.daypanel.active>.subpanel{grid-column:2;grid-row:1;min-width:0}
+.daypanel.active>.subtabs>.subtab{position:relative;display:flex;align-items:center;gap:11px;border:0!important;background:transparent!important;border-radius:12px;padding:8px 8px;text-align:start;color:#3f4a43;font-weight:600;width:100%;white-space:normal}
+.daypanel.active>.subtabs>.subtab::before{counter-increment:pstep;content:counter(pstep,arabic-indic);flex:0 0 auto;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;background:#fff;border:2px solid #cdd6cf;color:#6b7770;z-index:1;font-family:var(--fd)}
+.daypanel.active>.subtabs>.subtab::after{content:"";position:absolute;inset-inline-start:23px;top:40px;width:3px;height:calc(100% - 8px);background:var(--line);z-index:0}
+.daypanel.active>.subtabs>.subtab:last-child::after{display:none}
+.daypanel.active>.subtabs>.subtab:hover{background:#f1f6f1!important;color:var(--t1)!important}
+.daypanel.active>.subtabs>.subtab.active{background:color-mix(in srgb,var(--t2) 12%,#fff)!important;color:var(--t1)!important}
+.daypanel.active>.subtabs>.subtab.active::before{background:var(--t2);border-color:var(--t2);color:#fff}
+.daypanel.active>.subtabs>.subtab .done-dot{margin-inline-start:auto}
+@media(max-width:760px){.daypanel.active{display:block}.daypanel.active>.subtabs{margin-bottom:14px}}
+  </style>
   <link rel="manifest" href="manifest.json"/>
   <meta name="theme-color" content="#1F4A39"/>
   <link rel="icon" href="../favicon.ico" sizes="any"/>
