@@ -26,7 +26,7 @@ body{font-family:var(--fb);color:var(--ink);line-height:1.9;font-size:16px;
   background:radial-gradient(1200px 520px at 82% -12%,#EFF4EC 0,transparent 60%),linear-gradient(#FBF9F2,#F4EDDE)}
 b,strong{font-weight:700}
 h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
-.wrap{max-width:1080px;margin:0 auto;padding:18px 14px 70px}
+.wrap{max-width:min(1500px, calc(100vw - 40px));margin:0 auto;padding:18px 14px 70px}
 
 /* ===== الغلاف ===== */
 .hero{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:18px;isolation:isolate}
@@ -99,7 +99,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .subtabs.seq .pconn.mnz{position:relative;background:#b9a3e0}
 .subtabs.seq .pconn.mnz::before{content:"📜";position:absolute;top:-19px;left:50%;transform:translateX(-50%);font-size:13px;line-height:1;z-index:2;filter:drop-shadow(0 1px 1px rgba(0,0,0,.18))}
 /* ===== مسار اليوم عموديًّا يمين الصفحة + المحتوى يسارًا ===== */
-.daypanel.active{display:grid;grid-template-columns:160px minmax(0,1fr);gap:14px 22px;align-items:start;width:min(1500px, calc(100vw - 36px));margin-inline:calc((100% - min(1500px, calc(100vw - 36px)))/2)}
+.daypanel.active{display:grid;grid-template-columns:160px minmax(0,1fr);gap:14px 22px;align-items:start}
 .daypanel.active>.pathkey{grid-column:1/-1;grid-row:1;margin-bottom:2px}
 .daypanel.active>.subtabs.seq{grid-column:1;grid-row:2;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:14px 12px;height:fit-content;position:sticky;top:14px}
 .daypanel.active>.subtabs.seq::before{content:"مسارُ اليوم";display:block;font-family:var(--fd);font-weight:700;color:var(--t1);font-size:14px;margin:0 4px 10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
