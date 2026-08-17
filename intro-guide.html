@@ -1976,6 +1976,21 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 /* الخريطة: تثبيت تبويبات المواد الجانبيّة (تبقى ظاهرةً أثناء تمرير اللوحة الطويلة) بدل تركها فراغًا */
 #annual-plan .subject-map-tabs{align-self:start!important;position:sticky!important;top:14px!important;max-height:calc(100vh - 28px);overflow-y:auto}
 </style>
+<style id="gp-term-tabs">
+/* المخطط الدراسي — عرض فصلٍ واحد بالضغط بدل ثلاثة أعمدة طويلة؛ الفصل يملأ العرض ويتوزّع في أعمدة (2026-08-17) */
+#annual-plan .subject-progress{flex-wrap:wrap;gap:10px}
+#annual-plan .subject-progress>b{display:none}
+#annual-plan .subject-progress>div{cursor:pointer;padding:5px 13px;border-radius:999px;border:1px solid rgba(31,74,57,.2);background:rgba(255,255,255,.5);transition:background .15s,color .15s,border-color .15s;user-select:none}
+#annual-plan .subject-progress>div:hover{background:rgba(199,154,59,.16);border-color:rgba(199,154,59,.5)}
+#annual-plan .subject-progress>div.gp-step-on{background:#1F4A39;border-color:#1F4A39;color:#fff}
+#annual-plan .subject-progress>div.gp-step-on i,#annual-plan .subject-progress>div.gp-step-on span{color:#fff}
+#annual-plan .subject-progress>div:focus-visible{outline:2px solid #1F4A39;outline-offset:2px}
+#annual-plan .subject-terms-grid.gp-termtabbed{grid-template-columns:1fr!important;gap:0!important}
+#annual-plan .subject-terms-grid.gp-termtabbed>.subject-term-card{display:none!important}
+#annual-plan .subject-terms-grid.gp-termtabbed>.subject-term-card.gp-term-on{display:block!important}
+#annual-plan .subject-terms-grid.gp-termtabbed .subject-term-body{columns:250px 3;column-gap:24px}
+#annual-plan .subject-terms-grid.gp-termtabbed .lesson-group{-webkit-column-break-inside:avoid;break-inside:avoid;margin:0 0 14px}
+</style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
 /* توقيعات وعناوين الأقسام الذهبيّة: تغميق للقراءة على العاجيّ/الكريميّ */
@@ -3273,6 +3288,30 @@ document.querySelectorAll('.subject-map-tabs').forEach(tabbar=>{
     if(target) target.classList.add('active');
   }));
 });
+/* المخطط الدراسي: عرض فصلٍ واحد بالضغط بدل ثلاثة أعمدة طويلة (2026-08-17) */
+(function(){
+  var root=document.getElementById('annual-plan');
+  if(!root)return;
+  root.querySelectorAll('.subject-map-panel').forEach(function(panel){
+    var grid=panel.querySelector('.subject-terms-grid');
+    var prog=panel.querySelector('.subject-progress');
+    if(!grid||!prog||grid.dataset.gpTabbed)return;
+    var cards=[].slice.call(grid.children).filter(function(c){return c.classList.contains('subject-term-card');});
+    var steps=[].slice.call(prog.children).filter(function(c){return c.tagName==='DIV';});
+    if(cards.length<2||steps.length!==cards.length)return;
+    grid.classList.add('gp-termtabbed');grid.dataset.gpTabbed='1';prog.setAttribute('role','tablist');
+    function show(i){
+      cards.forEach(function(c,ci){c.classList.toggle('gp-term-on',ci===i);});
+      steps.forEach(function(s,si){var on=si===i;s.classList.toggle('gp-step-on',on);s.setAttribute('aria-selected',on?'true':'false');});
+    }
+    steps.forEach(function(s,si){
+      s.setAttribute('role','tab');s.setAttribute('tabindex','0');s.setAttribute('title','اعرضي محطّات هذا الفصل');
+      s.addEventListener('click',function(){show(si);});
+      s.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(si);}});
+    });
+    show(0);
+  });
+})();
 function openQr(src,title,url){document.getElementById('qrImg').src=src;document.getElementById('qrTitle').textContent=title||'رمز QR';const link=document.getElementById('qrOpenLink');if(link){link.href=url||'#';}document.getElementById('qrModal').classList.add('open');}
 function closeQr(){document.getElementById('qrModal').classList.remove('open');}
 let mannerCat='الكل';function setMannerCat(btn){mannerCat=btn.dataset.cat;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');filterManners();}
