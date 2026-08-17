@@ -849,6 +849,20 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #dayflow table.schedule td.care{color:#8AA48F;font-weight:600}
 @media(max-width:820px){#dayflow .page-aside{grid-template-columns:1fr!important}#dayflow .time-slot{grid-template-columns:76px 1fr;column-gap:12px}}
 </style>
+<style id="gp-dayflow-refine">
+/* مسار اليوم — تحسين الخطّ الزمنيّ: توسيطه بدل شريط الفراغ (٢٧٦ب) + عمود موصول يربط النقاط + بطاقات أنحف + وسم الفئة من تصنيف المفتاح نفسه (2026-08-17) */
+#dayflow .gp-legend{max-width:800px!important;margin-inline:auto!important}
+#dayflow .timeline{max-width:800px!important;margin-inline:auto!important;position:relative!important}
+#dayflow .timeline::before{content:"";position:absolute;top:14px;bottom:24px;right:115px;width:2px;background:#E4DAC4;border-radius:2px;z-index:0}
+#dayflow .time-slot{margin:0 0 14px!important}
+#dayflow .time-slot>div{min-height:0!important;height:auto!important;padding:12px 18px!important;font-size:17px!important;display:flex!important;align-items:center;justify-content:space-between;gap:14px;z-index:1}
+#dayflow .time-slot>div::after{font-family:"Noto Naskh Arabic",Tahoma,sans-serif;font-size:12px;font-weight:700;color:var(--c);background:color-mix(in srgb,var(--c) 12%,#fff);border:1px solid color-mix(in srgb,var(--c) 30%,#fff);padding:3px 12px;border-radius:20px;white-space:nowrap;flex:none;line-height:1.7}
+#dayflow .time-slot.fixed>div::after{content:"ثوابت"}
+#dayflow .time-slot.learning>div::after{content:"تعلّم أساسي"}
+#dayflow .time-slot.corner>div::after{content:"أركان تطبيقية"}
+#dayflow .time-slot.care>div::after{content:"رعاية وختام"}
+@media(max-width:820px){#dayflow .timeline::before{display:none}#dayflow .time-slot>div::after{display:none}}
+</style>
 <style id="gp-fitness">
 /* التبويب ٧ اللياقة البدنية — لغة الرئيسية: عمود واحد، بطاقات تحريريّة، معرض مصوّر */
 #fitness .section-banner{display:none!important}
