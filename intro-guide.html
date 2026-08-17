@@ -944,6 +944,13 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 @media(max-width:820px){#fitness .fitness-overview{grid-template-columns:1fr}#fitness .page-aside{grid-template-columns:1fr!important}}
 @media(max-width:620px){#fitness .fitness-gallery,#fitness .fitness-purpose-grid,#fitness .fitness-routine{grid-template-columns:1fr}}
 </style>
+<style id="gp-fitness-gallery-fix">
+/* اللياقة — المعرض ٧ بطاقات كانت تترك يتيمةً في صفٍّ وخانتين فارغتين؛ flex يوسّط الصفّ الأخير مع بقاء ٣/صفّ (2026-08-17) */
+#fitness .fitness-gallery{display:flex!important;flex-wrap:wrap;gap:22px;justify-content:center}
+#fitness .fitness-activity{flex:0 0 calc((100% - 44px)/3);max-width:calc((100% - 44px)/3)}
+@media(max-width:900px){#fitness .fitness-activity{flex:0 0 calc((100% - 22px)/2);max-width:calc((100% - 22px)/2)}}
+@media(max-width:620px){#fitness .fitness-activity{flex:0 0 100%;max-width:100%}}
+</style>
 <style id="gp-lesson">
 /* التبويب ٨ بنية اللقاء — لغة الرئيسية: عمود واحد، تدفّق مرقّم، قالب صفحة درس */
 #lesson .section-banner{display:none!important}
