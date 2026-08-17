@@ -2019,6 +2019,11 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 @media(max-width:820px){#components .resource-grid > *{flex:0 0 calc((100% - 18px)/2);max-width:calc((100% - 18px)/2)}}
 @media(max-width:560px){#components .resource-grid > *{flex:0 0 100%;max-width:100%}}
 </style>
+<style id="gp-corners-fix">
+/* الأركان — إصلاح تلامس: (١) بطاقات قوانين الركن الأربع كانت gap:0 فتتضاعف حدودها وتتشوّه زواياها المستديرة ← فجوة ١٠ب تفصلها؛ (٢) عنوان «مكتبة الأركان» كان margin-top:0 فيلامس لوحة القوانين فوقه ← هامش علويّ ٤٨ب (2026-08-17) */
+#corners .corner-rules-steps{row-gap:10px!important}
+#corners .song-section-title{margin-top:48px!important}
+</style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
 /* توقيعات وعناوين الأقسام الذهبيّة: تغميق للقراءة على العاجيّ/الكريميّ */
