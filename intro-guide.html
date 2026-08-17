@@ -2012,6 +2012,13 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #annual-plan .subject-terms-grid.gp-termtabbed .subject-term-body{columns:250px 3;column-gap:24px}
 #annual-plan .subject-terms-grid.gp-termtabbed .lesson-group{-webkit-column-break-inside:avoid;break-inside:avoid;margin:0 0 14px}
 </style>
+<style id="gp-components-resfix">
+/* المكوّنات — شبكة المصادر ١٠ بطاقات كانت تترك يتيمةً في صفٍّ وخانتين فارغتين؛ flex يوسّط الصفّ الأخير مع بقاء ٣/صفّ (2026-08-17) */
+#components .resource-grid{display:flex!important;flex-wrap:wrap;gap:18px;justify-content:center}
+#components .resource-grid > *{flex:0 0 calc((100% - 36px)/3);max-width:calc((100% - 36px)/3)}
+@media(max-width:820px){#components .resource-grid > *{flex:0 0 calc((100% - 18px)/2);max-width:calc((100% - 18px)/2)}}
+@media(max-width:560px){#components .resource-grid > *{flex:0 0 100%;max-width:100%}}
+</style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
 /* توقيعات وعناوين الأقسام الذهبيّة: تغميق للقراءة على العاجيّ/الكريميّ */
