@@ -2024,6 +2024,13 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #corners .corner-rules-steps{row-gap:10px!important}
 #corners .song-section-title{margin-top:48px!important}
 </style>
+<style id="gp-signals-fix">
+/* الإشارات — (١) لبنات الإشارة الأربع كانت بطاقاتٍ بزوايا ١٦ب متلامسة gap:0 فتتشوّه الزوايا ← شريطٌ مقسّمٌ موصول: حاوية بحدٍّ وزوايا + إزالة زوايا البطاقات مع الاحتفاظ بالفواصل الداخليّة، وإلغاء حدّ البطاقة الأولى لئلّا يتضاعف؛ (٢) عنوان «إشارات المواد» كان margin-top:0 فيلامس الشبكة فوقه ← هامش ٤٨ب (2026-08-17) */
+#signals .signal-flow-grid{border:0.8px solid #E9E1D2!important;border-radius:16px!important;overflow:hidden!important;padding:0!important;background:#fff!important}
+#signals .signal-flow-card{border-radius:0!important}
+#signals .signal-flow-card:first-child{border-inline-start:0!important}
+#signals .song-section-title{margin-top:48px!important}
+</style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
 /* توقيعات وعناوين الأقسام الذهبيّة: تغميق للقراءة على العاجيّ/الكريميّ */
