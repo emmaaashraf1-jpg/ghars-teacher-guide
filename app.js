@@ -262,5 +262,5 @@
     // PWA
     if('serviceWorker' in navigator){ navigator.serviceWorker.register(BASE+'sw.js').catch(function(){}); }
   }
-  if(doc.readyState!=='loading') requestAnimationFrame(init); else doc.addEventListener('DOMContentLoaded',function(){requestAnimationFrame(init);});
+  if(doc.readyState!=='loading') setTimeout(init,0); else doc.addEventListener('DOMContentLoaded',function(){setTimeout(init,0);});
 })();
