@@ -1973,6 +1973,8 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #annual-plan .subjects-plan-head{display:none!important}
 #annual-plan .guide-update-note{display:none!important}
 #annual-plan .subjects-atlas-hero{margin-top:8px!important}
+/* الخريطة: تثبيت تبويبات المواد الجانبيّة (تبقى ظاهرةً أثناء تمرير اللوحة الطويلة) بدل تركها فراغًا */
+#annual-plan .subject-map-tabs{align-self:start!important;position:sticky!important;top:14px!important;max-height:calc(100vh - 28px);overflow-y:auto}
 </style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
