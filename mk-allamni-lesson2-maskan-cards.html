@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>بطاقات أنواع المساكن — المسكن · علّمني ربي</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#14402E;--t2:#1E5631;--gold:#C79A3B;--ink:#1E2E29;--muted:#6C776F;--line:#d8cdb5;--cream:#F6F1E6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#e7ece4;padding:20px;line-height:1.6}
+.head{max-width:1000px;margin:0 auto 16px;text-align:center}
+.head h1{font-family:var(--fd);color:var(--t1);font-size:24px}
+.head p{color:var(--muted);font-size:13.5px;margin-top:4px}
+.sheet{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.wcard{background:var(--cream);border:2px solid var(--t2);border-radius:18px;padding:22px 14px 26px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:9px;box-shadow:0 8px 22px rgba(20,50,35,.12);break-inside:avoid;min-height:150px;justify-content:center}
+.wcard .wc-logo img{height:30px}
+.wcard .wc-mat{font-family:var(--fd);color:var(--t1);font-size:13px}
+.wcard .wc-top{font-family:var(--fd);color:var(--gold);font-size:12.5px}
+.wcard .wc-word{font-family:var(--fd);font-weight:700;color:var(--t1);font-size:34px;line-height:1.25}
+.printbtn{display:block;margin:20px auto 6px;background:var(--t2);color:#fff;border:0;border-radius:999px;padding:10px 26px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
+@media print{body{background:#fff;padding:0}.head p,.printbtn{display:none}.sheet{gap:8mm;max-width:100%}.wcard{box-shadow:none;border:1.5px dashed #9bb0a0}}
+</style>
+</head>
+<body>
+<div class="head">
+  <h1>بطاقات أنواع المساكن — المسكن · علّمني ربي</h1>
+  <p>بطاقاتٌ بالكلمة يتداولها الطفل · اطبعيها ثمّ قُصّيها على الخطّ المتقطّع</p>
+</div>
+<div class="sheet">
+  <div class="wcard"><div class="wc-logo"><img src="brand/logo-ghars.webp" alt="غرس"/></div><div class="wc-mat">علّمني ربي</div><div class="wc-top">أُسمّي المسكن</div><div class="wc-word">بيت طين</div></div>
+  <div class="wcard"><div class="wc-logo"><img src="brand/logo-ghars.webp" alt="غرس"/></div><div class="wc-mat">علّمني ربي</div><div class="wc-top">أُسمّي المسكن</div><div class="wc-word">خيمة</div></div>
+  <div class="wcard"><div class="wc-logo"><img src="brand/logo-ghars.webp" alt="غرس"/></div><div class="wc-mat">علّمني ربي</div><div class="wc-top">أُسمّي المسكن</div><div class="wc-word">عمارة</div></div>
+  <div class="wcard"><div class="wc-logo"><img src="brand/logo-ghars.webp" alt="غرس"/></div><div class="wc-mat">علّمني ربي</div><div class="wc-top">أُسمّي المسكن</div><div class="wc-word">بيت خشب</div></div>
+</div>
+<button class="printbtn" onclick="window.print()">🖨️ طباعة البطاقات</button>
+</body>
+</html>
