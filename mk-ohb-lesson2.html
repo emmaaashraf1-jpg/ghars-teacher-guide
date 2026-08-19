@@ -403,6 +403,30 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
 .wa-hint{max-width:440px;margin:8px auto 0;text-align:center;color:#6b7a72;font-size:12px;line-height:1.75}
 .wa-hint code{background:#eef3ef;border-radius:4px;padding:0 4px;font-size:11.5px;color:#075E54}
 </style>
+<style id="gp-namecards">
+.acards{margin:14px 0 4px}
+.acards-lead{font-family:var(--fb);font-size:13.5px;color:#4a5a50;background:rgba(134,96,168,.07);border:1px dashed rgba(134,96,168,.4);border-radius:12px;padding:9px 14px;margin-bottom:12px;line-height:1.85}
+.acards-lead a{color:var(--elm);font-weight:700;text-decoration:none;white-space:nowrap}
+.matchhead{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.matchhead img{height:34px}.matchhead b{font-family:var(--fd);color:var(--t1);font-size:15px}
+.matchhead .dh-title{font-family:var(--fd);color:var(--elm);font-size:16px;font-weight:700}
+.matchhead .db{font-family:var(--fd);color:#5a4a6a;font-size:11.5px;border:1.3px solid #a99ab5;border-radius:999px;padding:3px 12px;background:rgba(255,255,255,.6)}
+.matchwrap{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;max-width:820px;margin:0 auto}
+.matchcol{flex:1 1 320px;min-width:260px}
+.matchcol h4{font-family:var(--fd);color:var(--gold,#C79A3B);text-align:center;font-size:13.5px;margin-bottom:10px}
+.mcard2{background:#F6F1E6;border:2px solid var(--elm);border-radius:14px;padding:11px 14px;margin-bottom:10px;text-align:center;box-shadow:0 4px 12px rgba(60,40,80,.09)}
+.mcard2.nm{font-family:var(--fd);color:var(--t1);font-size:22px;font-weight:700;line-height:1.5}
+.mcard2.nm small{display:block;color:var(--gold,#C79A3B);font-size:11.5px;font-family:var(--fb);font-weight:700;margin-top:3px}
+.mcard2.mean{font-family:var(--fb);font-weight:700;color:#3b2f4a;font-size:15.5px;line-height:1.7}
+.gitem-act{cursor:zoom-in}
+.gitem-act .act-mini{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,#F6F1E6,#efe7f3);border:1.5px dashed var(--elm)}
+.gitem-act .am-badge{font-family:var(--fd);color:#fff;background:var(--elm);border-radius:999px;padding:2px 12px;font-size:11.5px}
+.gitem-act .am-pair{font-family:var(--fd);color:var(--t1);font-size:18px;font-weight:700}
+.gitem-act .am-sub{font-family:var(--fb);color:#5a4a6a;font-size:12px}
+.gq-lb .lb-card{display:none;width:94vw;max-width:900px;max-height:88vh;overflow:auto}
+.gq-lb.card-open .lb-card{display:block}
+.gq-lb.card-open figure{display:none}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -549,6 +573,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
     </div>
 
     <div class="sec-head"><div class="num gold"><i class="gi" data-i="النشاط المصاحب" data-size="22"></i></div><h2>النشاط المصاحب — القفل والمفتاح</h2><div class="rule"></div></div>
+    <div class="acards" id="actNamesMkOhb2"><div class="acards-lead">بطاقات «مطابقةُ اسم الله بمعناه — الملك · السميع · البصير» بهويّة غرس — تُطبع وتُقصّ؛ يطابق الطفلُ كلَّ اسمٍ بمعناه <a href="mk-ohb-lesson2-match-cards.html" target="_blank" rel="noopener">🖨️ للطباعة الكبيرة ↗</a></div><div class="matchhead"><img src="brand/logo-ghars.webp" alt="نادي غرس القيم"/><b>أحبك ربي</b><span class="dh-title">مطابقةُ اسم الله بمعناه — الملك · السميع · البصير</span><span class="db">بطاقات نشاط</span></div><div class="matchwrap"><div class="matchcol"><h4>أسماء الله الحسنى</h4><div class="mcard2 nm">الملك</div><div class="mcard2 nm">السميع</div><div class="mcard2 nm">البصير</div></div><div class="matchcol"><h4>المعاني</h4><div class="mcard2 mean">مالكُ كلِّ شيءٍ ويمنح النِّعم</div><div class="mcard2 mean">يسمع كلَّ أصواتنا؛ فنقول في البيت كلامًا طيّبًا</div><div class="mcard2 mean">يرى أعمالَنا؛ فنُحسنُ العمل ونحفظُ أعيننا عمّا لا يحبّه الله</div></div></div></div>
     <div class="card actful">
       <h3>القفل والمفتاح</h3>
       <div class="row2">
@@ -964,5 +989,6 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
 <script id="gq-lb-iframe-fix">
 (function(){if(window.self===window.top)return;var lb=document.querySelector('.gq-lb');if(!lb)return;function pos(){if(!lb.classList.contains('open'))return;try{var fr=window.frameElement;if(!fr)return;var t=window.top,r=fr.getBoundingClientRect(),vh=t.innerHeight,off=Math.max(0,-r.top);lb.style.position='absolute';lb.style.top=off+'px';lb.style.bottom='auto';lb.style.left='0';lb.style.right='0';lb.style.width='100%';lb.style.height=vh+'px';}catch(e){}}var mo=new MutationObserver(function(){if(lb.classList.contains('open'))pos();});mo.observe(lb,{attributes:true,attributeFilter:['class']});})();
 </script>
-</body>
+<script id="gp-lbcard-aug">(function(){var lb=document.querySelector('.gq-lb');if(!lb)return;var lbCard=lb.querySelector('.lb-card');if(!lbCard){lbCard=document.createElement('div');lbCard.className='lb-card';lb.appendChild(lbCard);}function cl(){lb.classList.remove('open','card-open');lbCard.innerHTML='';}lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('close'))cl();});document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});document.querySelectorAll('[data-enlarge]').forEach(function(el){el.addEventListener('click',function(){var t=document.getElementById(el.getAttribute('data-enlarge'));if(!t)return;lbCard.innerHTML='';var c=t.cloneNode(true);c.removeAttribute('id');lbCard.appendChild(c);lb.classList.add('open','card-open');});});})();</script>."
+".</body>
 </html>
