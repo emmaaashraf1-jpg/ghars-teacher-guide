@@ -2167,6 +2167,13 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 /* (٣) جدول أصول التقييم كانت زواياه ١٤ب ← ١٦ب كالبقيّة */
 #assessment .asset-table-wrap{border-radius:16px!important}
 </style>
+<style id="gp-buttons">
+/* مراجعة القوائم والأزرار: الأغلب متناسق (حبّات ٩٩٩ للفلاتر/الوسوم · أزرار الفعل تُدوَّر حبّةً كاملة · تبويبات ١٣ب · قوائم بلا نقاط أو decimal). إصلاح شاذّين (2026-08-20) */
+/* (١) عيب تباين: عنصر قائمة المواد النشط كان نصًّا غابيًّا #1F4A39 على خلفيّة غابيّة = مخفيّ (تباين ١) ← أبيض (تباين ١٠) */
+#subjects .subject-tab.active,#subjects .subject-tab.active *{color:#ffffff!important}
+/* (٢) أزرار فلترة الآداب كان خطّها ٩ب (صغيرٌ جدًّا وشاذّ عن ١٢–١٥) ← ١٢ب */
+#manners .filter-btn{font-size:12px!important}
+</style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
 /* توقيعات وعناوين الأقسام الذهبيّة: تغميق للقراءة على العاجيّ/الكريميّ */
