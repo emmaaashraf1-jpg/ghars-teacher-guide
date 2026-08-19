@@ -2158,6 +2158,15 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #unit .unit-preview{margin-bottom:0!important}
 #fitness .fitness-overview,#assessment .assessment-loop,#assessment .asset-table-wrap,#unit .closing-statement{margin-top:40px!important}
 </style>
+<style id="gp-tables">
+/* توحيد الجداول (مراجعة): الأغلب متناسق (رأس أبيض على غابيّ #1F4A39 · AlAwwal · تظليل متناوب · حاوية ٠٫٨ب/١٦ب/overflow-auto). إصلاح الشاذّ (2026-08-20) */
+/* (١) دايفلو: رأس عمود الوقت كان #2c6a4d وحده بين كل الجداول ← غابيّ #1F4A39 كالبقيّة */
+#dayflow table.schedule thead th:first-child{background:#1F4A39!important}
+/* (٢) جدول مؤشرات التقييم كان بلا حاوية مدوّرة (زواياه ١٤ب لا تُدوَّر لـborder-collapse) ← حاوية مدوّرة ١٦ب كالبقيّة */
+#assessment table.indicator-table{border-collapse:separate!important;border-spacing:0!important;border-radius:16px!important;overflow:hidden!important;border:0.8px solid #E9E1D2!important}
+/* (٣) جدول أصول التقييم كانت زواياه ١٤ب ← ١٦ب كالبقيّة */
+#assessment .asset-table-wrap{border-radius:16px!important}
+</style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
 /* توقيعات وعناوين الأقسام الذهبيّة: تغميق للقراءة على العاجيّ/الكريميّ */
