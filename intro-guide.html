@@ -2053,6 +2053,29 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #vision .gp-stat{box-shadow:0 4px 14px -10px rgba(31,74,57,.14)!important}
 #vision .wahy-note{color:#4f5f57!important}
 </style>
+<style id="gp-lesson-editorial">
+/* بنية اللقاء — تطوير التصميم المعتمد: تكوينٌ تحريريّ بعمودين (استعادة الشبكة الأصليّة التي سطّحها gp-harmonize) + شريطٌ جانبيّ مثبَّت غنيّ (المدّة + دورة المعلّمة + ملاحظتان + الكفّارة) يملأ الفراغ الجانبيّ + خطٌّ زمنيّ للخطوات السبع + عمق (2026-08-18) */
+#lesson .page-body{display:grid!important;grid-template-columns:minmax(0,1fr) 300px!important;gap:44px!important;align-items:start!important}
+#lesson .page-aside{position:sticky!important;top:22px!important;display:flex!important;flex-direction:column!important;gap:14px!important}
+@media(max-width:900px){#lesson .page-body{display:block!important}#lesson .page-aside{position:static!important;margin-top:34px}}
+#lesson .page-aside .gp-sechead{margin:8px 0 -2px!important;padding:0!important}
+#lesson .page-aside .gp-sechead h2{font-size:19px!important}
+#lesson .page-aside .gp-sechead .k{font-size:11.5px!important}
+#lesson .page-aside .teacher-cycle{display:flex!important;flex-direction:column!important;gap:0!important;grid-template-columns:none!important}
+#lesson .page-aside .cycle-card{background:#fff!important;border:0!important;border-bottom:1px solid #F0E9DB!important;border-radius:0!important;padding:11px 0!important;box-shadow:none!important}
+#lesson .page-aside .cycle-card:last-child{border-bottom:0!important;padding-bottom:0!important}
+#lesson .page-aside .meeting-duration-note{margin:0!important;font-size:13.5px!important}
+#lesson .page-aside .closing-statement{background:#F4EDDE!important;border:1px solid #E9E1D2!important;border-radius:16px!important;padding:16px!important;text-align:center!important;color:#1F4A39!important;font-family:'AlAwwal','Amiri',serif!important;margin:0!important;font-size:16px!important;line-height:1.9!important}
+#lesson .lesson-steps{position:relative}
+#lesson .lesson-steps::before{content:"";position:absolute;top:16px;bottom:16px;right:19px;width:2px;background:linear-gradient(#E7D8B0,#E9E1D2);border-radius:2px}
+#lesson .lesson-step{position:relative;display:grid!important;grid-template-columns:40px 1fr!important;gap:18px!important;align-items:start!important;padding-bottom:20px!important;margin:0!important;background:none!important;border:0!important}
+#lesson .lesson-step:last-child{padding-bottom:0!important}
+#lesson .lesson-step .no{position:relative;z-index:1;width:40px!important;height:40px!important;border-radius:50%!important;background:#1F4A39!important;color:#fdf6e6!important;font-family:'AlAwwal','Amiri',serif!important;font-weight:700;font-size:18px!important;display:flex!important;align-items:center;justify-content:center;box-shadow:0 0 0 4px #FBF9F2,0 6px 14px -6px rgba(31,74,57,.5)!important}
+#lesson .lesson-step:nth-child(5) .no,#lesson .lesson-step:nth-child(6) .no{background:#0E6E6B!important;box-shadow:0 0 0 4px #FBF9F2,0 6px 14px -6px rgba(14,110,107,.5)!important}
+#lesson .lesson-step>div:last-child b{font-family:'AlAwwal','Amiri',serif!important;font-size:19px!important;color:#1F4A39!important}
+#lesson .teacher-tip,#lesson .quick-card,#lesson .lesson-mock{box-shadow:0 6px 20px -12px rgba(31,74,57,.16)!important}
+#lesson .gp-head .gp-lede{font-size:18px!important;color:#3a4640!important;max-width:720px!important}
+</style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
 /* توقيعات وعناوين الأقسام الذهبيّة: تغميق للقراءة على العاجيّ/الكريميّ */
@@ -2662,15 +2685,11 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="section-banner"><div class="section-number">08</div><div class="section-title"><div><h2>بنية اللقاء التعليمي</h2><p>قالب موحد يضمن وضوح الهدف وفاعلية النشاط والتقويم.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="بنية اللقاء التعليمي" data-size="24"></i></div></div></div>
 <div class="gp-head"><div class="gp-eyebrow">بنية اللقاء · التبويب ٠٨</div><h1>بنية اللقاء التعليمي</h1><p class="gp-lede">قالب موحد يضمن وضوح الهدف وفاعلية النشاط والتقويم — سبع محطات متتابعة في كل لقاء.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٧</b><span>خطوات متتابعة</span></div><div class="gp-stat"><i></i><b>٣٠ د</b><span>لكل لقاء</span></div><div class="gp-stat"><i></i><b>٣</b><span>أسئلة الدورة</span></div></div></div>
 <div class="page-body"><div class="page-main">
-<div class="meeting-duration-note" id="lesson-duration-rule"><strong>مدة كل لقاء:</strong> 30 دقيقة (نصف ساعة) قاعدة ثابتة في المنهج كله. يبدأ اللقاء بتهيئة وإشارة قصيرة، ثم بناء معنى مركز، ثم نشاط تطبيقي أو تعلم باللعب، ثم تغذية راجعة وخاتمة.</div>
 <div class="gp-sechead"><div class="k">خطوات اللقاء</div><h2>سبع محطات متتابعة</h2><p>من التحية إلى الخاتمة، يسير كل لقاء على المسار نفسه فيألفه الطفل.</p></div>
 <div class="lesson-framework"><div class="lesson-steps">
 <div class="lesson-step"><div class="no">1</div><div><b>التحية والقوانين</b><p>السلام عليكم، ثم تذكير مختصر بقوانين مكان العلم.</p></div></div><div class="lesson-step"><div class="no">2</div><div><b>إشارة المادة</b><p>آية أو نشيد أو أبيات يعرف الطفل من خلالها نوع اللقاء.</p></div></div><div class="lesson-step"><div class="no">3</div><div><b>استدعاء السابق</b><p>سؤال قصير يربط الدرس الجديد بما تعلمه الطفل.</p></div></div><div class="lesson-step"><div class="no">4</div><div><b>بناء المعنى</b><p>شرح موجز، وأسئلة، ونص شرعي، ومحسوس أو صورة.</p></div></div><div class="lesson-step"><div class="no">5</div><div><b>النشاط التطبيقي</b><p>لعب، تصنيف، ترتيب، تمثيل، تجربة، أو بناء.</p></div></div><div class="lesson-step"><div class="no">6</div><div><b>التغذية الراجعة</b><p>تطبيق فردي أو سؤال يوضح مدى الفهم.</p></div></div><div class="lesson-step"><div class="no">7</div><div><b>الخاتمة</b><p>تلخيص المعنى، الدعاء، ثم كفارة المجلس.</p></div></div>
 </div><div class="gp-sechead"><div class="k">قالب الصفحة</div><h2>ماذا تحوي صفحة الدرس</h2></div><div class="lesson-mock"><div class="mock-head">قالب صفحة الدرس</div><div class="mock-body"><div class="mock-main"><div class="mock-block"><b>سير اللقاء</b><span>ما تقوله المعلمة وما تعرضه وتسأل عنه خطوة بخطوة.</span></div><div class="mock-block"><b>النشاط</b><span>تفاصيل التنفيذ، توزيع الأدوار، وكيفية استخدام الأدوات.</span></div><div class="mock-block"><b>التغذية الراجعة</b><span>تطبيق فردي أو جماعي قصير يبين الفهم.</span></div><div class="mock-block"><b>الربط القيمي</b><span>كيف ينتقل المفهوم إلى عبادة أو خلق أو اختيار.</span></div></div><aside class="mock-aside"><div class="mock-block"><b>الهدف</b><span>سلوك قابل للملاحظة.</span></div><div class="mock-block"><b>النص</b><span>آية أو حديث أو اعتقاد.</span></div><div class="mock-block"><b>الأدوات</b><span>ما يلزم فقط.</span></div><div class="mock-block"><b>المؤشر</b><span>كيف أعرف أنه تعلم؟</span></div></aside></div></div></div>
-<div class="gp-sechead"><div class="k">دورة المعلّمة</div><h2>في كل لقاء</h2></div>
-<div class="teacher-cycle"><div class="cycle-card"><b>ماذا أقول؟</b><span>لغة واضحة، وأسئلة قصيرة، ونص صحيح.</span></div><div class="cycle-card"><b>ماذا أفعل؟</b><span>أعرض، وأمثل، وأدع الطفل يجرب.</span></div><div class="cycle-card"><b>ماذا ألاحظ؟</b><span>الفهم، واللغة، والمهارة، والسلوك.</span></div></div>
-<div class="closing-statement" style="font-size:15px">سبحانك اللهم وبحمدك، أشهد أن لا إله إلا أنت، أستغفرك وأتوب إليك.</div>
-</div><aside class="page-aside"><div class="gp-sechead gp-aside-head"><div class="k">للمعلّمة</div><h2>ملاحظتان</h2></div><div class="teacher-tip"><span class="tip-label">زمن الشرح</span><h3>الأقصر أفضل</h3><p>كلما قصرت المقدمة ووضحت، اتسع وقت الطفل للتجريب والتعبير والحركة.</p></div><div class="quick-card"><span class="tip-label">هدف النشاط</span><h3>ليس للزينة</h3><p>لا يُنفذ النشاط لأنه جميل فقط؛ بل لأنه يكشف الفهم ويثبت المعنى.</p></div></aside></div>
+</div><aside class="page-aside"><div class="meeting-duration-note" id="lesson-duration-rule"><strong>مدة كل لقاء:</strong> 30 دقيقة (نصف ساعة) قاعدة ثابتة في المنهج كله. يبدأ اللقاء بتهيئة وإشارة قصيرة، ثم بناء معنى مركز، ثم نشاط تطبيقي أو تعلم باللعب، ثم تغذية راجعة وخاتمة.</div><div class="gp-sechead"><div class="k">دورة المعلّمة</div><h2>في كل لقاء</h2></div><div class="teacher-cycle"><div class="cycle-card"><b>ماذا أقول؟</b><span>لغة واضحة، وأسئلة قصيرة، ونص صحيح.</span></div><div class="cycle-card"><b>ماذا أفعل؟</b><span>أعرض، وأمثل، وأدع الطفل يجرب.</span></div><div class="cycle-card"><b>ماذا ألاحظ؟</b><span>الفهم، واللغة، والمهارة، والسلوك.</span></div></div><div class="gp-sechead gp-aside-head"><div class="k">للمعلّمة</div><h2>ملاحظتان</h2></div><div class="teacher-tip"><span class="tip-label">زمن الشرح</span><h3>الأقصر أفضل</h3><p>كلما قصرت المقدمة ووضحت، اتسع وقت الطفل للتجريب والتعبير والحركة.</p></div><div class="quick-card"><span class="tip-label">هدف النشاط</span><h3>ليس للزينة</h3><p>لا يُنفذ النشاط لأنه جميل فقط؛ بل لأنه يكشف الفهم ويثبت المعنى.</p></div><div class="closing-statement" style="font-size:15px">سبحانك اللهم وبحمدك، أشهد أن لا إله إلا أنت، أستغفرك وأتوب إليك.</div></aside></div>
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>08 · بنية اللقاء التعليمي</b></div>
 </section>
 <section class="page" id="signals" style="--accent:#1E5631">
