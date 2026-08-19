@@ -1169,7 +1169,7 @@ html.hasjs:not(.gq-ready) #u-days{visibility:hidden}
   var doc=document, root=doc.documentElement;
   var KEY='gq-maskan-day';
 
-  function fit(fr){ try{ var d=fr.contentWindow.document; var h=Math.max(d.body.scrollHeight, d.documentElement.scrollHeight); if(h>200){ fr.style.height=h+'px'; } }catch(e){} }
+  function fit(fr){ try{ var d=fr.contentWindow.document; var h=Math.max(d.body.scrollHeight, d.documentElement.scrollHeight); if(h>200){ fr.style.minHeight='0'; fr.style.height=h+'px'; } }catch(e){} }
 
   function loadFrame(sp){
     if(!sp) return;

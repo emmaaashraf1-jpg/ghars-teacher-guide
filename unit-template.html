@@ -280,7 +280,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
   var doc=document, root=doc.documentElement;
   var KEY='gq-layl-nahar-day';
 
-  function fit(fr){ try{ var d=fr.contentWindow.document; var h=Math.max(d.body.scrollHeight, d.documentElement.scrollHeight); if(h>200){ fr.style.height=h+'px'; } }catch(e){} }
+  function fit(fr){ try{ var d=fr.contentWindow.document; var h=Math.max(d.body.scrollHeight, d.documentElement.scrollHeight); if(h>200){ fr.style.minHeight='0'; fr.style.height=h+'px'; } }catch(e){} }
 
   function loadFrame(sp){
     if(!sp) return;
