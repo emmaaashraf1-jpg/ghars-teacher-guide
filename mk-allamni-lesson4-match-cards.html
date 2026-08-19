@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>مطابقةُ كلِّ مخلوقٍ بمسكنه — علّمني ربي</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;--t1:#1F4A39;--elm:#0E6E6B;--gold:#C79A3B;--cream:#F6F1E6;--muted:#5f7168}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);background:#e7f0ee;padding:22px;color:#26332c;line-height:1.6}
+.head{max-width:1000px;margin:0 auto 14px;text-align:center}.head h1{font-family:var(--fd);color:var(--t1);font-size:23px}.head p{color:var(--muted);font-size:13px;margin-top:5px}
+.sec{max-width:900px;margin:20px auto 10px;font-family:var(--fd);color:var(--gold);font-weight:700;font-size:16px;text-align:center}
+.grid{max-width:820px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pc{background:var(--cream);border:2.5px solid var(--elm);border-radius:18px;padding:22px 16px;text-align:center;box-shadow:0 8px 20px rgba(15,60,55,.13);break-inside:avoid;min-height:110px;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:700;color:var(--t1);font-size:30px}
+.printbtn{display:block;margin:22px auto 6px;background:var(--elm);color:#fff;border:0;border-radius:999px;padding:11px 28px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
+@media print{@page{size:A4 portrait;margin:10mm}body{background:#fff;padding:0}.head,.printbtn{display:none}.grid{gap:7mm}.pc{box-shadow:none;min-height:44mm}}
+</style></head><body>
+<div class="head"><h1>مطابقةُ كلِّ مخلوقٍ بمسكنه</h1><p>علّمني ربي · المسكن · بالاسم فقط دون رسمِ حيوان؛ يطابق الطفلُ كلَّ مخلوقٍ بمسكنه</p></div>
+<div class="sec">المخلوق</div>
+<div class="grid">
+  <div class="pc">العصفور</div>
+  <div class="pc">الأرنب</div>
+  <div class="pc">الدجاج</div>
+  <div class="pc">الأسد</div>
+  <div class="pc">الخيل</div>
+</div>
+<div class="sec">مسكنه</div>
+<div class="grid">
+  <div class="pc">العُشّ</div>
+  <div class="pc">الجُحر</div>
+  <div class="pc">القِنّ</div>
+  <div class="pc">العرين</div>
+  <div class="pc">الإسطبل</div>
+</div>
+<button class="printbtn" onclick="window.print()">🖨️ طباعة البطاقات</button>
+</body></html>
