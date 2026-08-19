@@ -2096,6 +2096,16 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 @media(max-width:620px){#components .resource-grid > *{flex:0 0 100%!important;max-width:100%!important}}
 #components .page-aside .refs-helper-grid{display:flex!important;flex-direction:column!important;gap:10px!important;margin-top:0!important}
 </style>
+<style id="gp-scope-editorial">
+/* النطاق والتسلسل — تعميم التخطيط التحريريّ بعمودين: العمود الرئيس لجدول نموّ المواد (يمرّر داخليًّا لأنّ عرضه الأدنى ٧٦٠ب) + شريطٌ جانبيّ مثبَّت أُغنِي بنقل بطاقات الفصول الثلاثة إليه (توازن ٠٫٨) (2026-08-18) */
+#scope .page-body{display:grid!important;grid-template-columns:minmax(0,1fr) 288px!important;gap:40px!important;align-items:start!important}
+#scope .page-aside{position:sticky!important;top:22px!important;display:flex!important;flex-direction:column!important;gap:16px!important}
+@media(max-width:900px){#scope .page-body{display:block!important}#scope .page-aside{position:static!important;margin-top:34px}}
+#scope .page-aside .gp-sechead{margin:6px 0 -4px!important;padding:0!important}
+#scope .page-aside .gp-sechead h2{font-size:19px!important}
+#scope .scope-table-wrap{overflow-x:auto!important;max-width:100%!important}
+#scope .page-aside .term-map{display:flex!important;flex-direction:column!important;gap:10px!important;grid-template-columns:none!important}
+</style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
 /* توقيعات وعناوين الأقسام الذهبيّة: تغميق للقراءة على العاجيّ/الكريميّ */
