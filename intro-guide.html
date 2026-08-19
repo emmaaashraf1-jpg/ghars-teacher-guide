@@ -2123,6 +2123,29 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 /* توحيد زوايا بطاقات المحتوى الشاذّة (١٥/١٨) على ١٦ كبقيّة البطاقات */
 #components .resource-card,#components .refs-helper-card,#subjects .subject-detail,#corners .corner-library-card{border-radius:16px!important}
 </style>
+<style id="gp-color-normalize">
+/* تطبيع الألوان على اللوحة (مراجعة): ألوان خارج اللوحة كانت باقية عبر متغيّرات/قواعد — أكسنت أقسام (الرؤية/الأركان/الوحدة قرميدي/كحلي · التقييم بنفسجي · النطاق أزرق-رمادي · المخطط رمادي-فيروزي · الآداب أخضر) + ألوان مواد (علّمني ربي قرميدي #B15230 · مهاراتي أوكر #A9772E) + وسوم مواقف الآداب الأوكر + بطاقات صفحة الهبوط — تُطبَّع كلها على الغابي #1F4A39/الفيروزي #0E6E6B/الأوكر الداكن #8a5d12 (داكنة مقروءة، لا الذهبي الفاتح للنصوص) (2026-08-18) */
+#vision{--accent:#1F4A39!important}
+#corners{--accent:#1F4A39!important}
+#assessment{--accent:#0E6E6B!important}
+#scope{--accent:#0E6E6B!important}
+#unit{--accent:#1F4A39!important}
+#annual-plan{--accent:#0E6E6B!important}
+#manners{--accent:#1F4A39!important}
+[style*="#B15230" i]{--subject-color:#1F4A39!important;--subject:#1F4A39!important;--c:#1F4A39!important;--accent:#1F4A39!important}
+[style*="#A9772E" i]{--subject-color:#8a5d12!important;--subject:#8a5d12!important;--c:#8a5d12!important;--accent:#8a5d12!important}
+[style*="#7A4D7F" i]{--subject:#0E6E6B!important;--c:#0E6E6B!important;--accent:#0E6E6B!important}
+[style*="#455A64" i]{--c:#0E6E6B!important;--accent:#0E6E6B!important}
+[style*="#172848" i]{--c:#1F4A39!important;--accent:#1F4A39!important}
+[style*="#4E6B60" i]{--c:#0E6E6B!important;--accent:#0E6E6B!important}
+[style*="#4F7C49" i]{--c:#1F4A39!important;--accent:#1F4A39!important}
+[style*="#C57B57" i]{--c:#1F4A39!important;--accent:#1F4A39!important}
+[style*="#8A5A9E" i]{--c:#0E6E6B!important;--accent:#0E6E6B!important}
+[style*="#5C7B90" i]{--c:#0E6E6B!important;--accent:#0E6E6B!important}
+[style*="#3A4C6B" i]{--c:#1F4A39!important;--accent:#1F4A39!important}
+#manners .mw-tag{color:#8a5d12!important}
+#manners .mw-tag.mw-v,#manners .mw-tag.mw-g{color:#2C6A4D!important}
+</style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
 /* توقيعات وعناوين الأقسام الذهبيّة: تغميق للقراءة على العاجيّ/الكريميّ */
