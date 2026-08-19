@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>بطاقات آداب المساء الستّة — أدب واقتداء</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;--t1:#3a4a1c;--elm:#55702B;--gold:#C79A3B;--cream:#F6F1E6;--muted:#636a4e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);background:#eef0e5;padding:22px;color:#2c3320;line-height:1.6}
+.head{max-width:1000px;margin:0 auto 16px;text-align:center}.head h1{font-family:var(--fd);color:var(--t1);font-size:23px}.head p{color:var(--muted);font-size:13px;margin-top:5px}
+.sec{max-width:900px;margin:20px auto 10px;font-family:var(--fd);color:var(--gold);font-weight:700;font-size:16px;text-align:center}
+.grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.dcard{background:var(--cream);border:2.5px solid var(--elm);border-radius:20px;padding:22px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;box-shadow:0 8px 20px rgba(50,60,25,.12);break-inside:avoid;min-height:130px;justify-content:center;position:relative}
+.dcard .pc-num{position:absolute;top:12px;inset-inline-end:16px;width:34px;height:34px;border-radius:50%;background:var(--elm);color:#fff;font-family:var(--fd);font-size:18px;display:flex;align-items:center;justify-content:center}
+.dcard .dc-brand{display:flex;align-items:center;gap:7px;position:absolute;top:12px;inset-inline-start:14px}
+.dcard .dc-brand img{height:24px}.dcard .dc-brand b{font-family:var(--fd);color:var(--t1);font-size:10.5px}
+.dcard .dc-top{font-family:var(--fd);color:var(--gold);font-size:13px;margin-top:12px}
+.dcard .dc-text{font-family:var(--fd);font-weight:700;color:var(--t1);font-size:28px;line-height:1.3}
+.respgrid{max-width:640px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.rcard{border-radius:20px;padding:26px 16px;text-align:center;font-family:var(--fd);font-weight:700;font-size:34px;border:3px solid;break-inside:avoid}
+.rcard small{display:block;font-family:var(--fb);font-size:15px;font-weight:400;margin-top:6px;opacity:.85}
+.rcard.yes{background:#eef7ee;border-color:#2e7d46;color:#1f6d38}
+.rcard.no{background:#fdf3e3;border-color:#b8791f;color:#9a5f14}
+.printbtn{display:block;margin:22px auto 6px;background:var(--elm);color:#fff;border:0;border-radius:999px;padding:11px 28px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
+@media print{@page{size:A4 portrait;margin:10mm}body{background:#fff;padding:0}.head,.printbtn{display:none}.grid,.respgrid{gap:8mm}.dcard{box-shadow:none;min-height:58mm}.dcard .dc-text{font-size:32px}}
+</style></head><body>
+<div class="head"><h1>بطاقات آداب المساء الستّة</h1><p>أدب واقتداء · اللقاء الأول · اطبعيها وقُصّيها؛ يختار الطفل مصباحًا ويطبّق أدبه</p></div>
+<div class="sec">مصابيح آداب المساء</div>
+<div class="grid">
+  <div class="dcard"><div class="dc-brand"><img src="brand/logo-ghars.webp" alt="غرس"/><b>أدب واقتداء</b></div><span class="dc-top">من آداب المساء</span><span class="dc-text">نكفُّ الصبيان</span></div>
+  <div class="dcard"><div class="dc-brand"><img src="brand/logo-ghars.webp" alt="غرس"/><b>أدب واقتداء</b></div><span class="dc-top">من آداب المساء</span><span class="dc-text">نغلقُ الأبواب</span></div>
+  <div class="dcard"><div class="dc-brand"><img src="brand/logo-ghars.webp" alt="غرس"/><b>أدب واقتداء</b></div><span class="dc-top">من آداب المساء</span><span class="dc-text">نطفئُ المصابيح</span></div>
+  <div class="dcard"><div class="dc-brand"><img src="brand/logo-ghars.webp" alt="غرس"/><b>أدب واقتداء</b></div><span class="dc-top">من آداب المساء</span><span class="dc-text">نُوكئُ القِرَب</span></div>
+  <div class="dcard"><div class="dc-brand"><img src="brand/logo-ghars.webp" alt="غرس"/><b>أدب واقتداء</b></div><span class="dc-top">من آداب المساء</span><span class="dc-text">نغطّي الأواني</span></div>
+  <div class="dcard"><div class="dc-brand"><img src="brand/logo-ghars.webp" alt="غرس"/><b>أدب واقتداء</b></div><span class="dc-top">من آداب المساء</span><span class="dc-text">نذكرُ اسم الله</span></div>
+</div>
+
+<button class="printbtn" onclick="window.print()">🖨️ طباعة البطاقات</button>
+</body></html>

@@ -394,6 +394,33 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
 .wa-hint{max-width:440px;margin:8px auto 0;text-align:center;color:#6b7a72;font-size:12px;line-height:1.75}
 .wa-hint code{background:#eef3ef;border-radius:4px;padding:0 4px;font-size:11.5px;color:#075E54}
 </style>
+<style id="gp-adabcards">
+.acards{max-width:820px;margin:12px auto 6px}
+.acards-lead{font-family:var(--fb);font-size:13.5px;color:#43492f;background:rgba(85,112,43,.08);border:1px dashed rgba(85,112,43,.4);border-radius:12px;padding:9px 14px;margin-bottom:12px;line-height:1.85}
+.acards-lead a{color:var(--elm);font-weight:700;text-decoration:none;white-space:nowrap}
+.deedhead{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.deedhead img{height:34px}.deedhead b{font-family:var(--fd);color:var(--t1);font-size:15px}
+.deedhead .dh-title{font-family:var(--fd);color:var(--elm);font-size:16px;font-weight:700}
+.deedhead .db{font-family:var(--fd);color:#4a5233;font-size:11.5px;border:1.3px solid #a3ac8e;border-radius:999px;padding:3px 12px;background:rgba(255,255,255,.6)}
+.deedgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;max-width:760px;margin:0 auto}
+.deedcard{background:#F6F1E6;border:2px solid var(--elm);border-radius:16px;padding:15px 12px 17px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;box-shadow:0 6px 16px rgba(50,60,25,.1);position:relative}
+.deedcard .dc-top{font-family:var(--fd);color:var(--gold);font-size:11.5px}
+.deedcard .dc-text{font-family:var(--fd);font-weight:700;color:var(--t1);font-size:19px;line-height:1.4}
+.deedcard .dc-num{position:absolute;top:8px;inset-inline-start:10px;width:24px;height:24px;border-radius:50%;background:var(--elm);color:#fff;font-family:var(--fd);font-size:13px;display:flex;align-items:center;justify-content:center}
+.respwrap{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;max-width:520px;margin:16px auto 0}
+.rcard{flex:1 1 200px;border-radius:16px;padding:16px 14px;text-align:center;font-family:var(--fd);font-weight:700;font-size:22px;border:2px solid;box-shadow:0 5px 14px rgba(50,60,25,.12)}
+.rcard small{display:block;font-family:var(--fb);font-size:12px;font-weight:400;margin-top:4px;opacity:.85}
+.rcard.yes{background:#eef7ee;border-color:#2e7d46;color:#1f6d38}
+.rcard.no{background:#fdf3e3;border-color:#b8791f;color:#9a5f14}
+.act-mini{width:100%;height:100%;background:linear-gradient(135deg,#F6F1E6,#eef0e2);border:1.5px dashed var(--elm);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:12px;text-align:center}
+.act-mini .am-badge{font-family:var(--fd);font-size:11px;color:#fff;background:var(--elm);border-radius:999px;padding:2px 12px}
+.act-mini .am-pair{font-family:var(--fd);font-weight:700;color:var(--t1);font-size:18px;line-height:1.2}
+.act-mini .am-sub{font-family:var(--fb);color:#4a5233;font-size:12px}
+.gitem-act{cursor:zoom-in}
+.gq-lb .lb-card{display:none;width:94vw;max-width:900px;max-height:88vh;overflow:auto}
+.gq-lb.card-open .lb-card{display:block}
+.gq-lb.card-open figure{display:none}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -596,7 +623,8 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
     </div>
 
     <div class="sec-head"><div class="num"><i class="gi" data-i="الوسائل والأدوات" data-size="22"></i></div><h2>الوسائل والصور المعروضة في اللقاء</h2><div class="rule"></div></div>
-    <div class="gallery">
+    <div class="gallery">."
+      ".<div class="gitem gitem-act" data-enlarge="actMasaLnAdab1" title="اضغط لتكبير البطاقات"><div class="imgwrap" style="height:180px;padding:0"><div class="act-mini"><span class="am-badge">بطاقات نشاط</span><span class="am-pair">آداب المساء</span><span class="am-sub">٦ مصابيح</span></div></div><div class="cap">بطاقات آداب المساء<small>اضغط للتكبير ⤢</small></div></div>
       <div class="gitem"><div class="imgwrap"><img src="assets/cards/ln-adab-lantern.jpg" alt="إطفاء المصابيح" loading="lazy"/></div><div class="cap">إطفاء المصابيح<small>نُطفئ المصباح عند النوم</small></div></div>
       <div class="gitem"><div class="imgwrap"><img src="assets/cards/ln-adab-door.jpg" alt="إغلاق الأبواب" loading="lazy"/></div><div class="cap">إغلاق الأبواب<small>نُغلق الباب ونُسمّي الله</small></div></div>
       <div class="gitem"><div class="imgwrap"><img src="assets/cards/ln-adab-covered.jpg" alt="تغطية الطعام" loading="lazy"/></div><div class="cap">تغطية الطعام<small>نُغطّي الطعام والشراب</small></div></div>
@@ -604,6 +632,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
     <a class="linkbtn" href="ln-adab-lesson1-cards.html" target="_blank" rel="noopener" style="margin-top:10px;background:#14402E">🖨️ بطاقات العرض جاهزةً للطباعة — اطبعيها وقُصّيها لعرضها على الأطفال ↗</a>
 
     <div class="sec-head"><div class="num gold"><i class="gi" data-i="النشاط المصاحب" data-size="22"></i></div><h2>النشاط المصاحب</h2><div class="rule"></div></div>
+    <div class="acards" id="actMasaLnAdab1"><div class="acards-lead">بطاقات «آداب المساء الستّة» بهويّة غرس — تُطبع وتُقصّ؛ يختار الطفلُ مصباحًا ويطبّق أدبَه مع ذكر اسم الله <a href="ln-adab-lesson1-masaa-cards.html" target="_blank" rel="noopener">🖨️ للطباعة الكبيرة ↗</a></div><div class="deedhead"><img src="brand/logo-ghars.webp" alt="نادي غرس القيم"/><b>أدب واقتداء</b><span class="dh-title">آداب المساء الستّة</span><span class="db">بطاقات نشاط</span></div><div class="deedgrid"><div class="deedcard"><span class="dc-top">من آداب المساء</span><span class="dc-text">نكفُّ الصبيان</span></div><div class="deedcard"><span class="dc-top">من آداب المساء</span><span class="dc-text">نغلقُ الأبواب</span></div><div class="deedcard"><span class="dc-top">من آداب المساء</span><span class="dc-text">نطفئُ المصابيح</span></div><div class="deedcard"><span class="dc-top">من آداب المساء</span><span class="dc-text">نُوكئُ القِرَب</span></div><div class="deedcard"><span class="dc-top">من آداب المساء</span><span class="dc-text">نغطّي الأواني</span></div><div class="deedcard"><span class="dc-top">من آداب المساء</span><span class="dc-text">نذكرُ اسم الله</span></div></div></div>
     <div class="card actful">
       <h3>أنشطة آداب المساء التطبيقية</h3>
       <div class="row2">
@@ -1056,5 +1085,6 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
 <script id="gq-lb-iframe-fix">
 (function(){if(window.self===window.top)return;var lb=document.querySelector('.gq-lb');if(!lb)return;function pos(){if(!lb.classList.contains('open'))return;try{var fr=window.frameElement;if(!fr)return;var t=window.top,r=fr.getBoundingClientRect(),vh=t.innerHeight,off=Math.max(0,-r.top);lb.style.position='absolute';lb.style.top=off+'px';lb.style.bottom='auto';lb.style.left='0';lb.style.right='0';lb.style.width='100%';lb.style.height=vh+'px';}catch(e){}}var mo=new MutationObserver(function(){if(lb.classList.contains('open'))pos();});mo.observe(lb,{attributes:true,attributeFilter:['class']});})();
 </script>
-</body>
+<script id="gp-lbcard-aug">(function(){var lb=document.querySelector('.gq-lb');if(!lb)return;var lbCard=lb.querySelector('.lb-card');if(!lbCard){lbCard=document.createElement('div');lbCard.className='lb-card';lb.appendChild(lbCard);}function cl(){lb.classList.remove('open','card-open');lbCard.innerHTML='';}lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('close'))cl();});document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});document.querySelectorAll('[data-enlarge]').forEach(function(el){el.addEventListener('click',function(){var t=document.getElementById(el.getAttribute('data-enlarge'));if(!t)return;lbCard.innerHTML='';var c=t.cloneNode(true);c.removeAttribute('id');lbCard.appendChild(c);lb.classList.add('open','card-open');});});})();</script>."
+".</body>
 </html>
