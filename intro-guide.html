@@ -2106,6 +2106,14 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #scope .scope-table-wrap{overflow-x:auto!important;max-width:100%!important}
 #scope .page-aside .term-map{display:flex!important;flex-direction:column!important;gap:10px!important;grid-template-columns:none!important}
 </style>
+<style id="gp-subjects-void">
+/* خريطة المواد — تقليل فراغ عمود التفصيل (master-detail): كانت القائمة (٥٤٢ب) أطول بكثير من بطاقة التفصيل (٢٦٣ب) فيطفو فراغٌ ٢٧٩ب. الحلّ: تنحيف القائمة (الأسماء سطرٌ واحد) + تمديد بطاقة التفصيل لتملأ العمود كلوحةٍ مؤطّرة بمحتوًى متوسّط — فالفراغ يصير داخليًّا متوازنًا لا فراغ صفحة (2026-08-18) */
+#subjects .subject-layout{align-items:stretch!important}
+#subjects .subject-layout > div:nth-child(2){display:flex!important;flex-direction:column!important}
+#subjects .subject-detail.active{flex:1 1 auto!important;display:flex!important;flex-direction:column!important;justify-content:center!important}
+#subjects .subject-list{gap:4px!important}
+#subjects .subject-list > *{padding-top:5px!important;padding-bottom:5px!important;min-height:0!important}
+</style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
 /* توقيعات وعناوين الأقسام الذهبيّة: تغميق للقراءة على العاجيّ/الكريميّ */
