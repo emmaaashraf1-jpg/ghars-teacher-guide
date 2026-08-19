@@ -2081,6 +2081,17 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 .gp-head .gp-lede{font-size:18px!important;line-height:1.95!important;color:#3a4640!important}
 .resource-card,.refs-helper-card,.corner-library-card,.signal-material-card,.fitness-activity,.belief-card-item{box-shadow:0 7px 20px -12px rgba(31,74,57,.15)!important}
 </style>
+<style id="gp-components-editorial">
+/* المكوّنات — تعميم التخطيط التحريريّ بعمودين: استعادة الشبكة + شريطٌ جانبيّ مثبَّت أُغنِي بنقل «مساعد المعلمة» إليه + بطاقات المصادر عمودين (أكبر، بلا يتيمة) (2026-08-18) */
+#components .page-body{display:grid!important;grid-template-columns:minmax(0,1fr) 300px!important;gap:44px!important;align-items:start!important}
+#components .page-aside{position:sticky!important;top:22px!important;display:flex!important;flex-direction:column!important;gap:16px!important}
+@media(max-width:900px){#components .page-body{display:block!important}#components .page-aside{position:static!important;margin-top:34px}}
+#components .page-aside .gp-sechead{margin:6px 0 -4px!important;padding:0!important}
+#components .page-aside .gp-sechead h2{font-size:19px!important}
+#components .page-aside .gp-sechead .gp-eyebrow,#components .page-aside .gp-sechead .k{font-size:11.5px!important}
+#components .resource-grid > *{flex:0 0 calc((100% - 16px)/2)!important;max-width:calc((100% - 16px)/2)!important}
+#components .page-aside .refs-helper-grid{display:flex!important;flex-direction:column!important;gap:10px!important;margin-top:0!important}
+</style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
 /* توقيعات وعناوين الأقسام الذهبيّة: تغميق للقراءة على العاجيّ/الكريميّ */
@@ -2271,12 +2282,6 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="resource-card"><h4>استمارات تقييم الطفل</h4><p>نماذج فصلية ترسل لولي الأمر لتقديم صورة موجزة عن نمو الطفل في جوانب المنهج، وربط الملاحظة الصفية بخطوة متابعة منزلية واضحة.</p></div>
 <div class="resource-card"><h4>مساعد المعلمة للبحث</h4><p>أداة في صفحة البداية للبحث بالكلمة المفتاحية، مثل اسم المادة أو الركن أو القيمة أو المرجع؛ لتصل المعلمة بسرعة إلى التبويب المطلوب.</p></div>
 </div>
-<div class="gp-sechead gp-reveal"><span class="gp-eyebrow">كيف أستخدمها</span><h2>ثلاثة أسئلة عمليّة</h2></div>
-<div class="refs-helper-grid">
-<div class="refs-helper-card"><b>كيف أستخدم المراجع الإثرائية؟</b><p>تقرأها المعلمة قبل اللقاء لتتقن الخلفية الشرعية أو التربوية، ثم تختار منها ما يناسب عمر الطفل ولغة الصف.</p></div>
-<div class="refs-helper-card"><b>كيف أستخدم البطاقات؟</b><p>تُحضّر البطاقات قبل اليوم، وتعرض عند الحاجة فقط، ثم تنتقل إلى نشاط محسوس أو ركن يثبت المعنى.</p></div>
-<div class="refs-helper-card"><b>كيف أستخدم النماذج؟</b><p>النموذج يساعد المعلمة على ضبط المخرج: بطاقة، لوحة، تسلسل، تصنيف، تمثيل، أو ملاحظة تقويمية.</p></div>
-</div>
 <div class="gp-sechead gp-reveal"><span class="gp-eyebrow">من المورد إلى المخرج</span><h2>جدول الموارد والمخرجات</h2><p>لكلّ موردٍ موضعُ استخدامه ومخرجه المتوقّع.</p></div>
 <div class="asset-table-wrap"><table class="asset-table"><thead><tr><th>نوع المورد</th><th>موضع الاستخدام</th><th>المخرج المتوقع</th></tr></thead><tbody>
 <tr><td>بطاقة نص شرعي</td><td>بداية اللقاء أو لحظة الربط</td><td>يعرف الطفل أن المعنى مستند إلى الوحي.</td></tr>
@@ -2287,6 +2292,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </tbody></table></div>
 </div>
 <aside class="page-aside">
+<div class="gp-sechead gp-aside-head"><div class="k">كيف أستخدمها</div><h2>ثلاثة أسئلة عمليّة</h2></div><div class="refs-helper-grid"><div class="refs-helper-card"><b>كيف أستخدم المراجع الإثرائية؟</b><p>تقرأها المعلمة قبل اللقاء لتتقن الخلفية الشرعية أو التربوية، ثم تختار منها ما يناسب عمر الطفل ولغة الصف.</p></div><div class="refs-helper-card"><b>كيف أستخدم البطاقات؟</b><p>تُحضّر البطاقات قبل اليوم، وتعرض عند الحاجة فقط، ثم تنتقل إلى نشاط محسوس أو ركن يثبت المعنى.</p></div><div class="refs-helper-card"><b>كيف أستخدم النماذج؟</b><p>النموذج يساعد المعلمة على ضبط المخرج: بطاقة، لوحة، تسلسل، تصنيف، تمثيل، أو ملاحظة تقويمية.</p></div></div>
 <div class="gp-sechead gp-aside-head"><div class="k">للمعلّمة</div><h2>ثلاث ملاحظات</h2></div><div class="teacher-tip"><span class="tip-label">تنظيم</span><h3>لا تفتحي كل شيء</h3><p>في يوم التنفيذ تحتاجين فقط: صفحة اليوم، لقاء المادة، أدوات النشاط، ومكتبة الركن المناسبة.</p></div>
 <div class="quick-card"><span class="tip-label">قبل الطباعة</span><h3>ما يُجهّز مسبقًا</h3><p>بطاقات الاعتقاد، الآيات والأحاديث، رموز QR، أوراق العمل، وبطاقات الأركان.</p></div>
 <div class="reference-card"><span class="tip-label">مهم</span><h3>المراجع للمعلمة</h3><p>المراجع الإثرائية ترفع جودة التحضير، لكنها لا تعني زيادة زمن الشرح على الطفل.</p></div>
