@@ -3610,7 +3610,7 @@ const guideSearchInput=document.getElementById('guideSearchInput');if(guideSearc
   var tab=document.createElement('span');tab.className='gp-ph-tab';
   head.appendChild(brand);head.appendChild(tab);
   document.body.insertBefore(head,document.body.firstChild);
-  function sync(){var a=document.querySelector('.tab.active');tab.textContent=a?a.textContent.replace(/\s+/g,' ').trim():'';}
+  function sync(){var a=document.querySelector('.tab.active');var t=a?a.textContent.replace(/\s+/g,' ').trim():'';t=t.replace(/^[٠-٩0-9\s.··]+/,'').trim();tab.textContent=t;}
   if(typeof showPage==='function'){var o=showPage;window.showPage=function(){var r=o.apply(this,arguments);sync();return r;};}
   try{window.addEventListener('beforeprint',sync);}catch(e){}
   sync();
