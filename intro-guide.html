@@ -2185,6 +2185,23 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 .fitness-activity figure,.belief-card-item figure,.corner-library-thumb,.corner-rules-panel figure,#corners figure,#signals figure,#nutrition .moh-figure,#nutrition .moh-official{background:#F2EEE4!important}
 #nutrition .moh-figure img,#nutrition .moh-official img{object-fit:contain!important}
 </style>
+<style id="gp-nav">
+/* تنقّل سريع (تطوير): شريط تبويبات مصغّر يظهر عند التمرير في التبويبات الطويلة + زرّ عودة للأعلى (2026-08-20) */
+.gp-stickynav{position:fixed;top:0;inset-inline:0;z-index:60;background:rgba(251,249,242,.97);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid #E9E1D2;box-shadow:0 4px 16px -10px rgba(31,74,57,.25);transform:translateY(-105%);transition:transform .28s cubic-bezier(.22,.61,.36,1);direction:rtl}
+.gp-stickynav.show{transform:translateY(0)}
+.gp-stickynav-scroll{display:flex;gap:6px;overflow-x:auto;padding:8px 18px;max-width:1220px;margin:0 auto;scrollbar-width:thin}
+.gp-sn-btn{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;border:1px solid #E9E1D2;background:#fff;color:#3d4a40;border-radius:999px;padding:6px 13px;font-size:13px;font-family:'Noto Naskh Arabic',Tahoma,sans-serif;line-height:1.6;cursor:pointer;white-space:nowrap;transition:background .15s,color .15s,border-color .15s}
+.gp-sn-btn i{font-family:'AlAwwal','Amiri',serif;font-style:normal;font-size:11px;color:#8a5d12;font-weight:700}
+.gp-sn-btn:hover{background:#f4edde;border-color:#e0d3b0}
+.gp-sn-btn.on{background:#1F4A39;color:#fff;border-color:#1F4A39}
+.gp-sn-btn.on i{color:#C79A3B}
+.gp-sn-btn:focus-visible{outline:2px solid #1F4A39;outline-offset:2px}
+.gp-totop{position:fixed;bottom:22px;left:22px;z-index:60;width:46px;height:46px;border-radius:50%;background:#1F4A39;color:#fff;border:0;box-shadow:0 8px 22px -8px rgba(31,74,57,.5);cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s,transform .25s,visibility .25s}
+.gp-totop.show{opacity:1;visibility:visible;transform:translateY(0)}
+.gp-totop:hover{background:#2C6A4D}
+.gp-totop:focus-visible{outline:2px solid #C79A3B;outline-offset:2px}
+@media print{.gp-stickynav,.gp-totop{display:none!important}}
+</style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
 /* توقيعات وعناوين الأقسام الذهبيّة: تغميق للقراءة على العاجيّ/الكريميّ */
@@ -3509,6 +3526,35 @@ function runGuideSearch(query){const input=document.getElementById('guideSearchI
 document.querySelectorAll('[data-guide-query]').forEach(function(btn){btn.addEventListener('click',function(){runGuideSearch(btn.dataset.guideQuery);});});
 const guideSearchInput=document.getElementById('guideSearchInput');if(guideSearchInput){guideSearchInput.addEventListener('keydown',function(e){if(e.key==='Enter')runGuideSearch();});}
 
+/* تنقّل سريع: شريط تبويبات مصغّر يظهر عند التمرير + زرّ عودة للأعلى — لتيسير التنقّل في التبويبات الطويلة (2026-08-20) */
+(function(){
+  var tabEls=[].slice.call(document.querySelectorAll('.tab')).filter(function(t){return t.getAttribute('data-page');});
+  if(tabEls.length<2||typeof showPage!=='function')return;
+  var nav=document.createElement('nav');nav.className='gp-stickynav';nav.setAttribute('aria-label','تنقّل سريع بين تبويبات الدليل');
+  var inner=document.createElement('div');inner.className='gp-stickynav-scroll';var map={};
+  tabEls.forEach(function(t){
+    var id=t.getAttribute('data-page');var label=(t.textContent||'').replace(/\s+/g,' ').trim();
+    var m=label.match(/^([٠-٩0-9]+)\s*(.+)$/);var num=m?m[1]:'';var name=m?m[2]:label;
+    var btn=document.createElement('button');btn.type='button';btn.className='gp-sn-btn';btn.setAttribute('data-page',id);
+    var ii=document.createElement('i');ii.textContent=num;btn.appendChild(ii);btn.appendChild(document.createTextNode(name));
+    btn.addEventListener('click',function(){showPage(id);window.scrollTo({top:0,behavior:'smooth'});});
+    inner.appendChild(btn);map[id]=btn;
+  });
+  nav.appendChild(inner);document.body.appendChild(nav);
+  var toTop=document.createElement('button');toTop.type='button';toTop.className='gp-totop';toTop.setAttribute('aria-label','العودة إلى أعلى الصفحة');
+  toTop.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>';
+  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.body.appendChild(toTop);
+  function syncActive(){var act=document.querySelector('.tab.active');var id=act?act.getAttribute('data-page'):null;for(var k in map){map[k].classList.toggle('on',k===id);}if(id&&map[id]&&nav.classList.contains('show')){try{map[id].scrollIntoView({block:'nearest',inline:'center'});}catch(e){}}}
+  var origShow=showPage;window.showPage=function(){var r=origShow.apply(this,arguments);syncActive();return r;};
+  var navBottom=720;function calc(){var tp=document.querySelector('.tab-phase');navBottom=tp?(tp.getBoundingClientRect().bottom+window.pageYOffset):720;}
+  calc();
+  var ticking=false;
+  function onScroll(){if(ticking)return;ticking=true;requestAnimationFrame(function(){var show=window.pageYOffset>navBottom-40;nav.classList.toggle('show',show);toTop.classList.toggle('show',show);ticking=false;});}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',function(){calc();onScroll();},{passive:true});
+  syncActive();onScroll();
+})();
 </script>
 <footer class="gq-platform-foot">
   هذا دليل عام لمنهج غرس القيم — <a href="index.html">العودة إلى المنصّة</a> لاختيار دليل وحدة.
