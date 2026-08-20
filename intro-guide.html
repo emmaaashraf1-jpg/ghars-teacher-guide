@@ -2205,6 +2205,33 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 .gp-skip{position:fixed;top:0;inset-inline-start:16px;z-index:200;background:#1F4A39;color:#fff;padding:9px 18px;border-radius:0 0 12px 12px;font-family:'Noto Naskh Arabic',Tahoma,sans-serif;font-size:14px;font-weight:700;text-decoration:none;transform:translateY(-130%);transition:transform .2s}
 .gp-skip:focus{transform:translateY(0);outline:2px solid #C79A3B;outline-offset:-2px}
 </style>
+<style id="gp-print">
+/* ورقة طباعة مخصّصة (تطوير): طباعة التبويب النشط وحده على A4 نظيف — إخفاء كل عناصر الشاشة التفاعليّة، منع انقسام البطاقات بين الصفحات، حفظ ألوان الهويّة، وترويسة طباعة بعنوان الدليل واسم التبويب (2026-08-20) */
+@page{size:A4;margin:14mm}
+@media print{
+  /* اطبع التبويب النشط وحده (بدل ٦٥+ صفحة للدليل كاملًا) */
+  .cover{display:none!important}
+  .page{display:none!important}
+  .page.active{display:block!important;break-after:auto!important;break-before:auto!important}
+  /* أخفِ كل عناصر الشاشة التفاعليّة */
+  .toolbar,.toolbar-actions,.tabs,.tab-phase,.guide-search-panel,.gq-platform-crumb,.gq-platform-fab,.gp-stickynav,.gp-totop,.gp-skip,.qr-modal,.qr-btn{display:none!important}
+  /* سطّح إطار الكتاب والظلال، وأبقِ الحدود للتحديد على الورق */
+  .book{border:0!important;box-shadow:none!important;border-radius:0!important;width:100%!important;margin:0!important}
+  body{background:#fff!important}
+  *{box-shadow:none!important}
+  /* احفظ ألوان الهويّة (رؤوس خضراء/ذهبيّ) عند الطباعة */
+  body,body *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  /* لا تقسّم البطاقات/الصفوف/الخطوات/الجداول بين صفحتين */
+  .card,.panel,.note,.alert,.resource-card,.lesson-step,.belief-card-item,.fitness-activity,.section-banner,.wax-node,figure,tr,thead,.subject-map-panel,.matrix-details{break-inside:avoid}
+  h1,h2,h3,.gp-sechead{break-after:avoid}
+  /* ترويسة الطباعة تظهر */
+  .gp-print-head{display:block!important}
+}
+/* ترويسة الطباعة: مخفيّة على الشاشة، تظهر عند الطباعة فقط */
+.gp-print-head{display:none;margin:0 0 14px;padding:0 0 8px;border-bottom:2px solid #C79A3B;font-family:'Noto Naskh Arabic',Tahoma,sans-serif}
+.gp-print-head .gp-ph-brand{display:block;font-size:12px;color:#8a5d12;font-weight:700;letter-spacing:.2px}
+.gp-print-head .gp-ph-tab{display:block;font-family:'AlAwwal','Amiri',serif;font-size:20px;color:#1F4A39;font-weight:700;margin-top:2px}
+</style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
 /* توقيعات وعناوين الأقسام الذهبيّة: تغميق للقراءة على العاجيّ/الكريميّ */
@@ -3574,6 +3601,19 @@ const guideSearchInput=document.getElementById('guideSearchInput');if(guideSearc
   var skip=document.createElement('a');skip.className='gp-skip';skip.href='#';skip.textContent='تخطّي إلى المحتوى';
   skip.addEventListener('click',function(e){e.preventDefault();var p=document.querySelector('.page.active');if(p){p.setAttribute('tabindex','-1');p.focus();try{p.scrollIntoView();}catch(x){}}});
   document.body.insertBefore(skip,document.body.firstChild);
+})();
+
+/* الطباعة (تطوير): ترويسة طباعة تحمل اسم الدليل واسم التبويب النشط، تُحدَّث عند تبديل التبويب وقبيل الطباعة (2026-08-20) */
+(function(){
+  var head=document.createElement('div');head.className='gp-print-head';
+  var brand=document.createElement('span');brand.className='gp-ph-brand';brand.textContent='دليل معلّمة غرس القيم';
+  var tab=document.createElement('span');tab.className='gp-ph-tab';
+  head.appendChild(brand);head.appendChild(tab);
+  document.body.insertBefore(head,document.body.firstChild);
+  function sync(){var a=document.querySelector('.tab.active');tab.textContent=a?a.textContent.replace(/\s+/g,' ').trim():'';}
+  if(typeof showPage==='function'){var o=showPage;window.showPage=function(){var r=o.apply(this,arguments);sync();return r;};}
+  try{window.addEventListener('beforeprint',sync);}catch(e){}
+  sync();
 })();
 </script>
 <footer class="gq-platform-foot">
