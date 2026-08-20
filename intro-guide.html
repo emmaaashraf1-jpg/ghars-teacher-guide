@@ -2201,6 +2201,9 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 .gp-totop:hover{background:#2C6A4D}
 .gp-totop:focus-visible{outline:2px solid #C79A3B;outline-offset:2px}
 @media print{.gp-stickynav,.gp-totop{display:none!important}}
+/* الوصوليّة: رابط تخطٍّ إلى المحتوى (يظهر عند التركيز بلوحة المفاتيح فقط) */
+.gp-skip{position:fixed;top:0;inset-inline-start:16px;z-index:200;background:#1F4A39;color:#fff;padding:9px 18px;border-radius:0 0 12px 12px;font-family:'Noto Naskh Arabic',Tahoma,sans-serif;font-size:14px;font-weight:700;text-decoration:none;transform:translateY(-130%);transition:transform .2s}
+.gp-skip:focus{transform:translateY(0);outline:2px solid #C79A3B;outline-offset:-2px}
 </style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
@@ -3554,6 +3557,23 @@ const guideSearchInput=document.getElementById('guideSearchInput');if(guideSearc
   window.addEventListener('scroll',onScroll,{passive:true});
   window.addEventListener('resize',function(){calc();onScroll();},{passive:true});
   syncActive();onScroll();
+})();
+
+/* الوصوليّة (تطوير): نمط تبويبات WAI-ARIA (tablist/tab/tabpanel) + ربط التبويب بلوحته + تنقّل بالأسهم مراعٍ للعربيّة + رابط تخطٍّ إلى المحتوى (2026-08-20) */
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab')).filter(function(t){return t.getAttribute('data-page');});
+  if(!tabs.length||typeof showPage!=='function')return;
+  var tablist=document.querySelector('.tabs');
+  if(tablist){tablist.setAttribute('role','tablist');tablist.setAttribute('aria-label','تبويبات الدليل');tablist.setAttribute('aria-orientation','horizontal');}
+  tabs.forEach(function(t){var id=t.getAttribute('data-page');t.setAttribute('role','tab');if(!t.id)t.id='tab-'+id;t.setAttribute('aria-controls',id);var p=document.getElementById(id);if(p){p.setAttribute('role','tabpanel');p.setAttribute('aria-labelledby',t.id);p.setAttribute('tabindex','0');}});
+  function updateStates(){var a=document.querySelector('.tab.active');var id=a?a.getAttribute('data-page'):null;tabs.forEach(function(t){var on=t.getAttribute('data-page')===id;t.setAttribute('aria-selected',on?'true':'false');t.setAttribute('tabindex',on?'0':'-1');});var sn=document.querySelectorAll('.gp-sn-btn');for(var i=0;i<sn.length;i++){sn[i].setAttribute('aria-current',sn[i].getAttribute('data-page')===id?'true':'false');}}
+  function focusTab(i){i=(i+tabs.length)%tabs.length;var t=tabs[i];showPage(t.getAttribute('data-page'));t.focus();}
+  tabs.forEach(function(t,i){t.addEventListener('keydown',function(e){var h=true;switch(e.key){case 'ArrowLeft':focusTab(i+1);break;case 'ArrowRight':focusTab(i-1);break;case 'Home':focusTab(0);break;case 'End':focusTab(tabs.length-1);break;default:h=false;}if(h){e.preventDefault();}});});
+  if(!window.__a11yWrapped){var o=showPage;window.showPage=function(){var r=o.apply(this,arguments);updateStates();return r;};window.__a11yWrapped=true;}
+  updateStates();
+  var skip=document.createElement('a');skip.className='gp-skip';skip.href='#';skip.textContent='تخطّي إلى المحتوى';
+  skip.addEventListener('click',function(e){e.preventDefault();var p=document.querySelector('.page.active');if(p){p.setAttribute('tabindex','-1');p.focus();try{p.scrollIntoView();}catch(x){}}});
+  document.body.insertBefore(skip,document.body.firstChild);
 })();
 </script>
 <footer class="gq-platform-foot">
