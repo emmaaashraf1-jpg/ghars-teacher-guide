@@ -401,17 +401,7 @@
   .credit .name{font-family:var(--display);font-size:17px;color:var(--forest-2);text-decoration:none;font-weight:700}
   .credit .name:hover{text-decoration:underline}
   .credit .site{font-size:12.5px;color:var(--teal);text-decoration:none}
-  .foot{position:relative;background:var(--forest);color:#fff;padding:0 0 34px}
-  .foot-scene{height:clamp(190px,25vw,360px);
-    background-image:
-      linear-gradient(to bottom, rgba(31,74,57,0) 66%, rgba(31,74,57,.5) 87%, var(--forest) 100%),
-      url("units-art/intro-cover-alpha.png"),
-      linear-gradient(to bottom, var(--ivory) 0%, #eef0e4 26%, #cfdac6 52%, #7fa07f 76%, var(--forest) 100%);
-    background-repeat:no-repeat;
-    background-size:cover, cover, 100% 100%;
-    background-position:center 60%, center 58%, center;
-    margin-bottom:clamp(22px,3.4vw,44px)}
-  .foot .shell{position:relative;z-index:1}
+  .foot{background:var(--forest);color:#fff;padding:clamp(48px,6vw,76px) 0 34px}
   .foot-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:start}
   .foot h3{font-family:var(--display);font-weight:700;font-size:28px;margin-bottom:14px;color:#fff}
   .foot .tag{font-size:15px;color:rgba(255,255,255,.68);line-height:2.05;max-width:38ch}
@@ -720,7 +710,6 @@
 
 <!-- ============ Footer ============ -->
 <footer class="foot">
-  <div class="foot-scene" aria-hidden="true"></div>
   <div class="shell">
     <div class="foot-grid">
       <div>
