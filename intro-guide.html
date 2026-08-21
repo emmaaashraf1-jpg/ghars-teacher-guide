@@ -1258,7 +1258,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #manners .gp-sechead .k::before{content:"";width:22px;height:1.5px;background:#C0922E}
 #manners .gp-sechead h2{font-family:"AlAwwal","Amiri",serif;font-size:28px;color:#1F4A39;margin:0;line-height:1.6;font-weight:700;overflow:visible!important;padding-block:4px}
 /* plain titles → editorial */
-#manners .rules-title{font-family:"AlAwwal","Amiri",serif!important;font-size:24px!important;color:#1F4A39!important;margin:40px 0 18px!important;padding:0!important;overflow:visible!important}
+#manners .rules-title{font-family:"AlAwwal","Amiri",serif!important;font-size:24px!important;color:#1F4A39!important;background:none!important;margin:40px 0 18px!important;padding:0!important;overflow:visible!important}
 #manners .mawaqif-head b{font-family:"AlAwwal","Amiri",serif!important;font-size:24px!important;color:#1F4A39!important;display:block;margin-bottom:6px!important;overflow:visible}
 #manners .mawaqif-head span{color:#6C776F!important;font-size:14.5px!important;line-height:1.8!important}
 /* aside as full-width row */
@@ -1631,6 +1631,8 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #annual-plan .subject-term-card{border:1px solid var(--gp-linesoft)!important;border-radius:13px!important;overflow:hidden;background:#fff!important}
 #annual-plan .subject-term-card>header{display:flex!important;align-items:center;gap:10px;padding:11px 14px!important;background:color-mix(in srgb,var(--subject) 7%,#fff)!important;border-bottom:1px solid var(--gp-linesoft)!important}
 #annual-plan .term-card-index{width:28px;height:28px;flex:0 0 auto;border-radius:8px!important;background:var(--subject)!important;color:#fff!important;display:grid;place-items:center;font-family:var(--gp-display)!important;font-weight:700;font-size:13px!important}
+/* عناوين بطاقات الفصول تجلس على ترويسةٍ ملوّنة داكنة (كرقمها الأبيض) ← نصٌّ أبيض للقراءة */
+#annual-plan .subject-term-card>header .term-card-heading span,#annual-plan .subject-term-card>header .term-card-heading b{color:#fff!important}
 #annual-plan .term-card-heading span{font-size:10.5px!important;color:var(--gp-gray)!important;font-weight:700}
 #annual-plan .term-card-heading b{font-family:var(--gp-display)!important;color:var(--gp-forest)!important;font-size:14px!important}
 #annual-plan .subject-term-body{padding:12px 14px!important}
