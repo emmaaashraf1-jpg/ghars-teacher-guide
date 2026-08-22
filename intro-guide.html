@@ -2249,11 +2249,11 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 .gp-print-head .gp-ph-tab{display:block;font-family:'AlAwwal','Amiri',serif;font-size:20px;color:var(--gp-forest);font-weight:700;margin-top:2px}
 </style>
 <style id="gp-drawn">
-/* هويّة «الصناديق المرسومة» (2026-08-22): ورقٌ كريميّ منقّط + هالاتٌ لونيّة، وصناديقُ بحدٍّ حبريّ داكن وزوايا غير منتظمة وظلٍّ مُزاح — مستوحاة من قالب الدرس النموذجيّ. المرحلة الأولى: الإطار والورق والتبويبات فقط دون تغيير خلفيّات الصناديق (صونًا للتباين) */
+/* هويّة «الصناديق المرسومة» — وضع الحريّة (2026-08-22): «الورقة والحبر واللون هي التي تنظّم الصفحة». ورقٌ كريميّ منقّط + هالاتٌ لونيّة، وصناديقُ ملوّنة ناعمة بلا حدٍّ حبريّ صلب ولا ظلٍّ مُزاح — بزوايا يدويّة وميلٍ طفيف وظلٍّ رقيقٍ مُبَعثَر فقط */
 :root{--dink:#1E2E29;--dpaper:#F7F2E6;--dcard:#FFFDF7}
 
-/* ورقةُ الكتاب */
-.book{background:var(--dpaper)!important;border:2.5px solid var(--dink)!important;border-radius:26px 14px 28px 16px/16px 26px 14px 28px!important;box-shadow:5px 6px 0 rgba(30,46,41,.14)!important}
+/* ورقةُ الكتاب (بلا حدٍّ صلب) */
+.book{background:var(--dpaper)!important;border:1px solid rgba(30,46,41,.08)!important;border-radius:26px 14px 28px 16px/16px 26px 14px 28px!important;box-shadow:0 16px 44px -20px rgba(30,46,41,.20)!important}
 .page{background:
   radial-gradient(rgba(30,46,41,.05) 1px, transparent 1.2px),
   radial-gradient(70% 55% at 84% 3%, rgba(199,154,59,.18), rgba(199,154,59,0) 70%),
@@ -2263,32 +2263,32 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
   background-size:22px 22px,auto,auto,auto,auto!important;
   background-repeat:repeat,no-repeat,no-repeat,no-repeat,no-repeat!important}
 
-/* شريط التبويبات مرسوم */
-.toolbar{background:var(--dcard)!important;border-bottom:2.5px solid var(--dink)!important;box-shadow:0 4px 0 rgba(30,46,41,.06)!important}
-.toolbar .tab{border:2px solid var(--dink)!important;border-radius:16px 22px 14px 20px/20px 14px 22px 16px!important;background:var(--dcard)!important;box-shadow:2px 3px 0 rgba(30,46,41,.10)!important}
+/* شريط التبويبات ناعم */
+.toolbar{background:rgba(255,253,247,.92)!important;border-bottom:1px solid rgba(30,46,41,.10)!important;box-shadow:none!important}
+.toolbar .tab{border:1px solid rgba(30,46,41,.12)!important;border-radius:16px 22px 14px 20px/20px 14px 22px 16px!important;background:var(--dcard)!important;box-shadow:0 3px 10px -6px rgba(30,46,41,.20)!important}
 .toolbar .tab:nth-child(even){border-radius:20px 14px 22px 16px/16px 22px 14px 20px!important}
-.toolbar .tab.active{background:#1F4A39!important;border-color:var(--dink)!important;box-shadow:3px 4px 0 rgba(30,46,41,.18)!important}
-.toolbar .tab-ic{border:1.5px solid var(--dink)!important;border-radius:11px 8px 12px 9px/9px 11px 8px 12px!important;background:var(--dcard)!important}
+.toolbar .tab.active{background:#1F4A39!important;border-color:transparent!important;box-shadow:0 7px 16px -7px rgba(31,74,57,.55)!important}
+.toolbar .tab-ic{border:0!important;border-radius:11px 8px 12px 9px/9px 11px 8px 12px!important;background:var(--dcard)!important}
 
-/* الغلاف: حافّةٌ حبريّة سفليّة تفصله كورقةٍ ملصقة */
-.cover{border-bottom:3px solid var(--dink)!important}
+/* الغلاف: بلا حدٍّ حبريّ */
+.cover{border-bottom:0!important}
 
-/* الصناديق: إطارٌ حبريّ + زوايا غير منتظمة + ظلٌّ مُزاح (بلا تغيير الخلفيّة) */
+/* الصناديق: تعبئةٌ ورقيّة دافئة ناعمة بلا إطار حبريّ، بزوايا يدويّة وميلٍ طفيف وظلٍّ رقيق */
 :is(#start,#vision,#components,#subjects,#annual-plan,#dayflow,#fitness,#lesson,#signals,#corners,#songs,#manners,#assessment,#scope,#unit,#nutrition) :is(.gp-card,.resource-card,.refs-helper-card,.signal-material-card,.center-brief-card,.asset-card,.corner-library-card,.belief-card-item,.fitness-activity,.quick-card,.teacher-tip,.reference-card,.term-card,.subject-detail,.hpl-card,.loop-card,.cycle-card,.unit-data-card,.gp-eff,.subject-term-card,.corner-op){
-  border:2px solid var(--dink)!important;
+  border:0!important;
   border-radius:20px 10px 22px 12px/12px 20px 10px 22px!important;
-  box-shadow:4px 5px 0 rgba(30,46,41,.12)!important;
-  background:radial-gradient(85% 120% at 88% 6%, rgba(44,106,77,.10), rgba(44,106,77,0) 62%), radial-gradient(95% 110% at 6% 96%, rgba(199,154,59,.09), rgba(199,154,59,0) 58%), #FFFDF7!important;
+  box-shadow:0 8px 22px -12px rgba(30,46,41,.20)!important;
+  background:radial-gradient(85% 120% at 88% 6%, rgba(44,106,77,.12), rgba(44,106,77,0) 62%), radial-gradient(95% 110% at 6% 96%, rgba(199,154,59,.11), rgba(199,154,59,0) 58%), #FFFDF7!important;
   transform:rotate(-.4deg)}
 :is(#start,#vision,#components,#subjects,#annual-plan,#dayflow,#fitness,#lesson,#signals,#corners,#songs,#manners,#assessment,#scope,#unit,#nutrition) :is(.gp-card,.resource-card,.refs-helper-card,.signal-material-card,.center-brief-card,.asset-card,.corner-library-card,.belief-card-item,.fitness-activity,.quick-card,.teacher-tip,.reference-card,.term-card,.hpl-card,.loop-card,.cycle-card,.unit-data-card,.subject-term-card):nth-of-type(even){
   border-radius:10px 22px 12px 20px/22px 12px 20px 10px!important;
   transform:rotate(.4deg)}
 
-/* الأزرار والحبّات مرسومة */
-.guide-chip,#manners .filter-btn,#subjects .subject-tab,.gp-sn-btn,.toolbar-actions button,.gp-card-foot,.gp-chips button{border:1.5px solid var(--dink)!important;border-radius:14px 9px 15px 10px/10px 14px 9px 15px!important}
+/* الأزرار والحبّات ناعمة (بلا حدٍّ صلب) */
+.guide-chip,#manners .filter-btn,#subjects .subject-tab,.gp-sn-btn,.toolbar-actions button,.gp-card-foot,.gp-chips button{border:1px solid rgba(30,46,41,.12)!important;border-radius:14px 9px 15px 10px/10px 14px 9px 15px!important}
 
-/* الأرقام والشارات → مربّعٌ حبريّ غير منتظم بظلٍّ مُزاح */
-.gp-fstep .gp-n,#lesson .lesson-step .no,#manners .manner-no,#annual-plan .term-card-index,.gp-card-num{border:2px solid var(--dink)!important;border-radius:13px 8px 14px 9px/9px 13px 8px 14px!important;box-shadow:2px 3px 0 rgba(30,46,41,.14)!important}
+/* الأرقام والشارات → زاوية يدويّة بظلٍّ رقيقٍ بلا حدٍّ صلب */
+.gp-fstep .gp-n,#lesson .lesson-step .no,#manners .manner-no,#annual-plan .term-card-index,.gp-card-num{border:0!important;border-radius:13px 8px 14px 9px/9px 13px 8px 14px!important;box-shadow:0 4px 9px -4px rgba(30,46,41,.30)!important}
 </style>
 <style id="gp-contrast-fix">
 /* === تصحيح تباين الألوان عبر كل التبويبات (قراءة أوضح) — آخر كتلة لتغلب الترتيب === */
