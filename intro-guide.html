@@ -1839,11 +1839,16 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #start .gp-card-art{position:relative;aspect-ratio:3/2;display:grid;place-items:center;padding:0;overflow:hidden;background:radial-gradient(125% 130% at 80% 6%,color-mix(in srgb,var(--c) 9%,#fff),color-mix(in srgb,var(--c) 4%,#FBF9F2));border-bottom:2px solid rgba(199,154,59,.5)}
 #start .gp-card-img{width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:none;transition:transform .5s var(--gp-ease)}
 #start .gp-card:hover .gp-card-img{transform:scale(1.06)}
-/* غلافُ الرأس: مشهدُ الشروق (مدخلٌ بصريّ للعالم الواحد) */
-#start .gp-cover-scene{position:relative;max-width:780px;margin:0 auto 14px;border-radius:24px 12px 26px 14px/14px 24px 12px 26px;overflow:hidden;box-shadow:0 14px 32px -18px rgba(30,46,41,.32);border-bottom:3px solid rgba(199,154,59,.55)}
-#start .gp-cover-scene img{display:block;width:100%;height:auto}
-#start .gp-cover-scene::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(20,48,36,.62),rgba(20,48,36,.12) 44%,rgba(20,48,36,0) 70%);pointer-events:none}
-#start .gp-cover-scene .gp-cover-eyebrow{position:absolute;z-index:2;inset-inline-start:20px;bottom:15px;color:#fff;font-family:'AlAwwal','Amiri',serif;font-weight:700;font-size:clamp(15px,2vw,20px);text-shadow:0 2px 12px rgba(20,48,36,.9),0 1px 2px rgba(20,48,36,.95)}
+/* نموذجٌ للاعتماد: مشهدُ الشروق مرسومٌ خلفيّةً باهتةً للصفحة نفسها (يذوب في الورق) */
+#start{
+  background:
+    linear-gradient(180deg, rgba(247,242,230,.70), rgba(247,242,230,.88) 38%, rgba(247,242,230,.99) 62%),
+    url('assets/chapters/ch01-start.jpg') top center no-repeat,
+    radial-gradient(rgba(30,46,41,.05) 1px, transparent 1.2px),
+    var(--dpaper) !important;
+  background-size: auto, 100% auto, 22px 22px, auto !important;
+  background-repeat: no-repeat, no-repeat, repeat, no-repeat !important;
+}
 #start .gp-card-num{position:absolute;top:11px;inset-inline-end:11px;font-family:var(--gp-display);font-size:13px;font-weight:700;color:var(--gp-forest);background:rgba(251,249,242,.94);width:29px;height:29px;border-radius:50%;display:grid;place-items:center;box-shadow:0 2px 8px rgba(31,74,57,.1)}
 #start .gp-card-body{padding:14px 16px 15px;display:flex;flex-direction:column;gap:5px;flex:1}
 #start .gp-card-body h4{font-family:var(--gp-display);font-weight:700;font-size:17.5px;color:var(--gp-forest);line-height:1.5}
@@ -2363,7 +2368,6 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </nav>
 <section class="page active" id="start" style="--accent:#1E5631">
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>ابدئي من هنا</strong></div>
-<div class="gp-cover-scene"><img src="assets/chapters/ch01-start.jpg" alt="" aria-hidden="true"><span class="gp-cover-eyebrow">عالمُ غرس القيم · ابدئي الرحلة من هنا</span></div>
 <div class="gp-hero">
 <div class="gp-head">
 <span class="gp-eyebrow">صفحة الاستقبال · التبويب ٠١</span>
