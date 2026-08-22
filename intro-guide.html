@@ -2252,6 +2252,9 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 /* هويّة «الصناديق المرسومة» — وضع الحريّة (2026-08-22): «الورقة والحبر واللون هي التي تنظّم الصفحة». ورقٌ كريميّ منقّط + هالاتٌ لونيّة، وصناديقُ ملوّنة ناعمة بلا حدٍّ حبريّ صلب ولا ظلٍّ مُزاح — بزوايا يدويّة وميلٍ طفيف وظلٍّ رقيقٍ مُبَعثَر فقط */
 :root{--dink:#1E2E29;--dpaper:#F7F2E6;--dcard:#FFFDF7}
 
+/* تغميق الرماديّ الثانويّ درجةً ليبقى حادًّا على التعبئات الأقوى (تباين ≥ ٤٫٦ على الفيروزيّ) — يغلب تعريفات #tab{--gp-gray} المحلّيّة */
+:is(#start,#vision,#components,#subjects,#annual-plan,#dayflow,#fitness,#lesson,#signals,#corners,#songs,#manners,#assessment,#scope,#unit,#nutrition){--gp-gray:#565f58!important}
+
 /* ورقةُ الكتاب (بلا حدٍّ صلب) */
 .book{background:var(--dpaper)!important;border:1px solid rgba(30,46,41,.08)!important;border-radius:26px 14px 28px 16px/16px 26px 14px 28px!important;box-shadow:0 16px 44px -20px rgba(30,46,41,.20)!important}
 .page{background:
