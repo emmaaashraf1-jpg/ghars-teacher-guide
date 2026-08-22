@@ -16,17 +16,15 @@
   --gold:#C79A3B; --gold2:#C8A200; --cream:#F4EDDE;
   --ink:#1E2E29; --muted:#6C776F;
   --elm:#55702B; --elm-soft:#F1F7E8;
-  --line:#E9E1D2; --card:#fff;
-  --shadow:0 8px 26px rgba(20,40,35,.08);
-  --shadow-sm:0 3px 12px rgba(20,40,35,.06);
+  --line:transparent; --card:radial-gradient(85% 120% at 88% 6%, rgba(44,106,77,.10), transparent 62%), radial-gradient(95% 110% at 6% 96%, rgba(199,154,59,.09), transparent 58%), #FFFDF7;
+  --shadow:0 8px 22px rgba(20,50,35,.07);
+  --shadow-sm:0 2px 7px rgba(20,50,35,.045);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{
   font-family:var(--fb);
   color:var(--ink);line-height:1.95;font-size:16.5px;
-  background:
-    radial-gradient(1200px 520px at 82% -12%,#EFF4EC 0,transparent 60%),
-    linear-gradient(#FBF9F2,#F4EDDE);
+  background-color:#F7F2E6;background-image:radial-gradient(rgba(30,46,41,.05) 1px,transparent 1.2px),radial-gradient(70% 55% at 84% 4%,rgba(199,154,59,.13),transparent 70%),radial-gradient(60% 50% at 8% 34%,rgba(44,106,77,.09),transparent 72%);background-size:22px 22px,auto,auto;background-repeat:repeat,no-repeat,no-repeat;background-attachment:fixed;
 }
 .wrap{max-width:1020px;margin:0 auto;padding:20px 16px 60px}
 b,strong{font-weight:700}
@@ -36,7 +34,7 @@ b,strong{font-weight:700}
 table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd)}
 
 /* ===== الغلاف ===== */
-.cover{position:relative;overflow:hidden;border-radius:26px;color:#fff;box-shadow:var(--shadow);min-height:200px}
+.cover{position:relative;overflow:hidden;border-radius:26px 12px 30px 14px/14px 28px 12px 26px;color:#fff;box-shadow:var(--shadow);min-height:200px}
 .cover-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
 .cover::before{content:"";position:absolute;inset:0;z-index:1;opacity:.78;
   background:linear-gradient(135deg,rgba(85,112,43,.91),rgba(122,150,60,.78) 52%,rgba(122,150,60,.87))}
@@ -45,18 +43,18 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 .cover-main{position:relative;z-index:2;padding:28px 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .cover-l{flex:1 1 60%;min-width:240px}
 .cover-r{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
-.c-badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:999px;padding:6px 15px;font-weight:700;font-size:15px;margin-bottom:12px}
+.c-badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:20px 8px 18px 9px/9px 16px 8px 20px;transform:rotate(-.6deg);padding:6px 15px;font-weight:700;font-size:15px;margin-bottom:12px}
 .cover h1{font-size:33px;line-height:1.42;font-weight:700;margin-bottom:10px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
 .c-meta{font-size:15px;color:#dcf3ef;line-height:1.9}
-.c-unit{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:14px;
+.c-unit{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:14px 8px 15px 9px/9px 14px 8px 15px;
   padding:12px 16px;font-weight:700;font-size:16px;line-height:1.6}
 .c-dur{color:#bfe6e0;font-size:14.5px}
 
 /* ===== شريط التبويبات ===== */
 .tabs{position:sticky;top:0;z-index:40;display:flex;flex-wrap:wrap;gap:8px;
   margin:16px 0 24px;padding:10px;background:rgba(255,251,242,.94);backdrop-filter:blur(6px);
-  border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 14px rgba(20,40,35,.05)}
-.tab{background:#fff;border:1px solid var(--line);color:var(--t2);border-radius:999px;
+  border:1px solid var(--line);border-radius:16px 9px 18px 10px/10px 16px 9px 18px;box-shadow:0 4px 14px rgba(20,40,35,.05)}
+.tab{background:#fff;border:1px solid var(--line);color:var(--t2);border-radius:16px 22px 14px 20px/20px 14px 22px 16px;
   padding:8px 15px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s}
 .tab:hover{background:var(--elm-soft);border-color:var(--elm);color:var(--elm)}
 .tab.active{background:var(--elm);border-color:var(--elm);color:#fff;box-shadow:0 4px 12px rgba(122,150,60,.28)}
@@ -70,11 +68,11 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 
 /* ===== مكوّنات ===== */
 .sec-head{display:flex;align-items:center;gap:12px;margin:26px 0 15px}
-.sec-head .num{flex:none;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+.sec-head .num{flex:none;width:38px;height:38px;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;display:grid;place-items:center;
   background:var(--elm);color:#fff;font-size:18px;box-shadow:0 4px 12px rgba(122,150,60,.28)}
 .sec-head .num.grn{background:var(--grn)}.sec-head .num.gold{background:var(--gold);color:#3a2a06}
 .sec-head h2{font-size:22px;color:var(--t1);font-weight:700}
-.sec-head .rule{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.sec-head .rule{flex:1;height:0;border-top:2px dashed rgba(176,132,46,.6)}
 .sec-head .stage{flex:none;font-family:var(--fd);font-weight:700;font-size:13.5px;color:#08636b;
   background:var(--elm-soft);border:1px solid #bfe3e6;border-radius:999px;padding:3px 12px}
 .sec-head .stage.s2{color:#8a6410;background:#F7EECB;border-color:#ebd9a8}
@@ -84,7 +82,7 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 /* ترويسة الدرس — بوصلة اللقاء (سؤال التركيز + جوهر اللقاء) · بنية مستفادة من أدلة هاركورت */
 .lhero{display:grid;grid-template-columns:1fr 1.35fr;gap:14px;margin:8px 0 20px}
 @media(max-width:760px){.lhero{grid-template-columns:1fr}}
-.lhero .lh{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px 18px;box-shadow:var(--shadow-sm)}
+.lhero .lh{background:#fff;border:1px solid var(--line);border-radius:16px 9px 18px 10px/10px 16px 9px 18px;padding:15px 18px;box-shadow:var(--shadow-sm)}
 .lhero .lh.focus{border-inline-start:5px solid var(--elm)}
 .lhero .lh.key{border-inline-start:5px solid var(--gold);background:#fffdf6}
 .lhero .lh-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:700;font-size:15px;margin-bottom:8px}
@@ -96,7 +94,7 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 .lhero .lh-foot b{color:var(--t2)}
 
 
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow-sm)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px 9px 18px 10px/10px 16px 9px 18px;padding:18px 20px;box-shadow:var(--shadow-sm)}
 .grid{display:grid;gap:15px}
 .g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
 @media(max-width:760px){.g2,.g3{grid-template-columns:1fr}.cover h1{font-size:27px}}
@@ -108,20 +106,20 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 .chip.c{background:var(--elm-soft);border-color:#d8e6c0;color:#2e3a16}
 
 /* مسار البدء */
-.flow-card{border-radius:14px;padding:15px 18px;margin-bottom:12px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.flow-card{border-radius:14px 8px 15px 9px/9px 14px 8px 15px;padding:15px 18px;margin-bottom:12px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
 .flow-card.sig{border-inline-start:5px solid var(--elm)}
 .flow-card.law{border-inline-start:5px solid var(--gold)}
 .flow-card.rev{border-inline-start:5px solid var(--grn)}
 .flow-card.belief{border-inline-start:5px solid var(--t1)}
 .flow-card.belief h3{color:var(--t1);font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.belief-text{background:var(--elm-soft);border:1px solid #d8e6c0;border-radius:12px;padding:13px 16px;color:#2e3a16;font-size:16px;line-height:2;font-weight:600}
+.belief-text{background:var(--elm-soft);border:1px solid #d8e6c0;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:13px 16px;color:#2e3a16;font-size:16px;line-height:2;font-weight:600}
 .flow-card h3{font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
 .flow-card.sig h3{color:var(--elm)}.flow-card.law h3{color:#8a6410}.flow-card.rev h3{color:var(--grn)}
 .greet{background:var(--elm-soft);border-radius:10px;padding:10px 14px;color:#2e3a16;font-weight:700;margin-bottom:10px}
 .linkbtn{display:inline-block;background:var(--t2);color:#fff;border-radius:999px;padding:8px 16px;font-weight:700;text-decoration:none;font-size:15px;margin:6px 0}
 .law-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
 @media(max-width:600px){.law-grid{grid-template-columns:1fr}}
-.law-grid > div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 13px;font-size:15px}
+.law-grid > div{background:#fff;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:10px 13px;font-size:15px}
 .law-grid small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
 
 /* الشريط الجانبي/الأهداف */
@@ -137,11 +135,11 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 /* سير اللقاء */
 .flow{position:relative;padding-inline-start:26px}
 .flow::before{content:"";position:absolute;inset-inline-start:8px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--elm),var(--gold))}
-.step{position:relative;margin-bottom:14px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 17px;box-shadow:var(--shadow-sm)}
+.step{position:relative;margin-bottom:14px;background:#fff;border:1px solid var(--line);border-radius:13px 9px 14px 8px/8px 13px 9px 14px;padding:13px 17px;box-shadow:var(--shadow-sm)}
 .step::before{content:"";position:absolute;inset-inline-start:-24px;top:17px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--elm)}
 .step b.k{color:var(--elm)}
 
-.story{background:#fff8ec;border:1px solid #ebd9a8;border-radius:16px;padding:0;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:6px}
+.story{background:#fff8ec;border:1px solid #ebd9a8;border-radius:16px 9px 18px 10px/10px 16px 9px 18px;padding:0;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:6px}
 .story .h{background:linear-gradient(90deg,var(--gold),#b98a2a);color:#fff;padding:11px 18px;font-weight:700;font-size:16px}
 .story .h span{font-weight:400;opacity:.9;font-size:13.5px}
 .story .b{padding:14px 18px}
@@ -162,12 +160,12 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 .actgrid .bd{color:var(--elm);font-weight:700}
 
 /* كفارة */
-.dua{text-align:center;background:linear-gradient(135deg,var(--t1),var(--grn));color:#fff;border-radius:18px;padding:24px;box-shadow:var(--shadow);margin-top:16px}
+.dua{text-align:center;background:linear-gradient(135deg,var(--t1),var(--grn));color:#fff;border-radius:18px 10px 20px 11px/11px 18px 10px 20px;padding:24px;box-shadow:var(--shadow);margin-top:16px}
 .dua .l{color:var(--gold);font-size:15px;letter-spacing:.5px;margin-bottom:6px}
 .dua .x{font-size:21px;line-height:2}
 
 /* info bar */
-.info{background:var(--elm-soft);border:1px solid #d8e6c0;color:#2e3a16;border-radius:12px;padding:11px 15px;font-size:15.5px;font-weight:600;margin-bottom:14px}
+.info{background:var(--elm-soft);border:1px solid #d8e6c0;color:#2e3a16;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:11px 15px;font-size:15.5px;font-weight:600;margin-bottom:14px}
 
 /* التقويم */
 .taq{border-top:4px solid var(--elm)}
@@ -181,7 +179,7 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 /* con-grid (قيم/مفاهيم/مؤشرات) */
 .cg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:600px){.cg{grid-template-columns:1fr}}
-.ci{background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 14px}
+.ci{background:#fff;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:11px 14px}
 .ci .term{color:var(--elm);font-weight:700;font-size:15.5px;margin-bottom:3px}
 .ci .def{font-size:15px;line-height:1.8}
 .steps{list-style:none;margin-top:6px}
@@ -193,7 +191,7 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 .card > .lbl.gold{border-color:var(--gold)}
 
 /* الآداب */
-.adab{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:14px;background:#fff}
+.adab{border-radius:14px 8px 15px 9px/9px 14px 8px 15px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:14px;background:#fff}
 .adab .h{background:linear-gradient(90deg,var(--elm),#3a4a1c);color:#fff;padding:11px 16px;font-weight:700;font-size:16px}
 .adab .b{padding:14px 16px}
 .adab .row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:15.5px;line-height:1.8}
@@ -212,7 +210,7 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
 .msg .l{color:var(--grn);font-weight:700;margin-bottom:6px}
 
 /* الحصيلة */
-table.voc{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:4px}
+table.voc{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;overflow:hidden;margin-top:4px}
 table.voc th{background:var(--elm);color:#fff;font-size:15px;padding:10px 12px;text-align:start}
 table.voc td{font-size:15px;line-height:1.8;padding:10px 12px;border-top:1px solid var(--line)}
 table.voc .w{color:var(--elm);font-weight:700}
@@ -231,8 +229,8 @@ table.voc .w{color:var(--elm);font-weight:700}
 /* الأركان */
 .chero h2{margin-bottom:6px}
 .chero p{color:var(--muted);font-size:15.5px}
-.caution{background:#F4EDDE;border:1px dashed #ebd9a8;border-radius:12px;padding:11px 15px;color:#8a6410;font-size:15px;margin:12px 0}
-.corner{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:16px;background:#fff}
+.caution{background:#F4EDDE;border:1px dashed #ebd9a8;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:11px 15px;color:#8a6410;font-size:15px;margin:12px 0}
+.corner{border-radius:18px 10px 20px 11px/11px 18px 10px 20px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:16px;background:#fff}
 .corner .h{padding:13px 18px;color:#fff;display:flex;justify-content:space-between;align-items:center}
 .corner .h .k{background:rgba(255,255,255,.2);border-radius:999px;padding:4px 13px;font-size:14.5px}
 .corner .h h4{font-size:17px}
@@ -245,26 +243,26 @@ table.voc .w{color:var(--elm);font-weight:700}
 
 .foot{text-align:center;color:var(--muted);font-size:14.5px;margin-top:34px}
 /* ==== إثراء الدليل ==== */
-.sig-video{margin:10px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#26301a}
+.sig-video{margin:10px 0;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;overflow:hidden;background:#26301a}
 .sig-video video{display:block;width:100%;max-height:300px;background:#000}
 .sig-video .cap{background:var(--elm-soft);color:#2e3a16;font-size:13.5px;padding:8px 12px}
 .plan-wrap{overflow-x:auto}
-table.plan{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+table.plan{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;overflow:hidden}
 table.plan th{background:var(--t2);color:#fff;font-size:14.5px;padding:9px 12px;text-align:start}
 table.plan td{font-size:14.5px;padding:9px 12px;border-top:1px solid var(--line);line-height:1.7}
 table.plan td:first-child{font-weight:700;color:var(--t1);white-space:nowrap}
 table.plan td.z{color:var(--gold2);font-weight:700;white-space:nowrap;text-align:center}
 table.plan tr.tot td{background:#F4EDDE;font-weight:700;color:#8a6410}
-.central{background:linear-gradient(135deg,#3a4a1c,#55702B);color:#fff;border-radius:14px;padding:14px 18px;margin:6px 0 2px;box-shadow:var(--shadow-sm)}
+.central{background:linear-gradient(135deg,#3a4a1c,#55702B);color:#fff;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;padding:14px 18px;margin:6px 0 2px;box-shadow:var(--shadow-sm)}
 .central b{color:#ffe9b8;display:block;margin-bottom:3px}
 .cues{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.cue{border:2px dashed #cdbf9e;background:#fffdf6;border-radius:14px;padding:14px;text-align:center}
+.cue{border:2px dashed #cdbf9e;background:#fffdf6;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;padding:14px;text-align:center}
 .cue .ic{font-size:30px;display:block;margin-bottom:6px}
 .cue .t{font-weight:700;color:var(--t1);font-size:14.5px;display:block}
 .cue .d{color:var(--muted);font-size:13px;display:block;margin-top:2px}
 .cue .tag{display:inline-block;margin-top:7px;background:var(--elm-soft);color:#2e3a16;border-radius:999px;padding:2px 10px;font-size:12px}
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
-.gitem{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow-sm)}
+.gitem{border:1px solid var(--line);border-radius:14px 8px 15px 9px/9px 14px 8px 15px;overflow:hidden;background:#fff;box-shadow:var(--shadow-sm)}
 .gitem .imgwrap{background:#f6f1e6;height:180px;overflow:hidden}
 .gitem img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
 .gitem .cap{padding:9px 12px;font-size:14px;font-weight:700;color:var(--t1);text-align:center}
@@ -290,7 +288,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 .strat .k{flex:none;background:var(--elm-soft);color:#2e3a16;border-radius:8px;padding:4px 11px;font-size:13.5px;font-weight:700;white-space:nowrap}
 .strat .v{font-size:14.5px;line-height:1.8}
 .means{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
-.means .m{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;border-top:4px solid var(--elm)}
+.means .m{background:#fff;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:12px 14px;border-top:4px solid var(--elm)}
 .means .m.s2{border-top-color:var(--gold2)}.means .m.s3{border-top-color:var(--grn)}.means .m.s4{border-top-color:#7a5cc0}
 .means .m h4{color:var(--t1);font-size:15px;margin-bottom:6px}
 .means .m .i{font-size:13.5px;line-height:1.7;color:var(--ink);display:block;padding-inline-start:12px;position:relative}
@@ -317,18 +315,18 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 .side .objgrid>div{min-width:0}
 .side .objgrid .obj span.t{font-size:13px;line-height:1.7;word-break:break-word}
 /* ورقة التدريس السريعة (٣ مراحل · خطوات مرجعية) */
-.quick-sheet{margin:16px 0;background:linear-gradient(180deg,#fffdf8,#f4fbf1);border:1px solid rgba(85,112,43,.20);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden}
+.quick-sheet{margin:16px 0;background:linear-gradient(180deg,#fffdf8,#f4fbf1);border:1px solid rgba(85,112,43,.20);border-radius:18px 10px 20px 11px/11px 18px 10px 20px;box-shadow:var(--shadow-sm);overflow:hidden}
 .quick-sheet .qs-head{background:linear-gradient(90deg,var(--t1),var(--t2));color:#fff;padding:12px 16px;font-family:var(--fd);font-weight:700;font-size:15.5px}
 .quick-sheet .qs-phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;padding:14px}
-.quick-sheet .qs-phase{background:#fff;border:1px solid rgba(85,112,43,.14);border-top:4px solid var(--t2);border-radius:14px;padding:11px 13px}
+.quick-sheet .qs-phase{background:#fff;border:1px solid rgba(85,112,43,.14);border-top:4px solid var(--t2);border-radius:14px 8px 15px 9px/9px 14px 8px 15px;padding:11px 13px}
 .quick-sheet .qs-ph-h{display:flex;align-items:center;gap:7px;color:var(--t1);font-family:var(--fd);font-weight:700;font-size:14px;margin-bottom:8px;flex-wrap:wrap}
 .quick-sheet .qs-n{width:26px;height:26px;border-radius:8px;background:var(--t2);color:#fff;display:grid;place-items:center;font-size:14px;flex:0 0 auto}
 .quick-sheet .qs-min{margin-inline-start:auto;background:var(--elm-soft);color:var(--t2);border-radius:999px;padding:2px 10px;font-size:11.5px;font-weight:700}
 .quick-sheet .qs-phase ul{margin:0;padding-inline-start:18px}
 .quick-sheet .qs-phase li{font-size:12.5px;line-height:1.8;margin-bottom:4px}
 .quick-sheet .qs-phase li::marker{color:var(--t2)}
-.quick-sheet .qs-home{margin:0 14px;background:#fbf3e3;border:1px solid #eccf94;border-radius:12px;padding:9px 12px;font-size:12.5px;color:#7a5a10;line-height:1.75}
-.quick-sheet .qs-note{margin:12px 14px 14px;padding:9px 12px;border-radius:12px;background:#fff;border:1px dashed rgba(85,112,43,.35);color:var(--muted);font-size:12px;line-height:1.75}
+.quick-sheet .qs-home{margin:0 14px;background:#fbf3e3;border:1px solid #eccf94;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:9px 12px;font-size:12.5px;color:#7a5a10;line-height:1.75}
+.quick-sheet .qs-note{margin:12px 14px 14px;padding:9px 12px;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;background:#fff;border:1px dashed rgba(85,112,43,.35);color:var(--muted);font-size:12px;line-height:1.75}
 .mainflow .sec-head{margin-top:0}
 .mainflow .flow{padding-inline-start:24px}
 /* ==== تحسينات حديثة هادئة + شعار ==== */
@@ -338,7 +336,7 @@ ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;c
 .gq-lb{position:fixed;inset:0;background:rgba(8,28,30,.88);display:none;place-items:center;z-index:200;padding:26px;cursor:zoom-out}
 .gq-lb.open{display:grid}
 .gq-lb figure{margin:0;text-align:center;max-width:96vw}
-.gq-lb img{max-width:96vw;max-height:86vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5);background:#fff}
+.gq-lb img{max-width:96vw;max-height:86vh;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;box-shadow:0 20px 60px rgba(0,0,0,.5);background:#fff}
 .gq-lb .cap{color:#fff;font-size:15px;margin-top:10px;font-family:var(--fd)}
 .gq-lb .close{position:absolute;top:16px;inset-inline-start:18px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:20px;cursor:pointer}
 .gitem img,.step-media img{cursor:zoom-in}
@@ -363,7 +361,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
 </style>
 <style id="wa-msg-css">
 .wa-wrap{margin:8px 0 2px}
-.wa{max-width:440px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 12px 34px rgba(0,0,0,.18);background:#ECE5DD;direction:rtl}
+.wa{max-width:440px;margin:0 auto;border-radius:16px 9px 18px 10px/10px 16px 9px 18px;overflow:hidden;box-shadow:0 12px 34px rgba(0,0,0,.18);background:#ECE5DD;direction:rtl}
 .wa-head{background:#128C7E;color:#fff;display:flex;align-items:center;gap:10px;padding:9px 12px}
 .wa-head .bk{font-size:22px;line-height:1;opacity:.9}
 .wa-head .av{width:40px;height:40px;border-radius:50%;background:#fff;overflow:hidden;display:grid;place-items:center;flex:none}
@@ -395,7 +393,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
 .wa-hint code{background:#eef3ef;border-radius:4px;padding:0 4px;font-size:11.5px;color:#075E54}
 </style>
 <style id="voc-web-css">
-.voc-web{position:relative;container-type:inline-size;max-width:680px;margin:2px auto 6px;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(22,78,45,.13);background:#F6F1E6}
+.voc-web{position:relative;container-type:inline-size;max-width:680px;margin:2px auto 6px;background:transparent}
 .voc-web>img{display:block;width:100%;height:auto;aspect-ratio:1448/1086}
 .voc-web .vw{position:absolute;transform:translate(-50%,-50%);text-align:center;font-family:var(--fd,'AlAwwal',serif);color:#3a2f22;white-space:nowrap;line-height:1;z-index:2;animation:vwfade .7s ease both}
 .voc-web .vw::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:-1;border-radius:50%;
@@ -422,7 +420,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
 /* الهدف / الأدوات */
 .card.actful .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 20px 4px}
 @media(max-width:600px){.card.actful .row2{grid-template-columns:1fr}}
-.card.actful .row2 .miniblock{background:#fff;border:1px solid #ece3d2;border-radius:14px;
+.card.actful .row2 .miniblock{background:#fff;border:1px solid #ece3d2;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;
   padding:12px 14px 13px;padding-inline-start:46px;box-shadow:0 3px 10px rgba(20,64,46,.05);position:relative;
   font-size:14.5px;line-height:1.8;color:var(--ink)}
 .card.actful .row2 .miniblock:first-child{border-top:3px solid var(--t2)}
@@ -441,7 +439,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
 
 /* خطوات التنفيذ — بطاقات مرقّمة */
 .card.actful>ol{list-style:none;counter-reset:step;margin:4px 20px 0;padding:0}
-.card.actful>ol>li{counter-increment:step;position:relative;background:#fff;border:1px solid #eee4d3;border-radius:13px;
+.card.actful>ol>li{counter-increment:step;position:relative;background:#fff;border:1px solid #eee4d3;border-radius:13px 9px 14px 8px/8px 13px 9px 14px;
   padding:13px 15px;padding-inline-start:54px;margin-bottom:9px;font-size:14.5px;line-height:1.8;color:var(--ink);box-shadow:0 2px 8px rgba(20,64,46,.04)}
 .card.actful>ol>li::before{content:counter(step);position:absolute;inset-inline-start:11px;top:50%;transform:translateY(-50%);
   width:31px;height:31px;border-radius:50%;background:linear-gradient(135deg,#2C6A4D,#0E6E6B);color:#fff;
@@ -449,12 +447,12 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
 
 /* أسئلة / اختيارات — رقائق */
 .card.actful .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:2px 20px 0}
-.card.actful .opt{background:#f6faf8;border:1px solid #dceae3;border-radius:12px;padding:11px 13px;font-size:14px;line-height:1.75;color:var(--ink)}
+.card.actful .opt{background:#f6faf8;border:1px solid #dceae3;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:11px 13px;font-size:14px;line-height:1.75;color:var(--ink)}
 .card.actful .opt b{display:inline-block;color:#fff;background:var(--t2);border-radius:7px;padding:1px 9px;font-size:12.5px;margin-bottom:3px}
 
 /* صور النشاط (معرض مصغّر) */
 .card.actful .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:2px 20px 0}
-.card.actful .gitem{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.card.actful .gitem{border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;overflow:hidden;background:#fff}
 .card.actful .imgwrap{height:120px;background:linear-gradient(135deg,#F4EDDE,#e9f2ee);display:grid;place-items:center;overflow:hidden}
 .card.actful .imgwrap img{width:100%;height:100%;object-fit:cover}
 .card.actful .cap{padding:8px 10px;font-size:12.5px;color:var(--t1);font-weight:700;line-height:1.5}
@@ -462,17 +460,17 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
 
 /* دعاء الختام */
 .card.actful .central{margin:16px 20px 20px;background:linear-gradient(135deg,#1F4A39,#0E6E6B);color:#fff;
-  border-radius:16px;padding:15px 18px;padding-inline-start:52px;position:relative;box-shadow:0 8px 20px rgba(14,110,107,.22)}
+  border-radius:16px 9px 18px 10px/10px 16px 9px 18px;padding:15px 18px;padding-inline-start:52px;position:relative;box-shadow:0 8px 20px rgba(14,110,107,.22)}
 .card.actful .central::before{content:"";position:absolute;inset-inline-start:16px;top:50%;transform:translateY(-50%);
   width:24px;height:24px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe9b8' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20c0-8 5-14 16-15-1 10-7 15-16 15z'/%3E%3Cpath d='M4 20c3-6 7-9 12-10'/%3E%3C/svg%3E") center/contain no-repeat}
 .card.actful .central b{color:#ffe9b8;display:block;margin-bottom:3px;font-family:var(--fd)}
 
 /* اختيارات إضافية */
-.actbar{background:linear-gradient(120deg,var(--gold),var(--gold2));color:#3a2a06;border-radius:14px;font-weight:700;
+.actbar{background:linear-gradient(120deg,var(--gold),var(--gold2));color:#3a2a06;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;font-weight:700;
   font-family:var(--fd);padding:12px;text-align:center;margin-top:18px;font-size:15px;box-shadow:0 6px 16px rgba(199,154,59,.22)}
 .actgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
 @media(max-width:600px){.actgrid{grid-template-columns:1fr}}
-.actgrid>div{background:#fff;border:1px solid var(--line);border-inline-start:3px solid var(--gold);border-radius:12px;
+.actgrid>div{background:#fff;border:1px solid var(--line);border-inline-start:3px solid var(--gold);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;
   padding:12px 15px;font-size:14px;line-height:1.8;box-shadow:0 3px 10px rgba(20,64,46,.04)}
 .actgrid .t{color:var(--t1);font-family:var(--fd);font-weight:700;display:block;margin-bottom:6px;font-size:14.5px}
 .actgrid .bd{color:var(--elm);font-weight:700}
@@ -483,7 +481,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
 .actscene .scene-lbl{font-family:var(--fb);font-size:11.5px;font-weight:700;color:var(--gold);letter-spacing:.3px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px}
 .actscene .scene-lbl::before,.actscene .scene-lbl::after{content:"";height:1px;width:34px;background:linear-gradient(90deg,transparent,rgba(199,154,59,.6))}
 .actscene .scene-lbl::after{background:linear-gradient(90deg,rgba(199,154,59,.6),transparent)}
-.actscene svg{width:100%;max-width:440px;height:auto;display:block;margin:0 auto;border-radius:14px}
+.actscene svg{width:100%;max-width:440px;height:auto;display:block;margin:0 auto;border-radius:14px 8px 15px 9px/9px 14px 8px 15px}
 </style>
 </head>
 <body>
@@ -661,7 +659,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
           <div class="step"><b class="k">المرحلة الأولى — البناء (تمهيد ومراجعة):</b> تذكّر المعلمة الأطفال بأن الله أرسل إلينا نبينا محمدًا ﷺ ليعلّمنا أمور ديننا ودنيانا، ومن ذلك الآداب الإسلامية. وتراجع معهم آخر أدب تعرّفنا عليه: <b>آداب الاستئذان</b>، ومعناه <b>طلب الإذن</b>. ثم تعرض صورة طفل عند باب مغلق وتسأل: قبل أن يدخل بيت أحد، أو فصلًا، أو غرفة أبيه وأمه، أو غرفة إخوته الكبار، أو بيت الجيران — ماذا يفعل؟ (يستأذن)؛ لأن صاحب المكان قد يكون مستريحًا أو نائمًا أو يبدّل ملابسه.</div>
           <div class="step"><b class="k">كيف أستأذن عند الدخول؟</b> تبيّن المعلمة الطريقة خطوةً خطوة: <b>أقف عن يمين الباب أو يساره</b> لا أمامه، ثم <b>أطرق الباب طرقًا خفيفًا مسموعًا ثلاث مرات، بينها فاصل</b>، ثم <b>أطلب الإذن بالدخول</b> فأقول: «السلام عليكم ورحمة الله وبركاته، أأدخل؟» وأنتظر الجواب.</div>
           <div class="step"><b class="k">دليل اللقاء من السنة:</b> تقرأ المعلمة الحديث وتعرض بطاقته: عن أبي موسى الأشعري رضي الله عنه أن رسول الله ﷺ قال: «الاستئذان ثلاث، فإن أُذن لك وإلا فارجع». رواه البخاري ومسلم، واللفظ لمسلم. وتوضّح: أطلب الإذن حتى ثلاث مرات، فإن أُذن لي دخلتُ، وإلا رجعتُ.<div class="step-media" style="max-width:680px"><img src="assets/gq_adab_istidhan_hadith_card.jpg" alt="بطاقة حديث آداب الاستئذان — الاستئذان ثلاث فإن أذن لك وإلا فارجع"/><div class="cap"> بطاقة حديث آداب الاستئذان التي تعرضها المعلمة</div></div>
-            <div class="gq-hadith-audio" style="margin:10px auto 0;max-width:680px;background:linear-gradient(135deg,#F1F7E8,#FBFDF5);border:1px solid #cfe0b8;border-right:6px solid #55702B;border-radius:16px;padding:12px 14px;text-align:right;box-shadow:var(--shadow-sm)"><div style="display:flex;align-items:center;gap:9px;margin-bottom:8px;color:#3a4a1c;font-size:13px;font-weight:900;line-height:1.7"><span style="width:34px;height:34px;border-radius:12px;background:#55702B;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:0 0 auto"></span><span>قراءة حديث آداب الاستئذان بصوت واضح</span></div><audio controls preload="none" style="width:100%;height:42px;display:block"><source src="assets/istidhan_hadith_audio.mp3" type="audio/mpeg"/>المتصفح لا يدعم تشغيل الصوت.</audio></div></div>
+            <div class="gq-hadith-audio" style="margin:10px auto 0;max-width:680px;background:linear-gradient(135deg,#F1F7E8,#FBFDF5);border:1px solid #cfe0b8;border-right:6px solid #55702B;border-radius:16px 9px 18px 10px/10px 16px 9px 18px;padding:12px 14px;text-align:right;box-shadow:var(--shadow-sm)"><div style="display:flex;align-items:center;gap:9px;margin-bottom:8px;color:#3a4a1c;font-size:13px;font-weight:900;line-height:1.7"><span style="width:34px;height:34px;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;background:#55702B;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:0 0 auto"></span><span>قراءة حديث آداب الاستئذان بصوت واضح</span></div><audio controls preload="none" style="width:100%;height:42px;display:block"><source src="assets/istidhan_hadith_audio.mp3" type="audio/mpeg"/>المتصفح لا يدعم تشغيل الصوت.</audio></div></div>
           <div class="step"><b class="k">الموقف الأول — إذا لم يُؤذن لي:</b> تسأل المعلمة: ولكن إذا استأذنتُ ولم يُؤذن لي بالدخول، فماذا أفعل؟ فتبيّن: <b>أرجع بهدوء ولا أغضب</b>، كما علّمنا نبيّنا ﷺ: «فإن أُذن لك وإلا فارجع»؛ فقد يكون صاحب المكان مشغولًا أو يحتاج إلى راحته وخصوصيته.</div>
           <div class="step"><b class="k">الموقف الثاني — إذا لم أجد أحدًا:</b> وإذا استأذنتُ فلم أجد أحدًا في المكان الذي ذهبت إليه — بيتًا أو فصلًا أو غرفة — فماذا أفعل؟ <b>لا أدخل، وأرجع</b>؛ فلا أدخل مكانًا لم يأذن لي صاحبه.</div>
           <div class="step"><b class="k">آداب الرجوع:</b> حين أرجع أنصرف براحة وسكينة، بلا غضب ولا عبوس، ولا إلحاح على الباب، وأعلم أن الرجوع أدبٌ يحبه الله ويرضى عنه صاحب المكان.</div>
@@ -1081,14 +1079,14 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
     <div class="chero"><p style="margin-bottom:6px">الأركان مساحاتٌ غنيّة بأدوات التعلّم، مدّتها ٣٠ دقيقة، يلعب فيها الأطفال ويستكشفون الأدوات <strong>بحرّية ومرح</strong> — لا التزام بآداب مجالس العلم كالمواد الأساسية. وتستقطع المعلمة وقتًا يسيرًا لتنفيذ <strong>نشاط تطبيقي سريع على الفكرة المركزية للدرس</strong> تأكيدًا وترسيخًا: أستأذن قبل أن أدخل مكانًا خاصًا لغيري، وأنتظر الجواب؛ فإن أُذن لي دخلتُ وسلّمتُ، وإن لم يُؤذن لي أو لم أجد أحدًا رجعتُ بهدوء ولم أغضب اقتداءً برسول الله ﷺ. أمام المعلمة <strong>ركنان مقترحان تختار بينهما</strong> (أو تنفّذهما معًا) بحسب جاهزية البيئة.</p></div>
     <div class="caution"><strong>ضابط منهجي:</strong> نتعلّم الأدب لأن الله يحبه، ونقتدي فيه برسول الله ﷺ؛ ولا نجعل قبول الآخرين لطلبنا حقًا واجبًا لنا. التطبيق سلوكٌ وأدبٌ لا تمثيلٌ للأشخاص؛ لا تُستخدم صور تجسّد النبي ﷺ أو الصحابة، ولا وجوه في البطاقات، ولا غرف حقيقية مغلقة أو مواقف تمس خصوصية الأطفال. تبقى واجهة الباب التمثيلية مكشوفة الجوانب وآمنة تحت نظر المعلمة، ولا يُطلب من الطفل أن يفتح بابًا حقيقيًا أو يتلصّص من الفتحات.</div>
 
-    <div style="border:2px solid #0d6e6e;border-radius:16px;overflow:hidden;margin:16px 0 18px;box-shadow:0 5px 16px rgba(20,40,35,.1)">
+    <div style="border:2px solid #0d6e6e;border-radius:16px 9px 18px 10px/10px 16px 9px 18px;overflow:hidden;margin:16px 0 18px;box-shadow:0 5px 16px rgba(20,40,35,.1)">
       <div style="background:linear-gradient(135deg,#1F4A39,#0d6e6e);color:#fff;padding:12px 16px;font-weight:700;display:flex;align-items:center;gap:9px;font-size:15px"><span style="font-size:19px"></span> الأركان التطبيقية المطوّرة — خياران جاهزان بملفات طباعة</div>
       <div style="padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
-        <div style="border:1px solid #E9E1D2;border-top:4px solid #0d6e6e;border-radius:12px;padding:12px 14px;background:#f7fbfa">
+        <div style="border:1px solid #E9E1D2;border-top:4px solid #0d6e6e;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:12px 14px;background:#f7fbfa">
           <div style="font-weight:700;color:#1F4A39;font-size:14.5px;line-height:1.6">خيار ١ · ركن المسكن<br/>أستأذن عند الباب</div>
           <a href="mk-print-d1a.html" target="_blank" rel="noopener" style="display:inline-block;margin-top:9px;background:#0d6e6e;color:#fff;border-radius:9px;padding:7px 13px;text-decoration:none;font-size:12.5px;font-weight:700"> ملف الطباعة</a>
         </div>
-        <div style="border:1px solid #E9E1D2;border-top:4px solid #C79A3B;border-radius:12px;padding:12px 14px;background:#fffdf7">
+        <div style="border:1px solid #E9E1D2;border-top:4px solid #C79A3B;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:12px 14px;background:#fffdf7">
           <div style="font-weight:700;color:#1F4A39;font-size:14.5px;line-height:1.6">خيار ٢ · ركن أقرأ لأتعلم<br/>بطاقات آداب الاستئذان</div>
           <a href="mk-print-d1b.html" target="_blank" rel="noopener" style="display:inline-block;margin-top:9px;background:#C79A3B;color:#3a2a06;border-radius:9px;padding:7px 13px;text-decoration:none;font-size:12.5px;font-weight:700"> ملف الطباعة</a>
         </div>
