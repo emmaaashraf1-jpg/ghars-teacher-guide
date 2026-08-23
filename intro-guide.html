@@ -1839,32 +1839,6 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #start .gp-card-art{position:relative;aspect-ratio:3/2;display:grid;place-items:center;padding:0;overflow:hidden;background:radial-gradient(125% 130% at 80% 6%,color-mix(in srgb,var(--c) 9%,#fff),color-mix(in srgb,var(--c) 4%,#FBF9F2));border-bottom:2px solid rgba(199,154,59,.5)}
 #start .gp-card-img{width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:none;transition:transform .5s var(--gp-ease)}
 #start .gp-card:hover .gp-card-img{transform:scale(1.06)}
-/* مشهدُ كلّ تبويبٍ مرسومٌ خلفيّةً باهتةً لصفحته (يذوب في الورق) — كلٌّ بمشهده الخاصّ */
-#start{--scene:url('assets/chapters/bg01-start.jpg')}
-#vision{--scene:url('assets/chapters/bg02-vision.jpg')}
-#components{--scene:url('assets/chapters/bg03-components.jpg')}
-#subjects{--scene:url('assets/chapters/bg04-subjects.jpg')}
-#annual-plan{--scene:url('assets/chapters/bg05-plan.jpg')}
-#dayflow{--scene:url('assets/chapters/bg06-dayflow.jpg')}
-#fitness{--scene:url('assets/chapters/bg07-fitness.jpg')}
-#lesson{--scene:url('assets/chapters/bg08-lesson.jpg')}
-#signals{--scene:url('assets/chapters/bg09-signals.jpg')}
-#corners{--scene:url('assets/chapters/bg10-corners.jpg')}
-#songs{--scene:url('assets/chapters/bg11-songs.jpg')}
-#manners{--scene:url('assets/chapters/bg12-manners.jpg')}
-#assessment{--scene:url('assets/chapters/bg13-assessment.jpg')}
-#scope{--scene:url('assets/chapters/bg14-scope.jpg')}
-#unit{--scene:url('assets/chapters/bg15-unit.jpg')}
-#nutrition{--scene:url('assets/chapters/bg16-nutrition.jpg')}
-:is(#start,#vision,#components,#subjects,#annual-plan,#dayflow,#fitness,#lesson,#signals,#corners,#songs,#manners,#assessment,#scope,#unit,#nutrition){
-  background:
-    linear-gradient(180deg, rgba(247,242,230,.38) 0, rgba(247,242,230,.46) 210px, rgba(247,242,230,.86) 500px, rgba(247,242,230,1) 640px),
-    var(--scene) top center no-repeat,
-    radial-gradient(rgba(30,46,41,.05) 1px, transparent 1.2px),
-    var(--dpaper) !important;
-  background-size: auto, 100% auto, 22px 22px, auto !important;
-  background-repeat: no-repeat, no-repeat, repeat, no-repeat !important;
-}
 #start .gp-card-num{position:absolute;top:11px;inset-inline-end:11px;font-family:var(--gp-display);font-size:13px;font-weight:700;color:var(--gp-forest);background:rgba(251,249,242,.94);width:29px;height:29px;border-radius:50%;display:grid;place-items:center;box-shadow:0 2px 8px rgba(31,74,57,.1)}
 #start .gp-card-body{padding:14px 16px 15px;display:flex;flex-direction:column;gap:5px;flex:1}
 #start .gp-card-body h4{font-family:var(--gp-display);font-weight:700;font-size:17.5px;color:var(--gp-forest);line-height:1.5}
