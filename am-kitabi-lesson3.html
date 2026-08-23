@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>الألفاظ المتكرّرة وأسماء الله · كتابي المنير · وحدة أنا مخلوق كرّمني الله</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;   /* خط العناوين */
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif; /* خط المتن */
+  --t1:#1b5e34; --t2:#1E5631; --grn:#1E5631;
+  --gold:#C79A3B; --gold2:#C8A200; --cream:#F4EDDE;
+  --ink:#1E2E29; --muted:#565f58;
+  --elm:#1E5631; --elm-soft:#EAF5EE;
+  --line:transparent; --card:radial-gradient(85% 120% at 88% 6%, rgba(44,106,77,.10), transparent 62%), radial-gradient(95% 110% at 6% 96%, rgba(199,154,59,.09), transparent 58%), #FFFDF7;
+  --shadow:0 8px 22px rgba(20,50,35,.07);
+  --shadow-sm:0 2px 7px rgba(20,50,35,.045);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:var(--fb);
+  color:var(--ink);line-height:1.95;font-size:16.5px;
+  background-color:#F7F2E6;background-image:radial-gradient(rgba(30,46,41,.05) 1px,transparent 1.2px),radial-gradient(70% 55% at 84% 4%,rgba(199,154,59,.13),transparent 70%),radial-gradient(60% 50% at 8% 34%,rgba(44,106,77,.09),transparent 72%);background-size:22px 22px,auto,auto;background-repeat:repeat,no-repeat,no-repeat;background-attachment:fixed;
+}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 60px}
+b,strong{font-weight:700}
+/* العناوين فقط بخط AlAwwal */
+.cover h1,.c-badge,.c-unit,.sec-head h2,.flow-card h3,.lbl,.taq h3,.ci .term,
+.adab .h,.par .h,.corner .h h4,.story .h,.refblock .h,.dua .x,.dua .l,
+table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd)}
+
+/* ===== الغلاف ===== */
+.cover{position:relative;overflow:hidden;border-radius:26px 12px 30px 14px/14px 28px 12px 26px;color:#fff;box-shadow:var(--shadow);min-height:200px}
+.cover-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.cover::before{content:"";position:absolute;inset:0;z-index:1;opacity:.78;
+  background:linear-gradient(135deg,rgba(27,94,52,.91),rgba(30,86,49,.78) 52%,rgba(30,86,49,.87))}
+.cover::after{content:"";position:absolute;inset:0;z-index:1;opacity:.07;pointer-events:none;
+  background:radial-gradient(circle at 88% 18%,#fff 0 2px,transparent 3px) 0 0/34px 34px}
+.cover-main{position:relative;z-index:2;padding:28px 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cover-l{flex:1 1 60%;min-width:240px}
+.cover-r{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.c-badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:20px 8px 18px 9px/9px 16px 8px 20px;transform:rotate(-.6deg);padding:6px 15px;font-weight:700;font-size:15px;margin-bottom:12px}
+.cover h1{font-size:33px;line-height:1.42;font-weight:700;margin-bottom:10px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+.c-meta{font-size:15px;color:#dcf3ef;line-height:1.9}
+.c-unit{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:14px 8px 15px 9px/9px 14px 8px 15px;
+  padding:12px 16px;font-weight:700;font-size:16px;line-height:1.6}
+.c-dur{color:#bfe6e0;font-size:14.5px}
+
+/* ===== شريط التبويبات ===== */
+.tabs{position:sticky;top:0;z-index:40;display:flex;flex-wrap:wrap;gap:8px;
+  margin:16px 0 24px;padding:10px;background:rgba(255,251,242,.94);backdrop-filter:blur(6px);
+  border:1px solid var(--line);border-radius:16px 9px 18px 10px/10px 16px 9px 18px;box-shadow:0 4px 14px rgba(20,40,35,.05)}
+.tab{background:#fff;border:1px solid var(--line);color:var(--t2);border-radius:16px 22px 14px 20px/20px 14px 22px 16px;
+  padding:8px 15px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s}
+.tab:hover{background:var(--elm-soft);border-color:var(--elm);color:var(--elm)}
+.tab.active{background:var(--elm);border-color:var(--elm);color:#fff;box-shadow:0 4px 12px rgba(30,86,49,.28)}
+.tab.gold{background:var(--gold);border-color:var(--gold);color:#3a2a06}
+.tab.gold.active{background:var(--gold2);border-color:var(--gold2);color:#241a00}
+
+/* ===== نظام اللوحات ===== */
+.panel{display:none;animation:fade .25s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ===== مكوّنات ===== */
+.sec-head{display:flex;align-items:center;gap:12px;margin:26px 0 15px}
+.sec-head .num{flex:none;width:38px;height:38px;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;display:grid;place-items:center;
+  background:var(--elm);color:#fff;font-size:18px;box-shadow:0 4px 12px rgba(30,86,49,.28)}
+.sec-head .num.grn{background:var(--grn)}.sec-head .num.gold{background:var(--gold);color:#3a2a06}
+.sec-head h2{font-size:22px;color:var(--t1);font-weight:700}
+.sec-head .rule{flex:1;height:0;border-top:2px dashed rgba(176,132,46,.6)}
+.sec-head .stage{flex:none;font-family:var(--fd);font-weight:700;font-size:13.5px;color:#08636b;
+  background:var(--elm-soft);border:1px solid #bfe3e6;border-radius:999px;padding:3px 12px}
+.sec-head .stage.s2{color:#8a6410;background:#F7EECB;border-color:#ebd9a8}
+.sec-head .stage.s3{color:var(--grn);background:#eaf5ee;border-color:#bfe0cd}
+.first{margin-top:6px}
+
+/* ترويسة الدرس — بوصلة اللقاء (سؤال التركيز + جوهر اللقاء) · بنية مستفادة من أدلة هاركورت */
+.lhero{display:grid;grid-template-columns:1fr 1.35fr;gap:14px;margin:8px 0 20px}
+@media(max-width:760px){.lhero{grid-template-columns:1fr}}
+.lhero .lh{background:#fff;border:1px solid var(--line);border-radius:16px 9px 18px 10px/10px 16px 9px 18px;padding:15px 18px;box-shadow:var(--shadow-sm)}
+.lhero .lh.focus{border-inline-start:5px solid var(--elm)}
+.lhero .lh.key{border-inline-start:5px solid var(--gold);background:#fffdf6}
+.lhero .lh-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:700;font-size:15px;margin-bottom:8px}
+.lhero .focus .lh-lbl{color:var(--elm)}
+.lhero .key .lh-lbl{color:#8a6410}
+.lhero .lh-q{font-size:18px;line-height:1.85;color:var(--t1);font-weight:700;font-family:var(--fd)}
+.lhero .lh-t{font-size:15.5px;line-height:1.95}
+.lhero .lh-foot{margin-top:9px;font-size:13.5px;line-height:1.7;color:var(--muted)}
+.lhero .lh-foot b{color:var(--t2)}
+
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px 9px 18px 10px/10px 16px 9px 18px;padding:18px 20px;box-shadow:var(--shadow-sm)}
+.grid{display:grid;gap:15px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){.g2,.g3{grid-template-columns:1fr}.cover h1{font-size:27px}}
+.lbl{color:var(--t1);font-weight:700;font-size:16px;border-bottom:2px solid var(--gold);display:inline-block;padding-bottom:3px;margin-bottom:12px}
+
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border-radius:999px;padding:6px 13px;font-size:15px;border:1px solid var(--line);background:#fff}
+.chip.v{background:#F4EDDE;border-color:#ebd9a8;color:#8a6410}
+.chip.c{background:var(--elm-soft);border-color:#bcdcc7;color:#17563a}
+
+/* مسار البدء */
+.flow-card{border-radius:14px 8px 15px 9px/9px 14px 8px 15px;padding:15px 18px;margin-bottom:12px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.flow-card.sig{border-inline-start:5px solid var(--elm)}
+.flow-card.law{border-inline-start:5px solid var(--gold)}
+.flow-card.rev{border-inline-start:5px solid var(--grn)}
+.flow-card h3{font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.flow-card.sig h3{color:var(--elm)}.flow-card.law h3{color:#8a6410}.flow-card.rev h3{color:var(--grn)}
+.greet{background:var(--elm-soft);border-radius:10px;padding:10px 14px;color:#17563a;font-weight:700;margin-bottom:10px}
+.linkbtn{display:inline-block;background:var(--t2);color:#fff;border-radius:999px;padding:8px 16px;font-weight:700;text-decoration:none;font-size:15px;margin:6px 0}
+.law-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+@media(max-width:600px){.law-grid{grid-template-columns:1fr}}
+.law-grid > div{background:#fff;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:10px 13px;font-size:15px}
+.law-grid small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+
+/* الشريط الجانبي/الأهداف */
+.two{display:grid;grid-template-columns:.9fr 1.4fr;gap:16px;align-items:start}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.obj{margin-bottom:8px;display:flex;gap:9px;align-items:flex-start}
+.obj .n{flex:none;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;color:#fff;font-size:13.5px;background:var(--elm)}
+.obj .n.o{background:var(--gold);color:#3a2a06}.obj .n.g{background:var(--grn)}.obj .n.p{background:#7a5cc0}
+.obj span.t{font-size:15.5px;line-height:1.8}
+.mini{font-size:15px;line-height:1.8;color:var(--ink)}
+.mini .src{color:var(--muted);font-size:13.5px}
+
+/* سير اللقاء */
+.flow{position:relative;padding-inline-start:26px}
+.flow::before{content:"";position:absolute;inset-inline-start:8px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--elm),var(--gold))}
+.step{position:relative;margin-bottom:14px;background:#fff;border:1px solid var(--line);border-radius:13px 9px 14px 8px/8px 13px 9px 14px;padding:13px 17px;box-shadow:var(--shadow-sm)}
+.step::before{content:"";position:absolute;inset-inline-start:-24px;top:17px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--elm)}
+.step b.k{color:var(--elm)}
+
+.story{background:#fff8ec;border:1px solid #ebd9a8;border-radius:16px 9px 18px 10px/10px 16px 9px 18px;padding:0;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:6px}
+.story .h{background:linear-gradient(90deg,var(--gold),#b98a2a);color:#fff;padding:11px 18px;font-weight:700;font-size:16px}
+.story .h span{font-weight:400;opacity:.9;font-size:13.5px}
+.story .b{padding:14px 18px}
+.story .b p{margin-bottom:8px}
+
+/* التغذية الراجعة */
+.feedback{border-inline-start:5px solid var(--grn)}
+.feedback h3{color:var(--grn);font-size:16px;margin-bottom:8px}
+.feedback ol{margin-inline-start:20px;font-size:16px;line-height:2}
+.note{color:var(--muted);font-size:14.5px;margin-top:8px}
+
+/* اختيارات الأنشطة */
+.actbar{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#3a2a06;border-radius:14px 14px 0 0;font-weight:700;padding:11px;text-align:center;margin-top:8px}
+.actgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;overflow:hidden}
+@media(max-width:600px){.actgrid{grid-template-columns:1fr}}
+.actgrid > div{padding:13px 16px;border:1px solid #f0e8da;font-size:15px;line-height:1.85}
+.actgrid .t{color:var(--t1);font-weight:700;display:block;margin-bottom:5px}
+.actgrid .bd{color:var(--elm);font-weight:700}
+
+/* كفارة */
+.dua{text-align:center;background:linear-gradient(135deg,var(--t1),var(--grn));color:#fff;border-radius:18px 10px 20px 11px/11px 18px 10px 20px;padding:24px;box-shadow:var(--shadow);margin-top:16px}
+.dua .l{color:var(--gold);font-size:15px;letter-spacing:.5px;margin-bottom:6px}
+.dua .x{font-size:21px;line-height:2}
+
+/* info bar */
+.info{background:var(--elm-soft);border:1px solid #bcdcc7;color:#17563a;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:11px 15px;font-size:15.5px;font-weight:600;margin-bottom:14px}
+
+/* التقويم */
+.taq{border-top:4px solid var(--elm)}
+.taq.t{border-top-color:var(--gold2)}.taq.n{border-top-color:var(--grn)}
+.taq h3{font-size:16px;font-weight:700;margin-bottom:10px}
+.taq.q h3{color:var(--elm)}.taq.t h3{color:#b0851a}.taq.n h3{color:var(--grn)}
+.taq ul{list-style:none}
+.taq li{display:flex;gap:8px;align-items:flex-start;margin-bottom:7px;font-size:15.5px;line-height:1.8}
+.taq li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:9px}
+
+/* con-grid (قيم/مفاهيم/مؤشرات) */
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.cg{grid-template-columns:1fr}}
+.ci{background:#fff;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:11px 14px}
+.ci .term{color:var(--elm);font-weight:700;font-size:15.5px;margin-bottom:3px}
+.ci .def{font-size:15px;line-height:1.8}
+.steps{list-style:none;margin-top:6px}
+.steps li{display:flex;gap:9px;margin-bottom:7px;font-size:15.5px;line-height:1.85}
+.steps li::before{content:"•";color:var(--gold);font-weight:900;font-size:18px;line-height:1.2}
+.cardgold{border-top:4px solid var(--gold)}
+.cardpurple{border-top:4px solid #7a5cc0}
+.cardblue{border-top:4px solid var(--t2)}
+.card > .lbl.gold{border-color:var(--gold)}
+
+/* الآداب */
+.adab{border-radius:14px 8px 15px 9px/9px 14px 8px 15px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:14px;background:#fff}
+.adab .h{background:linear-gradient(90deg,var(--elm),#1b5e34);color:#fff;padding:11px 16px;font-weight:700;font-size:16px}
+.adab .b{padding:14px 16px}
+.adab .row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:15.5px;line-height:1.8}
+.tag{flex:none;border-radius:8px;font-weight:700;font-size:13.5px;padding:3px 11px;color:#fff}
+.tag.s{background:#c46b2e}.tag.r{background:var(--t2)}.tag.v{background:var(--grn)}
+.adab .link{background:#F4EDDE;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;font-size:15px;padding:8px 12px;margin-top:6px}
+
+/* تحضيرات ولي الأمر */
+.par{margin-bottom:12px}
+.par .h{color:var(--t1);font-weight:700;font-size:16.5px;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.hs{display:flex;gap:9px;align-items:flex-start;margin-bottom:6px;font-size:15.5px;line-height:1.8}
+.hs .n{flex:none;width:22px;height:22px;border-radius:50%;background:var(--elm);color:#fff;display:grid;place-items:center;font-size:13.5px}
+.after{background:#f2faf5;border:1px solid #bfe0cd;border-radius:9px;padding:6px 12px;margin-top:5px;font-size:14.5px;color:#0A5030;font-style:italic}
+.pq{background:var(--elm-soft);border-radius:10px;color:#17563a;padding:8px 12px;margin:5px 0;font-size:15px;font-weight:600}
+.msg{border-inline-start:5px solid var(--grn);font-size:15.5px;line-height:1.95}
+.msg .l{color:var(--grn);font-weight:700;margin-bottom:6px}
+
+/* الحصيلة */
+table.voc{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;overflow:hidden;margin-top:4px}
+table.voc th{background:var(--elm);color:#fff;font-size:15px;padding:10px 12px;text-align:start}
+table.voc td{font-size:15px;line-height:1.8;padding:10px 12px;border-top:1px solid var(--line)}
+table.voc .w{color:var(--elm);font-weight:700}
+
+/* المراجع */
+.refblock{margin-bottom:14px}
+.refblock .h{color:var(--t1);font-weight:700;font-size:16px;margin-bottom:4px}
+.refblock .sub{color:var(--muted);font-size:14.5px;margin-bottom:8px}
+.refitem{display:flex;gap:10px;align-items:flex-start;border-bottom:1px dashed var(--line);padding:10px 0}
+.rbadge{flex:none;border-radius:999px;font-size:12.5px;font-weight:700;padding:3px 10px;color:#fff}
+.rbadge.q{background:var(--grn)}.rbadge.t{background:var(--t2)}.rbadge.p{background:#7a5cc0}.rbadge.d{background:#546e7a}
+.refitem .tt{font-size:15.5px;font-weight:700}
+.refitem .dd{color:var(--muted);font-size:14.5px}
+.reflink{color:var(--t2);font-size:14.5px;text-decoration:underline;margin-inline-end:8px}
+
+/* الأركان */
+.chero h2{margin-bottom:6px}
+.chero p{color:var(--muted);font-size:15.5px}
+.caution{background:#F4EDDE;border:1px dashed #ebd9a8;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:11px 15px;color:#8a6410;font-size:15px;margin:12px 0}
+.corner{border-radius:18px 10px 20px 11px/11px 18px 10px 20px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:16px;background:#fff}
+.corner .h{padding:13px 18px;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.corner .h .k{background:rgba(255,255,255,.2);border-radius:999px;padding:4px 13px;font-size:14.5px}
+.corner .h h4{font-size:17px}
+.corner .b{padding:16px 18px}
+.cfield{margin-bottom:10px}
+.cfield b{color:var(--elm);font-size:15px;display:block;margin-bottom:2px}
+.cfield p,.cfield li{font-size:15px;line-height:1.8}
+.cfield ol{margin-inline-start:20px}
+.faith{background:#F4EDDE;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;padding:10px 14px;margin-top:8px;font-size:15px}
+
+.foot{text-align:center;color:var(--muted);font-size:14.5px;margin-top:34px}
+/* ==== إثراء الدليل ==== */
+.sig-video{margin:10px 0;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;overflow:hidden;background:#123f27}
+.sig-video video{display:block;width:100%;max-height:300px;background:#000}
+.sig-video .cap{background:var(--elm-soft);color:#17563a;font-size:13.5px;padding:8px 12px}
+.plan-wrap{overflow-x:auto}
+table.plan{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;overflow:hidden}
+table.plan th{background:var(--t2);color:#fff;font-size:14.5px;padding:9px 12px;text-align:start}
+table.plan td{font-size:14.5px;padding:9px 12px;border-top:1px solid var(--line);line-height:1.7}
+table.plan td:first-child{font-weight:700;color:var(--t1);white-space:nowrap}
+table.plan td.z{color:var(--gold2);font-weight:700;white-space:nowrap;text-align:center}
+table.plan tr.tot td{background:#F4EDDE;font-weight:700;color:#8a6410}
+.central{background:linear-gradient(135deg,#1b5e34,#1E5631);color:#fff;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;padding:14px 18px;margin:6px 0 2px;box-shadow:var(--shadow-sm)}
+.central b{color:#ffe9b8;display:block;margin-bottom:3px}
+.cues{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.cue{border:2px dashed #cdbf9e;background:#fffdf6;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;padding:14px;text-align:center}
+.cue .ic{font-size:30px;display:block;margin-bottom:6px}
+.cue .t{font-weight:700;color:var(--t1);font-size:14.5px;display:block}
+.cue .d{color:var(--muted);font-size:13px;display:block;margin-top:2px}
+.cue .tag{display:inline-block;margin-top:7px;background:var(--elm-soft);color:#17563a;border-radius:999px;padding:2px 10px;font-size:12px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.gitem{border:1px solid var(--line);border-radius:14px 8px 15px 9px/9px 14px 8px 15px;overflow:hidden;background:#fff;box-shadow:var(--shadow-sm)}
+.gitem .imgwrap{background:#f6f1e6;height:180px;overflow:hidden}
+.gitem img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.gitem .cap{padding:9px 12px;font-size:14px;font-weight:700;color:var(--t1);text-align:center}
+.gitem .cap small{display:block;color:var(--muted);font-weight:400;font-size:12.5px;margin-top:2px}
+.step-media{margin:9px auto 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;max-width:330px;box-shadow:var(--shadow-sm)}
+.step-media img{display:block;width:100%;height:auto}
+.step-media .cap{background:var(--elm-soft);color:#17563a;font-size:12.5px;padding:5px 10px;text-align:center}
+.actful{border-inline-start:5px solid var(--gold);margin-top:8px}
+.actful h3{color:#8a6410;font-size:17px;margin-bottom:10px}
+.actful .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px}
+@media(max-width:600px){.actful .row2{grid-template-columns:1fr}}
+.miniblock b{color:var(--elm);display:block;margin-bottom:3px;font-size:14.5px}
+.actful ol{margin-inline-start:20px;font-size:15px;line-height:1.95}
+.actful .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px;margin-top:8px}
+.actful .opt{background:#f7fbfa;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;line-height:1.7}
+.actful .opt b{color:var(--t2)}
+ol.qa{list-style:none;margin-inline-start:0}
+ol.qa li{margin-bottom:12px}
+ol.qa .q{font-weight:700;color:var(--t1);font-size:15.5px}
+ol.qa .a{display:block;margin-top:3px;background:#f2faf5;border-inline-start:3px solid var(--grn);border-radius:8px;padding:7px 12px;font-size:14.5px;color:#12563a;line-height:1.8}
+ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;color:var(--grn)}
+.strat{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 13px;margin-bottom:8px}
+.strat .k{flex:none;background:var(--elm-soft);color:#17563a;border-radius:8px;padding:4px 11px;font-size:13.5px;font-weight:700;white-space:nowrap}
+.strat .v{font-size:14.5px;line-height:1.8}
+.means{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.means .m{background:#fff;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:12px 14px;border-top:4px solid var(--elm)}
+.means .m.s2{border-top-color:var(--gold2)}.means .m.s3{border-top-color:var(--grn)}.means .m.s4{border-top-color:#7a5cc0}
+.means .m h4{color:var(--t1);font-size:15px;margin-bottom:6px}
+.means .m .i{font-size:13.5px;line-height:1.7;color:var(--ink);display:block;padding-inline-start:12px;position:relative}
+.means .m .i::before{content:"•";color:var(--gold);position:absolute;inset-inline-start:0}
+/* تخطيط: شريط «حول الدرس» جانبي مصغّر + سير اللقاء أوسع */
+.les{display:grid;grid-template-columns:minmax(190px,0.72fr) 1.9fr;gap:16px;align-items:start;margin-top:6px}
+.objgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:600px){.objgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.objgrid{grid-template-columns:1fr}}
+.objgrid .lbl{font-size:13px;margin-bottom:8px;padding-bottom:2px}
+.objgrid .obj{margin-bottom:5px;gap:7px}
+.objgrid .obj .n{width:19px;height:19px;font-size:11.5px;border-radius:6px}
+.objgrid .obj span.t{font-size:13.5px;line-height:1.6}
+@media(max-width:560px){.les{grid-template-columns:1fr}}
+.side .card{padding:12px 14px;margin-bottom:12px}
+.side .card:last-child{margin-bottom:0}
+.side .lbl{font-size:14px;margin-bottom:9px}
+.side .chip{font-size:12.5px;padding:5px 10px}
+.side .mini{font-size:13.5px}
+.side .mini .src{font-size:12px}
+.side-title{font-family:var(--fd);font-weight:700;color:#17563a;font-size:15px;background:var(--elm-soft);border:1px solid #bcdcc7;border-radius:10px;padding:7px 12px;margin-bottom:12px;text-align:center}
+/* أهداف اللقاء داخل الشريط الجانبي: عمود واحد يمنع الفيضان */
+.side .objgrid{grid-template-columns:1fr!important;gap:10px}
+.side .objgrid>div{min-width:0}
+.side .objgrid .obj span.t{font-size:13px;line-height:1.7;word-break:break-word}
+/* ورقة التدريس السريعة (٣ مراحل · خطوات مرجعية) */
+.quick-sheet{margin:16px 0;background:linear-gradient(180deg,#fffdf8,#f4fbf1);border:1px solid rgba(30,86,49,.20);border-radius:18px 10px 20px 11px/11px 18px 10px 20px;box-shadow:var(--shadow-sm);overflow:hidden}
+.quick-sheet .qs-head{background:linear-gradient(90deg,var(--t1),var(--t2));color:#fff;padding:12px 16px;font-family:var(--fd);font-weight:700;font-size:15.5px}
+.quick-sheet .qs-phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;padding:14px}
+.quick-sheet .qs-phase{background:#fff;border:1px solid rgba(30,86,49,.14);border-top:4px solid var(--t2);border-radius:14px 8px 15px 9px/9px 14px 8px 15px;padding:11px 13px}
+.quick-sheet .qs-ph-h{display:flex;align-items:center;gap:7px;color:var(--t1);font-family:var(--fd);font-weight:700;font-size:14px;margin-bottom:8px;flex-wrap:wrap}
+.quick-sheet .qs-n{width:26px;height:26px;border-radius:8px;background:var(--t2);color:#fff;display:grid;place-items:center;font-size:14px;flex:0 0 auto}
+.quick-sheet .qs-min{margin-inline-start:auto;background:var(--elm-soft);color:var(--t2);border-radius:999px;padding:2px 10px;font-size:11.5px;font-weight:700}
+.quick-sheet .qs-phase ul{margin:0;padding-inline-start:18px}
+.quick-sheet .qs-phase li{font-size:12.5px;line-height:1.8;margin-bottom:4px}
+.quick-sheet .qs-phase li::marker{color:var(--t2)}
+.quick-sheet .qs-home{margin:0 14px;background:#fbf3e3;border:1px solid #eccf94;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:9px 12px;font-size:12.5px;color:#7a5a10;line-height:1.75}
+.quick-sheet .qs-note{margin:12px 14px 14px;padding:9px 12px;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;background:#fff;border:1px dashed rgba(30,86,49,.35);color:var(--muted);font-size:12px;line-height:1.75}
+/* ===== أداة التاريخ الهجري (تهيئة كتابي) ===== */
+.kitabi-hijri-tool{margin:0 0 12px;background:linear-gradient(135deg,#fffaf0,#f2fbf8);border:1px solid #e6d2a8;border-right:7px solid var(--gold);border-radius:18px 10px 20px 11px/11px 18px 10px 20px;box-shadow:var(--shadow-sm);overflow:hidden;direction:rtl;color:#102d36}
+.kitabi-hijri-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 15px;background:linear-gradient(90deg,#fff,#f7fbfa)}
+.kitabi-hijri-main{display:flex;align-items:center;gap:11px;min-width:0}
+.kitabi-hijri-moon{width:48px;height:48px;border-radius:17px;background:linear-gradient(135deg,var(--t1),var(--t2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:25px;flex:0 0 48px}
+.kitabi-hijri-kicker{font-size:11px;font-weight:800;color:#7a4a00;margin-bottom:2px}
+.kitabi-hijri-date{font-family:var(--fd);font-size:23px;line-height:1.35;font-weight:800;color:#102d36}
+.kitabi-hijri-sub{font-size:11px;line-height:1.7;color:#5e6d70;margin-top:2px}
+.kitabi-hijri-actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.kitabi-hijri-actions button{border:1px solid #dcc79c;background:#fff;color:#102d36;border-radius:999px;padding:5px 9px;font-family:inherit;font-size:11px;font-weight:700;cursor:pointer}
+.kitabi-hijri-actions button:hover{background:#F4EDDE;border-color:var(--gold)}
+.kitabi-hijri-status{font-size:10.5px;color:var(--t2);font-weight:800;min-width:40px;text-align:center}
+.kitabi-hijri-prompt{border-top:1px dashed #e1c991;background:#fffdf7;padding:10px 15px;font-size:12px;line-height:1.9;color:#5a3e00}
+.kitabi-hijri-prompt strong{color:var(--t2)}
+@media(max-width:760px){.kitabi-hijri-top{flex-direction:column;align-items:flex-start}.kitabi-hijri-actions{justify-content:flex-start}.kitabi-hijri-date{font-size:19px}}
+.mainflow .sec-head{margin-top:0}
+.mainflow .flow{padding-inline-start:24px}
+/* ==== تحسينات حديثة هادئة + شعار ==== */
+.gq-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:120;background:linear-gradient(90deg,var(--gold),var(--elm));transition:width .12s ease-out}
+.gq-top{position:fixed;bottom:22px;inset-inline-start:22px;width:46px;height:46px;border-radius:50%;background:var(--elm);color:#fff;border:0;cursor:pointer;display:grid;place-items:center;font-size:22px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(8px);transition:.25s;z-index:110}
+.gq-top.show{opacity:1;pointer-events:auto;transform:none}
+.gq-lb{position:fixed;inset:0;background:rgba(8,28,30,.88);display:none;place-items:center;z-index:200;padding:26px;cursor:zoom-out}
+.gq-lb.open{display:grid}
+.gq-lb figure{margin:0;text-align:center;max-width:96vw}
+.gq-lb img{max-width:96vw;max-height:86vh;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;box-shadow:0 20px 60px rgba(0,0,0,.5);background:#fff}
+.gq-lb .cap{color:#fff;font-size:15px;margin-top:10px;font-family:var(--fd)}
+.gq-lb .close{position:absolute;top:16px;inset-inline-start:18px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:20px;cursor:pointer}
+.gitem img,.step-media img{cursor:zoom-in}
+.gitem .imgwrap{position:relative}
+.gitem .imgwrap:has(img)::after{content:"";position:absolute;bottom:6px;inset-inline-end:6px;width:30px;height:30px;background:url('brand/seedling.webp') center/contain no-repeat;opacity:.9;filter:drop-shadow(0 1px 2px rgba(0,0,0,.25));pointer-events:none}
+.copy-btn{margin-inline-start:8px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);color:inherit;border-radius:8px;padding:3px 10px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:var(--fb);vertical-align:middle}
+.copy-btn:hover{background:rgba(255,255,255,.3)}
+.copy-btn.copied{background:#2e9e5b;border-color:#2e9e5b;color:#fff}
+
+/* تطوير-النشاط: تخطيط صندوق النشاط المصاحب */
+.actful .miniblock{margin-top:15px}
+.actful .row2 .miniblock{margin-top:0}
+.actful .miniblock>b{display:block;color:var(--t1);font-size:14px;font-weight:700;padding:6px 13px;margin-bottom:9px;border-inline-start:4px solid var(--gold);border-radius:0 9px 9px 0;background:linear-gradient(90deg,rgba(199,154,59,.16),rgba(199,154,59,.03))}
+.actful ol{margin-top:2px;padding-inline-start:8px}
+.actful ol li{margin-bottom:6px}
+.actful .opts{margin-top:2px}
+
+.flow-card.belief{border-inline-start:5px solid var(--t1)}
+.flow-card.belief h3{color:var(--t1);font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+
+/* ===== توحيد أيقونات الدليل (الخيار أ) ===== */
+.sec-head .num{background:#EEF4F1!important;border:1px solid #D6E5DF;color:#1F4A39!important;box-shadow:none!important}
+.sec-head .num .gi-svg,.sec-head .num .gi{width:22px;height:22px}
+h2 .gi,h3 .gi{vertical-align:-.18em}
+</style>
+<style id="wa-msg-css">
+.wa-wrap{margin:8px 0 2px}
+.wa{max-width:440px;margin:0 auto;border-radius:16px 9px 18px 10px/10px 16px 9px 18px;overflow:hidden;box-shadow:0 12px 34px rgba(0,0,0,.18);background:#ECE5DD;direction:rtl}
+.wa-head{background:#128C7E;color:#fff;display:flex;align-items:center;gap:10px;padding:9px 12px}
+.wa-head .bk{font-size:22px;line-height:1;opacity:.9}
+.wa-head .av{width:40px;height:40px;border-radius:50%;background:#fff;overflow:hidden;display:grid;place-items:center;flex:none}
+.wa-head .av img{width:34px;height:34px;object-fit:contain}
+.wa-head .who{flex:1;min-width:0}
+.wa-head .nm{font-family:var(--fd);font-weight:700;font-size:15.5px;line-height:1.2}
+.wa-head .st{font-size:11.5px;opacity:.85;margin-top:1px}
+.wa-head .ics{display:flex;gap:15px;align-items:center;opacity:.92}
+.wa-head .ics svg{width:19px;height:19px;fill:#fff}
+.wa-body{background:#ECE5DD;background-image:radial-gradient(rgba(0,0,0,.028) 1px,transparent 1px);background-size:18px 18px;padding:16px 12px 12px;display:flex;flex-direction:column}
+.wa-day{align-self:center;background:#e2f2ea;color:#5a7a68;font-size:11px;border-radius:8px;padding:3px 12px;margin-bottom:12px;box-shadow:0 1px 1px rgba(0,0,0,.05)}
+.wa-bub{position:relative;background:#DCF8C6;border-radius:12px 12px 12px 4px;padding:8px 12px 6px;max-width:90%;margin-inline-end:auto;box-shadow:0 1px 1.5px rgba(0,0,0,.13)}
+.wa-bub::after{content:"";position:absolute;top:0;inset-inline-start:-7px;width:0;height:0;border:7px solid transparent;border-top-color:#DCF8C6;border-inline-start:0}
+.wa-text{font-family:var(--fb);font-size:14px;line-height:1.95;color:#0b1f14;white-space:pre-wrap}
+.wa-text strong{font-weight:700;color:#075E54}
+.wa-text em{font-style:italic;color:#1a3a2a}
+.wa-meta{display:flex;align-items:center;gap:4px;justify-content:flex-start;margin-top:4px}
+.wa-meta .t{font-size:11px;color:#5a7768}
+.wa-meta .ck{width:17px;height:11px}
+.wa-foot{background:#F0F0F0;padding:8px 10px;display:flex;gap:8px;align-items:center}
+.wa-foot .inp{flex:1;background:#fff;border-radius:22px;padding:9px 15px;color:#9aa5a0;font-size:13px;box-shadow:0 1px 1px rgba(0,0,0,.06)}
+.wa-send{flex:none;background:#128C7E;border-radius:50%;width:44px;height:44px;display:grid;place-items:center;box-shadow:0 2px 6px rgba(18,140,126,.4)}
+.wa-send svg{width:20px;height:20px;fill:#fff}
+.wa-copybar{max-width:440px;margin:10px auto 0;display:flex;justify-content:center}
+.copy-btn.wa-copy{background:#128C7E;border:0;color:#fff;border-radius:999px;padding:9px 20px;font-family:var(--fb);font-weight:700;font-size:13px;cursor:pointer;display:inline-flex;gap:7px;align-items:center;vertical-align:middle;margin:0}
+.copy-btn.wa-copy:hover{background:#0f7568}
+.copy-btn.wa-copy.copied{background:#2e9e5b}
+.wa-hint{max-width:440px;margin:8px auto 0;text-align:center;color:#6b7a72;font-size:12px;line-height:1.75}
+.wa-hint code{background:#eef3ef;border-radius:4px;padding:0 4px;font-size:11.5px;color:#075E54}
+</style>
+<style id="voc-web-css">
+.voc-web{position:relative;container-type:inline-size;max-width:680px;margin:2px auto 6px;background:transparent}
+.voc-web>img{display:block;width:100%;height:auto;aspect-ratio:1448/1086}
+.voc-web .vw{position:absolute;transform:translate(-50%,-50%);text-align:center;font-family:var(--fd,'AlAwwal',serif);color:#3a2f22;white-space:nowrap;line-height:1;z-index:2;animation:vwfade .7s ease both}
+.voc-web .vw::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:-1;border-radius:50%;
+  width:max(4.4em,calc(100% + 1.7em));height:max(1.7em,calc(100% + 1em));
+  background:radial-gradient(ellipse,#F3EBD6 0%,#F3EBD6 52%,rgba(243,235,214,.55) 70%,rgba(243,235,214,0) 82%)}
+.voc-web .vw.center{font-weight:700;font-size:clamp(21px,4.5cqw,33px)}
+.voc-web .vw.center::before{width:max(5em,calc(100% + 1.8em));height:max(2em,calc(100% + 1.1em))}
+.voc-web .vw.branch{font-size:clamp(13px,2.95cqw,19px)}
+@keyframes vwfade{from{opacity:0;transform:translate(-50%,-46%)}to{opacity:1;transform:translate(-50%,-50%)}}
+@media (prefers-reduced-motion:reduce){.voc-web .vw{animation:none}}
+</style>
+<style id="actful-v2">
+.card.actful{padding:0;overflow:hidden;border:1px solid #ece1c6;border-radius:20px;
+  background:linear-gradient(180deg,#fffdf9,#fbf6ec);box-shadow:0 14px 34px rgba(20,64,46,.10)}
+.card.actful>h3{margin:0;background:linear-gradient(120deg,#1F4A39,#0E6E6B);color:#fff;font-family:var(--fd);
+  font-weight:700;font-size:18.5px;line-height:1.4;padding:15px 56px 15px 20px;position:relative}
+.card.actful>h3::before{content:"";position:absolute;inset-inline-start:17px;top:50%;transform:translateY(-50%);
+  width:26px;height:26px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 9h2.5a1.8 1.8 0 1 1 3.5 0H13V6.5a1.8 1.8 0 1 1 0-3.5'/%3E%3Cpath d='M13 3h4a1 1 0 0 1 1 1v4h1.5a1.8 1.8 0 1 1 0 3.5H18v4a1 1 0 0 1-1 1h-4'/%3E%3Cpath d='M13 20a1.8 1.8 0 1 1-3.5 0H6a1 1 0 0 1-1-1v-4H3.5a1.8 1.8 0 1 1 0-3.5H5V9'/%3E%3C/svg%3E") center/contain no-repeat}
+.card.actful>h3::after{content:"نشاطٌ تطبيقيّ";position:absolute;inset-inline-end:15px;top:50%;transform:translateY(-50%);
+  font-family:var(--fb);font-size:11px;font-weight:700;color:#fff;background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.42);border-radius:999px;padding:3px 11px;white-space:nowrap}
+.card.actful>*:not(h3){margin-inline:20px}
+
+/* الهدف / الأدوات */
+.card.actful .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 20px 4px}
+@media(max-width:600px){.card.actful .row2{grid-template-columns:1fr}}
+.card.actful .row2 .miniblock{background:#fff;border:1px solid #ece3d2;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;
+  padding:12px 14px 13px;padding-inline-start:46px;box-shadow:0 3px 10px rgba(20,64,46,.05);position:relative;
+  font-size:14.5px;line-height:1.8;color:var(--ink)}
+.card.actful .row2 .miniblock:first-child{border-top:3px solid var(--t2)}
+.card.actful .row2 .miniblock:last-child{border-top:3px solid var(--gold)}
+.card.actful .row2 .miniblock::before{content:"";position:absolute;inset-inline-start:13px;top:13px;width:23px;height:23px}
+.card.actful .row2 .miniblock:first-child::before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232C6A4D' stroke-width='1.8'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Ccircle cx='12' cy='12' r='1.5' fill='%232C6A4D'/%3E%3C/svg%3E") center/contain no-repeat}
+.card.actful .row2 .miniblock:last-child::before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B8862B' stroke-width='1.8' stroke-linejoin='round'%3E%3Cpath d='M3 8l9-5 9 5v8l-9 5-9-5z'/%3E%3Cpath d='M3 8l9 5 9-5'/%3E%3Cpath d='M12 13v8'/%3E%3C/svg%3E") center/contain no-repeat}
+.card.actful .row2 .miniblock>b{display:block;font-family:var(--fd);font-weight:700;color:var(--t1);font-size:15px;margin-bottom:4px;background:none;border:0;padding:0}
+
+/* عناوين الأقسام (miniblock خارج row2) */
+.card.actful>.miniblock{margin-top:17px}
+.card.actful>.miniblock>b{display:inline-flex;align-items:center;gap:8px;background:none;border:0;padding:0;margin:0 0 10px;
+  color:var(--t1);font-family:var(--fd);font-weight:700;font-size:16px}
+.card.actful>.miniblock>b::before{content:"";width:5px;height:19px;border-radius:3px;
+  background:linear-gradient(var(--gold),var(--gold2));display:inline-block}
+
+/* خطوات التنفيذ — بطاقات مرقّمة */
+.card.actful>ol{list-style:none;counter-reset:step;margin:4px 20px 0;padding:0}
+.card.actful>ol>li{counter-increment:step;position:relative;background:#fff;border:1px solid #eee4d3;border-radius:13px 9px 14px 8px/8px 13px 9px 14px;
+  padding:13px 15px;padding-inline-start:54px;margin-bottom:9px;font-size:14.5px;line-height:1.8;color:var(--ink);box-shadow:0 2px 8px rgba(20,64,46,.04)}
+.card.actful>ol>li::before{content:counter(step);position:absolute;inset-inline-start:11px;top:50%;transform:translateY(-50%);
+  width:31px;height:31px;border-radius:50%;background:linear-gradient(135deg,#2C6A4D,#0E6E6B);color:#fff;
+  font-family:var(--fd);font-weight:700;font-size:15.5px;display:grid;place-items:center;box-shadow:0 3px 9px rgba(14,110,107,.32)}
+
+/* أسئلة / اختيارات — رقائق */
+.card.actful .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:2px 20px 0}
+.card.actful .opt{background:#f6faf8;border:1px solid #dceae3;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:11px 13px;font-size:14px;line-height:1.75;color:var(--ink)}
+.card.actful .opt b{display:inline-block;color:#fff;background:var(--t2);border-radius:7px;padding:1px 9px;font-size:12.5px;margin-bottom:3px}
+
+/* صور النشاط (معرض مصغّر) */
+.card.actful .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:2px 20px 0}
+.card.actful .gitem{border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;overflow:hidden;background:#fff}
+.card.actful .imgwrap{height:120px;background:linear-gradient(135deg,#F4EDDE,#e9f2ee);display:grid;place-items:center;overflow:hidden}
+.card.actful .imgwrap img{width:100%;height:100%;object-fit:cover}
+.card.actful .cap{padding:8px 10px;font-size:12.5px;color:var(--t1);font-weight:700;line-height:1.5}
+.card.actful .cap small{display:block;color:var(--muted);font-weight:400;font-size:11.5px;margin-top:2px}
+
+/* دعاء الختام */
+.card.actful .central{margin:16px 20px 20px;background:linear-gradient(135deg,#1F4A39,#0E6E6B);color:#fff;
+  border-radius:16px 9px 18px 10px/10px 16px 9px 18px;padding:15px 18px;padding-inline-start:52px;position:relative;box-shadow:0 8px 20px rgba(14,110,107,.22)}
+.card.actful .central::before{content:"";position:absolute;inset-inline-start:16px;top:50%;transform:translateY(-50%);
+  width:24px;height:24px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe9b8' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20c0-8 5-14 16-15-1 10-7 15-16 15z'/%3E%3Cpath d='M4 20c3-6 7-9 12-10'/%3E%3C/svg%3E") center/contain no-repeat}
+.card.actful .central b{color:#ffe9b8;display:block;margin-bottom:3px;font-family:var(--fd)}
+
+/* اختيارات إضافية */
+.actbar{background:linear-gradient(120deg,var(--gold),var(--gold2));color:#3a2a06;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;font-weight:700;
+  font-family:var(--fd);padding:12px;text-align:center;margin-top:18px;font-size:15px;box-shadow:0 6px 16px rgba(199,154,59,.22)}
+.actgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+@media(max-width:600px){.actgrid{grid-template-columns:1fr}}
+.actgrid>div{background:#fff;border:1px solid var(--line);border-inline-start:3px solid var(--gold);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;
+  padding:12px 15px;font-size:14px;line-height:1.8;box-shadow:0 3px 10px rgba(20,64,46,.04)}
+.actgrid .t{color:var(--t1);font-family:var(--fd);font-weight:700;display:block;margin-bottom:6px;font-size:14.5px}
+.actgrid .bd{color:var(--elm);font-weight:700}
+</style>
+
+<style id="actscene-css">
+.card.actful>.actscene{margin-inline:0;padding:14px 18px 8px;text-align:center}
+.actscene .scene-lbl{font-family:var(--fb);font-size:11.5px;font-weight:700;color:var(--gold);letter-spacing:.3px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+.actscene .scene-lbl::before,.actscene .scene-lbl::after{content:"";height:1px;width:34px;background:linear-gradient(90deg,transparent,rgba(199,154,59,.6))}
+.actscene .scene-lbl::after{background:linear-gradient(90deg,rgba(199,154,59,.6),transparent)}
+.actscene svg{width:100%;max-width:440px;height:auto;display:block;margin:0 auto;border-radius:14px 8px 15px 9px/9px 14px 8px 15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== الغلاف ===== -->
+  <div class="cover">
+    <div class="cover-photo" style="background-image:url('units-art/unit-makhluq.jpg?v=1')"></div>
+    <div class="cover-main">
+      <div class="cover-l">
+        <span class="c-badge">مادة: كتابي المنير · الفصل الدراسي الأول</span>
+        <h1>وحدة أنا مخلوق كرّمني الله — اللقاء الثالث<br/>الألفاظ المتكرّرة والمتشابهة وأسماء الله</h1>
+        <div class="c-meta">المرحلة: تمهيدي (5–6 سنوات) · المجلس: مجلس القرآن · اليوم: الثلاثاء</div>
+      </div>
+      <div class="cover-r">
+        <div class="c-unit" style="background:#fff;padding:8px 10px;display:grid;place-items:center"><img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة" style="display:block;width:88px;height:88px;object-fit:contain"/></div>
+        <div class="c-dur">المدة: نصف ساعة</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== التبويبات ===== -->
+  <div class="tabs">
+    <button class="tab active" data-p="p1">دليل الدرس كامل</button>
+    <button class="tab" data-p="p2">التكامل اليومي</button>
+    <button class="tab" data-p="p3">التقويم</button>
+    <button class="tab" data-p="p4">الآداب الصفية</button>
+    <button class="tab" data-p="p5">تحضيرات ولي الأمر</button>
+    <button class="tab" data-p="p6">القيم والمفاهيم والاستراتيجيات</button>
+    <button class="tab" data-p="p7">الحصيلة اللغوية</button>
+    <button class="tab" data-p="p8">مراجع المعلمة</button>
+    <button class="tab gold" data-p="p9">الأركان التطبيقية</button>
+  </div>
+
+  <!-- ══════════ 1) دليل الدرس ══════════ -->
+  <div class="panel active" id="p1">
+
+    <!-- ترويسة الدرس: بوصلة اللقاء — سؤالٌ يفتح، وفكرةٌ تبقى -->
+    <div class="lhero">
+      <div class="lh focus">
+        <div class="lh-lbl"><i class="gi" data-i="سؤال اليوم" data-size="20"></i> سؤال التركيز</div>
+        <div class="lh-q">أيّ الألفاظ تكرّرت في سورة النبأ؟ وأيّها تشابهت؟ وأيّ أسماء الله ذُكرت فيها؟</div>
+        <div class="lh-foot">بوصلةُ اللقاء: تفتح به المعلمةُ الحوار وتعود إليه عند الغلق. <b>يقيسه</b> سؤالُ التغذية الراجعة الأول ومؤشراتُ النجاح.</div>
+      </div>
+      <div class="lh key">
+        <div class="lh-lbl"><i class="gi" data-i="الهدف" data-size="20"></i> جوهر اللقاء</div>
+        <div class="lh-t">في سورة النبأ ألفاظٌ متكرّرة نسمعها أكثر من مرّة، وألفاظٌ متشابهة يشبه بعضها بعضًا، ومنها اسمان من أسماء الله الحسنى: <b>الرحمن</b> و<b>الربّ</b>.</div>
+        <div class="lh-foot">تظهر موسّعةً في «المعنى المركزي» بسير اللقاء؛ لو لم يبقَ من الدرس إلا جملةٌ فهي هذه.</div>
+      </div>
+    </div>
+
+    <div class="quick-sheet">
+      <div class="qs-head"> ورقة التدريس السريعة — خطوات اللقاء أثناء الدرس</div>
+      <div class="qs-phases">
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">①</span> تهيئة وبداية اللقاء <span class="qs-min">٩ د</span></div>
+          <ul>
+                        <li>التاريخ الهجري وسؤال اليوم والطقس (أوّل لقاء اليوم) · إشارة نونية القحطاني.</li>
+            <li>آداب لقاء القرآن، ثم بطاقة «اعتقادنا في القرآن».</li>
+            <li>مراجعة علوم السورة ببطاقات المطابقة، ومعنى لفظ «النبأ».</li>
+          </ul>
+        </div>
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">②</span> بناء وسير اللقاء <span class="qs-min">١٣ د</span></div>
+          <ul>
+                        <li>معنى اللفظ المتكرّر ومعنى اللفظ المتشابه · تحديدهما بلونين على لوح السورة.</li>
+            <li>قراءة الآيات بصوتٍ واضح وعدّ مرّات ورود كلّ لفظ.</li>
+            <li>ملاحظة اسم الله «الرحمن» (٣٧ · ٣٨) واسم الله «الربّ» (٣٦ · ٣٧ · ٣٩).</li>
+            <li>تكرار سماع السورة.</li>
+          </ul>
+        </div>
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">③</span> إغلاق وتقويم <span class="qs-min">٨ د</span></div>
+          <ul>
+                        <li>نشاط «حدّد اللفظ على اللوح» والإشارة إلى أسماء الله وأرقام آياتها.</li>
+            <li>سؤال: كم مرّةً ذُكر «كلّا سيعلمون»؟ (مرّتين).</li>
+            <li>دعاء كفارة المجلس وختام اللقاء.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="qs-home"> <strong>ربط الأسرة:</strong> يُسمع وليُّ الأمر طفلَه سورةَ النبأ، ويطلب منه أن يخبره بكلمةٍ سمعها أكثر من مرّة.</div>
+      <div class="qs-note">ورقةٌ مرجعية سريعة أثناء الدرس — الخطوات فقط دون الأهداف والزيادات؛ والنصّ الكامل في تبويب «دليل الدرس كامل».</div>
+    </div>
+
+    <div class="sec-head first"><div class="num gold"><i class="gi" data-i="مسار بداية اللقاء" data-size="22"></i></div><h2>تهيئة بداية اليوم</h2><div class="rule"></div></div>
+    <div class="flow-card" style="border-inline-start:5px solid var(--gold)">
+      <p style="margin-bottom:10px"><strong>تُنفَّذ تهيئة بداية اليوم في أوّل لقاء من اليوم فقط — وهو لقاء «كتابي المنير»</strong> — ثم تنتقل المعلمة في بقيّة اللقاءات مباشرةً إلى إشارة بدء اللقاء.</p>
+      <div class="kitabi-hijri-tool" contenteditable="false" aria-label="أداة التاريخ الهجري في تهيئة اليوم">
+        <div class="kitabi-hijri-top">
+          <div class="kitabi-hijri-main">
+            <span class="kitabi-hijri-moon" aria-hidden="true"></span>
+            <div>
+              <div class="kitabi-hijri-kicker">التوقيت الهجري لتهيئة اليوم</div>
+              <div class="kitabi-hijri-date" id="kitabi-hijri-date">جارٍ حساب التاريخ الهجري…</div>
+              <div class="kitabi-hijri-sub" id="kitabi-hijri-sub">تاريخ اليوم الهجري بحسب تقويم المتصفح.</div>
+            </div>
+          </div>
+          <div class="kitabi-hijri-actions" aria-label="ضبط التاريخ الهجري">
+            <button type="button" onclick="kitabiAdjustHijri(-1)">− يوم</button>
+            <button type="button" onclick="kitabiAdjustHijri(1)">+ يوم</button>
+            <button type="button" onclick="kitabiResetHijri()">إعادة</button>
+            <span class="kitabi-hijri-status" id="kitabi-hijri-status"></span>
+          </div>
+        </div>
+        <div class="kitabi-hijri-prompt"><strong>تسأل المعلمة:</strong> ما تاريخنا الهجري اليوم؟ ثم تذكر اليوم والشهر والسنة، وتربطه ببداية حلقة كتابي المنير.</div>
+      </div>
+      <p style="margin-bottom:6px"><strong>سؤال اليوم:</strong> أيّ يوم هذا؟ تُنشد المعلمة مع الأطفال <strong>أنشودة أيّام الأسبوع</strong> كاملة، ثم تسأل: اليوم هو؟ — وأمس كان؟ — وغدًا سيكون بإذن الله يوم؟</p>
+      <p style="margin-bottom:6px"><strong>أنشودة الطقس بالحركات:</strong> تُشغّل المعلمة الأنشودة ويشارك الأطفال بالإشارات والحركات المناسبة، ثم الربط بالتوحيد: من خلق الشمس؟ ومن يرسل المطر؟ ومن يدبّر الطقس؟ ثم تؤكّد: الله سبحانه وتعالى.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 10px">
+        <a href="https://www.youtube.com/watch?v=8_BrLlgTOmw" target="_blank" rel="noopener" style="display:inline-block;background:var(--t2);color:#fff;border-radius:999px;padding:7px 15px;font-weight:700;text-decoration:none;font-size:13.5px">▶ أنشودة أيّام الأسبوع</a>
+        <a href="https://www.youtube.com/watch?v=hYhp-OpCfng" target="_blank" rel="noopener" style="display:inline-block;background:var(--t2);color:#fff;border-radius:999px;padding:7px 15px;font-weight:700;text-decoration:none;font-size:13.5px">▶ أنشودة الطقس بالحركات</a>
+      </div>
+      <p>تقول المعلمة: نبدأ يومنا بذكر الله وشكره على نعمة القرآن الذي سنتعلّمه.</p>
+    </div>
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="مسار بداية اللقاء" data-size="22"></i></div><h2>مسار بداية اللقاء</h2><span class="stage">① تهيئة</span><div class="rule"></div></div>
+    <div class="flow-card sig">
+      <h3><i class="gi" data-i="إشارات اللقاءات" data-size="20"></i> إشارة بدء اللقاء — نونية القحطاني</h3>
+      <div class="greet">السلام عليكم ورحمة الله وبركاته يا أحباب القرآن. <strong>نستمع الآن إلى إشارة بدء اللقاء لنعرف ماذا سيكون لقاؤنا.</strong></div>
+      <p><strong>منهجية الإشارة:</strong> تبدأ المعلمة بتحية الإسلام، ثم تدعو الأطفال للاستماع <strong>دون أن تُسمّي اللقاء</strong>؛ فيستمعون إلى أبيات <strong>نونية القحطاني</strong> ويتعرّفون على لقائهم بأنفسهم — فيرتبط كلّ لقاء بإشارته في أذهانهم — ثم <strong>تؤكّد المعلمة:</strong> «نعم، لقاؤنا الآن هو لقاء كتابي المنير، نتعلّم فيه القرآن»، فيتهيّؤون للجلوس والإنصات.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:stretch;margin:12px 0">
+        <div style="flex:1.5 1 300px;min-width:270px;background:linear-gradient(135deg,#EFFAF4,#FFFCF5);border:1px solid #C9DED5;border-right:6px solid var(--t2);border-radius:16px 9px 18px 10px/10px 16px 9px 18px;padding:14px 18px;text-align:center;font-family:var(--fd);font-size:18px;line-height:2.05;color:#1b5e34;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;justify-content:center">
+          يا مُنْزِلَ الآيَاتِ وَالْفُرْقَانِ<br/>
+          بَيْنِي وَبَيْنَكَ حُرْمَةُ الْقُرْآنِ<br/>
+          اِشْرَحْ بِهِ صَدْرِي لِمَعْرِفَةِ الْهُدَى<br/>
+          وَاعْصِمْ بِهِ قَلْبِي مِنَ الشَّيْطَانِ<br/>
+          يَسِّرْ بِهِ أَمْرِي وَاقْضِ مَآرِبِي<br/>
+          وَأَجِرْ بِهِ جَسَدِي مِنَ النِّيرَانِ
+        </div>
+        <div class="sig-video" style="flex:1 1 260px;min-width:250px;max-width:430px;display:flex;flex-direction:column;justify-content:center">
+          <div style="display:flex;align-items:center;gap:8px;color:var(--t2);font-weight:800;font-size:13.5px;margin-bottom:8px"><span>▶</span><span>فيديو إشارة بدء لقاء كتابي المنير</span></div>
+          <video controls preload="metadata" style="width:100%;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;border:1px solid var(--line);display:block"><source src="assets/video_013_9f80e8e0f229034b.mp4" type="video/mp4"/>لا يدعم المتصفح تشغيل الفيديو المضمّن.</video>
+          <div style="color:var(--muted);font-size:12px;margin-top:6px">تستعين المعلمة بالفيديو لضبط نغمة الإشارة، مع بقاء الأبيات ظاهرة في البطاقة.</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin:2px 0 10px"><a href="https://www.youtube.com/watch?v=aJPA3weJ7cc" target="_blank" rel="noopener" style="display:inline-block;background:var(--gold);color:#3a2a06;border-radius:999px;padding:8px 18px;font-weight:700;text-decoration:none;font-size:14.5px">▶ تشغيل نشيد كتابي المنير</a></div>
+      <div class="greet"><strong>جواب الإشارة:</strong> «لقاؤنا كتابي المنير، نتعلم فيه القرآن».</div>
+    </div>
+    <div class="flow-card law">
+      <h3>آداب لقاء القرآن</h3>
+      <div class="law-grid">
+        <div><b>أجلس بسكينة ووقار</b><small>يجلس الأطفال على شكل حلقة علم وأمامهم لوحةُ الآيات المقرَّرة.</small></div>
+        <div><b>أستمع وأنصت لكلام الله</b><small>حسن الإنصات من أدب المجلس.</small></div>
+        <div><b>أستعيذ وأبسمل قبل القراءة</b><small>قبل أن أبدأ القرآن.</small></div>
+        <div><b>أرتّل بصوت جميل واضح</b><small>أقرأ القرآن ترتيلًا.</small></div>
+      </div>
+    </div>
+    <div class="flow-card belief">
+      <h3>الاعتقاد — اعتقادنا في القرآن الكريم</h3>
+      <p style="margin-bottom:10px">أصلٌ ثابتٌ في جميع لقاءات كتابي المنير؛ تعرض المعلمة هذه البطاقة <strong>وتقرأها عليهم</strong>، ثم يردّدونها معها.</p>
+      <figure style="margin:0">
+        <img src="assets/gq_kitabi_belief_quran_card.webp" alt="اعتقادنا في القرآن الكريم" loading="lazy" style="width:100%;max-width:760px;display:block;margin:0 auto;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;border:1px solid var(--line);box-shadow:var(--shadow-sm)"/>
+        <figcaption style="text-align:center;color:var(--muted);font-size:12.5px;margin-top:8px">تعرض المعلمة هذه البطاقة في كل لقاء من لقاءات كتابي المنير وتقرأها عليهم.</figcaption>
+      </figure>
+      <div class="gq-belief-quran-audio" style="margin:12px auto 0;max-width:760px;background:linear-gradient(135deg,#EFFAF4,#FFFCF5);border:1px solid #C9DED5;border-right:6px solid #286A54;border-radius:16px 9px 18px 10px/10px 16px 9px 18px;padding:12px 14px;text-align:right;box-shadow:var(--shadow-sm)"><div style="display:flex;align-items:center;gap:9px;margin-bottom:8px;color:#286A54;font-size:13px;font-weight:900;line-height:1.7"><span style="width:34px;height:34px;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;background:#286A54;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex:0 0 auto">صوت</span><span>التسجيل الصوتي لبطاقة: اعتقادنا في القرآن</span></div><audio controls preload="metadata" style="width:100%;height:42px;display:block"><source src="assets/gq_belief_quran_audio.m4a" type="audio/mp4"/>المتصفح لا يدعم تشغيل الصوت.</audio></div>
+    </div>
+    <div class="flow-card rev">
+      <h3><i class="gi" data-i="استدعاء السابق" data-size="20"></i> مراجعة سريعة</h3>
+            <p>تراجع المعلمةُ علومَ السورة ببطاقات المطابقة (اسمها <strong>النبأ</strong> · ٤٠ آية · مكّية)، ثم تُذكّرهم بما سبق: «النبأ» معناها الخبرُ العظيم، وقد ورد اللفظُ مرّةً واحدةً في الآية ٢؛ تمهيدًا لملاحظة الألفاظ المتكرّرة والمتشابهة اليوم.</p>
+    </div>
+
+    
+
+    <div class="les">
+      <aside class="side">
+        <div class="side-title"> حول الدرس</div>
+        <div class="card">
+          <div class="lbl">أهداف اللقاء</div>
+          <div class="objgrid">
+                        <div>
+              <div class="lbl">وجدانية</div>
+              <div class="obj"><span class="n o">١</span><span class="t">أن يعظّم أسماءَ الله الحسنى الواردة في السورة</span></div>
+              <div class="obj"><span class="n o">٢</span><span class="t">أن يشعر بأنّ الذي خلقه هو الذي يرحمه ويربّيه</span></div>
+            </div>
+            <div>
+              <div class="lbl">معرفية</div>
+              <div class="obj"><span class="n">١</span><span class="t">أن يعرف معنى اللفظ المتكرّر واللفظ المتشابه</span></div>
+              <div class="obj"><span class="n">٢</span><span class="t">أن يسمّي اسمَي الله: الرحمن والربّ</span></div>
+            </div>
+            <div>
+              <div class="lbl">مهارية</div>
+              <div class="obj"><span class="n g">١</span><span class="t">أن يميّز بين اللفظ المتكرّر والمتشابه بالألوان</span></div>
+              <div class="obj"><span class="n g">٢</span><span class="t">أن يعدّ مرّات ورود اللفظ</span></div>
+            </div>
+            <div>
+              <div class="lbl">إجرائية</div>
+              <div class="obj"><span class="n p">١</span><span class="t">يشير إلى اللفظ المطلوب على اللوح</span></div>
+              <div class="obj"><span class="n p">٢</span><span class="t">يحدّد مواضع اسمَي الله بأرقام آياتها</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="lbl">المفردات</div>
+          <div class="chips">
+            <span class="chip c">المتكرّر</span><span class="chip c">المتشابه</span><span class="chip c">الرحمن</span><span class="chip c">الربّ</span><span class="chip c">أوتادًا</span><span class="chip c">مَآبًا</span><span class="chip c">كلّا سيعلمون</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="lbl">الآيات والأحاديث</div>
+                    <div class="mini"> اسم الله «الربّ»: ﴿جَزَاءً مِّن رَّبِّكَ﴾ <span class="src">النبأ: 36 · 37 · 39</span></div>
+          <div class="mini" style="margin-top:6px"> اسم الله «الرحمن»: ﴿…وَمَا بَيْنَهُمَا الرَّحْمَٰنِ﴾ <span class="src">النبأ: 37 · 38</span></div>
+          <div class="mini" style="margin-top:6px;color:var(--muted,#565f58)">لفظ متكرّر: ﴿كَلَّا سَيَعْلَمُونَ﴾ (٤ · ٥) — مرّتين.</div>
+        </div>
+        <div class="card" style="border-inline-start:4px solid #C79A3B;background:#fffdf6">
+          <div class="lbl" style="color:#8a6a12"> المثير</div>
+                    <div class="mini"> قراءةُ آيات السورة بصوتٍ واضح وعدُّ الألفاظ المتكرّرة</div>
+          <div class="mini" style="margin-top:6px"> تحديدُ الألفاظ المتكرّرة والمتشابهة بلونين على اللوح</div>
+          <div class="mini" style="margin-top:6px;color:var(--muted,#565f58)">تمهيدًا لاسمَي الله في السورة: الرحمن والربّ.</div>
+        </div>
+        <div class="card">
+          <div class="lbl">المواد المساعدة</div>
+                    <div class="mini"> لوحة السورة (تُحدَّد عليها الألفاظ بلونين)</div>
+          <div class="mini">• بطاقة علوم السورة للمراجعة</div>
+          <div class="mini">• أقلام سبورة بألوانٍ متعدّدة · مؤشّر إشارة</div>
+          <div class="mini">• حوامل ومصاحف · سمّاعة</div>
+        </div>
+        <div class="card">
+          <div class="lbl">ترابط المواد</div>
+          <div class="chips">
+                        <span class="chip v">علّمني ربي</span><span class="chip v">قال رسولي</span><span class="chip v">أدب واقتداء</span><span class="chip v">أحبك ربي</span><span class="chip v">لساني</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="mainflow">
+        <div class="sec-head first"><div class="num"><i class="gi" data-i="سير اللقاء" data-size="22"></i></div><h2>سير اللقاء</h2><span class="stage s2">② سير وإغلاق</span><div class="rule"></div></div>
+        <div class="flow">
+                    <div class="step"><b class="k">اللفظ المتكرّر والمتشابه:</b> تُخبرهم أنّنا اليوم نلاحظ <b>الألفاظ المتكرّرة</b> (نسمع اللفظَ نفسه أكثر من مرّة)، و<b>الألفاظ المتشابهة</b> (ألفاظٌ يشبه بعضها بعضًا).</div>
+          <div class="step"><b class="k">التمييز بلونين:</b> تحدّد المعلمةُ لونين على لوح السورة: لونٌ للألفاظ المتكرّرة ولونٌ للمتشابهة، وتقرأ الآياتِ بصوتٍ واضح.</div>
+          <div class="step"><b class="k">عدُّ المتكرّر:</b> بعد كلّ لفظٍ تعدّ معهم كم مرّةً ذُكر — مثل ﴿كَلَّا سَيَعْلَمُونَ﴾ (٤) ﴿ثُمَّ كَلَّا سَيَعْلَمُونَ﴾ (٥): مرّتين؛ وتكرارُ ﴿وَجَعَلْنَا…﴾ في نِعَم الله.</div>
+          <div class="bc-embed ulum-flow" id="ulumFlowCard"><svg class="wm" preserveAspectRatio="xMidYMid slice" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="bcStars" width="58" height="58" patternUnits="userSpaceOnUse"><g fill="#2D7A4B" opacity="0.06"><rect x="16" y="16" width="24" height="24" rx="2"/><rect x="16" y="16" width="24" height="24" rx="2" transform="rotate(45 28 28)"/></g></pattern></defs><rect width="100%" height="100%" fill="url(#bcStars)"/></svg><div class="bc-top"><div class="bc-brand"><img src="brand/logo-ghars.webp" alt="نادي غرس القيم"/><b>كتابي المنير</b></div><div class="bc-badge">أسماءُ الله في السورة</div></div><div class="bc-grid"><div class="bc-side"><div class="bc-arch"><div class="bc-fact"><div class="l">الرحمن</div><div class="v">٣٧ · ٣٨</div></div><div class="bc-fact"><div class="l">الربّ</div><div class="v">٣٦ · ٣٧ · ٣٩</div></div><div class="bc-fact"><div class="l">كلّا سيعلمون</div><div class="v">مرّتين</div></div></div></div><div class="bc-main"><div class="bc-kicker">أسماءُ الله الحسنى</div><div class="bc-title">في سُورةِ النَّبأ</div><div class="bc-quote">”</div><div class="bc-verses"><div class="bc-vrow"><div class="t">الرحمن</div><div class="a">رحمتُه وسِعت كلَّ شيء</div></div><div class="bc-vrow"><div class="t">الربّ</div><div class="a">خالقي ومالكي والمربّي بنعمه</div></div></div><div class="bc-axis">محورُها: <b>معرفةُ أسماء الله في كلامه · الدقّةُ في ملاحظة القرآن</b></div></div></div></div>
+          <div class="step"><b class="k">اسم الله «الرحمن»:</b> ﴿رَّبِّ السَّمَاوَاتِ وَالْأَرْضِ وَمَا بَيْنَهُمَا الرَّحْمَٰنِ﴾ (٣٧)، ﴿…إِلَّا مَنْ أَذِنَ لَهُ الرَّحْمَٰنُ﴾ (٣٨) — رحمتُه وسِعت كلَّ شيء.</div>
+          <div class="step"><b class="k">اسم الله «الربّ» (تعلّمناه في أحبّك ربّي):</b> ﴿جَزَاءً مِّن رَّبِّكَ﴾ (٣٦)، ﴿…الرَّحْمَٰنِ﴾ (٣٧)، ﴿…إِلَىٰ رَبِّهِ مَآبًا﴾ (٣٩) — خالقي ومالكي والمربّي بنعمه.</div>
+          <div class="step"><b class="k">تكرار السماع:</b> تُكرّر المعلمةُ سماعَ السورة قبل الانتقال إلى التغذية الراجعة.</div>
+          <div class="step"><b class="k">جملة اللقاء الختامية:</b> «في سورتنا ألفاظٌ تتكرّر وألفاظٌ تتشابه، وفيها اسمان من أسماء الله: <b>الرحمن</b> و<b>الربّ</b>».</div>
+        </div>
+                <div class="story">
+          <div class="h"> وقفة تدبّر: الذي خلقني هو الذي يرحمني ويربّيني <span>(تربطها المعلمة بمعنى الوحدة)</span></div>
+          <div class="b">
+            <p>«اسمُ الله <b>الربّ</b> يعني أنّه خالقي ومالكي والمربّي لي بنعمه، واسمه <b>الرحمن</b> يعني أنّ رحمته وسِعت كلَّ شيء؛ فالذي خلقني هو الذي يرحمني ويربّيني — وهذا معنى تكريم الله لمخلوقه».</p>
+            <p><strong>تنبيه منهجي:</strong> تُربط أسماءُ الله بمعانيها في وجدان الطفل، لا بالحفظ المجرّد للأرقام.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="الوسائل والأدوات" data-size="22"></i></div><h2>الوسائل والصور المعروضة في اللقاء</h2><div class="rule"></div></div>
+    
+    <style>
+.bc-embed{position:relative;max-width:880px;margin:2px auto 8px;background:#F6F1E6;border:2px solid #ddcfa8;border-radius:20px;overflow:hidden;padding:18px 22px 20px;box-shadow:0 10px 26px rgba(20,50,35,.13);display:flex;flex-direction:column}
+.bc-embed .wm{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.bc-embed .bc-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.bc-embed .bc-brand{display:flex;align-items:center;gap:9px}
+.bc-embed .bc-brand img{height:44px;width:auto;display:block}
+.bc-embed .bc-brand b{font-family:var(--fd);color:#1b5e34;font-size:15.5px}
+.bc-embed .bc-badge{font-family:var(--fd);color:#4a5a50;font-size:13px;border:1.5px solid #9aa79d;border-radius:999px;padding:5px 16px;background:rgba(255,255,255,.55)}
+.bc-embed .bc-grid{position:relative;z-index:2;display:flex;gap:20px;margin-top:14px;align-items:stretch;flex-wrap:wrap}
+.bc-embed .bc-side{flex:1 1 240px;display:flex}
+.bc-embed .bc-arch{flex:1;background:#eef4f0;border:2px solid #2D7A4B;border-radius:70px 70px 14px 14px;padding:18px 16px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.bc-embed .bc-fact{text-align:center}
+.bc-embed .bc-fact+.bc-fact{border-top:1px dashed #c4d8cb;padding-top:10px}
+.bc-embed .bc-fact .l{font-family:var(--fd);color:#9a7d33;font-weight:700;font-size:13px}
+.bc-embed .bc-fact .v{font-family:var(--fd);color:#1b5e34;font-weight:700;font-size:26px;margin-top:1px}
+.bc-embed .bc-fact .v small{font-size:13px;color:#565f58;font-weight:400}
+.bc-embed .bc-main{flex:1 1 320px;display:flex;flex-direction:column;justify-content:center}
+.bc-embed .bc-kicker{font-family:var(--fd);color:#2D7A4B;font-size:14px;letter-spacing:1px}
+.bc-embed .bc-title{font-family:var(--fd);font-weight:700;color:#1b5e34;font-size:38px;line-height:1.15;margin-top:2px}
+.bc-embed .bc-quote{font-family:Georgia,serif;font-size:44px;color:#cdb680;line-height:0;height:14px;margin:12px 0 4px}
+.bc-embed .bc-verses{display:flex;flex-direction:column;gap:7px}
+.bc-embed .bc-vrow .t{font-family:var(--fd);color:#C79A3B;font-weight:700;font-size:12.5px}
+.bc-embed .bc-vrow .a{font-family:'Noto Naskh Arabic',serif;color:#12271d;font-size:18px;line-height:1.8}
+.bc-embed .bc-axis{margin-top:11px;color:#3f5147;font-size:13px;line-height:1.7}
+.bc-embed .bc-axis b{color:#2D7A4B;font-family:var(--fd)}
+.ulum-flow{margin:16px 0 6px}
+.ulum-mini{width:100%;height:100%;background:#F6F1E6;border:1.5px solid #ddcfa8;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:12px;text-align:center}
+.ulum-mini .um-badge{font-family:var(--fd);font-size:11px;color:#4a5a50;border:1px solid #9aa79d;border-radius:999px;padding:2px 12px;background:rgba(255,255,255,.6)}
+.ulum-mini .um-name{font-family:var(--fd);font-weight:700;color:#1b5e34;font-size:22px;line-height:1.2}
+.ulum-mini .um-facts{font-family:var(--fd);color:#2D7A4B;font-size:12.5px}
+.gitem-ulum{cursor:zoom-in}
+.gq-lb .lb-card{display:none;width:94vw;max-width:900px;max-height:88vh;overflow:auto}
+.gq-lb.card-open .lb-card{display:block}
+.gq-lb.card-open figure{display:none}
+</style>
+    <div class="gallery">
+            <div class="gitem gitem-ulum" data-enlarge="ulumFlowCard" title="اضغط لتكبير بطاقة أسماء الله"><div class="imgwrap" style="height:180px;padding:0"><div class="ulum-mini"><span class="um-badge">أسماء الله</span><span class="um-name">الرحمن · الربّ</span><span class="um-facts">٣٧·٣٨ · ٣٦·٣٧·٣٩</span></div></div><div class="cap">بطاقة أسماء الله في السورة<small>اضغط للتكبير ⤢</small></div></div>
+      <div class="gitem"><div class="imgwrap" style="height:230px"><img src="units-art/makhluq-activities/lawhat-naba.jpg" alt="لوحة السورة محدَّدًا عليها الألفاظ بلونين" loading="lazy"/></div><div class="cap">لوحة السورة<small>تُحدَّد الألفاظ المتكرّرة والمتشابهة بلونين</small></div></div>
+      <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;background:var(--elm-soft)"><svg viewBox="0 0 120 120" width="84" height="84" role="img" aria-label="أقلام تلوين" style="filter:drop-shadow(0 4px 10px rgba(20,50,35,.22))"><rect x="28" y="30" width="14" height="60" rx="6" fill="#1E5631" transform="rotate(-12 35 60)"/><rect x="54" y="28" width="14" height="62" rx="6" fill="#C79A3B"/><rect x="80" y="30" width="14" height="60" rx="6" fill="#0d6e6e" transform="rotate(12 87 60)"/></svg></div><div class="cap">أقلام التصنيف<small>لونٌ للمتكرّر ولونٌ للمتشابه</small></div></div>
+    </div>
+    <a href="surah-ulum-infitar-cards.html" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;justify-content:center;max-width:1000px;margin:10px auto 0;padding:11px 16px;background:var(--t1);color:#fff;border-radius:13px 9px 14px 8px/8px 13px 9px 14px;text-decoration:none;font-weight:700;font-size:13.5px">🖨️ بطاقاتُ علوم السورة والمطابقة جاهزةً للطباعة — اطبعيها وقُصّيها للنشاط ↗</a>
+
+    <div class="sec-head"><div class="num gold"><i class="gi" data-i="النشاط المصاحب" data-size="22"></i></div><h2>النشاط المصاحب</h2><div class="rule"></div></div>
+    <div class="card actful">
+      <h3>حدّد اللفظ على اللوح</h3>
+      <div class="actscene"><div class="scene-lbl">فكرةُ النشاط بلمحة</div><svg viewBox="0 0 440 210" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<linearGradient id="as-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf6ea"/><stop offset="1" stop-color="#f3ead6"/></linearGradient>
+<radialGradient id="as-warm" cx="50%" cy="10%" r="80%"><stop offset="0" stop-color="rgba(255,244,214,.7)"/><stop offset="1" stop-color="rgba(255,244,214,0)"/></radialGradient>
+<linearGradient id="as-ttop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c39a63"/><stop offset="1" stop-color="#a97c47"/></linearGradient>
+<linearGradient id="as-tedge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a6236"/><stop offset="1" stop-color="#66451f"/></linearGradient>
+<linearGradient id="as-grn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f9159"/><stop offset="1" stop-color="#1E5631"/></linearGradient>
+<linearGradient id="as-gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDCE78"/><stop offset="1" stop-color="#B0842E"/></linearGradient>
+<linearGradient id="as-cream" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#efe4cf"/></linearGradient>
+<linearGradient id="as-boxF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8F2E1"/><stop offset="1" stop-color="#ECDFC2"/></linearGradient>
+<linearGradient id="as-boxS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDCBA4"/><stop offset="1" stop-color="#C6AE80"/></linearGradient>
+<linearGradient id="as-roofF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D89A45"/><stop offset="1" stop-color="#B46F2C"/></linearGradient>
+<linearGradient id="as-roofS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B7772F"/><stop offset="1" stop-color="#96591f"/></linearGradient>
+<radialGradient id="as-sun" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#FCE08A"/><stop offset="1" stop-color="#E9A93B"/></radialGradient>
+<radialGradient id="as-moon" cx="38%" cy="34%" r="70%"><stop offset="0" stop-color="#F3EFE0"/><stop offset="1" stop-color="#D9D2BC"/></radialGradient>
+<radialGradient id="as-ball" cx="38%" cy="32%" r="72%"><stop offset="0" stop-color="#4fb06f"/><stop offset="1" stop-color="#1E5631"/></radialGradient>
+<linearGradient id="as-red" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d1483c"/><stop offset="1" stop-color="#a2352b"/></linearGradient>
+<linearGradient id="as-metal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8b939a"/><stop offset=".5" stop-color="#c6cdd2"/><stop offset="1" stop-color="#8b939a"/></linearGradient>
+<linearGradient id="as-basket" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c89a5e"/><stop offset="1" stop-color="#9c7238"/></linearGradient>
+<linearGradient id="as-blA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5aa0dd"/><stop offset="1" stop-color="#3576b4"/></linearGradient>
+<linearGradient id="as-blB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0705f"/><stop offset="1" stop-color="#b8463a"/></linearGradient>
+<linearGradient id="as-blC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDCE78"/><stop offset="1" stop-color="#C79A3B"/></linearGradient>
+<filter id="as-soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.4"/></filter>
+</defs><rect x="0" y="0" width="440" height="210" fill="url(#as-bg)"/><rect x="0" y="0" width="440" height="152" fill="#f0e7d2"/><rect x="0" y="0" width="440" height="152" fill="url(#as-warm)"/><rect x="0" y="148" width="440" height="4" fill="rgba(120,90,50,.18)"/><rect x="0" y="150" width="440" height="60" fill="url(#as-ttop)"/><rect x="0" y="188" width="440" height="22" fill="url(#as-tedge)"/><rect x="0" y="150" width="440" height="7" fill="rgba(255,246,228,.35)"/><g stroke="rgba(90,58,26,.22)" stroke-width="1.5" stroke-linecap="round"><path d="M20 160 H150"/><path d="M40 172 H210"/><path d="M250 158 H400"/><path d="M270 178 H430"/><path d="M60 182 H180"/></g><ellipse cx="92" cy="151" rx="46" ry="6.5" fill="rgba(50,32,14,.30)" filter="url(#as-soft)"/>
+<ellipse cx="224" cy="151" rx="46" ry="6.5" fill="rgba(50,32,14,.30)" filter="url(#as-soft)"/>
+<ellipse cx="358" cy="151" rx="46" ry="6.5" fill="rgba(50,32,14,.30)" filter="url(#as-soft)"/>
+<g transform="translate(92,150)"><g>
+<rect x="-27" y="-72" width="54" height="72" rx="4" fill="url(#as-grn)" stroke="#123f26" stroke-width="1.5"/>
+<rect x="-27" y="-72" width="8" height="72" rx="2" fill="rgba(0,0,0,.16)"/>
+<rect x="20" y="-70" width="6" height="68" fill="#f2e7cf"/>
+<rect x="-15" y="-55" width="34" height="4.5" rx="2.2" fill="url(#as-gold)"/>
+<rect x="-11" y="-46" width="26" height="3.2" rx="1.6" fill="rgba(255,233,184,.75)"/>
+<path d="M3 -72 h9 v20 l-4.5 -5 -4.5 5 z" fill="url(#as-gold)" stroke="#a9822f" stroke-width=".7"/>
+</g></g>
+<g transform="translate(224,150)"><g>
+<line x1="-16" y1="0" x2="-26" y2="-84" stroke="#6d4a29" stroke-width="5.5" stroke-linecap="round"/>
+<line x1="18" y1="0" x2="8" y2="-84" stroke="#6d4a29" stroke-width="5.5" stroke-linecap="round"/>
+<line x1="0" y1="-2" x2="22" y2="-72" stroke="#5f3f22" stroke-width="4.5" stroke-linecap="round"/>
+<rect x="-42" y="-92" width="80" height="62" rx="6" fill="url(#as-grn)"/>
+<rect x="-36" y="-86" width="68" height="50" rx="3.5" fill="url(#as-cream)"/>
+<rect x="-29" y="-79" width="26" height="19" rx="2.5" fill="#e7f1ec" stroke="#9cc0ad" stroke-width="1.3"/>
+<circle cx="-16" cy="-72" r="3.2" fill="#7fae94"/>
+<rect x="2" y="-77" width="24" height="17" rx="2.5" fill="#faf1de" stroke="#e0c78e" stroke-width="1.3"/>
+<circle cx="14" cy="-71" r="3" fill="#e3c583"/>
+<rect x="-30" y="-48" width="56" height="4" rx="2" fill="#dbe6df"/>
+<rect x="-44" y="-32" width="84" height="7" rx="3.5" fill="#5f3f22"/>
+</g></g>
+<g transform="translate(358,150)"><g>
+<g transform="translate(-19,0) rotate(-13)"><rect x="-22" y="-64" width="44" height="64" rx="7" fill="#fff" stroke="url(#as-grn)" stroke-width="2.6"/><rect x="-15" y="-57" width="30" height="25" rx="3" fill="#e9f3ee"/><circle cx="-5" cy="-46" r="4.3" fill="#7fae94"/><rect x="-15" y="-28" width="30" height="4" rx="2" fill="#d9e7e0"/><rect x="-15" y="-20" width="20" height="4" rx="2" fill="#e6efe9"/></g>
+<g transform="translate(0,-2)"><rect x="-22" y="-66" width="44" height="66" rx="7" fill="#fff" stroke="url(#as-grn)" stroke-width="2.6"/><rect x="-15" y="-59" width="30" height="25" rx="3" fill="#faf1de"/><circle cx="-5" cy="-48" r="4.3" fill="#e3c583"/><rect x="-15" y="-30" width="30" height="4" rx="2" fill="#eedcb6"/><rect x="-15" y="-22" width="20" height="4" rx="2" fill="#f3e8cf"/></g>
+<g transform="translate(19,0) rotate(13)"><rect x="-22" y="-64" width="44" height="64" rx="7" fill="#fff" stroke="url(#as-gold)" stroke-width="2.6"/><rect x="-15" y="-57" width="30" height="25" rx="3" fill="#e9f3ee"/><circle cx="-5" cy="-46" r="4.3" fill="#7fae94"/><rect x="-15" y="-28" width="30" height="4" rx="2" fill="#d9e7e0"/><rect x="-15" y="-20" width="20" height="4" rx="2" fill="#e6efe9"/></g>
+</g></g>
+</svg></div>
+      <div class="row2">
+        <div class="miniblock"><b>الهدف</b>أن يحدّد الطفلُ اللفظَ المطلوب على لوحة السورة، وأن يذكر أسماءَ الله الواردة فيها وأرقامَ آياتها.</div>
+        <div class="miniblock"><b>الأدوات</b>لوحة السورة · أقلام سبورة بألوانٍ متعدّدة · مؤشّر إشارة.</div>
+      </div>
+      <div class="miniblock"><b>التهيئة</b>تعرض المعلمةُ لوحةَ السورة محدَّدةً بالألوان، ويشير الطفلُ بالمؤشّر إلى اللفظ المطلوب بالدور.</div>
+      <div class="miniblock" style="margin-top:8px"><b>خطوات التنفيذ</b></div>
+      <ol>
+                <li>يحاول الطفلُ تحديدَ اللفظ المطلوب على اللوح ويشير إليه.</li>
+        <li>اسم الله «الربّ»: ٣٦ – ٣٧ – ٣٩. اسم الله «الرحمن»: ٣٧ – ٣٨.</li>
+        <li>كم مرّةً ذُكر لفظ «كلّا سيعلمون»؟ مرّتين.</li>
+      </ol>
+      <div class="miniblock" style="margin-top:8px"><b>أسئلة أثناء النشاط (التغذية الراجعة)</b></div>
+      <div class="opts">
+                <div class="opt">أين اسم الله «الربّ»؟ (٣٦ · ٣٧ · ٣٩)</div>
+        <div class="opt">أين اسم الله «الرحمن»؟ (٣٧ · ٣٨)</div>
+        <div class="opt">كم مرّةً ذُكر «كلّا سيعلمون»؟ (مرّتين)</div>
+      </div>
+      <div class="miniblock" style="margin-top:10px"><b>اختيارات المعلمة حسب حاجة الطفل</b></div>
+      <div class="opts">
+                <div class="opt"><b>الخجول:</b> يشير إلى موضعٍ واحد بمساعدة المعلمة.</div>
+        <div class="opt"><b>السريع:</b> يحدّد مواضعَ الاسمين ويعدّ لفظًا متكرّرًا.</div>
+        <div class="opt"><b>كثير الحركة:</b> يتولّى توزيع أقلام الألوان وجمعها.</div>
+      </div>
+      <div class="central" style="margin-top:12px;background:linear-gradient(135deg,#1b5e34,#1E5631)"><b> الجملة الختامية</b>الحمد لله الذي علّمنا أسماءه الحسنى في كتابه.</div>
+    </div>
+
+    <div class="actbar"> اختيارات الأنشطة الإضافية</div>
+    <div class="actgrid">
+            <div><span class="t">تلبية الاحتياجات الفردية</span><span class="bd">البطيء:</span> إعادة قراءة اللفظ والإشارة بلطف. <span class="bd">الخجول:</span> «جزاك الله خيرًا» عند أوّل مشاركة. <span class="bd">النشيط:</span> يوزّع الأقلام الملوّنة.</div>
+      <div><span class="t">الربط بالمواد الأخرى</span><span class="bd">أحبك ربي:</span> اسم الله الربّ. <span class="bd">لساني:</span> التصنيف بالألوان والتمييز. <span class="bd">مهاراتي:</span> عدّ مرّات الورود وقراءة أرقام الآيات.</div>
+      <div><span class="t">التوسيع والإثراء</span><span class="bd">بيتي:</span> يخبر أسرته بكلمةٍ سمعها أكثر من مرّة. <span class="bd">فني:</span> تلوين لفظين بلونين مختلفين.</div>
+      <div><span class="t">اقتراحات للتكرار</span> مراجعة أسماء الله وأرقام آياتها ٣ دقائق في مطلع اللقاء التالي.</div>
+    </div>
+
+    <div class="dua">
+      <div class="l">كفارة المجلس · خاتمة اللقاء</div>
+      <div class="x">سبحانك اللهم وبحمدك، أشهد أن لا إله إلا أنت، أستغفرك وأتوب إليك.</div>
+    </div>
+  </div>
+
+  <!-- ══════════ 2) التكامل اليومي ══════════ -->
+  <div class="panel" id="p2">
+    <div class="sec-head first"><div class="num"><i class="gi" data-i="التكامل اليومي" data-size="22"></i></div><h2>العلاقة التكاملية لهذا اللقاء</h2><div class="rule"></div></div>
+    <div class="card cardblue">
+            <div class="mini" style="font-size:16px"><b style="color:var(--t1)">الفكرة الناظمة للوحدة:</b> الذي خلقني هو الذي يرحمني ويربّيني بنعمه — فالله ربّي ورحمنُ عليّ.</div>
+      <div class="mini" style="font-size:16px;margin-top:8px"><b style="color:var(--t1)">امتدادٌ للوحدة:</b> معرفةُ اسمَي الله «الربّ» و«الرحمن» صميمُ معنى «أنا مخلوقٌ كرّمني الله».</div>
+      <div class="mini" style="font-size:16px;margin-top:8px"><b style="color:var(--t1)">هذا اللقاء:</b> كتابي المنير — الألفاظ المتكرّرة وأسماء الله في السورة.</div>
+    </div>
+    <div class="sec-head"><div class="num" style="background:var(--elm)"><i class="gi" data-i="التكامل اليومي" data-size="22"></i></div><h2>كيف يتكامل هذا اللقاء مع بقية دروس اليوم والوحدة؟</h2><div class="rule"></div></div>
+    <p class="mini" style="font-size:15px;margin-bottom:10px">التعليمُ التكامليّ = يعيشُ الطفلُ <b>المعنى الواحد</b> في كلّ حصص يومه؛ فأسماءُ الله في السورة تربط القرآنَ بـ«أحبّك ربّي» واللغةِ والعدد. وهذه جسورُ الربط:</p>
+    <div class="cg">
+            <div class="ci"><div class="term"><i class="gi" data-i="أحبك ربي" data-size="18"></i> أحبك ربي — اسم الله الربّ</div><div class="def">اسمُ الله «الربّ» الذي تعلّموه في «أحبّك ربّي» يجدونه في سورتهم، ومعه «الرحمن». <b>حركةُ المعلمة:</b> «تذكّرون اسم الله الربّ؟ ها هو في سورتنا».</div></div>
+      <div class="ci"><div class="term"><i class="gi" data-i="لساني عربي" data-size="18"></i> لساني — التصنيف والتمييز</div><div class="def">الملاحظةُ والتصنيفُ بالألوان والتمييزُ بين المتشابه والمتكرّر: إدراكٌ سمعيٌّ وبصريّ. <b>حركةُ المعلمة:</b> «أيّهما لونُ المتكرّر؟».</div></div>
+      <div class="ci"><div class="term"><i class="gi" data-i="مهاراتي" data-size="18"></i> مهاراتي — العدّ وأرقام الآيات</div><div class="def">عدُّ مرّات ورود اللفظ وقراءةُ أرقام الآيات وترتيبُها. <b>حركةُ المعلمة:</b> «كم مرّةً ذُكر هذا اللفظ؟».</div></div>
+      <div class="ci"><div class="term"><i class="gi" data-i="علّمني ربي" data-size="18"></i> علّمني ربي — الله الخالق الربّ</div><div class="def">الذي خلقني هو ربّي المربّي بنعمه؛ فأعرف قدرَ خالقي. <b>حركةُ المعلمة:</b> «مَن خلقك يرحمك ويربّيك».</div></div>
+      <div class="ci"><div class="term"><i class="gi" data-i="التكامل اليومي" data-size="18"></i> امتدادٌ في الوحدة</div><div class="def">يمهّد للقاء الرابع الذي نبدأ فيه تدبّر معاني الآيات. <b>حركةُ المعلمة:</b> «بعد أن عرفنا الألفاظ نبدأ نتدبّر معانيها».</div></div>
+    </div>
+    <div class="card" style="margin-top:15px">
+      <div class="lbl">فكرة للربط السريع</div>
+      <p class="mini" style="font-size:15.5px">اسألي: كيف يخدم هذا اللقاء معنى الوحدة؟ يعرف الطفلُ أنّ اللهَ ربَّه ورحمنَه، فيشعر أنّ الذي خلقه هو الذي يرحمه ويربّيه، وهذا معنى تكريم الله لمخلوقه.</p>
+    </div>
+  </div>
+
+  <!-- ══════════ 3) التقويم ══════════ -->
+  <div class="panel" id="p3">
+    <div class="info"> التقويم في منهج غرس القيم ثلاثي المراحل — يرصد الطفل قبل الدرس وأثناءه وبعده.</div>
+    <div class="grid g3">
+      <div class="card taq q"><h3><i class="gi" data-i="التقويم القبلي" data-size="20"></i> التقويم القبلي</h3><ul>
+                <li>ما معنى أن يتكرّر اللفظ؟</li><li>هل تعرف اسمًا من أسماء الله تعلّمناه في «أحبّك ربّي»؟</li><li>ما اسمُ سورتنا؟ وكم عددُ آياتها؟</li>
+      </ul></div>
+      <div class="card taq t"><h3><i class="gi" data-i="التقويم التكويني" data-size="20"></i> التقويم التكويني</h3><ul>
+                <li>ملاحظة الطفل للفظ المتكرّر عند قراءة المعلمة بصوتٍ واضح</li><li>مشاركته في العدّ: كم مرّةً ذُكر هذا اللفظ؟</li>
+        <li>تمييزه بين لون الألفاظ المتكرّرة والمتشابهة على اللوح</li><li>إشارته إلى اسم الله الربّ واسم الله الرحمن في مواضعهما</li>
+      </ul></div>
+      <div class="card taq n"><h3><i class="gi" data-i="التقويم النهائي" data-size="20"></i> التقويم النهائي</h3><ul>
+                <li>أسئلة التحديد على اللوح: أين اسم الله الربّ؟ (٣٦·٣٧·٣٩) · أين الرحمن؟ (٣٧·٣٨) · كم مرّة «كلّا سيعلمون»؟ (مرّتين)</li>
+        <li><b>المعيار: إجابتان صحيحتان من ثلاث مع تحديدٍ صحيحٍ واحدٍ على الأقلّ على اللوح</b></li>
+      </ul></div>
+    </div>
+    <div class="sec-head"><div class="num grn"><i class="gi" data-i="مؤشر النجاح والتقويم" data-size="22"></i></div><h2>مؤشرات النجاح</h2><div class="rule"></div></div>
+    <div class="cg">
+            <div class="ci"><div class="term">المؤشر المعرفي</div><div class="def">يميّز بين اللفظ المتكرّر واللفظ المتشابه، ويسمّي اسمَي الله في السورة.</div></div>
+      <div class="ci"><div class="term">المؤشر المهاري</div><div class="def">يعدّ مرّات ورود لفظٍ متكرّر ويشير إلى موضعه على اللوح.</div></div>
+      <div class="ci"><div class="term">المؤشر الوجداني</div><div class="def">يعظّم أسماءَ الله ويشعر أنّ خالقه هو الذي يرحمه ويربّيه.</div></div>
+      <div class="ci"><div class="term">المؤشر التطبيقي</div><div class="def">يحدّد مواضعَ اسمَي الله بأرقام آياتها على اللوح.</div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 4) الآداب الصفية ══════════ -->
+  <div class="panel" id="p4">
+    <div class="info"> الآداب الصفية لحظات تربوية ذهبية — تبدأ المعلمة كل فكرة بآية أو نص حديث، ولا يعلو صوتها على النص الشرعي. الحزم مع الهدوء دائمًا.</div>
+    <div class="card cardblue" style="margin-bottom:14px">
+      <div class="lbl">آداب المعلمة — مقدمة الرعاية</div>
+      <ul class="steps">
+        <li>تبدأ بالبسملة والحمدلة والدعاء: «اللهم علّمنا ما ينفعنا وانفعنا بما علّمتنا».</li>
+        <li>تنطلق كل فكرة بآية أو نص حديث شريف.</li>
+        <li>الحزم مع الهدوء — فلا يعلو صوت المعلمة على النص الشرعي.</li>
+      </ul>
+      <div class="lbl" style="margin-top:12px;font-size:15px">آداب الطفل مع القرآن</div>
+      <ul class="steps">
+        <li>الجلوس بسكينة ووقار في حلقة العلم أمام لوحة الآيات.</li><li>الإنصات لكلام الله وعدم المقاطعة أثناء التلاوة.</li><li>الاستعاذة والبسملة قبل القراءة، وحسن التعامل مع المصحف.</li>
+      </ul>
+    </div>
+
+        <div class="adab"><div class="h">١ · تعظيم كلام الله</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>وضع طفل بطاقة النشاط فوق صفحة المصحف المفتوح.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«المصحف كلام الله نعظّمه ولا نضع فوقه شيئًا. نرفع بطاقتنا برفق، ونضع المصحف في مكانٍ عالٍ نظيف».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>تعظيم القرآن — حسن التعامل مع المصحف.</span></div>
+      <div class="link">ربط بالدرس: علوم السورة مدخل لتعظيم كلام الله لا مسابقة معلومات.</div>
+    </div></div>
+    <div class="adab"><div class="h">٢ · حسن الاستماع والإنصات</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>تحدّث طفل مع زميله أثناء تلاوة السورة.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«إذا سمعنا القرآن أنصتنا؛ قال الله: ﴿فَاسْتَمِعُوا لَهُ وَأَنْصِتُوا﴾. نستمع بقلوبنا لكلام ربّنا. جزاك الله خيرًا».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>حسن الاستماع — الإنصات لكلام الله.</span></div>
+      <div class="link">ربط بالدرس: نتعلّم السورة استماعًا من قارئ متقن.</div>
+    </div></div>
+    <div class="adab"><div class="h">٣ · الاستعاذة والبسملة قبل القراءة</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>بدأ طفل يردّد الآية دون استعاذة ولا بسملة.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«قبل أن نقرأ القرآن نستعيذ بالله ونبسمل؛ فنبدأ باسم الله ونطلب حفظه. هيا نقولها معًا برفق».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>أدب تلاوة القرآن — الاستعانة بالله.</span></div>
+      <div class="link">ربط بالدرس: من آداب لقاء القرآن التي رددناها في بدء اللقاء.</div>
+    </div></div>
+    <div class="adab"><div class="h">٤ · السكينة والوقار في الجلوس</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>تحرّك طفل كثيرًا وهو في حلقة القرآن.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«في حلقة القرآن نجلس بسكينة ووقار احترامًا لكلام الله. اجلس هادئًا يا بطل، وستسحب بطاقتك بعد قليل».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>السكينة — الوقار — احترام مجلس القرآن.</span></div>
+      <div class="link">ربط بالدرس: أول آداب اللقاء «أجلس بسكينة ووقار».</div>
+    </div></div>
+    <div class="adab"><div class="h">٥ · الانتظار وضبط النفس في النشاط</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>أراد طفل أن يسحب كل البطاقات قبل أن يأتي دوره.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«انتظر دورك يا بطل، لكلٍّ منّا بطاقة يسحبها ويجيب عنها. حسن الانتظار من أدب المجلس. جزاك الله خيرًا».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>ضبط النفس — أدب الدور — احترام المجموعة.</span></div>
+      <div class="link">ربط بالدرس: نشاط «اسحب بطاقة» يتناوب فيه الأطفال.</div>
+    </div></div>
+  </div>
+
+  <!-- ══════════ 5) تحضيرات ولي الأمر ══════════ -->
+  <div class="panel" id="p5">
+    <div class="info"> القيمة تترسّخ حين تُعاش في البيت كما تُتعلَّم في الفصل — هذه التهيئات يُطبّقها ولي الأمر قبل الدرس وبعده.</div>
+        <div class="card par"><div class="h"> ١ · تهيئة وجدانية</div>
+      <div class="hs"><span class="n">أ</span><span>يُحدّث ولي الأمر طفله أنّ اللهَ ربَّه ورحمنَه: خلقه ويرحمه ويربّيه بنعمه.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يقول له: «الحمد لله الذي علّمنا أسماءه الحسنى في كتابه».</span></div>
+      <div class="after">← يربط الطفل بين الدرس وتعظيمه لأسماء الله.</div>
+    </div>
+    <div class="card par"><div class="h"> ٢ · تهيئة معرفية</div>
+      <div class="hs"><span class="n">أ</span><span>يذكّره باسم الله «الربّ» الذي تعلّمه في «أحبّك ربّي»، ويخبره أنّه في سورة النبأ.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يسأله: «هل تسمع كلمةً تتكرّر في السورة؟»</span></div>
+      <div class="after">← يرسّخ المفهوم قبل سماعه في الصف.</div>
+    </div>
+    <div class="card par"><div class="h"> ٣ · تهيئة حسية سمعية</div>
+      <div class="hs"><span class="n">أ</span><span>يُسمع طفله سورة النبأ، ويطلب منه أن ينتبه للكلمات التي يسمعها أكثر من مرّة.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يعدّان معًا مرّاتِ ورود كلمةٍ يسمعها الطفل.</span></div>
+      <div class="after">← يعيش الطفل المعنى واقعيًا قبل عرضه في الصف.</div>
+    </div>
+    <div class="card par"><div class="h"> ٤ · تهيئة عملية بسيطة</div>
+      <div class="hs"><span class="n">أ</span><span>يلوّنان معًا لفظًا متكرّرًا في نسخةٍ مطبوعة من الآيات بلونٍ واحد.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يساعده على ترديد اسمَي الله: «الرحمن» و«الربّ».</span></div>
+      <div class="after">← مشاركة الأسرة تعطي الطفل حافزًا للمشاركة أمام زملائه.</div>
+    </div>
+    <div class="card par"><div class="h"> ٥ · تهيئة سلوكية</div>
+      <div class="hs"><span class="n">أ</span><span>يذكّره بأدب الإنصات وحسن الملاحظة أثناء التلاوة.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يذكّره أن يدعو الله بأسمائه: «يا رحمن ارحمني، يا ربّ اهدني».</span></div>
+      <div class="after">← يصبح السلوك اليومي نفسه جزءًا من الدرس.</div>
+    </div>
+    <div class="card par"><div class="h"> ٦ · تهيئة تعاونية أسرية</div>
+      <p class="mini" style="font-size:15.5px">تستمع الأسرة معًا إلى السورة، ويخبرهم الطفل بأسماء الله التي فيها (الرحمن والربّ) ومعانيها المبسّطة، فيتعلّم أن يعرف ربّه بأسمائه.</p>
+      <div class="after">← يزرع محبة أسماء الله ومعرفتها في وجدان الطفل.</div>
+    </div>
+    <div class="card par"><div class="h"> أسئلة تطرحها على طفلك</div>
+            <div class="pq">ما معنى اللفظ المتكرّر؟ وما معنى المتشابه؟</div>
+      <div class="pq">ما اسما الله اللذان وردا في السورة؟</div>
+      <div class="pq">في أيّ الآيات ورد اسم الله «الربّ»؟</div>
+      <div class="pq">كم مرّةً ذُكر لفظ «كلّا سيعلمون»؟</div>
+      <div class="pq">ماذا يعني اسم الله «الرحمن»؟</div>
+    </div>
+    <div class="wa-wrap">
+      <div class="wa">
+        <div class="wa-head">
+          <span class="bk">‹</span>
+          <span class="av"><img src="brand/logo-ghars.webp" alt="غرس"/></span>
+          <div class="who"><div class="nm">أولياء أمور الفصل</div><div class="st">غرس القيم · دليل المعلمة</div></div>
+          <span class="ics"><svg viewBox="0 0 24 24"><path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11z"/></svg><svg viewBox="0 0 24 24"><path d="M20 15.5c-1.2 0-2.5-.2-3.6-.6a1 1 0 0 0-1 .2l-2.2 2.2a15 15 0 0 1-6.6-6.6l2.2-2.2a1 1 0 0 0 .2-1C8.7 6.5 8.5 5.2 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg></span>
+        </div>
+        <div class="wa-body">
+          <span class="wa-day">اليوم</span>
+          <div class="wa-bub">
+            <div class="wa-text">بسم الله الرحمن الرحيم 🌿
+السلام عليكم ورحمة الله وبركاته
+
+📖 لاحظ أبناؤكم اليوم في سورة النبأ <strong>الألفاظ المتكرّرة والمتشابهة</strong>، وميّزوها بالألوان، وتعرّفوا على اسمين من أسماء الله فيها: <strong>الرحمن</strong> و<strong>الربّ</strong>.
+
+🏡 <strong>نشاط بيتي:</strong> أسمِعوا طفلكم السورة واطلبوا منه أن يخبركم بكلمةٍ سمعها أكثر من مرّة. <em>من غير واجبٍ كتابيّ</em>.
+
+💚 جزاكم الله خيرًا، ونسأل الله أن يعلّق قلوبَ أبنائنا بأسمائه الحسنى — <strong>فريق نادي غرس القيم</strong></div>
+            <div class="wa-meta"><span class="t">٨:٣٠ ص</span><svg class="ck" viewBox="0 0 17 11" fill="none" stroke="#53BDEB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6l3.2 3.4L11 2"/><path d="M6.2 9.4L6.7 8.8 16 1"/></svg></div>
+          </div>
+        </div>
+        <div class="wa-foot">
+          <span class="inp">اكتب رسالة…</span>
+          <span class="wa-send" title="رسالة لولي الأمر"><svg viewBox="0 0 24 24"><path d="M3 20.5v-6l8-2.5-8-2.5v-6l19 8.5z"/></svg></span>
+        </div>
+      </div>
+      <div class="wa-copybar"><button class="copy-btn wa-copy" data-copy=".wa-text">📋 نسخ الرسالة لإرسالها</button></div>
+      <div class="wa-hint">انسخي الرسالة وأرسليها عبر واتساب أو تيليجرام — يُنسّق الغامق <code>*هكذا*</code> والمائل <code>_هكذا_</code> تلقائيًا عند اللصق.</div>
+    </div>
+  </div>
+
+
+  <!-- ══════════ 6) القيم والمفاهيم ══════════ -->
+  <div class="panel" id="p6">
+    <div class="sec-head first"><div class="num gold"><i class="gi" data-i="القيم الأساسية" data-size="22"></i></div><h2>القيم الأساسية للدرس</h2><div class="rule"></div></div>
+    <div class="cg">
+            <div class="ci"><div class="term">تعظيم أسماء الله</div><div class="def">معرفةُ أسماء الله الحسنى وتعظيمُها ومحبّتُها.</div></div>
+      <div class="ci"><div class="term">الدقّة وحسن الملاحظة</div><div class="def">الدقّةُ في ملاحظة كلام الله وألفاظه.</div></div>
+      <div class="ci"><div class="term">الصبر والانتباه</div><div class="def">الصبرُ والانتباهُ أثناء التلاوة.</div></div>
+      <div class="ci"><div class="term">أدب المجلس</div><div class="def">احترامُ دور الآخرين في الإجابة والانتظار.</div></div>
+    </div>
+        <div class="card" style="margin-bottom:16px">
+      <div class="lbl"> كيف تغرس المعلمة القيم أثناء الدرس؟</div>
+      <ul class="steps">
+        <li>تربط علوم السورة بالاستماع إليها وتعظيم كلام الله، لا بالحفظ المجرّد.</li>
+        <li>تنمذج آداب المصحف: ترفعه برفق، وتضعه في مكان نظيف عالٍ.</li>
+        <li>تُثني على حسن الإنصات: «أحسنتم الاستماع لكلام الله».</li>
+        <li>تُظهر فرحها بتعلّم السورة: «الحمد لله الذي علّمنا كتابه».</li>
+      </ul>
+    </div>
+    <div class="sec-head"><div class="num p" style="background:#7a5cc0"><i class="gi" data-i="المفاهيم الأساسية" data-size="22"></i></div><h2>المفاهيم الأساسية</h2><div class="rule"></div></div>
+    <div class="cg">
+            <div class="ci"><div class="term">الألفاظ المتكرّرة</div><div class="def">أن نسمع نفسَ اللفظ أكثر من مرّةٍ في السورة.</div></div>
+      <div class="ci"><div class="term">الألفاظ المتشابهة</div><div class="def">ألفاظٌ يشبه بعضها بعضًا.</div></div>
+      <div class="ci"><div class="term">اسم الله الرحمن</div><div class="def">اسمٌ من أسماء الله ورد في الآيتين ٣٧ و٣٨؛ رحمته وسِعت كلَّ شيء.</div></div>
+      <div class="ci"><div class="term">اسم الله الربّ</div><div class="def">اسمٌ من أسماء الله ورد في الآيات ٣٦ و٣٧ و٣٩؛ خالقي ومالكي والمربّي بنعمه.</div></div>
+    </div>
+    <div class="sec-head"><div class="num"><i class="gi" data-i="الاستراتيجيات التعليمية" data-size="22"></i></div><h2>الاستراتيجيات التعليمية</h2><div class="rule"></div></div>
+    <div class="card">
+            <div class="strat"><span class="k">التصنيف بالألوان</span><span class="v">لونٌ للمتكرّر ولونٌ للمتشابه على لوح السورة.</span></div>
+      <div class="strat"><span class="k">الإدراك السمعي والبصري</span><span class="v">سماعُ اللفظ ثم رؤيتُه محدَّدًا على اللوح.</span></div>
+      <div class="strat"><span class="k">العدّ الجماعي</span><span class="v">عدُّ مرّات ورود اللفظ المتكرّر.</span></div>
+      <div class="strat"><span class="k">بطاقات علوم السورة</span><span class="v">للمراجعة بالمطابقة في مطلع اللقاء.</span></div>
+    </div>
+
+    <div class="sec-head"><div class="num gold"><i class="gi" data-i="الاستراتيجيات التعليمية" data-size="22"></i></div><h2>الأساليب العشرة</h2><div class="rule"></div></div>
+    <div class="cg">
+            <div class="ci"><div class="term">١ · الوسيلة الحسّية</div><div class="def">لوحةُ السورة وأقلامُ السبورة الملوّنة والمصاحف.</div></div>
+      <div class="ci"><div class="term">٢ · الحوار</div><div class="def">مناقشةُ معنى المتكرّر والمتشابه.</div></div>
+      <div class="ci"><div class="term">٣ · السؤال</div><div class="def">كم مرّةً ذُكر هذا اللفظ؟ أين اسم الله الرحمن؟</div></div>
+      <div class="ci"><div class="term">٤ · اللعب</div><div class="def">تحديدُ اللفظ على اللوح والإشارةُ إليه.</div></div>
+      <div class="ci"><div class="term">٥ · التصنيف</div><div class="def">تمييزُ الألفاظ بالألوان.</div></div>
+      <div class="ci"><div class="term">٦ · التعزيز</div><div class="def">الثناءُ على من لاحظ لفظًا متكرّرًا بنفسه.</div></div>
+      <div class="ci"><div class="term">٧ · الربط بالواقع</div><div class="def">ربطُ اسم الله الربّ بما تعلّموه في «أحبّك ربّي».</div></div>
+      <div class="ci"><div class="term">٨ · الاستماع المؤثّر</div><div class="def">قراءةُ الآيات بصوتٍ واضح وتكرارُ سماعها.</div></div>
+      <div class="ci"><div class="term">٩ · النشيد</div><div class="def">أبياتُ نونية القحطاني في إشارة بدء اللقاء.</div></div>
+      <div class="ci"><div class="term">١٠ · العدّ</div><div class="def">عدُّ مرّات ورود اللفظ وقراءةُ أرقام الآيات.</div></div>
+    </div>
+
+    <div class="sec-head"><div class="num grn"><i class="gi" data-i="الوسائل والأدوات" data-size="22"></i></div><h2>الوسائل</h2><div class="rule"></div></div>
+    <div class="means">
+            <div class="m"><h4>مرئية</h4><span class="i">لوحة السورة محدَّدًا عليها الألفاظ بلونين</span><span class="i">بطاقة علوم السورة</span><span class="i">أقلام سبورة بألوانٍ متعدّدة</span></div>
+      <div class="m s2"><h4>سمعية</h4><span class="i">مقطع نونية القحطاني (إشارة اللقاء)</span><span class="i">تلاوة سورة النبأ على السمّاعة</span><span class="i">تسجيل صوت بطاقة «اعتقادنا في القرآن»</span></div>
+      <div class="m s3"><h4>عملية (Hands-on)</h4><span class="i">تحديد الألفاظ بالألوان على اللوح</span><span class="i">الإشارة إلى مواضع أسماء الله</span><span class="i">عدّ مرّات ورود اللفظ</span></div>
+      <div class="m s4"><h4>قيمية (شرعية)</h4><span class="i">تعظيم أسماء الله الحسنى</span><span class="i">الإنصات لتلاوة القرآن وحسن الملاحظة</span><span class="i">تعزيز شرعي: بارك الله فيك</span></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 7) الحصيلة اللغوية ══════════ -->
+  <div class="panel" id="p7">
+    <div class="info"> الحصيلة اللغوية تُعزّز الفهم وتُنمّي القدرة على التعبير — تُستخدَم بشكل طبيعي أثناء الدرس.</div>
+    <div class="voc-web">
+            <img src="assets/voc-web-book.png" alt="شبكة كلمات الحصيلة" loading="lazy"/>
+      <span class="vw center" style="left:50%;top:59%">أسماء الله</span>
+      <span class="vw branch" style="left:31%;top:19.3%">المتكرّر</span>
+      <span class="vw branch" style="left:58%;top:27.4%">المتشابه</span>
+      <span class="vw branch" style="left:74%;top:31.3%">الرحمن</span>
+      <span class="vw branch" style="left:28%;top:34.3%">الربّ</span>
+      <span class="vw branch" style="left:72.5%;top:45.1%">أوتادًا</span>
+      <span class="vw branch" style="left:26%;top:46.5%">مَآبًا</span>
+    </div>
+    <div class="card"><div class="lbl">الكلمات الأساسية في الدرس</div>
+      <table class="voc"><thead><tr><th style="width:22%">الكلمة</th><th>بيان المعنى</th></tr></thead><tbody>
+                <tr><td><span class="w">المتكرّر</span></td><td>اللفظُ الذي نسمعه أكثر من مرّةٍ في السورة.</td></tr>
+        <tr><td><span class="w">المتشابه</span></td><td>اللفظُ الذي يشبه لفظًا آخر.</td></tr>
+        <tr><td><span class="w">الرحمن</span></td><td>اسمٌ من أسماء الله؛ رحمتُه وسِعت كلَّ شيء.</td></tr>
+        <tr><td><span class="w">الربّ</span></td><td>اسمٌ من أسماء الله؛ خالقي ومالكي والمربّي بنعمه.</td></tr>
+        <tr><td><span class="w">أوتادًا</span></td><td>الجبالُ المثبَّتة للأرض.</td></tr>
+        <tr><td><span class="w">مَآبًا</span></td><td>مرجعًا يرجع إليه الإنسان.</td></tr>
+      </tbody></table>
+    </div>
+    <div class="card" style="margin-top:15px"><div class="lbl">المصطلحات الأساسية</div>
+      <table class="voc"><thead><tr><th style="width:22%">المصطلح</th><th>بيان المعنى</th></tr></thead><tbody>
+                <tr><td><span class="w">أسماء الله الحسنى</span></td><td>أسماءُ الله التي نعرفه بها ونعظّمه ونحبّه ونعبده بمقتضاها.</td></tr>
+        <tr><td><span class="w">حساب</span></td><td>الجزاءُ على الأعمال يوم القيامة.</td></tr>
+        <tr><td><span class="w">تعظيم القرآن</span></td><td>إجلالُ كلام الله وتوقيره وحسنُ الإنصات له.</td></tr>
+      </tbody></table>
+    </div>
+    <div class="card cardgold" style="margin-top:15px"><div class="lbl gold"> كيف تستخدم المعلمة هذه الحصيلة؟</div>
+      <ul class="steps">
+        <li>تُدرج الكلمات بشكل طبيعي في شرحها دون توقف مفاجئ.</li>
+        <li>تستخدم الكلمة في جملة واضحة: «سورة النبأ <strong>مكية</strong> — يعني نزلت في مكة».</li>
+        <li>تكرّر الكلمات في سياقات مختلفة لتثبيتها.</li>
+        <li>تُشجّع الأطفال على استخدامها وتثني عليهم.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════ 8) المراجع ══════════ -->
+  <div class="panel" id="p8">
+        <div class="card refblock">
+      <div class="h"> القرآن الكريم — سورة النبأ وتفسيرها</div>
+      <div class="sub">مصادر لضبط علوم السورة قبل اللقاء</div>
+      <div class="refitem"><span class="rbadge q">قرآن</span><div><div class="tt">المصحف الشريف — سورة النبأ (٤٠ آية)</div><div class="dd">جزء عمّ — سورة مكية.</div><a class="reflink" href="https://quran.com/78" target="_blank">quran.com/78</a></div></div>
+      <div class="refitem"><span class="rbadge q">تفسير</span><div><div class="tt">التفسير المختصر لسورة النبأ</div><div class="dd">مركز تفسير للدراسات القرآنية.</div><a class="reflink" href="https://tafsir.app/mukhtasar/78/1" target="_blank">التفسير المختصر</a></div></div>
+      <div class="refitem"><span class="rbadge q">تفسير</span><div><div class="tt">الدرر السنية: موسوعة التفسير — سورة النبأ</div><div class="dd">تفصيل معاني آيات السورة.</div><a class="reflink" href="https://dorar.net/tafseer/78" target="_blank">الدرر السنية</a></div></div>
+    </div>
+    <div class="card refblock">
+      <div class="h"> مواد اللقاء المعتمدة</div>
+      <div class="refitem"><span class="rbadge t">لوحة</span><div><div class="tt">لوحة سورة النبأ وتسجيل التلاوة</div><div class="dd">المعتمدان في مكتبة الدليل — للعرض والاستماع.</div></div></div>
+      <div class="refitem"><span class="rbadge t">صوت</span><div><div class="tt">بطاقة «اعتقادنا في القرآن» وتسجيلها الصوتي</div><div class="dd">المعتمدان لترديد الاعتقاد مع الأطفال.</div></div></div>
+      <div class="refitem"><span class="rbadge t">صوت</span><div><div class="tt">مقطع نونية القحطاني (إشارة اللقاء)</div><div class="dd">يُربط تسجيل الإشارة المعتمد في مكتبة الدليل.</div></div></div>
+    </div>
+    <div class="card refblock">
+      <div class="h"> مراجع تربوية</div>
+      <div class="refitem"><span class="rbadge p">تربية</span><div><div class="tt">تعليم القرآن للأطفال — طرق ووسائل</div><div class="dd">تربية الطفل على تعظيم القرآن وحسن الاستماع إليه.</div></div></div>
+      <div class="refitem"><span class="rbadge p">تربية</span><div><div class="tt">غرس محبة القرآن في الطفل (دليل عملي للمربين)</div><div class="dd">مركز دلائل – الرياض، ط3.</div></div></div>
+    </div>
+    <div class="card refblock">
+      <div class="h"> مصادر رقمية إثرائية</div>
+      <div class="refitem"><span class="rbadge d">رقمي</span><div><div class="tt">موقع tafsir.app</div><div class="dd">تفاسير سورة النبأ لضبط معانيها.</div><a class="reflink" href="https://tafsir.app/" target="_blank">tafsir.app</a></div></div>
+      <div class="refitem"><span class="rbadge d">رقمي</span><div><div class="tt">موقع quran.com</div><div class="dd">تلاوات مسموعة لسورة النبأ من قرّاء متقنين.</div><a class="reflink" href="https://quran.com/78" target="_blank">quran.com</a></div></div>
+      <div class="refitem"><span class="rbadge d">رقمي</span><div><div class="tt">موقع dorar.net</div><div class="dd">موسوعة التفسير للتأكد من معاني الآيات.</div><a class="reflink" href="https://dorar.net/" target="_blank">dorar.net</a></div></div>
+    </div>
+    <div class="card refblock">
+      <div class="h"> مراجع علم التجويد للمعلمة</div>
+      <div class="sub">مراجع متخصصة تضبط بها المعلمة أحكام التلاوة ورواية حفص قبل التسميع، وتستعين بها في تحسين الأداء دون تقديم تفاصيلها للأطفال.</div>
+      <div class="refitem"><span class="rbadge q">تجويد</span><div><div class="tt"> كتاب التجويد المصور | د. أيمن سويد</div><div class="dd">مرجع مصور لأحكام التجويد على هيئة لوحات وصور توضيحية.</div><a class="reflink" href="https://faculty.ksu.edu.sa/ar/mkaber/course-material/245309" target="_blank">اضغطي لفتح المرجع ↗</a></div></div>
+      <div class="refitem"><span class="rbadge q">تجويد</span><div><div class="tt"> الملخص المفيد في علم التجويد برواية حفص</div><div class="dd">مرجع مختصر في علم التجويد برواية حفص عن عاصم من طريق الشاطبية.</div><a class="reflink" href="https://quranpedia.net/book/20107" target="_blank">اضغطي لفتح المرجع ↗</a></div></div>
+    </div>
+    <div class="card refblock">
+      <div class="h"> مراجع قرآنية للمعلمة</div>
+      <div class="sub">روابط مرجعية سريعة تستعين بها المعلمة قبل اللقاء أو أثناء الإعداد، ولا تُقدَّم للأطفال أثناء الدرس.</div>
+      <div class="refitem"><span class="rbadge q">بطاقات</span><div><div class="tt">موقع البطاقات — سورة النبأ</div><div class="dd">بطاقة تعريفية موجزة بسورة النبأ: اسمها وعدد آياتها ومحاور عامة.</div><a class="reflink" href="https://albitaqat.com/an-naba/" target="_blank">اضغطي لفتح المرجع ↗</a></div></div>
+      <div class="refitem"><span class="rbadge q">تفسير</span><div><div class="tt">المختصر في تفسير القرآن الكريم — سورة النبأ</div><div class="dd">تفسير ميسّر موجز لآيات السورة يعين المعلمة على بناء المعنى العام.</div><a class="reflink" href="https://tafsir.app/mukhtasar/78/1" target="_blank">اضغطي لفتح المرجع ↗</a></div></div>
+      <div class="refitem"><span class="rbadge d">تدبر</span><div><div class="tt">قرآن بيديا — سورة النبأ (تفسير وتدبر)</div><div class="dd">صفحة السورة في موسوعة القرآن: تفاسير ومعاني كلمات ومواد تدبرية.</div><a class="reflink" href="https://quranpedia.net/surah/78" target="_blank">اضغطي لفتح المرجع ↗</a></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 9) الأركان ══════════ -->
+  <div class="panel" id="p9">
+    <div class="sec-head first chero"><div class="num gold"><i class="gi" data-i="أركان" data-size="22"></i></div><h2>وقت الأركان التطبيقية</h2><div class="rule"></div></div>
+    <div class="chero"><p style="margin-bottom:6px">الأركان مساحاتٌ غنيّة بأدوات التعلّم، مدّتها ٣٠ دقيقة، يستكشف فيها الأطفال الأدوات <strong>بحرّية ومرح</strong> — مع بقاء المصحف والنصّ القرآني في موضع التلاوة والتعظيم. وتستقطع المعلمة وقتًا يسيرًا لنشاطٍ تطبيقيّ سريع على الفكرة المركزية: الألفاظ المتكرّرة وأسماء الله في السورة. أمام المعلمة <strong>ركنان مقترحان تختار بينهما</strong> بحسب جاهزية البيئة.</p></div>
+    <div class="caution"><strong>ضابط منهجي:</strong> تُقدَّم الألفاظ وأسماء الله مدخلًا لتعظيم كلام الله ومعرفةِ ربّنا لا مسابقة معلومات؛ ويُحافظ على آداب التعامل مع المصحف.</div>
+
+        <div class="corner">
+      <div class="h" style="background:linear-gradient(90deg,#1b5e34,#1E5631)"><h4>لونان لسورتي</h4><span class="k"> ركن فنوني الجميلة</span></div>
+      <div class="b">
+        <div class="cfield"><b>الأدوات والوسائل التعليمية</b><p>نسخةٌ مطبوعة من آيات السورة، قلمان ملوّنان، ولوحةُ عرض لأعمال الأطفال.</p></div>
+        <div class="cfield"><b>قوانين الركن</b><p>البقاء في مساحة الركن · استخدام الألوان بنظافة · عدم التلوين فوق المصحف · انتظار الدور · إعادة الأدوات إلى مكانها.</p></div>
+        <div class="cfield"><b>اللعب الحرّ في الركن</b><p>يستكشف الأطفالُ الألوانَ ويجرّبون التلوين بحرّية ومرح على نسخة الآيات المطبوعة (لا على المصحف).</p></div>
+        <div class="cfield"><b>النشاط التطبيقي السريع</b><p><em>تستقطع المعلمة نحو ٥–٧ دقائق لتطبيق سريع على الفكرة المركزية: <strong>في سورتنا كلماتٌ تتكرّر.</strong></em></p><ol>
+          <li>يلوّن الطفلُ بلونٍ واحدٍ اللفظ المتكرّر «وَجَعَلْنَا»، وبلونٍ آخر لفظ «حِسَابًا».</li>
+          <li>يعدّ مرّات كلٍّ منهما.</li>
+          <li>يختم بقول: «في سورتنا كلماتٌ تتكرّر لنتذكّرها ونحفظها».</li>
+        </ol></div>
+        <div class="cfield"><b>هدف الركن</b><p>أن يميّز الطفلُ الألفاظ المتكرّرة بالتلوين ويعدّ مرّات ورودها.</p></div>
+        <div class="cfield"><b>دور المعلمة</b><p>تهيّئ الأدوات وتتيح التلوين الحرّ، ثم توجّه النشاطَ نحو الفكرة المركزية بجملةٍ قصيرة.</p></div>
+        <div class="cfield"><b>خصوصية عقدية وتربوية</b><p>الفنّ يخدم تعظيم القرآن؛ لا يُلوَّن أو يُكتب فوق المصحف، ولا رسمَ لذوات الأرواح.</p></div>
+        <div class="cfield"><b>مناسب للفئة العمرية</b><p>تلوينٌ بسيط، مع مجموعة صغيرة وإشراف على الأدوات.</p></div>
+        <div class="cfield"><b>المخرج</b><p>ورقةٌ ملوّنةٌ فيها لفظان متكرّران بلونين + عدُّ مرّاتهما.</p></div>
+        <div class="cfield"><b>نموذج تطبيقي للركن</b>
+          <div class="gallery" style="margin-top:6px"><div class="gitem"><div class="imgwrap" style="height:200px"><img src="units-art/makhluq-activities/lawhat-naba.jpg" alt="تلوين الألفاظ المتكرّرة بلونين" loading="lazy"/></div><div class="cap">لونان لسورتي<small>يلوّن اللفظ المتكرّر بلونين</small></div></div></div>
+        </div>
+        <div class="faith">الجملة الختامية: في سورتنا كلماتٌ تتكرّر لنتذكّرها ونحفظها.</div>
+      </div>
+    </div>
+
+        <div class="corner">
+      <div class="h" style="background:linear-gradient(90deg,#286A54,#0E6E6B)"><h4>بطاقة اسم الله</h4><span class="k"> ركن الإدراك</span></div>
+      <div class="b">
+        <div class="cfield"><b>الأدوات والوسائل التعليمية</b><p>بطاقتا «الرحمن» و«الربّ»، لوحةُ السورة، وبطاقاتُ أرقام الآيات.</p></div>
+        <div class="cfield"><b>قوانين الركن</b><p>البقاء في مساحة الركن · التعامل برفقٍ مع البطاقات واللوحة · انتظار الدور · إعادة الأدوات إلى مكانها.</p></div>
+        <div class="cfield"><b>اللعب الحرّ في الركن</b><p>يستكشف الأطفالُ لوحةَ السورة وبطاقاتِ أسماء الله بحرّية ومرح.</p></div>
+        <div class="cfield"><b>النشاط التطبيقي السريع</b><p><em>تستقطع المعلمة نحو ٥–٧ دقائق لتطبيق سريع على الفكرة المركزية: <strong>اسما الله الرحمن والربّ في سورتنا.</strong></em></p><ol>
+          <li>يضع الطفلُ بطاقة «الرحمن» عند الآيتين ٣٧ و٣٨.</li>
+          <li>ويضع بطاقة «الربّ» عند الآيات ٣٦ و٣٧ و٣٩.</li>
+          <li>يختم بقول: «الله الرحمن رحمته وسِعت كلَّ شيء، والله الربّ خالقي ومالكي ومربّي بنعمه».</li>
+        </ol></div>
+        <div class="cfield"><b>هدف الركن</b><p>أن يحدّد الطفلُ مواضعَ اسمَي الله على اللوحة بأرقام آياتها.</p></div>
+        <div class="cfield"><b>دور المعلمة</b><p>تُتيح الاستكشاف الحرّ أولًا، ثم توجّه المطابقةَ بجملةٍ قصيرة عن معنى كلّ اسم.</p></div>
+        <div class="cfield"><b>خصوصية عقدية وتربوية</b><p>معرفةُ أسماء الله تخدم تعظيمَه ومحبّته؛ ويبقى النصّ القرآني في موضع التلاوة والتعظيم.</p></div>
+        <div class="cfield"><b>مناسب للفئة العمرية</b><p>مطابقةٌ قصيرة، مع طفلٍ أو مجموعةٍ صغيرة في كل دورة.</p></div>
+        <div class="cfield"><b>المخرج</b><p>وضعُ بطاقتَي الاسمين في مواضعهما الصحيحة + جملةٌ عن معنى كلّ اسم.</p></div>
+        <div class="cfield"><b>نموذج تطبيقي للركن</b>
+          <div class="gallery" style="margin-top:6px"><div class="gitem"><div class="imgwrap" style="height:200px"><img src="units-art/makhluq-activities/lawhat-naba.jpg" alt="مطابقة بطاقتي الرحمن والربّ على اللوحة" loading="lazy"/></div><div class="cap">بطاقة اسم الله<small>يضع الرحمن والربّ عند آياتهما</small></div></div></div>
+        </div>
+        <div class="faith">الجملة الختامية: الله الرحمن رحمته وسِعت كلَّ شيء، والله الربّ خالقي ومالكي ومربّي بنعمه.</div>
+      </div>
+    </div>
+</div>
+
+  <div class="foot">وحدة أنا مخلوق كرّمني الله · كتابي المنير · اللقاء الثالث — الألفاظ المتكرّرة وأسماء الله · نادي غرس القيم لضيافة الأطفال</div>
+  <div class="gq-dev-credit" style="margin:22px auto 0;max-width:540px;padding:18px 16px 4px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center"><span style="font-size:11.5px;color:var(--muted);letter-spacing:.3px">إعداد وتطوير وإخراج دليل المعلمة</span><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="display:inline-block;line-height:0"><img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية" style="width:104px;height:auto;display:block"/></a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-family:var(--fd);font-size:14.5px;color:#1e5631;text-decoration:none;font-weight:700">شركة حضارة للاستشارات التربوية والتعليمية</a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--elm,#0E6E6B);text-decoration:none">www.hadarah-consulting.com</a></div>
+</div>
+
+<script id="kitabi-hijri-tool-script">
+function kitabiHijriOffset(){try{return parseInt(localStorage.getItem('gqKitabiHijriOffset')||'0',10)||0;}catch(e){return 0;}}
+function kitabiSetHijriOffset(v){try{localStorage.setItem('gqKitabiHijriOffset',String(v));}catch(e){}}
+function kitabiFormatHijri(date){var opts={weekday:'long',day:'numeric',month:'long',year:'numeric'};var cals=['ar-SA-u-ca-islamic-umalqura','ar-SA-u-ca-islamic','ar-EG-u-ca-islamic'];for(var i=0;i<cals.length;i++){try{return new Intl.DateTimeFormat(cals[i],opts).format(date).replace(/،/g,'، ');}catch(e){}}return date.toLocaleDateString('ar-EG',opts);}
+function kitabiUpdateHijri(){var dateEl=document.getElementById('kitabi-hijri-date');if(!dateEl)return;var off=kitabiHijriOffset();var d=new Date();d.setDate(d.getDate()+off);dateEl.textContent=kitabiFormatHijri(d);var status=document.getElementById('kitabi-hijri-status');if(status)status.textContent=off===0?'':(off>0?'+'+off:off);var sub=document.getElementById('kitabi-hijri-sub');if(sub)sub.textContent=off===0?'تاريخ اليوم الهجري بحسب تقويم المتصفح. راجعيه مع تقويم المركز عند الحاجة.':'تم ضبط التاريخ '+(off>0?'+'+off:off)+' يوم حسب تقويم المركز.';}
+function kitabiAdjustHijri(delta){var n=kitabiHijriOffset()+delta;if(n>2)n=2;if(n<-2)n=-2;kitabiSetHijriOffset(n);kitabiUpdateHijri();}
+function kitabiResetHijri(){kitabiSetHijriOffset(0);kitabiUpdateHijri();}
+function kitabiCopyHijriPrompt(){var date=(document.getElementById('kitabi-hijri-date')||{}).textContent||'';var text='تهيئة اليوم: ما تاريخنا الهجري اليوم؟ اليوم هو: '+date;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){var s=document.getElementById('kitabi-hijri-status');if(s){s.textContent='نُسخ';setTimeout(kitabiUpdateHijri,1400);}}).catch(function(){});}}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',kitabiUpdateHijri);}else{kitabiUpdateHijri();}
+</script>
+
+<script>
+(function(){
+  var doc=document, root=doc.documentElement, body=doc.body;
+  var pb=doc.createElement('div'); pb.className='gq-progress'; body.appendChild(pb);
+  var top=doc.createElement('button'); top.className='gq-top'; top.setAttribute('aria-label','العودة للأعلى'); top.textContent='↑'; body.appendChild(top);
+  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function onScroll(){ var sc=window.pageYOffset||root.scrollTop, max=(root.scrollHeight-root.clientHeight)||1; pb.style.width=Math.min(100,sc/max*100)+'%'; if(sc>320){top.classList.add('show');}else{top.classList.remove('show');} }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var lb=doc.createElement('div'); lb.className='gq-lb'; lb.innerHTML='<button class="close" aria-label="اغلاق">\u2715</button><figure><img alt=""/><figcaption class="cap"></figcaption></figure><div class="lb-card"></div>'; body.appendChild(lb);
+  var lbImg=lb.querySelector('img'), lbCap=lb.querySelector('.cap'), lbCard=lb.querySelector('.lb-card');
+  function closeLb(){lb.classList.remove('open'); lb.classList.remove('card-open'); lbImg.removeAttribute('src'); if(lbCard) lbCard.innerHTML='';}
+  lb.addEventListener('click',function(e){ if(e.target===lb||e.target.classList.contains('close')) closeLb(); });
+  doc.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLb(); });
+  doc.querySelectorAll('.gitem img, .step-media img').forEach(function(im){
+    im.addEventListener('click',function(){ var cap='', box=im.closest('.gitem')||im.closest('.step-media'); if(box){var c=box.querySelector('.cap'); if(c) cap=c.textContent;} lb.classList.remove('card-open'); lbImg.src=im.currentSrc||im.src; lbCap.textContent=cap; lb.classList.add('open'); });
+  });
+  doc.querySelectorAll('[data-enlarge]').forEach(function(el){ el.addEventListener('click',function(){ var t=doc.getElementById(el.getAttribute('data-enlarge')); if(!t||!lbCard) return; lbCard.innerHTML=''; var cl=t.cloneNode(true); cl.removeAttribute('id'); lbCard.appendChild(cl); lb.classList.add('open'); lb.classList.add('card-open'); }); });
+  var tabs=[].slice.call(doc.querySelectorAll('.tab'));
+  var KEY='gq-fam-tab-'+(doc.title||'l');
+  function activate(btn,save,scroll){ tabs.forEach(function(t){t.classList.remove('active');}); doc.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');}); btn.classList.add('active'); var p=doc.getElementById(btn.dataset.p); if(p) p.classList.add('active'); if(save){ try{localStorage.setItem(KEY,btn.dataset.p);}catch(e){} } if(scroll){ window.scrollTo({top:0,behavior:'smooth'}); } }
+  tabs.forEach(function(btn,i){ btn.setAttribute('tabindex','0'); btn.addEventListener('click',function(){ activate(btn,true,true); }); btn.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ e.preventDefault(); var dir=(e.key==='ArrowLeft')?1:-1, ni=(i+dir+tabs.length)%tabs.length; tabs[ni].focus(); activate(tabs[ni],true,false); } }); });
+  try{ var saved=localStorage.getItem(KEY); if(saved){ var b=doc.querySelector('.tab[data-p="'+saved+'"]'); if(b) activate(b,false,false); } }catch(e){}
+  function fallback(txt,cb){ var ta=doc.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0'; body.appendChild(ta); ta.select(); try{doc.execCommand('copy');}catch(e){} body.removeChild(ta); cb(); }
+  doc.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){ var target=doc.querySelector(btn.getAttribute('data-copy')); if(!target) return; var clone=target.cloneNode(true); clone.querySelectorAll('.l,.copy-btn').forEach(function(n){n.remove();}); clone.querySelectorAll('strong').forEach(function(n){n.textContent='*'+n.textContent+'*';}); clone.querySelectorAll('em').forEach(function(n){n.textContent='_'+n.textContent+'_';}); var txt=(clone.innerText||clone.textContent||'').replace(/\n{3,}/g,'\n\n').trim(); function done(){ var o=btn.getAttribute('data-lbl'); if(!o){o=btn.textContent; btn.setAttribute('data-lbl',o);} btn.textContent='\u2713 نُسخ'; btn.classList.add('copied'); setTimeout(function(){ btn.textContent=o; btn.classList.remove('copied'); },1500); } if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done).catch(function(){fallback(txt,done);}); } else { fallback(txt,done); } });
+  });
+})();
+</script>
+<!--gq-credit-embed-hide--><script>try{if(window.self!==window.top){var _c=document.querySelector(".gq-dev-credit");if(_c)_c.style.display="none";}}catch(e){}</script>
+<script src="brand/guide-icons.js?v=2"></script>
+<script id="gq-lb-iframe-fix">
+(function(){if(window.self===window.top)return;var lb=document.querySelector('.gq-lb');if(!lb)return;function pos(){if(!lb.classList.contains('open'))return;try{var fr=window.frameElement;if(!fr)return;var t=window.top,r=fr.getBoundingClientRect(),vh=t.innerHeight,off=Math.max(0,-r.top);lb.style.position='absolute';lb.style.top=off+'px';lb.style.bottom='auto';lb.style.left='0';lb.style.right='0';lb.style.width='100%';lb.style.height=vh+'px';}catch(e){}}var mo=new MutationObserver(function(){if(lb.classList.contains('open'))pos();});mo.observe(lb,{attributes:true,attributeFilter:['class']});})();
+</script>
+</body>
+</html>
