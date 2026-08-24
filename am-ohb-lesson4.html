@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>اسم الله الرب (٤): قصة إبراهيم عليه السلام مع قومه · أحبّك ربّي · وحدة أنا مخلوق كرّمني الله</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;   /* خط العناوين */
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif; /* خط المتن */
+  --t1:#5d4478; --t2:#8660A8; --grn:#8660A8;
+  --gold:#C79A3B; --gold2:#C8A200; --cream:#F4EDDE;
+  --ink:#1E2E29; --muted:#565f58;
+  --elm:#8660A8; --elm-soft:#F3ECF8;
+  --line:transparent; --card:radial-gradient(85% 120% at 88% 6%, rgba(44,106,77,.10), transparent 62%), radial-gradient(95% 110% at 6% 96%, rgba(199,154,59,.09), transparent 58%), #FFFDF7;
+  --shadow:0 8px 22px rgba(20,50,35,.07);
+  --shadow-sm:0 2px 7px rgba(20,50,35,.045);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:var(--fb);
+  color:var(--ink);line-height:1.95;font-size:16.5px;
+  background-color:#F7F2E6;background-image:radial-gradient(rgba(30,46,41,.05) 1px,transparent 1.2px),radial-gradient(70% 55% at 84% 4%,rgba(199,154,59,.13),transparent 70%),radial-gradient(60% 50% at 8% 34%,rgba(44,106,77,.09),transparent 72%);background-size:22px 22px,auto,auto;background-repeat:repeat,no-repeat,no-repeat;background-attachment:fixed;
+}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 60px}
+b,strong{font-weight:700}
+/* العناوين فقط بخط AlAwwal */
+.cover h1,.c-badge,.c-unit,.sec-head h2,.flow-card h3,.lbl,.taq h3,.ci .term,
+.adab .h,.par .h,.corner .h h4,.story .h,.refblock .h,.dua .x,.dua .l,
+table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd)}
+
+/* ===== الغلاف ===== */
+.cover{position:relative;overflow:hidden;border-radius:26px 12px 30px 14px/14px 28px 12px 26px;color:#fff;box-shadow:var(--shadow);min-height:200px}
+.cover-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.cover::before{content:"";position:absolute;inset:0;z-index:1;opacity:.78;
+  background:linear-gradient(135deg,rgba(93,68,120,.91),rgba(134,96,168,.78) 52%,rgba(134,96,168,.87))}
+.cover::after{content:"";position:absolute;inset:0;z-index:1;opacity:.07;pointer-events:none;
+  background:radial-gradient(circle at 88% 18%,#fff 0 2px,transparent 3px) 0 0/34px 34px}
+.cover-main{position:relative;z-index:2;padding:28px 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cover-l{flex:1 1 60%;min-width:240px}
+.cover-r{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.c-badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:20px 8px 18px 9px/9px 16px 8px 20px;transform:rotate(-.6deg);padding:6px 15px;font-weight:700;font-size:15px;margin-bottom:12px}
+.cover h1{font-size:33px;line-height:1.42;font-weight:700;margin-bottom:10px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+.c-meta{font-size:15px;color:#dcf3ef;line-height:1.9}
+.c-unit{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:14px 8px 15px 9px/9px 14px 8px 15px;
+  padding:12px 16px;font-weight:700;font-size:16px;line-height:1.6}
+.c-dur{color:#bfe6e0;font-size:14.5px}
+
+/* ===== شريط التبويبات ===== */
+.tabs{position:sticky;top:0;z-index:40;display:flex;flex-wrap:wrap;gap:8px;
+  margin:16px 0 24px;padding:10px;background:rgba(255,251,242,.94);backdrop-filter:blur(6px);
+  border:1px solid var(--line);border-radius:16px 9px 18px 10px/10px 16px 9px 18px;box-shadow:0 4px 14px rgba(20,40,35,.05)}
+.tab{background:#fff;border:1px solid var(--line);color:var(--t2);border-radius:16px 22px 14px 20px/20px 14px 22px 16px;
+  padding:8px 15px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s}
+.tab:hover{background:var(--elm-soft);border-color:var(--elm);color:var(--elm)}
+.tab.active{background:var(--elm);border-color:var(--elm);color:#fff;box-shadow:0 4px 12px rgba(134,96,168,.28)}
+.tab.gold{background:var(--gold);border-color:var(--gold);color:#3a2a06}
+.tab.gold.active{background:var(--gold2);border-color:var(--gold2);color:#241a00}
+
+/* ===== نظام اللوحات ===== */
+.panel{display:none;animation:fade .25s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ===== مكوّنات ===== */
+.sec-head{display:flex;align-items:center;gap:12px;margin:26px 0 15px}
+.sec-head .num{flex:none;width:38px;height:38px;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;display:grid;place-items:center;
+  background:var(--elm);color:#fff;font-size:18px;box-shadow:0 4px 12px rgba(134,96,168,.28)}
+.sec-head .num.grn{background:var(--grn)}.sec-head .num.gold{background:var(--gold);color:#3a2a06}
+.sec-head h2{font-size:22px;color:var(--t1);font-weight:700}
+.sec-head .rule{flex:1;height:0;border-top:2px dashed rgba(176,132,46,.6)}
+.sec-head .stage{flex:none;font-family:var(--fd);font-weight:700;font-size:13.5px;color:#08636b;
+  background:var(--elm-soft);border:1px solid #bfe3e6;border-radius:999px;padding:3px 12px}
+.sec-head .stage.s2{color:#8a6410;background:#F7EECB;border-color:#ebd9a8}
+.sec-head .stage.s3{color:var(--grn);background:#eaf5ee;border-color:#bfe0cd}
+.first{margin-top:6px}
+
+/* ترويسة الدرس — بوصلة اللقاء (سؤال التركيز + جوهر اللقاء) · بنية مستفادة من أدلة هاركورت */
+.lhero{display:grid;grid-template-columns:1fr 1.35fr;gap:14px;margin:8px 0 20px}
+@media(max-width:760px){.lhero{grid-template-columns:1fr}}
+.lhero .lh{background:#fff;border:1px solid var(--line);border-radius:16px 9px 18px 10px/10px 16px 9px 18px;padding:15px 18px;box-shadow:var(--shadow-sm)}
+.lhero .lh.focus{border-inline-start:5px solid var(--elm)}
+.lhero .lh.key{border-inline-start:5px solid var(--gold);background:#fffdf6}
+.lhero .lh-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:700;font-size:15px;margin-bottom:8px}
+.lhero .focus .lh-lbl{color:var(--elm)}
+.lhero .key .lh-lbl{color:#8a6410}
+.lhero .lh-q{font-size:18px;line-height:1.85;color:var(--t1);font-weight:700;font-family:var(--fd)}
+.lhero .lh-t{font-size:15.5px;line-height:1.95}
+.lhero .lh-foot{margin-top:9px;font-size:13.5px;line-height:1.7;color:var(--muted)}
+.lhero .lh-foot b{color:var(--t2)}
+
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px 9px 18px 10px/10px 16px 9px 18px;padding:18px 20px;box-shadow:var(--shadow-sm)}
+.grid{display:grid;gap:15px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){.g2,.g3{grid-template-columns:1fr}.cover h1{font-size:27px}}
+.lbl{color:var(--t1);font-weight:700;font-size:16px;border-bottom:2px solid var(--gold);display:inline-block;padding-bottom:3px;margin-bottom:12px}
+
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border-radius:999px;padding:6px 13px;font-size:15px;border:1px solid var(--line);background:#fff}
+.chip.v{background:#F4EDDE;border-color:#ebd9a8;color:#8a6410}
+.chip.c{background:var(--elm-soft);border-color:#ddd0ec;color:#4a3560}
+
+/* مسار البدء */
+.flow-card{border-radius:14px 8px 15px 9px/9px 14px 8px 15px;padding:15px 18px;margin-bottom:12px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.flow-card.sig{border-inline-start:5px solid var(--elm)}
+.flow-card.law{border-inline-start:5px solid var(--gold)}
+.flow-card.rev{border-inline-start:5px solid var(--grn)}
+.flow-card.belief{border-inline-start:5px solid var(--t1)}
+.flow-card.belief h3{color:var(--t1);font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.belief-text{background:var(--elm-soft);border:1px solid #ddd0ec;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:13px 16px;color:#4a3560;font-size:16px;line-height:2;font-weight:600}
+.flow-card h3{font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.flow-card.sig h3{color:var(--elm)}.flow-card.law h3{color:#8a6410}.flow-card.rev h3{color:var(--grn)}
+.greet{background:var(--elm-soft);border-radius:10px;padding:10px 14px;color:#4a3560;font-weight:700;margin-bottom:10px}
+.linkbtn{display:inline-block;background:var(--t2);color:#fff;border-radius:999px;padding:8px 16px;font-weight:700;text-decoration:none;font-size:15px;margin:6px 0}
+.law-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+@media(max-width:600px){.law-grid{grid-template-columns:1fr}}
+.law-grid > div{background:#fff;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:10px 13px;font-size:15px}
+.law-grid small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+
+/* الشريط الجانبي/الأهداف */
+.two{display:grid;grid-template-columns:.9fr 1.4fr;gap:16px;align-items:start}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.obj{margin-bottom:8px;display:flex;gap:9px;align-items:flex-start}
+.obj .n{flex:none;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;color:#fff;font-size:13.5px;background:var(--elm)}
+.obj .n.o{background:var(--gold);color:#3a2a06}.obj .n.g{background:var(--grn)}.obj .n.p{background:#7a5cc0}
+.obj span.t{font-size:15.5px;line-height:1.8}
+.mini{font-size:15px;line-height:1.8;color:var(--ink)}
+.mini .src{color:var(--muted);font-size:13.5px}
+
+/* سير اللقاء */
+.flow{position:relative;padding-inline-start:26px}
+.flow::before{content:"";position:absolute;inset-inline-start:8px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--elm),var(--gold))}
+.step{position:relative;margin-bottom:14px;background:#fff;border:1px solid var(--line);border-radius:13px 9px 14px 8px/8px 13px 9px 14px;padding:13px 17px;box-shadow:var(--shadow-sm)}
+.step::before{content:"";position:absolute;inset-inline-start:-24px;top:17px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--elm)}
+.step b.k{color:var(--elm)}
+
+.story{background:#fff8ec;border:1px solid #ebd9a8;border-radius:16px 9px 18px 10px/10px 16px 9px 18px;padding:0;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:6px}
+.story .h{background:linear-gradient(90deg,var(--gold),#b98a2a);color:#fff;padding:11px 18px;font-weight:700;font-size:16px}
+.story .h span{font-weight:400;opacity:.9;font-size:13.5px}
+.story .b{padding:14px 18px}
+.story .b p{margin-bottom:8px}
+
+/* التغذية الراجعة */
+.feedback{border-inline-start:5px solid var(--grn)}
+.feedback h3{color:var(--grn);font-size:16px;margin-bottom:8px}
+.feedback ol{margin-inline-start:20px;font-size:16px;line-height:2}
+.note{color:var(--muted);font-size:14.5px;margin-top:8px}
+
+/* اختيارات الأنشطة */
+.actbar{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#3a2a06;border-radius:14px 14px 0 0;font-weight:700;padding:11px;text-align:center;margin-top:8px}
+.actgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;overflow:hidden}
+@media(max-width:600px){.actgrid{grid-template-columns:1fr}}
+.actgrid > div{padding:13px 16px;border:1px solid #f0e8da;font-size:15px;line-height:1.85}
+.actgrid .t{color:var(--t1);font-weight:700;display:block;margin-bottom:5px}
+.actgrid .bd{color:var(--elm);font-weight:700}
+
+/* كفارة */
+.dua{text-align:center;background:linear-gradient(135deg,var(--t1),var(--grn));color:#fff;border-radius:18px 10px 20px 11px/11px 18px 10px 20px;padding:24px;box-shadow:var(--shadow);margin-top:16px}
+.dua .l{color:var(--gold);font-size:15px;letter-spacing:.5px;margin-bottom:6px}
+.dua .x{font-size:21px;line-height:2}
+
+/* info bar */
+.info{background:var(--elm-soft);border:1px solid #ddd0ec;color:#4a3560;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:11px 15px;font-size:15.5px;font-weight:600;margin-bottom:14px}
+
+/* التقويم */
+.taq{border-top:4px solid var(--elm)}
+.taq.t{border-top-color:var(--gold2)}.taq.n{border-top-color:var(--grn)}
+.taq h3{font-size:16px;font-weight:700;margin-bottom:10px}
+.taq.q h3{color:var(--elm)}.taq.t h3{color:#b0851a}.taq.n h3{color:var(--grn)}
+.taq ul{list-style:none}
+.taq li{display:flex;gap:8px;align-items:flex-start;margin-bottom:7px;font-size:15.5px;line-height:1.8}
+.taq li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:9px}
+
+/* con-grid (قيم/مفاهيم/مؤشرات) */
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.cg{grid-template-columns:1fr}}
+.ci{background:#fff;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:11px 14px}
+.ci .term{color:var(--elm);font-weight:700;font-size:15.5px;margin-bottom:3px}
+.ci .def{font-size:15px;line-height:1.8}
+.steps{list-style:none;margin-top:6px}
+.steps li{display:flex;gap:9px;margin-bottom:7px;font-size:15.5px;line-height:1.85}
+.steps li::before{content:"•";color:var(--gold);font-weight:900;font-size:18px;line-height:1.2}
+.cardgold{border-top:4px solid var(--gold)}
+.cardpurple{border-top:4px solid #7a5cc0}
+.cardblue{border-top:4px solid var(--t2)}
+.card > .lbl.gold{border-color:var(--gold)}
+
+/* الآداب */
+.adab{border-radius:14px 8px 15px 9px/9px 14px 8px 15px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:14px;background:#fff}
+.adab .h{background:linear-gradient(90deg,var(--elm),#5d4478);color:#fff;padding:11px 16px;font-weight:700;font-size:16px}
+.adab .b{padding:14px 16px}
+.adab .row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:15.5px;line-height:1.8}
+.tag{flex:none;border-radius:8px;font-weight:700;font-size:13.5px;padding:3px 11px;color:#fff}
+.tag.s{background:#c46b2e}.tag.r{background:var(--t2)}.tag.v{background:var(--grn)}
+.adab .link{background:#F4EDDE;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;font-size:15px;padding:8px 12px;margin-top:6px}
+
+/* تحضيرات ولي الأمر */
+.par{margin-bottom:12px}
+.par .h{color:var(--t1);font-weight:700;font-size:16.5px;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.hs{display:flex;gap:9px;align-items:flex-start;margin-bottom:6px;font-size:15.5px;line-height:1.8}
+.hs .n{flex:none;width:22px;height:22px;border-radius:50%;background:var(--elm);color:#fff;display:grid;place-items:center;font-size:13.5px}
+.after{background:#f2faf5;border:1px solid #bfe0cd;border-radius:9px;padding:6px 12px;margin-top:5px;font-size:14.5px;color:#0A5030;font-style:italic}
+.pq{background:var(--elm-soft);border-radius:10px;color:#4a3560;padding:8px 12px;margin:5px 0;font-size:15px;font-weight:600}
+.msg{border-inline-start:5px solid var(--grn);font-size:15.5px;line-height:1.95}
+.msg .l{color:var(--grn);font-weight:700;margin-bottom:6px}
+
+/* الحصيلة */
+table.voc{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;overflow:hidden;margin-top:4px}
+table.voc th{background:var(--elm);color:#fff;font-size:15px;padding:10px 12px;text-align:start}
+table.voc td{font-size:15px;line-height:1.8;padding:10px 12px;border-top:1px solid var(--line)}
+table.voc .w{color:var(--elm);font-weight:700}
+
+/* المراجع */
+.refblock{margin-bottom:14px}
+.refblock .h{color:var(--t1);font-weight:700;font-size:16px;margin-bottom:4px}
+.refblock .sub{color:var(--muted);font-size:14.5px;margin-bottom:8px}
+.refitem{display:flex;gap:10px;align-items:flex-start;border-bottom:1px dashed var(--line);padding:10px 0}
+.rbadge{flex:none;border-radius:999px;font-size:12.5px;font-weight:700;padding:3px 10px;color:#fff}
+.rbadge.q{background:var(--grn)}.rbadge.t{background:var(--t2)}.rbadge.p{background:#7a5cc0}.rbadge.d{background:#546e7a}
+.refitem .tt{font-size:15.5px;font-weight:700}
+.refitem .dd{color:var(--muted);font-size:14.5px}
+.reflink{color:var(--t2);font-size:14.5px;text-decoration:underline;margin-inline-end:8px}
+
+/* الأركان */
+.chero h2{margin-bottom:6px}
+.chero p{color:var(--muted);font-size:15.5px}
+.caution{background:#F4EDDE;border:1px dashed #ebd9a8;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:11px 15px;color:#8a6410;font-size:15px;margin:12px 0}
+.corner{border-radius:18px 10px 20px 11px/11px 18px 10px 20px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:16px;background:#fff}
+.corner .h{padding:13px 18px;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.corner .h .k{background:rgba(255,255,255,.2);border-radius:999px;padding:4px 13px;font-size:14.5px}
+.corner .h h4{font-size:17px}
+.corner .b{padding:16px 18px}
+.cfield{margin-bottom:10px}
+.cfield b{color:var(--elm);font-size:15px;display:block;margin-bottom:2px}
+.cfield p,.cfield li{font-size:15px;line-height:1.8}
+.cfield ol{margin-inline-start:20px}
+.faith{background:#F4EDDE;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;padding:10px 14px;margin-top:8px;font-size:15px}
+
+.foot{text-align:center;color:var(--muted);font-size:14.5px;margin-top:34px}
+/* ==== إثراء الدليل ==== */
+.sig-video{margin:10px 0;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;overflow:hidden;background:#3a2a4d}
+.sig-video video{display:block;width:100%;max-height:300px;background:#000}
+.sig-video .cap{background:var(--elm-soft);color:#4a3560;font-size:13.5px;padding:8px 12px}
+.plan-wrap{overflow-x:auto}
+table.plan{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;overflow:hidden}
+table.plan th{background:var(--t2);color:#fff;font-size:14.5px;padding:9px 12px;text-align:start}
+table.plan td{font-size:14.5px;padding:9px 12px;border-top:1px solid var(--line);line-height:1.7}
+table.plan td:first-child{font-weight:700;color:var(--t1);white-space:nowrap}
+table.plan td.z{color:var(--gold2);font-weight:700;white-space:nowrap;text-align:center}
+table.plan tr.tot td{background:#F4EDDE;font-weight:700;color:#8a6410}
+.central{background:linear-gradient(135deg,#5d4478,#8660A8);color:#fff;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;padding:14px 18px;margin:6px 0 2px;box-shadow:var(--shadow-sm)}
+.central b{color:#ffe9b8;display:block;margin-bottom:3px}
+.cues{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.cue{border:2px dashed #cdbf9e;background:#fffdf6;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;padding:14px;text-align:center}
+.cue .ic{font-size:30px;display:block;margin-bottom:6px}
+.cue .t{font-weight:700;color:var(--t1);font-size:14.5px;display:block}
+.cue .d{color:var(--muted);font-size:13px;display:block;margin-top:2px}
+.cue .tag{display:inline-block;margin-top:7px;background:var(--elm-soft);color:#4a3560;border-radius:999px;padding:2px 10px;font-size:12px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.gitem{border:1px solid var(--line);border-radius:14px 8px 15px 9px/9px 14px 8px 15px;overflow:hidden;background:#fff;box-shadow:var(--shadow-sm)}
+.gitem .imgwrap{background:#f6f1e6;height:180px;overflow:hidden}
+.gitem img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.gitem .cap{padding:9px 12px;font-size:14px;font-weight:700;color:var(--t1);text-align:center}
+.gitem .cap small{display:block;color:var(--muted);font-weight:400;font-size:12.5px;margin-top:2px}
+.step-media{margin:9px auto 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;max-width:330px;box-shadow:var(--shadow-sm)}
+.step-media img{display:block;width:100%;height:auto}
+.step-media .cap{background:var(--elm-soft);color:#4a3560;font-size:12.5px;padding:5px 10px;text-align:center}
+.actful{border-inline-start:5px solid var(--gold);margin-top:8px}
+.actful h3{color:#8a6410;font-size:17px;margin-bottom:10px}
+.actful .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px}
+@media(max-width:600px){.actful .row2{grid-template-columns:1fr}}
+.miniblock b{color:var(--elm);display:block;margin-bottom:3px;font-size:14.5px}
+.actful ol{margin-inline-start:20px;font-size:15px;line-height:1.95}
+.actful .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px;margin-top:8px}
+.actful .opt{background:#f7fbfa;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;line-height:1.7}
+.actful .opt b{color:var(--t2)}
+ol.qa{list-style:none;margin-inline-start:0}
+ol.qa li{margin-bottom:12px}
+ol.qa .q{font-weight:700;color:var(--t1);font-size:15.5px}
+ol.qa .a{display:block;margin-top:3px;background:#f2faf5;border-inline-start:3px solid var(--grn);border-radius:8px;padding:7px 12px;font-size:14.5px;color:#12563a;line-height:1.8}
+ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;color:var(--grn)}
+.strat{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 13px;margin-bottom:8px}
+.strat .k{flex:none;background:var(--elm-soft);color:#4a3560;border-radius:8px;padding:4px 11px;font-size:13.5px;font-weight:700;white-space:nowrap}
+.strat .v{font-size:14.5px;line-height:1.8}
+.means{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.means .m{background:#fff;border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:12px 14px;border-top:4px solid var(--elm)}
+.means .m.s2{border-top-color:var(--gold2)}.means .m.s3{border-top-color:var(--grn)}.means .m.s4{border-top-color:#7a5cc0}
+.means .m h4{color:var(--t1);font-size:15px;margin-bottom:6px}
+.means .m .i{font-size:13.5px;line-height:1.7;color:var(--ink);display:block;padding-inline-start:12px;position:relative}
+.means .m .i::before{content:"•";color:var(--gold);position:absolute;inset-inline-start:0}
+/* تخطيط: شريط «حول الدرس» جانبي مصغّر + سير اللقاء أوسع */
+.les{display:grid;grid-template-columns:minmax(190px,0.72fr) 1.9fr;gap:16px;align-items:start;margin-top:6px}
+.objgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:600px){.objgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.objgrid{grid-template-columns:1fr}}
+.objgrid .lbl{font-size:13px;margin-bottom:8px;padding-bottom:2px}
+.objgrid .obj{margin-bottom:5px;gap:7px}
+.objgrid .obj .n{width:19px;height:19px;font-size:11.5px;border-radius:6px}
+.objgrid .obj span.t{font-size:13.5px;line-height:1.6}
+@media(max-width:560px){.les{grid-template-columns:1fr}}
+.side .card{padding:12px 14px;margin-bottom:12px}
+.side .card:last-child{margin-bottom:0}
+.side .lbl{font-size:14px;margin-bottom:9px}
+.side .chip{font-size:12.5px;padding:5px 10px}
+.side .mini{font-size:13.5px}
+.side .mini .src{font-size:12px}
+.side-title{font-family:var(--fd);font-weight:700;color:#4a3560;font-size:15px;background:var(--elm-soft);border:1px solid #ddd0ec;border-radius:10px;padding:7px 12px;margin-bottom:12px;text-align:center}
+/* أهداف اللقاء داخل الشريط الجانبي: عمود واحد يمنع الفيضان */
+.side .objgrid{grid-template-columns:1fr!important;gap:10px}
+.side .objgrid>div{min-width:0}
+.side .objgrid .obj span.t{font-size:13px;line-height:1.7;word-break:break-word}
+/* ورقة التدريس السريعة (٣ مراحل · خطوات مرجعية) */
+.quick-sheet{margin:16px 0;background:linear-gradient(180deg,#fffdf8,#f7f2fb);border:1px solid rgba(134,96,168,.20);border-radius:18px 10px 20px 11px/11px 18px 10px 20px;box-shadow:var(--shadow-sm);overflow:hidden}
+.quick-sheet .qs-head{background:linear-gradient(90deg,var(--t1),var(--t2));color:#fff;padding:12px 16px;font-family:var(--fd);font-weight:700;font-size:15.5px}
+.quick-sheet .qs-phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;padding:14px}
+.quick-sheet .qs-phase{background:#fff;border:1px solid rgba(134,96,168,.14);border-top:4px solid var(--t2);border-radius:14px 8px 15px 9px/9px 14px 8px 15px;padding:11px 13px}
+.quick-sheet .qs-ph-h{display:flex;align-items:center;gap:7px;color:var(--t1);font-family:var(--fd);font-weight:700;font-size:14px;margin-bottom:8px;flex-wrap:wrap}
+.quick-sheet .qs-n{width:26px;height:26px;border-radius:8px;background:var(--t2);color:#fff;display:grid;place-items:center;font-size:14px;flex:0 0 auto}
+.quick-sheet .qs-min{margin-inline-start:auto;background:var(--elm-soft);color:var(--t2);border-radius:999px;padding:2px 10px;font-size:11.5px;font-weight:700}
+.quick-sheet .qs-phase ul{margin:0;padding-inline-start:18px}
+.quick-sheet .qs-phase li{font-size:12.5px;line-height:1.8;margin-bottom:4px}
+.quick-sheet .qs-phase li::marker{color:var(--t2)}
+.quick-sheet .qs-home{margin:0 14px;background:#fbf3e3;border:1px solid #eccf94;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:9px 12px;font-size:12.5px;color:#7a5a10;line-height:1.75}
+.quick-sheet .qs-note{margin:12px 14px 14px;padding:9px 12px;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;background:#fff;border:1px dashed rgba(134,96,168,.35);color:var(--muted);font-size:12px;line-height:1.75}
+.mainflow .sec-head{margin-top:0}
+.mainflow .flow{padding-inline-start:24px}
+/* ==== تحسينات حديثة هادئة + شعار ==== */
+.gq-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:120;background:linear-gradient(90deg,var(--gold),var(--elm));transition:width .12s ease-out}
+.gq-top{position:fixed;bottom:22px;inset-inline-start:22px;width:46px;height:46px;border-radius:50%;background:var(--elm);color:#fff;border:0;cursor:pointer;display:grid;place-items:center;font-size:22px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(8px);transition:.25s;z-index:110}
+.gq-top.show{opacity:1;pointer-events:auto;transform:none}
+.gq-lb{position:fixed;inset:0;background:rgba(8,28,30,.88);display:none;place-items:center;z-index:200;padding:26px;cursor:zoom-out}
+.gq-lb.open{display:grid}
+.gq-lb figure{margin:0;text-align:center;max-width:96vw}
+.gq-lb img{max-width:96vw;max-height:86vh;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;box-shadow:0 20px 60px rgba(0,0,0,.5);background:#fff}
+.gq-lb .cap{color:#fff;font-size:15px;margin-top:10px;font-family:var(--fd)}
+.gq-lb .close{position:absolute;top:16px;inset-inline-start:18px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:20px;cursor:pointer}
+.gitem img,.step-media img{cursor:zoom-in}
+.gitem .imgwrap{position:relative}
+.gitem .imgwrap:has(img)::after{content:"";position:absolute;bottom:6px;inset-inline-end:6px;width:30px;height:30px;background:url('brand/seedling.webp') center/contain no-repeat;opacity:.9;filter:drop-shadow(0 1px 2px rgba(0,0,0,.25));pointer-events:none}
+.copy-btn{margin-inline-start:8px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);color:inherit;border-radius:8px;padding:3px 10px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:var(--fb);vertical-align:middle}
+.copy-btn:hover{background:rgba(255,255,255,.3)}
+.copy-btn.copied{background:#2e9e5b;border-color:#2e9e5b;color:#fff}
+
+/* تطوير-النشاط: تخطيط صندوق النشاط المصاحب */
+.actful .miniblock{margin-top:15px}
+.actful .row2 .miniblock{margin-top:0}
+.actful .miniblock>b{display:block;color:var(--t1);font-size:14px;font-weight:700;padding:6px 13px;margin-bottom:9px;border-inline-start:4px solid var(--gold);border-radius:0 9px 9px 0;background:linear-gradient(90deg,rgba(199,154,59,.16),rgba(199,154,59,.03))}
+.actful ol{margin-top:2px;padding-inline-start:8px}
+.actful ol li{margin-bottom:6px}
+.actful .opts{margin-top:2px}
+
+/* ===== توحيد أيقونات الدليل (الخيار أ) ===== */
+.sec-head .num{background:#EEF4F1!important;border:1px solid #D6E5DF;color:#1F4A39!important;box-shadow:none!important}
+.sec-head .num .gi-svg,.sec-head .num .gi{width:22px;height:22px}
+h2 .gi,h3 .gi{vertical-align:-.18em}
+</style>
+<style id="wa-msg-css">
+.wa-wrap{margin:8px 0 2px}
+.wa{max-width:440px;margin:0 auto;border-radius:16px 9px 18px 10px/10px 16px 9px 18px;overflow:hidden;box-shadow:0 12px 34px rgba(0,0,0,.18);background:#ECE5DD;direction:rtl}
+.wa-head{background:#128C7E;color:#fff;display:flex;align-items:center;gap:10px;padding:9px 12px}
+.wa-head .bk{font-size:22px;line-height:1;opacity:.9}
+.wa-head .av{width:40px;height:40px;border-radius:50%;background:#fff;overflow:hidden;display:grid;place-items:center;flex:none}
+.wa-head .av img{width:34px;height:34px;object-fit:contain}
+.wa-head .who{flex:1;min-width:0}
+.wa-head .nm{font-family:var(--fd);font-weight:700;font-size:15.5px;line-height:1.2}
+.wa-head .st{font-size:11.5px;opacity:.85;margin-top:1px}
+.wa-head .ics{display:flex;gap:15px;align-items:center;opacity:.92}
+.wa-head .ics svg{width:19px;height:19px;fill:#fff}
+.wa-body{background:#ECE5DD;background-image:radial-gradient(rgba(0,0,0,.028) 1px,transparent 1px);background-size:18px 18px;padding:16px 12px 12px;display:flex;flex-direction:column}
+.wa-day{align-self:center;background:#e2f2ea;color:#5a7a68;font-size:11px;border-radius:8px;padding:3px 12px;margin-bottom:12px;box-shadow:0 1px 1px rgba(0,0,0,.05)}
+.wa-bub{position:relative;background:#DCF8C6;border-radius:12px 12px 12px 4px;padding:8px 12px 6px;max-width:90%;margin-inline-end:auto;box-shadow:0 1px 1.5px rgba(0,0,0,.13)}
+.wa-bub::after{content:"";position:absolute;top:0;inset-inline-start:-7px;width:0;height:0;border:7px solid transparent;border-top-color:#DCF8C6;border-inline-start:0}
+.wa-text{font-family:var(--fb);font-size:14px;line-height:1.95;color:#0b1f14;white-space:pre-wrap}
+.wa-text strong{font-weight:700;color:#075E54}
+.wa-text em{font-style:italic;color:#1a3a2a}
+.wa-meta{display:flex;align-items:center;gap:4px;justify-content:flex-start;margin-top:4px}
+.wa-meta .t{font-size:11px;color:#5a7768}
+.wa-meta .ck{width:17px;height:11px}
+.wa-foot{background:#F0F0F0;padding:8px 10px;display:flex;gap:8px;align-items:center}
+.wa-foot .inp{flex:1;background:#fff;border-radius:22px;padding:9px 15px;color:#9aa5a0;font-size:13px;box-shadow:0 1px 1px rgba(0,0,0,.06)}
+.wa-send{flex:none;background:#128C7E;border-radius:50%;width:44px;height:44px;display:grid;place-items:center;box-shadow:0 2px 6px rgba(18,140,126,.4)}
+.wa-send svg{width:20px;height:20px;fill:#fff}
+.wa-copybar{max-width:440px;margin:10px auto 0;display:flex;justify-content:center}
+.copy-btn.wa-copy{background:#128C7E;border:0;color:#fff;border-radius:999px;padding:9px 20px;font-family:var(--fb);font-weight:700;font-size:13px;cursor:pointer;display:inline-flex;gap:7px;align-items:center;vertical-align:middle;margin:0}
+.copy-btn.wa-copy:hover{background:#0f7568}
+.copy-btn.wa-copy.copied{background:#2e9e5b}
+.wa-hint{max-width:440px;margin:8px auto 0;text-align:center;color:#6b7a72;font-size:12px;line-height:1.75}
+.wa-hint code{background:#eef3ef;border-radius:4px;padding:0 4px;font-size:11.5px;color:#075E54}
+</style>
+<style id="voc-web-css">
+.voc-web{position:relative;container-type:inline-size;max-width:680px;margin:2px auto 6px;background:transparent}
+.voc-web>img{display:block;width:100%;height:auto;aspect-ratio:1448/1086}
+.voc-web .vw{position:absolute;transform:translate(-50%,-50%);text-align:center;font-family:var(--fd,'AlAwwal',serif);color:#3a2f22;white-space:nowrap;line-height:1;z-index:2;animation:vwfade .7s ease both}
+.voc-web .vw::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:-1;border-radius:50%;
+  width:max(4.4em,calc(100% + 1.7em));height:max(1.7em,calc(100% + 1em));
+  background:radial-gradient(ellipse,#F3EBD6 0%,#F3EBD6 52%,rgba(243,235,214,.55) 70%,rgba(243,235,214,0) 82%)}
+.voc-web .vw.center{font-weight:700;font-size:clamp(21px,4.5cqw,33px)}
+.voc-web .vw.center::before{width:max(5em,calc(100% + 1.8em));height:max(2em,calc(100% + 1.1em))}
+.voc-web .vw.branch{font-size:clamp(13px,2.95cqw,19px)}
+@keyframes vwfade{from{opacity:0;transform:translate(-50%,-46%)}to{opacity:1;transform:translate(-50%,-50%)}}
+@media (prefers-reduced-motion:reduce){.voc-web .vw{animation:none}}
+</style>
+<style id="actful-v2">
+.card.actful{padding:0;overflow:hidden;border:1px solid #ece1c6;border-radius:20px;
+  background:linear-gradient(180deg,#fffdf9,#fbf6ec);box-shadow:0 14px 34px rgba(20,64,46,.10)}
+.card.actful>h3{margin:0;background:linear-gradient(120deg,#1F4A39,#0E6E6B);color:#fff;font-family:var(--fd);
+  font-weight:700;font-size:18.5px;line-height:1.4;padding:15px 56px 15px 20px;position:relative}
+.card.actful>h3::before{content:"";position:absolute;inset-inline-start:17px;top:50%;transform:translateY(-50%);
+  width:26px;height:26px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 9h2.5a1.8 1.8 0 1 1 3.5 0H13V6.5a1.8 1.8 0 1 1 0-3.5'/%3E%3Cpath d='M13 3h4a1 1 0 0 1 1 1v4h1.5a1.8 1.8 0 1 1 0 3.5H18v4a1 1 0 0 1-1 1h-4'/%3E%3Cpath d='M13 20a1.8 1.8 0 1 1-3.5 0H6a1 1 0 0 1-1-1v-4H3.5a1.8 1.8 0 1 1 0-3.5H5V9'/%3E%3C/svg%3E") center/contain no-repeat}
+.card.actful>h3::after{content:"نشاطٌ تطبيقيّ";position:absolute;inset-inline-end:15px;top:50%;transform:translateY(-50%);
+  font-family:var(--fb);font-size:11px;font-weight:700;color:#fff;background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.42);border-radius:999px;padding:3px 11px;white-space:nowrap}
+.card.actful>*:not(h3){margin-inline:20px}
+
+/* الهدف / الأدوات */
+.card.actful .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 20px 4px}
+@media(max-width:600px){.card.actful .row2{grid-template-columns:1fr}}
+.card.actful .row2 .miniblock{background:#fff;border:1px solid #ece3d2;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;
+  padding:12px 14px 13px;padding-inline-start:46px;box-shadow:0 3px 10px rgba(20,64,46,.05);position:relative;
+  font-size:14.5px;line-height:1.8;color:var(--ink)}
+.card.actful .row2 .miniblock:first-child{border-top:3px solid var(--t2)}
+.card.actful .row2 .miniblock:last-child{border-top:3px solid var(--gold)}
+.card.actful .row2 .miniblock::before{content:"";position:absolute;inset-inline-start:13px;top:13px;width:23px;height:23px}
+.card.actful .row2 .miniblock:first-child::before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232C6A4D' stroke-width='1.8'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Ccircle cx='12' cy='12' r='1.5' fill='%232C6A4D'/%3E%3C/svg%3E") center/contain no-repeat}
+.card.actful .row2 .miniblock:last-child::before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B8862B' stroke-width='1.8' stroke-linejoin='round'%3E%3Cpath d='M3 8l9-5 9 5v8l-9 5-9-5z'/%3E%3Cpath d='M3 8l9 5 9-5'/%3E%3Cpath d='M12 13v8'/%3E%3C/svg%3E") center/contain no-repeat}
+.card.actful .row2 .miniblock>b{display:block;font-family:var(--fd);font-weight:700;color:var(--t1);font-size:15px;margin-bottom:4px;background:none;border:0;padding:0}
+
+/* عناوين الأقسام (miniblock خارج row2) */
+.card.actful>.miniblock{margin-top:17px}
+.card.actful>.miniblock>b{display:inline-flex;align-items:center;gap:8px;background:none;border:0;padding:0;margin:0 0 10px;
+  color:var(--t1);font-family:var(--fd);font-weight:700;font-size:16px}
+.card.actful>.miniblock>b::before{content:"";width:5px;height:19px;border-radius:3px;
+  background:linear-gradient(var(--gold),var(--gold2));display:inline-block}
+
+/* خطوات التنفيذ — بطاقات مرقّمة */
+.card.actful>ol{list-style:none;counter-reset:step;margin:4px 20px 0;padding:0}
+.card.actful>ol>li{counter-increment:step;position:relative;background:#fff;border:1px solid #eee4d3;border-radius:13px 9px 14px 8px/8px 13px 9px 14px;
+  padding:13px 15px;padding-inline-start:54px;margin-bottom:9px;font-size:14.5px;line-height:1.8;color:var(--ink);box-shadow:0 2px 8px rgba(20,64,46,.04)}
+.card.actful>ol>li::before{content:counter(step);position:absolute;inset-inline-start:11px;top:50%;transform:translateY(-50%);
+  width:31px;height:31px;border-radius:50%;background:linear-gradient(135deg,#2C6A4D,#0E6E6B);color:#fff;
+  font-family:var(--fd);font-weight:700;font-size:15.5px;display:grid;place-items:center;box-shadow:0 3px 9px rgba(14,110,107,.32)}
+
+/* أسئلة / اختيارات — رقائق */
+.card.actful .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:2px 20px 0}
+.card.actful .opt{background:#f6faf8;border:1px solid #dceae3;border-radius:12px 8px 13px 9px/9px 12px 8px 13px;padding:11px 13px;font-size:14px;line-height:1.75;color:var(--ink)}
+.card.actful .opt b{display:inline-block;color:#fff;background:var(--t2);border-radius:7px;padding:1px 9px;font-size:12.5px;margin-bottom:3px}
+
+/* صور النشاط (معرض مصغّر) */
+.card.actful .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:2px 20px 0}
+.card.actful .gitem{border:1px solid var(--line);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;overflow:hidden;background:#fff}
+.card.actful .imgwrap{height:120px;background:linear-gradient(135deg,#F4EDDE,#e9f2ee);display:grid;place-items:center;overflow:hidden}
+.card.actful .imgwrap img{width:100%;height:100%;object-fit:cover}
+.card.actful .cap{padding:8px 10px;font-size:12.5px;color:var(--t1);font-weight:700;line-height:1.5}
+.card.actful .cap small{display:block;color:var(--muted);font-weight:400;font-size:11.5px;margin-top:2px}
+
+/* دعاء الختام */
+.card.actful .central{margin:16px 20px 20px;background:linear-gradient(135deg,#1F4A39,#0E6E6B);color:#fff;
+  border-radius:16px 9px 18px 10px/10px 16px 9px 18px;padding:15px 18px;padding-inline-start:52px;position:relative;box-shadow:0 8px 20px rgba(14,110,107,.22)}
+.card.actful .central::before{content:"";position:absolute;inset-inline-start:16px;top:50%;transform:translateY(-50%);
+  width:24px;height:24px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe9b8' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20c0-8 5-14 16-15-1 10-7 15-16 15z'/%3E%3Cpath d='M4 20c3-6 7-9 12-10'/%3E%3C/svg%3E") center/contain no-repeat}
+.card.actful .central b{color:#ffe9b8;display:block;margin-bottom:3px;font-family:var(--fd)}
+
+/* اختيارات إضافية */
+.actbar{background:linear-gradient(120deg,var(--gold),var(--gold2));color:#3a2a06;border-radius:14px 8px 15px 9px/9px 14px 8px 15px;font-weight:700;
+  font-family:var(--fd);padding:12px;text-align:center;margin-top:18px;font-size:15px;box-shadow:0 6px 16px rgba(199,154,59,.22)}
+.actgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+@media(max-width:600px){.actgrid{grid-template-columns:1fr}}
+.actgrid>div{background:#fff;border:1px solid var(--line);border-inline-start:3px solid var(--gold);border-radius:12px 8px 13px 9px/9px 12px 8px 13px;
+  padding:12px 15px;font-size:14px;line-height:1.8;box-shadow:0 3px 10px rgba(20,64,46,.04)}
+.actgrid .t{color:var(--t1);font-family:var(--fd);font-weight:700;display:block;margin-bottom:6px;font-size:14.5px}
+.actgrid .bd{color:var(--elm);font-weight:700}
+</style>
+
+<style id="actscene-css">
+.card.actful>.actscene{margin-inline:0;padding:14px 18px 8px;text-align:center}
+.actscene .scene-lbl{font-family:var(--fb);font-size:11.5px;font-weight:700;color:var(--gold);letter-spacing:.3px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+.actscene .scene-lbl::before,.actscene .scene-lbl::after{content:"";height:1px;width:34px;background:linear-gradient(90deg,transparent,rgba(199,154,59,.6))}
+.actscene .scene-lbl::after{background:linear-gradient(90deg,rgba(199,154,59,.6),transparent)}
+.actscene svg{width:100%;max-width:440px;height:auto;display:block;margin:0 auto;border-radius:14px 8px 15px 9px/9px 14px 8px 15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== الغلاف ===== -->
+  <div class="cover">
+    <div class="cover-photo" style="background-image:url('units-art/unit-makhluq.jpg?v=1')"></div>
+    <div class="cover-main">
+      <div class="cover-l">
+        <span class="c-badge">مادة: أحبك ربي · مجلس أسماء الله الحسنى</span>
+        <h1>وحدة أنا مخلوق كرّمني الله — اللقاء الرابع<br/>اسم الله الرب (٤): قصة إبراهيم عليه السلام مع قومه</h1>
+        <div class="c-meta">المرحلة: تمهيدي (5–6 سنوات) · المجلس: لقاء أحبّك ربّي — مجلس أسماء الله الحسنى · اليوم: الإثنين ٢٣ / ٣</div>
+      </div>
+      <div class="cover-r">
+        <div class="c-unit" style="background:#fff;padding:8px 10px;display:grid;place-items:center"><img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة" style="display:block;width:88px;height:88px;object-fit:contain"/></div>
+        <div class="c-dur">المدة: نصف ساعة</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== التبويبات ===== -->
+  <div class="tabs">
+    <button class="tab active" data-p="p1">دليل الدرس كامل</button>
+    <button class="tab" data-p="p2">التكامل اليومي</button>
+    <button class="tab" data-p="p3">التقويم</button>
+    <button class="tab" data-p="p4">الآداب الصفية</button>
+    <button class="tab" data-p="p5">تحضيرات ولي الأمر</button>
+    <button class="tab" data-p="p6">القيم والمفاهيم والاستراتيجيات</button>
+    <button class="tab" data-p="p7">الحصيلة اللغوية</button>
+    <button class="tab" data-p="p8">مراجع المعلمة</button>
+    <button class="tab gold" data-p="p9">الأركان التطبيقية</button>
+  </div>
+
+  <!-- ══════════ 1) دليل الدرس ══════════ -->
+  <div class="panel active" id="p1">
+
+    <!-- ترويسة الدرس: بوصلة اللقاء — سؤالٌ يفتح، وفكرةٌ تبقى -->
+    <div class="lhero">
+      <div class="lh focus">
+        <div class="lh-lbl"><i class="gi" data-i="سؤال اليوم" data-size="20"></i> سؤال التركيز</div>
+        <div class="lh-q">من الذي يستحقّ أن ندعوه ونعبده ونطلب منه حاجاتنا؟</div>
+        <div class="lh-foot">بوصلةُ اللقاء: تفتح به المعلمةُ الحوار وتعود إليه عند الغلق. <b>يقيسه</b> سؤالُ التغذية الراجعة الأول ومؤشراتُ النجاح.</div>
+      </div>
+      <div class="lh key">
+        <div class="lh-lbl"><i class="gi" data-i="الهدف" data-size="20"></i> جوهر اللقاء</div>
+        <div class="lh-t">الله ربّي هو الذي خلقني ويهديني ويطعمني ويشفيني، فهو المستحقّ للعبادة وحده لا شريك له، وكلّ حاجاتي أطلبها منه.</div>
+        <div class="lh-foot">تظهر موسّعةً في «المعنى المركزي» بسير اللقاء؛ لو لم يبقَ من الدرس إلا جملةٌ فهي هذه.</div>
+      </div>
+    </div>
+
+    <div class="quick-sheet">
+      <div class="qs-head"> ورقة التدريس السريعة — خطوات اللقاء أثناء الدرس</div>
+      <div class="qs-phases">
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">①</span> تهيئة وبداية اللقاء <span class="qs-min">٧ د</span></div>
+          <ul>
+            <li>إشارة بدء اللقاء — أسماء الله الحسنى، ثم جواب الإشارة.</li>
+            <li>افتتاح اللقاء بذكر الله، والتذكير بقوانين الفصل.</li>
+            <li>عرض بطاقة اسم الله الرب ومراجعة اللقاءات الثلاثة السابقة.</li>
+          </ul>
+        </div>
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">②</span> بناء وسير اللقاء <span class="qs-min">١٥ د</span></div>
+          <ul>
+            <li>قصص القرآن أحسن القصص وأصدقها: قصّة نبيّ الله إبراهيم عليه السلام مع قومه وسؤاله إيّاهم.</li>
+            <li>سماع الآيات ﴿فَإِنَّهُمْ عَدُوٌّ لِي إِلَّا رَبَّ الْعَالَمِينَ﴾… وما عرفناه من القصّة.</li>
+            <li>كلّ حاجاتي أطلبها من الله ربّي.</li>
+          </ul>
+        </div>
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">③</span> إغلاق وتقويم <span class="qs-min">٨ د</span></div>
+          <ul>
+            <li>نشاط عمود صحّ وخطأ بمواقفه الأربعة.</li>
+            <li>ترديد أنّ الله وحده المستحقّ للعبادة.</li>
+            <li>دعاء كفارة المجلس وختام اللقاء.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="qs-home"> <strong>ربط الأسرة:</strong> إذا احتاج الطفلُ شيئًا يذكّره وليُّ الأمر أن يدعو ربَّه أوّلًا ويقول: «يا ربّ أعطني»، ويسأله: إذا مرضتَ من يشفيك؟ بلا تكليفٍ كتابيّ.</div>
+      <div class="qs-note">ورقةٌ مرجعية سريعة أثناء الدرس — الخطوات فقط دون الأهداف والزيادات؛ والنصّ الكامل في تبويب «دليل الدرس كامل».</div>
+    </div>
+
+    <div class="sec-head first"><div class="num"><i class="gi" data-i="مسار بداية اللقاء" data-size="22"></i></div><h2>مسار بداية اللقاء</h2><span class="stage">① تهيئة</span><div class="rule"></div></div>
+    <div class="flow-card sig">
+      <h3><i class="gi" data-i="إشارات اللقاءات" data-size="20"></i> إشارة بدء اللقاء — أسماء الله الحسنى</h3>
+      <div class="greet">السلام عليكم ورحمة الله وبركاته يا أحباب الله. <strong>نستمع الآن إلى إشارة بدء اللقاء لنعرف ماذا سيكون لقاؤنا.</strong></div>
+      <p><strong>منهجية الإشارة:</strong> تبدأ المعلمة بتحية الإسلام، ثم تدعو الأطفال للاستماع <strong>دون أن تُسمّي اللقاء</strong>؛ فيستمعون إلى <strong>آية الأسماء الحسنى وحديث فضل إحصائها</strong> (إشارة مادة أحبك ربي) <strong>ويتعرّفون على لقائهم بأنفسهم</strong> — فيرتبط كلّ لقاء بإشارته في أذهانهم — ثم <strong>تؤكّد المعلمة:</strong> «نعم، لقاؤنا الآن هو لقاء أحبك ربي؛ نتعلّم أسماء الله الحسنى ونعرف معانيها وندعوه بها ونعيش آثارها»، فيتهيّؤون للجلوس والإنصات.</p>
+      <div class="belief-text" style="font-weight:700;text-align:center">﴿وَلِلَّهِ الْأَسْمَاءُ الْحُسْنَىٰ فَادْعُوهُ بِهَا﴾ <span style="font-weight:400;font-size:14px">[الأعراف: ١٨٠]</span></div>
+      <p style="margin-top:10px"><strong>الحديث:</strong> قال رسول الله ﷺ: «إِنَّ لِلَّهِ تِسْعَةً وَتِسْعِينَ اسْمًا، مِائَةً إِلَّا وَاحِدًا، مَنْ أَحْصَاهَا دَخَلَ الْجَنَّةَ» (متفق عليه).</p>
+      <p style="margin-top:8px"><strong>المعنى الميسّر:</strong> من إحصائها أن نتعلّم أسماء الله، ونفهم معانيها، وندعوه بها، ونعمل بما يحبه؛ نرجو أن يوفّقنا الله لذلك فنفوز بوعده.</p>
+      <div class="sig-video" style="margin:12px 0;border:1px solid var(--line);border-radius:14px 8px 15px 9px/9px 14px 8px 15px;overflow:hidden;background:#2a1f3a">
+        <div style="display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--elm-soft);color:var(--t1);font-weight:800;font-size:13.5px"><span>▶</span><span>فيديو إشارة بدء لقاء أحبك ربي</span></div>
+        <video controls preload="none" style="display:block;width:100%;max-height:300px;background:#000"><source src="assets/gq_signal_ohb.mp4" type="video/mp4"/>لا يدعم المتصفح تشغيل الفيديو المضمّن.</video>
+        <div style="padding:8px 12px;color:var(--muted);font-size:12px;background:#fff">تستعين المعلمة بالفيديو لضبط نغمة إشارة بدء اللقاء، مع بقاء النصّ ظاهرًا في البطاقة.</div>
+      </div>
+      <div class="greet"><strong>جواب الإشارة:</strong> «لقاؤنا أحبك ربي؛ نتعلم أسماء الله الحسنى ونعرف معانيها وندعوه بها ونعيش آثارها».</div>
+      <div class="caution" style="margin:10px 0 0"><strong>تنبيه عقدي:</strong> لا يُقال: «ليس لله إلا تسعة وتسعون اسمًا». الحديث يبيّن فضل إحصاء تسعة وتسعين اسمًا، ولا يحصر أسماء الله كلها في هذا العدد.</div>
+    </div>
+    <div class="flow-card" style="border-inline-start:5px solid var(--gold)">
+      <h3><i class="gi" data-i="دعاء" data-size="20"></i> افتتاح اللقاء بذكر الله</h3>
+      <p>تبدأ المعلمةُ بـ<strong>البسملة والحمدلة</strong> والصلاةِ على النبيّ ﷺ، ثمّ تفتتح لقاء «أحبك ربي» بذكرِ الله وطلبِ العون على محبّةِ الله وشكرِ نِعَمه، وتُردّد لجذب انتباه الأطفال: «انتباه… انتباه… حان وقتُ محبّةِ الله»، فيتهيّؤون للإنصات.</p>
+      <p style="margin-top:10px;font-size:14.5px;color:var(--muted)"><strong>الحزمُ مع الهدوء:</strong> تُدير المعلمةُ اللقاءَ بحزمٍ هادئ — صوتٌ لطيفٌ، وحدودٌ واضحة، وابتسامةٌ محتسبة — دون شدّةٍ تُنفّر ولا فوضى تُشتّت.</p>
+    </div>
+    <div class="flow-card law">
+      <h3><i class="gi" data-i="الآداب الصفية والقوانين" data-size="20"></i> قوانين الفصل</h3>
+      <div class="law-grid">
+        <div><b>أحافظ على نظافة فصلي</b><small>إماطة الأذى عن الطريق صدقة.</small></div>
+        <div><b>أستمع وأنصت</b><small>فلا أقاطع الآخرين.</small></div>
+        <div><b>أحفظ لساني ويدي</b><small>المسلم من سلم المسلمون من لسانه ويده.</small></div>
+        <div><b>أجلس جلسة صحيحة</b><small>في المساحة المخصصة لي.</small></div>
+        <div><b>أرفع يدي للمشاركة</b><small>السؤال للجميع والإجابة لمن تختاره المعلمة.</small></div>
+      </div>
+    </div>
+    <div class="flow-card rev">
+      <h3><i class="gi" data-i="استدعاء السابق" data-size="20"></i> مراجعة سريعة</h3>
+      <p>نراجع سلسلة اسم الله الرب: تعلّمنا أنّ الله ربّي خلقني وأعدّني، وأنّه ربّ جميع المخلوقات، وأنّه أمدّني بالنعم وهو معبودي وحده. <strong>واليوم نُتمّها بقصّةٍ من أصدق القصص: قصّة إبراهيم عليه السلام مع قومه.</strong></p>
+    </div>
+
+    
+
+    <div class="les">
+      <aside class="side">
+        <div class="side-title"> حول الدرس</div>
+        <div class="card">
+          <div class="lbl">أهداف اللقاء</div>
+          <div class="objgrid">            <div>
+              <div class="lbl">معرفية</div>
+              <div class="obj"><span class="n">١</span><span class="t">أن يعرف قصّة إبراهيم عليه السلام مع قومه وسؤالَه إيّاهم</span></div>
+              <div class="obj"><span class="n">٢</span><span class="t">أن يعرف أنّ الله ربّه هو وحده المستحقّ للعبادة</span></div>
+            </div>
+            <div>
+              <div class="lbl">مهارية</div>
+              <div class="obj"><span class="n g">١</span><span class="t">أن يميّز التصرّف الصحيح (اللجوء إلى الله) من الخاطئ في مواقف الحاجة</span></div>
+            </div>
+            <div>
+              <div class="lbl">وجدانية</div>
+              <div class="obj"><span class="n o">١</span><span class="t">أن يعلّق قلبَه بالله وحده ويقتدي بأنبيائه عليهم السلام</span></div>
+            </div>
+            <div>
+              <div class="lbl">إجرائية</div>
+              <div class="obj"><span class="n p">١</span><span class="t">يرفع الوجه الصحيح في عمود صحّ وخطأ</span></div>
+              <div class="obj"><span class="n p">٢</span><span class="t">يقول عند الحاجة: «يا ربّ أطعمني · اشفني · احفظني»</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="lbl">المفردات</div>
+          <div class="chips">
+            <span class="chip c">العبادة</span><span class="chip c">الأصنام</span><span class="chip c">جمادات</span><span class="chip c">يهدين</span><span class="chip c">يشفين</span><span class="chip c">تعوّذنا</span><span class="chip c">مصالحنا</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="lbl"> الآيات والأحاديث</div>
+          <div class="mini">﴿فَإِنَّهُمْ عَدُوٌّ لِي إِلَّا رَبَّ الْعَالَمِينَ ۝ الَّذِي خَلَقَنِي فَهُوَ يَهْدِينِ﴾ <span class="src">[الشعراء: ٧٧–٧٨]</span></div>
+          <div class="mini" style="margin-top:6px">﴿وَالَّذِي هُوَ يُطْعِمُنِي وَيَسْقِينِ ۝ وَإِذَا مَرِضْتُ فَهُوَ يَشْفِينِ﴾ <span class="src">[الشعراء: ٧٩–٨٠]</span></div>
+          <div class="mini" style="margin-top:6px">﴿وَالَّذِي يُمِيتُنِي ثُمَّ يُحْيِينِ﴾ <span class="src">[الشعراء: ٨١]</span></div>
+          <div class="mini" style="margin-top:6px">حديث: «إِنَّ لِلَّهِ تِسْعَةً وَتِسْعِينَ اسْمًا... مَنْ أَحْصَاهَا دَخَلَ الْجَنَّةَ» <span class="src">متفق عليه</span></div>
+        </div>
+        <div class="card" style="border-inline-start:4px solid #C79A3B;background:#fffdf6">
+          <div class="lbl" style="color:#8a6a12"> المثير</div>
+                    <div class="mini"> تعرض المعلمة بطاقة اسم الله «الرب»، وتُخبر أنّ اليوم قصّةٌ من أصدق القصص</div>
+          <div class="mini" style="margin-top:6px"> «من الذي يستحقّ أن ندعوه ونعبده ونطلب منه حاجاتنا؟»</div>
+          <div class="mini" style="margin-top:6px;color:var(--muted,#565f58)">فنتعلّم من قصّة إبراهيم عليه السلام أنّ الله ربّي هو المعبود وحده.</div>
+        </div>
+        <div class="card">
+          <div class="lbl">المواد المساعدة</div>
+                    <div class="mini"> عمود صحّ وخطأ (وجه أخضر ووجه أحمر) — أداة التقييم</div>
+          <div class="mini">• تلاوة/تسجيل الآيات من سورة الشعراء (تُسمَع عند بيان قول إبراهيم عليه السلام)</div>
+          <div class="mini">• بطاقة اسم الله «الرب» (للمراجعة)</div>
+        </div>
+        <div class="card">
+          <div class="lbl">ترابط المواد</div>
+          <div class="chips">
+            <span class="chip v">علّمني ربي</span><span class="chip v">كتابي المنير</span><span class="chip v">أدب واقتداء</span><span class="chip v">قال رسولي</span><span class="chip v">لساني</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="mainflow">
+        <div class="sec-head first"><div class="num"><i class="gi" data-i="سير اللقاء" data-size="22"></i></div><h2>سير اللقاء</h2><span class="stage s2">② سير وإغلاق</span><div class="rule"></div></div>
+        <div class="flow">          <div class="step"><b class="k">المرحلة الأولى — التهيئة:</b> تبدأ المعلمةُ بقوانين اللقاء، ثم تسأل: ما هو لقاؤنا؟ وتقرأ ﴿وَلِلَّهِ الْأَسْمَاءُ الْحُسْنَىٰ فَادْعُوهُ بِهَا﴾، وتُنفّذ إشارةَ المادة.</div>
+          <div class="step"><b class="k">مراجعة سلسلة الرب:</b> ما الاسم الذي تعلّمناه؟ (الرب) وتعرض بطاقتَه، وتراجع: خلقني وأعدّني · ربّ المخلوقات · أمدّني بالنعم وهو معبودي.</div>
+          <div class="step"><b class="k">قصص القرآن:</b> «اليوم نحكي قصّةً أخبرنا الله بها في القرآن، وقصصُ القرآن أحسنُ القصص وأصدقُها: قصّةُ نبيّ الله إبراهيم عليه السلام مع قومه».</div>
+          <div class="step"><b class="k">قومُ إبراهيم:</b> كان قومُه يتّبعون الشيطانَ ولا يشكرون الله ولا يعبدونه؛ فسألهم إبراهيم عليه السلام: «ما تعبدون؟» قالوا: نعبد أصنامًا ننحتها بأيدينا.</div>
+          <div class="step"><b class="k">حوار إبراهيم عليه السلام:</b> قال لهم: هل هؤلاء يسمعون دعاءكم إذا دعوتموهم؟ أو ينفعونكم أو يضرّونكم؟ لا؛ فهي جماداتٌ لا تتكلّم ولا تسمع.</div>
+          <div class="step"><b class="k">سماع الآيات:</b> بيّن إبراهيم عليه السلام من يستحقّ العبادة، وأخبرنا الله بقوله: ﴿الَّذِي خَلَقَنِي فَهُوَ يَهْدِينِ ۝ وَالَّذِي هُوَ يُطْعِمُنِي وَيَسْقِينِ ۝ وَإِذَا مَرِضْتُ فَهُوَ يَشْفِينِ ۝ وَالَّذِي يُمِيتُنِي ثُمَّ يُحْيِينِ﴾.</div>
+          <div class="step"><b class="k">ما عرفناه من القصّة:</b> الله ربّنا هو الذي خلقنا ويهدينا لمصالحنا ويطعمنا ويشفينا إذا مرضنا ويميتنا ثم يحيينا؛ فكلّ النعم منه وحده.</div>
+          <div class="step"><b class="k">المستحقّ للعبادة:</b> فهو المستحقّ للعبادة وحده لا شريك له.</div>
+          <div class="step"><b class="k">كلّ حاجاتي من ربّي:</b> إن جعتُ دعوتُه أن يطعمني، وإن خفتُ تعوّذتُ به من الشرور، وإن مرضتُ دعوتُه أن يشفيني، وإن ضاع أبي في طريقٍ دعا الله أن يدلّه على الطريق الصحيح.</div>
+          <div class="step"><b class="k">التقييم بعمود صحّ وخطأ:</b> تقرأ المعلمةُ الموقفَ فيرفع الطفلُ الوجهَ الأخضرَ للتصرّف الصحيح والأحمرَ للخاطئ.</div>
+          <div class="step"><b class="k">المعنى المركزي:</b> الله ربّي هو المستحقّ للعبادة وحده لا شريك له، وكلّ حاجاتي أطلبها منه.</div>
+          <div class="step"><b class="k"> تصحيح فهم الطفل:</b> الأصنامُ جماداتٌ لا تنفع ولا تضرّ؛ ولا يُدعى إلّا الله ولا يُطلَب الشفاءُ والرزقُ إلّا منه. والأنبياءُ عليهم السلام قدوةٌ في التوحيد، ولا تُرسَم صورهم ولا تُمثَّل الأصنام تعظيمًا للتوحيد.</div>
+          <div class="step"><b class="k">جملة اللقاء الختامية:</b> ربّي وحده أعبده وأدعوه؛ وكلّ حاجاتي أطلبها منه.</div></div>
+        <div class="story">
+          <div class="h"> وقفة تربوية: من التعليم إلى الاقتداء <span>(تربطها المعلمة بتعليق القلب بالله وحده لا بتخويفٍ ولا تفصيلٍ في الأصنام)</span></div>
+          <div class="b">
+            <p>تُتمّ القصّةُ سلسلةَ اسم الله الرب: عرف الطفلُ أنّ ربّه خلقه وأعدّه وأمدّه بالنعم؛ فاليوم يعرف لِمَ يستحقّ ربّه العبادةَ وحده. وتنقل المعنى من التعليم إلى الاقتداء: كما وحّد إبراهيمُ عليه السلام ربَّه، فأنا أدعو ربّي وحده وأطلب منه حاجاتي.</p>
+            <p><strong>ضابط عقدي وتربوي:</strong> يُثبَت توحيدُ العبادة لله وحده؛ ولا يُدعى ولا يُستغاث بغيره. ولا تُفصَّل عبادةُ الأصنام ولا تُصوَّر تعظيمًا للتوحيد، ولا تُرسَم صورُ الأنبياء عليهم السلام. وتُقدَّم القصّةُ بلا تخويف، وإنّما محبةً لله وتعلّقًا به.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="الوسائل والأدوات" data-size="22"></i></div><h2>الوسائل والصور المعروضة في اللقاء</h2><div class="rule"></div></div>
+    <div class="gallery">
+            <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;font-family:var(--fb);font-size:26px;font-weight:700;background:var(--elm-soft);text-align:center;line-height:1.3"><span style="color:#2e7d46">✓</span> <span style="color:#c0392b">✕</span></div><div class="cap">عمود صحّ وخطأ<small>وجه أخضر ووجه أحمر</small></div></div>
+      <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;font-family:var(--fd);font-size:17px;font-weight:700;color:var(--t1);background:var(--elm-soft);text-align:center;line-height:1.7">الَّذِي خَلَقَنِي<br/>فَهُوَ يَهْدِينِ</div><div class="cap">آيات الشعراء<small>تُسمَع في القصّة</small></div></div>
+      <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;font-family:var(--fb);font-size:16px;font-weight:700;color:var(--t1);background:var(--elm-soft);text-align:center;line-height:1.6">جوع · مرض<br/>خوف · طريق</div><div class="cap">مواقف الحاجة<small>أدعو ربّي في كلّها</small></div></div>
+      <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;font-family:var(--fd);font-size:24px;font-weight:700;color:var(--t1);background:var(--elm-soft);text-align:center;line-height:1.4">الرب</div><div class="cap">بطاقة اسم الله الرب<small>تُعرض في المراجعة</small></div></div>
+    </div>
+
+    <div class="sec-head"><div class="num gold"><i class="gi" data-i="النشاط المصاحب" data-size="22"></i></div><h2>النشاط المصاحب</h2><div class="rule"></div></div>
+    <div style="text-align:center;font-size:13px;color:#565f58;margin-bottom:14px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap">بطاقاتُ المواقف المصوّرة — ستُّ مشاهدَ (أشياء ودمًى خشبيّة بلا ملامح) يفرزها الطفل على لوحتَي «ما يحبّه الله» و«أصلح الموقف»؛ الجوابُ في مفتاح المعلمة بصفحةٍ مستقلّة. <a href="ohb-lesson3-mawaqif-cards.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#1b5e34;color:#fff;border-radius:999px;padding:6px 14px;text-decoration:none;font-weight:700;font-size:12.5px">🖨️ بطاقات المواقف للطباعة ↗</a></div>
+          <h3>عمود صحّ وخطأ</h3>
+      <div class="actscene"><div class="scene-lbl">فكرةُ النشاط بلمحة</div><svg viewBox="0 0 440 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="oh-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4EFFA"/><stop offset="1" stop-color="#e9e0f4"/></linearGradient></defs><rect x="0" y="0" width="440" height="200" rx="14" fill="url(#oh-bg)"/><g transform="translate(140,100)"><circle cx="0" cy="0" r="46" fill="#bfe0c2" stroke="#2e7d46" stroke-width="4"/><path d="M-20 2 l14 14 l26 -30" fill="none" stroke="#2e7d46" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><rect x="-6" y="46" width="12" height="46" rx="4" fill="#8a6236"/></g><g transform="translate(300,100)"><circle cx="0" cy="0" r="46" fill="#f3c6c1" stroke="#c0392b" stroke-width="4"/><path d="M-18 -18 l36 36 M18 -18 l-36 36" fill="none" stroke="#c0392b" stroke-width="7" stroke-linecap="round"/><rect x="-6" y="46" width="12" height="46" rx="4" fill="#8a6236"/></g><text x="220" y="188" text-anchor="middle" font-family="AlAwwal,serif" font-size="13" font-weight="700" fill="#4a3568">أرفع الأخضرَ للصحيح والأحمرَ للخاطئ</text></svg></div>
+      <div class="row2">
+        <div class="miniblock"><b>الهدف</b>أن يميّز الطفلُ التصرّف الصحيح الذي يلجأ فيه صاحبه إلى الله ربّه عند الحاجة من التصرّف الخاطئ.</div>
+        <div class="miniblock"><b>الأدوات</b>عمود له وجهان: أخضر للصحيح وأحمر للخاطئ.</div>
+      </div>
+      <div class="miniblock"><b>التهيئة</b>يُعطى كلُّ طفلٍ عمودًا، وتُقرأ المواقفُ فيرفع الوجهَ المناسب.</div>
+      <div class="miniblock" style="margin-top:8px"><b>خطوات التنفيذ</b></div>
+      <ol>
+        <li>تقرأ المعلمةُ الموقفَ.</li>
+        <li>يرفع الطفلُ الوجهَ الأخضرَ للصحيح والأحمرَ للخاطئ.</li>
+        <li>تُصحَّح الإجاباتُ بذكر ما ينبغي: ندعو الله ربّنا في كلّ حاجاتنا.</li>
+      </ol>
+      <div class="miniblock" style="margin-top:8px"><b>المواقف (التغذية الراجعة)</b></div>
+      <div class="opts">
+        <div class="opt">ضاعت هند في الطريق فجلست تبكي فقط. (خطأ · تدعو ربّها)</div>
+        <div class="opt">ضاع صالح فدعا الله أن يدلّه على الطريق. (صحّ)</div>
+        <div class="opt">مرض عمر فدعا الله أن يشفيه. (صحّ)</div>
+        <div class="opt">خافت نورة فاستعاذت بالله ودعته أن يحفظها. (صحّ)</div>
+      </div>
+      <div class="miniblock" style="margin-top:10px"><b>اختيارات المعلمة حسب حاجة الطفل</b></div>
+      <div class="opts">
+        <div class="opt"><b>الخجول:</b> يرفع الوجهَ لموقفٍ واحدٍ ويُثنى عليه.</div>
+        <div class="opt"><b>السريع:</b> يعلّل لماذا التصرّفُ صحيحٌ أو خاطئ.</div>
+        <div class="opt"><b>كثير الحركة:</b> يوزّع الأعمدةَ على أقرانه.</div>
+      </div>
+      <div class="central" style="margin-top:12px;background:linear-gradient(135deg,#4a3568,#8660A8)"><b> جملة ختامية للنشاط</b>ربّي وحده أعبده وأدعوه؛ وكلّ حاجاتي أطلبها منه.</div>
+
+    <div class="actbar"> اختيارات الأنشطة الإضافية</div>
+    <div class="actgrid">
+            <div><span class="t">تلبية الاحتياجات الفردية</span><span class="bd">البطيء:</span> يرفع الوجهَ لموقفٍ واحدٍ برفق. <span class="bd">الخجول:</span> «جزاك الله خيرًا» عند أوّل إجابة. <span class="bd">النشيط:</span> يوزّع الأعمدةَ ويجمعها.</div>
+      <div><span class="t">الربط بالمواد الأخرى</span><span class="bd">كتابي المنير:</span> قصصُ القرآن أصدقُ القصص. <span class="bd">قال رسولي:</span> الاقتداءُ بالأنبياء في التوحيد. <span class="bd">علّمني ربي:</span> الله وحده الرزّاق الشافي.</div>
+      <div><span class="t">التوسيع والإثراء</span><span class="bd">بيتي:</span> عند الحاجة يدعو ربَّه أوّلًا: «يا ربّ أعطني». <span class="bd">المسكن:</span> يمثّل مواقف الجوع والمرض والخوف ويدعو ربّه.</div>
+      <div><span class="t">اقتراحات للتكرار</span> مراجعة سؤال إبراهيم عليه السلام وأنّ الله وحده المعبود ٣ دقائق في مطلع اللقاء التالي.</div>
+    </div>
+
+    <div class="dua">
+      <div class="l">كفارة المجلس · خاتمة اللقاء</div>
+      <div class="x">سبحانك اللهم وبحمدك، أشهد أن لا إله إلا أنت، أستغفرك وأتوب إليك.</div>
+    </div>
+  </div>
+
+  <!-- ══════════ 2) التكامل اليومي ══════════ -->
+  <div class="panel" id="p2">
+    <div class="sec-head first"><div class="num"><i class="gi" data-i="التكامل اليومي" data-size="22"></i></div><h2>العلاقة التكاملية لهذا اللقاء</h2><div class="rule"></div></div>
+    <div class="card cardblue">
+            <div class="mini" style="font-size:16px"><b style="color:var(--t1)">الفكرة الناظمة للوحدة:</b> كرّمني الله، وربّي هو خالقي وهاديّ ورازقي وشافيّ؛ فهو المستحقّ للعبادة وحده.</div>
+      <div class="mini" style="font-size:16px;margin-top:8px"><b style="color:var(--t1)">سؤال اليوم:</b> من الذي يستحقّ أن ندعوه ونعبده ونطلب منه حاجاتنا؟</div>
+      <div class="mini" style="font-size:16px;margin-top:8px"><b style="color:var(--t1)">هذا اللقاء:</b> أحبّك ربّي — اسم الله الرب (٤): قصّة إبراهيم عليه السلام مع قومه.</div>
+    </div>
+    <div class="sec-head"><div class="num" style="background:var(--elm)"><i class="gi" data-i="التكامل اليومي" data-size="22"></i></div><h2>كيف يتكامل هذا اللقاء مع بقية دروس اليوم والوحدة؟</h2><div class="rule"></div></div>
+    <p class="mini" style="font-size:15px;margin-bottom:10px">تُتمّ القصّةُ سلسلةَ اسم الله الرب وتنقل المعنى إلى الاقتداء: كما وحّد إبراهيمُ عليه السلام ربَّه أدعو ربّي وحده، وتمهّد لسلسلة اسم الله الصمد. وهذه جسورُ الربط:</p>
+    <div class="cg">
+            <div class="ci"><div class="term"><i class="gi" data-i="كتابي المنير" data-size="18"></i> كتابي المنير — قصص القرآن</div><div class="def">قصصُ القرآن أصدقُ القصص. <b>حركةُ المعلمة:</b> «أخبرنا الله بقصّة إبراهيم عليه السلام».</div></div>
+      <div class="ci"><div class="term"><i class="gi" data-i="قال رسولي" data-size="18"></i> قال رسولي — الاقتداء بالأنبياء</div><div class="def">الأنبياءُ قدوةٌ في التوحيد. <b>حركةُ المعلمة:</b> «كما وحّد إبراهيمُ ربَّه أوحّد ربّي».</div></div>
+      <div class="ci"><div class="term"><i class="gi" data-i="علّمني ربي" data-size="18"></i> علّمني ربي — الله وحده المعين</div><div class="def">الله يهدي ويطعم ويشفي. <b>حركةُ المعلمة:</b> «من يشفيك إذا مرضت؟ الله».</div></div>
+      <div class="ci"><div class="term"><i class="gi" data-i="أدب واقتداء" data-size="18"></i> أدب واقتداء — الدعاء عند الحاجة</div><div class="def">نلجأ إلى الله في كلّ حاجة. <b>حركةُ المعلمة:</b> «يا ربّ أعطني».</div></div>
+      <div class="ci"><div class="term"><i class="gi" data-i="أركان" data-size="18"></i> الأركان والمراكز</div><div class="def">في المكتبة تُعاد القصّة، وفي المسكن تُمثَّل مواقفُ الحاجة. <b>حركةُ المعلمة:</b> ربطُ الاسم بألعاب الأركان.</div></div>
+    </div>
+    <div class="card" style="margin-top:15px">
+      <div class="lbl">فكرة للربط السريع</div>
+      <p class="mini" style="font-size:15.5px">يمهّد هذا اللقاءُ لسلسلة اسم الله «الصمد» الذي تصمد إليه جميعُ المخلوقات في حاجاتها. وفي الأركان نُذكّر الأطفالَ أنّ الله ربّنا هو المعين في كلّ حاجة.</p>
+    </div>
+  </div>
+
+  <!-- ══════════ 3) التقويم ══════════ -->
+  <div class="panel" id="p3">
+    <div class="info"> التقويم في منهج غرس القيم ثلاثي المراحل — يرصد الطفل قبل الدرس وأثناءه وبعده.</div>
+    <div class="grid g3">
+      <div class="card taq q"><h3><i class="gi" data-i="التقويم القبلي" data-size="20"></i> التقويم القبلي</h3><ul>
+                <li>هل تعرف نبيًّا اسمه إبراهيم؟</li>
+        <li>من نطلب منه إذا احتجنا شيئًا؟</li>
+        <li>ماذا نفعل إذا مرضنا؟</li>
+      </ul></div>
+      <div class="card taq t"><h3><i class="gi" data-i="التقويم التكويني" data-size="20"></i> التقويم التكويني</h3><ul>
+                <li>انتباهه أثناء سرد القصّة وإعادتُه سؤال إبراهيم عليه السلام</li>
+        <li>الإنصات عند سماع الآيات</li>
+        <li>الإجابة عن: هل تسمع الأصنام؟ هل تنفع أو تضرّ؟</li>
+        <li>رفع الوجه الصحيح في عمود صحّ وخطأ</li>
+      </ul></div>
+      <div class="card taq n"><h3><i class="gi" data-i="التقويم النهائي" data-size="20"></i> التقويم النهائي</h3><ul>
+                <li>عمود صحّ وخطأ: هند جلست تبكي فقط (خطأ) · صالح دعا الله أن يدلّه (صحّ)</li>
+        <li>عمر دعا الله أن يشفيه (صحّ) · نورة استعاذت بالله وحفظها (صحّ)</li>
+        <li><b>المعيار: ثلاث إجابات صحيحة من أربع</b></li>
+      </ul></div>
+    </div>
+    <div class="sec-head"><div class="num grn"><i class="gi" data-i="مؤشر النجاح والتقويم" data-size="22"></i></div><h2>مؤشرات النجاح</h2><div class="rule"></div></div>
+    <div class="cg">
+            <div class="ci"><div class="term">المؤشر المعرفي</div><div class="def">يعرف قصّة إبراهيم عليه السلام مع قومه.</div></div>
+      <div class="ci"><div class="term">المؤشر العقدي</div><div class="def">يعرف أنّ الله ربّه هو وحده المستحقّ للعبادة.</div></div>
+      <div class="ci"><div class="term">المؤشر المهاري</div><div class="def">يميّز التصرّف الصحيح من الخاطئ في مواقف الحاجة.</div></div>
+      <div class="ci"><div class="term">المؤشر الإجرائي</div><div class="def">يعرف كيف يطلب حاجاته من ربّه.</div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 4) الآداب الصفية ══════════ -->
+  <div class="panel" id="p4">
+    <div class="info"> الآداب الصفية لحظات تربوية ذهبية — تبدأ المعلمة كل فكرة بآية أو نص حديث، ولا يعلو صوتها على النص الشرعي. الحزم مع الهدوء دائمًا.</div>
+    <div class="card cardblue" style="margin-bottom:14px">
+      <div class="lbl">آداب المعلمة — مقدمة الرعاية</div>
+      <ul class="steps">
+        <li>تبدأ بالبسملة والحمدلة والدعاء: «اللهم علّمنا ما ينفعنا وانفعنا بما علّمتنا».</li>
+        <li>تنطلق كل فكرة بآية أو نص حديث شريف.</li>
+        <li>الحزم مع الهدوء — فلا يعلو صوت المعلمة على النص الشرعي.</li>
+      </ul>
+      <div class="lbl" style="margin-top:12px;font-size:15px">آداب الطفل في مجلس أسماء الله الحسنى</div>
+      <ul class="steps">
+        <li>أجلس بسكينة وأحسن الاستماع عند ذكر أسماء الله الحسنى.</li><li>أردّد الآية والاسم بأدب ووضوح، وأرفع يدي وأنتظر دوري قبل الإجابة.</li><li>أحافظ على بطاقات الاسم والآيات والصور، ولا أسخر من إجابة أحد وأساعد زميلي برفق.</li>
+      </ul>
+    </div>
+
+        <div class="adab"><div class="h">١ · إفراد الله بالدعاء</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>احتاج طفلٌ شيئًا فطلبه من غير الله فقط.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«نطلب من الله ربّنا أوّلًا؛ هو الذي يعطي ويشفي ويهدي. قل: يا ربّ أعطني، ثم نأخذ بالأسباب».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>توحيد الدعاء.</span></div>
+      <div class="link">ربط بالدرس: كلّ حاجاتي من ربّي.</div>
+    </div></div>
+    <div class="adab"><div class="h">٢ · الإنصات لقصص القرآن</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>انشغل طفلٌ أثناء سرد القصّة.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«قصصُ القرآن أصدقُ القصص، ننصت لها لنتعلّم من أنبياء الله. هيّا ننتبه معًا».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>تعظيم كلام الله.</span></div>
+      <div class="link">ربط بالدرس: قصّةُ إبراهيم من القرآن.</div>
+    </div></div>
+    <div class="adab"><div class="h">٣ · الاقتداء بالأنبياء</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>سأل طفل: كيف أكون مثل إبراهيم عليه السلام؟</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«تعبد الله وحده وتدعوه وحده وتحبّه؛ كما فعل إبراهيمُ عليه السلام. الأنبياءُ قدوتُنا في محبّة الله».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>الاقتداء بالأنبياء.</span></div>
+      <div class="link">ربط بالدرس: نقتدي بتوحيد إبراهيم عليه السلام.</div>
+    </div></div>
+    <div class="adab"><div class="h">٤ · التوكّل مع الأخذ بالأسباب</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>خاف طفلٌ ولم يدرِ ماذا يفعل.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«نتعوّذ بالله ونطلب منه أن يحفظنا، ونخبر بالغًا موثوقًا ليساعدنا؛ فالله يحفظنا ويهيّئ لنا العون».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>التوكّل والأخذ بالأسباب.</span></div>
+      <div class="link">ربط بالدرس: أدعو ربّي عند الخوف.</div>
+    </div></div>
+    <div class="adab"><div class="h">٥ · احترام مشاعر الآخرين</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>ضحك أطفالٌ ممّن أخطأ في عمود صحّ وخطأ.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«لا نسخر من أحد؛ كلّنا نتعلّم. نصحّح برفقٍ ونشجّع بعضنا. جزاكم الله خيرًا».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>الرحمة وحسن الخُلق.</span></div>
+      <div class="link">ربط بالدرس: نتعلّم التوحيد بأدب.</div>
+    </div></div>
+  </div>
+
+  <!-- ══════════ 5) تحضيرات ولي الأمر ══════════ -->
+  <div class="panel" id="p5">
+    <div class="info"> القيمة تترسّخ حين تُعاش في البيت كما تُتعلَّم في الفصل — هذه التهيئات يُطبّقها ولي الأمر قبل الدرس وبعده.</div>
+        <div class="card par"><div class="h"> ١ · تهيئة وجدانية</div>
+      <div class="hs"><span class="n">أ</span><span>يخبر وليُّ الأمر طفلَه أنّ اليوم قصّةُ نبيٍّ من أنبياء الله: إبراهيم عليه السلام.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يقول له: «الله ربّنا وحده نعبده ونطلب منه».</span></div>
+      <div class="after">← يعلّق قلب الطفل بالله وحده.</div>
+    </div>
+    <div class="card par"><div class="h"> ٢ · تهيئة معرفية</div>
+      <div class="hs"><span class="n">أ</span><span>يسأله: إذا مرضتَ من يشفيك؟ وإذا جعتَ من يطعمك؟</span></div>
+      <div class="hs"><span class="n">ب</span><span>يبيّن أنّ الله ربّه هو الذي يهدي ويطعم ويشفي.</span></div>
+      <div class="after">← يرسّخ أنّ الله وحده المعين.</div>
+    </div>
+    <div class="card par"><div class="h"> ٣ · تهيئة بالدعاء</div>
+      <div class="hs"><span class="n">أ</span><span>يعلّمه أن يدعو ربَّه عند الحاجة: «يا ربّ أعطني».</span></div>
+      <div class="hs"><span class="n">ب</span><span>يذكّره أن يتعوّذ بالله إذا خاف.</span></div>
+      <div class="after">← يعيش الطفل اللجوء إلى الله.</div>
+    </div>
+    <div class="card par"><div class="h"> ٤ · تهيئة بالقصّة</div>
+      <div class="hs"><span class="n">أ</span><span>يذكّره أنّ قصصَ القرآن أحسنُ القصص وأصدقُها.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يسأله: ماذا سأل إبراهيمُ عليه السلام قومَه؟</span></div>
+      <div class="after">← يربط التوحيد بقصص القرآن.</div>
+    </div>
+    <div class="card par"><div class="h"> ٥ · تهيئة تعاونية أسرية</div>
+      <p class="mini" style="font-size:15.5px">تذكّر الأسرةُ الطفلَ عند كلّ حاجةٍ أن يدعو ربَّه أوّلًا ثم يأخذ بالأسباب، وتغرس تعلّقَ القلب بالله وحده من غير خوفٍ ولا وسوسة.</p>
+      <div class="after">← يزرع توحيد اللجوء إلى الله.</div>
+    </div>
+    <div class="card par"><div class="h"> أسئلة تطرحها على طفلك</div>
+            <div class="pq">ماذا سأل إبراهيمُ عليه السلام قومَه؟ (ما تعبدون؟)</div>
+      <div class="pq">هل تسمع الأصنامُ أو تنفع؟ (لا · جماداتٌ لا تسمع)</div>
+      <div class="pq">إذا مرضتَ أو جعتَ ممّن تطلب؟ (من الله ربّي)</div>
+      <div class="pq">من يستحقّ العبادة وحده؟ (الله ربّي)</div>
+      <div class="pq">ماذا تقول إذا خفت؟ (أعوذ بالله ربّي)</div>
+    </div>
+    <div class="wa-wrap">
+      <div class="wa">
+        <div class="wa-head">
+          <span class="bk">‹</span>
+          <span class="av"><img src="brand/logo-ghars.webp" alt="غرس"/></span>
+          <div class="who"><div class="nm">أولياء أمور الفصل</div><div class="st">غرس القيم · دليل المعلمة</div></div>
+          <span class="ics"><svg viewBox="0 0 24 24"><path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11z"/></svg><svg viewBox="0 0 24 24"><path d="M20 15.5c-1.2 0-2.5-.2-3.6-.6a1 1 0 0 0-1 .2l-2.2 2.2a15 15 0 0 1-6.6-6.6l2.2-2.2a1 1 0 0 0 .2-1C8.7 6.5 8.5 5.2 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg></span>
+        </div>
+        <div class="wa-body">
+          <span class="wa-day">اليوم</span>
+          <div class="wa-bub">
+            <div class="wa-text">بسم الله الرحمن الرحيم 🌿
+السلام عليكم ورحمة الله وبركاته
+
+📖 سمع طفلكم اليوم في لقاء <strong>«أحبّك ربّي»</strong> قصّةَ نبيّ الله <strong>إبراهيم عليه السلام مع قومه</strong>، وعرف أنّ الله ربَّه هو الذي خلقه ويهديه ويطعمه ويشفيه، فهو المستحقّ للعبادة وحده لا شريك له، وأنّ كلّ حاجاتنا نطلبها منه.
+
+🏡 <strong>نشاط بيتي:</strong> إذا احتاج طفلكم شيئًا اليوم فذكّروه أن يدعو ربَّه أوّلًا ويقول: «يا ربّ أعطني». من غير واجبٍ كتابيّ.
+
+💚 جزاكم الله خيرًا، ونسأل الله أن يبارك في أبنائنا وأن يعلّق قلوبهم به وحده — <strong>فريق نادي غرس القيم</strong></div>
+            <div class="wa-meta"><span class="t">٨:٣٠ ص</span><svg class="ck" viewBox="0 0 17 11" fill="none" stroke="#53BDEB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6l3.2 3.4L11 2"/><path d="M6.2 9.4L6.7 8.8 16 1"/></svg></div>
+          </div>
+        </div>
+        <div class="wa-foot">
+          <span class="inp">اكتب رسالة…</span>
+          <span class="wa-send" title="رسالة لولي الأمر"><svg viewBox="0 0 24 24"><path d="M3 20.5v-6l8-2.5-8-2.5v-6l19 8.5z"/></svg></span>
+        </div>
+      </div>
+      <div class="wa-copybar"><button class="copy-btn wa-copy" data-copy=".wa-text">📋 نسخ الرسالة لإرسالها</button></div>
+      <div class="wa-hint">انسخي الرسالة وأرسليها عبر واتساب أو تيليجرام — يُنسّق الغامق <code>*هكذا*</code> والمائل <code>_هكذا_</code> تلقائيًا عند اللصق.</div>
+    </div>
+  </div>
+
+
+  <!-- ══════════ 6) القيم والمفاهيم ══════════ -->
+  <div class="panel" id="p6">
+    <div class="sec-head first"><div class="num gold"><i class="gi" data-i="القيم الأساسية" data-size="22"></i></div><h2>القيم الأساسية للدرس</h2><div class="rule"></div></div>
+    <div class="cg">
+            <div class="ci"><div class="term">توحيد الله وإفراده بالعبادة</div><div class="def">أن نعبد الله وحده ولا نعبد سواه.</div></div>
+      <div class="ci"><div class="term">الاقتداء بالأنبياء</div><div class="def">اتّباعُ إبراهيم عليه السلام في توحيد ربّه.</div></div>
+      <div class="ci"><div class="term">الدعاء والالتجاء إلى الله</div><div class="def">طلبُ الحاجات من الله عند كلّ حاجة.</div></div>
+      <div class="ci"><div class="term">شكر المنعم</div><div class="def">عدمُ اتّباع الشيطان وشكرُ الله على نعمه.</div></div>
+    </div>
+    <div class="card" style="margin-bottom:16px">
+      <div class="lbl"> كيف تغرس المعلمة القيم أثناء الدرس؟</div>
+      <ul class="steps">
+                <li>تسرد القصّةَ من القرآن بلا زيادةٍ، وتُسمع الآياتِ كما وردت.</li>
+        <li>تبيّن أنّ الأصنام جماداتٌ لا تنفع، وأنّ الله وحده المعبود.</li>
+        <li>تنقل المعنى إلى الاقتداء: أدعو ربّي وحده كما وحّده إبراهيم عليه السلام.</li>
+        <li>لا تُصوّر الأنبياءَ ولا تُمثّل الأصنام، وتقدّم القصّةَ محبةً لا تخويفًا.</li>
+      </ul>
+    </div>
+    <div class="sec-head"><div class="num p" style="background:#7a5cc0"><i class="gi" data-i="المفاهيم الأساسية" data-size="22"></i></div><h2>المفاهيم الأساسية</h2><div class="rule"></div></div>
+    <div class="cg">
+            <div class="ci"><div class="term">العبادة</div><div class="def">أن نتوجّه إلى الله وحده بالدعاء والطاعة والمحبّة.</div></div>
+      <div class="ci"><div class="term">الأصنام</div><div class="def">تماثيلُ كان القومُ ينحتونها ويعبدونها، وهي جماداتٌ لا تتكلّم ولا تسمع.</div></div>
+      <div class="ci"><div class="term">الهداية</div><div class="def">أن يدلّنا الله على ما فيه مصلحتنا.</div></div>
+      <div class="ci"><div class="term">الاستعاذة</div><div class="def">أن نطلب من الله أن يحمينا من الشرّ.</div></div>
+    </div>
+    <div class="sec-head"><div class="num"><i class="gi" data-i="الاستراتيجيات التعليمية" data-size="22"></i></div><h2>الاستراتيجيات التعليمية</h2><div class="rule"></div></div>
+    <div class="card">
+            <div class="strat"><span class="k">الحكي والقصص القرآني</span><span class="v">قصّةُ إبراهيم عليه السلام مع قومه.</span></div>
+      <div class="strat"><span class="k">سماع الآيات</span><span class="v">آياتُ الشعراء عند بيان قول إبراهيم عليه السلام.</span></div>
+      <div class="strat"><span class="k">الحوار بالسؤال</span><span class="v">هل يسمعون؟ هل ينفعون؟ هل يضرّون؟</span></div>
+      <div class="strat"><span class="k">عمود صحّ وخطأ</span><span class="v">للتقويم الحركيّ في الإغلاق.</span></div>
+      <div class="strat"><span class="k">التمثيل بالمواقف</span><span class="v">مواقفُ هند وصالح وعمر ونورة.</span></div>
+    </div>
+
+    <div class="sec-head"><div class="num gold"><i class="gi" data-i="الاستراتيجيات التعليمية" data-size="22"></i></div><h2>الأساليب العشرة</h2><div class="rule"></div></div>
+    <div class="cg">
+            <div class="ci"><div class="term">١ · القصّة</div><div class="def">سردُ قصّة إبراهيم عليه السلام مع قومه.</div></div>
+      <div class="ci"><div class="term">٢ · الحوار</div><div class="def">أسئلةُ إبراهيم عليه السلام تُعاد على الأطفال.</div></div>
+      <div class="ci"><div class="term">٣ · الاستماع</div><div class="def">سماعُ الآيات من سورة الشعراء.</div></div>
+      <div class="ci"><div class="term">٤ · التمثيل بالمواقف</div><div class="def">مواقفُ الحاجة الأربعة.</div></div>
+      <div class="ci"><div class="term">٥ · الحركة</div><div class="def">رفعُ الوجه الأخضر أو الأحمر.</div></div>
+      <div class="ci"><div class="term">٦ · الربط بالواقع</div><div class="def">الجوعُ والخوفُ والمرضُ وضياعُ الطريق.</div></div>
+      <div class="ci"><div class="term">٧ · التعزيز</div><div class="def">الثناءُ على الإجابة الصحيحة.</div></div>
+      <div class="ci"><div class="term">٨ · السؤال</div><div class="def">أسئلةُ الإغلاق عن التوحيد.</div></div>
+      <div class="ci"><div class="term">٩ · الاستنتاج</div><div class="def">أنّ الأصنام لا تنفع وأنّ الله وحده المعبود.</div></div>
+      <div class="ci"><div class="term">١٠ · المحاكاة</div><div class="def">الاقتداءُ بتوحيد إبراهيم عليه السلام.</div></div>
+    </div>
+
+    <div class="sec-head"><div class="num grn"><i class="gi" data-i="الوسائل والأدوات" data-size="22"></i></div><h2>الوسائل</h2><div class="rule"></div></div>
+    <div class="means">
+            <div class="m"><h4>مرئية</h4><span class="i">عمود صحّ وخطأ (وجه أخضر وأحمر)</span><span class="i">بطاقة اسم الله الرب</span></div>
+      <div class="m s2"><h4>سمعية</h4><span class="i">إشارة المادة: فيديو أحبّك ربّي المعتمد</span><span class="i">تلاوة/تسجيل آيات الشعراء (٧٧–٨١)</span></div>
+      <div class="m s3"><h4>عملية (Hands-on)</h4><span class="i">رفع الوجه المناسب في عمود صحّ وخطأ</span><span class="i">تمثيل مواقف الحاجة</span><span class="i">الدعاء عند كلّ حاجة</span></div>
+      <div class="m s4"><h4>قيمية (شرعية)</h4><span class="i">توحيد الله وإفراده بالعبادة</span><span class="i">الاقتداء بالأنبياء</span><span class="i">الدعاء والالتجاء إلى الله</span></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 7) الحصيلة اللغوية ══════════ -->
+  <div class="panel" id="p7">
+    <div class="info"> الحصيلة اللغوية تُعزّز الفهم وتُنمّي القدرة على التعبير — تُستخدَم بشكل طبيعي أثناء الدرس.</div>
+    <div class="voc-web">
+      <img src="assets/voc-web-book.png" alt="شبكة كلمات الحصيلة" loading="lazy"/>
+            <span class="vw center" style="left:50%;top:59%">العبادة</span>
+      <span class="vw branch" style="left:31%;top:19.3%">الأصنام</span>
+      <span class="vw branch" style="left:58%;top:27.4%">جمادات</span>
+      <span class="vw branch" style="left:74%;top:31.3%">يهدين</span>
+      <span class="vw branch" style="left:28%;top:34.3%">يشفين</span>
+      <span class="vw branch" style="left:72.5%;top:45.1%">تعوّذنا</span>
+      <span class="vw branch" style="left:26%;top:46.5%">مصالحنا</span>
+    </div>
+    <div class="card"><div class="lbl">الكلمات الأساسية في الدرس</div>
+      <table class="voc"><thead><tr><th style="width:22%">الكلمة</th><th>بيان المعنى</th></tr></thead><tbody>
+                <tr><td><span class="w">أصنام</span></td><td>تماثيلُ ينحتها الناسُ بأيديهم ويعبدونها من دون الله.</td></tr>
+        <tr><td><span class="w">ننحتها</span></td><td>نصنعها ونشكّلها من الحجر أو الخشب.</td></tr>
+        <tr><td><span class="w">جمادات</span></td><td>أشياءُ لا تتحرّك ولا تسمع ولا تتكلّم.</td></tr>
+        <tr><td><span class="w">يهدين</span></td><td>يدلّني على الطريق الصحيح وما فيه مصلحتي.</td></tr>
+        <tr><td><span class="w">يشفين</span></td><td>يذهب عنّي المرضَ ويعافيني.</td></tr>
+        <tr><td><span class="w">تعوّذنا</span></td><td>طلبنا من الله أن يحمينا.</td></tr>
+      </tbody></table>
+    </div>
+    <div class="card" style="margin-top:15px"><div class="lbl">مفردات ومفاهيم أسماء الله الحسنى (للمعلمة)</div>
+      <div class="cg">
+                <div class="ci"><div class="term">مصالحنا</div><div class="def">ما فيه خيرُنا ونفعُنا.</div></div>
+        <div class="ci"><div class="term">العبادة</div><div class="def">التوجّهُ إلى الله وحده بالدعاء والطاعة والمحبّة.</div></div>
+        <div class="ci"><div class="term">أثر الإيمان بالاسم</div><div class="def">إفرادُ الله بالعبادة والدعاءِ والالتجاء إليه.</div></div>
+      </div>
+    </div>
+    <div class="card cardgold" style="margin-top:15px"><div class="lbl gold"> كيف تستخدم المعلمة هذه الحصيلة؟</div>
+      <ul class="steps">
+        <li>تُدرج الكلمات بشكل طبيعي في شرحها دون توقف مفاجئ.</li>
+        <li>تستخدم اسم الله في جملة واضحة تربط الاسمَ بمعناه وأثرِه في حياة الطفل.</li>
+        <li>تكرّر الكلمات في سياقات مختلفة لتثبيتها.</li>
+        <li>تُشجّع الأطفال على استخدامها وتثني عليهم.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════ 8) المراجع ══════════ -->
+  <div class="panel" id="p8">
+        <div class="card refblock">
+      <div class="h"> الآيات وضبطها</div>
+      <div class="sub">مصدر لضبط آيات الشعراء قبل اللقاء</div>
+      <div class="refitem"><span class="rbadge q">قرآن</span><div><div class="tt">Quran.com — الشعراء ٧٧–٨١</div><div class="dd">﴿فَإِنَّهُمْ عَدُوٌّ لِي إِلَّا رَبَّ الْعَالَمِينَ… وَالَّذِي يُمِيتُنِي ثُمَّ يُحْيِينِ﴾ — قول إبراهيم عليه السلام.</div><a class="reflink" href="https://quran.com/26/77-81" target="_blank">quran.com/26/77</a></div></div>
+    </div>
+    <div class="card refblock">
+      <div class="h"> ضبط عقدي</div>
+      <div class="refitem"><span class="rbadge t">عقيدة</span><div><div class="tt">الدرر السنية — الموسوعة العقدية: توحيد الألوهيّة ودعوة إبراهيم عليه السلام</div><div class="dd">إفرادُ الله بالعبادة، وبطلانُ عبادة الأصنام.</div><a class="reflink" href="https://dorar.net/aqadia" target="_blank">dorar.net/aqadia</a></div></div>
+    </div>
+    <div class="card refblock">
+      <div class="h"> مواد الوحدة المعتمدة</div>
+      <div class="refitem"><span class="rbadge t">وسيلة</span><div><div class="tt">عمود صحّ وخطأ · تلاوة آيات الشعراء · بطاقة اسم الله الرب</div><div class="dd">المعتمدة في مكتبة الدليل.</div></div></div>
+      <div class="refitem"><span class="rbadge d">حديث</span><div><div class="tt">حديث إحصاء الأسماء الحسنى</div><div class="dd">«إنّ لله تسعةً وتسعين اسمًا…» (متفق عليه).</div></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 9) الأركان ══════════ -->
+  <div class="panel" id="p9">
+    <div class="sec-head first chero"><div class="num gold"><i class="gi" data-i="أركان" data-size="22"></i></div><h2>وقت الأركان التطبيقية</h2><div class="rule"></div></div>
+    <div class="chero"><p style="margin-bottom:6px">الأركان مساحاتٌ غنيّة بأدوات التعلّم، مدّتها ٣٠ دقيقة, يلعب فيها الأطفال ويستكشفون الأدوات <strong>بحرّية ومرح</strong>. وتستقطع المعلمة وقتًا يسيرًا لتنفيذ <strong>نشاط تطبيقي سريع على الفكرة المركزية للدرس</strong>: الله وحده المستحقّ للعبادة، وكلّ حاجاتي أطلبها منه. ولكلّ لقاءٍ <strong>ركنان تطبيقيّان (أ/ب)</strong> يُختاران من أركان اليوم الثمانية (المكتبة · الفنون · الإدراك · الاكتشاف · الرمل · الدكّان · البناء · المسكن).</p></div>
+    <div class="caution"><strong>ضابط عقدي وتربوي:</strong> يُثبَت توحيدُ العبادة لله وحده؛ فلا يُدعى ولا يُستغاث بغيره، ولا تُفصَّل عبادةُ الأصنام ولا تُصوَّر، ولا تُرسَم صورُ الأنبياء عليهم السلام. وتُقدَّم القصّةُ محبةً لا تخويفًا، ويُشجَّع كلُّ طفلٍ من غير مقارنة.</div>
+        <div class="corner">
+      <div class="h" style="background:linear-gradient(90deg,#4a3568,#8660A8)"><h4>قصة إبراهيم عليه السلام مع قومه</h4><span class="k"> الركن (أ) — المكتبة (ركن القصة)</span></div>
+      <div class="b">
+        <div class="cfield"><b>الأدوات والوسائل التعليمية</b><p>كتبٌ وقصصٌ مصوّرة عن أنبياء الله (بلا رسمٍ لصور الأنبياء).</p></div>
+        <div class="cfield"><b>قوانين الركن</b><p>البقاء في مساحة الركن · الإنصات · انتظار الدور · إعادة الكتب إلى مكانها.</p></div>
+        <div class="cfield"><b>اللعب الحرّ في الركن</b><p>يتصفّح الأطفالُ القصصَ بحرّية ومرح.</p></div>
+        <div class="cfield"><b>النشاط التطبيقي السريع</b><p><em>تستقطع المعلمة نحو ٥–٧ دقائق لتطبيق سريع على الفكرة المركزية: <strong>الله وحده المستحقّ للعبادة.</strong></em></p><ol>
+          <li>تعيد المعلمةُ حكايةَ سؤال إبراهيم عليه السلام لقومه: ما تعبدون؟</li>
+          <li>تسأل الطفلَ: هل تسمع الأصنامُ أو تنفع؟</li>
+          <li>يختم: «الله ربّي هو وحده الذي يستحقّ العبادة».</li>
+        </ol></div>
+        <div class="cfield"><b>هدف الركن</b><p>أن يستخلص الطفلُ من القصّة توحيدَ العبادة لله.</p></div>
+        <div class="cfield"><b>دور المعلمة</b><p>تُعيد القصّةَ وتسأل وتشجّع بلا تخويف.</p></div>
+        <div class="cfield"><b>خصوصية عقدية وتربوية</b><p>لا رسمَ للأنبياء ولا تصويرَ للأصنام؛ التركيزُ على إفراد الله بالعبادة.</p></div>
+        <div class="cfield"><b>مناسب للفئة العمرية</b><p>قصّةٌ قصيرة مع مجموعةٍ صغيرة.</p></div>
+        <div class="cfield"><b>المخرج</b><p>يذكر الطفلُ أنّ الله وحده يستحقّ العبادة.</p></div>
+        <div class="faith">الجملة الختامية: الله ربّي هو وحده الذي يستحقّ العبادة.</div>
+      </div>
+    </div>
+
+    <div class="corner">
+      <div class="h" style="background:linear-gradient(90deg,#8660A8,#a781c8)"><h4>كلّ حاجاتي أطلبها من ربّي</h4><span class="k"> الركن (ب) — المسكن</span></div>
+      <div class="b">
+        <div class="cfield"><b>الأدوات والوسائل التعليمية</b><p>أدوات ركن المسكن ومواقف تمثيليّة (طعام · دواء · باب البيت).</p></div>
+        <div class="cfield"><b>قوانين الركن</b><p>البقاء في مساحة الركن · المحافظة على الأدوات · انتظار الدور · إعادتها إلى مكانها.</p></div>
+        <div class="cfield"><b>اللعب الحرّ في الركن</b><p>يمثّل الأطفالُ مواقفَ البيت بحرّية ومرح.</p></div>
+        <div class="cfield"><b>النشاط التطبيقي السريع</b><p><em>تستقطع المعلمة دقائق يسيرة لتطبيق سريع على الفكرة المركزية: <strong>أطلب حاجاتي من ربّي.</strong></em></p><ol>
+          <li>يمثّل الطفلُ موقفًا: جعتُ · مرضتُ · خفتُ.</li>
+          <li>يدعو ربَّه: «يا ربّ أطعمني · اشفني · احفظني».</li>
+          <li>يختم: «وكلّ حاجاتي أطلبها من الله ربّي».</li>
+        </ol></div>
+        <div class="cfield"><b>هدف الركن</b><p>أن يتدرّب الطفلُ على اللجوء إلى الله في حاجاته.</p></div>
+        <div class="cfield"><b>دور المعلمة</b><p>تُتيح التمثيلَ الحرّ، ثم توجّه الدعاءَ إلى الله وتشجّع.</p></div>
+        <div class="cfield"><b>خصوصية عقدية وتربوية</b><p>توحيدُ الدعاء لله وحده مع الأخذ بالأسباب؛ بلا تخويفٍ ولا وسوسة.</p></div>
+        <div class="cfield"><b>مناسب للفئة العمرية</b><p>تمثيلٌ بسيط مع مجموعةٍ صغيرة.</p></div>
+        <div class="cfield"><b>المخرج</b><p>يدعو الطفلُ ربَّه في موقف حاجة.</p></div>
+        <div class="faith">الجملة الختامية: وكلّ حاجاتي أطلبها من الله ربّي.</div>
+      </div>
+    </div>
+</div>
+
+  <div class="foot">وحدة أنا مخلوق كرّمني الله · أحبّك ربّي · اللقاء الرابع — اسم الله الرب (٤): قصة إبراهيم عليه السلام مع قومه · نادي غرس القيم لضيافة الأطفال</div>
+  <div class="gq-dev-credit" style="margin:22px auto 0;max-width:540px;padding:18px 16px 4px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center"><span style="font-size:11.5px;color:var(--muted);letter-spacing:.3px">إعداد وتطوير وإخراج دليل المعلمة</span><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="display:inline-block;line-height:0"><img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية" style="width:104px;height:auto;display:block"/></a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-family:var(--fd);font-size:14.5px;color:#1e5631;text-decoration:none;font-weight:700">شركة حضارة للاستشارات التربوية والتعليمية</a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--elm,#0E6E6B);text-decoration:none">www.hadarah-consulting.com</a></div>
+</div>
+
+<script>
+(function(){
+  var doc=document, root=doc.documentElement, body=doc.body;
+  var pb=doc.createElement('div'); pb.className='gq-progress'; body.appendChild(pb);
+  var top=doc.createElement('button'); top.className='gq-top'; top.setAttribute('aria-label','العودة للأعلى'); top.textContent='↑'; body.appendChild(top);
+  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function onScroll(){ var sc=window.pageYOffset||root.scrollTop, max=(root.scrollHeight-root.clientHeight)||1; pb.style.width=Math.min(100,sc/max*100)+'%'; if(sc>320){top.classList.add('show');}else{top.classList.remove('show');} }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var lb=doc.createElement('div'); lb.className='gq-lb'; lb.innerHTML='<button class="close" aria-label="اغلاق">\u2715</button><figure><img alt=""/><figcaption class="cap"></figcaption></figure>'; body.appendChild(lb);
+  var lbImg=lb.querySelector('img'), lbCap=lb.querySelector('.cap');
+  function closeLb(){lb.classList.remove('open'); lbImg.removeAttribute('src');}
+  lb.addEventListener('click',function(e){ if(e.target===lb||e.target.classList.contains('close')) closeLb(); });
+  doc.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLb(); });
+  doc.querySelectorAll('.gitem img, .step-media img').forEach(function(im){
+    im.addEventListener('click',function(){ var cap='', box=im.closest('.gitem')||im.closest('.step-media'); if(box){var c=box.querySelector('.cap'); if(c) cap=c.textContent;} lbImg.src=im.currentSrc||im.src; lbCap.textContent=cap; lb.classList.add('open'); });
+  });
+  var tabs=[].slice.call(doc.querySelectorAll('.tab'));
+  var KEY='gq-am-ohb-tab-'+(doc.title||'l');
+  function activate(btn,save,scroll){ tabs.forEach(function(t){t.classList.remove('active');}); doc.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');}); btn.classList.add('active'); var p=doc.getElementById(btn.dataset.p); if(p) p.classList.add('active'); if(save){ try{localStorage.setItem(KEY,btn.dataset.p);}catch(e){} } if(scroll){ window.scrollTo({top:0,behavior:'smooth'}); } }
+  tabs.forEach(function(btn,i){ btn.setAttribute('tabindex','0'); btn.addEventListener('click',function(){ activate(btn,true,true); }); btn.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ e.preventDefault(); var dir=(e.key==='ArrowLeft')?1:-1, ni=(i+dir+tabs.length)%tabs.length; tabs[ni].focus(); activate(tabs[ni],true,false); } }); });
+  try{ var saved=localStorage.getItem(KEY); if(saved){ var b=doc.querySelector('.tab[data-p="'+saved+'"]'); if(b) activate(b,false,false); } }catch(e){}
+  function fallback(txt,cb){ var ta=doc.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0'; body.appendChild(ta); ta.select(); try{doc.execCommand('copy');}catch(e){} body.removeChild(ta); cb(); }
+  doc.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){ var target=doc.querySelector(btn.getAttribute('data-copy')); if(!target) return; var clone=target.cloneNode(true); clone.querySelectorAll('.l,.copy-btn').forEach(function(n){n.remove();}); clone.querySelectorAll('strong').forEach(function(n){n.textContent='*'+n.textContent+'*';}); clone.querySelectorAll('em').forEach(function(n){n.textContent='_'+n.textContent+'_';}); var txt=(clone.innerText||clone.textContent||'').replace(/\n{3,}/g,'\n\n').trim(); function done(){ var o=btn.getAttribute('data-lbl'); if(!o){o=btn.textContent; btn.setAttribute('data-lbl',o);} btn.textContent='\u2713 نُسخ'; btn.classList.add('copied'); setTimeout(function(){ btn.textContent=o; btn.classList.remove('copied'); },1500); } if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done).catch(function(){fallback(txt,done);}); } else { fallback(txt,done); } });
+  });
+})();
+</script>
+<!--gq-credit-embed-hide--><script>try{if(window.self!==window.top){var _c=document.querySelector(".gq-dev-credit");if(_c)_c.style.display="none";}}catch(e){}</script>
+<script src="brand/guide-icons.js?v=2"></script>
+<script id="gq-lb-iframe-fix">
+(function(){if(window.self===window.top)return;var lb=document.querySelector('.gq-lb');if(!lb)return;function pos(){if(!lb.classList.contains('open'))return;try{var fr=window.frameElement;if(!fr)return;var t=window.top,r=fr.getBoundingClientRect(),vh=t.innerHeight,off=Math.max(0,-r.top);lb.style.position='absolute';lb.style.top=off+'px';lb.style.bottom='auto';lb.style.left='0';lb.style.right='0';lb.style.width='100%';lb.style.height=vh+'px';}catch(e){}}var mo=new MutationObserver(function(){if(lb.classList.contains('open'))pos();});mo.observe(lb,{attributes:true,attributeFilter:['class']});})();
+</script>
+</body>
+</html>
