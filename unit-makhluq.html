@@ -9,7 +9,7 @@
 @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
 @font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
-:root{
+:root{--uimg:url('units-art/unit-maskan.jpg?v=13');
   --fd:'AlAwwal','Noto Naskh Arabic',serif;
   --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
   --t1:#1F4A39; --t2:#2C6A4D; --grn:#1E5631;
@@ -25,13 +25,13 @@ body{font-family:var(--fb);color:var(--ink);line-height:1.9;font-size:16px;
   background:radial-gradient(1200px 520px at 82% -12%,#EFF4EC 0,transparent 60%),linear-gradient(#FBF9F2,#F4EDDE)}
 b,strong{font-weight:700}
 h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
-.wrap{max-width:1080px;margin:0 auto;padding:18px 14px 70px}
+.wrap{max-width:min(1500px, calc(100vw - 40px));margin:0 auto;padding:18px 14px 70px}
 
 /* ===== الغلاف ===== */
 .hero{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:18px;isolation:isolate}
 .hero-photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;transform:scale(1.02)}
 .hero::before{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(135deg,rgba(31,74,57,.93),rgba(44,106,77,.86) 60%,rgba(14,110,107,.82))}
+  background:linear-gradient(135deg,rgba(31,74,57,.58),rgba(44,106,77,.46) 58%,rgba(14,110,107,.4))}
 .hero-in{position:relative;z-index:2;padding:34px 30px 30px;color:#fff;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .hero-badge-logo{flex:0 0 auto;width:104px;height:104px;border-radius:22px;background:#fff;
   border:1px solid rgba(255,255,255,.65);display:grid;place-items:center;padding:9px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
@@ -71,6 +71,62 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .subpanel{display:none}
 .subpanel.active{display:block;animation:fade .2s ease}
 
+/* ===== مسار اليوم — تسلسل مرقّم ===== */
+.pathkey{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:9px;font-size:12px;color:var(--muted)}
+.pathkey b{color:var(--t1);font-family:var(--fd)}
+.pathkey .k{display:inline-flex;align-items:center;gap:5px}
+.pathkey .k i{width:11px;height:11px;border-radius:50%;display:inline-block}
+/* مسار اليوم — أفقي متسلسل على صفوف، أرقام + أسهم اتجاه */
+.subtabs.seq{flex-wrap:wrap;gap:22px 0;align-items:center;justify-content:flex-start;counter-reset:pstep;padding:16px 14px}
+.subtabs.seq .subtab{display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;
+  padding:6px 15px 6px 10px;font-size:13.5px;border-radius:999px}
+.subtabs.seq .subtab::before{counter-increment:pstep;content:counter(pstep,arabic-indic);flex:0 0 auto;
+  width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:12.5px;font-weight:700;font-family:var(--fb);
+  background:var(--sc,#2C6A4D);color:#fff}
+.subtabs.seq .subtab.active{background:var(--sc,#2C6A4D);border-color:var(--sc,#2C6A4D);color:#fff;box-shadow:0 4px 14px color-mix(in srgb,var(--sc,#2C6A4D) 32%,transparent)}
+.subtabs.seq .subtab.active::before{background:#fff;color:var(--sc,#2C6A4D)}
+.subtabs.seq .subtab.routine{--sc:#8a8f98;border-style:dashed;color:#5f6560;background:#f7f8f6}
+.subtabs.seq .subtab.routine:hover{color:#5f6560;border-color:#8a8f98}
+.subtabs.seq .subtab.routine.active{background:#8a8f98;border-color:#8a8f98;color:#fff}
+.subtabs.seq .pconn{flex:1 1 22px;min-width:22px;height:4px;background:#d6ded9;border-radius:3px;align-self:center}
+.subtabs.seq .subtab .pchk{width:19px;height:19px;border-radius:50%;border:2px solid #c4cfc9;background:#fff;display:grid;place-items:center;flex:0 0 auto;cursor:pointer;font-size:11px;line-height:1;color:transparent;transition:.15s;margin-inline-start:1px}
+.subtabs.seq .subtab .pchk::before{content:"✓";font-weight:700}
+.subtabs.seq .subtab .pchk:hover{border-color:#1E5631;transform:scale(1.12)}
+.subtabs.seq .subtab.pdone{opacity:.55}
+.subtabs.seq .subtab.pdone .pchk{background:#1E5631;border-color:#1E5631;color:#fff;opacity:1}
+@media print{.subtabs.seq .subtab .pchk{display:none}}
+.subtabs.seq .pconn.mnz{position:relative;background:#b9a3e0}
+.subtabs.seq .pconn.mnz::before{content:"📜";position:absolute;top:-19px;left:50%;transform:translateX(-50%);font-size:13px;line-height:1;z-index:2;filter:drop-shadow(0 1px 1px rgba(0,0,0,.18))}
+/* ===== مسار اليوم عموديًّا يمين الصفحة + المحتوى يسارًا ===== */
+.daypanel.active{display:grid;grid-template-columns:230px minmax(0,1fr);gap:14px 22px;align-items:start}
+.unitnav-row .utab{flex:1 1 auto;text-align:center;justify-content:center}
+#journey .jstep{flex:1 1 0;min-width:120px}
+.daypanel.active>.pathkey{grid-column:1/-1;grid-row:1;margin-bottom:2px}
+.daypanel.active>.subtabs.seq{grid-column:1;grid-row:2;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:14px 12px;height:fit-content;position:sticky;top:14px}
+.daypanel.active>.subtabs.seq::before{content:"مسارُ اليوم";display:block;font-family:var(--fd);font-weight:700;color:var(--t1);font-size:14px;margin:0 4px 10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.daypanel.active>.subpanel{grid-column:2;grid-row:2;min-width:0}
+.subtabs.seq .pconn{display:none!important}
+.subtabs.seq .subtab{display:flex!important;width:100%;flex:0 0 auto!important;position:relative;padding:7px 10px!important;min-height:54px;box-sizing:border-box;border-radius:12px;justify-content:flex-start;gap:11px!important;white-space:normal;text-align:start;line-height:1.35}
+.subtabs.seq .subtab::before{width:26px!important;height:26px!important;font-size:11.5px!important;z-index:1}
+.subtabs.seq .subtab::after{content:"";position:absolute;inset-inline-start:22px;top:calc(50% + 13px);width:3px;height:calc(50% + 1px);background:#d6ded9;z-index:0}
+.subtabs.seq .subtab:last-child::after{display:none}
+.subtabs.seq .subtab:not(.active){background:transparent!important;border-color:transparent!important;color:#3f4a43!important}
+.subtabs.seq .subtab.active{background:color-mix(in srgb,var(--sc,#2C6A4D) 13%,#fff)!important;color:var(--t1)!important;border-color:transparent!important;box-shadow:none!important}
+.subtabs.seq .subtab.active::before{background:var(--sc,#2C6A4D)!important;color:#fff!important}
+.subtabs.seq .subtab .pchk{margin-inline-start:auto!important}
+@media(max-width:820px){.daypanel.active{display:block;margin-inline:0;width:auto}.daypanel.active>.subtabs.seq{margin-bottom:14px;position:static}}
+/* ===== بطاقة فترة روتينية ===== */
+.rcard{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
+  border-inline-start:6px solid var(--rc,#8a8f98);border-radius:18px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:8px}
+.rcard .rc-ic{flex:0 0 auto;width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:29px;
+  background:var(--rc-soft,#f2f3f2);border:1px solid var(--line)}
+.rcard .rc-b{flex:1;min-width:0}
+.rcard .rc-top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:9px}
+.rcard .rc-name{font-family:var(--fd);font-weight:700;font-size:20px;color:var(--t1)}
+.rcard .rc-time{font-size:12.5px;color:var(--muted);font-weight:700;background:#f4f7f6;border:1px solid var(--line);border-radius:999px;padding:3px 12px;white-space:nowrap}
+.rcard p{font-size:14.5px;line-height:1.95;margin:0 0 8px;color:var(--ink)}
+.rcard .rc-aim{color:#5b4412;background:#fffdf6;border:1px solid #ecd9a8;border-inline-start:4px solid var(--gold);border-radius:12px;padding:9px 13px;font-size:13.5px;margin:0}
+
 .day-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);
   border-inline-start:6px solid var(--sc,var(--t2));border-radius:16px;padding:13px 18px;box-shadow:var(--shadow-sm);margin-bottom:12px}
 .day-head .subj{background:var(--sc,var(--t2));color:#fff;border-radius:999px;padding:6px 14px;font-size:12.5px;font-weight:700;white-space:nowrap}
@@ -108,7 +164,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 .upanel.active{display:block;animation:fade .25s ease}
 
 /* مكوّنات محتوى لوحات الوحدة */
-.u-hero{background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff;border-radius:20px;padding:22px 24px;margin-bottom:16px;box-shadow:var(--shadow-sm)}
+.u-hero{background:linear-gradient(135deg,rgba(16,52,38,.82),rgba(11,36,27,.70)),var(--uimg) center/cover;text-shadow:0 2px 10px rgba(0,0,0,.35);color:#fff;border-radius:20px;padding:22px 24px;margin-bottom:16px;box-shadow:var(--shadow-sm)}
 .u-hero h2{font-family:var(--fd);font-size:24px;color:#fff;margin-bottom:6px}
 .u-hero p{font-size:14px;opacity:.96;max-width:860px;line-height:1.85}
 .u-h3{font-family:var(--fd);font-size:19px;color:var(--t1);margin:22px 0 12px;padding-inline-start:13px;border-inline-start:5px solid var(--gold)}
@@ -173,8 +229,84 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
 
 .fitness-quick{background:#fff;border:1px solid var(--line);border-inline-start:4px solid var(--t2);border-radius:12px;padding:11px 14px;font-size:13px;line-height:1.8;box-shadow:var(--shadow-sm)}
 .fitness-quick b{color:var(--t1)}
+
+/* ===== توحيد أيقونات الدليل (الخيار أ) ===== */
+.rc-ic{background:#EEF4F1!important;color:#1F4A39!important;border:1px solid #D6E5DF}
+.rc-ic .gi-svg{width:26px;height:26px}
+/* ═══ نظام «الخريطة المطوَّرة» mpv (معزول: رموز مقصورة على .mpv) ═══ */
+.mpv{--paper:#FBF8F1;--card:#FFFFFF;--ink:#182620;--muted:#78857C;--green:#14402E;--pine:#2C6A4D;--gold:#B08636;--gold-soft:#E8DBBB;--line:#EBE3D2;
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  font-family:var(--fb);color:var(--ink)}
+.mpv h2,.mpv h3,.mpv .mpv-theme,.mpv .mpv-num,.mpv .mpv-medday,.mpv .mpv-gh{font-family:var(--fd)}
+.mpv-hero{position:relative;overflow:hidden;color:#fff;border-radius:20px;padding:30px 30px 26px;margin-bottom:10px;
+  background:linear-gradient(135deg,rgba(16,52,38,.82),rgba(11,36,27,.70)),var(--uimg) center/cover;
+  box-shadow:0 18px 40px -22px rgba(20,64,46,.6)}
+.mpv-star{position:absolute;inset:0;opacity:.10;background-repeat:repeat;background-size:66px 66px;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='66' height='66' viewBox='0 0 66 66'><g fill='none' stroke='%23ffffff' stroke-width='1'><path d='M33 4 L41 25 L62 33 L41 41 L33 62 L25 41 L4 33 L25 25 Z'/><circle cx='33' cy='33' r='9'/></g></svg>")}
+.mpv-kicker{position:relative;text-shadow:0 1px 6px rgba(0,0,0,.4);font-size:12px;letter-spacing:3px;color:var(--gold-soft);font-weight:700;margin-bottom:9px}
+.mpv-hero h2{position:relative;text-shadow:0 2px 10px rgba(0,0,0,.4);font-size:29px;line-height:1.25;text-wrap:balance;margin:0 0 10px;color:#fff}
+.mpv-hero p{position:relative;font-size:13.5px;max-width:62ch;color:#e9f0ea;opacity:.94}
+.mpv-rule{position:relative;height:2px;width:66px;margin-top:16px;border-radius:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.mpv-legend{display:flex;flex-wrap:wrap;gap:5px 16px;align-items:center;font-size:11.5px;color:var(--muted);padding:13px 6px 4px}
+.mpv-lg{display:inline-flex;align-items:center;gap:6px}
+.mpv-sw{width:11px;height:11px;border-radius:3px;background:var(--c)}
+.mpv-legend b{color:var(--ink);font-weight:700}
+/* الخطّ الزمنيّ */
+.mpv-tl{position:relative;margin-top:6px}
+.mpv-tl::before{content:"";position:absolute;top:26px;bottom:26px;right:31px;width:2px;background:linear-gradient(var(--gold-soft),var(--gold) 40%,var(--gold-soft));opacity:.7}
+.mpv-day{position:relative;display:grid;grid-template-columns:64px 1fr;gap:16px;margin-bottom:15px}
+.mpv-rail{position:relative;display:flex;flex-direction:column;align-items:center;padding-top:6px}
+.mpv-med{width:48px;height:48px;border-radius:50%;background:var(--card);border:2px solid var(--dc);display:grid;place-items:center;position:relative;z-index:2;box-shadow:0 0 0 5px var(--paper),0 8px 18px -8px color-mix(in srgb,var(--dc) 60%,transparent)}
+.mpv-num{font-size:22px;font-weight:700;color:var(--dc);line-height:1}
+.mpv-medday{margin-top:9px;font-size:12.5px;color:var(--dc);font-weight:700;text-align:center;line-height:1.35}
+.mpv-medday small{display:block;font-family:var(--fb);font-size:10.5px;color:var(--muted);letter-spacing:1px;font-weight:600}
+.mpv-card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px -20px rgba(24,38,32,.4)}
+.mpv-top{height:4px;background:linear-gradient(90deg,var(--dc),color-mix(in srgb,var(--dc) 30%,transparent))}
+.mpv-cin{padding:15px 18px 16px}
+.mpv-eyebrow{font-size:11px;letter-spacing:2px;color:var(--muted);font-weight:700;margin-bottom:3px}
+.mpv-theme{font-size:21px;color:var(--dc);line-height:1.3;margin:0 0 10px;text-wrap:balance}
+.mpv-aim{position:relative;font-size:13px;color:#3a4a42;background:color-mix(in srgb,var(--dc) 6%,#fff);border-radius:10px;padding:9px 13px 9px 16px;margin-bottom:13px}
+.mpv-aim::before{content:"";position:absolute;inset-inline-start:0;top:9px;bottom:9px;width:3px;border-radius:3px;background:var(--dc)}
+.mpv-aim b{color:var(--dc);font-weight:700}
+.mpv-leslbl{font-size:10.5px;letter-spacing:1.5px;color:var(--muted);font-weight:700;margin-bottom:7px}
+.mpv-tags{display:flex;flex-wrap:wrap;gap:7px}
+.mpv-tag{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;background:#fff;border:1px solid var(--line);border-radius:10px;padding:5px 11px 5px 9px;color:var(--ink)}
+.mpv-mk{width:7px;height:18px;border-radius:3px;background:var(--mc);flex:0 0 auto}
+.mpv-tag small{font-weight:500;color:var(--muted);font-size:11px}
+.mpv-tag.lead{border-color:color-mix(in srgb,var(--mc) 45%,var(--line));background:color-mix(in srgb,var(--mc) 6%,#fff)}
+/* شبكة بطاقات (الفكرة الناظمة/الأركان) */
+.mpv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:13px;margin-top:4px}
+.mpv-gcard{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px -20px rgba(24,38,32,.4)}
+.mpv-gcard .mpv-top{height:4px;background:linear-gradient(90deg,var(--dc),color-mix(in srgb,var(--dc) 30%,transparent))}
+.mpv-gin{padding:14px 16px 15px}
+.mpv-gh{display:flex;align-items:center;gap:9px;font-size:16px;color:var(--dc);font-weight:700;margin-bottom:7px}
+.mpv-gh .ic{width:34px;height:34px;border-radius:10px;background:color-mix(in srgb,var(--dc) 12%,#fff);display:grid;place-items:center;font-size:18px;flex:0 0 auto}
+.mpv-gcard p{font-size:12.7px;color:#3a4a42;margin:0 0 7px}
+.mpv-gcard p:last-child{margin-bottom:0}
+.mpv-gcard b{color:var(--dc)}
+/* نداء/تذكير */
+.mpv-call{display:flex;gap:12px;align-items:flex-start;background:#f6f1fb;border:1px solid #e2d6f2;border-inline-start:4px solid #6d4aa7;border-radius:14px;padding:13px 16px;margin:2px 0 14px;font-size:12.8px;color:#48376e}
+.mpv-call.gold{background:#fbf6ea;border-color:#ecdcae;border-inline-start-color:var(--gold);color:#5a5230}
+.mpv-call .ci{font-size:22px;line-height:1;flex:0 0 auto}
+.mpv-call b{color:#3a2a6a}
+.mpv-call.gold b{color:var(--green)}
+.mpv-btn{display:flex;align-items:center;gap:12px;justify-content:center;margin:0 0 14px;padding:15px 18px;border-radius:16px;text-decoration:none;font-weight:700;font-size:14px;line-height:1.55;color:#fff;background:linear-gradient(135deg,var(--green),var(--pine));box-shadow:0 10px 26px -14px rgba(20,64,46,.7)}
+.mpv-btn .ic{font-size:22px}
+.mpv-foot{display:flex;gap:11px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-inline-start:4px solid var(--gold);border-radius:14px;padding:13px 16px;margin-top:12px;font-size:12.6px;color:#5a5230}
+.mpv-g{flex:0 0 auto;line-height:1}
+.mpv-foot b{color:var(--green)}
+.mpv-tbl{width:100%;border-collapse:collapse;font-size:12.7px;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.mpv-tbl th{background:var(--green);color:#fff;font-family:var(--fd);font-weight:700;padding:10px 13px;text-align:start;font-size:13px}
+.mpv-tbl td{padding:10px 13px;border-top:1px solid var(--line);vertical-align:top}
+.mpv-tbl tr:nth-child(even) td{background:#faf8f2}
+@media(max-width:540px){.mpv-day{grid-template-columns:52px 1fr;gap:11px}.mpv-tl::before{right:25px}.mpv-hero h2{font-size:24px}}
+@media print{.mpv-hero{box-shadow:none}.mpv-btn,.mpv-card,.mpv-gcard{box-shadow:none}}
+
+.hasjs #u-days .daytabs{display:none}
+html.hasjs:not(.gq-ready) #u-days{visibility:hidden}
+.daytab .d-n:empty{display:none}
 </style>
-  <link rel="stylesheet" href="app.css"/>
+  <link rel="stylesheet" href="app.css?v=dp2"/>
   <link rel="manifest" href="manifest.json"/>
   <meta name="theme-color" content="#1F4A39"/>
   <link rel="icon" href="favicon.ico" sizes="any"/>
@@ -197,9 +329,9 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
       <div class="hero-txt">
         <span class="hero-kicker">الوحدة الأولى · المرحلة التمهيدية</span>
         <h1 class="hero-title">وحدة أنا مخلوقٌ كرّمني الله</h1>
-        <div class="hero-sub">وحدةٌ متكاملةٌ تغرس أنّ الله خلق الطفل وكرّمه وأعدّه بالحواسّ والعقل، وتربط ذلك بتدبّر سورة النبأ ومعرفة أسماء الله واتّباع النبيّ ﷺ وحسن الأدب والمهارة. تضمّ <b>سبع موادّ أساسية + مركزين تطبيقيّين</b>. اختاري اليوم، ثم المادة لعرض دليل لقائها كاملًا.</div>
+        <div class="hero-sub">وحدةٌ متكاملةٌ تغرس أنّ الله خلق الطفل وكرّمه وأعدّه بالحواسّ والعقل، وتربط ذلك بتدبّر سورة النبأ ومعرفة أسماء الله واتّباع النبيّ ﷺ وحسن الأدب والمهارة، وبالتفكّر في مخلوقات الله. تضمّ <b>سبع موادّ أساسية + مركزين تطبيقيّين</b>. اختاري اليوم، ثم المادة لعرض دليل لقائها كاملًا.</div>
         <div class="hero-chips">
-          <span>☀ أيام الوحدة</span><span>📚 ٩ موادّ</span><span>📖 لقاءات متكاملة</span><span>🕋 سورة النبأ</span><span>⏱️ ٣٠ دقيقة/لقاء</span>
+          <span>☀ ١٤ يومًا تدريسيًّا</span><span>📚 ٩ موادّ</span><span>📖 لقاءات متكاملة</span><span>🕋 سورة النبأ</span><span>⏱️ ٣٠ دقيقة/لقاء</span>
         </div>
       </div>
     </div>
@@ -209,57 +341,584 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
     <div class="unitnav-row">
       <span class="unitnav-label">التخطيط والمتابعة</span>
       <button class="utab days-tab active" data-u="days">دروس الوحدة</button>
-      <button class="utab" data-u="about">عن الوحدة</button>
       <button class="utab" data-u="usage">دليل الاستخدام</button>
+      <button class="utab" data-u="theme">الفكرة الناظمة والتكامل</button>
+      <button class="utab" data-u="unit">الوحدة</button>
+      <button class="utab" data-u="week">خريطة الأسبوع</button>
+    </div>
+    <div class="unitnav-row">
+      <span class="unitnav-label">المحتوى والتطبيق</span>
+      <button class="utab" data-u="values">القيم والتقييم</button>
+      <button class="utab" data-u="lang">الحصيلة اللغوية</button>
+      <button class="utab" data-u="manzooma">منظومة الوحدة</button>
+      <button class="utab" data-u="songs">أناشيد حركية</button>
+      <button class="utab" data-u="fitness">اللياقة البدنية</button>
+      <button class="utab" data-u="corners">خريطة الأركان</button>
     </div>
   </nav>
-
-  <div class="upanel" id="u-about">
-    <div class="u-hero"><h2>عن وحدة «أنا مخلوقٌ كرّمني الله»</h2><p>الفكرة الناظمة: أنّ الله خلق الإنسانَ وكرّمه وأعدّه بالحواسّ والعقل؛ فيتعلّم الطفل أن يعرف خالقه ويحبّه ويشكره ويتّبع نبيّه ﷺ. تتكامل موادّ الوحدة في غرس هذا المعنى الواحد عبر القرآن واللغة والمهارة والأدب.</p></div>
-    <h3 class="u-h3">موادّ الوحدة</h3>
-    <div class="u-grid two">
-      <div class="u-card" style="--ac:#1E5631"><span class="u-subj" style="--ac:#1E5631">كتابي المنير · ١٠</span><p>سورة النبأ: علومها ومعانيها وتدبّر آياتها والتسميع.</p></div>
-      <div class="u-card" style="--ac:#2C6A4D"><span class="u-subj" style="--ac:#2C6A4D">علّمني ربي · ١٤</span><p>التوحيد والتفكّر: الله الخالق الهادي، وتكريم الإنسان بالعلم، والتفكّر في مخلوقات الله (النبات · رغيف الخبز · النحل · النمل · البحار · الخيل · الإبل).</p></div>
-      <div class="u-card" style="--ac:#0E6E6B"><span class="u-subj" style="--ac:#0E6E6B">لساني عربي · ١٣</span><p>الإدراك السمعي والبصري، وحروف الباء والدال واللام والميم ومواضعها.</p></div>
-      <div class="u-card" style="--ac:#8660A8"><span class="u-subj" style="--ac:#8660A8">أحبّك ربّي · ٨</span><p>أسماء الله الحسنى: اسم الله «الرب» (١–٤) واسم الله «الصمد» (١–٤).</p></div>
-      <div class="u-card" style="--ac:#55702B"><span class="u-subj" style="--ac:#55702B">أدب واقتداء · ٣</span><p>آداب اللباس اقتداءً بالنبي ﷺ: ستر العورة والتيامن ودعاء الثوب الجديد.</p></div>
-      <div class="u-card" style="--ac:#96683a"><span class="u-subj" style="--ac:#96683a">قال رسولي · ٣</span><p>السيرة والحديث: حديث «احفظ الله يحفظك» — علومه ومعانيه ووصاياه.</p></div>
-      <div class="u-card" style="--ac:#3F7A56"><span class="u-subj" style="--ac:#3F7A56">مهاراتي · ٦</span><p>الأرقام والمعدودات ومفهوم الأشكال الهندسية بالمحسوس.</p></div>
-      <div class="u-card" style="--ac:#0d6e6e"><span class="u-subj" style="--ac:#0d6e6e">مركز اللغة · ٣</span><p>لقاءات تطبيقية: إدراكٌ سمعيّ واستعدادٌ كتابيّ بلعبٍ حرٍّ بالأدوات.</p></div>
-      <div class="u-card" style="--ac:#1E5631"><span class="u-subj" style="--ac:#1E5631">مركز الرياضيات · ٥</span><p>لقاءات تطبيقية: عدٌّ وتصنيفٌ وتمييزُ أشكالٍ بلعبٍ حرٍّ بالأدوات.</p></div>
-    </div>
-    <div class="u-note"><b>أيام الوحدة:</b> أربعةَ عشرَ يومًا تدريسيًّا مسمّاةً بلقاءات «علّمني ربي» الفعليّة (من الله الخالق إلى التفكّر في الإبل)، ويومٌ ختاميّ لـ«برنامج الوحدة». وتوزيعُ لقاءات بقيّة الموادّ على الأيام <b>ترتيبٌ أوّليّ</b> بحسب تسلسلها، قابلٌ للتعديل وفق خطّة المعلمة.</div>
-    <div class="u-note"><b>ملاحظة:</b> التبويباتُ التعريفية الأخرى (منظومة/قيم/حصيلة/أناشيد/لياقة/أركان) تُضاف عند توفّر موادّها على مستوى الوحدة.</div>
-  </div>
 
   <div class="upanel" id="u-usage">
     <div class="u-hero"><h2>كيف تستخدمين هذه الصفحة؟</h2></div>
     <div class="u-grid">
-      <div class="u-card"><h4>١ · اختاري اليوم</h4><p>من شريط <b>تبويبات الأيام</b> أعلى «دروس الوحدة» تنتقلين بين أيام الوحدة؛ ويُحفظ آخر يومٍ فتحتِه تلقائيًّا.</p></div>
+      <div class="u-card"><h4>١ · اختاري اليوم</h4><p>من شريط <b>تبويبات الأيام</b> أعلى «دروس الوحدة» تنتقلين بين أيام الوحدة الأربعة عشر؛ ويُحفظ آخر يومٍ فتحتِه تلقائيًّا.</p></div>
       <div class="u-card"><h4>٢ · اختاري المادّة</h4><p>داخل كلّ يومٍ تبويباتٌ ملوّنةٌ للمواد؛ اضغطي المادة لعرض دليل لقائها كاملًا داخل الصفحة.</p></div>
       <div class="u-card"><h4>٣ · افتحي كصفحة كاملة</h4><p>زر <b>«↗ فتح كصفحة كاملة»</b> يفتح اللقاء في تبويبٍ مستقلٍّ للطباعة أو العرض على الشاشة.</p></div>
-      <div class="u-card"><h4>٤ · وضع التدريس والمؤقّت</h4><p>الشريط العلويّ يوفّر وضعَ التدريس ومؤقّت المراحل ومتابعةَ التقدّم — يعمل حتى دون اتصال (PWA).</p></div>
+      <div class="u-card"><h4>٤ · التبويبات التخطيطية</h4><p>«الفكرة الناظمة» و«الوحدة» و«خريطة الأسبوع» و«القيم» و«الحصيلة» و«المنظومة» و«الأركان» تعطيكِ الصورةَ الكاملة للوحدة قبل التدريس.</p></div>
     </div>
     <div class="u-note"><b>تذكير منهجي:</b> المراكز التطبيقية (اللغة والرياضيات) فتراتٌ تطبيقيّةٌ مستقلّةٌ بعد الدرس، لا تحلّ محلّ اللقاء الأساسيّ ولا تقدّم مفهومًا جديدًا.</div>
   </div>
 
+  <div class="upanel" id="u-theme"><div class="mpv">
+    <header class="mpv-hero"><div class="mpv-star"></div>
+      <div class="mpv-kicker">المحور الناظم · التكامل</div>
+      <h2>الفكرة الناظمة لوحدة أنا مخلوق</h2>
+      <p>الله خلق الإنسانَ وكرّمه وأعدّه بالحواسّ والعقل؛ فيعرف الطفلُ خالقَه ويحبّه ويشكره ويتّبع نبيّه ﷺ، ويتفكّر في بديع مخلوقات الله فيزداد إيمانًا. تدور الموادّ التسعُ كلُّها حول هذا المحور عبر أربعة عشر يومًا.</p>
+      <div class="mpv-rule"></div>
+    </header>
+    <div class="mpv-leslbl" style="padding:14px 4px 2px">كيف يتكامل المحور عبر الأيام</div>
+    <div class="mpv-tl">
+      <article class="mpv-day" style="--dc:#1E5631">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">1</span></div><div class="mpv-medday">اليوم الأول</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">الله الخالق</h3>
+          <div class="mpv-aim">يضع <b>علّمني ربي</b> أساس الوحدة بأنّ الله الخالق؛ ويفتتح <b>كتابي المنير</b> سورة النبأ، ويرسّخ <b>أحبك ربي</b> اسمَ الله «الرب»، ويبني <b>لساني</b> الإدراكَ السمعيّ.</div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#2C6A4D">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">2</span></div><div class="mpv-medday">اليوم الثاني</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">مراحل خلق الإنسان</h3>
+          <div class="mpv-aim">يعرض <b>علّمني ربي</b> أطوار خلق الإنسان؛ ويتدبّر <b>كتابي المنير</b> معنى النبأ، ويُثري <b>لساني</b> الإدراكَ البصريّ، ويعدّ <b>مهاراتي</b>.</div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#0E6E6B">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">3</span></div><div class="mpv-medday">اليوم الثالث</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">مفاتيح التعلّم (١)</h3>
+          <div class="mpv-aim">يعرّف <b>علّمني ربي</b> أدوات التعلّم الثلاث؛ ويربطها <b>لساني</b> بالإدراك السمعيّ والبصريّ، ويتدبّر <b>كتابي المنير</b> أسماء الله في السورة.</div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#3F7A56">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">4</span></div><div class="mpv-medday">اليوم الرابع</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">مفاتيح التعلّم (٢)</h3>
+          <div class="mpv-aim">يرسّخ <b>علّمني ربي</b> الانتفاع بأدوات التعلّم وشكرَها؛ ويطبّق <b>لساني</b> التكاملَ البصريّ الحركيّ، ويستمرّ <b>أحبك ربي</b> باسم الله «الرب».</div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#14402E">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">5</span></div><div class="mpv-medday">اليوم الخامس</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">تكريم آدم بالعلم</h3>
+          <div class="mpv-aim">يحكي <b>علّمني ربي</b> قصّة تكريم آدم بالعلم؛ ويتدبّر <b>كتابي المنير</b> آيات النبأ، ويطبّق <b>أدب واقتداء</b> أدبَ اللباس.</div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#1E6E63">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">6</span></div><div class="mpv-medday">اليوم السادس</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">الله الهادي</h3>
+          <div class="mpv-aim">يعرّف <b>علّمني ربي</b> اسمَ الله الهادي وهدايتَه للمخلوقات؛ ويتدبّر <b>كتابي المنير</b>، ويُثري <b>لساني</b> التمييزَ السمعيّ.</div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#55702B">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">7</span></div><div class="mpv-medday">اليوم السابع</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">مفهوم التفكّر</h3>
+          <div class="mpv-aim">يبني <b>علّمني ربي</b> مفهوم التفكّر عبادةً؛ ويتدبّر <b>كتابي المنير</b> آيات النبأ، ويتعرّف <b>لساني</b> حرفَ الباء، ويقتدي <b>قال رسولي</b> بالنبيّ ﷺ.</div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#8660A8">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">8</span></div><div class="mpv-medday">اليوم الثامن</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">التفكّر في النبات (١) ومنافعه</h3>
+          <div class="mpv-aim">يتفكّر <b>علّمني ربي</b> في النبات ومنافعه؛ ويرسّخ <b>أحبك ربي</b> اسمَ الله «الرب» الرازق، ويتعرّف <b>لساني</b> مواضعَ الباء.</div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#96683a">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">9</span></div><div class="mpv-medday">اليوم التاسع</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">التفكّر في النبات (٢) — قصة رغيف الخبز</h3>
+          <div class="mpv-aim">يتتبّع <b>علّمني ربي</b> رحلة الخبز فالرزقُ من الله؛ ويتدبّر <b>كتابي المنير</b>، ويتعرّف <b>لساني</b> حرفَ الدال.</div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#1F7A8C">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">10</span></div><div class="mpv-medday">اليوم العاشر</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">التفكّر في النحلة</h3>
+          <div class="mpv-aim">يتأمّل <b>علّمني ربي</b> عظيم خلق النحلة؛ ويتدبّر <b>كتابي المنير</b> آيات النبأ، ويتعرّف <b>لساني</b> مواضعَ الدال، ويعدّ <b>مهاراتي</b>.</div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#1F4A39">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">11</span></div><div class="mpv-medday">اليوم الحادي عشر</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">التفكّر في النمل</h3>
+          <div class="mpv-aim">يتأمّل <b>علّمني ربي</b> خلق النمل وتنظيمه؛ ويتدبّر <b>كتابي المنير</b>، ويتعرّف <b>لساني</b> مواضعَ اللام.</div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#0d6e6e">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">12</span></div><div class="mpv-medday">اليوم الثاني عشر</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">التفكّر في البحار</h3>
+          <div class="mpv-aim">يتفكّر <b>علّمني ربي</b> في البحر ومخلوقاته؛ ويتدبّر <b>كتابي المنير</b>، ويتعرّف <b>لساني</b> حرفَ الميم.</div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#8A6D2B">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">13</span></div><div class="mpv-medday">اليوم الثالث عشر</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">التفكّر في الخيل</h3>
+          <div class="mpv-aim">يتفكّر <b>علّمني ربي</b> في خلق الخيل وتسخيرها؛ ويتدبّر <b>كتابي المنير</b>، ويُثري <b>لساني</b> الذاكرةَ السمعيّة.</div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#6B3F22">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">14</span></div><div class="mpv-medday">اليوم الرابع عشر</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم · ختام</div><h3 class="mpv-theme">التفكّر في الإبل</h3>
+          <div class="mpv-aim">يختم <b>علّمني ربي</b> التفكّرَ بعجيب خلق الإبل؛ ويسمّع <b>كتابي المنير</b> ما حُفظ من السورة، ويُثري <b>لساني</b> الاتجاهات.</div>
+        </div></div>
+      </article>
+    </div>
+
+    <div class="mpv-leslbl" style="padding:8px 4px 2px">إسهام كلّ مادّةٍ في المحور</div>
+    <div class="mpv-grid">
+      <div class="mpv-gcard" style="--dc:#2C6A4D"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">🌱</span>علّمني ربي</div><p>المحور الذي تدور حوله الوحدة؛ يبني معرفة الله الخالق الهادي، وتكريمَ الإنسان بالعلم وأدوات التعلّم، والتفكّرَ في مخلوقات الله (النبات والنحل والنمل والبحار والخيل والإبل).</p></div></div>
+      <div class="mpv-gcard" style="--dc:#1E5631"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">📖</span>كتابي المنير</div><p>سورة النبأ (علومها وتدبّرها والتسميع)؛ يتلو الطفلُ ويتدبّر عظمةَ الخالق ونعمَه وآياتِه في الكون، فيتّصل التفكّرُ بكلام الله.</p></div></div>
+      <div class="mpv-gcard" style="--dc:#8660A8"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">◈</span>أحبك ربي</div><p>اسما الله «الرب» و«الصمد» يرسّخان أنّ الله وحده الخالق الرازق المعبود؛ فما يتفكّر فيه الطفلُ من مخلوقاتٍ ونعمٍ يردّه إلى ربّه.</p></div></div>
+      <div class="mpv-gcard" style="--dc:#96683a"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">📜</span>قال رسولي</div><p>حديث «احفظ الله يحفظك» يربط الطفلَ بحفظ الله ومراقبته، فيقتدي بالنبيّ ﷺ في تعظيم الخالق والاستعانة به.</p></div></div>
+      <div class="mpv-gcard" style="--dc:#55702B"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">🧕</span>أدب واقتداء</div><p>آداب اللباس (الستر والتيامن ودعاء الثوب الجديد) تترجم شكرَ نعمة الجسد الذي كرّمه الله إلى سلوكٍ يوميّ.</p></div></div>
+      <div class="mpv-gcard" style="--dc:#0E6E6B"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">🔤</span>لساني عربي</div><p>الإدراك السمعيّ والبصريّ وحروف (ب · د · ل · م) تُتعلَّم عبر كلماتٍ من عالم المخلوقات، فتُبنى أداةُ قراءة كلام الله.</p></div></div>
+      <div class="mpv-gcard" style="--dc:#3F7A56"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">🔢</span>مهاراتي</div><p>الأرقام والمعدودات والأشكال الهندسية يوظّفها الطفلُ في عدّ مخلوقات الله وتأمّل إتقان صنعه.</p></div></div>
+    </div>
+    <div class="mpv-foot"><span class="mpv-g"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 L14.6 8.4 L22 6.2 L17.5 12.5 L23 17 L15.4 16.4 L15.6 24 L12 17.6 L8.4 24 L8.6 16.4 L1 17 L6.5 12.5 L2 6.2 L9.4 8.4 Z" fill="none" stroke="#B08636" stroke-width="1.3"/></svg></span><div>الربط بين المواد لطيفٌ واقعيٌّ يخدم محور «أنا مخلوقٌ كرّمني الله» دون تكلّف؛ فكلُّ مادّةٍ تُسهم من بابها في معرفة الخالق وشكرِ نعمه والتفكّر في بديع خلقه.</div></div>
+  </div></div>
+
+  <div class="upanel" id="u-unit"><div class="u-hero">
+    <h2>وحدة أنا مخلوقٌ كرّمني الله</h2>
+    <p>وحدةٌ تغرس معرفةَ الله الخالق الذي كرّم الإنسانَ وأعدّه بالحواسّ والعقل، وشكرَ نعمه، والتفكّرَ في بديع مخلوقاته — عبر سبع موادّ ومركزين تطبيقيّين خلال أربعة عشر يومًا.</p>
+  </div>
+    <h3 class="u-h3">الأساس الفلسفي: منظومة الوحي مقابل منظومة الشيطان</h3>
+    <div class="u-note"><b>الأساس الفلسفي للمنهج:</b> يقوم منهج غرس القيم على <b>منظومة الوحي</b> بوصفها المرجع الأعلى في بناء الإنسان وتنمية وجدانه. وفي المقابل تتبنّى المناهج الإنسانية والعلمانية <b>منظومة الشيطان</b> التي تتمحور حول الإنسان والعقل المجرّد، فتغدو الحرية هي القيمة المطلقة والمتعة هي الغاية. والمنهج لا يرفض العلم الأكاديمي بل يُعيد ربطه بالوحي ليكون العلم خادمًا للإنسان في طريق عبوديته لله؛ فللعلم بوصلة، وللإنسان غاية.</div>
+    <div style="overflow-x:auto">
+    <table class="msys-table">
+      <thead><tr><th class="dim">البُعد</th><th class="wahy">🌙 منظومة الوحي</th><th class="shaytan">⚠️ منظومة الشيطان</th></tr></thead>
+      <tbody>
+        <tr><td class="dim">الإله</td><td class="wahy"><span class="ic">🕌</span><span class="lb">الله</span><span class="sub">الخالق الواحد القهار</span></td><td class="shaytan"><span class="ic">👤</span><span class="lb">الإنسان</span><span class="sub">محور الكون ومقياسه</span></td></tr>
+        <tr><td class="dim">المرجع</td><td class="wahy"><span class="ic">📖</span><span class="lb">الوحي</span><span class="sub">قرآن كريم وسنة نبوية</span></td><td class="shaytan"><span class="ic">🧠</span><span class="lb">العقل</span><span class="sub">العقل المجرّد والمادة</span></td></tr>
+        <tr><td class="dim">القيمة</td><td class="wahy"><span class="ic">☝️</span><span class="lb">التوحيد</span><span class="sub">القيمة المحورية</span></td><td class="shaytan"><span class="ic">🔓</span><span class="lb">الحرية</span><span class="sub">الحرية المطلقة كغاية</span></td></tr>
+        <tr><td class="dim">الفعل</td><td class="wahy"><span class="ic">🤲</span><span class="lb">التسليم</span><span class="sub">العبودية الاختيارية لله</span></td><td class="shaytan"><span class="ic">⚡</span><span class="lb">الطغيان</span><span class="sub">اتباع الهوى والنفس</span></td></tr>
+        <tr><td class="dim">الغاية</td><td class="wahy"><span class="ic">🌟</span><span class="lb">الدار الآخرة</span><span class="sub">الغاية الحقيقية للوجود</span></td><td class="shaytan"><span class="ic">💰</span><span class="lb">الدار الدنيا</span><span class="sub">الدنيا نهاية المطاف</span></td></tr>
+        <tr><td class="dim">الثمرة</td><td class="wahy"><span class="ic">💚</span><span class="lb">حلاوة الإيمان</span><span class="sub">سموّ السلوك واتزان الشخصية</span></td><td class="shaytan"><span class="ic">🕳️</span><span class="lb">المتعة واللذة</span><span class="sub">فراغ الروح وفقدان المعنى</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 class="u-h3">كيف تتجلّى الأبعاد الستة في وحدة أنا مخلوق؟</h3>
+    <div class="u-grid">
+      <div class="u-card" style="--ac:#0A5030"><h4>① الإله — الله وحده</h4><p>كلُّ ما حولنا — وأنا منه — مخلوقٌ لله الخالق وحده، لا للطبيعة ولا للصدفة؛ يفتتح كلُّ لقاءٍ بأنّ الله خلق هذا المخلوق وأتقن صنعه.</p></div>
+      <div class="u-card" style="--ac:#1B4D7E"><h4>② المرجع — الوحي</h4><p>كلّ فكرةٍ مستندةٌ لآيةٍ أو حديث: ﴿هُوَ اللَّهُ الْخَالِقُ الْبَارِئُ الْمُصَوِّرُ﴾ · ﴿أَفَلَا يَنظُرُونَ إِلَى الْإِبِلِ﴾ · ﴿وَجَعَلَ لَكُمُ السَّمْعَ وَالْأَبْصَارَ﴾ وحديث «احفظ الله يحفظك».</p></div>
+      <div class="u-card" style="--ac:#7A4A00"><h4>③ القيمة — التوحيد</h4><p>نسبةُ الخلق والرزق والهداية لله وحده، وتعظيمُه وشكرُه على نعمه — هذا قلب الوحدة.</p></div>
+      <div class="u-card" style="--ac:#5B2D8E"><h4>④ الفعل — التسليم</h4><p>التفكّر عبادةٌ أمر بها الله، والشكرُ بالحواسّ والعقل، وأدبُ اللباس، والاقتداءُ بالنبيّ ﷺ كلُّها تسليمٌ وطاعة.</p></div>
+      <div class="u-card" style="--ac:#D05A1A"><h4>⑤ الغاية — الدار الآخرة</h4><p>معرفةُ الخالق والتفكّرُ في خلقه تزيد الإيمانَ وتُعدّ الطفلَ ليكون من الفائزين في الآخرة، لا لتكون الدنيا غايتَه.</p></div>
+      <div class="u-card" style="--ac:#1A7A4C"><h4>⑥ الثمرة — حلاوة الإيمان</h4><p>الطفل يعظّم خالقه، ويشكر نعمه، ويسبّح عند بديع خلقه محبةً وتعظيمًا — هذا الأثر الوجداني هو هدف الوحدة.</p></div>
+    </div>
+
+    <h3 class="u-h3">أهداف الوحدة</h3>
+    <div class="u-grid">
+      <div class="u-card" style="--ac:#C79A3B"><h4><span class="u-subj" style="--ac:#C79A3B">وجدانية</span></h4><p>أن يعظّم الطفلُ اللهَ الخالقَ ويحبّه ويشكره على نعمة خلقه وحواسّه وعقله ورزقه، ويسبّح عند تأمّل بديع مخلوقاته فيزداد إيمانًا وتعظيمًا لخالقه.</p></div>
+      <div class="u-card" style="--ac:#2C6A4D"><h4><span class="u-subj" style="--ac:#2C6A4D">معرفية</span></h4><p>أن يعرف أنّ الله خلقه وأطواره، وأدواتِ التعلّم (السمع والبصر والفؤاد)، وتكريمَ آدم بالعلم، واسمَ الله الهادي، ومعنى التفكّر، وبديعَ خلق الله في النبات والنحل والنمل والبحار والخيل والإبل، وسورةَ النبأ وأسماءَ الله.</p></div>
+      <div class="u-card" style="--ac:#1E5631"><h4><span class="u-subj" style="--ac:#1E5631">مهارية</span></h4><p>أن يتأمّل ويصف مخلوقات الله، ويستعمل حواسّه في التعلّم، ويتعرّف حروف (ب · د · ل · م) والأرقامَ والأشكال، ويؤدّي أنشطة التفكّر والتصنيف والمطابقة.</p></div>
+      <div class="u-card" style="--ac:#8660A8"><h4><span class="u-subj" style="--ac:#8660A8">سلوكية / إجرائية</span></h4><p>أن يقول «سبحان الله الخالق» عند رؤية مخلوقٍ، ويشكر الله على حواسّه، ويرفق بالحيوان، ويلتزم أدبَ اللباس وأدبَ مجلس العلم، ويستعين بالله ويحفظ حدوده.</p></div>
+    </div>
+
+    <h3 class="u-h3">مواد الوحدة</h3>
+    <div class="u-grid">
+      <div class="u-card" style="--ac:#2C6A4D"><h4><span class="u-subj" style="--ac:#2C6A4D">علّمني ربي · ١٤</span></h4><p>المادة المحورية؛ أربعة عشر لقاءً تبني معرفة الله الخالق الهادي، وتكريمَ الإنسان بالعلم وأدوات التعلّم، والتفكّرَ في مخلوقات الله.</p></div>
+      <div class="u-card" style="--ac:#1E5631"><h4><span class="u-subj" style="--ac:#1E5631">كتابي المنير · ١٠</span></h4><p>سورة النبأ: علومها ومعانيها وتدبّر آياتها والتسميع؛ يربط الطفلَ بكلام الله وعظمةِ خلقه.</p></div>
+      <div class="u-card" style="--ac:#8660A8"><h4><span class="u-subj" style="--ac:#8660A8">أحبك ربي · ٨</span></h4><p>أسماء الله الحسنى: «الرب» (١–٤) و«الصمد» (١–٤)؛ ترسّخ أنّ الله الخالق الرازق المعبود.</p></div>
+      <div class="u-card" style="--ac:#96683a"><h4><span class="u-subj" style="--ac:#96683a">قال رسولي · ٣</span></h4><p>حديث «احفظ الله يحفظك»؛ حفظُ الله ومراقبتُه والاستعانةُ به اقتداءً بالنبيّ ﷺ.</p></div>
+      <div class="u-card" style="--ac:#55702B"><h4><span class="u-subj" style="--ac:#55702B">أدب واقتداء · ٣</span></h4><p>آداب اللباس (الستر والتيامن ودعاء الثوب الجديد) اقتداءً بالنبيّ ﷺ.</p></div>
+      <div class="u-card" style="--ac:#0E6E6B"><h4><span class="u-subj" style="--ac:#0E6E6B">لساني عربي · ١٣</span></h4><p>الإدراك السمعيّ والبصريّ وحروف (ب · د · ل · م) ومواضعها عبر كلماتٍ مألوفة.</p></div>
+      <div class="u-card" style="--ac:#3F7A56"><h4><span class="u-subj" style="--ac:#3F7A56">مهاراتي · ٦</span></h4><p>الأرقام والمعدودات ومفهوم الأشكال الهندسية بالمحسوس.</p></div>
+    </div>
+    <p class="u-note">ويكمِّل الوحدةَ مركزان تطبيقيّان: <strong>مركز اللغة</strong> (٣ لقاءات) و<strong>مركز الرياضيات</strong> (٥ لقاءات)؛ لقاءاتٌ عملية تُرسّخ ما تعلّمه الطفل بأنشطة تطبيقية.</p>
+
+    <h3 class="u-h3">مفردات الوحدة بالفئات</h3>
+    <div class="u-grid">
+      <div class="u-card" style="--ac:#8660A8"><h4><span class="u-subj" style="--ac:#8660A8">مفردات إيمانية</span></h4><p>الخالق · البارئ · المصوّر · الرب · الصمد · الهادي · التسخير · التفكّر · التسبيح · النعمة · الشكر · تعظيم الخالق.</p></div>
+      <div class="u-card" style="--ac:#2C6A4D"><h4><span class="u-subj" style="--ac:#2C6A4D">مفردات المخلوقات</span></h4><p>المخلوقات · النبات · النحلة · النمل · البحار · الخيل · الإبل · السنام · الرحيق · الرزق · الهداية · التسخير.</p></div>
+      <div class="u-card" style="--ac:#0E6E6B"><h4><span class="u-subj" style="--ac:#0E6E6B">مفردات لغوية / معرفية</span></h4><p>السمع · البصر · الفؤاد · حروف ب · د · ل · م وأصواتها · الأرقام والمعدودات · الأشكال الهندسية · التصنيف والتمييز.</p></div>
+    </div>
+
+    <h3 class="u-h3">محاور تكامل الوحدة</h3>
+    <div class="u-grid two">
+      <div class="u-card" style="--ac:#1E5631"><h4><span class="u-subj" style="--ac:#1E5631">المحور القرآني</span></h4><p>«كتابي المنير» بسورة النبأ يربط قلب الطفل بعظمة الخالق ونعمِه وآياتِه في الكون، فيتّصل التفكّرُ بكلام الله.</p></div>
+      <div class="u-card" style="--ac:#96683a"><h4><span class="u-subj" style="--ac:#96683a">المحور النبوي</span></h4><p>«قال رسولي» (احفظ الله يحفظك) يجعل الطفل يحفظ حدود الله ويستعين به ويراقبه اقتداءً بالنبيّ ﷺ.</p></div>
+      <div class="u-card" style="--ac:#2C6A4D"><h4><span class="u-subj" style="--ac:#2C6A4D">المحور السلوكي / القيمي</span></h4><p>«علّمني ربي» المحور الذي تدور حوله الوحدة؛ معرفة الخالق وشكر نعمه والتفكّر في بديع خلقه.</p></div>
+      <div class="u-card" style="--ac:#55702B"><h4><span class="u-subj" style="--ac:#55702B">محور الأدب</span></h4><p>«أدب واقتداء» (آداب اللباس) يترجم شكرَ نعمة الجسد الذي كرّمه الله إلى آدابٍ عملية.</p></div>
+      <div class="u-card" style="--ac:#8660A8"><h4><span class="u-subj" style="--ac:#8660A8">المحور الإيماني</span></h4><p>«أحبك ربي» (الرب · الصمد) يرسّخ أنّ الله وحده الخالق الرازق المعبود، فيردّ الطفلُ كلَّ نعمةٍ إلى ربّه.</p></div>
+      <div class="u-card" style="--ac:#0E6E6B"><h4><span class="u-subj" style="--ac:#0E6E6B">المحور اللغوي</span></h4><p>«لساني عربي» (حروف ب · د · ل · م) يبني الحصيلة اللغوية عبر كلماتٍ من عالم المخلوقات.</p></div>
+      <div class="u-card" style="--ac:#3F7A56"><h4><span class="u-subj" style="--ac:#3F7A56">المحور الرياضي</span></h4><p>«مهاراتي» (الأرقام والأشكال) يوظّف المهارة الحسّية في عدّ مخلوقات الله وتأمّل إتقان صنعه.</p></div>
+      <div class="u-card" style="--ac:#0d6e6e"><h4><span class="u-subj" style="--ac:#0d6e6e">المراكز التطبيقية</span></h4><p>مركزا اللغة والرياضيات يثبّتان ما تعلّمه الطفل بالممارسة واللعب الهادف حول محور الوحدة.</p></div>
+    </div>
+  </div>
+
+  <div class="upanel" id="u-week"><div class="mpv">
+    <header class="mpv-hero"><div class="mpv-star"></div>
+      <div class="mpv-kicker">الوحدة الأولى · أنا مخلوقٌ كرّمني الله</div>
+      <h2>خريطة أيام الوحدة</h2>
+      <p>أربعةَ عشرَ يومًا حول محورٍ واحد: معرفةُ الله الخالق وشكرُ نعمه والتفكّرُ في بديع مخلوقاته. يفتتح كلَّ يومٍ «كتابي المنير» ثم «علّمني ربي» المحور القيميّ، وتتكامل بقيّة المواد حول فكرة اليوم، ويومٌ ختاميّ لبرنامج الوحدة.</p>
+      <div class="mpv-rule"></div>
+    </header>
+    <div class="mpv-legend"><span class="mpv-lg"><b>المواد:</b></span>
+      <span class="mpv-lg"><span class="mpv-sw" style="--c:#1E5631"></span>كتابي المنير</span>
+      <span class="mpv-lg"><span class="mpv-sw" style="--c:#2C6A4D"></span>علّمني ربي</span>
+      <span class="mpv-lg"><span class="mpv-sw" style="--c:#8660A8"></span>أحبك ربي</span>
+      <span class="mpv-lg"><span class="mpv-sw" style="--c:#96683a"></span>قال رسولي</span>
+      <span class="mpv-lg"><span class="mpv-sw" style="--c:#55702B"></span>أدب واقتداء</span>
+      <span class="mpv-lg"><span class="mpv-sw" style="--c:#0E6E6B"></span>لساني · مركز اللغة</span>
+      <span class="mpv-lg"><span class="mpv-sw" style="--c:#3F7A56"></span>مهاراتي · مركز الرياضيات</span>
+    </div>
+    <div class="mpv-tl">
+      <article class="mpv-day" style="--dc:#1E5631">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">1</span></div><div class="mpv-medday">اليوم الأول</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">الله الخالق</h3>
+          <div class="mpv-aim"><b>المقصد:</b> يُدرك أنّ الله خلق كلَّ شيءٍ وأتقن خلقه، فيعظّم الخالق سبحانه.</div>
+          <div class="mpv-leslbl">لقاءات اليوم</div><div class="mpv-tags">
+            <span class="mpv-tag lead" style="--mc:#1E5631"><span class="mpv-mk"></span>كتابي المنير <small>علوم سورة النبأ</small></span>
+            <span class="mpv-tag lead" style="--mc:#2C6A4D"><span class="mpv-mk"></span>علّمني ربي <small>الله الخالق</small></span>
+            <span class="mpv-tag" style="--mc:#0E6E6B"><span class="mpv-mk"></span>لساني عربي <small>الإدراك السمعي: الوعي الصوتي</small></span>
+            <span class="mpv-tag" style="--mc:#8660A8"><span class="mpv-mk"></span>أحبّك ربّي <small>اسم الله الرب (١): ربّي خلقني وأعدّني</small></span>
+            <span class="mpv-tag" style="--mc:#55702B"><span class="mpv-mk"></span>أدب واقتداء <small>آداب اللباس: ستر العورة</small></span>
+            <span class="mpv-tag" style="--mc:#96683a"><span class="mpv-mk"></span>قال رسولي <small>علوم الحديث والتعريف بالراوي</small></span>
+            <span class="mpv-tag" style="--mc:#3F7A56"><span class="mpv-mk"></span>مهاراتي <small>الأرقام والمعدودات ١–٦</small></span>
+            <span class="mpv-tag" style="--mc:#0d6e6e"><span class="mpv-mk"></span>مركز اللغة <small>مطابقة الصوت بالصورة</small></span>
+            <span class="mpv-tag" style="--mc:#1E5631"><span class="mpv-mk"></span>مركز الرياضيات <small>ترتيب البطاقات وفرقعة البالونات</small></span>
+          </div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#2C6A4D">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">2</span></div><div class="mpv-medday">اليوم الثاني</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">مراحل خلق الإنسان</h3>
+          <div class="mpv-aim"><b>المقصد:</b> يعرف أنّ الله خلقه وأطواره في بطن أمّه، فيشكر خالقه.</div>
+          <div class="mpv-leslbl">لقاءات اليوم</div><div class="mpv-tags">
+            <span class="mpv-tag lead" style="--mc:#1E5631"><span class="mpv-mk"></span>كتابي المنير <small>معنى لفظ النبأ</small></span>
+            <span class="mpv-tag lead" style="--mc:#2C6A4D"><span class="mpv-mk"></span>علّمني ربي <small>مراحل خلق الإنسان</small></span>
+            <span class="mpv-tag" style="--mc:#0E6E6B"><span class="mpv-mk"></span>لساني عربي <small>الإدراك البصري: الذاكرة البصرية</small></span>
+            <span class="mpv-tag" style="--mc:#8660A8"><span class="mpv-mk"></span>أحبّك ربّي <small>اسم الله الرب (٢): ربّ العالمين</small></span>
+            <span class="mpv-tag" style="--mc:#55702B"><span class="mpv-mk"></span>أدب واقتداء <small>آداب اللباس: التيامن</small></span>
+            <span class="mpv-tag" style="--mc:#96683a"><span class="mpv-mk"></span>قال رسولي <small>معاني الحديث: احفظ الله يحفظك</small></span>
+            <span class="mpv-tag" style="--mc:#3F7A56"><span class="mpv-mk"></span>مهاراتي <small>الأرقام والمعدودات ٧–١٠</small></span>
+            <span class="mpv-tag" style="--mc:#0d6e6e"><span class="mpv-mk"></span>مركز اللغة <small>محاكاة الخطوط على ورق المشاريع</small></span>
+            <span class="mpv-tag" style="--mc:#1E5631"><span class="mpv-mk"></span>مركز الرياضيات <small>ترتيب أرقام الساعة والمعدودات</small></span>
+          </div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#0E6E6B">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">3</span></div><div class="mpv-medday">اليوم الثالث</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">مفاتيح التعلّم (١)</h3>
+          <div class="mpv-aim"><b>المقصد:</b> يتعرّف أدوات التعلّم التي وهبه الله: السمع والبصر والفؤاد.</div>
+          <div class="mpv-leslbl">لقاءات اليوم</div><div class="mpv-tags">
+            <span class="mpv-tag lead" style="--mc:#1E5631"><span class="mpv-mk"></span>كتابي المنير <small>الألفاظ المتكرّرة وأسماء الله</small></span>
+            <span class="mpv-tag lead" style="--mc:#2C6A4D"><span class="mpv-mk"></span>علّمني ربي <small>مفاتيح التعلّم (١)</small></span>
+            <span class="mpv-tag" style="--mc:#0E6E6B"><span class="mpv-mk"></span>لساني عربي <small>السمعي: التركيز والاستجابة للأوامر</small></span>
+            <span class="mpv-tag" style="--mc:#8660A8"><span class="mpv-mk"></span>أحبّك ربّي <small>اسم الله الرب (٣): أمدّني بالنعم</small></span>
+            <span class="mpv-tag" style="--mc:#55702B"><span class="mpv-mk"></span>أدب واقتداء <small>آداب اللباس: دعاء الثوب الجديد</small></span>
+            <span class="mpv-tag" style="--mc:#96683a"><span class="mpv-mk"></span>قال رسولي <small>إذا سألت فاسأل الله</small></span>
+            <span class="mpv-tag" style="--mc:#3F7A56"><span class="mpv-mk"></span>مهاراتي <small>الأرقام ٠ ١ ٢ — قصة لولوة والبيض</small></span>
+            <span class="mpv-tag" style="--mc:#0d6e6e"><span class="mpv-mk"></span>مركز اللغة <small>مكعّب الخطوط</small></span>
+            <span class="mpv-tag" style="--mc:#1E5631"><span class="mpv-mk"></span>مركز الرياضيات <small>قفاز العدّ والبحث عن الرقم</small></span>
+          </div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#3F7A56">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">4</span></div><div class="mpv-medday">اليوم الرابع</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">مفاتيح التعلّم (٢)</h3>
+          <div class="mpv-aim"><b>المقصد:</b> يعرف وظيفة كلّ أداةٍ وكيف يشكر الله عليها وينتفع بها.</div>
+          <div class="mpv-leslbl">لقاءات اليوم</div><div class="mpv-tags">
+            <span class="mpv-tag lead" style="--mc:#1E5631"><span class="mpv-mk"></span>كتابي المنير <small>مفهوم التدبّر · الآيات ١–٥</small></span>
+            <span class="mpv-tag lead" style="--mc:#2C6A4D"><span class="mpv-mk"></span>علّمني ربي <small>مفاتيح التعلّم (٢)</small></span>
+            <span class="mpv-tag" style="--mc:#0E6E6B"><span class="mpv-mk"></span>لساني عربي <small>البصري: التكامل البصري الحركي</small></span>
+            <span class="mpv-tag" style="--mc:#8660A8"><span class="mpv-mk"></span>أحبّك ربّي <small>اسم الله الرب (٤): قصة إبراهيم عليه السلام</small></span>
+            <span class="mpv-tag" style="--mc:#3F7A56"><span class="mpv-mk"></span>مهاراتي <small>مفهوم الأشكال الهندسية</small></span>
+            <span class="mpv-tag" style="--mc:#1E5631"><span class="mpv-mk"></span>مركز الرياضيات <small>عدسة الأشكال</small></span>
+          </div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#14402E">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">5</span></div><div class="mpv-medday">اليوم الخامس</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">تكريم آدم بالعلم</h3>
+          <div class="mpv-aim"><b>المقصد:</b> يعرف أنّ الله كرّم آدم وفضّله على الخلق بالعلم.</div>
+          <div class="mpv-leslbl">لقاءات اليوم</div><div class="mpv-tags">
+            <span class="mpv-tag lead" style="--mc:#1E5631"><span class="mpv-mk"></span>كتابي المنير <small>تدبّر الآيات ٦–١٦</small></span>
+            <span class="mpv-tag lead" style="--mc:#2C6A4D"><span class="mpv-mk"></span>علّمني ربي <small>تكريم آدم بالعلم</small></span>
+            <span class="mpv-tag" style="--mc:#0E6E6B"><span class="mpv-mk"></span>لساني عربي <small>السمعي: التمييز السمعي</small></span>
+            <span class="mpv-tag" style="--mc:#8660A8"><span class="mpv-mk"></span>أحبّك ربّي <small>اسم الله الصمد (١): معناه وموطنه</small></span>
+            <span class="mpv-tag" style="--mc:#3F7A56"><span class="mpv-mk"></span>مهاراتي <small>الرقمان ٣ و٤</small></span>
+            <span class="mpv-tag" style="--mc:#1E5631"><span class="mpv-mk"></span>مركز الرياضيات <small>أكواب تصنيف الأرقام</small></span>
+          </div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#1E6E63">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">6</span></div><div class="mpv-medday">اليوم السادس</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">الله الهادي</h3>
+          <div class="mpv-aim"><b>المقصد:</b> يعرف أنّ الله الهادي هدى كلَّ مخلوقٍ لمصالحه ورزقه.</div>
+          <div class="mpv-leslbl">لقاءات اليوم</div><div class="mpv-tags">
+            <span class="mpv-tag lead" style="--mc:#1E5631"><span class="mpv-mk"></span>كتابي المنير <small>تدبّر الآيات ١٧–٢٠</small></span>
+            <span class="mpv-tag lead" style="--mc:#2C6A4D"><span class="mpv-mk"></span>علّمني ربي <small>الله الهادي</small></span>
+            <span class="mpv-tag" style="--mc:#0E6E6B"><span class="mpv-mk"></span>لساني عربي <small>التعرّف على حرف الباء</small></span>
+            <span class="mpv-tag" style="--mc:#8660A8"><span class="mpv-mk"></span>أحبّك ربّي <small>اسم الله الصمد (٢): حاجة الإنسان لربّه</small></span>
+            <span class="mpv-tag" style="--mc:#3F7A56"><span class="mpv-mk"></span>مهاراتي <small>الأشكال الأربعة الأساسية</small></span>
+          </div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#55702B">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">7</span></div><div class="mpv-medday">اليوم السابع</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">مفهوم التفكّر</h3>
+          <div class="mpv-aim"><b>المقصد:</b> يدرك أنّ التفكّر في خلق الله عبادةٌ يحبّها الله.</div>
+          <div class="mpv-leslbl">لقاءات اليوم</div><div class="mpv-tags">
+            <span class="mpv-tag lead" style="--mc:#1E5631"><span class="mpv-mk"></span>كتابي المنير <small>تدبّر الآيات ٢١–٣٠</small></span>
+            <span class="mpv-tag lead" style="--mc:#2C6A4D"><span class="mpv-mk"></span>علّمني ربي <small>مفهوم التفكّر</small></span>
+            <span class="mpv-tag" style="--mc:#0E6E6B"><span class="mpv-mk"></span>لساني عربي <small>مواضع حرف الباء</small></span>
+            <span class="mpv-tag" style="--mc:#8660A8"><span class="mpv-mk"></span>أحبّك ربّي <small>اسم الله الصمد (٣): قصة الاستسقاء</small></span>
+          </div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#8660A8">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">8</span></div><div class="mpv-medday">اليوم الثامن</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">التفكّر في النبات (١) ومنافعه</h3>
+          <div class="mpv-aim"><b>المقصد:</b> يتفكّر في النبات ومنافعه، ويردّد معنى اسم الله الرب.</div>
+          <div class="mpv-leslbl">لقاءات اليوم</div><div class="mpv-tags">
+            <span class="mpv-tag lead" style="--mc:#1E5631"><span class="mpv-mk"></span>كتابي المنير <small>تدبّر الآيات ٣١–٣٦</small></span>
+            <span class="mpv-tag lead" style="--mc:#2C6A4D"><span class="mpv-mk"></span>علّمني ربي <small>التفكّر في النبات (١) ومنافعه</small></span>
+            <span class="mpv-tag" style="--mc:#0E6E6B"><span class="mpv-mk"></span>لساني عربي <small>التعرّف على حرف الدال</small></span>
+            <span class="mpv-tag" style="--mc:#8660A8"><span class="mpv-mk"></span>أحبّك ربّي <small>اسم الله الصمد (٤): ثمرات الإيمان</small></span>
+          </div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#96683a">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">9</span></div><div class="mpv-medday">اليوم التاسع</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">التفكّر في النبات (٢) — قصة رغيف الخبز</h3>
+          <div class="mpv-aim"><b>المقصد:</b> يتتبّع رحلة رغيف الخبز فيعرف أنّ الرزق كلَّه من الله.</div>
+          <div class="mpv-leslbl">لقاءات اليوم</div><div class="mpv-tags">
+            <span class="mpv-tag lead" style="--mc:#1E5631"><span class="mpv-mk"></span>كتابي المنير <small>تدبّر الآيات ٣٧–٤٠</small></span>
+            <span class="mpv-tag lead" style="--mc:#2C6A4D"><span class="mpv-mk"></span>علّمني ربي <small>التفكّر في النبات (٢) — قصة رغيف الخبز</small></span>
+            <span class="mpv-tag" style="--mc:#0E6E6B"><span class="mpv-mk"></span>لساني عربي <small>مواضع حرف الدال</small></span>
+          </div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#1F7A8C">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">10</span></div><div class="mpv-medday">اليوم العاشر</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">التفكّر في النحلة</h3>
+          <div class="mpv-aim"><b>المقصد:</b> يتأمّل عظيم خلق الله للنحلة وهدايتَه لها لصنع العسل.</div>
+          <div class="mpv-leslbl">لقاءات اليوم</div><div class="mpv-tags">
+            <span class="mpv-tag lead" style="--mc:#1E5631"><span class="mpv-mk"></span>كتابي المنير <small>التسميع لمن حفظ</small></span>
+            <span class="mpv-tag lead" style="--mc:#2C6A4D"><span class="mpv-mk"></span>علّمني ربي <small>التفكّر في النحلة</small></span>
+            <span class="mpv-tag" style="--mc:#0E6E6B"><span class="mpv-mk"></span>لساني عربي <small>مواضع حرف اللام</small></span>
+          </div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#1F4A39">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">11</span></div><div class="mpv-medday">اليوم الحادي عشر</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">التفكّر في النمل</h3>
+          <div class="mpv-aim"><b>المقصد:</b> يتأمّل خلق الله للنمل وتنظيمَه وهدايةَ الله له.</div>
+          <div class="mpv-leslbl">لقاءات اليوم</div><div class="mpv-tags">
+            <span class="mpv-tag lead" style="--mc:#2C6A4D"><span class="mpv-mk"></span>علّمني ربي <small>التفكّر في النمل</small></span>
+            <span class="mpv-tag" style="--mc:#0E6E6B"><span class="mpv-mk"></span>لساني عربي <small>التعرّف على حرف الميم</small></span>
+          </div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#0d6e6e">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">12</span></div><div class="mpv-medday">اليوم الثاني عشر</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">التفكّر في البحار</h3>
+          <div class="mpv-aim"><b>المقصد:</b> يتفكّر في البحر ومخلوقاته العظيمة التي سخّرها الله.</div>
+          <div class="mpv-leslbl">لقاءات اليوم</div><div class="mpv-tags">
+            <span class="mpv-tag lead" style="--mc:#2C6A4D"><span class="mpv-mk"></span>علّمني ربي <small>التفكّر في البحار</small></span>
+            <span class="mpv-tag" style="--mc:#0E6E6B"><span class="mpv-mk"></span>لساني عربي <small>الذاكرة السمعية (لعبة الهمس)</small></span>
+          </div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#8A6D2B">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">13</span></div><div class="mpv-medday">اليوم الثالث عشر</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم</div><h3 class="mpv-theme">التفكّر في الخيل</h3>
+          <div class="mpv-aim"><b>المقصد:</b> يعرف أنّ الله خلق الخيل وسخّرها للإنسان للركوب والحمل.</div>
+          <div class="mpv-leslbl">لقاءات اليوم</div><div class="mpv-tags">
+            <span class="mpv-tag lead" style="--mc:#2C6A4D"><span class="mpv-mk"></span>علّمني ربي <small>التفكّر في الخيل</small></span>
+            <span class="mpv-tag" style="--mc:#0E6E6B"><span class="mpv-mk"></span>لساني عربي <small>البصري: الاتجاهات الستّ</small></span>
+          </div>
+        </div></div>
+      </article>
+      <article class="mpv-day" style="--dc:#6B3F22">
+        <div class="mpv-rail"><div class="mpv-med"><span class="mpv-num">14</span></div><div class="mpv-medday">اليوم الرابع عشر</div></div>
+        <div class="mpv-card"><div class="mpv-top"></div><div class="mpv-cin"><div class="mpv-eyebrow">فكرة اليوم · ختام</div><h3 class="mpv-theme">التفكّر في الإبل</h3>
+          <div class="mpv-aim"><b>المقصد:</b> يتأمّل عجيب خلق الله للإبل وتسخيرَها لمنافع الإنسان.</div>
+          <div class="mpv-leslbl">لقاءات اليوم</div><div class="mpv-tags">
+            <span class="mpv-tag lead" style="--mc:#2C6A4D"><span class="mpv-mk"></span>علّمني ربي <small>التفكّر في الإبل</small></span>
+          </div>
+        </div></div>
+      </article>
+    </div>
+
+    <div class="mpv-foot"><span class="mpv-g"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 L14.6 8.4 L22 6.2 L17.5 12.5 L23 17 L15.4 16.4 L15.6 24 L12 17.6 L8.4 24 L8.6 16.4 L1 17 L6.5 12.5 L2 6.2 L9.4 8.4 Z" fill="none" stroke="#B08636" stroke-width="1.3"/></svg></span><div><b>الإيقاع الثابت:</b> يفتتح كلَّ يومٍ «كتابي المنير» ثم «علّمني ربي» المحور القيميّ، ثم بقيّة المواد؛ والمركزان التطبيقيّان يُنفَّذان ضمن وقت الأركان، ويُختَم اليومُ بالمنظومة. وتوزيعُ لقاءات بقيّة المواد ترتيبٌ أوّليٌّ قابلٌ للتعديل.</div></div>
+  </div></div>
+
+  <div class="upanel" id="u-values">
+    <div class="u-hero"><h2>القيم والتقييم</h2><p>خلاصةٌ منقولة من لقاءات وحدة «أنا مخلوقٌ كرّمني الله»: القيم التي تُغرَس ووسيلة غرسها، ودور الأسرة في ترسيخها، ثم التقويم ومؤشراته. القيم مستمدّة أساسًا من «علّمني ربي» مع لمحاتٍ من «كتابي المنير» (سورة النبأ) و«أحبك ربي» و«قال رسولي». ولا تجسيد للغيب.</p></div>
+    <h3 class="u-h3">قيم الوحدة ومفاهيمها</h3>
+    <div class="u-grid">
+      <div class="u-card" style="--ac:#2C6A4D"><h4>تعظيم الله الخالق</h4><p>الله وحده خلق كلَّ شيءٍ وأتقن صنعه. تُغرَس بأن يُتبَع كلُّ ذكرٍ لمخلوقٍ بـ«سبحان الله الخالق»، وبربط كلّ آيةٍ ونعمةٍ بخالقها، والتعزيز: «سبحان مَن أبدع خلقه».</p></div>
+      <div class="u-card" style="--ac:#1E5631"><h4>شكر النعم</h4><p>الحواسّ والعقل والرزق نعمٌ من الله تستوجب الحمد. تُغرَس بترديد «الحمد لله» عند ذكر السمع والبصر والفؤاد والطعام، وبربط كلّ نعمةٍ برازقها سبحانه.</p></div>
+      <div class="u-card" style="--ac:#8660A8"><h4>التفكّر عبادة</h4><p>النظرُ في خلق الله عبادةٌ أمر بها الله وتزيد الإيمان ﴿أَفَلَا يَنظُرُونَ﴾. تُغرَس بتخصيص وقفات تأمّلٍ في المخلوقات، وترديد «سبحان الله» عند بديع الخلق.</p></div>
+      <div class="u-card" style="--ac:#0d6e6e"><h4>طلب العلم وأدواته</h4><p>كرّم الله الإنسانَ بالعلم وأعدّه بالسمع والبصر والفؤاد. تُغرَس بحثّ الطفل على حسن الاستماع والملاحظة، وشكرِ الله على أدوات التعلّم، وتعظيمِ مجلس العلم.</p></div>
+      <div class="u-card" style="--ac:#96683a"><h4>حفظ الله والاستعانة به</h4><p>«احفظ الله يحفظك، وإذا سألت فاسأل الله». تُغرَس بربط حفظ حدود الله بحفظه للطفل، وتعليمِه أن يسأل الله وحده ويستعين به.</p></div>
+      <div class="u-card" style="--ac:#55702B"><h4>الرفق بالمخلوقات</h4><p>مخلوقات الله تُحترم ولا تُؤذى. تُغرَس بتعليم الطفل الرفقَ بالحيوان وعدمَ إيذائه، وأنّ الرحمة بالمخلوقات من محبّة خالقها.</p></div>
+    </div>
+    <h3 class="u-h3">دور الأسرة — رسائل لولي الأمر</h3>
+    <div class="u-grid">
+      <div class="u-card" style="--ac:#2C6A4D"><h4>تعظيم الخالق</h4><p>يتعلّم طفلكم أنّ الله خلق كلَّ شيء. نشاطٌ بيتي: تأمّلوا معه مخلوقًا جميلًا (زهرة · طير · سماء)، واسألوه «مَن خلقه؟» ثم قولوا معًا «سبحان الله الخالق».</p></div>
+      <div class="u-card" style="--ac:#1E5631"><h4>شكر النعم</h4><p>عرف أنّ حواسّه والطعام نعمٌ من الله. نشاطٌ بيتي: عند الأكل أو السماع أو النظر ذكّروه «هذه نعمةٌ من الله»، وقولوا «الحمد لله».</p></div>
+      <div class="u-card" style="--ac:#8660A8"><h4>التفكّر في المخلوقات</h4><p>تفكّر في النبات والنحل والنمل والبحار والخيل والإبل. نشاطٌ بيتي: أروه صورةً أو مقطعًا قصيرًا عن مخلوقٍ، وتحدّثوا عن بديع خلقه، وقولوا «سبحان مَن خلقه».</p></div>
+      <div class="u-card" style="--ac:#96683a"><h4>حفظ الله والدعاء</h4><p>تعلّم «احفظ الله يحفظك، وإذا سألت فاسأل الله». نشاطٌ بيتي: علّموه أن يسأل الله حاجته، وذكّروه أنّ من حفظ أوامر الله حفظه الله.</p></div>
+      <div class="u-card" style="--ac:#55702B"><h4>الرفق والأدب</h4><p>تعلّم الرفقَ بالحيوان وآدابَ اللباس. نشاطٌ بيتي: درّبوه على الرفق بالمخلوقات، وعلى التيامن ودعاء الثوب الجديد.</p></div>
+      <div class="u-card" style="--ac:#0d6e6e"><h4>تهيئة البيت للقيمة</h4><p>القيمة تترسّخ حين تُعاش في البيت كما تُتعلَّم في الفصل. نشاطٌ بيتي: هيّئوه قبل اللقاء بتأمّل مخلوقٍ من مخلوقات الله وسؤاله «مَن خلقه؟».</p></div>
+    </div>
+    <h3 class="u-h3">التقويم ومؤشرات النجاح</h3>
+    <div style="overflow-x:auto"><table class="u-table">
+      <tr><th>نوع التقويم</th><th>أمثلة المؤشرات</th></tr>
+      <tr><td>التقويم القبلي</td><td>مَن خلقك ومَن خلق ما حولك؟ · بمَ نسمع ونبصر ونشعر؟ · مَن كرّم آدم؟ · ما التفكّر؟ · مَن خلق النحل والنمل والبحر والخيل والإبل؟ · هل تعرف سورة النبأ؟</td></tr>
+      <tr><td>التقويم التكويني</td><td>متابعة تفاعل الأطفال أثناء العرض والصور وتلاوة الآيات · عدِّد أدوات التعلّم · اذكر مخلوقًا وعجيبةً في خلقه · مَن رزقنا الطعام؟ · معنى اسمَي الرب والصمد.</td></tr>
+      <tr><td>تقويم القرآن (حفظ وفهم)</td><td>تسميع ما تيسّر من سورة النبأ تسميعًا صحيحًا · بيان المعنى الإجمالي لآياتها. <b>المعيار: تسميعٌ متّصلٌ مع فهم فكرةٍ جامعة.</b></td></tr>
+      <tr><td>التقويم النهائي</td><td>مَن الخالق؟ · اذكر أداةً من أدوات التعلّم ووظيفتها · اذكر مخلوقًا وعجيبةً في خلقه · مَن رزقك؟ <b>المعيار: ٣ إجابات صحيحة على الأقل مع أداء نشاطٍ صحيح.</b></td></tr>
+      <tr><td>المؤشر الوجداني</td><td>ظهور التعظيم والتسبيح عند رؤية المخلوقات، وقول «سبحان الله» و«الحمد لله» بصدق، والدهشة أمام بديع خلق الله.</td></tr>
+      <tr><td>المؤشر المعرفي</td><td>الإجابة الصحيحة على ٣ أسئلة، وذكر أداةِ تعلّمٍ ووظيفتها، ومخلوقٍ وعجيبةٍ في خلقه، وتسميع مقطعٍ من سورة النبأ.</td></tr>
+      <tr><td>المؤشر السلوكي</td><td>حسن الاستماع في مجلس العلم، والرفق بالحيوان، والتيامن في اللباس، والاستعانة بالله والدعاء.</td></tr>
+      <tr><td>المؤشر التطبيقي</td><td>تنفيذ أنشطة التفكّر والتصنيف والمطابقة، ووصف مخلوقٍ من مخلوقات الله، ومطابقة أداة التعلّم بوظيفتها.</td></tr>
+    </table></div>
+  </div>
+
+  <div class="upanel" id="u-lang">
+    <div class="u-hero"><h2>الحصيلة اللغوية لوحدة أنا مخلوق</h2><p>الحروف المستهدفة في لقاءات «لساني عربي» ومفردات الوحدة الجديدة، لتوظّفها المعلمة في الحوار والتعزيز اليوميّ وربطها بمحور معرفة الخالق والتفكّر في مخلوقاته. المفردات مستخرجة من دروس لساني ومن مادة «علّمني ربي».</p></div>
+    <h3 class="u-h3">الحروف المستهدفة</h3>
+    <div class="u-grid two">
+      <div class="u-card" style="--ac:#0E6E6B"><span class="u-subj" style="--ac:#0E6E6B">مدخل الوحدة</span><h4>الإدراك السمعيّ والبصريّ</h4><p>خمسةُ لقاءاتٍ تمهيدية تبني <b>الوعي الصوتيّ</b> و<b>الذاكرة البصرية</b> والتمييزَ السمعيّ والتكاملَ البصريّ الحركيّ — أساسُ الاستعداد للقراءة والكتابة.</p></div>
+      <div class="u-card" style="--ac:#1E5631"><span class="u-subj" style="--ac:#1E5631">حرف الباء (ب)</span><h4>التعرّف ومواضعه</h4><p>اسم الحرف <b>بَاء</b> وتحته نقطة، وصوته مع الفتحة <b>بَ</b>. نميّز مواضعه الثلاثة (الأوّل · الوسط · الآخر) في كلماتٍ مألوفة.</p></div>
+      <div class="u-card" style="--ac:#8660A8"><span class="u-subj" style="--ac:#8660A8">حرف الدال (د)</span><h4>التعرّف ومواضعه</h4><p>اسم الحرف <b>دَال</b> وفوقه لا نقاط، وصوته مع الفتحة <b>دَ</b>. نتتبّعه بالإصبع ونميّز مواضعه في الكلمة.</p></div>
+      <div class="u-card" style="--ac:#96683a"><span class="u-subj" style="--ac:#96683a">حرف اللام (ل)</span><h4>مواضعه</h4><p>اسم الحرف <b>لَام</b>، وصوته مع الفتحة <b>لَ</b>. نميّز موضعه في أوّل الكلمة ووسطها وآخرها.</p></div>
+      <div class="u-card" style="--ac:#3F7A56"><span class="u-subj" style="--ac:#3F7A56">حرف الميم (م)</span><h4>التعرّف</h4><p>اسم الحرف <b>مِيم</b>، وصوته مع الفتحة <b>مَ</b>. نربطه بكلماتٍ من عالم المخلوقات (ماء · نمل · سمك).</p></div>
+      <div class="u-card" style="--ac:#0d6e6e"><span class="u-subj" style="--ac:#0d6e6e">مهارات ختامية</span><h4>الذاكرة والاتجاهات</h4><p>لعبةُ الهمس لتقوية <b>الذاكرة السمعية</b>، والاتجاهاتُ الستّ لتنمية <b>الإدراك البصريّ المكانيّ</b>.</p></div>
+    </div>
+    <h3 class="u-h3">مفردات الوحدة الجديدة</h3>
+    <div style="overflow-x:auto"><table class="u-table">
+      <tr><th>الكلمة/المصطلح</th><th>معناها المبسّط</th></tr>
+      <tr><td>الخالق</td><td>الذي أوجد الشيء وأبدعه على غير مثالٍ سابق؛ اسمٌ من أسماء الله.</td></tr>
+      <tr><td>مخلوقات</td><td>كلُّ ما خلقه الله؛ الإنسان والحيوان والنبات والسماء والأرض.</td></tr>
+      <tr><td>السمع · البصر · الفؤاد</td><td>أدوات التعلّم التي وهبها الله للإنسان لينتفع ويتعلّم.</td></tr>
+      <tr><td>التفكّر</td><td>تأمّل بديع خلق الله؛ عبادةٌ يحبّها الله وتزيد الإيمان.</td></tr>
+      <tr><td>الرب</td><td>الذي ربّاني وربّى العالمين بنعمته؛ اسمٌ من أسماء الله.</td></tr>
+      <tr><td>التسخير</td><td>أن ذلّل الله المخلوقَ لخدمة الإنسان (كالخيل والإبل).</td></tr>
+      <tr><td>حرف · صوت · موضع</td><td>مصطلحات نستعملها في تعلّم القراءة وتحديد الحرف وموضعه.</td></tr>
+    </table></div>
+    <h3 class="u-h3">نظرة سريعة على حصيلة الوحدة اللغوية</h3>
+    <div class="u-chips">
+      <span class="u-chip">الإدراك السمعيّ والبصريّ</span>
+      <span class="u-chip">حروف ب · د · ل · م ومواضعها</span>
+      <span class="u-chip">مفردات المخلوقات وأسماء الله</span>
+      <span class="u-chip">أدوات التعلّم الثلاث</span>
+      <span class="u-chip">مصطلحات القراءة · حرف · صوت · موضع</span>
+    </div>
+    <div class="u-note"><b>للمعلمة:</b> وظّفي هذه الحروف والمفردات في الحوار والتعزيز اليوميّ، ولا تُدرّسيها قائمةً منفصلة؛ بل التقطيها أثناء الدرس والنشاط، واربطي كلَّ حرفٍ بكلمةٍ من عالم المخلوقات، ثم عظّمي الخالقَ سبحانه. وتذكّري أنّ تعلّم العربية وسيلةٌ لقراءة كلام الله لا مجرّد حفظ الشكل.</div>
+  </div>
+
+  <div class="upanel" id="u-manzooma"><div class="mpv">
+    <header class="mpv-hero"><div class="mpv-star"></div>
+      <div class="mpv-kicker">الصوت الجامع للوحدة</div>
+      <h2>منظومة الوحدة — نشيد التفكّر</h2>
+      <p>المنظومة الجامعة لوحدة «أنا مخلوقٌ كرّمني الله»؛ تربط التفكّرَ في مخلوقات الله وبديعِ خلقه بتعظيم الخالق وشكرِ نعمه. تُشغّلها المعلمة للأطفال ليستمعوا إليها فيبقوا مندمجين في معنى الوحدة، دون مشاهدة الشاشة.</p>
+      <div class="mpv-rule"></div>
+    </header>
+    <div class="mpv-call"><span class="ci">📺</span><div><b>للمعلمة:</b> <b>تُشغّلها المعلمة للأطفال ليستمعوا إليها</b>؛ والفيديو مرجعٌ للمعلمة للاستماع والتعرّف على المنظومة، <b>دون عرض الشاشة على الأطفال</b>.</div></div>
+    <div style="border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#000;box-shadow:0 10px 30px -18px rgba(31,74,57,.5);margin-bottom:14px"><video controls preload="none" src="assets/video_008_cfcf4810def7d59f.mp4" style="width:100%;display:block">متصفحك لا يدعم تشغيل الفيديو.</video></div>
+    <div class="mpv-leslbl" style="padding:2px 4px 4px">متى تُستخدَم المنظومة؟</div>
+    <div class="mpv-grid">
+      <div class="mpv-gcard" style="--dc:#2C6A4D"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">🌙</span>ختام اليوم</div><p>آخر وقتٍ من اليوم: تُشغّلها المعلمة للأطفال ليستمعوا إليها، فترسخ معاني التفكّر وتعظيمِ الخالق بلطفٍ وتكرار.</p></div></div>
+      <div class="mpv-gcard" style="--dc:#1E6E63"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">📜</span>عند الانتقال إلى الأركان</div><p>تُشغَّل عند انتقال الأطفال إلى الأركان وعند عودتهم — جسرٌ وجدانيّ يذكّرهم بأنّ الأركان تطبيقٌ لمعنى الوحدة.</p></div></div>
+      <div class="mpv-gcard" style="--dc:#1E5631"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">◈</span>الاستماع المتكرّر</div><p>مع تكرار الاستماع عبر الأيام تعلق مقاطعها في وجدان الأطفال، فيرسخ فيهم التفكّرُ في آيات الله والشكرُ عليها.</p></div></div>
+      <div class="mpv-gcard" style="--dc:#3F7A56"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">🛡️</span>قاعدة الشاشة</div><p>الفيديو مرجعٌ للمعلمة داخل الدليل؛ أمّا الأطفال فيستفيدون من أدائها صوتًا دون توجيه أنظارهم إلى الشاشة.</p></div></div>
+    </div>
+    <div class="mpv-foot"><span class="mpv-g"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 L14.6 8.4 L22 6.2 L17.5 12.5 L23 17 L15.4 16.4 L15.6 24 L12 17.6 L8.4 24 L8.6 16.4 L1 17 L6.5 12.5 L2 6.2 L9.4 8.4 Z" fill="none" stroke="#2C6A4D" stroke-width="1.3"/></svg></span><div>نشيد التفكّر هو الصوت الجامع لوحدة «أنا مخلوقٌ كرّمني الله»؛ يربط قلوبَ الأطفال بالتفكّر في بديع خلق الله وتعظيمِه وشكرِ نعمه.</div></div>
+  </div></div>
+
+<!-- ═══════════ لوحة: أناشيد حركية ═══════════ -->
+  <div class="upanel" id="u-songs"><div class="u-hero">
+  <h2>أناشيد حركية وألعاب أصابع</h2>
+  <p>تستخدمها المعلمة للفصل بين اللقاءات، أو لاستعادة نشاط الأطفال، أو عند ظهور فوضى صفية تحتاج إلى جذب انتباه لطيف. ومع التكرار يحفظ الأطفال النشيد وحركاته، فتتحول الأناشيد إلى أداة انتقال تربوية ثابتة تُهيّئ الأطفال للانتقال بين أركان الوحدة.</p>
+</div>
+<div class="u-note warn"><b>تنبيه بخصوص الشاشات:</b> فيديوهات الأناشيد الحركية وألعاب الأصابع هي مرجع للمعلمة فقط لتتعلم اللحن والحركات ثم تنفذها بنفسها أمام الأطفال، ولا تُعرض على الأطفال. اختاري نشيدًا واحدًا بين كل لقاءين؛ فالثبات يساعد الأطفال على حفظ الحركة والانتقال الهادئ.</div>
+<div class="motion-grid">
+  <div class="motion-card"><div class="motion-card-head"><div class="motion-icon">🌧️</div><div><div class="motion-title">تهطل الأمطار</div><div class="motion-sub">لعبة أصابع · انتقال حركي</div></div></div><video controls preload="none"><source src="assets/video_002_cfd19c4ef405a80b.mp4" type="video/mp4"></video><div class="motion-card-body">لعبة أصابع قصيرة لاستعادة الانتباه وتحريك الأصابع بتمثيل المطر.</div></div>
+  <div class="motion-card"><div class="motion-card-head"><div class="motion-icon">🪶</div><div><div class="motion-title">عصفورتي</div><div class="motion-sub">لعبة أصابع · انتقال حركي</div></div></div><video controls preload="none"><source src="assets/video_003_4236b9ef43dbf67f.mp4" type="video/mp4"></video><div class="motion-card-body">نشيد حركي رقيق يحفّز الخيال والتمثيل الإيهامي.</div></div>
+  <div class="motion-card"><div class="motion-card-head"><div class="motion-icon">🪁</div><div><div class="motion-title">حلّقت الطيور</div><div class="motion-sub">لعبة أصابع · انتقال حركي</div></div></div><video controls preload="none"><source src="assets/video_004_7a3a0a820714e4f1.mp4" type="video/mp4"></video><div class="motion-card-body">حركات طيران تساعد على التفريغ الحركي والعودة للجلوس الهادئ.</div></div>
+  <div class="motion-card"><div class="motion-card-head"><div class="motion-icon">🍃</div><div><div class="motion-title">ورقة التوت</div><div class="motion-sub">لعبة أصابع · انتقال حركي</div></div></div><video controls preload="none"><source src="assets/video_005_657836c2ea5b14a9.mp4" type="video/mp4"></video><div class="motion-card-body">نشيد أصابع مناسب للانتقال بين اللقاءات أو قبل نشاط يدوي.</div></div>
+  <div class="motion-card"><div class="motion-card-head"><div class="motion-icon">🌿</div><div><div class="motion-title">يدان يدان</div><div class="motion-sub">لعبة أصابع · انتقال حركي</div></div></div><video controls preload="none"><source src="assets/video_006_61b742e6906dc87f.mp4" type="video/mp4"></video><div class="motion-card-body">تنشيط لليدين والعضلات الصغيرة مع ضبط الإيقاع الجماعي.</div></div>
+  <div class="motion-card"><div class="motion-card-head"><div class="motion-icon">☁️</div><div><div class="motion-title">أنشودة الطقس بالحركات</div><div class="motion-sub">لعبة أصابع · انتقال حركي</div></div></div><video controls preload="none"><source src="assets/video_007_fad2d0d2cd60a387.mp4" type="video/mp4"></video><div class="motion-card-body">تستخدمها المعلمة في تهيئة اليوم أو بين اللقاءات؛ ينظر الأطفال إلى حال الجو ثم يشاركون بالحركات لاستعادة النشاط وضبط الانتباه.</div></div>
+</div></div>
+
+  
+<!-- ═══════════ لوحة: اللياقة البدنية ═══════════ -->
+  <div class="upanel" id="u-fitness">
+  <div class="u-hero"><h2>اللياقة البدنية في وحدة أنا مخلوق</h2><p>هذا التبويب يجمع أفكارًا بدنية قصيرة تساعد المعلمة على تفريغ طاقة الأطفال بين اللقاءات أو قبل الأركان، فتُستخدم حركات النشاط لرفع الحيوية ثم تُختم بحركات التهدئة قبل الجلوس للأركان. الأنشطة هنا ليست درسًا مستقلًا، بل أداة تنظيمية تربوية تدعم التركيز والانتباه، وتُربَط بلطف بموضوع الوحدة دون تكلّف.</p></div>
+  <div class="u-note warn"><b>تنبيه بخصوص الشاشات:</b> بطاقات اللياقة البدنية مرجع بصري للمعلمة لتفهم الوضعية والخطوات ثم تنفذ النشاط بنفسها أمام الأطفال، ولا تُعرض الشاشة على الأطفال، وتُراعى السلامة والمساحة المناسبة والفروق الفردية.</div>
+  <h3 class="u-h3"><span class="u-subj" style="--ac:#2C6A4D">قواعد عامّة قبل البدء</span></h3>
+  <div class="u-grid">
+    <div class="u-card" style="--ac:#2C6A4D"><b>المدة المناسبة:</b> من ٣ إلى ٧ دقائق، ويكفي تمرين واحد أو تمرينان في الانتقال الواحد.</div>
+    <div class="u-card" style="--ac:#1F4A39"><b>المكان:</b> ساحة آمنة أو مساحة صفية واسعة، مع إبعاد الأدوات الحادة أو الزوايا الصلبة.</div>
+    <div class="u-card" style="--ac:#3E7C5A"><b>قاعدة التنفيذ:</b> شرح قصير، نموذج من المعلمة، ثم تنفيذ جماعي بإيقاع هادئ ومنظم.</div>
+    <div class="u-card" style="--ac:#B7791F"><b>الربط بالوحدة:</b> تُستخدم حركات النشاط للانتقال بين لقاءات الوحدة، وحركات التهدئة قبل الجلوس للأركان.</div>
+  </div>
+  <div class="u-note warn"><b>سلامة التنفيذ:</b> لا تُستخدم المنافسة إذا أخرجت الأطفال عن الهدوء أو سببت تزاحمًا. يُمنع دفع الزملاء، وتُخفف التمارين للأطفال الذين يحتاجون دعمًا حركيًا. في تمارين الظهر والبطن تُختصر المدة، ويُطلب من الطفل التوقف فورًا عند التعب.</div>
+  <h3 class="u-h3"><span class="u-subj" style="--ac:#2C6A4D">بطاقات التمارين والألعاب الحركية</span></h3>
+  <div class="u-grid">
+    <div class="u-card" style="--ac:#1F4A39"><b>لعبة القاطرتين: مسار الحركة ↩ ٥-٧ دقائق</b><p>نشاط جماعي منظم يناسب الساحة، يدرّب الطفل على انتظار الدور، والحركة في مسار واضح، والعودة الهادئة إلى المجموعة، ونتخيّله كأننا ننتقل في مسارٍ منظّم.</p><ul><li>تقف كل مجموعة في صف واحد عند خط البداية.</li><li>يمر الطفل من أسفل الحاجز (من تحت الحاجز)، ثم يقفز من فوق الحاجز التالي حسب قدرة الأطفال.</li><li>يضع اللبنة/الكرة في السلة (السلة) ثم يعود بسرعة معتدلة ليلمس يد زميله.</li><li>تفوز المجموعة التي تكمل المسار دون تزاحم أو خروج عن القواعد.</li></ul></div>
+    <div class="u-card" style="--ac:#2C6A4D"><b>تمرين الركلات ↩ ٣٠ ثانية</b><p>تمرين بسيط لتقوية الساقين وتنظيم التنفس، مناسب بعد جلوس طويل أو قبل نشاط يحتاج يقظة.</p><ul><li>يستلقي الطفل على ظهره مع مد الساقين.</li><li>يركل للأعلى والأسفل دون ثني الركبتين.</li><li>تذكّر المعلمة الأطفال بحركة هادئة لا تؤذي الزميل.</li></ul></div>
+    <div class="u-card" style="--ac:#3E7C5A"><b>تمرين الزحف: الزحف الهادئ ↩ ٤٠-٦٠ ثانية</b><p>ينمي التآزر بين اليدين والقدمين، ويصلح كفاصل حركي قصير للانتقال بين اللقاءات وتفريغ طاقة الأطفال، ونتخيّله انتقالًا هادئًا.</p><ul><li>يضع الطفل يديه وقدميه على الأرض بشكل ثابت.</li><li>يتقدم للأمام ببطء مع ترك مسافة آمنة.</li><li>يمكن جعل المسار خطًا مستقيمًا أو بين أقماع خفيفة تمثّل مسار الحركة.</li></ul></div>
+    <div class="u-card" style="--ac:#55705E"><b>سباق الزحف الهادئ ↩ ٣ دقائق</b><p>صيغة جماعية من تمرين الزحف، لكنها تُقدَّم بقواعد واضحة حتى لا تتحول إلى فوضى.</p><ul><li>تحدد المعلمة خط بداية ونهاية بمسافة قصيرة.</li><li>ينطلق الأطفال في مجموعات صغيرة لا في كل الصف مرة واحدة.</li><li>المعيار ليس السرعة فقط، بل الالتزام بالمسار وعدم الاصطدام.</li></ul></div>
+    <div class="u-card" style="--ac:#B7791F"><b>تمرين القرفصاء: نرتفع وننزل ↩ ٦٠ ثانية</b><p>يقوي الساقين ويحسن الاتزان، ويستخدم عندما تحتاج المعلمة نشاطًا بدنيًا واضح البداية والنهاية، وكأننا نرتفع كجدارٍ ثم ننزل بهدوء.</p><ul><li>يبعد الطفل بين قدميه بمقدار مناسب.</li><li>يمد يديه للأمام ثم ينزل بثني الركبتين بهدوء.</li><li>تنتبه المعلمة لوضع الركبة وألا يكون النزول سريعًا.</li></ul></div>
+    <div class="u-card" style="--ac:#8A6D1F"><b>تمرين المعدة ↩ ٦-٨ مرات</b><p>تمرين اختياري قصير للأطفال القادرين، ويُنفذ ببطء مع دعم القدمين عند الحاجة.</p><ul><li>يستلقي الطفل على ظهره مع ثني الركبتين.</li><li>تكون اليدان خلف الرقبة أو بجانب الجسم دون شد الرقبة.</li><li>يرفع الجزء العلوي قليلًا ثم يعود للوضع الأول.</li></ul></div>
+    <div class="u-card" style="--ac:#2C6A4D"><b>قفز الفتح والإغلاق: كالباب المتّسع ↩ ٢٠-٣٠ ثانية</b><p>نشاط قصير لرفع النشاط بسرعة، ثم يعقبه تنفس هادئ حتى لا ينتقل الطفل إلى الدرس وهو مشتت.</p><ul><li>يبدأ الطفل واقفًا ويداه بجانب جسمه.</li><li>يقفز مع فتح القدمين ورفع اليدين (كباب يتّسع)، ثم يعود للوضع الأول.</li><li>تختم المعلمة بثلاث أنفاس هادئة قبل الجلوس.</li></ul></div>
+  </div>
+  <div class="u-note"><b>ختام الانتقال:</b> بعد أي حركة نشطة تُختم الجولة بثلاث أنفاس هادئة ووقفة سكون قصيرة، لينتقل الأطفال إلى الأركان وهم هادئون مستعدّون.</div>
+</div>
+
+  
+  <div class="upanel" id="u-corners"><div class="mpv">
+    <header class="mpv-hero"><div class="mpv-star"></div>
+      <div class="mpv-kicker">اللعب الحرّ · التطبيق</div>
+      <h2>خريطة الأركان — وحدة أنا مخلوق</h2>
+      <p>أركانُ الوحدة مساحاتُ لعبٍ حرّ بأدواتٍ تعليمية (٣٠ دقيقة). لكثرة الأعداد تُفتَح <b>٤ أركانٍ متوازية</b> كلَّ يوم، تُوزَّع عليها المجموعات وتتناوب بينها؛ ولكلِّ ركنٍ لمسةٌ تطبيقية خفيفة على فكرة اليوم (التفكّر في مخلوق الله ونَسبةُ خلقه إليه).</p>
+      <div class="mpv-rule"></div>
+    </header>
+    <div class="mpv-call"><span class="ci">📜</span><div><b>شغّلي منظومة الوحدة</b> عند انتقال الأطفال إلى الأركان <b>وعند عودتهم منها</b> — إشارةٌ تنظّم الحركة وتربطها بذكر الله.</div></div>
+    <div class="mpv-call gold"><span class="ci">📋</span><div><b>قوانين الأركان:</b> أبقى في ركني حتى ينتهي الوقت · أحافظ على أدواته · أتشارك وأنتظر دوري · أُعيد الأدوات مرتّبة.</div></div>
+    <div class="mpv-leslbl" style="padding:2px 4px 2px">أنواع الأركان اليومية — لكلٍّ لونُه</div>
+    <div class="mpv-grid">
+      <div class="mpv-gcard" style="--dc:#8B0000"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">🔎</span>أكتشف ما حولي</div><p><b>اللعب الحرّ:</b> عدساتٌ ومكبّرات، عيّناتٌ طبيعية آمنة (أوراقٌ · أصداف · حصى)، صورُ مخلوقاتٍ — ملاحظةٌ وتجريبٌ حسّيّ.</p><p><b>اللمسة:</b> يلاحظ عجيبةً في مخلوقٍ من مخلوقات الله ويقول «سبحان مَن خلقه».</p></div></div>
+      <div class="mpv-gcard" style="--dc:#1E5631"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">🎨</span>فنوني الجميلة</div><p><b>اللعب الحرّ:</b> تلوينُ رسومٍ جاهزة، قصٌّ ولصقٌ آمن، بطاقاتُ مخلوقاتٍ مصوّرة ولوحةُ عرض.</p><p><b>اللمسة:</b> يلوّن مخلوقًا جاهزًا (بلا وجوهٍ للأرواح) ويردّد «اللهُ خلقه وأبدع صنعه».</p></div></div>
+      <div class="mpv-gcard" style="--dc:#2C6A4D"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">🧩</span>أدرك وأستمتع</div><p><b>اللعب الحرّ:</b> بطاقاتُ مطابقةٍ وذاكرة، لوحةُ تسلسل، معداد وأشكالٌ هندسية — ألعابٌ إدراكية.</p><p><b>اللمسة:</b> يطابق المخلوقَ باسمه أو بمنفعته (نحلة ↔ عسل · جمل ↔ صحراء) بلا كتابة.</p></div></div>
+      <div class="mpv-gcard" style="--dc:#6B3F22"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">📚</span>أقرأ لأتعلّم</div><p><b>اللعب الحرّ:</b> قصصٌ مصوّرة وكتبٌ عن المخلوقات، بطاقاتُ حروفٍ ومطابقةِ كلمة-صورة، مصاحفُ في حواملها.</p><p><b>اللمسة:</b> يتصفّح بهدوء ويربط حرفَ اليوم بكلمةٍ من عالم المخلوقات.</p></div></div>
+      <div class="mpv-gcard" style="--dc:#C79A3B"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">🧱</span>ساحة البناء</div><p><b>اللعب الحرّ:</b> مكعباتٌ خشبية، بلاطٌ مغناطيسي، أقواسٌ ووحداتُ تركيب — يبني مساكنَ المخلوقات بحرّية.</p><p><b>اللمسة:</b> يبني «خليّةً» أو «عشًّا» ويذكر مَن هدى المخلوقَ لبنائه.</p></div></div>
+      <div class="mpv-gcard" style="--dc:#0d6e6e"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic">🏠</span>ركن الإيهام</div><p><b>اللعب الحرّ:</b> أدواتُ لعب أدوارٍ، دُمى خشبية بلا ملامح، بطاقاتُ مشاهد — لعبُ أدوارٍ هادئ.</p><p><b>اللمسة:</b> يمثّل «طبيبَ حيواناتٍ» أو «مزارعًا» ويشكر اللهَ على تسخير مخلوقاته.</p></div></div>
+    </div>
+    <div class="mpv-leslbl" style="padding:12px 4px 2px">روتين تنفيذ الركن — تسلسلٌ موحّد</div>
+    <div style="overflow-x:auto"><table class="mpv-tbl">
+      <tr><th>الخطوة</th><th>ماذا يحدث</th></tr>
+      <tr><td><b>١ · مراجعة القوانين</b></td><td>٢–٣ دقائق: تُذكّر المعلمة الأطفال بقوانين الركن المعروضة قبل البدء.</td></tr>
+      <tr><td><b>٢ · النشاط التطبيقي</b></td><td>تنفيذُ لمسةِ الدرس الموجّهة (ملاحظة/مطابقة/تلوين/بناء) لتثبيت المعنى المركزي: اللهُ خلق هذا المخلوق وأبدع صنعه.</td></tr>
+      <tr><td><b>٣ · اللعب الحرّ</b></td><td>يُترَك الأطفالُ للاستكشاف واللعب الحرّ بأدوات الركن مع الالتزام بالقوانين.</td></tr>
+      <tr><td><b>٤ · إعادة الأدوات</b></td><td>يُعيد كلُّ طفلٍ الأدواتِ إلى مكانها مرتّبة — ثم <b>تُشغَّل المنظومة عند العودة</b>.</td></tr>
+    </table></div>
+    <div class="u-note" style="margin-top:12px"><b>ملاحظة:</b> لكلّ لقاءٍ ركنان تطبيقيّان مفصّلان (بأدواتٍ وأهدافٍ ومخرجات) داخل دليل اللقاء نفسه في تبويب «دروس الوحدة».</div>
+  </div></div>
+
   <div class="upanel active" id="u-days">
   <div class="daytabs" role="tablist">
-    <button class="daytab active" data-d="1"><span class="d-t">الله الخالق</span></button>
-    <button class="daytab" data-d="2"><span class="d-t">مراحل خلق الإنسان</span></button>
-    <button class="daytab" data-d="3"><span class="d-t">مفاتيح التعلّم</span></button>
-    <button class="daytab" data-d="4"><span class="d-t">مفاتيح التعلّم</span></button>
-    <button class="daytab" data-d="5"><span class="d-t">تكريم آدم بالعلم</span></button>
-    <button class="daytab" data-d="6"><span class="d-t">الله الهادي</span></button>
-    <button class="daytab" data-d="7"><span class="d-t">مفهوم التفكّر</span></button>
-    <button class="daytab" data-d="8"><span class="d-t">التفكّر في النبات</span></button>
-    <button class="daytab" data-d="9"><span class="d-t">التفكّر في النبات</span></button>
-    <button class="daytab" data-d="10"><span class="d-t">التفكّر في النحلة</span></button>
-    <button class="daytab" data-d="11"><span class="d-t">التفكّر في النملة</span></button>
-    <button class="daytab" data-d="12"><span class="d-t">التفكّر في البحار</span></button>
-    <button class="daytab" data-d="13"><span class="d-t">التفكّر في الخيل</span></button>
-    <button class="daytab" data-d="14"><span class="d-t">التفكّر في الإبل</span></button>
-    <button class="daytab" data-d="15"><span class="d-t">برنامج الوحدة</span></button>
+    <button class="daytab active" data-d="1"><span class="d-n"></span><span class="d-t">الله الخالق</span></button>
+    <button class="daytab" data-d="2"><span class="d-n"></span><span class="d-t">مراحل خلق الإنسان</span></button>
+    <button class="daytab" data-d="3"><span class="d-n"></span><span class="d-t">مفاتيح التعلّم</span></button>
+    <button class="daytab" data-d="4"><span class="d-n"></span><span class="d-t">مفاتيح التعلّم</span></button>
+    <button class="daytab" data-d="5"><span class="d-n"></span><span class="d-t">تكريم آدم بالعلم</span></button>
+    <button class="daytab" data-d="6"><span class="d-n"></span><span class="d-t">الله الهادي</span></button>
+    <button class="daytab" data-d="7"><span class="d-n"></span><span class="d-t">مفهوم التفكّر</span></button>
+    <button class="daytab" data-d="8"><span class="d-n"></span><span class="d-t">التفكّر في النبات</span></button>
+    <button class="daytab" data-d="9"><span class="d-n"></span><span class="d-t">التفكّر في النبات</span></button>
+    <button class="daytab" data-d="10"><span class="d-n"></span><span class="d-t">التفكّر في النحلة</span></button>
+    <button class="daytab" data-d="11"><span class="d-n"></span><span class="d-t">التفكّر في النملة</span></button>
+    <button class="daytab" data-d="12"><span class="d-n"></span><span class="d-t">التفكّر في البحار</span></button>
+    <button class="daytab" data-d="13"><span class="d-n"></span><span class="d-t">التفكّر في الخيل</span></button>
+    <button class="daytab" data-d="14"><span class="d-n"></span><span class="d-t">التفكّر في الإبل</span></button>
+    <button class="daytab" data-d="15"><span class="d-n"></span><span class="d-t">برنامج الوحدة</span></button>
   </div>
 
   <div class="daypanel active" id="d1">
@@ -715,6 +1374,26 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
     });
   });
 
+  // ===== علامة «تمّ» على بلّورات المسار (تتبّع إنجاز المعلمة، حفظ محلّي) =====
+  var DKEY=KEY+'-done', doneSet;
+  try{ doneSet=new Set(JSON.parse(localStorage.getItem(DKEY)||'[]')); }catch(e){ doneSet=new Set(); }
+  function saveDone(){ try{ localStorage.setItem(DKEY, JSON.stringify([].slice.call(doneSet))); }catch(e){} }
+  doc.addEventListener('gq:resetdone',function(){ doneSet.clear(); saveDone(); [].forEach.call(doc.querySelectorAll('.subtab.pdone'),function(el){el.classList.remove('pdone');}); });
+  daypanels.forEach(function(panel){
+    panel.querySelectorAll('.subtab').forEach(function(t){
+      var id=panel.id+':'+t.dataset.s;
+      if(doneSet.has(id)) t.classList.add('pdone');
+      var chk=doc.createElement('span');
+      chk.className='pchk'; chk.setAttribute('role','button'); chk.setAttribute('tabindex','0');
+      chk.setAttribute('aria-label','وسم اللقاء كمُنجَز'); chk.setAttribute('title','اضغطي لوسم هذا اللقاء كمُنجَز');
+      function toggle(e){ e.stopPropagation(); e.preventDefault(); if(doneSet.has(id)){ doneSet.delete(id); t.classList.remove('pdone'); } else { doneSet.add(id); t.classList.add('pdone'); } saveDone(); }
+      chk.addEventListener('click', toggle);
+      chk.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') toggle(e); });
+      t.appendChild(chk);
+    });
+  });
+
+
   // ربط تبويبات الأيام
   daytabs.forEach(function(t,i){
     t.addEventListener('click',function(){ activateDay(t.dataset.d,true); window.scrollTo({top:0,behavior:'smooth'}); });
@@ -741,6 +1420,7 @@ h1,h2,h3,.hero-title,.daytab,.day-head h2{font-family:var(--fd)}
   window.addEventListener('scroll',function(){ var sc=window.pageYOffset||root.scrollTop; if(sc>320) top.classList.add('show'); else top.classList.remove('show'); },{passive:true});
 })();
 </script>
-<script src="app.js"></script>
+<script src="app.js?v=dp5"></script>
+<script src="brand/guide-icons.js?v=2"></script>
 </body>
 </html>
