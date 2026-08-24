@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>بطاقات علوم السورة — سورة النبأ (كتابي المنير)</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#1b5e34;--elm:#2D7A4B;--gold:#C79A3B;--ink:#1E2E29;--muted:#6C776F;--line:#d8cdb5;--cream:#F6F1E6;--soft:#eef4f0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#e9efe8;padding:22px;line-height:1.6}
+.head{max-width:1000px;margin:0 auto 14px;text-align:center}
+.head h1{font-family:var(--fd);color:var(--t1);font-size:23px}
+.head p{color:var(--muted);font-size:13px;margin-top:4px}
+.sec{max-width:1000px;margin:26px auto 12px;display:flex;align-items:center;gap:10px}
+.sec b{font-family:var(--fd);color:var(--t1);font-size:16px;white-space:nowrap}
+.sec i{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+
+/* ===== لوحة علوم السورة — بروح بطاقة الاعتقاد ===== */
+.bcard{position:relative;max-width:920px;margin:0 auto;background:var(--cream);border:2.5px solid #ddcfa8;border-radius:22px;overflow:hidden;padding:24px 30px 28px;box-shadow:0 14px 34px rgba(20,50,35,.15);display:flex;flex-direction:column}
+.wm{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.bc-top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.bc-badge{font-family:var(--fd);color:#4a5a50;font-size:15px;border:1.6px solid #9aa79d;border-radius:999px;padding:6px 20px;background:rgba(255,255,255,.55)}
+.bc-brand{display:flex;align-items:center;gap:11px}
+.bc-brand b{font-family:var(--fd);color:var(--t1);font-size:18px}
+.bc-brand img{height:56px;width:auto;display:block}
+.bc-grid{position:relative;z-index:2;display:flex;gap:26px;margin-top:18px;align-items:stretch}
+.bc-main{flex:1 1 56%;display:flex;flex-direction:column;justify-content:center;padding:4px 4px 4px 0}
+.bc-kicker{font-family:var(--fd);color:var(--elm);font-size:16px;letter-spacing:1px}
+.bc-title{font-family:var(--fd);font-weight:700;color:var(--t1);font-size:54px;line-height:1.15;margin-top:2px}
+.bc-quote{font-family:Georgia,'Times New Roman',serif;font-size:58px;color:#cdb680;line-height:0;height:20px;margin:16px 0 4px}
+.bc-verses{display:flex;flex-direction:column;gap:9px}
+.bc-vrow .t{font-family:var(--fd);color:var(--gold);font-weight:700;font-size:14px}
+.bc-vrow .a{font-family:'Noto Naskh Arabic',serif;color:#12271d;font-size:22px;line-height:1.85}
+.bc-axis{margin-top:14px;color:#3f5147;font-size:14.5px;line-height:1.8}
+.bc-axis b{color:var(--elm);font-family:var(--fd)}
+.bc-side{flex:1 1 40%;display:flex}
+.bc-arch{flex:1;background:var(--soft);border:2.5px solid var(--elm);border-radius:96px 96px 18px 18px;padding:26px 22px;display:flex;flex-direction:column;justify-content:center;gap:14px;box-shadow:0 8px 20px rgba(20,50,35,.12)}
+.bc-fact{text-align:center}
+.bc-fact+.bc-fact{border-top:1px dashed #c4d8cb;padding-top:14px}
+.bc-fact .l{font-family:var(--fd);color:#9a7d33;font-weight:700;font-size:15px}
+.bc-fact .v{font-family:var(--fd);color:var(--t1);font-weight:700;font-size:34px;margin-top:2px}
+.bc-fact .v small{font-size:16px;color:var(--muted);font-weight:400}
+
+/* ===== بطاقات المطابقة ===== */
+.match{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mcard{border-radius:16px;overflow:hidden;border:2.5px solid var(--elm);text-align:center;break-inside:avoid}
+.mcard.title .b{background:linear-gradient(135deg,var(--t1),var(--elm));color:#fff}
+.mcard .b{font-family:var(--fd);font-weight:700;padding:20px 8px;min-height:82px;display:grid;place-items:center;font-size:20px}
+.mcard.ans .b{background:#fff;color:var(--t1)}
+.mcard .cap{background:var(--cream);color:var(--muted);font-size:11.5px;padding:5px}
+.hint{max-width:1000px;margin:14px auto 0;text-align:center;color:var(--muted);font-size:12.8px;line-height:1.8}
+.printbtn{display:block;margin:22px auto 6px;background:var(--elm);color:#fff;border:0;border-radius:999px;padding:11px 28px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
+
+/* ===== الطباعة: كلّ بطاقة صفحة A4 أفقيّة كاملة ===== */
+@media print{
+  @page{size:A4 landscape;margin:10mm}
+  body{background:#fff;padding:0}
+  .head,.hint,.printbtn,.sec,.mcard .cap{display:none}
+  .bcard{max-width:100%;margin:0;box-shadow:none;height:176mm;min-height:0;justify-content:center;page-break-after:always;page-break-inside:avoid;padding:20px 40px;overflow:hidden}
+  .bc-badge{font-size:18px;padding:7px 24px}
+  .bc-brand b{font-size:22px}.bc-brand img{height:64px}
+  .bc-grid{gap:34px;margin-top:16px}
+  .bc-title{font-size:60px}
+  .bc-quote{font-size:70px;height:20px;margin:12px 0 4px}
+  .bc-verses{gap:10px}
+  .bc-vrow .t{font-size:18px}.bc-vrow .a{font-size:30px}
+  .bc-axis{font-size:19px;margin-top:14px}
+  .bc-arch{border-radius:100px 100px 20px 20px;padding:30px 26px;gap:16px}
+  .bc-fact .l{font-size:20px}.bc-fact .v{font-size:42px}.bc-fact .v small{font-size:21px}
+  .match{display:block;margin:0}
+  .mcard{margin:0;box-shadow:none;border:3px dashed #8fa89a;border-radius:24px;height:176mm;min-height:0;display:grid;page-break-after:always;page-break-inside:avoid;overflow:hidden}
+  .mcard .b{min-height:auto;font-size:120px;line-height:1.12;word-break:break-word;padding:20px}
+  .match:last-of-type .mcard:last-child{page-break-after:auto}
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <h1>بطاقات علوم السورة — سورة النبأ</h1>
+  <p>كتابي المنير · وحدة أنا مخلوقٌ كرّمني الله · <strong>كلّ بطاقة تُطبع بالعرض (Landscape) بحجمٍ كبير في صفحة A4 مستقلّة</strong> — اطبعيها وغلّفيها وضعيها بالمغناطيس في مكانها على لوحة علوم السورة بمساعدة الأطفال</p>
+</div>
+
+<div class="sec"><b>١) لوحةُ العرض</b><i></i></div>
+<div class="bcard">
+  <svg class="wm" preserveAspectRatio="xMidYMid slice" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="stars" width="62" height="62" patternUnits="userSpaceOnUse"><g fill="#2D7A4B" opacity="0.06"><rect x="18" y="18" width="26" height="26" rx="2"/><rect x="18" y="18" width="26" height="26" rx="2" transform="rotate(45 31 31)"/></g></pattern></defs><rect width="100%" height="100%" fill="url(#stars)"/></svg>
+  <div class="bc-top">
+    <div class="bc-brand"><img src="brand/logo-ghars.webp" alt="نادي غرس القيم"/><b>كتابي المنير</b></div>
+    <div class="bc-badge">بطاقةُ علوم السورة</div>
+  </div>
+  <div class="bc-grid">
+    <div class="bc-side">
+      <div class="bc-arch">
+        <div class="bc-fact"><div class="l">عددُ الآيات</div><div class="v">٤٠ <small>آية</small></div></div>
+        <div class="bc-fact"><div class="l">التنزيل</div><div class="v">مكّيّة</div></div>
+        <div class="bc-fact"><div class="l">الجزء</div><div class="v">عَمَّ <small>(الثلاثون)</small></div></div>
+      </div>
+    </div>
+    <div class="bc-main">
+      <div class="bc-kicker">عُلومُ السُّورة</div>
+      <div class="bc-title">سُورةُ النَّبأ</div>
+      <div class="bc-quote">”</div>
+      <div class="bc-verses">
+        <div class="bc-vrow"><div class="t">أوّلُ آية</div><div class="a">﴿عَمَّ يَتَسَاءَلُونَ﴾</div></div>
+        <div class="bc-vrow"><div class="t">آخِرُ آية</div><div class="a">﴿يَا لَيْتَنِي كُنتُ تُرَابًا﴾</div></div>
+      </div>
+      <div class="bc-axis">محورُها: <b>التساؤلُ عن يوم القيامة · قدرةُ الله على الخلق والبعث · جزاءُ الطاغين والمتّقين</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec"><b>٢) بطاقاتُ العناوين</b><i></i></div>
+<div class="match">
+  <div class="mcard title"><div class="b">الاسم</div><div class="cap">عنوان</div></div>
+  <div class="mcard title"><div class="b">عددُ الآيات</div><div class="cap">عنوان</div></div>
+  <div class="mcard title"><div class="b">التنزيل</div><div class="cap">عنوان</div></div>
+  <div class="mcard title"><div class="b">الجزء</div><div class="cap">عنوان</div></div>
+</div>
+
+<div class="sec"><b>٣) بطاقاتُ الإجابة</b><i></i></div>
+<div class="match">
+  <div class="mcard ans"><div class="b">النَّبأ</div><div class="cap">إجابة</div></div>
+  <div class="mcard ans"><div class="b">٤٠</div><div class="cap">إجابة</div></div>
+  <div class="mcard ans"><div class="b">مكّيّة</div><div class="cap">إجابة</div></div>
+  <div class="mcard ans"><div class="b">عَمَّ</div><div class="cap">إجابة</div></div>
+</div>
+
+<div class="hint">النشاط «ضع البطاقة عند العنوان»: تعرض المعلمة بطاقاتِ العناوين الأربعة على لوحة علوم السورة، ويطابق الطفل بطاقةَ الإجابة عند عنوانها ويثبّتها بالمغناطيس في مكانها — تثبيتٌ لعلوم السورة باللعب بلا كتابة.</div>
+<button class="printbtn" onclick="window.print()">🖨️ طباعة البطاقات</button>
+</body>
+</html>
