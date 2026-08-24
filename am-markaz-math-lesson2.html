@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>مركز الرياضيات · لقاء تطبيقي ٢ · ترتيب أرقام الساعة والمعدودات بالملقاط · وحدة أنا مخلوق كرّمني الله</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#1F4A39; --t2:#1E5631; --soft:#E7F0EA; --soft2:#F2F8F4;
+  --gold:#C79A3B; --cream:#F4EDDE;
+  --ink:#1E2E29; --muted:#6C776F; --line:#e6ded0; --card:#fff;
+  --shadow:0 6px 20px rgba(50,10,10,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.95;font-size:16px;
+  background:linear-gradient(#fbf9f3,#f6f0e6);padding:22px 16px 60px}
+.wrap{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+b,strong{font-weight:700}
+h1,h2,h3,.c-badge,.c-unit{font-family:var(--fd)}
+
+/* ===== الغلاف (بأسلوب دروس العائلة) ===== */
+.cover{position:relative;overflow:hidden;border-radius:22px;color:#fff;box-shadow:var(--shadow);min-height:190px}
+.cover-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.cover::before{content:"";position:absolute;inset:0;z-index:1;opacity:.78;
+  background:linear-gradient(135deg,rgba(92,16,16,.92),rgba(139,0,0,.80) 52%,rgba(139,0,0,.88))}
+.cover::after{content:"";position:absolute;inset:0;z-index:1;opacity:.07;pointer-events:none;
+  background:radial-gradient(circle at 88% 18%,#fff 0 2px,transparent 3px) 0 0/34px 34px}
+.cover-main{position:relative;z-index:2;padding:26px 28px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cover-l{flex:1 1 60%;min-width:240px}
+.cover-r{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.c-badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:999px;padding:6px 15px;font-weight:700;font-size:14px;margin-bottom:11px}
+.cover h1{font-size:29px;line-height:1.42;font-weight:700;margin-bottom:10px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+.c-meta{font-size:14px;color:#f3d9d9;line-height:1.85}
+.c-unit{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:12px 16px;font-weight:700;font-size:15px;line-height:1.6}
+.c-dur{color:#ecc9c9;font-size:14px}
+
+/* ===== رقائق المعنى ===== */
+.mc-chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.mc-chip{background:var(--soft2);border:1px solid var(--line);border-radius:16px;padding:13px 15px;font-size:14px;line-height:1.85}
+.mc-chip strong{display:block;color:var(--t1);font-weight:700;margin-bottom:3px;font-family:var(--fd);font-size:15px}
+
+/* ===== أقسام وبطاقات ===== */
+.mc-block{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow)}
+.mc-block>h2{color:var(--t1);font-size:18px;font-weight:700;margin-bottom:12px;
+  padding-inline-start:12px;border-inline-start:4px solid var(--t2)}
+.mc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px}
+.mc-card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--t2);
+  border-radius:16px;padding:15px 17px;box-shadow:var(--shadow)}
+.mc-card h3{color:var(--t1);font-size:15.5px;font-weight:700;margin-bottom:9px}
+.mc-card.wide{grid-column:1/-1}
+.mc-card ul,.mc-card ol{margin:0;padding-inline-start:20px}
+.mc-card li{margin-bottom:5px;font-size:14px;line-height:1.9}
+.mc-card li::marker{color:var(--t2)}
+
+/* ===== ملفات مساعِدة ===== */
+.mc-res{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));gap:10px}
+.mc-res a{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;
+  padding:11px 14px;background:var(--soft2);border:1px solid var(--line);border-inline-start:4px solid var(--t2);
+  border-radius:13px;color:var(--ink);text-decoration:none;font-size:13.5px;font-weight:700}
+.mc-res a::after{content:"فتح ↗";color:#fff;background:var(--t2);border-radius:999px;padding:4px 11px;font-size:11px;white-space:nowrap}
+
+/* ===== تنبيه ===== */
+.mc-note{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);
+  border-radius:16px;padding:14px 17px;font-size:14px;line-height:1.95;color:#5b4412}
+.mc-note strong{color:#7a5a12}
+@media(max-width:640px){.cover-main{flex-direction:column;text-align:center;align-items:center}.cover h1{font-size:23px}.cover-r{align-items:center}}
+.mc-sig{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.mc-sig-head{background:linear-gradient(135deg,#1F4A39,#0d6e6e);color:#fff;padding:13px 18px;font-family:var(--fd);font-weight:700;font-size:16px;display:flex;align-items:center;gap:9px}
+.mc-sig-body{padding:16px 20px;font-size:14.5px;line-height:1.95}
+.mc-sig-greet{background:var(--soft2);border-radius:12px;padding:10px 13px;margin-bottom:11px}
+.mc-ayah{font-family:var(--fd);font-weight:700;text-align:center;line-height:2.2;color:#1F4A39;background:var(--soft2);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;font-size:17px}
+.mc-ayah .ref{font-family:var(--fb);font-weight:400;font-size:13px;color:var(--muted)}
+.mc-sig-video{margin:12px 0}
+.mc-sig-video video{width:100%;max-width:500px;display:block;margin:0 auto;border-radius:14px;border:1px solid var(--line);background:#000}
+.mc-sig-video .cap{text-align:center;font-size:12.5px;color:var(--muted);margin-top:6px}
+.mc-sig-ans{background:#eef6f4;border-inline-start:4px solid var(--t2);border-radius:12px;padding:10px 13px;margin-top:11px;font-weight:700;color:#1F4A39}
+.mc-ws-wrap{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.mc-ws-bar{background:var(--soft2);border-bottom:1px solid var(--line);padding:9px 14px;font-size:13px;font-weight:700;color:var(--t1);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.mc-ws-bar a{background:var(--t2);color:#fff;border-radius:999px;padding:5px 13px;text-decoration:none;font-size:12px;white-space:nowrap}
+.mc-ws-frame{height:420px;background:#eef2ef}
+.mc-ws-frame iframe{width:100%;height:100%;border:0;display:block;background:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="cover-photo" style="background-image:url('units-art/unit-makhluq.jpg?v=1')"></div>
+    <div class="cover-main">
+      <div class="cover-l">
+        <span class="c-badge">مركز الرياضيات · لقاء تطبيقي · ٣٠ دقيقة</span>
+        <h1>وحدة أنا مخلوق كرّمني الله — مركز الرياضيات<br/>أنشطة تهيئة ٢: ترتيب أرقام الساعة والمعدودات بالملقاط</h1>
+        <div class="c-meta">المرحلة: تمهيدي (5–6 سنوات) · الدرس المرتبط: مهاراتي — الأعداد والمعدودات · تنظيم: مجموعات · الأسبوع الأول</div>
+      </div>
+      <div class="cover-r">
+        <div class="c-unit" style="background:#fff;padding:8px 10px;display:grid;place-items:center"><img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة" style="display:block;width:88px;height:88px;object-fit:contain"/></div>
+        <div class="c-dur">المدة: ٣٠ دقيقة</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="mc-sig">
+    <div class="mc-sig-head"><i class="gi gi-dark" data-i="إشارات اللقاءات" data-size="20"></i> إشارة بدء اللقاء — مركز الرياضيات (مهاراتي)</div>
+    <div class="mc-sig-body">
+      <div class="mc-sig-greet">السلام عليكم ورحمة الله وبركاته. مركز الرياضيات تطبيقٌ عمليّ للقاء «مهاراتي»؛ <strong>فنبدؤه بإشارة بدء اللقاء نفسها لنعرف ماذا سيكون مركزنا.</strong></div>
+      <p><strong>منهجية الإشارة:</strong> تبدأ المعلمة بتحية الإسلام، ثم تدعو الأطفال للاستماع <strong>دون أن تُسمّي المركز</strong>؛ فيستمعون إلى إشارة «مهاراتي» <strong>ويتعرّفون على مركزهم بأنفسهم</strong>، ثم <strong>تؤكّد المعلمة:</strong> «نعم، مركزنا الآن هو مركز الرياضيات، نطبّق فيه ما تعلّمناه من الأعداد والمفاهيم الرياضية بالملاحظة والتجربة».</p>
+      <div class="mc-ayah">﴿إِنَّ عِدَّةَ الشُّهُورِ عِندَ اللَّهِ اثْنَا عَشَرَ شَهْرًا فِي كِتَابِ اللَّهِ﴾ <span class="ref">[التوبة: ٣٦]</span></div>
+      <div class="mc-sig-video"><video controls preload="none" src="assets/video_033_b6b8486b75ca59fc.mp4">متصفحك لا يدعم تشغيل الفيديو.</video><div class="cap">▶ فيديو إشارة بدء لقاء مهاراتي</div></div>
+      <p><strong>المعنى الميسّر:</strong> ذكر الله في الآية عدد الشهور، والأعداد تعيننا على عدّ الأشياء وترتيبها وضبطها.</p>
+      <div class="mc-sig-ans"><strong>جواب الإشارة:</strong> «مركزنا مركز الرياضيات؛ نطبّق الأعداد والمفاهيم الرياضية بالملاحظة والتجربة».</div>
+    </div>
+  </section>
+
+  <section class="mc-chips">
+        <div class="mc-chip"><strong>المعنى المركزي</strong>تهيئةٌ لمهارات العدّ: يرتّب الطفلُ أرقامَ الساعة ١–١٢ بالتسلسل، ويستخرج بالملقاط عددَ المعدودات المطابق لرقمه؛ فيثبت مفهومُ العدّ والمعدود، وينتفع بوقته فيما يحبّه الله.</div>
+    <div class="mc-chip"><strong>الركن الداعم</strong>ركن المتجر (فئاتُ النقود بالأرقام) في درس مهاراتي، وربطُ الوقت بما يحبّه الله (قراءة القرآن والعلم النافع).</div>
+    <div class="mc-chip"><strong>المثير</strong>إدراكٌ سمعيّ — صوتُ عقارب الساعة؛ تذكّرهم بنعمة السمع وتحمّسهم للهدوء ليسمعوه، ثم: على ماذا تحتوي الساعة؟ أرقام.</div>
+    <div class="mc-chip"><strong>التقويم</strong>يُقيَّم على إتقان ترتيب الأرقام بالتسلسل، والتعرّفِ على الرقم وتمثيلِه بالمعدودات؛ بلا تحويله إلى اختبار.</div>
+  </section>
+  <section class="mc-grid">
+    <div class="mc-card"><h3>الأهداف ونواتج التعلّم</h3><ul><li>أن يتعرّف الطفلُ على اللقاء وفائدة العدّ في حياتنا.</li><li>أن يحلّ مجموعةً من الأنشطة التي تهيّئه للقاءات القادمة.</li><li>أن يرتّب أرقامَ الساعة من ١ إلى ١٢ بالتسلسل الصحيح ابتداءً من نقطة البداية.</li><li>أن يستخرج بالملقاط عددَ المعدودات المطابق لرقم بطاقته، فيُحدَّد المستوى العامّ للأطفال.</li></ul></div>
+    <div class="mc-card"><h3>خطوات النشاط · ٦ مراحل</h3><ol><li><b>تهيئة (٤د):</b> تحيّةٌ وقوانينُ اللقاء وتلاوةُ آية المدخل ﴿إِنَّ عِدَّةَ الشُّهُورِ عِندَ اللَّهِ اثْنَا عَشَرَ شَهْرًا﴾؛ والمثير: صوتُ عقارب الساعة وتذكيرٌ بنعمة السمع والهدوءِ لسماعه.</li><li><b>نمذجة (٥د):</b> فائدةُ الأرقام (أعدّ · وقتي الثمين لما يحبّه الله · الصلواتُ وركعاتها · عمري · حسابُ مشترياتي)، ثم العدُّ معًا ١–١٥، و«ما هذا الصوت؟ عقاربُ الساعة»؛ أشكالُ الساعات (حائط · يد · جوّال · منبّه)، ثم الرقمُ ١ نموذجًا عند نقطة البداية.</li><li><b>تطبيق موجَّه (٥د):</b> يلاحظون أنّ الساعة فيها ١٢ عددًا متسلسلًا، ويرتّبونها ١–١٢ بتوجيهٍ بالعدّ الجهريّ في الأرقام الأولى.</li><li><b>تطبيق مستقلّ (٩د):</b> يكمل الطفلُ ترتيبَ أرقام الساعة إلى ١٢. ثم المعدودات: تُوزَّع بطاقاتُ الأعداد وباستخدام الملقاط يستخرج كلٌّ المعدوداتِ على حسب رقمه.</li><li><b>توثيق (٤د):</b> يُقيَّم على ترتيب الأرقام بالتسلسل والتعرّفِ على الرقم وتمثيلِه بالمعدودات، وتُرصَد ذلك، وتُلتقط صورةُ الساعة بعد اكتمالها.</li><li><b>إغلاق (٣د):</b> «كيف نستفيد من الساعة والأرقام في يومنا؟» وتذكيرٌ بالانتفاع بالوقت فيما يحبّه الله، وامتدادٌ في ركن المتجر، ثم جمعُ الأدوات ودعاءُ الختام.</li></ol></div>
+  </section>
+
+  <section class="mc-grid">
+    <div class="mc-card wide"><h3>الأدوات والكميات</h3><ul><li>نموذجُ ساعةٍ مطبوعٌ — لكلّ مجموعةٍ (أو طفلٍ) مع تحديد نقطة البداية التي يوضع فيها الرقم ١.</li><li>بطاقاتُ الأرقام ١–١٢ لترتيب الساعة (مجموعةٌ لكلّ نموذج) · بطاقاتُ الأعداد (بطاقةٌ لكلّ طفلٍ في المعدودات).</li><li>معدوداتٌ (خرز · كرات · حبيبات) نحو ١٥ لكلّ طفل · ملاقطُ (ملقاطٌ لكلّ طفل) · أطباقُ فرزٍ (طبقٌ لكلّ طفل).</li><li>مقطعٌ صوتيٌّ لصوت عقارب الساعة وجهازُ تشغيلٍ واحدٌ للمركز.</li></ul></div>
+    <div class="mc-card wide"><h3>المؤشّرات والتوثيق</h3><ul><li>قائمةُ رصدٍ فرديّة بعمودين: إتقانُ ترتيب الأرقام بالتسلسل · التعرّفُ على الرقم وتمثيلُه بالمعدودات.</li><li>ملاحظةٌ نوعيّة: هل يبدأ من نقطة البداية الصحيحة؟ هل يعدّ حبّةً حبّة أم يقدّر بالنظر؟ وهل يمسك الملقاط بأطراف أصابعه؟</li><li>عيّنةُ عمل: صورةٌ فوتوغرافيّةٌ لنموذج الساعة بعد اكتمال ترتيبه باسم الطفل وتاريخه.</li><li><b>معيار التحقّق:</b> ترتيبٌ صحيحٌ لثمانيةٍ من أرقام الساعة الاثني عشر، ومطابقةٌ صحيحةٌ للمعدود مع بطاقته.</li></ul></div>
+    <div class="mc-card wide"><h3>التمايز حسب حاجة الطفل</h3><ul><li><b>للمتمكّن:</b> يرتّب أرقامَ الساعة دون نموذج، ثم: أين يقف العقربُ الآن؟ ويستخرج بالملقاط عددًا أكبر (حتى ١٥).</li><li><b>للمحتاج إلى دعم:</b> نموذجُ ساعةٍ مرقّمٌ جزئيًّا (١ · ٣ · ٦ · ٩ · ١٢) ليكمل ما بينها، وتُقلَّل بطاقةُ عدده دون ٥.</li><li><b>لضعف قبضة اليد:</b> يُستبدَل الملقاطُ بملعقةٍ صغيرةٍ أو باليد مباشرةً، ويُدرَّب على الملقاط تدريجيًّا.</li><li><b>لضعف السمع:</b> يُرفع صوتُ المقطع ويُجلَس قريبًا، مع صورة ساعةٍ متحرّكةٍ أو ساعةٍ حقيقيّةٍ يلمسها.</li><li><b>للحركيّ:</b> تُرسم ساعةٌ كبيرةٌ على الأرض ويمشي واضعًا كلَّ رقمٍ في موضعه.</li></ul></div>
+  </section>
+  <section class="mc-block">
+    <h2>ملفات مساعدة للمعلمة</h2>
+    <p style="font-size:14px;margin-bottom:10px">المتوفّر في مجلد المركز: ملفّ «أنشطة تهيئة 2.docx» (تحضير المعلمة حنان هشام) بسير اللقاء والأدوات، ونصّ في أدواته على «طباعة نموذج الساعة».</p>
+    <div class="mc-note" style="margin:0"><strong>يلزم تجهيزه:</strong> طباعةُ نموذج الساعة (دائرةٌ فارغةٌ باثنتي عشرة خانةً ونقطةِ بدايةٍ محدَّدة) بعدد المجموعات · بطاقاتُ الأرقام ١–١٢ لكلّ نموذج وبطاقاتُ أعدادٍ للمعدودات · جدولُ رصدٍ بأسماء الأطفال وعمودَي (الترتيب بالتسلسل · الرقم والمعدود).</div>
+  </section>
+
+  <div class="mc-note"><strong>تنبيه منهجي:</strong> النشاطُ ترتيبٌ للأرقام وتمثيلٌ بالمعدودات لا كتابةً لأرقامٍ مطوّلة؛ فلا يُطلَب من الطفل كتابةُ أرقام، والصفرُ لا شيءٌ لا خطأ، ولا مقارنةَ بين الأطفال، مع الهدوء والتصحيح اللطيف. المركزُ فترةٌ تطبيقيّةٌ مستقلّة بعد الدرس، لا يحلّ محلّه ولا يقدّم مفهومًا جديدًا.</div>
+
+
+  <div class="gq-dev-credit" style="margin:22px auto 0;max-width:540px;padding:18px 16px 4px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center"><span style="font-size:11.5px;color:var(--muted);letter-spacing:.3px">إعداد وتطوير وإخراج دليل المعلمة</span><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="display:inline-block;line-height:0"><img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية" style="width:104px;height:auto;display:block"/></a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-family:var(--fd);font-size:14.5px;color:#1e5631;text-decoration:none;font-weight:700">شركة حضارة للاستشارات التربوية والتعليمية</a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--elm,#0E6E6B);text-decoration:none">www.hadarah-consulting.com</a></div>
+</div>
+<script src="brand/guide-icons.js?v=2"></script>
+<!--gq-credit-embed-hide--><script>try{if(window.self!==window.top){var _c=document.querySelector(".gq-dev-credit");if(_c)_c.style.display="none";}}catch(e){}</script>
+</body>
+</html>

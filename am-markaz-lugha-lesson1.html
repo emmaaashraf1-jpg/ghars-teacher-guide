@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>مركز اللغة · لقاء تطبيقي ١ · مطابقة الصوت بالصورة · وحدة أنا مخلوق كرّمني الله</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#1F4A39; --t2:#0d6e6e; --soft:#E4F1F0; --soft2:#F2FAF9;
+  --gold:#C79A3B; --cream:#F4EDDE;
+  --ink:#1E2E29; --muted:#6C776F; --line:#e6ded0; --card:#fff;
+  --shadow:0 6px 20px rgba(20,40,35,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.95;font-size:16px;
+  background:linear-gradient(#fbf9f3,#f6f0e6);padding:22px 16px 60px}
+.wrap{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+b,strong{font-weight:700}
+h1,h2,h3,.c-badge,.c-unit{font-family:var(--fd)}
+
+/* ===== الغلاف (بأسلوب دروس العائلة) ===== */
+.cover{position:relative;overflow:hidden;border-radius:22px;color:#fff;box-shadow:var(--shadow);min-height:190px}
+.cover-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.cover::before{content:"";position:absolute;inset:0;z-index:1;opacity:.78;
+  background:linear-gradient(135deg,rgba(31,74,57,.92),rgba(13,110,110,.80) 52%,rgba(13,110,110,.88))}
+.cover::after{content:"";position:absolute;inset:0;z-index:1;opacity:.07;pointer-events:none;
+  background:radial-gradient(circle at 88% 18%,#fff 0 2px,transparent 3px) 0 0/34px 34px}
+.cover-main{position:relative;z-index:2;padding:26px 28px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cover-l{flex:1 1 60%;min-width:240px}
+.cover-r{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.c-badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:999px;padding:6px 15px;font-weight:700;font-size:14px;margin-bottom:11px}
+.cover h1{font-size:29px;line-height:1.42;font-weight:700;margin-bottom:10px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+.c-meta{font-size:14px;color:#dcf3ef;line-height:1.85}
+.c-unit{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:12px 16px;font-weight:700;font-size:15px;line-height:1.6}
+.c-dur{color:#bfe6e0;font-size:14px}
+
+/* ===== رقائق المعنى ===== */
+.mc-chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.mc-chip{background:var(--soft2);border:1px solid var(--line);border-radius:16px;padding:13px 15px;font-size:14px;line-height:1.85}
+.mc-chip strong{display:block;color:var(--t1);font-weight:700;margin-bottom:3px;font-family:var(--fd);font-size:15px}
+
+/* ===== أقسام وبطاقات ===== */
+.mc-block{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow)}
+.mc-block>h2{color:var(--t1);font-size:18px;font-weight:700;margin-bottom:12px;
+  padding-inline-start:12px;border-inline-start:4px solid var(--t2)}
+.mc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px}
+.mc-card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--t2);
+  border-radius:16px;padding:15px 17px;box-shadow:var(--shadow)}
+.mc-card h3{color:var(--t1);font-size:15.5px;font-weight:700;margin-bottom:9px}
+.mc-card.wide{grid-column:1/-1}
+.mc-card ul,.mc-card ol{margin:0;padding-inline-start:20px}
+.mc-card li{margin-bottom:5px;font-size:14px;line-height:1.9}
+.mc-card li::marker{color:var(--t2)}
+
+/* ===== معاينة أوراق العمل ===== */
+.mc-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px}
+.mc-fig{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.mc-fig img{display:block;width:100%;height:240px;object-fit:contain;background:var(--soft2);padding:8px}
+.mc-fig figcaption{padding:9px 12px;font-size:13px;font-weight:700;color:var(--ink);background:#fff;border-top:1px solid var(--line)}
+.mc-fig a{text-decoration:none;color:inherit}
+
+/* ===== ملفات مساعِدة ===== */
+.mc-res{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,215px),1fr));gap:10px}
+.mc-res a{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;
+  padding:11px 14px;background:var(--soft2);border:1px solid var(--line);border-inline-start:4px solid var(--t2);
+  border-radius:13px;color:var(--ink);text-decoration:none;font-size:13.5px;font-weight:700}
+.mc-res a::after{content:"فتح ↗";color:#fff;background:var(--t2);border-radius:999px;padding:4px 11px;font-size:11px;white-space:nowrap}
+
+/* ===== تنبيه ===== */
+.mc-note{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);
+  border-radius:16px;padding:14px 17px;font-size:14px;line-height:1.95;color:#5b4412}
+.mc-note strong{color:#7a5a12}
+@media(max-width:640px){.cover-main{flex-direction:column;text-align:center;align-items:center}.cover h1{font-size:23px}.cover-r{align-items:center}}
+.mc-sig{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.mc-sig-head{background:linear-gradient(135deg,#1F4A39,#0d6e6e);color:#fff;padding:13px 18px;font-family:var(--fd);font-weight:700;font-size:16px;display:flex;align-items:center;gap:9px}
+.mc-sig-body{padding:16px 20px;font-size:14.5px;line-height:1.95}
+.mc-sig-greet{background:var(--soft2);border-radius:12px;padding:10px 13px;margin-bottom:11px}
+.mc-ayah{font-family:var(--fd);font-weight:700;text-align:center;line-height:2.2;color:#1F4A39;background:var(--soft2);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;font-size:17px}
+.mc-ayah .ref{font-family:var(--fb);font-weight:400;font-size:13px;color:var(--muted)}
+.mc-sig-video{margin:12px 0}
+.mc-sig-video video{width:100%;max-width:500px;display:block;margin:0 auto;border-radius:14px;border:1px solid var(--line);background:#000}
+.mc-sig-video .cap{text-align:center;font-size:12.5px;color:var(--muted);margin-top:6px}
+.mc-sig-ans{background:#eef6f4;border-inline-start:4px solid var(--t2);border-radius:12px;padding:10px 13px;margin-top:11px;font-weight:700;color:#1F4A39}
+.mc-ws-wrap{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.mc-ws-bar{background:var(--soft2);border-bottom:1px solid var(--line);padding:9px 14px;font-size:13px;font-weight:700;color:var(--t1);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.mc-ws-bar a{background:var(--t2);color:#fff;border-radius:999px;padding:5px 13px;text-decoration:none;font-size:12px;white-space:nowrap}
+.mc-ws-frame{height:420px;background:#eef2ef}
+.mc-ws-frame iframe{width:100%;height:100%;border:0;display:block;background:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="cover">
+    <div class="cover-photo" style="background-image:url('units-art/unit-makhluq.jpg?v=1')"></div>
+    <div class="cover-main">
+      <div class="cover-l">
+        <span class="c-badge">مركز اللغة · لقاء تطبيقي · ٣٠ دقيقة</span>
+        <h1>وحدة أنا مخلوق كرّمني الله — مركز اللغة<br/>مطابقة الصوت بالصورة (الإدراك السمعي)</h1>
+        <div class="c-meta">المرحلة: تمهيدي (5–6 سنوات) · الدرس المرتبط: لساني عربي — الإدراك السمعي · تنظيم: ٤–٦ أطفال · الأسبوع الأول</div>
+      </div>
+      <div class="cover-r">
+        <div class="c-unit" style="background:#fff;padding:8px 10px;display:grid;place-items:center"><img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة" style="display:block;width:88px;height:88px;object-fit:contain"/></div>
+        <div class="c-dur">المدة: ٣٠ دقيقة</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="mc-sig">
+    <div class="mc-sig-head"><i class="gi gi-dark" data-i="إشارات اللقاءات" data-size="20"></i> إشارة بدء اللقاء — مركز اللغة (لساني عربي)</div>
+    <div class="mc-sig-body">
+      <div class="mc-sig-greet">السلام عليكم ورحمة الله وبركاته يا أحباب العربية. مركز اللغة تطبيقٌ عمليّ للقاء «لساني عربي»؛ <strong>فنبدؤه بإشارة بدء اللقاء نفسها لنعرف ماذا سيكون مركزنا.</strong></div>
+      <p><strong>منهجية الإشارة:</strong> تبدأ المعلمة بتحية الإسلام، ثم تدعو الأطفال للاستماع <strong>دون أن تُسمّي المركز</strong>؛ فيستمعون إلى إشارة «لساني عربي» (آيات الشعراء في الفيديو) <strong>ويتعرّفون على مركزهم بأنفسهم</strong>، ثم <strong>تؤكّد المعلمة:</strong> «نعم، مركزنا الآن هو مركز اللغة، نطبّق فيه ما تعلّمناه من حروف لغتنا لنقرأ كلام الله ونُحسن النطق»، مع التركيز على ﴿بِلِسَانٍ عَرَبِيٍّ مُبِينٍ﴾.</p>
+      <div class="mc-ayah">﴿وَإِنَّهُ لَتَنْزِيلُ رَبِّ الْعَالَمِينَ · نَزَلَ بِهِ الرُّوحُ الْأَمِينُ · عَلَىٰ قَلْبِكَ لِتَكُونَ مِنَ الْمُنْذِرِينَ · بِلِسَانٍ عَرَبِيٍّ مُبِينٍ﴾ <span class="ref">[الشعراء: ١٩٢–١٩٥]</span></div>
+      <div class="mc-sig-video"><video controls preload="none" src="assets/gq_signal_lisani.mp4">متصفحك لا يدعم تشغيل الفيديو.</video><div class="cap">▶ فيديو إشارة بدء لقاء لساني عربي</div></div>
+      <p><strong>المعنى الميسّر:</strong> أنزل الله القرآن بلسانٍ عربيّ واضح؛ فنحبّ العربية ونتعلّم حروفها لتعيننا — بتوفيق الله — على قراءة كلامه وفهمه.</p>
+      <div class="mc-sig-ans"><strong>جواب الإشارة:</strong> «مركزنا مركز اللغة؛ نطبّق حروف لغتنا العربية لنقرأ كلام الله ونحسن النطق».</div>
+    </div>
+  </section>
+
+  <section class="mc-chips">
+        <div class="mc-chip"><strong>المعنى المركزي</strong>اللغةُ بابٌ لفهم كلام الله؛ ينتقل الطفلُ من المشاهدة مع المعلمة إلى أداءٍ عمليّ: ينصت للصوت ويختار صورتَه المناسبة، شاكرًا الله على نعمة السمع التي كرّمه بها.</div>
+    <div class="mc-chip"><strong>الركن الداعم</strong>ركن «أقرأ لأتعلّم» في درس لساني، وربطُ الأصوات بنعمة السمع في وحدة «أنا مخلوق كرّمني الله».</div>
+    <div class="mc-chip"><strong>المثير</strong>تُشغّل المعلمةُ صوتًا وتسأل: ما هذا الصوت؟ ومن أيّ صورةٍ خرج؟ فينتبه الأطفالُ إلى الإصغاء واختيار الصورة.</div>
+    <div class="mc-chip"><strong>التقويم</strong>يميّز الطفلُ الأصواتَ الستّة ويطابق كلَّ صوتٍ بصورته؛ مع توثيق درجة الاستقلال لا تحويله إلى اختبار.</div>
+  </section>
+
+  <section class="mc-grid">
+    <div class="mc-card"><h3>الأهداف ونواتج التعلّم</h3><ul><li>أن يميّز الطفلُ الصوتَ المسموع ويختار الصورةَ المناسبة له من الصور المعروضة.</li><li>أن يسمّي مصدرَ الصوت بكلمةٍ صحيحة: عصفور · سكب ماء · ضفدع · أمواج البحر · طرق باب · سيارة شرطة.</li><li>أن ينصت للصوت حتى نهايته قبل أن يختار، فيتدرّب على الإصغاء المركّز.</li><li>أن يشكر الله على نعمة السمع التي كرّمه الله بها.</li></ul></div>
+    <div class="mc-card"><h3>خطوات النشاط · ٦ مراحل</h3><ol><li><b>تهيئة (٣د):</b> تذكّره المعلمةُ بنعمة السمع، وتطلب أن يغمض عينيه ويخبرها بما يسمعه، ثم: «سنلعب اليوم لعبة أسمع وأختار».</li><li><b>نمذجة (٥د):</b> تعرض الصورَ وتسمّيها معه، ثم تشغّل صوتًا نموذجًا وتختار صورته: «هذا صوت العصفور، إذًا أختار صورة العصفور».</li><li><b>تطبيق موجَّه (٦د):</b> تشغّل صوتًا وتسأل: ما هذا الصوت؟ وتوجّهه بالتلميح (ماء أم طائر؟) حتى يضع يده على الصورة ويسمّيها.</li><li><b>تطبيق مستقلّ (٩د):</b> تشغّل الأصواتَ تباعًا ويختار كلُّ طفلٍ الصورةَ دون مساعدة، ويعلّق الصورةَ على السبورة.</li><li><b>توثيق (٤د):</b> ترصد لكلّ طفلٍ الأصواتَ الستّة (أصاب/أخطأ · بمساعدةٍ أو بدونها) وتلتقط صورةَ سبورة الأصوات.</li><li><b>إغلاق (٣د):</b> «بأيّ نعمةٍ عرفتَ هذه الأصوات؟ بنعمة السمع التي وهبني الله»، ثم جمعُ الأدوات ودعاءُ الختام.</li></ol></div>
+  </section>
+
+  <section class="mc-grid">
+    <div class="mc-card wide"><h3>الأدوات والكميات</h3><ul><li>مجموعةُ صورٍ مطبوعةٍ ستّ لكلّ طاولة (مقاسٌ مناسبٌ للمسك): عصفور · سكب ماء · ضفدع · أمواج البحر · طرق باب · سيارة شرطة.</li><li>مقاطعُ صوتيّةٌ ستّةٌ مطابقةٌ للصور · جهازُ تشغيلٍ واحدٌ (لابتوب أو مكبّر صوتٍ صغير) للمركز.</li><li>طاولةُ المركز أو مساحةٌ من الأرض تُفرد عليها الصور · لاصقٌ أو مشابك لتعليق الصورة على السبورة.</li><li>نسخةٌ من مجموعة الصور لكلّ مجموعةٍ في حال التطبيق الجماعيّ.</li></ul></div>
+    <div class="mc-card wide"><h3>المؤشّرات والتوثيق</h3><ul><li>قائمةُ رصدٍ فرديّة: اسمُ الطفل × الأصوات الستّة، تُعلَّم بـ«أصاب مستقلًّا» أو «أصاب بمساعدة» أو «لم يميّز».</li><li>ملاحظةٌ نوعيّة: هل ينصت حتى نهاية الصوت؟ هل يسمّي المصدرَ بكلمةٍ صحيحة أم يشير فقط؟</li><li>عيّنةُ عمل: صورةٌ فوتوغرافيّةٌ لسبورة الأصوات بعد تعليق الصور المطابقة.</li><li><b>معيار التحقّق:</b> ثلاثةُ أصواتٍ صحيحةٍ من ستّة، ويُعاد النشاطُ في الأسبوع التالي لمن لم يبلغها.</li></ul></div>
+    <div class="mc-card wide"><h3>التمايز حسب حاجة الطفل</h3><ul><li><b>للمتمكّن:</b> تُشغَّل الأصواتُ دون عرض الصور فيسمّي الصوتَ شفويًّا ثم يبحث عن صورته، أو يرتّب الأصواتَ بحسب سماعها.</li><li><b>للمحتاج إلى دعم:</b> تُقلَّل الصورُ إلى ثلاثٍ متباعدةٍ (عصفور · طرق باب · أمواج بحر) ويُعاد الصوتُ مرّتين.</li><li><b>للخجول أو قليل الكلام:</b> يكتفي بالإشارة إلى الصورة ثم تسمّيها المعلمةُ ويردّد.</li><li><b>للحركيّ:</b> تُفرد الصورُ على الأرض ويمشي إلى الصورة المناسبة ويحملها إلى السبورة.</li><li><b>لضعف السمع:</b> تُرفع شدّةُ الصوت ويُجلَس قريبًا من مصدره، مع دعمٍ بحركةٍ تمثيليّة.</li></ul></div>
+  </section>
+
+  <section class="mc-block">
+    <h2>ملفات مساعدة للمعلمة</h2>
+    <p style="font-size:14px;margin-bottom:10px">المتوفّر في مجلد المركز: ملفّ «مركز اللغة 1.docx» بوصف النشاط وقائمة الصور الستّ (بلا بطاقاتٍ جاهزةٍ للطباعة).</p>
+    <div class="mc-note" style="margin:0"><strong>يلزم تجهيزه:</strong> طباعةُ ستّ بطاقاتِ صورٍ ملوّنة (عصفور · سكب ماء · ضفدع · أمواج البحر · طرق باب · سيارة شرطة) وتغليفها · ملفٌّ صوتيٌّ يجمع المقاطعَ الستّة مرقّمةً بترتيب البطاقات · جدولُ رصدٍ مطبوعٌ بأسماء الأطفال وأعمدة الأصوات الستّة.</div>
+  </section>
+
+  <div class="mc-note"><strong>تنبيه منهجي:</strong> يُقدَّم النشاطُ تدريبًا على الإصغاء وربطِ الصوت بمصدره خدمةً لنعمة السمع؛ فلا تُستخدم آياتٌ أو أحاديثُ للتجريب الصوتيّ داخل المركز، ولا مقارنةَ بين الأطفال، مع الهدوء والتصحيح اللطيف. المركزُ فترةٌ تطبيقيّةٌ مستقلّة بعد الدرس، لا يحلّ محلّه ولا يقدّم مفهومًا جديدًا.</div>
+
+
+  <div class="gq-dev-credit" style="margin:22px auto 0;max-width:540px;padding:18px 16px 4px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center"><span style="font-size:11.5px;color:var(--muted);letter-spacing:.3px">إعداد وتطوير وإخراج دليل المعلمة</span><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="display:inline-block;line-height:0"><img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية" style="width:104px;height:auto;display:block"/></a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-family:var(--fd);font-size:14.5px;color:#1e5631;text-decoration:none;font-weight:700">شركة حضارة للاستشارات التربوية والتعليمية</a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--elm,#0E6E6B);text-decoration:none">www.hadarah-consulting.com</a></div>
+</div>
+<script src="brand/guide-icons.js?v=2"></script>
+<!--gq-credit-embed-hide--><script>try{if(window.self!==window.top){var _c=document.querySelector(".gq-dev-credit");if(_c)_c.style.display="none";}}catch(e){}</script>
+</body>
+</html>
