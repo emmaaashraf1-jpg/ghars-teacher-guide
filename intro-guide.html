@@ -3579,7 +3579,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #rules .g-cond b svg{width:18px;height:18px}
 #rules .g-cond.c-light{--cc:#D79A1E}#rules .g-cond.c-water{--cc:#2E8F8A}#rules .g-cond.c-soil{--cc:#8a5d12}
 #rules .grow-art{display:flex;justify-content:center}
-#rules .grow-svg{width:100%;max-width:310px;height:auto;overflow:visible}
+#rules .grow-vid{width:100%;max-width:340px;height:auto;display:block;border-radius:22px 12px 22px 14px/14px 22px 12px 22px;box-shadow:0 14px 30px -18px rgba(30,46,41,.42)}
 #rules .grow-sub{display:flex;align-items:center;gap:12px;margin:0 0 16px;font-family:'AlAwwal','Amiri',serif;color:#1F4A39;font-size:16.5px;white-space:nowrap}
 #rules .grow-sub::before,#rules .grow-sub::after{content:"";height:2px;flex:1;border-radius:2px;background:repeating-linear-gradient(90deg,rgba(199,154,59,.8) 0 7px,transparent 7px 13px)}
 #rules .grow-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px;align-items:start}
@@ -3613,7 +3613,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 @keyframes gRays{to{transform:rotate(360deg)}}
 @keyframes gPulse{0%,100%{opacity:.88}50%{opacity:1}}
 @keyframes gDrop{0%{transform:translateY(-8px);opacity:0}25%{opacity:.95}100%{transform:translateY(54px);opacity:0}}
-@media(max-width:720px){#rules .grow-hero{grid-template-columns:1fr;gap:14px}#rules .grow-art{order:-1}#rules .grow-svg{max-width:230px}#rules .grow-fruit{padding-inline-start:26px}#rules .grow-fruit .g-fruit-ic{position:static;display:block;margin-bottom:10px}}
+@media(max-width:720px){#rules .grow-hero{grid-template-columns:1fr;gap:14px}#rules .grow-art{order:-1}#rules .grow-vid{max-width:260px}#rules .grow-fruit{padding-inline-start:26px}#rules .grow-fruit .g-fruit-ic{position:static;display:block;margin-bottom:10px}}
 </style>
 <section class="page" id="rules" style="--accent:#8a5d12">
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>قواعد قيمية</strong></div>
@@ -3633,36 +3633,10 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </div>
 </div>
 <div class="grow-art">
-<svg class="grow-svg" viewBox="0 0 300 300" role="img" aria-label="رسمٌ لبذرةٍ تنمو نبتةً بالماء والضوء والتربة">
-<defs>
-<radialGradient id="gwash" cx="50%" cy="42%" r="66%"><stop offset="0%" stop-color="#EAF3E6"/><stop offset="100%" stop-color="#EAF3E6" stop-opacity="0"/></radialGradient>
-<radialGradient id="gsun" cx="50%" cy="45%" r="55%"><stop offset="0%" stop-color="#FBE7A8"/><stop offset="55%" stop-color="#E8B84B"/><stop offset="100%" stop-color="#E8B84B" stop-opacity="0"/></radialGradient>
-<linearGradient id="gsoil" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9A7643"/><stop offset="100%" stop-color="#5A3F1E"/></linearGradient>
-<linearGradient id="gstem" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#2F7A50"/><stop offset="100%" stop-color="#6BB68A"/></linearGradient>
-<radialGradient id="gleaf" cx="32%" cy="30%" r="82%"><stop offset="0%" stop-color="#86C99B"/><stop offset="100%" stop-color="#3F8B60"/></radialGradient>
-<linearGradient id="gdrop" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7FCFC9"/><stop offset="100%" stop-color="#2E8F8A"/></linearGradient>
-</defs>
-<ellipse cx="150" cy="150" rx="142" ry="132" fill="url(#gwash)"/>
-<g class="grow-rays"><g stroke="#E8B84B" stroke-width="4.5" stroke-linecap="round" opacity=".78"><line x1="106" y1="72" x2="118" y2="72"/><line x1="96" y1="96" x2="104.5" y2="104.5"/><line x1="72" y1="106" x2="72" y2="118"/><line x1="48" y1="96" x2="39.5" y2="104.5"/><line x1="38" y1="72" x2="26" y2="72"/><line x1="48" y1="48" x2="39.5" y2="39.5"/><line x1="72" y1="38" x2="72" y2="26"/><line x1="96" y1="48" x2="104.5" y2="39.5"/></g></g>
-<circle class="grow-sun" cx="72" cy="72" r="30" fill="url(#gsun)"/>
-<circle cx="72" cy="72" r="18.5" fill="#EFC24E"/>
-<circle cx="65" cy="65" r="6.5" fill="#F6DE93" opacity=".85"/>
-<g transform="translate(206,96)"><path class="grow-drop" d="M0,-8 C4.5,-2 5.5,3 0,8 C-5.5,3 -4.5,-2 0,-8 Z" fill="url(#gdrop)"/></g>
-<g transform="translate(233,70)"><path class="grow-drop gd2" d="M0,-7 C4,-1.8 5,2.6 0,7 C-5,2.6 -4,-1.8 0,-7 Z" fill="url(#gdrop)"/></g>
-<g transform="translate(182,124)"><path class="grow-drop gd3" d="M0,-6.5 C3.7,-1.6 4.6,2.4 0,6.5 C-4.6,2.4 -3.7,-1.6 0,-6.5 Z" fill="url(#gdrop)"/></g>
-<path d="M28,232 Q90,214 150,220 Q214,214 272,234 L272,268 Q150,285 28,268 Z" fill="url(#gsoil)"/>
-<path d="M28,232 Q90,214 150,220 Q214,214 272,234" fill="none" stroke="#4A3316" stroke-width="2.5" stroke-linecap="round" opacity=".5"/>
-<g fill="#3C2A11" opacity=".3"><circle cx="72" cy="250" r="2.1"/><circle cx="108" cy="258" r="1.6"/><circle cx="196" cy="252" r="2"/><circle cx="226" cy="258" r="1.6"/><circle cx="150" cy="262" r="1.8"/></g>
-<g stroke="#5A3F1E" fill="none" stroke-width="2" stroke-linecap="round" opacity=".42"><path d="M150,224 q-10,16 -20,26"/><path d="M150,226 q12,14 22,22"/><path d="M150,228 v28"/></g>
-<g class="grow-plant-in"><g class="grow-plant">
-<path d="M150,224 C146,190 156,160 150,120" fill="none" stroke="url(#gstem)" stroke-width="7" stroke-linecap="round"/>
-<g><ellipse cx="118" cy="190" rx="30" ry="13" transform="rotate(-28 118 190)" fill="url(#gleaf)" stroke="#2A5B41" stroke-width="1.4" stroke-opacity=".45"/><path d="M148,182 Q128,187 94,197" fill="none" stroke="#2A5B41" stroke-width="1.3" stroke-opacity=".4"/></g>
-<g><ellipse cx="184" cy="150" rx="30" ry="13" transform="rotate(26 184 150)" fill="url(#gleaf)" stroke="#2A5B41" stroke-width="1.4" stroke-opacity=".45"/><path d="M152,158 Q173,150 210,141" fill="none" stroke="#2A5B41" stroke-width="1.3" stroke-opacity=".4"/></g>
-<ellipse cx="133" cy="107" rx="17" ry="8" transform="rotate(-40 133 107)" fill="url(#gleaf)" stroke="#2A5B41" stroke-width="1.2" stroke-opacity=".4"/>
-<ellipse cx="167" cy="107" rx="17" ry="8" transform="rotate(40 167 107)" fill="url(#gleaf)" stroke="#2A5B41" stroke-width="1.2" stroke-opacity=".4"/>
-<circle cx="150" cy="115" r="5" fill="#7CC697"/>
-</g></g>
-</svg>
+<video class="grow-vid" autoplay loop muted playsinline aria-label="بذرةٌ تنمو نبتةً بالماء والضوء والتربة">
+<source src="assets/rules/watercolor-seedling-gentle-loop.mp4" type="video/mp4">
+<img src="assets/rules/watercolor-seedling-gentle-loop.webp" alt="بذرةٌ تنمو نبتةً بالماء والضوء والتربة" style="width:100%;height:auto;display:block;border-radius:inherit">
+</video>
 </div>
 </div>
 <div class="grow-sub">القواعدُ التسع</div>
@@ -3681,6 +3655,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <h3>استمدّي التوفيق من الله — وبها تُثمر</h3><p>اسألي الله دائمًا أن يوفقك ويسددك ويبصرك في انتقاء المعلومات، والنصوص، والوسائل، والأنشطة، وأن يبارك في كلماتك ويبلغ بها قلوب الأطفال.</p><p>واسأليه أن يؤلف بين قلوب فريق العمل، ويرزقكن الرحمة والرأفة وحسن التعاون، ويوفقكن في التخطيط والتنفيذ.</p><p>فنجاح اللقاء، وبلوغ معانيه، وانتفاع الأطفال به، كله بتوفيق الله وفضله. فلا يفتر لسانك عن الدعاء، ولا تعتمدي على حسن التخطيط وحده؛ بل خذي بالأسباب واستعيني بالله، واسأليه أن يجعل لقاءك نافعًا مباركًا، وأن يغرس به القيم في قلوب الأطفال.</p></div>
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>17 · قواعد قيمية ونصائح على الطريق</b></div>
 </section>
+<script>(function(){var sec=document.getElementById('rules');if(!sec)return;var v=sec.querySelector('.grow-vid');if(!v)return;var reduce=false;try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}if(reduce){v.removeAttribute('autoplay');v.addEventListener('loadeddata',function(){try{v.pause();}catch(e){}});return;}function tryplay(){if(sec.classList.contains('active')){var p=v.play&&v.play();if(p&&p.catch)p.catch(function(){});}}try{new MutationObserver(tryplay).observe(sec,{attributes:true,attributeFilter:['class']});}catch(e){}tryplay();})();</script>
 <footer style="padding:24px;text-align:center;background:#f3f5f7;border-top:1px solid var(--line);color:#6d7681;font-size:10px">نادي غرس القيم للطفولة · الدليل التعريفي والتشغيلي للمنهج · إصدار المعلمة</footer>
 </main>
 <div class="qr-modal" id="qrModal" onclick="if(event.target===this)closeQr()">
