@@ -3579,8 +3579,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 #rules .g-cond b svg{width:18px;height:18px}
 #rules .g-cond.c-light{--cc:#D79A1E}#rules .g-cond.c-water{--cc:#2E8F8A}#rules .g-cond.c-soil{--cc:#8a5d12}
 #rules .grow-art{display:flex;justify-content:center}
-#rules .grow-vid{width:100%;max-width:360px;height:auto;display:block;mix-blend-mode:multiply}
-#rules .grow-vid img{mix-blend-mode:multiply}
+#rules .grow-vid{width:100%;max-width:380px;height:auto;display:block}
 #rules .grow-sub{display:flex;align-items:center;gap:12px;margin:0 0 16px;font-family:'AlAwwal','Amiri',serif;color:#1F4A39;font-size:16.5px;white-space:nowrap}
 #rules .grow-sub::before,#rules .grow-sub::after{content:"";height:2px;flex:1;border-radius:2px;background:repeating-linear-gradient(90deg,rgba(199,154,59,.8) 0 7px,transparent 7px 13px)}
 #rules .grow-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px;align-items:start}
@@ -3634,10 +3633,10 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </div>
 </div>
 <div class="grow-art">
-<video class="grow-vid" autoplay loop muted playsinline aria-label="بذرةٌ تنمو نبتةً بالماء والضوء والتربة">
-<source src="assets/rules/watercolor-seedling-gentle-loop.mp4" type="video/mp4">
-<img src="assets/rules/watercolor-seedling-gentle-loop.webp" alt="بذرةٌ تنمو نبتةً بالماء والضوء والتربة" style="width:100%;height:auto;display:block;border-radius:inherit">
-</video>
+<picture>
+<source media="(prefers-reduced-motion: reduce)" srcset="assets/rules/watercolor-seedling-human-painted-transparent.png">
+<img class="grow-vid" src="assets/rules/watercolor-seedling-human-painted-transparent-loop.webp" alt="بذرةٌ تنمو نبتةً بالماء والضوء والتربة" loading="lazy">
+</picture>
 </div>
 </div>
 <div class="grow-sub">القواعدُ التسع</div>
