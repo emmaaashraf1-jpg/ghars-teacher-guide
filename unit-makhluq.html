@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>وحدة أنا مخلوق كرّمني الله — مجمّع اللقاءات · دليل المعلمة</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --ink:#1E2E29; --muted:#6C776F; --line:#e6ded0; --card:#fff;
+  --t1:#1F4A39; --gold:#C79A3B; --cream:#F4EDDE;
+  --shadow:0 6px 20px rgba(20,40,35,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.9;font-size:16px;background:linear-gradient(#fbf9f3,#f4eee2);padding:22px 16px 70px}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+h1,h2,h3,h4,.badge{font-family:var(--fd)}
+b,strong{font-weight:700}
+a{color:inherit}
+/* ===== breadcrumb ===== */
+.crumb{font-size:13.5px;color:var(--muted)}
+.crumb a{color:var(--t1);text-decoration:none;font-weight:700}
+/* ===== hero ===== */
+.hero{position:relative;overflow:hidden;border-radius:24px;color:#fff;box-shadow:var(--shadow);min-height:220px}
+.hero-photo{position:absolute;inset:0;background:url('units-art/unit-makhluq.jpg?v=1') center/cover;z-index:0}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;opacity:.9;background:linear-gradient(135deg,rgba(31,74,57,.95),rgba(44,106,77,.82) 55%,rgba(31,74,57,.9))}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;opacity:.08;background:radial-gradient(circle at 90% 15%,#fff 0 2px,transparent 3px) 0 0/34px 34px}
+.hero-in{position:relative;z-index:2;padding:30px 30px 26px}
+.badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:999px;padding:6px 16px;font-weight:700;font-size:14px;margin-bottom:12px}
+.hero h1{font-size:33px;line-height:1.35;margin-bottom:10px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+.hero p{font-size:15px;color:#e7f3ee;max-width:760px;line-height:1.95}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.chips span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:5px 13px;font-size:13.5px;font-weight:700}
+/* ===== material section ===== */
+.mat{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.mat-head{display:flex;align-items:center;gap:12px;padding:15px 20px;color:#fff;background:var(--sc,#2C6A4D)}
+.mat-head .n{width:34px;height:34px;flex:0 0 auto;border-radius:11px;background:rgba(255,255,255,.2);display:grid;place-items:center;font-family:var(--fd);font-weight:700;font-size:17px}
+.mat-head h2{font-size:19px;font-weight:700;flex:1}
+.mat-head .cnt{font-size:13px;font-weight:700;background:rgba(255,255,255,.18);border-radius:999px;padding:4px 12px;white-space:nowrap}
+.mat-sub{padding:11px 20px 4px;font-size:13.5px;color:var(--muted)}
+.les{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:11px;padding:14px 18px 20px}
+.les a{display:flex;align-items:center;gap:11px;padding:11px 14px;background:#faf7f0;border:1px solid var(--line);border-inline-start:4px solid var(--sc,#2C6A4D);border-radius:13px;text-decoration:none;color:var(--ink);font-size:14.5px;font-weight:700;line-height:1.55;transition:transform .12s,box-shadow .12s}
+.les a:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(20,40,35,.1);background:#fff}
+.les a .ln{width:30px;height:30px;flex:0 0 auto;border-radius:9px;background:var(--sc,#2C6A4D);color:#fff;display:grid;place-items:center;font-family:var(--fd);font-weight:700;font-size:14px}
+.les a .arrow{margin-inline-start:auto;color:var(--sc,#2C6A4D);font-weight:700;opacity:.7}
+/* ===== footer note ===== */
+.note{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);border-radius:16px;padding:15px 18px;font-size:14px;color:#5b4412;line-height:1.9}
+.foot{text-align:center;font-size:12.5px;color:var(--muted);padding-top:6px}
+@media(max-width:560px){.hero h1{font-size:26px}.hero-in{padding:24px 20px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="crumb"><a href="index.html">الرئيسية</a> ← وحدة أنا مخلوق كرّمني الله</div>
+
+  <!-- ═══════════ الغلاف ═══════════ -->
+  <div class="hero">
+    <div class="hero-photo"></div>
+    <div class="hero-in">
+      <span class="badge">الوحدة الأولى · مجمّع اللقاءات</span>
+      <h1>وحدة أنا مخلوقٌ كرّمني الله</h1>
+      <p>وحدةٌ متكاملةٌ تغرس في الطفل أنّ الله خلقه وكرّمه وأعدّه بالحواسّ والعقل، وتربط ذلك بتدبّر كلام الله ومعرفة أسمائه واتّباع نبيّه ﷺ وحسن الأدب والمهارة. تضمّ <b>سبع موادّ أساسيّة + مركزين تطبيقيّين</b>؛ اختاري المادّة ثم اللقاء لعرض دليله كاملًا.</p>
+      <div class="chips">
+        <span>📚 ٩ موادّ</span><span>📖 ٦٣ لقاءً</span><span>🕋 سورة النبأ</span><span>🌿 أسماء الله: الرب · الصمد</span><span>⏱️ ٣٠ دقيقة/لقاء</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ علّمني ربي ═══════════ -->
+  <section class="mat" style="--sc:#2C6A4D">
+    <div class="mat-head"><span class="n">١</span><h2>علّمني ربي</h2><span class="cnt">١٢ لقاءً</span></div>
+    <div class="mat-sub">التوحيد والتفكّر: الله الخالق الهادي، وتكريم الإنسان بالعلم، والتفكّر في مخلوقات الله.</div>
+    <div class="les">
+      <a href="am-allamni-lesson1.html" target="_blank" rel="noopener"><span class="ln">١</span>الله الخالق<span class="arrow">↗</span></a>
+      <a href="am-allamni-lesson2.html" target="_blank" rel="noopener"><span class="ln">٢</span>مراحل خلق الإنسان<span class="arrow">↗</span></a>
+      <a href="am-allamni-lesson3.html" target="_blank" rel="noopener"><span class="ln">٣</span>مفاتيح التعلّم ١<span class="arrow">↗</span></a>
+      <a href="am-allamni-lesson4.html" target="_blank" rel="noopener"><span class="ln">٤</span>مفاتيح التعلّم ٢<span class="arrow">↗</span></a>
+      <a href="am-allamni-lesson5.html" target="_blank" rel="noopener"><span class="ln">٥</span>تكريم آدم بالعلم<span class="arrow">↗</span></a>
+      <a href="am-allamni-lesson6.html" target="_blank" rel="noopener"><span class="ln">٦</span>الله الهادي<span class="arrow">↗</span></a>
+      <a href="am-allamni-lesson7.html" target="_blank" rel="noopener"><span class="ln">٧</span>مفهوم التفكّر<span class="arrow">↗</span></a>
+      <a href="am-allamni-lesson8.html" target="_blank" rel="noopener"><span class="ln">٨</span>التفكّر في النباتات<span class="arrow">↗</span></a>
+      <a href="am-allamni-lesson9.html" target="_blank" rel="noopener"><span class="ln">٩</span>قصة رغيف الخبز<span class="arrow">↗</span></a>
+      <a href="am-allamni-lesson10.html" target="_blank" rel="noopener"><span class="ln">١٠</span>التفكّر في النحلة<span class="arrow">↗</span></a>
+      <a href="am-allamni-lesson11.html" target="_blank" rel="noopener"><span class="ln">١١</span>التفكّر في النمل<span class="arrow">↗</span></a>
+      <a href="am-allamni-lesson12.html" target="_blank" rel="noopener"><span class="ln">١٢</span>التفكّر في البحار<span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <!-- ═══════════ كتابي المنير ═══════════ -->
+  <section class="mat" style="--sc:#1E5631">
+    <div class="mat-head"><span class="n">٢</span><h2>كتابي المنير</h2><span class="cnt">١٠ لقاءات</span></div>
+    <div class="mat-sub">سورة النبأ: علومها ومعانيها وتدبّر آياتها والتسميع.</div>
+    <div class="les">
+      <a href="am-kitabi-lesson1.html" target="_blank" rel="noopener"><span class="ln">١</span>علوم سورة النبأ<span class="arrow">↗</span></a>
+      <a href="am-kitabi-lesson2.html" target="_blank" rel="noopener"><span class="ln">٢</span>معنى لفظ النبأ<span class="arrow">↗</span></a>
+      <a href="am-kitabi-lesson3.html" target="_blank" rel="noopener"><span class="ln">٣</span>الألفاظ المتكرّرة وأسماء الله<span class="arrow">↗</span></a>
+      <a href="am-kitabi-lesson4.html" target="_blank" rel="noopener"><span class="ln">٤</span>مفهوم التدبّر والآيات ١–٥<span class="arrow">↗</span></a>
+      <a href="am-kitabi-lesson5.html" target="_blank" rel="noopener"><span class="ln">٥</span>الآيات ٦–١٦: دلائل القدرة<span class="arrow">↗</span></a>
+      <a href="am-kitabi-lesson6.html" target="_blank" rel="noopener"><span class="ln">٦</span>الآيات ١٧–٢٠: يوم الفصل<span class="arrow">↗</span></a>
+      <a href="am-kitabi-lesson7.html" target="_blank" rel="noopener"><span class="ln">٧</span>الآيات ٢١–٣٠: جزاء المكذّبين<span class="arrow">↗</span></a>
+      <a href="am-kitabi-lesson8.html" target="_blank" rel="noopener"><span class="ln">٨</span>الآيات ٣١–٣٦: جزاء المتّقين<span class="arrow">↗</span></a>
+      <a href="am-kitabi-lesson9.html" target="_blank" rel="noopener"><span class="ln">٩</span>الآيات ٣٧–٤٠: عظمة الله<span class="arrow">↗</span></a>
+      <a href="am-kitabi-lesson10.html" target="_blank" rel="noopener"><span class="ln">١٠</span>التسميع لمن حفظ<span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <!-- ═══════════ لساني عربي ═══════════ -->
+  <section class="mat" style="--sc:#0E6E6B">
+    <div class="mat-head"><span class="n">٣</span><h2>لساني عربي</h2><span class="cnt">١٣ لقاءً</span></div>
+    <div class="mat-sub">الإدراك السمعي والبصري، وحروف الباء والدال واللام والميم ومواضعها.</div>
+    <div class="les">
+      <a href="am-lisani-lesson1.html" target="_blank" rel="noopener"><span class="ln">١</span>الإدراك السمعي: الوعي الصوتي<span class="arrow">↗</span></a>
+      <a href="am-lisani-lesson2.html" target="_blank" rel="noopener"><span class="ln">٢</span>الإدراك البصري: الذاكرة البصرية<span class="arrow">↗</span></a>
+      <a href="am-lisani-lesson3.html" target="_blank" rel="noopener"><span class="ln">٣</span>السمعي: التركيز والاستجابة للأوامر<span class="arrow">↗</span></a>
+      <a href="am-lisani-lesson4.html" target="_blank" rel="noopener"><span class="ln">٤</span>البصري: التكامل البصري الحركي<span class="arrow">↗</span></a>
+      <a href="am-lisani-lesson5.html" target="_blank" rel="noopener"><span class="ln">٥</span>السمعي: التمييز السمعي<span class="arrow">↗</span></a>
+      <a href="am-lisani-lesson6.html" target="_blank" rel="noopener"><span class="ln">٦</span>التعرّف على حرف الباء<span class="arrow">↗</span></a>
+      <a href="am-lisani-lesson7.html" target="_blank" rel="noopener"><span class="ln">٧</span>مواضع حرف الباء<span class="arrow">↗</span></a>
+      <a href="am-lisani-lesson8.html" target="_blank" rel="noopener"><span class="ln">٨</span>التعرّف على حرف الدال<span class="arrow">↗</span></a>
+      <a href="am-lisani-lesson9.html" target="_blank" rel="noopener"><span class="ln">٩</span>مواضع حرف الدال<span class="arrow">↗</span></a>
+      <a href="am-lisani-lesson10.html" target="_blank" rel="noopener"><span class="ln">١٠</span>مواضع حرف اللام<span class="arrow">↗</span></a>
+      <a href="am-lisani-lesson11.html" target="_blank" rel="noopener"><span class="ln">١١</span>التعرّف على حرف الميم<span class="arrow">↗</span></a>
+      <a href="am-lisani-lesson12.html" target="_blank" rel="noopener"><span class="ln">١٢</span>الذاكرة السمعية (لعبة الهمس)<span class="arrow">↗</span></a>
+      <a href="am-lisani-lesson13.html" target="_blank" rel="noopener"><span class="ln">١٣</span>الإدراك البصري: الاتجاهات الستّ<span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <!-- ═══════════ مهاراتي ═══════════ -->
+  <section class="mat" style="--sc:#1E5631">
+    <div class="mat-head"><span class="n">٤</span><h2>مهاراتي</h2><span class="cnt">٦ لقاءات</span></div>
+    <div class="mat-sub">الأرقام والمعدودات ومفهوم الأشكال الهندسية بالمحسوس.</div>
+    <div class="les">
+      <a href="am-maharati-lesson1.html" target="_blank" rel="noopener"><span class="ln">١</span>الأرقام والمعدودات من ١ إلى ٦<span class="arrow">↗</span></a>
+      <a href="am-maharati-lesson2.html" target="_blank" rel="noopener"><span class="ln">٢</span>الأرقام والمعدودات من ٧ إلى ١٠<span class="arrow">↗</span></a>
+      <a href="am-maharati-lesson3.html" target="_blank" rel="noopener"><span class="ln">٣</span>الأرقام ٠ و١ و٢ — قصة لولوة والبيض<span class="arrow">↗</span></a>
+      <a href="am-maharati-lesson4.html" target="_blank" rel="noopener"><span class="ln">٤</span>مفهوم الأشكال الهندسية<span class="arrow">↗</span></a>
+      <a href="am-maharati-lesson5.html" target="_blank" rel="noopener"><span class="ln">٥</span>الرقمان ٣ و٤<span class="arrow">↗</span></a>
+      <a href="am-maharati-lesson6.html" target="_blank" rel="noopener"><span class="ln">٦</span>الأشكال الهندسية الأربعة الأساسية<span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <!-- ═══════════ أدب واقتداء ═══════════ -->
+  <section class="mat" style="--sc:#55702B">
+    <div class="mat-head"><span class="n">٥</span><h2>أدب واقتداء</h2><span class="cnt">٣ لقاءات</span></div>
+    <div class="mat-sub">آداب اللباس اقتداءً بالنبي ﷺ: ستر العورة والتيامن ودعاء الثوب الجديد.</div>
+    <div class="les">
+      <a href="am-adab-lesson1.html" target="_blank" rel="noopener"><span class="ln">١</span>ستر العورة وشكر نعمة اللباس<span class="arrow">↗</span></a>
+      <a href="am-adab-lesson2.html" target="_blank" rel="noopener"><span class="ln">٢</span>التيامن في اللباس<span class="arrow">↗</span></a>
+      <a href="am-adab-lesson3.html" target="_blank" rel="noopener"><span class="ln">٣</span>دعاء لبس الثوب الجديد<span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <!-- ═══════════ أحبّك ربّي ═══════════ -->
+  <section class="mat" style="--sc:#8660A8">
+    <div class="mat-head"><span class="n">٦</span><h2>أحبّك ربّي</h2><span class="cnt">٨ لقاءات</span></div>
+    <div class="mat-sub">أسماء الله الحسنى: اسم الله «الرب» (١–٤) واسم الله «الصمد» (١–٤).</div>
+    <div class="les">
+      <a href="am-ohb-lesson1.html" target="_blank" rel="noopener"><span class="ln">١</span>الرب (١): ربّي خلقني وأعدّني<span class="arrow">↗</span></a>
+      <a href="am-ohb-lesson2.html" target="_blank" rel="noopener"><span class="ln">٢</span>الرب (٢): ربّ العالمين والمخلوقات<span class="arrow">↗</span></a>
+      <a href="am-ohb-lesson3.html" target="_blank" rel="noopener"><span class="ln">٣</span>الرب (٣): أمدّني بالنعم<span class="arrow">↗</span></a>
+      <a href="am-ohb-lesson4.html" target="_blank" rel="noopener"><span class="ln">٤</span>الرب (٤): قصة إبراهيم عليه السلام<span class="arrow">↗</span></a>
+      <a href="am-ohb-lesson5.html" target="_blank" rel="noopener"><span class="ln">٥</span>الصمد (١): معناه وموطن ذكره<span class="arrow">↗</span></a>
+      <a href="am-ohb-lesson6.html" target="_blank" rel="noopener"><span class="ln">٦</span>الصمد (٢): حاجة الإنسان لربّه<span class="arrow">↗</span></a>
+      <a href="am-ohb-lesson7.html" target="_blank" rel="noopener"><span class="ln">٧</span>الصمد (٣): قصة الاستسقاء<span class="arrow">↗</span></a>
+      <a href="am-ohb-lesson8.html" target="_blank" rel="noopener"><span class="ln">٨</span>الصمد (٤): ثمرات الإيمان<span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <!-- ═══════════ قال رسولي ═══════════ -->
+  <section class="mat" style="--sc:#96683a">
+    <div class="mat-head"><span class="n">٧</span><h2>قال رسولي</h2><span class="cnt">٣ لقاءات</span></div>
+    <div class="mat-sub">السيرة والحديث: حديث «احفظ الله يحفظك» — علومه ومعانيه ووصاياه.</div>
+    <div class="les">
+      <a href="am-rasuli-lesson1.html" target="_blank" rel="noopener"><span class="ln">١</span>علوم الحديث والتعريف بالراوي<span class="arrow">↗</span></a>
+      <a href="am-rasuli-lesson2.html" target="_blank" rel="noopener"><span class="ln">٢</span>معاني الحديث: احفظ الله يحفظك<span class="arrow">↗</span></a>
+      <a href="am-rasuli-lesson3.html" target="_blank" rel="noopener"><span class="ln">٣</span>إذا سألت فاسأل الله<span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <!-- ═══════════ مركز اللغة ═══════════ -->
+  <section class="mat" style="--sc:#0d6e6e">
+    <div class="mat-head"><span class="n">٨</span><h2>مركز اللغة — لقاءات تطبيقية</h2><span class="cnt">٣ لقاءات</span></div>
+    <div class="mat-sub">تطبيقٌ عمليّ للساني عربي: إدراكٌ سمعيّ واستعدادٌ كتابيّ بلعبٍ حرٍّ بالأدوات.</div>
+    <div class="les">
+      <a href="am-markaz-lugha-lesson1.html" target="_blank" rel="noopener"><span class="ln">١</span>مطابقة الصوت بالصورة<span class="arrow">↗</span></a>
+      <a href="am-markaz-lugha-lesson2.html" target="_blank" rel="noopener"><span class="ln">٢</span>محاكاة الخطوط على ورق المشاريع<span class="arrow">↗</span></a>
+      <a href="am-markaz-lugha-lesson3.html" target="_blank" rel="noopener"><span class="ln">٣</span>مكعّب الخطوط<span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <!-- ═══════════ مركز الرياضيات ═══════════ -->
+  <section class="mat" style="--sc:#1E5631">
+    <div class="mat-head"><span class="n">٩</span><h2>مركز الرياضيات — لقاءات تطبيقية</h2><span class="cnt">٥ لقاءات</span></div>
+    <div class="mat-sub">تطبيقٌ عمليّ لمهاراتي: عدٌّ وتصنيفٌ وتمييزُ أشكالٍ بلعبٍ حرٍّ بالأدوات.</div>
+    <div class="les">
+      <a href="am-markaz-math-lesson1.html" target="_blank" rel="noopener"><span class="ln">١</span>ترتيب البطاقات وفرقعة البالونات<span class="arrow">↗</span></a>
+      <a href="am-markaz-math-lesson2.html" target="_blank" rel="noopener"><span class="ln">٢</span>ترتيب أرقام الساعة والمعدودات<span class="arrow">↗</span></a>
+      <a href="am-markaz-math-lesson3.html" target="_blank" rel="noopener"><span class="ln">٣</span>قفاز العدّ والبحث عن الرقم<span class="arrow">↗</span></a>
+      <a href="am-markaz-math-lesson4.html" target="_blank" rel="noopener"><span class="ln">٤</span>عدسة الأشكال<span class="arrow">↗</span></a>
+      <a href="am-markaz-math-lesson5.html" target="_blank" rel="noopener"><span class="ln">٥</span>أكواب تصنيف الأرقام<span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <div class="note"><strong>ملاحظة:</strong> كلّ لقاءٍ يُفتح صفحةً كاملةً في تبويبٍ جديد (تصميم الصناديق المرسومة بتسعة تبويبات للموادّ الأساسية، وصفحةٌ تطبيقيّةٌ مستقلّة للمركزين). الموادّ مرتّبةٌ حسب بنائها في الوحدة؛ ويرجع ترتيبُها اليوميّ إلى جدول الأسبوع في خطّة المعلمة.</div>
+
+  <div class="foot">وحدة أنا مخلوق كرّمني الله · ٦٣ لقاءً في ٩ موادّ · نادي غرس القيم لضيافة الأطفال</div>
+</div>
+</body>
+</html>
