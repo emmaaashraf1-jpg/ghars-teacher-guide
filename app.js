@@ -101,7 +101,7 @@
     var bar=doc.getElementById('pbar'); if(bar) bar.querySelector('i').style.width=(all.length?Math.round(done/all.length*100):0)+'%';
     var ptxt=doc.getElementById('progtxt'); if(ptxt) ptxt.textContent='أنجزتِ '+done+' من '+all.length+' لقاءً';
     // علامات على تبويبات المواد لليوم النشط
-    var day=doc.querySelector('.daypanel.active'); if(day){ [].forEach.call(day.querySelectorAll('.subpanel'),function(sp,i){ var f=sp.querySelector('iframe'); var st=day.querySelectorAll('.subtab')[i]; if(f&&st){ st.classList.toggle('done',!!p[f.getAttribute('data-src')]); if(!st.querySelector('.done-dot')) st.insertAdjacentHTML('beforeend','<span class="done-dot">'+svg(I.check,'')+'</span>'); } }); }
+    var day=doc.querySelector('.daypanel.active'); if(day){ [].forEach.call(day.querySelectorAll('.subpanel'),function(sp,i){ var f=sp.querySelector('iframe'); var st=day.querySelector('.subtab[data-s="'+sp.getAttribute('data-s')+'"]'); if(f&&st){ st.classList.toggle('done',!!p[f.getAttribute('data-src')]); if(!st.querySelector('.done-dot')) st.insertAdjacentHTML('beforeend','<span class="done-dot">'+svg(I.check,'')+'</span>'); } }); }
     // اليوم مكتمل إن اكتملت كل موادّه
     [].forEach.call(doc.querySelectorAll('.daypanel'),function(dp){ var fs=[].slice.call(dp.querySelectorAll('.subpanel iframe')); var dt=doc.querySelector('.daytab[data-d="'+dp.id.replace('d','')+'"]'); if(dt&&fs.length) dt.classList.toggle('done',fs.every(function(f){return p[f.getAttribute('data-src')];})); });
     renderJourney();
@@ -137,7 +137,7 @@
       [].forEach.call(dp.querySelectorAll('.subpanel'),function(sp,i){
         var subjEl=sp.querySelector('.subj')||sp.querySelector('.rc-name'); var subj=subjEl?subjEl.textContent.trim():''; var ttlEl=sp.querySelector('h2')||sp.querySelector('.rc-name'); var ttl=ttlEl?ttlEl.textContent.trim():'';
         var color=(sp.querySelector('.day-head')||{style:{}}).style.getPropertyValue?getComputedStyle(sp.querySelector('.day-head')).getPropertyValue('--sc'):'';
-        INDEX.push({day:dnum,theme:theme,subj:subj,ttl:ttl,s:i+1,color:color,text:(subj+' '+ttl+' '+theme).toLowerCase()});
+        INDEX.push({day:dnum,theme:theme,subj:subj,ttl:ttl,s:(sp.getAttribute('data-s')||(i+1)),color:color,text:(subj+' '+ttl+' '+theme).toLowerCase()});
       });
     });
   }
