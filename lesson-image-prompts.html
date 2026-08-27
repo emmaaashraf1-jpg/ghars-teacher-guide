@@ -24,6 +24,19 @@ h1{font-size:23px;color:var(--t1);text-align:center;margin-bottom:4px}
 .corner .fn{font-family:ui-monospace,Consolas,monospace;font-size:11.5px;color:var(--t2);direction:ltr;text-align:left;margin-bottom:7px}
 .corner pre{white-space:pre-wrap;direction:ltr;text-align:left;font-family:ui-monospace,Consolas,monospace;font-size:12px;line-height:1.65;background:#f7f9f6;border:1px dashed #cfe0d8;border-radius:9px;padding:10px}
 @media print{body{background:#fff}.corner{box-shadow:none}}
+.tasks{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin:18px 0 8px;box-shadow:0 3px 10px rgba(20,40,35,.05)}
+.tasks h2{font-size:17px;color:var(--t1);margin-bottom:4px}
+.tasks .lead{font-size:12.5px;color:var(--muted);margin-bottom:6px}
+.phase{margin-top:12px}
+.phase h3{font-size:14.5px;color:var(--grn);border-inline-start:5px solid var(--gold);padding-inline-start:9px;margin-bottom:6px}
+.task{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--ink);padding:6px 0;border-bottom:1px dashed #eee3d0}
+.task:last-child{border-bottom:0}
+.st{flex:0 0 auto;font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap;text-align:center;min-width:96px}
+.st.done{background:#e6f4ea;color:#1e7a3e}
+.st.wait{background:#fbf1d8;color:#8a6a12}
+.st.todo{background:#eef0ee;color:#6b756e}
+.st.rev{background:#e7f0f6;color:#1b5a86}
+.task b{color:var(--t1);font-weight:700}
 </style>
 </head>
 <body>
@@ -42,6 +55,31 @@ h1{font-size:23px;color:var(--t1);text-align:center;margin-bottom:4px}
 <pre>Simple clean flat vector illustration for young children, friendly and cheerful, bold clear shapes, soft warm educational palette (forest green, ivory, muted gold, gentle earth tones), smooth minimal shading, thick rounded outlines, plain solid or very soft background. Modern kindergarten flash-card style. NO people, NO faces, NO animals with faces, NO readable text or letters, NO religious symbols of other faiths. 4:3, crisp, print-ready flash-card.</pre>
 </div>
 <div class="hint" style="border-inline-start-color:#7A4A9E;color:#4a2d6a"><b>بطاقات النصّ (آيات · حروف · حركات · أعداد):</b> لا تُولَّد صورةً (المولّدات تُشوّه الحروف العربية) — تُبنى مباشرةً في صفحة البطاقات بالـHTML بخطّ الدليل بنصٍّ دقيق. تُعلَّم في هذه الوثيقة بوسم <b>[بطاقة نصّ — HTML]</b>. واختاري روح (أ) الفوتوغرافيّة للمشاهد والأدوات الواقعيّة، و(ب) المسطّحة للمفاهيم والرموز.</div>
+
+<div class="tasks">
+<h2>📋 قائمة المهام — تتبّع الإنجاز</h2>
+<div class="lead">لكلّ لقاء: جردُ البطاقات ← قرارُ المعلمة (إبقاء/استبدال · وللأشخاص أ/ب) ← كتابةُ البرومبت ← تجميعُه في هذه الصفحة. تُحدَّث الحالة مع كلّ إنجاز.</div>
+
+<div class="phase"><h3>🅰 المسار الأساسيّ — برومبتات صور «علّمني ربي»</h3>
+<div class="task"><span class="st wait">بانتظار قرارك</span><span><b>م‌١.١</b> · العائلة · لقاء ١ — مفهوم العائلة (٩ بطاقات؛ فيها أفراد العائلة والعائلات الكبيرة = أشخاص)</span></div>
+<div class="task"><span class="st todo">لم يبدأ</span><span><b>م‌١.٢</b> · العائلة · لقاء ٢ — آداب التعامل</span></div>
+<div class="task"><span class="st todo">لم يبدأ</span><span><b>م‌١.٣</b> · العائلة · لقاء ٣ — برّ الوالدين</span></div>
+<div class="task"><span class="st todo">لم يبدأ</span><span><b>م‌١.٤</b> · العائلة · لقاء ٤ — مسؤوليات الأفراد</span></div>
+<div class="task"><span class="st wait">بانتظار اعتمادك</span><span><b>م‌١.٥</b> · العائلة · لقاء ٥ — عائلة النبي ﷺ (كُتِب برومبتا «سيرة مبسّطة» و«لوحة المحبّة»)</span></div>
+<div class="task"><span class="st rev">مراجعة</span><span><b>م‌٢</b> · المسكن · علّمني ١–٤ (موجودة بالصفحة) + إضافة النشاط المصاحب لكلّ لقاء</span></div>
+<div class="task"><span class="st todo">لم يبدأ</span><span><b>م‌٣</b> · أنا مخلوق · علّمني ١–١٤ (الأكبر · يحتاج قرارَك في تصوير الحيوان: نحلة/نمل/خيل/إبل)</span></div>
+<div class="task"><span class="st rev">مراجعة</span><span><b>م‌٤</b> · الليل والنهار · علّمني ١–٥ (برومبتات سابقة — سماويّة آمنة)</span></div>
+</div>
+
+<div class="phase"><h3>🅱 مسار مواز — بطاقات/وسائط معتمدة تُرسلينها (أنا مخلوق)</h3>
+<div class="task"><span class="st done">منجَز ✓</span><span>قال رسولي — بطاقة حديث «احفظ الله يحفظك» + الصوت (٣ لقاءات)</span></div>
+<div class="task"><span class="st done">منجَز ✓</span><span>أدب واقتداء · لقاء ١ — بطاقة آية الأعراف ٢٦ + التلاوة</span></div>
+<div class="task"><span class="st todo">بانتظار ملفّك</span><span><b>م‌ب‌١</b> · أدب لقاء ٢ (التيامن) — بطاقة + صوت</span></div>
+<div class="task"><span class="st todo">بانتظار ملفّك</span><span><b>م‌ب‌٢</b> · أدب لقاء ٣ (دعاء الثوب الجديد) — بطاقة + صوت</span></div>
+<div class="task"><span class="st todo">بانتظار ملفّك</span><span><b>م‌ب‌٣</b> · استبدال فيديو تلاوة الأعراف (١٤٫٥MB) بـmp3 خفيف</span></div>
+<div class="task"><span class="st todo">بانتظار ملفّك</span><span><b>م‌ب‌٤</b> · بقيّة مواد أنا مخلوق (كتابي · أحبك · لساني · مهاراتي · المركزان) — بطاقات/تلاوات ناقصة</span></div>
+</div>
+</div>
 
 <!-- ============ الليل والنهار ============ -->
 <div class="unit"><h2>وحدة الليل والنهار</h2>
