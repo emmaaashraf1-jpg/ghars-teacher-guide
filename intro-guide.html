@@ -2280,25 +2280,25 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 
 /* الصناديق: تعبئةٌ ورقيّة دافئة ناعمة بلا إطار حبريّ، بزوايا يدويّة وميلٍ طفيف وظلٍّ رقيق */
 :is(#start,#vision,#components,#subjects,#annual-plan,#dayflow,#fitness,#lesson,#signals,#corners,#songs,#manners,#assessment,#scope,#unit,#nutrition) :is(.gp-card,.resource-card,.refs-helper-card,.signal-material-card,.center-brief-card,.asset-card,.corner-library-card,.belief-card-item,.fitness-activity,.quick-card,.teacher-tip,.reference-card,.term-card,.subject-detail,.hpl-card,.loop-card,.cycle-card,.unit-data-card,.gp-eff,.subject-term-card,.corner-op){
-  border:0!important;
-  border-radius:20px 10px 22px 12px/12px 20px 10px 22px!important;
-  box-shadow:0 8px 22px -12px rgba(30,46,41,.20)!important;
-  background:radial-gradient(85% 120% at 88% 6%, rgba(44,106,77,.18), rgba(44,106,77,0) 62%), radial-gradient(95% 110% at 6% 96%, rgba(199,154,59,.16), rgba(199,154,59,0) 58%), #FCF6E8!important;
-  transform:rotate(-.4deg)}
+  border:1px solid var(--gp-line)!important;
+  border-radius:16px!important;
+  box-shadow:0 10px 26px -20px rgba(31,74,57,.40)!important;
+  background:linear-gradient(162deg,#fff,#FBF9F2)!important;
+  transform:none!important}
 :is(#start,#vision,#components,#subjects,#annual-plan,#dayflow,#fitness,#lesson,#signals,#corners,#songs,#manners,#assessment,#scope,#unit,#nutrition) :is(.gp-card,.resource-card,.refs-helper-card,.signal-material-card,.center-brief-card,.asset-card,.corner-library-card,.belief-card-item,.fitness-activity,.quick-card,.teacher-tip,.reference-card,.term-card,.hpl-card,.loop-card,.cycle-card,.unit-data-card,.subject-term-card):nth-of-type(even){
-  border-radius:10px 22px 12px 20px/22px 12px 20px 10px!important;
-  transform:rotate(.4deg)}
+  border-radius:16px!important;
+  transform:none!important}
 
 /* ===== تعبئاتٌ لونيّة متمايزة حسب نوع الصندوق (كما في القالب: نعناعيّ · ذهبيّ · فيروزيّ · غسلٌ بلون العنصر) ===== */
 /* نعناعيّ أخضر — بطاقات المحتوى والتطبيق */
 :is(#start,#vision,#components,#subjects,#annual-plan,#dayflow,#fitness,#lesson,#signals,#corners,#songs,#manners,#assessment,#scope,#unit,#nutrition) :is(.quick-card,.belief-card-item,.fitness-activity,.hpl-card,.resource-card,.corner-op,.gp-eff){
-  background:radial-gradient(85% 120% at 88% 6%, rgba(96,150,118,.32), rgba(96,150,118,0) 62%), radial-gradient(95% 110% at 6% 96%, rgba(200,224,178,.42), rgba(200,224,178,0) 58%), #E3F0E1!important}
+  background:linear-gradient(162deg,#fff,#FBF9F2)!important}
 /* ذهبيّ كريميّ — المراجع والوسائل والملاحظات */
 :is(#start,#vision,#components,#subjects,#annual-plan,#dayflow,#fitness,#lesson,#signals,#corners,#songs,#manners,#assessment,#scope,#unit,#nutrition) :is(.teacher-tip,.asset-card,.corner-library-card,.cycle-card,.unit-data-card){
-  background:radial-gradient(85% 120% at 88% 6%, rgba(199,154,59,.36), rgba(199,154,59,0) 62%), radial-gradient(95% 110% at 6% 96%, rgba(44,106,77,.14), rgba(44,106,77,0) 58%), #F5E6C0!important}
+  background:linear-gradient(162deg,#fff,#FBF9F2)!important}
 /* فيروزيّ — الأسئلة والإشارات والتقويم */
 :is(#start,#vision,#components,#subjects,#annual-plan,#dayflow,#fitness,#lesson,#signals,#corners,#songs,#manners,#assessment,#scope,#unit,#nutrition) :is(.reference-card,.refs-helper-card,.center-brief-card,.loop-card,.subject-detail){
-  background:radial-gradient(85% 120% at 88% 6%, rgba(72,163,159,.34), rgba(72,163,159,0) 62%), radial-gradient(95% 110% at 6% 96%, rgba(199,154,59,.12), rgba(199,154,59,0) 58%), #D8EBE8!important}
+  background:linear-gradient(162deg,#fff,#FBF9F2)!important}
 /* غسلٌ خفيفٌ بلون العنصر نفسه (كلٌّ بحسب لونه) */
 #signals .signal-material-card{background:color-mix(in srgb, var(--accent,#0E6E6B) 15%, #FFFDF7)!important}
 #annual-plan .subject-term-card,#subjects .subject-term-card,#subjects .term-card,#scope .term-card{background:color-mix(in srgb, var(--subject,var(--accent,#2C6A4D)) 13%, #FFFDF7)!important}
