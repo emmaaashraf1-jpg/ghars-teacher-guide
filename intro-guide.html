@@ -1943,6 +1943,17 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 .cover .cover-orn,.cover .cover-orn *{color:#2C6A4D!important}
 .cover .subtitle{color:#3d4a40!important;text-shadow:0 1px 8px rgba(255,253,246,.82)!important}
 .cover .cover-tags span{color:#1F4A39!important;background:rgba(255,255,255,.68)!important;border:1px solid rgba(31,74,57,.2)!important;text-shadow:none!important}
+/* ===== نموذج الرقيّ (اقتباس USD Halo ضمن هويّة غرس) — تبويب «ابدئي من هنا» ===== */
+#start .gp-hero{position:relative}
+#start .gp-hero::before{content:"";position:absolute;z-index:0;inset:-54px -72px -24px -72px;pointer-events:none;
+  background:radial-gradient(48% 62% at 80% 24%,rgba(199,154,59,.17),transparent 62%),radial-gradient(44% 60% at 9% 84%,rgba(76,154,110,.13),transparent 60%),radial-gradient(40% 52% at 52% 112%,rgba(46,106,77,.09),transparent 60%)}
+#start .gp-hero>*{position:relative;z-index:1}
+#start .gp-head{margin-top:16px}
+#start .gp-sechead{margin-top:clamp(54px,6vw,80px)!important}
+#start .gp-cards{gap:clamp(18px,2vw,26px)!important}
+#start .gp-card{transition:transform .32s var(--gp-ease),box-shadow .32s var(--gp-ease),border-color .3s!important}
+#start .gp-card:hover{transform:translateY(-6px)!important;box-shadow:0 30px 56px -26px rgba(31,74,57,.34),0 0 0 1.5px rgba(199,154,59,.42)!important;border-color:transparent!important}
+#start .gp-card:hover .gp-card-img{transform:scale(1.05)}
 </style>
 <style id="gp-wahy-vision">
 /* منظومة الوحي في تبويب الرؤية — التصميم المائيّ الجديد (الوضع الثابت من الرئيسية) */
