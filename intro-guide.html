@@ -775,15 +775,13 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <section class="cover">
 <div class="hero-x">
 <span class="cover-kicker">نادي غرس القيم للطفولة · إصدار المعلمة</span>
-<div class="hero-badge-x"><img alt="شعار غرس القيم" src="intro-assets/img_f995567352da.png"/></div>
 <div class="hero-copy-x">
 <h1>الدليل التعريفي والتشغيلي للمنهج</h1>
-<div class="cover-orn" aria-hidden="true"><i></i><b>◆</b><i></i></div>
 <p class="subtitle">منظومة تربوية متكاملة تبدأ من الوحي، وتصل إلى المعرفة والمهارة والسلوك عبر لقاءات قصيرة، وأركان تطبيقية، وآداب صفية حية.</p>
 <div class="cover-tags"><span>مرجعية الوحي</span><span>تكامل المواد</span><span>التعلم باللعب</span><span>التربية بالموقف</span></div>
-<span class="teacher-edition">دليل المعلمة · مرحلة التمهيدي</span>
 </div>
 </div>
+<div class="cover-scene"><img class="cover-scene-img" src="assets/units-art/intro-cover-scene.jpg" alt="" aria-hidden="true"></div>
 </section>
 <template id="__bundler_thumbnail" data-bg-color="#1F4A39">
 <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
@@ -1933,8 +1931,11 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 /* غلافٌ بلا إطار، متسامٍ مع ما تحته (بروح Velorah): شفّافٌ متّصل + عنوانٌ ضخمٌ متمركز محكم */
 .cover{background:transparent!important;position:relative;overflow:visible!important;min-height:0!important;border:0!important;box-shadow:none!important}
 .cover::before{display:none!important}
-.cover::after{display:block!important;content:"";position:absolute;inset:-6% -18% 0 -18%;z-index:0;pointer-events:none;background:radial-gradient(46% 80% at 50% 0%,rgba(199,154,59,.15),rgba(199,154,59,0) 62%),radial-gradient(40% 66% at 84% 6%,rgba(76,154,110,.10),transparent 60%),radial-gradient(38% 64% at 8% 10%,rgba(46,106,77,.08),transparent 60%);-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent)!important;mask-image:linear-gradient(180deg,#000 62%,transparent)!important;border:0!important;box-shadow:none!important;border-radius:0!important}
-.cover .hero-x{position:relative;z-index:2;display:flex!important;flex-direction:column;align-items:center;text-align:center;max-width:900px;margin:0 auto;padding:clamp(60px,9vw,116px) clamp(24px,5vw,48px) clamp(18px,3vw,34px)!important}
+.cover::after{display:none!important}
+.cover .hero-x{position:relative;z-index:2;display:flex!important;flex-direction:column;align-items:center;text-align:center;max-width:900px;margin:0 auto;padding:clamp(48px,7vw,92px) clamp(24px,5vw,48px) clamp(6px,1.4vw,16px)!important}
+/* الصورة المائيّة المتماهية: حوافُّها البيضاء تذوب في ورق الصفحة عبر multiply */
+.cover .cover-scene{position:relative;z-index:1;display:flex;justify-content:center;margin:0 auto;padding:0 clamp(8px,2vw,24px) clamp(6px,1.5vw,18px)}
+.cover .cover-scene-img{width:min(100%,1080px);height:auto;display:block;mix-blend-mode:multiply}
 .cover .cover-kicker{display:inline-flex!important;align-items:center;gap:10px;color:var(--gp-ochre-dark)!important;background:transparent!important;font-family:'AlAwwal','Amiri',serif;font-weight:700;font-size:12.5px!important;letter-spacing:.03em;margin-bottom:22px!important;text-shadow:none!important;padding:0!important}
 .cover .cover-kicker::before,.cover .cover-kicker::after{content:"";width:28px;height:1px;background:currentColor;opacity:.5}
 .cover .hero-badge-x{margin:0 0 22px!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
