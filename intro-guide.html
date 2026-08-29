@@ -774,16 +774,16 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="topline"></div>
 <section class="cover">
 <div class="hero-x">
-<div class="hero-copy-x">
 <span class="cover-kicker">نادي غرس القيم للطفولة · إصدار المعلمة</span>
+<div class="hero-badge-x"><img alt="شعار غرس القيم" src="intro-assets/img_f995567352da.png"/></div>
+<div class="hero-copy-x">
 <h1>الدليل التعريفي والتشغيلي للمنهج</h1>
+<div class="cover-orn" aria-hidden="true"><i></i><b>◆</b><i></i></div>
 <p class="subtitle">منظومة تربوية متكاملة تبدأ من الوحي، وتصل إلى المعرفة والمهارة والسلوك عبر لقاءات قصيرة، وأركان تطبيقية، وآداب صفية حية.</p>
 <div class="cover-tags"><span>مرجعية الوحي</span><span>تكامل المواد</span><span>التعلم باللعب</span><span>التربية بالموقف</span></div>
 <span class="teacher-edition">دليل المعلمة · مرحلة التمهيدي</span>
 </div>
-<div class="cover-emblem"><span class="ring" aria-hidden="true"></span><div class="hero-badge-x"><img alt="شعار غرس القيم" src="intro-assets/img_f995567352da.png"/></div></div>
 </div>
-<div class="cover-marquee"><div class="cover-marquee-track"><span>علّمني ربي</span><span>·</span><span>كتابي المنير</span><span>·</span><span>أحبك ربي</span><span>·</span><span>لساني عربي</span><span>·</span><span>مهاراتي</span><span>·</span><span>قال رسولي</span><span>·</span><span>أدب واقتداء</span><span>·</span><span>علّمني ربي</span><span>·</span><span>كتابي المنير</span><span>·</span><span>أحبك ربي</span><span>·</span><span>لساني عربي</span><span>·</span><span>مهاراتي</span><span>·</span><span>قال رسولي</span><span>·</span><span>أدب واقتداء</span><span>·</span></div></div>
 </section>
 <template id="__bundler_thumbnail" data-bg-color="#1F4A39">
 <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
@@ -1930,29 +1930,19 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </style>
 <style id="gp-cover-blend">
 /* غلاف الدليل: لوحةٌ مائية مضيئة متماهية (كالرئيسية) — بلا تعتيم + نصّ غابيّ غامق بهالة فاتحة */
-/* بطل USD Halo الغابيّ: هالةٌ ذهبيّة + عمودان + شريطٌ متحرّك */
-.cover{background:radial-gradient(120% 92% at 82% 8%,#255A43,transparent 55%),radial-gradient(96% 82% at 4% 100%,#0f2419,transparent 60%),#16382a!important;position:relative;overflow:hidden;min-height:0!important}
+.cover{background:radial-gradient(72% 58% at 50% 38%,rgba(199,154,59,.12),rgba(199,154,59,0) 60%),radial-gradient(58% 52% at 10% 92%,rgba(76,154,110,.10),rgba(76,154,110,0) 58%),radial-gradient(54% 46% at 92% 8%,rgba(46,106,77,.08),rgba(46,106,77,0) 60%),#FBF9F2!important;position:relative;overflow:hidden;min-height:0!important}
+.cover>.hero-x{position:relative;z-index:2;padding-top:58px!important;padding-bottom:50px!important}
 .cover::before{display:none!important}
-.cover::after{display:block!important;content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(32% 40% at 76% 44%,rgba(232,200,119,.42),rgba(199,154,59,.1) 46%,transparent 68%)!important;-webkit-mask-image:none!important;mask-image:none!important;border:0!important;box-shadow:none!important;border-radius:0!important}
-.cover .hero-x{position:relative;z-index:2;display:grid!important;grid-template-columns:1.05fr .92fr;gap:clamp(22px,4vw,48px);align-items:center;padding:clamp(54px,8vw,92px) clamp(24px,5vw,58px) clamp(24px,3.4vw,38px)!important;max-width:1240px;margin:0 auto}
-.cover .hero-copy-x{text-align:start}
-.cover .cover-kicker{display:inline-flex!important;align-items:center;gap:10px;color:#E8C877!important;background:transparent!important;font-family:'AlAwwal','Amiri',serif;font-weight:700;font-size:12.5px!important;letter-spacing:.02em;margin-bottom:16px;text-shadow:none!important;padding:0!important}
-.cover .cover-kicker::before{content:"";width:24px;height:1px;background:currentColor;opacity:.6}
-.cover .hero-copy-x h1{color:#fff!important;font-family:'AlAwwal','Amiri',serif!important;font-size:clamp(38px,5.6vw,74px)!important;line-height:1.08!important;letter-spacing:-.5px!important;margin:0 0 18px!important;text-shadow:none!important;max-width:16ch}
-.cover .cover-orn{display:none!important}
-.cover .subtitle{color:rgba(251,249,242,.82)!important;font-size:clamp(14px,1.7vw,17px)!important;line-height:2!important;max-width:46ch;margin:0 0 22px!important;text-shadow:none!important}
-.cover .cover-tags{display:flex;flex-wrap:wrap;gap:8px;margin:0}
-.cover .cover-tags span{color:#fff!important;background:rgba(255,255,255,.08)!important;border:1px solid rgba(232,200,119,.32)!important;border-radius:999px!important;padding:6px 14px!important;font-size:12px!important;text-shadow:none!important}
-.cover .teacher-edition{display:inline-block;margin-top:18px!important;padding:9px 18px!important;border-radius:999px!important;background:var(--gp-gold)!important;color:#241a04!important;font-weight:700;border:0!important;letter-spacing:0!important}
-.cover .cover-emblem{position:relative;display:grid;place-items:center;min-height:250px}
-.cover .cover-emblem .ring{position:absolute;width:min(340px,86%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 42%,rgba(232,200,119,.85),rgba(199,154,59,.28) 42%,transparent 70%);filter:blur(3px)}
-.cover .cover-emblem .hero-badge-x{position:relative;z-index:1;width:min(206px,54%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 30%,#fff,#F6EFDC 60%,#EAD9AE);box-shadow:0 30px 66px -20px rgba(0,0,0,.5),inset 0 0 0 7px rgba(255,255,255,.4);display:grid!important;place-items:center;padding:0!important;border:0!important;margin:0!important}
-.cover .cover-emblem .hero-badge-x img{width:66%!important;height:auto;filter:none}
-.cover .cover-marquee{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.13);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.cover .cover-marquee-track{display:flex;gap:clamp(22px,4vw,46px);width:max-content;padding:13px clamp(24px,5vw,58px);animation:coverScroll 30s linear infinite;color:rgba(251,249,242,.7);font-family:'AlAwwal','Amiri',serif;font-weight:700;font-size:14px;white-space:nowrap}
-@keyframes coverScroll{to{transform:translateX(50%)}}
-@media(prefers-reduced-motion:reduce){.cover .cover-marquee-track{animation:none}}
-@media(max-width:820px){.cover .hero-x{grid-template-columns:1fr;text-align:center}.cover .cover-emblem{order:-1;min-height:190px;margin-bottom:6px}.cover .cover-kicker{justify-content:center}.cover .hero-copy-x{text-align:center}.cover .cover-tags{justify-content:center}.cover .hero-copy-x h1{margin-inline:auto}}
+.cover::after{display:block!important;content:"";position:absolute;inset:0;z-index:0;
+  background:radial-gradient(86% 60% at 50% 47%,rgba(251,249,242,.3),rgba(251,249,242,.08) 42%,rgba(251,249,242,0) 66%),url('units-art/intro-cover-alpha.png?v=1') center 47%/97% no-repeat;
+  -webkit-mask-image:none!important;mask-image:none!important;
+  border:0!important;box-shadow:none!important;border-radius:0!important}
+/* نصّ غامق مقروء على اللوحة المضيئة */
+.cover .cover-kicker{color:var(--gp-ochre-dark)!important;background:rgba(255,255,255,.68)!important;text-shadow:none!important}
+.cover .hero-copy-x h1{color:#1F4A39!important;text-shadow:0 1px 10px rgba(255,253,246,.92),0 0 26px rgba(255,253,246,.8)!important}
+.cover .cover-orn,.cover .cover-orn *{color:#2C6A4D!important}
+.cover .subtitle{color:#3d4a40!important;text-shadow:0 1px 8px rgba(255,253,246,.82)!important}
+.cover .cover-tags span{color:#1F4A39!important;background:rgba(255,255,255,.68)!important;border:1px solid rgba(31,74,57,.2)!important;text-shadow:none!important}
 /* ===== نموذج الرقيّ (اقتباس USD Halo ضمن هويّة غرس) — تبويب «ابدئي من هنا» ===== */
 #start .gp-hero{position:relative}
 #start .gp-hero::before{content:"";position:absolute;z-index:0;inset:-54px -72px -24px -72px;pointer-events:none;
