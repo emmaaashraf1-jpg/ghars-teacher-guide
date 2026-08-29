@@ -1930,26 +1930,22 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </style>
 <style id="gp-cover-blend">
 /* غلاف الدليل: لوحةٌ مائية مضيئة متماهية (كالرئيسية) — بلا تعتيم + نصّ غابيّ غامق بهالة فاتحة */
-.cover{background:radial-gradient(72% 58% at 50% 38%,rgba(199,154,59,.12),rgba(199,154,59,0) 60%),radial-gradient(58% 52% at 10% 92%,rgba(76,154,110,.10),rgba(76,154,110,0) 58%),radial-gradient(54% 46% at 92% 8%,rgba(46,106,77,.08),rgba(46,106,77,0) 60%),#FBF9F2!important;position:relative;overflow:hidden;min-height:0!important}
-.cover .hero-x{position:relative;z-index:2;display:flex!important;flex-direction:column;align-items:center;text-align:center;max-width:920px;margin:0 auto;padding:clamp(52px,7vw,86px) clamp(24px,5vw,48px) clamp(40px,5vw,58px)!important}
+/* غلافٌ بلا إطار، متسامٍ مع ما تحته (بروح Velorah): شفّافٌ متّصل + عنوانٌ ضخمٌ متمركز محكم */
+.cover{background:transparent!important;position:relative;overflow:visible!important;min-height:0!important;border:0!important;box-shadow:none!important}
 .cover::before{display:none!important}
-.cover::after{display:block!important;content:"";position:absolute;inset:0;z-index:0;
-  background:radial-gradient(86% 60% at 50% 47%,rgba(251,249,242,.3),rgba(251,249,242,.08) 42%,rgba(251,249,242,0) 66%),url('units-art/intro-cover-alpha.png?v=1') center 47%/97% no-repeat;
-  -webkit-mask-image:none!important;mask-image:none!important;
-  border:0!important;box-shadow:none!important;border-radius:0!important}
-/* نصّ غامق مقروء على اللوحة المضيئة */
-.cover .cover-kicker{display:inline-flex!important;align-items:center;gap:10px;color:var(--gp-ochre-dark)!important;background:transparent!important;font-family:'AlAwwal','Amiri',serif;font-weight:700;font-size:12.5px!important;letter-spacing:.02em;margin-bottom:18px!important;text-shadow:none!important;padding:0!important}
-.cover .cover-kicker::before,.cover .cover-kicker::after{content:"";width:26px;height:1px;background:currentColor;opacity:.5}
-.cover .hero-badge-x{margin:0 0 18px!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
-.cover .hero-badge-x img{width:clamp(62px,7.5vw,92px)!important;height:auto;filter:drop-shadow(0 10px 22px rgba(31,74,57,.18))}
+.cover::after{display:block!important;content:"";position:absolute;inset:-6% -18% 0 -18%;z-index:0;pointer-events:none;background:radial-gradient(46% 80% at 50% 0%,rgba(199,154,59,.15),rgba(199,154,59,0) 62%),radial-gradient(40% 66% at 84% 6%,rgba(76,154,110,.10),transparent 60%),radial-gradient(38% 64% at 8% 10%,rgba(46,106,77,.08),transparent 60%);-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent)!important;mask-image:linear-gradient(180deg,#000 62%,transparent)!important;border:0!important;box-shadow:none!important;border-radius:0!important}
+.cover .hero-x{position:relative;z-index:2;display:flex!important;flex-direction:column;align-items:center;text-align:center;max-width:900px;margin:0 auto;padding:clamp(60px,9vw,116px) clamp(24px,5vw,48px) clamp(18px,3vw,34px)!important}
+.cover .cover-kicker{display:inline-flex!important;align-items:center;gap:10px;color:var(--gp-ochre-dark)!important;background:transparent!important;font-family:'AlAwwal','Amiri',serif;font-weight:700;font-size:12.5px!important;letter-spacing:.03em;margin-bottom:22px!important;text-shadow:none!important;padding:0!important}
+.cover .cover-kicker::before,.cover .cover-kicker::after{content:"";width:28px;height:1px;background:currentColor;opacity:.5}
+.cover .hero-badge-x{margin:0 0 22px!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+.cover .hero-badge-x img{width:clamp(56px,6.8vw,82px)!important;height:auto;filter:drop-shadow(0 10px 24px rgba(31,74,57,.16))}
 .cover .hero-copy-x{display:flex;flex-direction:column;align-items:center}
-.cover .hero-copy-x h1{color:var(--gp-forest)!important;font-family:'AlAwwal','Amiri',serif!important;font-size:clamp(34px,5vw,58px)!important;line-height:1.15!important;letter-spacing:-.3px!important;margin:0!important;text-shadow:none!important;max-width:20ch}
-.cover .cover-orn{display:block!important;width:66px!important;height:3px!important;border-radius:3px;margin:18px 0 0!important;background:linear-gradient(90deg,transparent,var(--gp-gold),transparent)!important;font-size:0!important}
-.cover .cover-orn *{display:none!important}
-.cover .subtitle{color:#48564d!important;font-size:clamp(15px,1.9vw,18px)!important;line-height:2!important;max-width:56ch;margin:20px 0 0!important;text-shadow:none!important}
-.cover .cover-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:24px!important}
-.cover .cover-tags span{color:var(--gp-forest)!important;background:rgba(255,255,255,.72)!important;border:1px solid rgba(199,154,59,.42)!important;border-radius:999px!important;padding:7px 16px!important;font-size:12.5px!important;font-weight:600;text-shadow:none!important}
-.cover .teacher-edition{display:inline-block;margin-top:24px!important;padding:10px 22px!important;border-radius:999px!important;background:var(--gp-forest)!important;color:#fff!important;font-weight:700;border:0!important;letter-spacing:0!important;box-shadow:0 14px 28px -14px rgba(31,74,57,.42)}
+.cover .hero-copy-x h1{color:var(--gp-forest)!important;font-family:'AlAwwal','Amiri',serif!important;font-size:clamp(40px,6.4vw,84px)!important;line-height:1.04!important;letter-spacing:-.6px!important;margin:0!important;text-shadow:none!important;max-width:16ch}
+.cover .cover-orn{display:none!important}
+.cover .subtitle{color:#57645b!important;font-size:clamp(15px,1.9vw,19px)!important;line-height:1.9!important;max-width:52ch;margin:22px 0 0!important;text-shadow:none!important}
+.cover .cover-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:26px!important}
+.cover .cover-tags span{color:var(--gp-ochre-dark)!important;background:transparent!important;border:1px solid rgba(199,154,59,.4)!important;border-radius:999px!important;padding:6px 15px!important;font-size:12px!important;font-weight:600;text-shadow:none!important}
+.cover .teacher-edition{display:none!important}
 /* ===== نموذج الرقيّ (اقتباس USD Halo ضمن هويّة غرس) — تبويب «ابدئي من هنا» ===== */
 #start .gp-hero{position:relative}
 #start .gp-hero::before{content:"";position:absolute;z-index:0;inset:-54px -72px -24px -72px;pointer-events:none;
