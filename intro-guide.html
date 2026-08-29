@@ -773,6 +773,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <main class="book" id="book">
 <div class="topline"></div>
 <section class="cover">
+<div class="cover-scene"><img class="cover-scene-img" src="assets/units-art/intro-cover-scene.png?v=2" alt="" aria-hidden="true"></div>
 <div class="hero-x">
 <span class="cover-kicker">نادي غرس القيم للطفولة · إصدار المعلمة</span>
 <div class="hero-copy-x">
@@ -781,7 +782,6 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="cover-tags"><span>مرجعية الوحي</span><span>تكامل المواد</span><span>التعلم باللعب</span><span>التربية بالموقف</span></div>
 </div>
 </div>
-<div class="cover-scene"><img class="cover-scene-img" src="assets/units-art/intro-cover-scene.png?v=2" alt="" aria-hidden="true"></div>
 </section>
 <template id="__bundler_thumbnail" data-bg-color="#1F4A39">
 <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
@@ -1929,21 +1929,21 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <style id="gp-cover-blend">
 /* غلاف الدليل: لوحةٌ مائية مضيئة متماهية (كالرئيسية) — بلا تعتيم + نصّ غابيّ غامق بهالة فاتحة */
 /* غلافٌ بلا إطار، متسامٍ مع ما تحته (بروح Velorah): شفّافٌ متّصل + عنوانٌ ضخمٌ متمركز محكم */
+/* بطلٌ بأسلوب Velorah: الصورة تملأ البطل، والنصُّ فوقها عاليًا، وتدرّجٌ يُذيب أسفلها في الصفحة */
 .cover{background:transparent!important;position:relative;overflow:visible!important;min-height:0!important;border:0!important;box-shadow:none!important}
-.cover::before{display:none!important}
+.cover::before{content:""!important;display:block!important;position:absolute!important;inset:0 0 auto 0;height:58%;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(251,249,242,.74),rgba(251,249,242,.24) 54%,rgba(251,249,242,0))!important}
 .cover::after{display:none!important}
-.cover .hero-x{position:relative;z-index:2;display:flex!important;flex-direction:column;align-items:center;text-align:center;max-width:900px;margin:0 auto;padding:clamp(48px,7vw,92px) clamp(24px,5vw,48px) clamp(6px,1.4vw,16px)!important}
-/* الصورة المائيّة المتماهية: حوافُّها البيضاء تذوب في ورق الصفحة عبر multiply */
-.cover .cover-scene{position:relative;z-index:1;display:flex;justify-content:center;margin:0 auto;padding:0 clamp(8px,2vw,24px) clamp(4px,1.2vw,14px)}
-.cover .cover-scene-img{width:min(100%,1060px);height:auto;display:block}
+.cover .cover-scene{position:relative;z-index:0;display:flex;justify-content:center;margin:0 auto;padding:0}
+.cover .cover-scene-img{width:min(100%,1220px)!important;height:auto;display:block}
+.cover .hero-x{position:absolute!important;z-index:3;inset:0 0 auto 0;display:flex!important;flex-direction:column;align-items:center;text-align:center;max-width:860px;margin:0 auto;padding:clamp(30px,5vw,58px) clamp(24px,5vw,48px) 0!important}
 .cover .cover-kicker{display:inline-flex!important;align-items:center;gap:10px;color:var(--gp-ochre-dark)!important;background:transparent!important;font-family:'AlAwwal','Amiri',serif;font-weight:700;font-size:12.5px!important;letter-spacing:.03em;margin-bottom:22px!important;text-shadow:none!important;padding:0!important}
 .cover .cover-kicker::before,.cover .cover-kicker::after{content:"";width:28px;height:1px;background:currentColor;opacity:.5}
 .cover .hero-badge-x{margin:0 0 22px!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
 .cover .hero-badge-x img{width:clamp(56px,6.8vw,82px)!important;height:auto;filter:drop-shadow(0 10px 24px rgba(31,74,57,.16))}
 .cover .hero-copy-x{display:flex;flex-direction:column;align-items:center}
-.cover .hero-copy-x h1{color:var(--gp-forest)!important;font-family:'AlAwwal','Amiri',serif!important;font-size:clamp(40px,6.4vw,84px)!important;line-height:1.04!important;letter-spacing:-.6px!important;margin:0!important;text-shadow:none!important;max-width:16ch}
+.cover .hero-copy-x h1{color:var(--gp-forest)!important;font-family:'AlAwwal','Amiri',serif!important;font-size:clamp(40px,6.4vw,84px)!important;line-height:1.04!important;letter-spacing:-.6px!important;margin:0!important;text-shadow:0 1px 0 rgba(255,255,255,.5),0 2px 22px rgba(251,249,242,.85)!important;max-width:16ch}
 .cover .cover-orn{display:none!important}
-.cover .subtitle{color:#57645b!important;font-size:clamp(15px,1.9vw,19px)!important;line-height:1.9!important;max-width:52ch;margin:22px 0 0!important;text-shadow:none!important}
+.cover .subtitle{color:#4b564d!important;font-size:clamp(15px,1.9vw,19px)!important;line-height:1.9!important;max-width:52ch;margin:22px 0 0!important;text-shadow:0 1px 14px rgba(251,249,242,.9)!important}
 .cover .cover-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:26px!important}
 .cover .cover-tags span{color:var(--gp-ochre-dark)!important;background:transparent!important;border:1px solid rgba(199,154,59,.4)!important;border-radius:999px!important;padding:6px 15px!important;font-size:12px!important;font-weight:600;text-shadow:none!important}
 .cover .teacher-edition{display:none!important}
