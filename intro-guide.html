@@ -3951,6 +3951,9 @@ td,th,dd,dt{font-size:14.5px!important}
 
 /* 3) الشريط → خطٌّ زمنيّ رفيع طافٍ (نقاط) */
 @media(min-width:901px){
+ /* حجز مساحةٍ يمين الصفحة للشريط الطافي كي لا يغطّي المحتوى */
+ body{padding-right:clamp(248px,19vw,300px)!important}
+ .gq-platform-crumb{padding-inline-end:clamp(20px,5vw,48px)!important}
  .guide-layout .toolbar{position:fixed!important;right:clamp(12px,1.4vw,24px)!important;left:auto!important;inset-inline-start:auto!important;inset-inline-end:auto!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;align-self:auto!important;width:auto!important;max-width:236px!important;min-width:0!important;max-height:calc(100vh - 24px)!important;overflow-y:auto!important;overflow-x:visible!important;background:#FBF9F2!important;border:1px solid #ddd0b4!important;border-radius:18px!important;box-shadow:0 22px 48px -18px rgba(31,74,57,.42)!important;padding:11px 11px!important;backdrop-filter:blur(8px)!important;display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;align-items:stretch!important;justify-content:flex-start!important;gap:0!important;z-index:60}
  .guide-layout .toolbar::-webkit-scrollbar{width:5px}.guide-layout .toolbar::-webkit-scrollbar-thumb{background:rgba(199,154,59,.4);border-radius:9px}
  .guide-layout .mini-brand,.guide-layout .toolbar-actions,.guide-layout .tab-phase-label{display:none!important}
