@@ -2373,7 +2373,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 /* ============ الشريط الزمنيّ: التبويبات خطًّا رأسيًّا يمين المحتوى ============ */
 .guide-layout{display:grid;grid-template-columns:288px minmax(0,1fr);gap:clamp(14px,1.8vw,26px);align-items:start;padding:16px clamp(10px,1.6vw,20px) 0}
 .guide-content{min-width:0}
-.guide-layout .toolbar{position:sticky!important;top:12px!important;align-self:start;display:flex!important;flex-direction:column!important;justify-content:flex-start!important;max-height:calc(100vh - 20px);overflow-y:auto!important;overflow-x:visible;background:linear-gradient(200deg,#fff,#FBF7EC)!important;border:1px solid var(--gp-line)!important;border-radius:18px!important;padding:13px 12px!important;box-shadow:0 14px 34px -22px rgba(31,74,57,.4)!important;backdrop-filter:none!important}
+.guide-layout .toolbar{position:sticky!important;top:12px!important;align-self:start;display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;justify-content:flex-start!important;align-items:stretch!important;max-height:calc(100vh - 20px);overflow-y:auto!important;overflow-x:visible;background:linear-gradient(200deg,#fff,#FBF7EC)!important;border:1px solid var(--gp-line)!important;border-radius:18px!important;padding:13px 12px!important;box-shadow:0 14px 34px -22px rgba(31,74,57,.4)!important;backdrop-filter:none!important}
 .guide-layout .tab-phase{margin-top:0}
 .guide-layout .tab-phase-row::before{inset-inline-start:25px;top:20px;bottom:20px}
 .guide-layout .toolbar-actions{flex:none;margin-top:12px;padding-top:12px;gap:6px}
