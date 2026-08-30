@@ -56,15 +56,19 @@ img{max-width:100%;display:block}
 @media(max-width:860px){.spine{display:none}}
 
 /* ===== البطل: صورةٌ ملءَ العرض تتماهى مع الورق (بروح غلاف الرئيسيّة) ===== */
-.hero{position:relative;min-height:clamp(560px,90vh,860px);display:flex;align-items:flex-start;overflow:hidden;background:var(--ivory);isolation:isolate}
-.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 56%;z-index:0;
-  filter:saturate(1.14) contrast(1.06);transform:scale(1.05);animation:heroZoom 2.6s var(--ease) both}
+.hero{position:relative;min-height:clamp(560px,90vh,860px);display:flex;align-items:center;overflow:hidden;background:var(--ivory);isolation:isolate}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 42%;z-index:0;
+  filter:saturate(1.18) contrast(1.08);transform:scale(1.05);animation:heroZoom 2.6s var(--ease) both}
 @keyframes heroZoom{to{transform:scale(1)}}
+/* غلالةٌ خفيفة: الصورة حيّةٌ يمينًا، والفراغ الأيسر يُضاء برفقٍ خلف النصّ، والحافّة السفلى تذوب في الورق */
 .hero-wash{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
-   linear-gradient(to bottom,rgba(251,249,242,.78) 0%,rgba(251,249,242,.4) 15%,rgba(251,249,242,0) 36%,rgba(251,249,242,0) 64%,rgba(251,249,242,.55) 86%,var(--ivory) 100%),
-   radial-gradient(120% 60% at 82% 4%,rgba(199,154,59,.12),transparent 52%)}
-.hero-in{position:relative;z-index:2;width:100%;padding-top:clamp(48px,8vh,100px)}
+   radial-gradient(78% 74% at 20% 50%,rgba(251,249,242,.72),rgba(251,249,242,.24) 52%,transparent 72%),
+   linear-gradient(to bottom,transparent 60%,rgba(251,249,242,.42) 85%,var(--ivory) 100%),
+   radial-gradient(120% 50% at 86% 4%,rgba(199,154,59,.1),transparent 50%)}
+.hero-in{position:relative;z-index:2;width:100%;padding-block:clamp(30px,5vh,64px)}
+.hero-in .shell{display:flex;justify-content:flex-end}
+.hero-copy{max-width:min(100%,34ch)}
 .hero-mark{margin-bottom:clamp(16px,2.2vw,24px)}
 .hero-mark .eyebrow{font-size:clamp(12.5px,1.4vw,15px)}
 .hero h1{font-family:var(--display);font-weight:700;color:var(--forest);
@@ -176,9 +180,11 @@ img{max-width:100%;display:block}
   <div class="hero-wash"></div>
   <div class="hero-in">
     <div class="shell">
+     <div class="hero-copy">
       <div class="hero-mark reveal"><span class="eyebrow">الفصل ٠٢ · تأسيسٌ ورؤية</span></div>
       <h1 class="reveal">الرؤية والمنظومة</h1>
       <p class="hero-essence reveal">منهجٌ يعيد للوحي مرجعيّته، وللعلم بوصلته، وللإنسان غايته.</p>
+     </div>
     </div>
   </div>
   <div class="hero-cue"><div class="shell" style="display:flex;align-items:center;gap:10px">
