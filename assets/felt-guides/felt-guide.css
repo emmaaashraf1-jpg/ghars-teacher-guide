@@ -1,0 +1,124 @@
+/* ===== أدلّة تنفيذ لوحات الجوخ — نظام تصميم مشترك (هوية دليل غرس) ===== */
+@font-face{font-family:'AlAwwal';src:url('../fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('../fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('../fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('../fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#1F4A39; --t2:#2C6A4D; --grn:#1E5631;
+  --gold:#C79A3B; --gold2:#C8A200; --cream:#F4EDDE;
+  --ink:#22302B; --muted:#5c665f;
+  --elm:#0E6E6B;
+  --paper:#FBF8F0; --panel:#FFFDF7; --stripe:#F5F1E6;
+  --line:#e6e0d0; --hd:#2C6A4D; --hd2:#1F4A39;
+  --shadow:0 8px 22px rgba(20,50,35,.08); --shadow-sm:0 2px 8px rgba(20,50,35,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);color:var(--ink);line-height:1.95;font-size:16.5px;
+  background:var(--paper);direction:rtl;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:26px 20px 70px}
+
+/* ترويسة */
+.fg-head{background:linear-gradient(135deg,#F6EFDF,#EFE7D5);border:2px solid #d8cfb4;
+  border-radius:22px;padding:26px 28px 24px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.fg-head .eyebrow{font-family:var(--fd);color:var(--t2);font-weight:700;font-size:14px;letter-spacing:.3px;margin-bottom:6px}
+.fg-head h1{font-family:var(--fd);color:var(--t1);font-weight:700;font-size:30px;line-height:1.5;text-wrap:balance}
+.fg-head .sub{color:var(--muted);font-size:16px;margin-top:8px}
+
+/* الصورة المرجعية */
+figure.fg-ref{margin:22px 0 6px;text-align:center}
+figure.fg-ref img{max-width:100%;border-radius:18px;box-shadow:var(--shadow);border:1px solid var(--line)}
+figure.fg-ref figcaption{color:var(--muted);font-size:14px;margin-top:10px}
+
+/* شريط قسم */
+.fg-sec{background:linear-gradient(90deg,var(--hd2),var(--hd));color:#fff;font-family:var(--fd);
+  font-weight:700;font-size:20px;border-radius:14px;padding:13px 20px;margin:30px 0 16px;box-shadow:var(--shadow-sm)}
+.fg-sec .n{opacity:.85;font-size:16px}
+
+/* عنوان فرعيّ بشريط ذهبيّ */
+.fg-sub{font-family:var(--fd);color:var(--t1);font-weight:700;font-size:18px;margin:22px 0 12px;
+  padding-inline-start:12px;border-inline-start:5px solid var(--gold)}
+
+/* بطاقات */
+.fg-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;
+  padding:18px 20px;box-shadow:var(--shadow-sm);margin-bottom:14px}
+
+/* جداول */
+table.fg-t{width:100%;border-collapse:collapse;background:var(--panel);border-radius:14px;overflow:hidden;
+  box-shadow:var(--shadow-sm);margin:6px 0 8px;font-size:15.5px}
+table.fg-t thead th{background:#e7efe8;color:var(--t1);font-family:var(--fd);font-weight:700;
+  padding:12px 14px;text-align:right}
+table.fg-t td{padding:11px 14px;border-top:1px solid var(--line);vertical-align:top}
+table.fg-t tbody tr:nth-child(even){background:var(--stripe)}
+table.fg-t td:first-child{font-weight:700;color:var(--t1);white-space:nowrap}
+table.fg-t.wrap-first td:first-child{white-space:normal}
+.fg-scroll{overflow-x:auto}
+
+/* قواعد/خطوات مرقّمة */
+ol.fg-list,ul.fg-list{list-style:none;counter-reset:fg;display:flex;flex-direction:column;gap:11px;margin:4px 0}
+ol.fg-list>li{counter-increment:fg;position:relative;padding-inline-start:42px;line-height:1.9}
+ol.fg-list>li::before{content:counter(fg);position:absolute;inset-inline-start:0;top:1px;
+  width:28px;height:28px;border-radius:9px;background:var(--t2);color:#fff;font-family:var(--fd);
+  font-weight:700;font-size:15px;display:grid;place-items:center}
+ol.fg-list>li b,ul.fg-list>li b{color:var(--t1)}
+ul.fg-dot{list-style:none;display:flex;flex-direction:column;gap:9px;margin:4px 0}
+ul.fg-dot>li{position:relative;padding-inline-start:22px;line-height:1.85}
+ul.fg-dot>li::before{content:"";position:absolute;inset-inline-start:2px;top:12px;width:8px;height:8px;
+  border-radius:50%;background:var(--gold)}
+
+/* لوحة ألوان */
+.fg-swatches{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0}
+.fg-sw{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:var(--panel);box-shadow:var(--shadow-sm)}
+.fg-sw .band{height:58px}
+.fg-sw .meta{padding:9px 12px}
+.fg-sw .nm{font-weight:700;color:var(--t1);font-size:14.5px}
+.fg-sw .hex{color:var(--muted);font-size:13px;letter-spacing:.5px;font-family:'Saudi',monospace;direction:ltr;text-align:right}
+
+/* تنبيه/قاعدة */
+.fg-note{background:#FBF3DA;border-inline-start:5px solid var(--gold);border-radius:12px;
+  padding:13px 16px;margin:12px 0;font-size:15.5px}
+.fg-note b{color:#8a6d1e}
+.fg-note.grn{background:#EAF3EC;border-inline-start-color:var(--t2)}
+.fg-note.grn b{color:var(--t1)}
+.fg-note.red{background:#FBECE7;border-inline-start-color:#B75B49}
+.fg-note.red b{color:#9c4632}
+
+/* قائمة تحقّق */
+.fg-check{list-style:none;display:flex;flex-direction:column;gap:10px;margin:6px 0}
+.fg-check>li{position:relative;padding-inline-start:32px;line-height:1.8}
+.fg-check>li::before{content:"";position:absolute;inset-inline-start:0;top:4px;width:19px;height:19px;
+  border:2px solid var(--t2);border-radius:6px;background:#fff}
+.fg-check.gold>li::before{border-color:var(--gold)}
+
+/* شريط قسم داكن لقوائم التحقّق (كالـPDF) */
+.fg-sec.check{font-size:18px}
+
+/* أزرار وتنقّل */
+.fg-toolbar{position:sticky;top:0;z-index:30;display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  background:rgba(251,248,240,.92);backdrop-filter:blur(6px);padding:12px 0;margin-bottom:6px;border-bottom:1px solid var(--line)}
+.fg-btn{font-family:var(--fb);font-weight:700;font-size:14.5px;border:1.5px solid var(--t2);color:var(--t1);
+  background:#fff;border-radius:11px;padding:8px 15px;cursor:pointer;text-decoration:none;transition:.15s}
+.fg-btn:hover{background:var(--t2);color:#fff}
+.fg-btn.gold{border-color:var(--gold);color:#8a6d1e}
+.fg-btn.gold:hover{background:var(--gold);color:#fff}
+.fg-sib{margin-inline-start:auto;display:flex;gap:8px;flex-wrap:wrap}
+.fg-sib a{font-size:13.5px;color:var(--t2);text-decoration:none;border:1px solid var(--line);border-radius:9px;padding:6px 11px;background:#fff}
+.fg-sib a:hover{border-color:var(--t2)}
+.fg-sib a.here{background:var(--t2);color:#fff;border-color:var(--t2)}
+
+.fg-foot{margin-top:34px;padding-top:18px;border-top:1px dashed var(--line);color:var(--muted);
+  font-size:13.5px;text-align:center}
+
+@media(max-width:640px){
+  .fg-head h1{font-size:24px} .fg-swatches{grid-template-columns:repeat(2,1fr)}
+  .fg-sec{font-size:17px} .wrap{padding:16px 14px 60px}
+}
+@media print{
+  .fg-toolbar{display:none} body{background:#fff}
+  .fg-head,.fg-card,table.fg-t,.fg-sw{box-shadow:none}
+  .fg-sec{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .fg-swatches{grid-template-columns:repeat(3,1fr)}
+  a[href]::after{content:""}
+}
