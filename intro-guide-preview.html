@@ -1,0 +1,277 @@
+<!doctype html>
+<!--
+THESIS: الدليل رحلةٌ حيّة من الوحي إلى التطبيق، لا وثيقة. يرفض شبكةَ البطاقات العاجيّة الباهتة؛ بدلها مشاهدُ غابيّة غامرة تحمل المائيّات، والقراءةُ في لوحاتٍ عاجيّة دافئة دقيقة الطباعة.
+OWN-WORLD: أرضٌ غابيّة عميقة (#0C1F16/#102A1E) للمشاهد الغامرة، عاجٌ دافئ (#FBF7EE) للقراءة. ذهبٌ (#C79A3B) نفيسٌ نادر. مائيّاتٌ ملءَ العرض معمَّقة. عناوين Amiri ضخمة محكمة التتبّع، متنٌ Naskh فسيح. خطٌّ زمنيّ رفيع طافٍ.
+STORY: المعلّمة تفهم أنّ منظومة الوحي مرجعُ البناء، فترى كيف تتحوّل إلى تخطيطٍ وتشغيلٍ وتقويم، وتخرج بمعيارٍ تقرّر به.
+FIRST VIEWPORT: مشهدٌ غابيّ ملءَ الشاشة، صورةُ الفصل معمَّقة، علامةُ فصلٍ ذهبيّة، عنوانٌ أبيض ضخم «الرؤية والمنظومة»، سطرُ جوهر، ومؤشّر تمرير. خطٌّ رفيعٌ من النقاط على الحافّة اليمنى.
+FORM: رحلة تمرير غامرة (المرتبة الأولى). FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الرؤية والمنظومة · نموذج الرحلة — غرس القيم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest-950:#0A1B12;--forest-900:#0F2619;--forest-850:#122E1F;--forest-800:#153826;--forest-700:#1D4B33;--forest-600:#256B47;
+  --sage:#77A085;--sage-soft:#A6C1AE;
+  --gold:#C79A3B;--gold-soft:#E6CB82;--gold-deep:#9A6E1E;
+  --ivory:#FBF7EE;--cream:#F2EAD8;--paper:#FEFCF6;
+  --ink:#1B2620;--ink-soft:#4C564E;--ink-mute:#77817A;--line:#E7DDC9;--line-soft:#F0E8D8;
+  --terra:#B15230;
+  --disp:'Amiri','Noto Naskh Arabic',serif;
+  --body:'Noto Naskh Arabic','Amiri',serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --maxr:78ch;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--body);line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:rgba(199,154,59,.28);color:#123024}
+img{max-width:100%;display:block}
+a{color:inherit}
+::-webkit-scrollbar{width:11px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:#c9b892;border-radius:9px;border:3px solid var(--cream)}
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:3px;border-radius:3px}
+
+/* ============ الحاوية والإيقاع ============ */
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(22px,5vw,64px)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ============ الخطّ الزمنيّ الطافي ============ */
+.spine{position:fixed;inset-inline-end:clamp(10px,2vw,26px);top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;align-items:center;gap:9px;mix-blend-mode:normal}
+.spine::before{content:"";position:absolute;top:-2px;bottom:-2px;width:2px;background:linear-gradient(180deg,transparent,rgba(140,120,80,.35) 12%,rgba(140,120,80,.35) 88%,transparent);inset-inline-start:50%;transform:translateX(50%);z-index:0}
+.spine b{position:relative;z-index:1;font-family:var(--disp);font-weight:700;color:var(--gold-deep);font-size:11px;letter-spacing:.06em;margin-bottom:4px;background:var(--ivory);padding:2px 0}
+.spine i{position:relative;z-index:1;width:9px;height:9px;border-radius:50%;background:var(--paper);border:1.5px solid #cdbd98;transition:.3s var(--ease)}
+.spine i.on{background:var(--forest-700);border-color:var(--forest-700);transform:scale(1.5);box-shadow:0 0 0 4px rgba(29,75,51,.14)}
+.spine i.done{background:var(--gold);border-color:var(--gold)}
+@media(max-width:820px){.spine{display:none}}
+
+/* ============ البطل الغامر ============ */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--forest-950);isolation:isolate}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:0;filter:saturate(1.16) contrast(1.06) brightness(.9);transform:scale(1.06);animation:heroZoom 2.4s var(--ease) both}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero-wash{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+   linear-gradient(to top,var(--forest-950) 2%,rgba(10,27,18,.72) 26%,rgba(10,27,18,.28) 52%,rgba(10,27,18,.42) 100%),
+   radial-gradient(120% 80% at 78% 8%,rgba(199,154,59,.16),transparent 55%)}
+.hero-grain{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.5;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/></svg>")}
+.hero-in{position:relative;z-index:3;width:100%;padding-bottom:clamp(64px,10vh,120px)}
+.hero-mark{display:inline-flex;align-items:center;gap:13px;color:var(--gold-soft);font-family:var(--disp);font-weight:700;font-size:clamp(13px,1.5vw,16px);letter-spacing:.06em;margin-bottom:clamp(16px,2.4vw,26px)}
+.hero-mark::before{content:"";width:44px;height:1.5px;background:currentColor;opacity:.75}
+.hero h1{font-family:var(--disp);font-weight:700;color:#fff;font-size:clamp(46px,8.4vw,118px);line-height:.98;letter-spacing:-.02em;margin:0;max-width:15ch;text-shadow:0 6px 44px rgba(0,0,0,.4)}
+.hero-essence{color:rgba(255,255,255,.9);font-size:clamp(17px,2.1vw,25px);line-height:1.7;max-width:44ch;margin:clamp(20px,2.6vw,30px) 0 0;text-shadow:0 2px 22px rgba(0,0,0,.4)}
+.hero-cue{position:absolute;inset-inline-start:0;bottom:clamp(20px,3vh,34px);display:flex;align-items:center;gap:11px;color:rgba(255,255,255,.7);font-size:13px;z-index:3;animation:floaty 2.4s ease-in-out infinite}
+.hero-cue span{width:26px;height:26px;border:1.5px solid rgba(255,255,255,.4);border-radius:50%;display:grid;place-items:center}
+.hero-cue svg{width:13px;height:13px}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+.hero .reveal{transition-duration:1.1s}
+.hero-mark.reveal{transition-delay:.15s}
+.hero h1.reveal{transition-delay:.28s}
+.hero-essence.reveal{transition-delay:.42s}
+
+/* ============ لوحة القراءة (عاجيّة) ============ */
+.read{background:var(--ivory);position:relative;padding:clamp(66px,11vh,140px) 0}
+.read.top{padding-top:clamp(60px,9vh,110px)}
+.lead{font-size:clamp(19px,2.3vw,26px);line-height:1.85;color:#2b342e;max-width:36ch;font-family:var(--disp);font-weight:700;margin:0 auto 0 0}
+.lead::before{content:"";display:block;width:54px;height:3px;border-radius:3px;background:var(--gold);margin-bottom:clamp(22px,3vw,34px)}
+.body-copy{font-size:clamp(16.5px,1.35vw,19px);line-height:2.1;color:#3c4640;max-width:66ch;margin:clamp(26px,3.4vw,42px) 0 0}
+.body-copy.drop::first-letter{float:inline-start;font-family:var(--disp);font-size:3.5em;line-height:.78;font-weight:700;color:var(--forest-700);margin-inline-end:.14em;margin-top:.05em}
+.body-copy b{color:var(--forest-700);font-weight:700}
+.body-copy .terra{color:var(--terra)}
+
+/* ============ عنوان القسم ============ */
+.eyebrow-num{font-family:var(--disp);font-weight:700;color:var(--gold-deep);font-size:14px;letter-spacing:.1em}
+.h2{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.4vw,58px);line-height:1.08;letter-spacing:-.015em;margin:12px 0 0}
+.sub{font-size:clamp(16px,1.5vw,19px);color:var(--ink-soft);line-height:1.85;max-width:56ch;margin:18px 0 0}
+
+/* ============ المنظومتان المتقابلتان (مشهد غابيّ درامّيّ) ============ */
+.systems{position:relative;background:var(--forest-900);color:#fff;padding:clamp(70px,12vh,150px) 0;overflow:hidden}
+.systems::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.9;
+  background:radial-gradient(70% 55% at 50% 0%,rgba(199,154,59,.13),transparent 60%),radial-gradient(80% 60% at 50% 100%,rgba(10,20,14,.7),transparent 55%)}
+.systems .wrap{position:relative;z-index:1}
+.systems .eyebrow-num{color:var(--gold-soft)}
+.systems .h2{color:#fff}
+.systems .sub{color:rgba(255,255,255,.72)}
+.sys-heads{display:grid;grid-template-columns:1fr 88px 1fr;align-items:center;gap:0;margin-top:clamp(34px,5vw,56px);text-align:center}
+.sys-side{display:flex;flex-direction:column;align-items:center;gap:10px}
+.sys-side img{width:clamp(46px,5vw,62px);height:auto;filter:drop-shadow(0 8px 20px rgba(0,0,0,.4))}
+.sys-side small{color:var(--gold-soft);font-size:12px;letter-spacing:.08em;font-weight:600}
+.sys-side.other small{color:rgba(255,255,255,.5)}
+.sys-side b{font-family:var(--disp);font-size:clamp(20px,2.4vw,30px);font-weight:700}
+.sys-side.other b{color:rgba(255,255,255,.58)}
+.sys-vs{font-family:var(--disp);color:var(--gold);font-size:14px;font-weight:700;opacity:.85}
+.axes{margin-top:clamp(30px,4.4vw,50px);border-top:1px solid rgba(255,255,255,.12)}
+.axis{display:grid;grid-template-columns:1fr 128px 1fr;align-items:center;border-bottom:1px solid rgba(255,255,255,.12);min-height:64px}
+.axis .a-ours,.axis .a-other{font-family:var(--disp);font-size:clamp(19px,2.2vw,27px);font-weight:700;padding:16px 8px}
+.axis .a-ours{text-align:start;color:#fff}
+.axis .a-other{text-align:end;color:rgba(255,255,255,.5)}
+.axis .a-mid{text-align:center;color:var(--gold-soft);font-size:clamp(11px,1.2vw,13px);font-weight:600;letter-spacing:.04em;position:relative}
+.axis .a-mid::before,.axis .a-mid::after{content:"";position:absolute;top:50%;width:14px;height:1px;background:rgba(199,154,59,.4)}
+.axis .a-mid::before{inset-inline-start:6px}.axis .a-mid::after{inset-inline-end:6px}
+.sys-foot{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px);margin-top:clamp(30px,4vw,44px)}
+.sys-foot>div{padding:clamp(18px,2.4vw,26px);border-radius:16px}
+.sf-ours{background:linear-gradient(160deg,rgba(37,107,71,.5),rgba(21,56,38,.5));border:1px solid rgba(199,154,59,.3)}
+.sf-other{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.sys-foot small{display:block;font-size:11.5px;letter-spacing:.07em;margin-bottom:7px}
+.sf-ours small{color:var(--gold-soft)}.sf-other small{color:rgba(255,255,255,.45)}
+.sys-foot b{font-family:var(--disp);font-size:clamp(17px,1.9vw,22px);font-weight:700;line-height:1.4}
+.sf-ours b{color:#fff}.sf-other b{color:rgba(255,255,255,.6)}
+.sys-note{margin:clamp(30px,4vw,46px) auto 0;max-width:60ch;text-align:center;font-family:var(--disp);font-size:clamp(18px,2vw,24px);line-height:1.7;color:rgba(255,255,255,.9)}
+.sys-note b{color:var(--gold-soft)}
+
+/* ============ التشغيل: تدفّق مرقّم ============ */
+.flow{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.2vw,26px);margin-top:clamp(38px,5vw,58px);counter-reset:step}
+.step{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:clamp(24px,3vw,34px) clamp(22px,2.6vw,32px);counter-increment:step;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.step:hover{transform:translateY(-5px);box-shadow:0 24px 50px -30px rgba(20,55,38,.4)}
+.step::before{content:"0" counter(step);position:absolute;top:clamp(20px,2.4vw,28px);inset-inline-end:clamp(22px,2.6vw,30px);font-family:var(--disp);font-weight:700;font-size:clamp(30px,3.6vw,46px);color:var(--line);line-height:1}
+.step h4{font-family:var(--disp);font-weight:700;color:var(--forest-700);font-size:clamp(19px,2.1vw,25px);margin:0 0 12px;max-width:9ch}
+.step p{margin:0;color:var(--ink-soft);font-size:clamp(15px,1.3vw,17px);line-height:1.85;max-width:34ch}
+.step .bar{position:absolute;inset-inline-start:0;top:22px;bottom:22px;width:4px;border-radius:4px;background:var(--c,var(--forest-600))}
+@media(max-width:720px){.flow{grid-template-columns:1fr}}
+
+/* ============ هوامش المعلّمة ============ */
+.notes{background:var(--forest-950);color:#fff;padding:clamp(64px,10vh,130px) 0}
+.notes .eyebrow-num{color:var(--gold-soft)}
+.notes .h2{color:#fff}
+.note-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);margin-top:clamp(34px,4.6vw,52px)}
+.note{position:relative;padding:clamp(24px,3vw,32px) clamp(22px,2.6vw,28px);background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:20px}
+.note .k{font-family:var(--disp);color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.05em}
+.note h4{font-family:var(--disp);color:#fff;font-size:clamp(18px,2vw,23px);font-weight:700;margin:10px 0 12px}
+.note p{margin:0;color:rgba(255,255,255,.74);font-size:15px;line-height:1.9}
+@media(max-width:760px){.note-grid{grid-template-columns:1fr}}
+
+/* ============ الخاتمة ============ */
+.close{background:var(--ivory);text-align:center;padding:clamp(70px,12vh,150px) 0}
+.close .mark{width:52px;height:52px;margin:0 auto clamp(22px,3vw,30px);color:var(--gold)}
+.close p{font-family:var(--disp);font-size:clamp(22px,3vw,38px);line-height:1.5;color:var(--forest-800);max-width:24ch;margin:0 auto;font-weight:700}
+.close .next{margin-top:clamp(30px,4vw,44px);display:inline-flex;align-items:center;gap:12px;color:var(--gold-deep);font-family:var(--disp);font-weight:700;font-size:17px}
+.close .next svg{width:18px;height:18px}
+
+.banner{background:var(--forest-800);color:var(--gold-soft);text-align:center;font-size:13px;padding:12px;font-family:var(--disp);letter-spacing:.02em}
+</style>
+</head>
+<body>
+<div class="banner">نموذجٌ للاعتماد — قسم «الرؤية» في عالم الرحلة المصوّرة الجديد · إن أعجبكِ عمّمتُه على الفصول السبعة عشر</div>
+
+<!-- الخطّ الزمنيّ الطافي -->
+<nav class="spine" aria-label="مسار الرحلة">
+  <b>٠٢<span style="opacity:.5">/</span>١٧</b>
+  <i class="done"></i><i class="on" title="الرؤية والمنظومة"></i>
+  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+</nav>
+
+<!-- البطل -->
+<header class="hero">
+  <img class="hero-img" src="assets/chapters/ch02-vision.jpg?v=3" alt="مشهدٌ مائيٌّ لشجرةٍ مثمرةٍ تحت شروق">
+  <div class="hero-wash"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-in">
+    <div class="wrap">
+      <span class="hero-mark reveal">الفصل ٠٢ — تأسيسٌ ورؤية</span>
+      <h1 class="reveal">الرؤية والمنظومة</h1>
+      <p class="hero-essence reveal">منهجٌ يعيد للوحي مرجعيّته، وللعلم بوصلته، وللإنسان غايته.</p>
+    </div>
+  </div>
+  <div class="hero-cue"><div class="wrap" style="display:flex;align-items:center;gap:11px;padding-bottom:0">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></span>
+    تابعي الرحلة
+  </div></div>
+</header>
+
+<!-- المقدّمة -->
+<section class="read top">
+  <div class="wrap">
+    <p class="lead reveal">لا تبدأ التربيةُ من الطفل، بل من المرجع الذي يُبنى عليه.</p>
+    <p class="body-copy drop reveal">يقوم منهج غرس القيم على <b>منظومة الوحي</b> بوصفها المرجع الأعلى في بناء الإنسان وتنمية وجدانه؛ في مقابل <span class="terra">منظومة الشيطان</span> التي تتمحور حول الإنسان والعقل المجرّد، فتغدو الحرية قيمةً مطلقة والمتعة غاية. والمنهج لا يرفض العلم، بل يعيد ربطه بالوحي ليكون خادمًا للإنسان في طريق عبوديّته لله.</p>
+  </div>
+</section>
+
+<!-- المنظومتان -->
+<section class="systems">
+  <div class="wrap">
+    <span class="eyebrow-num reveal">٠٢ · أ</span>
+    <h2 class="h2 reveal">منظومتان متقابلتان</h2>
+    <p class="sub reveal">ستّة محاورَ يُقرأ بها كلُّ درسٍ وكلُّ ركن؛ تبدأ من الإله والمرجع، وتنتهي إلى الثمرة في وجدان الطفل.</p>
+
+    <div class="sys-heads reveal">
+      <div class="sys-side"><img src="assets/wahy/book.png?v=2" alt=""><small>منهجنا</small><b>منظومة الوحي</b></div>
+      <div class="sys-vs">في مقابل</div>
+      <div class="sys-side other"><img src="assets/wahy/knot.png?v=2" alt="" style="opacity:.75"><small>مناهج أخرى</small><b>منظومة الشيطان</b></div>
+    </div>
+
+    <div class="axes reveal">
+      <div class="axis"><div class="a-ours">الله</div><div class="a-mid">الإله</div><div class="a-other">الإنسان</div></div>
+      <div class="axis"><div class="a-ours">الوحي</div><div class="a-mid">المرجع والمصدر</div><div class="a-other">العقل</div></div>
+      <div class="axis"><div class="a-ours">التوحيد</div><div class="a-mid">القيمة المركزيّة</div><div class="a-other">الحرّيّة</div></div>
+      <div class="axis"><div class="a-ours">التسليم لله</div><div class="a-mid">الفعل</div><div class="a-other">الطغيان</div></div>
+      <div class="axis"><div class="a-ours">الدار الآخرة</div><div class="a-mid">الغاية</div><div class="a-other">الدار الدنيا</div></div>
+      <div class="axis"><div class="a-ours">حلاوة الإيمان</div><div class="a-mid">الثمرة</div><div class="a-other">المتعة واللذّة</div></div>
+    </div>
+
+    <div class="sys-foot reveal">
+      <div class="sf-ours"><small>المآل</small><b>طمأنينةٌ واتّزانٌ وسموُّ سلوك</b></div>
+      <div class="sf-other"><small>المآل</small><b>لذّةٌ عابرة وفقدانُ المعنى</b></div>
+    </div>
+
+    <p class="sys-note reveal"><b>منهجنا لا يرفض العلم</b>، بل يعيد للوحي مرجعيّته، وللعلم بوصلته، وللإنسان غايته — فيكون العلمُ خادمًا للإنسان في طريق عبوديّته لله.</p>
+  </div>
+</section>
+
+<!-- التشغيل -->
+<section class="read">
+  <div class="wrap">
+    <span class="eyebrow-num reveal">٠٢ · ب</span>
+    <h2 class="h2 reveal">كيف تظهر منظومة الوحي في التشغيل؟</h2>
+    <p class="sub reveal">لا تبقى المنظومةُ فكرةً؛ بل تتحوّل إلى تخطيطٍ وتشغيلٍ وتقويمٍ داخل الصفّ.</p>
+    <div class="flow">
+      <div class="step reveal" style="--c:#0E6E6B"><span class="bar"></span><h4>في التخطيط</h4><p>يبدأ الدليل بسؤال: ما المعنى الإيمانيّ الذي ستخدمه المادّة أو الوحدة؟</p></div>
+      <div class="step reveal" style="--c:#2C6A4D"><span class="bar"></span><h4>في اللقاء</h4><p>تتدرّج المعلّمة من الملاحظة إلى السؤال، ثمّ النصّ الشرعيّ، ثمّ التطبيق.</p></div>
+      <div class="step reveal" style="--c:#C0922E"><span class="bar"></span><h4>في الركن</h4><p>يتحوّل المعنى إلى لعبٍ محسوس: تصنيف، تمثيل، بناء، قراءة، أو تجربةٌ آمنة.</p></div>
+      <div class="step reveal" style="--c:#B15230"><span class="bar"></span><h4>في التقويم</h4><p>لا يكفي أن يعرف الطفلُ الجواب؛ نلاحظ أثر المعرفة في قوله واختياره وتعامله.</p></div>
+    </div>
+    <p class="body-copy reveal" style="margin-top:clamp(30px,4vw,46px);max-width:64ch"><b>هذه المحاور الستّة</b> — الإله، المرجع، القيمة، الفعل، الغاية، الثمرة — تُقرأ في كلّ مادّة، وكلّ ركن، وكلّ نموذج تقويم؛ فيبدأ كلّ درسٍ من الإله والمرجع، ويمرّ بالقيمة والفعل والغاية، لينتهي إلى الثمرة في وجدان الطفل وسلوكه. وهي البوصلة التي تُعرض من خلالها أدلّة الوحدات جميعها.</p>
+  </div>
+</section>
+
+<!-- هوامش المعلّمة -->
+<section class="notes">
+  <div class="wrap">
+    <span class="eyebrow-num reveal">للمعلّمة</span>
+    <h2 class="h2 reveal">ثلاث ملاحظاتٍ على الطريق</h2>
+    <div class="note-grid">
+      <div class="note reveal"><div class="k">معيار القرار</div><h4>قبل إضافة أيّ نشاط</h4><p>اسألي: هل يقود هذا النشاط إلى المعنى؟ وهل يربط العلم بالوحي؟ وهل يناسب عمر الطفل؟</p></div>
+      <div class="note reveal"><div class="k">توازن</div><h4>العقل والإيمان</h4><p>الملاحظة والتجربة واللعب ليست بدائل عن الوحي؛ هي طرقٌ يفهم بها الطفلُ آياتِ الله ونعمته.</p></div>
+      <div class="note reveal"><div class="k">جملة مركزيّة</div><h4>بوصلة المعلّمة</h4><p>العلمُ خادمٌ للإنسان في طريق عبوديّته لله، لا بديلٌ عن الهداية الربّانيّة.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- الخاتمة -->
+<section class="close">
+  <div class="wrap">
+    <div class="mark"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6c5 4 5 11 0 16-5-5-5-12 0-16z"/><circle cx="24" cy="26" r="16"/><path d="M24 26l7 7"/></svg></div>
+    <p>من الرؤية… إلى الأثر في وجدان الطفل وسلوكه.</p>
+    <div class="next">الفصل التالي: مكوّنات المنهج <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  // fire hero reveals immediately
+  requestAnimationFrame(function(){document.querySelectorAll('.hero .reveal').forEach(function(el){el.classList.add('in');});});
+})();
+</script>
+</body>
+</html>
