@@ -1930,11 +1930,11 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 /* غلاف الدليل: لوحةٌ مائية مضيئة متماهية (كالرئيسية) — بلا تعتيم + نصّ غابيّ غامق بهالة فاتحة */
 /* غلافٌ بلا إطار، متسامٍ مع ما تحته (بروح Velorah): شفّافٌ متّصل + عنوانٌ ضخمٌ متمركز محكم */
 /* غلافٌ ملءَ عرض الصفحة يتماهى معها (بأسلوب Velorah): صورةٌ ممتدّة، النصُّ فوقها، وحوافُّها تذوب في ورق الصفحة بلا إطار */
-.cover{background:transparent!important;position:relative!important;width:100%;margin:0!important;padding:0!important;overflow:hidden!important;border:0!important;box-shadow:none!important;min-height:0!important;height:clamp(460px,56vw,720px);display:block!important;animation:gqFade .9s both}
+.cover{background:transparent!important;position:relative!important;width:100%;margin:0!important;padding:0!important;overflow:hidden!important;border:0!important;box-shadow:none!important;min-height:0!important;height:clamp(400px,44vw,560px);display:block!important;animation:gqFade .9s both}
 .cover .cover-scene{position:absolute!important;inset:0;z-index:0;margin:0;padding:0;display:block}
-.cover .cover-scene-img{width:100%!important;height:100%!important;object-fit:cover;object-position:center 46%;display:block}
+.cover .cover-scene-img{width:100%!important;height:100%!important;object-fit:cover;object-position:center 52%;display:block}
 /* ذوبان الحواف الأربع في لون الصفحة (لا إطار، لا صندوق) */
-.cover::before{content:""!important;display:block!important;position:absolute!important;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(251,249,242,.9),rgba(251,249,242,.34) 15%,rgba(251,249,242,0) 32%,rgba(251,249,242,0) 55%,rgba(248,242,229,.55) 80%,#F5EEDF 100%),linear-gradient(90deg,rgba(251,249,242,.7),rgba(251,249,242,0) 13%,rgba(251,249,242,0) 87%,rgba(251,249,242,.7))!important}
+.cover::before{content:""!important;display:block!important;position:absolute!important;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(251,249,242,.86),rgba(251,249,242,.3) 14%,rgba(251,249,242,0) 30%,rgba(251,249,242,0) 66%,rgba(248,242,229,.34) 86%,#F5EEDF 100%),linear-gradient(90deg,rgba(251,249,242,.65),rgba(251,249,242,0) 12%,rgba(251,249,242,0) 88%,rgba(251,249,242,.65))!important}
 .cover::after{display:none!important}
 .cover .hero-x{position:absolute!important;z-index:3;inset:0 0 auto 0;display:flex!important;flex-direction:column;align-items:center;text-align:center;max-width:900px;margin:0 auto;padding:clamp(34px,5.2vw,66px) clamp(24px,5vw,48px) 0!important}
 .cover .cover-kicker{display:inline-flex!important;align-items:center;gap:10px;color:var(--gp-ochre-dark)!important;background:transparent!important;font-family:'AlAwwal','Amiri',serif;font-weight:700;font-size:12.5px!important;letter-spacing:.03em;margin-bottom:22px!important;text-shadow:none!important;padding:0!important}
@@ -2373,19 +2373,19 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 /* ============ الشريط الزمنيّ: التبويبات خطًّا رأسيًّا يمين المحتوى ============ */
 .guide-layout{display:grid;grid-template-columns:288px minmax(0,1fr);gap:clamp(14px,1.8vw,26px);align-items:start;padding:16px clamp(10px,1.6vw,20px) 0}
 .guide-content{min-width:0}
-.guide-layout .toolbar{position:sticky!important;top:12px!important;align-self:start;display:flex!important;flex-direction:column;max-height:calc(100vh - 20px);overflow-y:auto!important;overflow-x:visible;background:linear-gradient(200deg,#fff,#FBF7EC)!important;border:1px solid var(--gp-line)!important;border-radius:18px!important;padding:15px 13px!important;box-shadow:0 14px 34px -22px rgba(31,74,57,.4)!important;backdrop-filter:none!important}
+.guide-layout .toolbar{position:sticky!important;top:12px!important;align-self:start;display:flex!important;flex-direction:column!important;justify-content:flex-start!important;max-height:calc(100vh - 20px);overflow-y:auto!important;overflow-x:visible;background:linear-gradient(200deg,#fff,#FBF7EC)!important;border:1px solid var(--gp-line)!important;border-radius:18px!important;padding:13px 12px!important;box-shadow:0 14px 34px -22px rgba(31,74,57,.4)!important;backdrop-filter:none!important}
 .guide-layout .tab-phase{margin-top:0}
 .guide-layout .tab-phase-row::before{inset-inline-start:25px;top:20px;bottom:20px}
 .guide-layout .toolbar-actions{flex:none;margin-top:12px;padding-top:12px;gap:6px}
 .guide-layout .toolbar::-webkit-scrollbar{width:6px}.guide-layout .toolbar::-webkit-scrollbar-thumb{background:rgba(199,154,59,.4);border-radius:9px}
 .guide-layout .mini-brand{display:none!important}
-.guide-layout .tabs{display:flex!important;flex-direction:column;justify-content:flex-start;flex:0 0 auto;overflow:visible!important;gap:9px;padding:2px 0}
-.guide-layout .tab-phase{margin-top:0}
-.guide-layout .tab-phase-label{display:flex;align-items:center;gap:9px;font-family:'AlAwwal','Amiri',serif;font-weight:700;color:var(--gp-ochre-dark);font-size:13.5px;margin:0 6px 9px;padding-inline-start:4px}
+.guide-layout .tabs{order:1!important;display:flex!important;flex-direction:column;justify-content:flex-start;flex:0 0 auto;overflow:visible!important;gap:4px;padding:0}
+.guide-layout .tab-phase{margin-top:0;order:0}
+.guide-layout .tab-phase-label{display:flex;align-items:center;gap:9px;font-family:'AlAwwal','Amiri',serif;font-weight:700;color:var(--gp-ochre-dark);font-size:13px;margin:2px 6px 5px;padding-inline-start:4px}
 .guide-layout .tab-phase-label::before{content:"";width:16px;height:2px;border-radius:2px;background:var(--gp-gold)}
 .guide-layout .tab-phase-row{display:block!important;position:relative}
 .guide-layout .tab-phase-row::before{content:"";position:absolute;inset-inline-start:25px;top:22px;bottom:22px;width:2px;background:var(--gp-line);z-index:0}
-.guide-layout .tab{display:block!important;width:100%;text-align:start;border:0!important;background:transparent!important;border-radius:12px!important;padding:5px 10px!important;margin:0!important;box-shadow:none!important;position:relative;z-index:1;transition:background .18s}
+.guide-layout .tab{display:block!important;width:100%;text-align:start;border:0!important;background:transparent!important;border-radius:12px!important;padding:4px 10px!important;margin:0!important;box-shadow:none!important;position:relative;z-index:1;transition:background .18s}
 .guide-layout .tab:hover{background:rgba(31,74,57,.05)!important;border-color:transparent!important}
 .guide-layout .tab .tab-ic{display:none!important}
 .guide-layout .tab .tab-meta{display:flex!important;flex-direction:row!important;align-items:center;gap:12px}
@@ -2396,7 +2396,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 .guide-layout .tab.active{background:linear-gradient(90deg,rgba(31,74,57,.09),transparent)!important;border-color:transparent!important}
 .guide-layout .tab.active .tab-n{background:var(--gp-forest)!important;border-color:var(--gp-forest)!important;color:#fff!important;box-shadow:0 0 0 4px #FCF8EE,0 0 0 7px rgba(31,74,57,.13),0 6px 14px -6px rgba(31,74,57,.5)!important;transform:scale(1.06)}
 .guide-layout .tab.active .tab-t{color:var(--gp-forest)!important}
-.guide-layout .toolbar-actions{flex:none;display:flex!important;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:5px;margin-top:11px;padding-top:11px;border-top:1px solid var(--gp-line)}
+.guide-layout .toolbar-actions{order:2!important;flex:none;display:flex!important;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:5px;margin-top:10px;padding-top:10px;border-top:1px solid var(--gp-line)}
 .guide-layout .toolbar-actions a,.guide-layout .toolbar-actions button{padding:6px 9px!important;font-size:10.5px!important;text-align:center;flex:1 1 auto}
 @media(max-width:900px){
  .guide-layout{grid-template-columns:1fr;padding:0}
