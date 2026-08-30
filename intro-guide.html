@@ -769,34 +769,6 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
   .wahy-cmp [style*="#FFE0D4"]{background:#F6EFEC!important}
   .wahy-cmp [style*="color:#B02020"]{color:#8a726b!important}
 </style>
-<style id="gp-journey">
-/* ====== الرحلة المصوّرة المنغمسة — نموذجٌ على قسم «الرؤية» ====== */
-/* بطلٌ سينمائيّ لكلّ فصل: صورةٌ ملءَ عرض العمود + عنوانٌ فوقها بحركةٍ هادئة */
-::selection{background:rgba(199,154,59,.26);color:#153529}
-#vision .running-head{display:none!important}
-#vision .gp-head{padding:0!important;margin:0!important}
-#vision .gp-head .gp-eyebrow,#vision .gp-head>h1,#vision .gp-head .gp-lede,#vision .gp-head .gp-stats{display:none!important}
-
-.jhero{position:relative;width:100%;height:clamp(360px,42vw,520px);overflow:hidden;background:#0f2a1f;isolation:isolate;border-radius:2px}
-.jhero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;z-index:0}
-.jhero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to top,rgba(13,34,24,.9) 0%,rgba(13,34,24,.52) 28%,rgba(13,34,24,.1) 56%,rgba(13,34,24,.22) 100%)}
-.jhero-body{position:absolute;z-index:2;inset-inline:0;bottom:0;display:flex;flex-direction:column;align-items:flex-start;padding:0 clamp(30px,4vw,56px) clamp(28px,3.4vw,46px)}
-.jhero-mark{display:inline-flex;align-items:center;gap:11px;color:#E8D6A6;font-family:'AlAwwal','Amiri',serif;font-weight:700;font-size:clamp(12px,1.25vw,14px);letter-spacing:.05em;margin-bottom:14px}
-.jhero-mark::before{content:"";width:32px;height:2px;border-radius:2px;background:currentColor;opacity:.75}
-.jhero-title{font-family:'AlAwwal','Amiri',serif;font-weight:700;color:#fff;font-size:clamp(34px,5.4vw,66px);line-height:1.04;letter-spacing:-.5px;margin:0;text-shadow:0 3px 34px rgba(0,0,0,.32);max-width:20ch}
-.jhero-essence{color:rgba(255,255,255,.9);font-size:clamp(15px,1.75vw,20px);line-height:1.7;margin:16px 0 0;max-width:50ch;text-shadow:0 1px 18px rgba(0,0,0,.34)}
-.page.active .jhero-img{animation:jZoom 1.5s cubic-bezier(.22,.61,.36,1) both}
-.page.active .jhero-mark{animation:jUp .7s .04s cubic-bezier(.22,.61,.36,1) both}
-.page.active .jhero-title{animation:jUp .85s .12s cubic-bezier(.22,.61,.36,1) both}
-.page.active .jhero-essence{animation:jUp .85s .2s cubic-bezier(.22,.61,.36,1) both}
-@keyframes jZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
-@keyframes jUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@media(prefers-reduced-motion:reduce){.page.active .jhero-img,.page.active .jhero-mark,.page.active .jhero-title,.page.active .jhero-essence{animation:none!important}}
-
-#vision .gp-intro{font-size:clamp(16px,1.5vw,18px);line-height:2.05;color:#3f4a44;max-width:64ch;margin:clamp(26px,3vw,40px) auto 6px;padding:0 clamp(30px,4vw,56px)}
-#vision .gp-intro::first-letter{float:inline-start;font-family:'AlAwwal','Amiri',serif;font-size:3.3em;line-height:.82;font-weight:700;color:#2C6A4D;margin-inline-end:.14em;margin-top:.04em}
-#vision .gp-intro b{color:#1F4A39;font-weight:700}
-</style>
 <div class="gq-platform-crumb"><a href="index.html">منصّة غرس القيم</a><span>›</span>الدليل العام<span>›</span>الدليل التعريفي والتشغيلي</div>
 <section class="cover">
 <div class="cover-scene"><img class="cover-scene-img" src="assets/units-art/intro-cover-scene.png?v=2" alt="" aria-hidden="true"></div>
@@ -2453,6 +2425,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </nav>
 <div class="guide-content">
 <section class="page active" id="start" style="--accent:#1E5631">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch01-start.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù Ù¡</span><div class="jhero-title">ابدئي من هنا</div><p class="jhero-essence">كيف تنتقل المعلمة من التخطيط إلى التنفيذ بثقةٍ ووضوح.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>ابدئي من هنا</strong></div>
 <div class="gp-hero">
 <div class="gp-head">
@@ -2514,15 +2487,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>01 · ابدئي من هنا</b></div>
 </section>
 <section class="page" id="vision" style="--accent:#B15230">
-<div class="jhero">
-<img class="jhero-img" src="assets/chapters/ch02-vision.jpg?v=3" alt="" aria-hidden="true">
-<div class="jhero-scrim" aria-hidden="true"></div>
-<div class="jhero-body">
-<span class="jhero-mark">الفصل ٠٢ · تأسيسٌ ورؤية</span>
-<h1 class="jhero-title">الرؤية والمنظومة</h1>
-<p class="jhero-essence">منهجٌ يعيد للوحي مرجعيّته، وللعلم بوصلته، وللإنسان غايته.</p>
-</div>
-</div>
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch02-vision.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù Ù¢</span><div class="jhero-title">الرؤية والمنظومة</div><p class="jhero-essence">منهجٌ يعيد للوحي مرجعيّته، وللعلم بوصلته، وللإنسان غايته.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>الرؤية والمنظومة</strong></div>
 <div class="gp-head gp-reveal">
 <span class="gp-eyebrow">الأساس الفلسفيّ · التبويب ٠٢</span>
@@ -2578,6 +2543,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>02 · الرؤية والمنظومة</b></div>
 </section>
 <section class="page" id="components" style="--accent:#0E6E6B">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch03-components.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù Ù£</span><div class="jhero-title">مكوّنات المنهج</div><p class="jhero-essence">تُقرأ المكونات بوصفها <b>نظامًا واحدًا</b>: التخطيط يحدد الوجهة، واللقاء يبني المعنى، والبطاقات توضحه، والركن يثبته، والمنظومات ترافق الانتقال، والمراجع الإثرائية تعين المعلمة، والتقييم يرصد الأثر.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>مكونات المنهج</strong></div>
 <div class="gp-head gp-reveal">
 <span class="gp-eyebrow">نظامٌ واحد · التبويب ٠٣</span>
@@ -2630,6 +2596,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>03 · مكونات المنهج</b></div>
 </section>
 <section class="page" id="subjects" style="--accent:#0E6E6B">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch04-subjects.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù Ù¤</span><div class="jhero-title">خريطة المواد والمراكز</div><p class="jhero-essence"><b>علّمني ربي</b> هو المحور المركزي الذي يعرّف الطفل بالله وآياته، بينما تعمق بقية المواد والمراكز التطبيقية المعنى نفسه من القرآن والسنة واللغة والرياضيات والسلوك.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>خريطة المواد والمراكز</strong></div>
 <div class="gp-head gp-reveal">
 <span class="gp-eyebrow">وظيفة كل مادة ومركز · التبويب ٠٤</span>
@@ -2677,6 +2644,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>04 · خريطة المواد</b></div>
 </section>
 <section class="page annual-plan-page" id="annual-plan" style="--accent:#4e6b60">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch05-plan.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù Ù¥</span><div class="jhero-title">المخطط الدراسي للمنهج</div><p class="jhero-essence">يضع أمام المعلمة <b>الخريطة السنوية التفصيلية</b> قبل الانتقال إلى مسار اليوم أو نموذج الوحدة؛ فتفهم أين تقع كل وحدة، وما الذي تنمّيه كل مادةٍ ومركزٍ عبر الفصول الثلاثة.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>المخطط الدراسي للمنهج</strong></div>
 <div class="gp-head gp-reveal">
 <span class="gp-eyebrow">أطلس المنهج السنويّ · التبويب ٠٥</span>
@@ -2966,6 +2934,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>05 · المخطط الدراسي للمنهج</b></div>
 </section>
 <section class="page" id="dayflow" style="--accent:#0E6E6B">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch06-dayflow.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù Ù¦</span><div class="jhero-title">مسار اليوم الدراسي</div><p class="jhero-essence">توازن بين الثوابت واللقاءات والأركان والحركة والراحة.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>مسار اليوم الدراسي</strong></div>
 <div class="section-banner"><div class="section-number">06</div><div class="section-title"><div><h2>مسار اليوم الدراسي</h2><p>توازن بين الثوابت واللقاءات والأركان والحركة والراحة.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="مسار اليوم الدراسي" data-size="24"></i></div></div></div>
 <div class="gp-head"><div class="gp-eyebrow">مسار اليوم · التبويب ٠٦</div><h1>مسار اليوم الدراسي</h1><p class="gp-lede">توازن بين الثوابت واللقاءات والأركان والحركة والراحة.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>7:30–2:00</b><span>امتداد اليوم</span></div><div class="gp-stat"><i></i><b>١٣</b><span>محطة يومية</span></div><div class="gp-stat"><i></i><b>٣٠ د</b><span>لكل لقاء أو مركز</span></div></div></div>
@@ -2988,6 +2957,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>06 · مسار اليوم الدراسي</b></div>
 </section>
 <section class="page" id="fitness" style="--accent:#1E5631">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch07-fitness.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù Ù§</span><div class="jhero-title">اللياقة البدنية</div><p class="jhero-essence">تمارين وأنشطة حركية آمنة تهيئ الجسم والعقل للتعلم — جزء ثابت من تشغيل اليوم لا فقرة ترفيهية منفصلة.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>اللياقة البدنية</strong></div>
 <div class="section-banner"><div class="section-number">07</div><div class="section-title"><div><h2>اللياقة البدنية</h2><p>تمارين وأنشطة حركية آمنة تهيئ الجسم والعقل للتعلم.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="اللياقة البدنية" data-size="24"></i></div></div></div>
 <div class="gp-head"><div class="gp-eyebrow">اللياقة البدنية · التبويب ٠٧</div><h1>اللياقة البدنية</h1><p class="gp-lede">تمارين وأنشطة حركية آمنة تهيئ الجسم والعقل للتعلم — جزء ثابت من تشغيل اليوم لا فقرة ترفيهية منفصلة.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٣٠ د</b><span>زمن الفقرة</span></div><div class="gp-stat"><i></i><b>٧</b><span>أنشطة مصوّرة</span></div><div class="gp-stat"><i></i><b>٤</b><span>مراحل الروتين</span></div></div></div>
@@ -3021,6 +2991,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>07 · اللياقة البدنية</b></div>
 </section>
 <section class="page" id="lesson" style="--accent:#1E5631">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch08-lesson.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù Ù¨</span><div class="jhero-title">بنية اللقاء التعليمي</div><p class="jhero-essence">قالب موحد يضمن وضوح الهدف وفاعلية النشاط والتقويم — سبع محطات متتابعة في كل لقاء.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>بنية اللقاء التعليمي</strong></div>
 <div class="section-banner"><div class="section-number">08</div><div class="section-title"><div><h2>بنية اللقاء التعليمي</h2><p>قالب موحد يضمن وضوح الهدف وفاعلية النشاط والتقويم.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="بنية اللقاء التعليمي" data-size="24"></i></div></div></div>
 <div class="gp-head"><div class="gp-eyebrow">بنية اللقاء · التبويب ٠٨</div><h1>بنية اللقاء التعليمي</h1><p class="gp-lede">قالب موحد يضمن وضوح الهدف وفاعلية النشاط والتقويم — سبع محطات متتابعة في كل لقاء.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٧</b><span>خطوات متتابعة</span></div><div class="gp-stat"><i></i><b>٣٠ د</b><span>لكل لقاء</span></div><div class="gp-stat"><i></i><b>٣</b><span>أسئلة الدورة</span></div></div></div>
@@ -3033,6 +3004,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>08 · بنية اللقاء التعليمي</b></div>
 </section>
 <section class="page" id="signals" style="--accent:#1E5631">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch09-signals.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù Ù©</span><div class="jhero-title">إشارات اللقاءات</div><p class="jhero-essence">إشارة اللقاء ليست مقدمة طويلة، بل مفتاح قصير يربط المادة بالهوية ويساعد الطفل على الانتقال.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>إشارات اللقاءات</strong></div>
 <div class="section-banner"><div class="section-number">09</div><div class="section-title"><div><h2>إشارات اللقاءات</h2><p>إشارات بدء محدثة تربط المادة بالهوية وتساعد الطفل على الانتقال.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="إشارات اللقاءات" data-size="24"></i></div></div></div>
 <div class="gp-head"><div class="gp-eyebrow">إشارات اللقاءات · التبويب ٠٩</div><h1>إشارات اللقاءات</h1><p class="gp-lede">إشارة اللقاء ليست مقدمة طويلة، بل مفتاح قصير يربط المادة بالهوية ويساعد الطفل على الانتقال.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٩</b><span>إشارات مواد</span></div><div class="gp-stat"><i></i><b>٤</b><span>لبنات الإشارة</span></div><div class="gp-stat"><i></i><b>٥</b><span>خطوات الانتقال</span></div></div></div>
@@ -3097,6 +3069,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>09 · إشارات اللقاءات</b></div>
 </section>
 <section class="page" id="corners" style="--accent:#B15230">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch10-corners.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù¡Ù </span><div class="jhero-title">الأركان والتعلم باللعب</div><p class="jhero-essence">الأركان ليست ملحقًا لوحدة، بل نظام تشغيل ثابت في المنهج كله يحوّل معنى المادة إلى خبرة محسوسة.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>الأركان والتعلم باللعب</strong></div>
 <div class="section-banner"><div class="section-number">10</div><div class="section-title"><div><h2>الأركان والتعلم باللعب</h2><p>تعريف عام مصور للأركان وتشغيلها داخل منهج غرس القيم كله.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="خريطة الأركان" data-size="24"></i></div></div></div>
 <div class="gp-head"><div class="gp-eyebrow">الأركان والتعلم باللعب · التبويب ١٠</div><h1>الأركان والتعلم باللعب</h1><p class="gp-lede">الأركان ليست ملحقًا لوحدة، بل نظام تشغيل ثابت في المنهج كله يحوّل معنى المادة إلى خبرة محسوسة.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٩</b><span>مكتبات أركان</span></div><div class="gp-stat"><i></i><b>٨</b><span>بطاقات قوانين</span></div><div class="gp-stat"><i></i><b>٥</b><span>خطوات التشغيل</span></div></div></div>
@@ -3358,6 +3331,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>10 · الأركان والتعلم باللعب</b></div>
 </section>
 <section class="page" id="songs" style="--accent:#0E6E6B">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch11-songs.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù¡Ù¡</span><div class="jhero-title">الأناشيد والمنظومات</div><p class="jhero-essence">ذاكرة سمعية وحركية ترافق الطفل في اليوم والوحدة — تُشغَّل أثناء الانتقال لترسيخ المعنى لا لملء الوقت.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>الأناشيد والمنظومات</strong></div>
 <div class="section-banner"><div class="section-number">11</div><div class="section-title"><div><h2>الأناشيد والمنظومات</h2><p>ذاكرة سمعية وحركية ترافق الطفل في اليوم والوحدة.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="أناشيد حركية" data-size="24"></i></div></div></div>
 <div class="gp-head"><div class="gp-eyebrow">الأناشيد والمنظومات · التبويب ١١</div><h1>الأناشيد والمنظومات</h1><p class="gp-lede">ذاكرة سمعية وحركية ترافق الطفل في اليوم والوحدة — تُشغَّل أثناء الانتقال لترسيخ المعنى لا لملء الوقت.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٣</b><span>أناشيد يومية ثابتة</span></div><div class="gp-stat"><i></i><b>٥</b><span>أناشيد حركية</span></div><div class="gp-stat"><i></i><b>١٧</b><span>منظومة وحدة</span></div></div></div>
@@ -3371,6 +3345,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>11 · الأناشيد والمنظومات</b></div>
 </section>
 <section class="page" id="manners" style="--accent:#4F7C49">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch12-manners.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù¡Ù¢</span><div class="jhero-title">الآداب الصفية</div><p class="jhero-essence">تربية بالموقف، ونص شرعي، وبديل سلوكي واضح — دفتر عملي للمعلّمة يربط كل موقف بالقيمة والنص والبديل.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>الآداب الصفية</strong></div>
 <div class="section-banner"><div class="section-number">12</div><div class="section-title"><div><h2>الآداب الصفية</h2><p>تربية بالموقف، ونص شرعي، وبديل سلوكي واضح.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="الآداب الصفية والقوانين" data-size="24"></i></div></div></div>
 <div class="gp-head"><div class="gp-eyebrow">الآداب الصفية · التبويب ١٢</div><h1>الآداب الصفية</h1><p class="gp-lede">تربية بالموقف، ونص شرعي، وبديل سلوكي واضح — دفتر عملي للمعلّمة يربط كل موقف بالقيمة والنص والبديل.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٣٣</b><span>أدبًا مصنّفًا</span></div><div class="gp-stat"><i></i><b>٥٩</b><span>موقفًا موثّقًا</span></div><div class="gp-stat"><i></i><b>٥</b><span>قوانين الفصل</span></div></div></div>
@@ -3384,6 +3359,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>12 · الآداب الصفية</b></div>
 </section>
 <section class="page" id="assessment" style="--accent:#7A4D7F">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch13-assessment.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù¡Ù£</span><div class="jhero-title">التقييم والأسرة</div><p class="jhero-essence">ملاحظة متكاملة ودعم مستمر وشراكة هادفة — لا يقتصر التقييم على إجابة الطفل بل ينظر إلى <strong>المعنى والفهم واللغة والمهارة والسلوك</strong>.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>التقييم والأسرة</strong></div>
 <div class="section-banner"><div class="section-number">13</div><div class="section-title"><div><h2>التقييم والأسرة</h2><p>ملاحظة متكاملة ودعم مستمر وشراكة هادفة.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="القيم والأسرة والتقييم" data-size="24"></i></div></div></div>
 <div class="gp-head"><div class="gp-eyebrow">التقييم والأسرة · التبويب ١٣</div><h1>التقييم والأسرة</h1><p class="gp-lede">ملاحظة متكاملة ودعم مستمر وشراكة هادفة — لا يقتصر التقييم على إجابة الطفل بل ينظر إلى <strong>المعنى والفهم واللغة والمهارة والسلوك</strong>.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٥</b><span>مجالات التقييم</span></div><div class="gp-stat"><i></i><b>٤</b><span>حلقة الملاحظة</span></div><div class="gp-stat"><i></i><b>٣</b><span>أغلفة وحدات</span></div></div></div>
@@ -3427,6 +3403,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>13 · التقييم والأسرة</b></div>
 </section>
 <section class="page" id="scope" style="--accent:#455A64">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch14-scope.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù¡Ù¤</span><div class="jhero-title">النطاق والتسلسل</div><p class="jhero-essence">خريطة نمو المواد عبر الفصول الثلاثة — من التأسيس في الأول، إلى التوسّع في الثاني، ثم التثبيت والتطبيق في الثالث.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>النطاق والتسلسل</strong></div>
 <div class="section-banner"><div class="section-number">14</div><div class="section-title"><div><h2>النطاق والتسلسل</h2><p>خريطة نمو المواد عبر الفصول الثلاثة.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="النطاق والتسلسل" data-size="24"></i></div></div></div>
 <div class="gp-head"><div class="gp-eyebrow">النطاق والتسلسل · التبويب ١٤</div><h1>النطاق والتسلسل</h1><p class="gp-lede">خريطة نمو المواد عبر الفصول الثلاثة — من التأسيس في الأول، إلى التوسّع في الثاني، ثم التثبيت والتطبيق في الثالث.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٩</b><span>مواد المنهج</span></div><div class="gp-stat"><i></i><b>٣</b><span>فصول دراسية</span></div><div class="gp-stat"><i></i><b>٢٧</b><span>خلية تسلسل</span></div></div></div>
@@ -3438,6 +3415,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>14 · النطاق والتسلسل</b></div>
 </section>
 <section class="page" id="unit" style="--accent:#172848">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch15-unit.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù¡Ù¥</span><div class="jhero-title">نموذج وحدة متكاملة</div><p class="jhero-essence">وحدة الليل والنهار وفق آخر دليل تكاملي محدث — خمسة لقاءات تتكامل فيها المواد والأركان حول قيمة التفكّر.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>نموذج وحدة متكاملة</strong></div>
 <div class="section-banner"><div class="section-number">15</div><div class="section-title"><div><h2>نموذج وحدة متكاملة</h2><p>وحدة الليل والنهار وفق آخر دليل تكاملي محدث.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="نموذج وحدة متكاملة" data-size="24"></i></div></div></div>
 <div class="gp-head"><div class="gp-eyebrow">نموذج وحدة متكاملة · التبويب ١٥</div><h1>نموذج وحدة متكاملة</h1><p class="gp-lede">وحدة الليل والنهار وفق آخر دليل تكاملي محدث — خمسة لقاءات تتكامل فيها المواد والأركان حول قيمة التفكّر.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٥</b><span>لقاءات رئيسية</span></div><div class="gp-stat"><i></i><b>٨</b><span>مواد متكاملة</span></div><div class="gp-stat"><i></i><b>٦</b><span>بطاقات ونماذج</span></div></div></div>
@@ -3467,6 +3445,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 <div class="page-folio"><span>الدليل التعريفي والتشغيلي للمنهج</span><b>15 · نموذج وحدة متكاملة</b></div>
 </section>
 <section class="page" id="nutrition" style="--accent:#2E7D46">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch16-nutrition.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù¡Ù¦</span><div class="jhero-title">التغذية والنمو السليم للطفل</div><p class="jhero-essence">مراجع وزارة الصحة السعودية المعتمدة في تغذية الطفل ونموّه وسلامته — سندٌ علميّ للمعلّمة يُقرأ للتحضير والإثراء، لا مادةَ عرضٍ مباشرة للطفل.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>التغذية والنمو السليم للطفل</strong></div>
 <div class="section-banner"><div class="section-number">16</div><div class="section-title"><div><h2>التغذية والنمو السليم للطفل</h2><p>مراجع وزارة الصحة السعودية المعتمدة في تغذية الطفل ونموّه وسلامته.</p></div><div class="section-icon"><i class="gi gi-dark" data-i="التغذية والنمو السليم" data-size="24"></i></div></div></div>
 <div class="gp-head"><div class="gp-eyebrow">التغذية والنمو السليم · التبويب ١٦</div><h1>التغذية والنمو السليم للطفل</h1><p class="gp-lede">مراجع وزارة الصحة السعودية المعتمدة في تغذية الطفل ونموّه وسلامته — سندٌ علميّ للمعلّمة يُقرأ للتحضير والإثراء، لا مادةَ عرضٍ مباشرة للطفل.</p><div class="gp-stats"><div class="gp-stat"><i></i><b>٥</b><span>أدلّة وزارة الصحة</span></div><div class="gp-stat"><i></i><b>٨</b><span>أغذية نبوية</span></div><div class="gp-stat"><i></i><b>٣</b><span>دراسات علمية</span></div></div></div>
@@ -3734,6 +3713,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 @media(max-width:720px){#rules .grow-hero{grid-template-columns:1fr;gap:14px}#rules .grow-art{order:-1}#rules .grow-vid{max-width:260px}#rules .grow-fruit{padding-inline-start:26px}#rules .grow-fruit .g-fruit-ic{position:static;display:block;margin-bottom:10px}}
 </style>
 <section class="page" id="rules" style="--accent:#8a5d12">
+<div class="jhero"><img class="jhero-img" src="assets/chapters/ch01-start.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">Ø§ÙÙØµÙ Ù¡Ù§</span><div class="jhero-title">قواعد قيمية ونصائح على الطريق</div><p class="jhero-essence">القيمةُ بذرةٌ نغرسها في قلب الطفل، وهذه القواعدُ التسع ماؤها وضوؤها وتربتها التي تنمو بها.</p></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>قواعد قيمية</strong></div>
 <div class="gp-head gp-reveal">
 <span class="gp-eyebrow">قواعدُ العمل القيميّ · التبويب ١٧</span>
@@ -3931,4 +3911,89 @@ td,th,dd,dt{font-size:14.5px!important}
 .tab{font-size:13.5px!important;padding:8px 12px!important}
 </style>
 <script src="brand/guide-icons.js?v=2"></script>
+<style id="gp-world-journey">
+/* ============ عالم الرحلة المصوّرة — معمَّم على الفصول الـ17 ============ */
+/* بلغة الصفحة الرئيسيّة · خطّ AlAwwal المعتمد · ألوان غرس الرسميّة */
+:root{--gp-ivory:#FBF9F2;--gp-cream:#F4EDDE;--gp-warm:#F6F1E4;--gp-forest:#1F4A39;--gp-forest2:#2C6A4D;--gp-teal:#0E6E6B;--gp-ochre:#C0922E;--gp-ochre-dark:#8a5d12;--gp-gold:#C79A3B;--gp-ink:#1E2E29;--gp-gray:#6C776F;--gp-line:#E9E1D2;--gp-line-soft:#F0E9DB}
+::selection{background:rgba(192,146,46,.22);color:#153529}
+
+/* 1) صفحةٌ كاملة بلا بطاقة كتاب */
+#book.book{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;overflow:visible!important;width:min(100%,1200px)!important;margin:0 auto clamp(30px,5vw,60px)!important}
+#book .topline{display:none!important}
+.page{background:var(--gp-ivory)!important;min-height:0!important}
+
+/* 2) لا شبكة شريط: المحتوى بعرض كامل */
+.guide-layout{display:block!important;padding:0!important;gap:0!important;grid-template-columns:none!important}
+.guide-content{min-width:0!important}
+
+/* 3) الشريط → خطٌّ زمنيّ رفيع طافٍ (نقاط) */
+@media(min-width:901px){
+ .guide-layout .toolbar{position:fixed!important;inset-inline-end:clamp(9px,1.4vw,20px)!important;top:50%!important;transform:translateY(-50%)!important;align-self:auto!important;width:auto!important;min-width:0!important;max-height:none!important;overflow:visible!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;backdrop-filter:none!important;display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:0!important;z-index:55}
+ .guide-layout .mini-brand,.guide-layout .toolbar-actions,.guide-layout .tab-phase-label,.guide-layout .tab .tab-t{display:none!important}
+ .guide-layout .tabs{display:flex!important;flex-direction:column!important;gap:9px!important;padding:0!important;width:auto!important;flex:0 0 auto!important}
+ .guide-layout .tab-phase{display:flex!important;flex-direction:column!important;gap:9px!important;margin:0!important}
+ .guide-layout .tab-phase-row{display:flex!important;flex-direction:column!important;gap:9px!important}
+ .guide-layout .tab-phase-row::before{display:none!important}
+ .guide-layout .tab{display:block!important;width:auto!important;padding:2px!important;margin:0!important;background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important}
+ .guide-layout .tab:hover{background:transparent!important;transform:none!important}
+ .guide-layout .tab .tab-meta{display:block!important;gap:0!important}
+ .guide-layout .tab .tab-n{width:9px!important;height:9px!important;min-width:0!important;padding:0!important;border-radius:50%!important;background:#fff!important;border:1.5px solid #cdbd98!important;color:transparent!important;font-size:0!important;box-shadow:none!important;transform:none!important;transition:.25s ease!important;display:block!important}
+ .guide-layout .tab:hover .tab-n{border-color:var(--gp-forest)!important;transform:scale(1.3)!important}
+ .guide-layout .tab.active .tab-n{background:var(--gp-forest)!important;border-color:var(--gp-forest)!important;transform:scale(1.65)!important;box-shadow:0 0 0 4px rgba(31,74,57,.12)!important}
+ .guide-layout .tab.done .tab-n{background:var(--gp-gold)!important;border-color:var(--gp-gold)!important}
+}
+
+/* 4) البطل المعتمد لكلّ فصل: صورةٌ حيّةٌ يمينًا، النصّ يسارًا فوق الفراغ، يذوب في الورق */
+.page .jhero{position:relative;width:100%;min-height:clamp(430px,60vh,600px);display:flex;align-items:center;overflow:hidden;background:var(--gp-ivory);isolation:isolate;margin:0 0 clamp(2px,.6vw,8px)}
+.page .jhero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 42%;z-index:0;filter:saturate(1.16) contrast(1.07)}
+.page.active .jhero-img{animation:jZoom 2.1s cubic-bezier(.22,.61,.36,1) both}
+@keyframes jZoom{from{transform:scale(1.09)}to{transform:scale(1.02)}}
+.page .jhero-wash{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+   radial-gradient(78% 76% at 20% 50%,rgba(251,249,242,.74),rgba(251,249,242,.24) 52%,transparent 72%),
+   linear-gradient(to bottom,rgba(251,249,242,.26) 0%,transparent 22%,transparent 60%,rgba(251,249,242,.5) 86%,var(--gp-ivory) 100%),
+   radial-gradient(120% 50% at 86% 4%,rgba(199,154,59,.1),transparent 50%)}
+.page .jhero-copy{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:clamp(28px,5vh,64px) clamp(22px,5vw,52px);display:flex;flex-direction:column;align-items:flex-end;text-align:start}
+.page .jhero-mark{max-width:34ch;display:inline-flex;align-items:center;gap:11px;color:var(--gp-ochre-dark);font-family:'AlAwwal','Amiri',serif;font-weight:700;font-size:clamp(12.5px,1.4vw,15px);letter-spacing:.04em;margin:0 0 clamp(14px,2vw,22px);text-shadow:0 1px 10px rgba(251,249,242,.85)}
+.page .jhero-mark::before{content:"";width:30px;height:1.5px;background:currentColor;opacity:.7}
+.page .jhero-title{max-width:19ch;font-family:'AlAwwal','Amiri',serif;font-weight:700;color:var(--gp-forest);font-size:clamp(38px,6.6vw,92px);line-height:1.02;letter-spacing:-.01em;text-shadow:0 1px 0 rgba(255,255,255,.4),0 2px 28px rgba(251,249,242,.8)}
+.page .jhero-title::after{content:"";display:block;width:64px;height:3px;border-radius:3px;margin-top:clamp(16px,2.2vw,24px);background:linear-gradient(90deg,var(--gp-gold),rgba(199,154,59,0))}
+.page .jhero-essence{max-width:32ch;font-family:'AlAwwal','Amiri',serif;font-weight:700;color:var(--gp-ink);font-size:clamp(16px,2.2vw,25px);line-height:1.5;margin:clamp(16px,2.2vw,24px) 0 0;text-shadow:0 1px 12px rgba(251,249,242,.82)}
+.page.active .jhero-mark{animation:jUp .7s .05s cubic-bezier(.22,.61,.36,1) both}
+.page.active .jhero-title{animation:jUp .85s .13s cubic-bezier(.22,.61,.36,1) both}
+.page.active .jhero-essence{animation:jUp .85s .22s cubic-bezier(.22,.61,.36,1) both}
+@keyframes jUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.page.active .jhero-img,.page.active .jhero-mark,.page.active .jhero-title,.page.active .jhero-essence{animation:none!important}}
+
+/* 5) إخفاء الترويسة القديمة (البطل يحملها) + المقدّمة تصير صدرًا تحريريًّا */
+.page .running-head{display:none!important}
+.page .gp-head{max-width:none!important;margin:0!important;padding:0!important;background:transparent!important;box-shadow:none!important;border:0!important}
+.page .gp-head>.gp-eyebrow,.page .gp-head>h1,.page .gp-head>.gp-lede,.page .gp-head .gp-stats{display:none!important}
+.page .gp-head .gp-intro{display:block!important;font-family:'Noto Naskh Arabic','Segoe UI',Tahoma,sans-serif!important;font-size:clamp(16px,1.5vw,18.5px)!important;line-height:2.15!important;color:#3f4a44!important;max-width:66ch!important;margin:clamp(30px,4vw,46px) 0 0!important;padding:0 clamp(22px,5vw,52px)!important}
+.page .gp-head .gp-intro::first-letter{float:inline-start;font-family:'AlAwwal','Amiri',serif;font-size:3.3em;line-height:.8;font-weight:700;color:var(--gp-forest2);margin-inline-end:.14em;margin-top:.04em}
+.page .gp-head .gp-intro b{color:var(--gp-forest);font-weight:700}
+
+/* 6) لغة المحتوى: خطوط الهوية + مساحات + بطاقات الرئيسيّة */
+.page .page-body{background:transparent!important;padding:clamp(28px,4vw,52px) clamp(22px,5vw,52px) clamp(40px,6vw,70px)!important}
+.page .gp-sechead h2,.page .section-title h2,.page h2.gp-h2{font-family:'AlAwwal','Amiri',serif!important;color:var(--gp-forest)!important;letter-spacing:-.01em}
+.page .gp-eyebrow{color:var(--gp-ochre)!important}
+/* بطاقاتٌ بيضاء بحدٍّ رفيع وظلٍّ غابيّ ناعم (نمط الرئيسيّة) */
+.page :is(.gp-card,.gp-eff,.teacher-tip,.quick-card,.reference-card,.route-card,.component-card,.cycle-card,.corner-card){
+  background:#fff!important;border:1px solid var(--gp-line)!important;border-top-color:var(--gp-line)!important;border-radius:16px!important;
+  box-shadow:0 14px 34px -26px rgba(31,74,57,.35)!important;transition:transform .28s var(--gp-ease,ease),box-shadow .28s ease!important}
+.page :is(.gp-card,.gp-eff,.teacher-tip,.quick-card,.reference-card):hover{transform:translateY(-4px)!important;box-shadow:0 20px 40px -26px rgba(31,74,57,.4)!important}
+.page :is(.teacher-tip,.quick-card,.reference-card){border-top:1px solid var(--gp-line)!important}
+.page :is(.gp-card,.gp-eff,.teacher-tip,.quick-card,.reference-card) :is(h3,h4,b){font-family:'AlAwwal','Amiri',serif!important}
+.page .page-folio{color:var(--gp-gray)!important;border-top:1px solid var(--gp-line-soft)!important}
+
+/* 7) كشف تدريجيّ لطيف عند فتح القسم */
+.page.active .page-body{animation:jUp .8s .28s cubic-bezier(.22,.61,.36,1) both}
+
+/* 8) الجوّال: يبقى الشريط أفقيًّا مستخدَمًا */
+@media(max-width:900px){
+ .page .jhero{min-height:clamp(340px,52vh,460px)}
+ .page .jhero-copy{align-items:flex-end}
+}
+</style>
+
 </body></html>
