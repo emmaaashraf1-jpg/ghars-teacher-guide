@@ -770,17 +770,6 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
   .wahy-cmp [style*="color:#B02020"]{color:#8a726b!important}
 </style>
 <div class="gq-platform-crumb"><a href="index.html">منصّة غرس القيم</a><span>›</span>الدليل العام<span>›</span>الدليل التعريفي والتشغيلي</div>
-<section class="cover">
-<div class="cover-scene"><img class="cover-scene-img" src="assets/units-art/intro-cover-scene.png?v=2" alt="" aria-hidden="true"></div>
-<div class="hero-x">
-<span class="cover-kicker">نادي غرس القيم للطفولة · إصدار المعلمة</span>
-<div class="hero-copy-x">
-<h1>الدليل التعريفي والتشغيلي للمنهج</h1>
-<p class="subtitle">منظومة تربوية متكاملة تبدأ من الوحي، وتصل إلى المعرفة والمهارة والسلوك عبر لقاءات قصيرة، وأركان تطبيقية، وآداب صفية حية.</p>
-<div class="cover-tags"><span>مرجعية الوحي</span><span>تكامل المواد</span><span>التعلم باللعب</span><span>التربية بالموقف</span></div>
-</div>
-</div>
-</section>
 <main class="book" id="book">
 <div class="topline"></div>
 <template id="__bundler_thumbnail" data-bg-color="#1F4A39">
@@ -2425,7 +2414,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </nav>
 <div class="guide-content">
 <section class="page active" id="start" style="--accent:#1E5631">
-<div class="jhero"><img class="jhero-img" src="assets/chapters/ch01-start.jpg?v=3" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">الفصل ٠١</span><div class="jhero-title">ابدئي من هنا</div><p class="jhero-essence">كيف تنتقل المعلمة من التخطيط إلى التنفيذ بثقةٍ ووضوح.</p></div></div>
+<div class="jhero jhero-cover"><img class="jhero-img" src="assets/units-art/intro-cover-scene.png?v=2" alt="" aria-hidden="true"><div class="jhero-wash" aria-hidden="true"></div><div class="jhero-copy"><span class="jhero-mark">نادي غرس القيم للطفولة · إصدار المعلّمة</span><div class="jhero-title">الدليل التعريفيّ والتشغيليّ للمنهج</div><p class="jhero-essence">منظومةٌ تربويّة متكاملة تبدأ من الوحي، وتصل إلى المعرفة والمهارة والسلوك عبر لقاءاتٍ قصيرة، وأركانٍ تطبيقيّة، وآدابٍ صفّيّة حيّة.</p><div class="jhero-tags"><span>مرجعيّة الوحي</span><span>تكامل المواد</span><span>التعلّم باللعب</span><span>التربية بالموقف</span></div></div></div>
 <div class="running-head"><span>نادي غرس القيم للطفولة</span><strong>ابدئي من هنا</strong></div>
 <div class="gp-hero">
 <div class="gp-head">
@@ -3989,9 +3978,17 @@ td,th,dd,dt{font-size:14.5px!important}
 /* 7) كشف تدريجيّ لطيف عند فتح القسم */
 .page.active .page-body{animation:jUp .8s .28s cubic-bezier(.22,.61,.36,1) both}
 
+/* غلاف الدليل (القسم الأوّل): صورة المرج، وشارات الهوية */
+.page .jhero-cover{min-height:clamp(500px,72vh,700px)}
+.page .jhero-cover .jhero-img{object-position:center 46%}
+.page .jhero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:clamp(20px,2.6vw,30px);max-width:40ch}
+.page .jhero-tags span{font-family:'Noto Naskh Arabic','Segoe UI',Tahoma,sans-serif;font-size:clamp(11.5px,1.2vw,13px);font-weight:700;color:var(--gp-ochre-dark);background:rgba(251,249,242,.72);border:1px solid rgba(199,154,59,.4);border-radius:999px;padding:6px 14px;backdrop-filter:blur(2px);text-shadow:none}
+.page.active .jhero-tags{animation:jUp .85s .3s cubic-bezier(.22,.61,.36,1) both}
+
 /* 8) الجوّال: يبقى الشريط أفقيًّا مستخدَمًا */
 @media(max-width:900px){
  .page .jhero{min-height:clamp(340px,52vh,460px)}
+ .page .jhero-cover{min-height:clamp(420px,60vh,540px)}
  .page .jhero-copy{align-items:flex-end}
 }
 </style>
