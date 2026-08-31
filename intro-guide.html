@@ -4047,6 +4047,159 @@ td,th,dd,dt{font-size:14.5px!important}
 #book .page :is(.gp-sechead,.sec-head) h2::after{opacity:.55}
 #book .page :is(.subject-box,.signal-flow-card){border-width:1px!important;box-shadow:0 26px 52px -36px rgba(31,74,57,.2)!important}
 </style>
+<style id="gp-content-pro">
+/* ============================================================
+   الرفع الاحترافيّ لمحتوى التبويبات — طبقةٌ مشتركة (تعمّم تلقائيًّا)
+   الأولويّات: هرميّة تحريريّة · جداول مصمّمة · بطاقات تتنفّس · ملء المساحة
+   ============================================================ */
+
+/* ---------- 1) رأس القسم: مفتتحٌ تحريريّ واضح الهرميّة ---------- */
+#book .page .page-main > .gp-sechead{
+  margin-top:clamp(58px,6.5vw,92px)!important;
+  margin-bottom:clamp(22px,2.6vw,32px)!important;
+  padding-bottom:clamp(15px,1.7vw,21px)!important;
+  position:relative;border:0!important;background:transparent!important;
+}
+#book .page .page-main > .gp-sechead:first-child{margin-top:clamp(6px,1.4vw,18px)!important}
+#book .page .page-main > .gp-sechead::after{
+  content:"";position:absolute;bottom:0;inset-inline-start:auto;inset-inline-end:0;
+  width:clamp(46px,6vw,78px);height:2.5px;border-radius:3px;
+  background:linear-gradient(to var(--gp-hair-dir,left),var(--gp-gold),rgba(199,154,59,0));
+}
+#book .page .page-main > .gp-sechead .gp-eyebrow{
+  display:inline-block;color:var(--gp-ochre-dark)!important;
+  font-family:'AlAwwal','Amiri',serif!important;font-weight:700;
+  font-size:clamp(12px,1.25vw,13.5px)!important;letter-spacing:.03em;
+  margin-bottom:clamp(8px,1vw,12px)!important;opacity:.95;
+}
+#book .page .page-main > .gp-sechead h2{
+  font-family:'AlAwwal','Amiri',serif!important;color:var(--gp-forest)!important;
+  font-size:clamp(27px,3.1vw,36px)!important;line-height:1.14!important;
+  letter-spacing:-.012em;margin:0!important;
+}
+#book .page .page-main > .gp-sechead h2::after{display:none!important}
+#book .page .page-main > .gp-sechead > p,
+#book .page .page-main > .gp-sechead .gp-sechead-sub{
+  color:#5a665e!important;font-size:clamp(14.5px,1.4vw,16px)!important;
+  line-height:1.75!important;margin:clamp(8px,1vw,12px) 0 0!important;max-width:60ch;
+}
+
+/* ---------- 2) بطاقاتٌ تتنفّس: شبكاتٌ مريحة بلا تلامس ---------- */
+#book .page .resource-grid{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,248px),1fr))!important;
+  gap:clamp(18px,1.9vw,26px)!important;
+}
+#book #components .resource-grid > *{flex:initial!important;max-width:none!important}
+#book .page .centers-brief-grid{gap:clamp(18px,2vw,26px)!important}
+#book .page .gp-effects{gap:clamp(16px,1.8vw,24px)!important}
+#book .page .refs-helper-grid{gap:clamp(12px,1.3vw,16px)!important}
+
+/* داخل البطاقة: هرميّةٌ واضحة + تنفّسٌ داخليّ + رفعٌ لطيف عند اللمس */
+#book .page :is(.resource-card,.refs-helper-card,.center-brief-card,.gp-eff){
+  padding:clamp(18px,1.7vw,24px) clamp(18px,1.7vw,23px)!important;
+  border-radius:16px!important;position:relative;overflow:hidden;
+  transition:transform .34s cubic-bezier(.16,.84,.44,1),box-shadow .34s ease!important;
+}
+#book .page :is(.resource-card,.center-brief-card,.gp-eff):hover{
+  transform:translateY(-4px)!important;
+  box-shadow:0 22px 44px -26px rgba(31,74,57,.42)!important;
+}
+#book .page :is(.resource-card,.refs-helper-card) :is(h4,b:first-child){
+  font-family:'AlAwwal','Amiri',serif!important;color:var(--gp-forest)!important;
+  font-size:clamp(16px,1.45vw,18px)!important;line-height:1.35!important;
+  display:block;margin:0 0 7px!important;letter-spacing:-.008em;
+}
+#book .page :is(.resource-card,.refs-helper-card) p{
+  color:#4c574f!important;font-size:clamp(13.5px,1.28vw,14.5px)!important;
+  line-height:1.82!important;margin:0!important;
+}
+/* شارةٌ لونيّة علويّة رفيعة (بديلٌ عن الحدّ الملوّن الجانبيّ) */
+#book .page .resource-card::before{
+  content:"";position:absolute;top:0;inset-inline-end:0;width:clamp(34px,4vw,52px);height:3px;
+  background:linear-gradient(to var(--gp-hair-dir,left),var(--gp-teal),rgba(14,110,107,0));
+  opacity:.85;
+}
+
+/* ---------- 3) ملء المساحة: الفِقَر المفردة تصير حاشياتٍ بعرضٍ كامل ---------- */
+#book .page :is(.wahy-note,.subject-thesis,.meeting-duration-note,.central-thread){
+  position:relative;background:linear-gradient(135deg,rgba(244,237,222,.7),rgba(251,249,242,.4))!important;
+  border:0!important;border-radius:18px!important;
+  padding:clamp(20px,2.3vw,30px) clamp(22px,2.6vw,34px) clamp(20px,2.3vw,30px) clamp(40px,4vw,58px)!important;
+  box-shadow:0 18px 40px -34px rgba(31,74,57,.3)!important;
+  font-size:clamp(15px,1.5vw,17.5px)!important;line-height:1.95!important;color:#3c4a43!important;
+  max-width:none!important;overflow:hidden;
+}
+#book .page :is(.wahy-note,.subject-thesis,.meeting-duration-note,.central-thread)::before{
+  content:"";position:absolute;top:0;bottom:0;inset-inline-end:0;width:5px;
+  background:linear-gradient(180deg,var(--gp-gold),var(--gp-ochre-dark));border-radius:0 3px 3px 0;
+}
+#book .page :is(.wahy-note,.subject-thesis) b:first-child,
+#book .page .meeting-duration-note strong,
+#book .page .central-thread b:first-child{color:var(--gp-forest)!important;font-family:'AlAwwal','Amiri',serif!important}
+
+/* ---------- 4) جداولٌ مصمّمة: خفّةٌ ووضوحٌ وثباتُ العمود الأوّل ---------- */
+#book .page :is(.matrix-wrap,.asset-table-wrap,.scope-table-wrap){
+  border-radius:16px!important;border:.8px solid var(--gp-line)!important;
+  overflow:auto!important;box-shadow:0 20px 44px -34px rgba(31,74,57,.28)!important;
+  background:#fff;scrollbar-width:thin;scrollbar-color:#cdbd96 transparent;
+}
+#book .page :is(.matrix-wrap,.asset-table-wrap,.scope-table-wrap)::-webkit-scrollbar{height:9px}
+#book .page :is(.matrix-wrap,.asset-table-wrap,.scope-table-wrap)::-webkit-scrollbar-thumb{background:#cdbd96;border-radius:9px;border:2px solid #fff}
+#book .page :is(.components-matrix,.asset-table){
+  border-collapse:separate!important;border-spacing:0!important;width:100%;min-width:600px;
+}
+#book .page :is(.components-matrix,.asset-table) thead th{
+  background:linear-gradient(180deg,var(--gp-forest2),var(--gp-forest))!important;
+  color:#fff!important;font-family:'AlAwwal','Amiri',serif!important;font-weight:700;
+  font-size:clamp(13px,1.3vw,14.5px)!important;padding:14px 12px!important;
+  text-align:center;white-space:nowrap;position:sticky;top:0;z-index:2;letter-spacing:-.005em;
+}
+#book .page :is(.components-matrix,.asset-table) thead th:first-child{
+  text-align:start;position:sticky;inset-inline-end:0;z-index:3;
+}
+#book .page :is(.components-matrix,.asset-table) tbody td{
+  padding:13px 12px!important;font-size:clamp(13px,1.28vw,14.5px)!important;
+  color:#414d46!important;border-bottom:.8px solid var(--gp-line-soft)!important;
+  text-align:center;line-height:1.7;vertical-align:middle;
+}
+#book .page :is(.components-matrix,.asset-table) tbody td:first-child{
+  text-align:start;font-weight:700;color:var(--gp-forest)!important;
+  font-family:'AlAwwal','Amiri',serif!important;position:sticky;inset-inline-end:0;
+  background:inherit;box-shadow:-8px 0 12px -10px rgba(31,74,57,.14);min-width:150px;
+}
+#book .page :is(.components-matrix,.asset-table) tbody tr{background:#fff;transition:background .16s}
+#book .page :is(.components-matrix,.asset-table) tbody tr:nth-child(even){background:#FAF7EF}
+#book .page :is(.components-matrix,.asset-table) tbody tr:hover{background:#F3EFE2}
+#book .page :is(.components-matrix,.asset-table) tbody tr:last-child td{border-bottom:0!important}
+/* علامة المصفوفة: قرصٌ نظيف بلون الغابة بدل المحرف ● */
+#book .page .components-matrix .matrix-dot{
+  display:inline-block;width:11px;height:11px;border-radius:50%;font-size:0!important;color:transparent!important;
+  background:var(--gp-forest2);box-shadow:0 0 0 4px rgba(44,106,77,.12);vertical-align:middle;
+}
+
+/* ---------- 5) الشريط الجانبيّ: حاشياتٌ متّسقة (label chip بلا رافدٍ ملوّن) ---------- */
+#book .page .page-aside :is(.teacher-tip,.quick-card,.reference-card){
+  border-radius:16px!important;padding:clamp(15px,1.5vw,19px) clamp(16px,1.5vw,20px)!important;
+  background:#fff!important;box-shadow:0 14px 32px -26px rgba(31,74,57,.34)!important;border:0!important;
+}
+#book .page .page-aside :is(.teacher-tip,.quick-card,.reference-card) .tip-label{
+  display:inline-block;background:var(--gp-cream);color:var(--gp-ochre-dark)!important;
+  font-family:'AlAwwal','Amiri',serif!important;font-weight:700;font-size:11.5px!important;
+  letter-spacing:.02em;padding:3px 11px;border-radius:999px;margin-bottom:9px;
+}
+#book .page .page-aside :is(.teacher-tip,.quick-card,.reference-card) h3{
+  font-family:'AlAwwal','Amiri',serif!important;color:var(--gp-forest)!important;
+  font-size:clamp(15px,1.4vw,16.5px)!important;margin:0 0 6px!important;line-height:1.3;
+}
+#book .page .page-aside :is(.teacher-tip,.quick-card,.reference-card) p{
+  color:#4c574f!important;font-size:13.5px!important;line-height:1.8!important;margin:0!important;
+}
+
+/* ---------- 6) أسطح المتصفّح (craft-floor): تحديدٌ وتمرير مثمّنان ---------- */
+#book .page ::selection{background:rgba(192,146,46,.24);color:#153529}
+</style>
+
 <style id="gp-reveal-css">
 @media(prefers-reduced-motion:no-preference){
   #book .page .gp-rev{opacity:0;transform:translateY(26px) scale(.986);filter:blur(9px);transition:opacity .95s ease-out,transform 1.05s cubic-bezier(.16,.84,.44,1),filter .95s ease-out;will-change:opacity,transform,filter}
