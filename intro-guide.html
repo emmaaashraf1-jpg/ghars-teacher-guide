@@ -4072,7 +4072,7 @@ td,th,dd,dt{font-size:14.5px!important}
   var SEL=['.gp-sechead','.gp-intro','.wahy-note','.wscene','.gp-eff','.teacher-tip','.quick-card','.reference-card','.op-card','.note','.gp-card','.routine-card','.subject-term-card','.cycle-card','.corner-card','.dl-card','.component-card','.route-card','.signal-accordion','.assessment-domain','.unit-int-card','.pn-card','.family-card','.term-card','.support-card','.principle','.harm-card','.fitness-purpose','.fitness-activity','.poetry','.grow-card','.ghars-testament','.gp-fstep','.subject-box','.signal-flow-card'].join(',');
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('gp-in'); io.unobserve(e.target); } });
-  },{threshold:0.06,rootMargin:'0px 0px -5% 0px'});
+  },{threshold:0,rootMargin:'0px 0px -7% 0px'});
   function prime(page){
     var els=page.querySelectorAll(SEL);
     for(var k=0;k<els.length;k++){
@@ -4097,6 +4097,8 @@ td,th,dd,dt{font-size:14.5px!important}
   function parallax(){
     ticking=false;
     var page=document.querySelector('.page.active'); if(!page) return;
+    var hh=window.innerHeight, pend=page.querySelectorAll('.gp-rev:not(.gp-in)');
+    for(var s=0;s<pend.length;s++){ var pb=pend[s].getBoundingClientRect(); if(pb.top<hh*0.93 && pb.bottom>0){ pend[s].classList.add('gp-in'); } }
     var hero=page.querySelector('.jhero'); if(!hero) return;
     var copy=hero.querySelector('.jhero-copy'); if(!copy) return;
     var r=hero.getBoundingClientRect();
