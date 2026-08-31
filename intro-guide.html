@@ -3979,8 +3979,8 @@ td,th,dd,dt{font-size:14.5px!important}
 /* 4) البطل المعتمد لكلّ فصل: صورةٌ حيّةٌ يمينًا، النصّ يسارًا فوق الفراغ، يذوب في الورق */
 .page .jhero{position:relative;width:100%;min-height:clamp(430px,60vh,600px);display:flex;align-items:center;overflow:hidden;background:var(--gp-ivory);isolation:isolate;margin:0 0 clamp(2px,.6vw,8px)}
 .page .jhero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 42%;z-index:0;filter:saturate(1.16) contrast(1.07)}
-.page.active .jhero-img{animation:jZoom 2.1s cubic-bezier(.22,.61,.36,1) both}
-@keyframes jZoom{from{transform:scale(1.09)}to{transform:scale(1.02)}}
+.page.active .jhero-img{animation:jZoom 2.3s cubic-bezier(.16,.84,.44,1) both}
+@keyframes jZoom{from{transform:scale(1.11);filter:blur(14px) saturate(1.16) contrast(1.07)}to{transform:scale(1.03);filter:blur(0) saturate(1.16) contrast(1.07)}}
 .page .jhero-wash{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
    linear-gradient(to right,rgba(251,249,242,.97) 0%,rgba(251,249,242,.9) 22%,rgba(251,249,242,.62) 40%,rgba(251,249,242,.2) 56%,transparent 70%),
@@ -4049,13 +4049,22 @@ td,th,dd,dt{font-size:14.5px!important}
 </style>
 <style id="gp-reveal-css">
 @media(prefers-reduced-motion:no-preference){
-  #book .page .gp-rev{opacity:0;transform:translateY(30px);transition:opacity .72s cubic-bezier(.22,.61,.36,1),transform .72s cubic-bezier(.22,.61,.36,1);will-change:opacity,transform}
-  #book .page .gp-rev.gp-in{opacity:1;transform:none}
+  #book .page .gp-rev{opacity:0;transform:translateY(26px) scale(.986);filter:blur(9px);transition:opacity .95s ease-out,transform 1.05s cubic-bezier(.16,.84,.44,1),filter .95s ease-out;will-change:opacity,transform,filter}
+  #book .page .gp-rev.gp-in{opacity:1;transform:none;filter:blur(0)}
   #book .page .gp-sechead{margin-top:clamp(20px,3vw,40px)!important}
   #book .page .jhero-copy{will-change:transform,opacity}
 }
 </style>
 <script id="gp-reveal-js">
+/* عند تبديل التبويب: افتحه من بدايته (أعلى القسم) لا من حيث كان التمرير */
+(function(){
+  function toTop(){ try{ var t=document.querySelector('.page.active')||document.getElementById('book'); var y=t?(t.getBoundingClientRect().top+window.pageYOffset-6):0; window.scrollTo(0,Math.max(0,y)); }catch(e){} }
+  if(typeof window.showPage==='function'){
+    var _orig=window.showPage;
+    window.showPage=function(){ var r=_orig.apply(this,arguments); toTop(); requestAnimationFrame(toTop); return r; };
+  }
+  document.addEventListener('click',function(e){ var t=e.target.closest?e.target.closest('.guide-layout .tab,.toolbar .tab'):null; if(t){ requestAnimationFrame(toTop); setTimeout(toTop,40); } },true);
+})();
 (function(){
   if(!('IntersectionObserver' in window)) return;
   var reduce=false; try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
