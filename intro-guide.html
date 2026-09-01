@@ -4302,4 +4302,90 @@ td,th,dd,dt{font-size:14.5px!important}
 })();
 </script>
 
+<style id="gp-unified">
+/* ============================================================
+   نظامٌ موحّد على لغة الصفحة الرئيسيّة (index.html) — إثباتٌ على «المكوّنات»
+   رموز الرئيسيّة الهيكليّة: زاوية ١٤ · حركة هادئة · سلّم خطّ · بطاقاتٌ محدودة الحدّ
+   الهدف: استقرارٌ واحترافيّةٌ كالرئيسيّة، لا طبقةٌ ترقيعيّة أخرى.
+   ============================================================ */
+:root{ --u-ease:cubic-bezier(.22,.61,.36,1); }
+
+/* ---------- حركةٌ هادئة كالرئيسيّة (fade + rise فقط، بلا ضباب) — عامّة ---------- */
+#book .page .gp-rev{opacity:0!important;transform:translateY(18px)!important;filter:none!important;
+  transition:opacity .66s var(--u-ease),transform .66s var(--u-ease)!important}
+#book .page .gp-rev.gp-in{opacity:1!important;transform:none!important;filter:none!important}
+
+/* ============ الإثبات: #components ============ */
+/* خلفيّةٌ عاجيّةٌ مسطّحة (بلا «بلوم» مائيّ يُشعِر بالاضطراب) */
+#book #components.page{background:var(--gp-ivory)!important}
+
+/* (1) ترويسةٌ هادئة كالرئيسيّة بدل البطل السينمائيّ (بلا صورةٍ كبيرة) */
+#components .jhero{min-height:0!important;height:auto!important;display:block!important;
+  background:transparent!important;overflow:visible!important;isolation:auto!important;
+  margin:0 0 clamp(30px,4vw,44px)!important;padding:clamp(30px,5vw,56px) 0 0!important}
+#components .jhero-img,#components .jhero-wash{display:none!important}
+#components .jhero-copy{position:static!important;transform:none!important;opacity:1!important;
+  max-width:none!important;margin:0!important;padding:0!important;display:block!important;
+  text-align:start!important;align-items:flex-start!important}
+#components .jhero-mark{display:inline-flex!important;color:var(--gp-ochre-dark)!important;
+  font-family:var(--gp-body,'Noto Naskh Arabic','Segoe UI',Tahoma,sans-serif)!important;
+  font-size:12.5px!important;font-weight:700!important;letter-spacing:.3px!important;
+  text-shadow:none!important;margin:0 0 22px!important}
+#components .jhero-title{font-family:'AlAwwal','Amiri',serif!important;color:var(--gp-forest)!important;
+  font-size:clamp(42px,6.4vw,76px)!important;line-height:1.04!important;letter-spacing:-.5px!important;
+  max-width:18ch!important;text-shadow:none!important;margin:0!important}
+#components .jhero-title::after{content:""!important;display:block!important;width:62px!important;height:3px!important;
+  border-radius:3px!important;margin-top:22px!important;
+  background:linear-gradient(90deg,var(--gp-gold),rgba(199,154,59,0))!important}
+#components .jhero-essence{font-family:'AlAwwal','Amiri',serif!important;font-weight:700!important;
+  color:var(--gp-ink,#1E2E29)!important;font-size:clamp(19px,2.6vw,26px)!important;line-height:1.55!important;
+  max-width:46ch!important;text-shadow:none!important;margin:20px 0 0!important}
+
+/* (2) رؤوس أقسامٍ بسلّم الرئيسيّة وهدوئها (بلا هامشٍ ذهبيّ) */
+#components .page-main > .gp-sechead{margin:clamp(52px,7vw,84px) 0 clamp(24px,3vw,32px)!important;padding:0!important}
+#components .page-main > .gp-sechead:first-child{margin-top:clamp(6px,1vw,14px)!important}
+#components .page-main > .gp-sechead::after{display:none!important}
+#components .page-main > .gp-sechead .gp-eyebrow{color:var(--gp-ochre-dark)!important;
+  font-family:var(--gp-body,'Noto Naskh Arabic','Segoe UI',Tahoma,sans-serif)!important;
+  font-size:12.5px!important;font-weight:700!important;letter-spacing:.3px!important;margin-bottom:12px!important;opacity:1!important}
+#components .page-main > .gp-sechead h2{font-family:'AlAwwal','Amiri',serif!important;color:var(--gp-forest)!important;
+  font-size:clamp(29px,4.2vw,42px)!important;line-height:1.28!important;letter-spacing:0!important;margin:0!important}
+#components .page-main > .gp-sechead h2::after{display:none!important}
+#components .page-main > .gp-sechead > p{color:var(--gp-gray,#6C776F)!important;font-size:16px!important;
+  line-height:2.05!important;margin:12px 0 0!important;max-width:62ch}
+
+/* (3) بطاقاتٌ كالرئيسيّة: حدٌّ ظاهر ١ب · زاوية ١٤ · بلا ظلٍّ ساكن · رفعٌ+ظلّ عند اللمس فقط */
+#components :is(.resource-card,.refs-helper-card){
+  background:#fff!important;border:1px solid var(--gp-line)!important;border-radius:14px!important;
+  box-shadow:none!important;padding:18px 20px 20px!important;overflow:hidden;
+  transition:transform .28s var(--u-ease),box-shadow .28s var(--u-ease),border-color .28s!important}
+#components :is(.resource-card,.refs-helper-card)::before{display:none!important}
+#components :is(.resource-card,.refs-helper-card)::after{display:none!important}
+#components :is(.resource-card,.refs-helper-card):hover{transform:translateY(-4px)!important;
+  box-shadow:0 18px 38px rgba(31,74,57,.1)!important;border-color:var(--gp-line-soft,#F0E9DB)!important}
+#components :is(.resource-card,.refs-helper-card) :is(h4,b:first-child){font-family:'AlAwwal','Amiri',serif!important;
+  color:var(--gp-forest)!important;font-size:19.5px!important;line-height:1.4!important;margin:0 0 8px!important;display:block}
+#components :is(.resource-card,.refs-helper-card) p{color:#4a554e!important;font-size:14.5px!important;line-height:1.85!important;margin:0!important}
+
+/* (4) شبكاتٌ بفجوة الرئيسيّة (٣٢ب) */
+#components .resource-grid{gap:clamp(20px,2.6vw,32px)!important}
+
+/* (5) الشريط الجانبيّ: بطاقات المعلّمة بنفس نظام البطاقات الهادئ */
+#components .page-aside :is(.teacher-tip,.quick-card,.reference-card){
+  background:#fff!important;border:1px solid var(--gp-line)!important;border-radius:14px!important;
+  box-shadow:none!important;padding:17px 19px!important;
+  transition:transform .28s var(--u-ease),box-shadow .28s var(--u-ease),border-color .28s!important}
+#components .page-aside :is(.teacher-tip,.quick-card,.reference-card):hover{
+  box-shadow:0 14px 30px rgba(31,74,57,.08)!important;border-color:var(--gp-line-soft,#F0E9DB)!important}
+#components .page-aside .tip-label{display:inline-block;color:var(--gp-ochre-dark)!important;background:transparent!important;
+  padding:0!important;font-family:var(--gp-body,'Noto Naskh Arabic',Tahoma,sans-serif)!important;
+  font-size:12px!important;font-weight:700!important;letter-spacing:.3px!important;margin-bottom:8px!important}
+#components .page-aside :is(.teacher-tip,.quick-card,.reference-card) h3{
+  font-family:'AlAwwal','Amiri',serif!important;color:var(--gp-forest)!important;font-size:17px!important;margin:0 0 6px!important;line-height:1.35}
+#components .page-aside :is(.teacher-tip,.quick-card,.reference-card) p{color:#4c574f!important;font-size:14px!important;line-height:1.85!important;margin:0!important}
+
+/* (6) folio هادئ */
+#components .page-folio{border-top:1px solid var(--gp-line)!important;background:none!important;margin-top:clamp(40px,5vw,60px)!important}
+</style>
+
 </body></html>
