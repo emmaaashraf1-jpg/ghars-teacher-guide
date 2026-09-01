@@ -4200,6 +4200,44 @@ td,th,dd,dt{font-size:14.5px!important}
 #book .page ::selection{background:rgba(192,146,46,.24);color:#153529}
 </style>
 
+<style id="gp-tables-pro">
+/* ============================================================
+   تعميم الجداول المصمّمة على بقيّة التبويبات (تحافظ على تلوين الخلايا الدلاليّ)
+   subjects-matrix · schedule · songs-table · indicator-table · scope-table · unit-week-table
+   ============================================================ */
+#book .page :is(.subjects-matrix,.schedule,.songs-table,.indicator-table,.scope-table,.unit-week-table){
+  border-collapse:separate!important;border-spacing:0!important;width:100%;
+}
+/* رأسٌ موحّد بتدرّجٍ غابيّ لاصق */
+#book .page :is(.subjects-matrix,.schedule,.songs-table,.indicator-table,.scope-table,.unit-week-table) thead th{
+  background:linear-gradient(180deg,var(--gp-forest2),var(--gp-forest))!important;color:#fff!important;
+  font-family:'AlAwwal','Amiri',serif!important;font-weight:700;
+  font-size:clamp(12.5px,1.25vw,14px)!important;padding:13px 12px!important;
+  text-align:center;white-space:nowrap;position:sticky;top:0;z-index:2;letter-spacing:-.005em;border:0!important;
+}
+#book .page :is(.subjects-matrix,.schedule,.songs-table,.indicator-table,.scope-table,.unit-week-table) thead th:first-child{
+  text-align:start;inset-inline-end:0;z-index:3;
+}
+/* خلايا: تنفّسٌ وخطُّ فاصلٍ رفيع فقط — دون مسّ خلفيّة/لون الخليّة الدلاليّ */
+#book .page :is(.subjects-matrix,.schedule,.songs-table,.indicator-table,.scope-table,.unit-week-table) tbody td{
+  padding:12px 12px!important;border-bottom:.8px solid var(--gp-line-soft)!important;
+  vertical-align:middle;line-height:1.7;font-size:clamp(12.5px,1.25vw,14px)!important;
+}
+#book .page :is(.subjects-matrix,.schedule,.songs-table,.indicator-table,.scope-table,.unit-week-table) tbody tr:last-child td{border-bottom:0!important}
+/* العمود الأوّل مثبَّت (يبقى ظاهرًا عند التمرير الأفقيّ) بخلفيّةٍ صلبة دافئة */
+#book .page :is(.subjects-matrix,.schedule,.songs-table,.indicator-table,.scope-table,.unit-week-table) :is(tbody td:first-child,tbody th:first-child){
+  position:sticky;inset-inline-end:0;z-index:1;background:#F6F1E4!important;
+  font-family:'AlAwwal','Amiri',serif!important;font-weight:700;color:var(--gp-forest)!important;
+  box-shadow:-8px 0 12px -10px rgba(31,74,57,.16);text-align:start;
+}
+</style>
+
+<style id="gp-cardgap-fix">
+/* بطاقاتٌ محتوًى حقيقيّة كانت تتلامس (٧–٨ب) — تنفّسٌ مناسبٌ لشبكةٍ مكتظّة */
+#book #manners .rules-grid{gap:clamp(11px,1.4vw,16px)!important}
+#book #unit .unit-days{gap:clamp(12px,1.5vw,18px)!important}
+</style>
+
 <style id="gp-reveal-css">
 @media(prefers-reduced-motion:no-preference){
   #book .page .gp-rev{opacity:0;transform:translateY(26px) scale(.986);filter:blur(9px);transition:opacity .95s ease-out,transform 1.05s cubic-bezier(.16,.84,.44,1),filter .95s ease-out;will-change:opacity,transform,filter}
