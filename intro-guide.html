@@ -4353,6 +4353,10 @@ td,th,dd,dt{font-size:14.5px!important}
 #components .page-main > .gp-sechead h2::after{display:none!important}
 #components .page-main > .gp-sechead > p{color:var(--gp-gray,#6C776F)!important;font-size:16px!important;
   line-height:2.05!important;margin:12px 0 0!important;max-width:62ch}
+/* إزالة زخارف «المرسوم» (خطٌّ منقّط ذهبيّ + مربّعٌ قبل العنوان) — نظافةٌ كالرئيسيّة */
+#components .gp-sechead h2{border-bottom:0!important;padding-bottom:0!important}
+#components .gp-sechead h2::before{display:none!important}
+#components .page-folio{border-top:1px solid var(--gp-line)!important;padding-top:16px!important}
 
 /* (3) بطاقاتٌ كالرئيسيّة: حدٌّ ظاهر ١ب · زاوية ١٤ · بلا ظلٍّ ساكن · رفعٌ+ظلّ عند اللمس فقط */
 #components :is(.resource-card,.refs-helper-card){
