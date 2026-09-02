@@ -4395,4 +4395,24 @@ td,th,dd,dt{font-size:14.5px!important}
 #book #signals .signal-material-grid{align-items:start!important}
 </style>
 
+<style id="gp-cards-unified">
+/* ============================================================
+   تعميم نظام بطاقات الصفحة الرئيسيّة على بطاقات المحتوى القياسيّة
+   (بيضاء · حدٌّ ١px · زاوية ١٤ · بلا ظلٍّ ساكن · رفعٌ+ظلّ عند اللمس)
+   تُستثنى بطاقات الصور/الملوّنة الدلاليّة/الشارات/طبق التغذية (تُعالَج فرادى)
+   ============================================================ */
+#book .page :is(.center-brief-card,.adab-term-card,.fitness-hero-card,.cycle-card,.signal-flow-card,.song-card,.rule-card,.assessment-domain,.loop-card,.parent-assessment-card,.asset-card,.harm-card,.dl-card,.pn-card,.subject-box,.fitness-purpose,.principle,.family-card,.term-card,.unit-int-card,.support-card,.grow-card,.quick-card,.reference-card){
+  background:#fff!important;border:1px solid var(--gp-line)!important;border-radius:14px!important;
+  box-shadow:none!important;
+  transition:transform .28s var(--u-ease,cubic-bezier(.22,.61,.36,1)),box-shadow .28s ease,border-color .28s ease!important;
+}
+#book .page :is(.center-brief-card,.adab-term-card,.fitness-hero-card,.cycle-card,.signal-flow-card,.song-card,.rule-card,.assessment-domain,.loop-card,.parent-assessment-card,.asset-card,.harm-card,.dl-card,.pn-card,.subject-box,.fitness-purpose,.principle,.family-card,.term-card,.unit-int-card,.support-card,.grow-card,.quick-card,.reference-card):hover{
+  transform:translateY(-4px)!important;box-shadow:0 18px 38px rgba(31,74,57,.1)!important;
+  border-color:var(--gp-line-soft,#F0E9DB)!important;
+}
+/* عناوين هذه البطاقات → AlAwwal غابيّ (اتّساقٌ مع الرئيسيّة) */
+#book .page :is(.center-brief-card,.adab-term-card,.fitness-hero-card,.cycle-card,.signal-flow-card,.song-card,.rule-card,.assessment-domain,.loop-card,.parent-assessment-card,.asset-card,.harm-card,.dl-card,.pn-card,.subject-box,.fitness-purpose,.principle,.family-card,.term-card,.unit-int-card,.support-card,.grow-card) :is(h3,h4){font-family:'AlAwwal','Amiri',serif!important;color:var(--gp-forest)!important}
+#book .page :is(.center-brief-card,.adab-term-card,.fitness-hero-card,.cycle-card,.signal-flow-card,.song-card,.rule-card,.assessment-domain,.loop-card,.parent-assessment-card,.asset-card,.harm-card,.dl-card,.pn-card,.subject-box,.fitness-purpose,.principle,.family-card,.term-card,.unit-int-card,.support-card,.grow-card) > b:first-child{font-family:'AlAwwal','Amiri',serif!important;color:var(--gp-forest)!important}
+</style>
+
 </body></html>
