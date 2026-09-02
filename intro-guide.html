@@ -4419,6 +4419,9 @@ td,th,dd,dt{font-size:14.5px!important}
 /* عناوين هذه البطاقات → AlAwwal غابيّ (اتّساقٌ مع الرئيسيّة) */
 #book .page :is(.center-brief-card,.adab-term-card,.fitness-hero-card,.cycle-card,.signal-flow-card,.song-card,.rule-card,.assessment-domain,.loop-card,.parent-assessment-card,.asset-card,.harm-card,.dl-card,.pn-card,.subject-box,.fitness-purpose,.principle,.family-card,.term-card,.unit-int-card,.support-card,.grow-card) :is(h3,h4){font-family:'AlAwwal','Amiri',serif!important;color:var(--gp-forest)!important}
 #book .page :is(.center-brief-card,.adab-term-card,.fitness-hero-card,.cycle-card,.signal-flow-card,.song-card,.rule-card,.assessment-domain,.loop-card,.parent-assessment-card,.asset-card,.harm-card,.dl-card,.pn-card,.subject-box,.fitness-purpose,.principle,.family-card,.term-card,.unit-int-card,.support-card,.grow-card) > b:first-child{font-family:'AlAwwal','Amiri',serif!important;color:var(--gp-forest)!important}
+/* محاذاة بطاقات «قواعد قيمية»: كانت align-items:start فتتفاوت أطوالها في الصفّ الواحد وتُحدِث فراغات ← stretch فتتساوى وتُحاذى (والبطاقة تُوزّع محتواها) */
+#book #rules .grow-grid{align-items:stretch!important}
+#book #rules .grow-card{display:flex!important;flex-direction:column!important}
 </style>
 
 </body></html>
