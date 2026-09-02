@@ -4398,7 +4398,10 @@ td,th,dd,dt{font-size:14.5px!important}
 /* (أ) الفصل ٨ «بنية اللقاء»: ترقيم الخطوات كان أوكرَ داكنًا على دائرةٍ غابيّة/فيروزيّة داكنة (تباينٌ ضعيف غير مقروء) ← أبيض */
 #book #lesson .lesson-step .no{color:#fff!important}
 /* (ب) الفصل ٩ «الإشارات»: بطاقات إشارات المواد كانت تُمطّ لأطولِها فيبقى فراغٌ أسفل القصيرة ← كلُّ بطاقةٍ بمقاس محتواها بلا فراغٍ مفروض */
-#book #signals .signal-material-grid{align-items:start!important}
+/* إشارات المواد: محاذاةٌ متساوية (stretch) مع تمدّد صندوق الآية ليملأ فراغ البطاقات القصيرة — فتتوازى البطاقات بلا فراغٍ ميّت */
+#book #signals .signal-material-grid{align-items:stretch!important}
+#book #signals .signal-material-card{justify-content:flex-start!important}
+#book #signals .signal-material-card .sig-verse{flex:1 1 auto!important;display:flex!important;flex-direction:column!important;justify-content:center!important}
 </style>
 
 <style id="gp-cards-unified">
