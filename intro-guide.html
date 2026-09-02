@@ -3975,6 +3975,9 @@ td,th,dd,dt{font-size:14.5px!important}
  .guide-layout .tab.active .tab-n{background:var(--gp-forest)!important;border-color:var(--gp-forest)!important;color:#fff!important;box-shadow:0 3px 10px -3px rgba(31,74,57,.5)!important}
  .guide-layout .tab.active .tab-t{color:var(--gp-forest)!important;font-size:14px!important}
  .guide-layout .tab.done .tab-n{background:var(--gp-gold)!important;border-color:var(--gp-gold)!important;color:#3a2a06!important}
+ /* إزالة «الهالة/الدائرة» الناشزة حول التبويب النشِط في الشريط: التبويب بلا حبّةٍ ولا حدٍّ ولا ظلّ — التمييز بالنقطة والنصّ فقط */
+ .guide-layout .toolbar .tab,.guide-layout .toolbar .tab.active,.guide-layout .toolbar .tab.done,.guide-layout .toolbar .tab:hover{background:transparent!important;box-shadow:none!important;border:0!important;border-radius:11px!important}
+ .guide-layout .toolbar .tab.active .tab-n{box-shadow:0 3px 10px -3px rgba(31,74,57,.5)!important}
 }
 
 /* 4) البطل المعتمد لكلّ فصل: صورةٌ حيّةٌ يمينًا، النصّ يسارًا فوق الفراغ، يذوب في الورق */
