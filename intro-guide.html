@@ -3794,10 +3794,10 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
 </div>
 <script>
 const book=document.getElementById('book');const tabs=[...document.querySelectorAll('.tab')];const pagesEls=[...document.querySelectorAll('.page')];
-function showPage(id){book.classList.remove('all-pages');pagesEls.forEach(p=>p.classList.toggle('active',p.id===id));tabs.forEach(t=>t.classList.toggle('active',t.dataset.page===id));document.querySelector('.toolbar').scrollIntoView({behavior:'smooth',block:'start'});}
+function showPage(id){book.classList.remove('all-pages');pagesEls.forEach(p=>p.classList.toggle('active',p.id===id));tabs.forEach(t=>t.classList.toggle('active',t.dataset.page===id));try{if((location.hash||'').replace('#','')!==id){history.pushState(null,'','#'+id);}}catch(e){}document.querySelector('.toolbar').scrollIntoView({behavior:'smooth',block:'start'});}
 tabs.forEach(t=>t.addEventListener('click',()=>showPage(t.dataset.page)));
 function pageFromHash(){var id=(location.hash||'').replace('#','');if(id&&document.getElementById(id))showPage(id);}
-window.addEventListener('hashchange',pageFromHash);pageFromHash();
+window.addEventListener('hashchange',pageFromHash);window.addEventListener('popstate',pageFromHash);pageFromHash();
 function toggleAll(){book.classList.toggle('all-pages');if(!book.classList.contains('all-pages'))showPage(document.querySelector('.tab.active')?.dataset.page||'start');}
 document.querySelectorAll('.subject-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.subject-tab').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.subject-detail').forEach(d=>d.classList.remove('active'));btn.classList.add('active');document.getElementById('subject-'+btn.dataset.subject).classList.add('active');}));
 document.querySelectorAll('.subject-map-tabs').forEach(tabbar=>{
@@ -4422,6 +4422,8 @@ td,th,dd,dt{font-size:14.5px!important}
 /* محاذاة بطاقات «قواعد قيمية»: كانت align-items:start فتتفاوت أطوالها في الصفّ الواحد وتُحدِث فراغات ← stretch فتتساوى وتُحاذى (والبطاقة تُوزّع محتواها) */
 #book #rules .grow-grid{align-items:stretch!important}
 #book #rules .grow-card{display:flex!important;flex-direction:column!important}
+/* تعميم المحاذاة (stretch) على كلّ شبكات البطاقات القياسيّة عبر التبويبات — ضمانُ تساوي البطاقات وتحاذيها في كلّ صفّ (يُستثنى signal-material-grid عمدًا: تفاوتُ الآيات فيه شديد فيُبقى على «هضم المحتوى» تفاديًا للفراغات الكبيرة) */
+#book .page :is(.gp-effects,.centers-brief-grid,.fitness-purpose-grid,.signal-flow-grid,.corner-principles,.song-grid,.assessment-loop,.parent-assessment-grid,.family-grid,.unit-integration,.support-band,.harm-grid,.dl-grid,.pn-grid,.grow-grid){align-items:stretch!important}
 </style>
 
 </body></html>
