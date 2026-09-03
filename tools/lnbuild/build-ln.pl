@@ -42,6 +42,8 @@ my $body = join('', map { $F{$_} } qw(P_PTAHDIR P_P1 P_P2 P_P3 P_P4 P_P5 P_P6 P_
 my $full = $head.$body.$tail;
 my @un = ($full =~ /\{\{(\w+)\}\}/g);
 warn "تحذير: علاماتٌ غير محلولة: @un\n" if @un;
+my $todo = () = ($full =~ /‹/g);
+warn "تحذير: تبويب «التحضير» غير مكتمل — $todo موضعَ تأليفٍ (علامة ‹›) لا يزال قائمًا\n" if $todo;
 
 open my $o,'>:raw',$out or die "write $out: $!"; print $o $full; close $o;
 print "بُني $out (".length($full)." بايت)\n";
