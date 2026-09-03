@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>عيّنة القالب المطوَّر — التحضير والخلفية</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif; --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#1F4A39; --t2:#2C6A4D; --grn:#1E5631;
+  --gold:#C79A3B; --gold2:#C8A200; --cream:#F4EDDE;
+  --ink:#22302B; --muted:#5c665f; --elm:#0E6E6B; --elm-soft:#E4F1F0;
+  --clay:#A1512B; --clay-soft:#FBEEE6; --clay-line:#E3C3AD;
+  --line:#e6e0d0; --paper:#FBF8F0;
+  --card:radial-gradient(85% 120% at 88% 6%, rgba(44,106,77,.10), transparent 62%), radial-gradient(95% 110% at 6% 96%, rgba(199,154,59,.09), transparent 58%), #FFFDF7;
+  --shadow:0 8px 22px rgba(20,50,35,.07); --shadow-sm:0 2px 7px rgba(20,50,35,.05);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);line-height:1.95;font-size:16.5px;background:var(--paper);direction:rtl;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:24px 20px 70px}
+
+/* ترويسة الدرس */
+.lhead{background:linear-gradient(135deg,#F6EFDF,#EFE7D5);border:2px solid #d8cfb4;border-radius:22px;padding:24px 26px;box-shadow:var(--shadow);margin-bottom:8px}
+.lhead .crumb{color:var(--t2);font-family:var(--fd);font-weight:700;font-size:14px;margin-bottom:6px}
+.lhead h1{font-family:var(--fd);color:var(--t1);font-weight:700;font-size:30px;line-height:1.4}
+.lhead .idstrip{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:14px;color:var(--ink);border-top:1px solid #d8cfb4;margin-top:14px;padding-top:12px}
+.lhead .idstrip b{color:var(--t2);font-weight:700}
+
+/* شريط تبويبات (عيّنة) */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 6px}
+.tab{background:#fff;border:1.5px solid var(--line);border-radius:12px 9px 13px 8px/8px 13px 9px 12px;padding:8px 15px;font-size:14.5px;font-weight:700;color:var(--t1);font-family:var(--fb)}
+.tab.active{background:var(--t2);border-color:var(--t2);color:#fff}
+
+/* رأس القسم */
+.sec-head{display:flex;align-items:center;gap:12px;margin:28px 0 14px}
+.sec-head .num{flex:none;width:42px;height:42px;border-radius:13px 9px 14px 10px/10px 14px 9px 13px;background:var(--t2);color:#fff;display:grid;place-items:center;font-size:22px;box-shadow:var(--shadow-sm)}
+.sec-head .num.gold{background:var(--gold);color:#3a2a06}
+.sec-head .num.clay{background:var(--clay)}
+.sec-head h2{font-family:var(--fd);color:var(--t1);font-weight:700;font-size:21px}
+.sec-head .rule{flex:1;height:2px;background:linear-gradient(90deg,var(--line),transparent)}
+.sec-head .tagnew{flex:none;font-family:var(--fd);font-weight:700;font-size:12.5px;color:#8a6d1e;background:var(--gold-soft,#FBF3DA);border:1px solid #e6cf95;border-radius:999px;padding:3px 12px}
+
+.pnsub{color:var(--muted);font-size:15px;margin:-6px 0 16px}
+
+/* بطاقة أساس */
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px 11px 18px 12px/12px 18px 11px 16px;padding:18px 20px;box-shadow:var(--shadow-sm);margin-bottom:14px}
+
+/* شبكة صناديق التجهيز */
+.egrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.egrid{grid-template-columns:1fr}}
+.emini{background:#FFFDF7;border:1px solid var(--line);border-top:4px solid var(--elm);border-radius:14px 9px 15px 10px/10px 15px 9px 14px;padding:14px 16px;box-shadow:var(--shadow-sm)}
+.emini.g2{border-top-color:var(--gold2)}.emini.g3{border-top-color:var(--grn)}.emini.g4{border-top-color:var(--clay)}
+.emini h4{font-family:var(--fd);color:var(--t1);font-size:16px;margin-bottom:9px}
+.tick{list-style:none;display:flex;flex-direction:column;gap:8px}
+.tick li{position:relative;padding-inline-start:26px;font-size:14.5px;line-height:1.75}
+.tick li::before{content:"✓";position:absolute;inset-inline-start:0;top:1px;width:18px;height:18px;background:var(--elm-soft);color:var(--elm);border-radius:6px;font-size:12px;font-weight:800;display:grid;place-items:center}
+.hintline{font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.6;border-top:1px dashed var(--line);padding-top:8px}
+
+/* آية مؤطّرة */
+.aya-block{margin-bottom:14px}
+.aya{font-family:var(--fd);font-size:22px;line-height:2.1;color:var(--t1);text-align:center;background:linear-gradient(180deg,#fbf7ec,#f4ecd8);border:1px solid var(--gold);border-inline-width:3px;border-radius:14px;padding:16px 20px}
+.aya + .aref{text-align:center;color:var(--gold2);font-weight:700;font-size:14px;margin-top:8px;font-family:var(--fd)}
+.kv{display:flex;flex-direction:column;gap:9px;margin-top:12px}
+.kv > div{display:grid;grid-template-columns:120px 1fr;gap:12px;font-size:14.5px;line-height:1.8}
+.kv b{color:var(--t2);font-family:var(--fd)}
+@media(max-width:560px){.kv > div{grid-template-columns:1fr}}
+.hadith{background:#fffdf6;border-inline-start:5px solid var(--gold);border-radius:12px;padding:14px 16px}
+.hadith .htext{font-family:var(--fd);font-size:17px;line-height:2;color:var(--ink)}
+.flag{display:inline-block;margin-top:10px;font-size:12.5px;color:var(--clay);background:var(--clay-soft);border:1px solid var(--clay-line);border-radius:999px;padding:3px 12px}
+
+/* قائمة عادية */
+.plain{list-style:none;display:flex;flex-direction:column;gap:10px}
+.plain li{position:relative;padding-inline-start:20px;line-height:1.85;font-size:15px}
+.plain li::before{content:"";position:absolute;inset-inline-start:2px;top:12px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.plain li b{color:var(--t1)}
+
+/* صندوق الضابط العقدي */
+.aqida{background:#F2FAF5;border:1px solid #bfe3cf;border-inline-start:5px solid var(--grn);border-radius:14px;padding:16px 18px}
+.aqida-lbl{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-weight:700;color:var(--grn);font-size:14px;background:#e4f0e8;border-radius:999px;padding:4px 13px;margin-bottom:10px}
+
+/* صناديق الأخطاء الشائعة (طينيّة) */
+.mistake{background:var(--clay-soft);border:1px solid var(--clay-line);border-radius:14px 9px 15px 10px/10px 15px 9px 14px;padding:14px 16px}
+.mistake h4{font-family:var(--fd);color:var(--clay);font-size:15.5px;margin-bottom:7px}
+.mistake p{font-size:14px;line-height:1.8}
+.prep{background:#fff;border:1px dashed var(--gold);border-radius:14px;padding:14px 16px}
+.prep h4{font-family:var(--fd);color:#8a6d1e;font-size:15.5px;margin-bottom:7px}
+.note{background:var(--elm-soft);border-radius:10px;padding:9px 14px;font-size:13.5px;color:#08636b;margin-bottom:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="lhead">
+    <div class="crumb">علّمني ربي · وحدة الليل والنهار · اللقاء الأول</div>
+    <h1>مفهوم الليل والنهار</h1>
+    <div class="idstrip"><span><b>المرحلة:</b> تمهيدي (٥–٦ سنوات)</span><span><b>المدّة:</b> نصف ساعة</span><span><b>الركن الدائم:</b> أكتشف ما حولي</span></div>
+  </header>
+
+  <div class="tabs">
+    <span class="tab active">① التحضير والخلفية</span>
+    <span class="tab">② موقع اللقاء من اليوم</span>
+    <span class="tab">③ دليل الدرس كامل</span>
+    <span class="tab">④ المواقف والآداب</span>
+    <span class="tab">⑤ الأركان</span>
+    <span class="tab">⑥ التقويم والحكم</span>
+    <span class="tab">⑦ العلاج والإثراء</span>
+    <span class="tab">⑧ الأسرة</span>
+    <span class="tab">⑨ خزانة المعلمة</span>
+  </div>
+
+  <div class="pnsub">كلُّ ما تحتاجه المعلمة قبل أن تدخل الحلقة: ما تُجهّزه بيدها، وما تعرفه في رأسها. (تُقرأ ليلة أمس · ٧ دقائق)</div>
+
+  <!-- قائمة تجهيز اللقاء -->
+  <div class="sec-head"><div class="num"><b>🧺</b></div><h2>قائمة تجهيز اللقاء</h2><div class="rule"></div><span class="tagnew">حقلٌ مطوَّر</span></div>
+  <div class="egrid">
+    <div class="emini"><h4>يُطبع ويُقصّ</h4><ul class="tick"><li>بطاقات «الليل والنهار» — أربع بطاقات: ليل · نهار · شمس · قمر</li><li>ملف طباعة ركن «أكتشف ما حولي»: نورٌ وظلام</li><li>بطاقة العودة إلى البيت (اليوم الأول)</li></ul></div>
+    <div class="emini g2"><h4>يُحمَّل مسبقًا</h4><ul class="tick"><li>أنشودة «العلم هو النور الهادي» — إشارة بدء اللقاء</li><li>فيديو/صورة تعاقب الليل والنهار — للعرض</li><li>صور شروق الشمس وغروبها</li></ul><div class="hintline">فيديو الإشارة والأناشيد مرجعٌ للمعلمة لتضبط النغمة — لا يُعرض على الأطفال.</div></div>
+    <div class="emini g3"><h4>يُجهَّز في المكان</h4><ul class="tick"><li>حلقة جلوس واسعة تكفي لتمرير الكرة</li><li>نافذة يُرى منها ضوء النهار — يُستعمل في التفكّر</li><li>لوحة عرض لبطاقات الليل والنهار</li></ul></div>
+    <div class="emini g4"><h4>يُجمع من البيئة</h4><ul class="tick"><li>كرة خفيفة ملوّنة للعبة المراجعة</li><li>أوراق تلوين وألوان — للشمس والقمر بلا أعين</li></ul></div>
+  </div>
+
+  <!-- ما تحتاجين معرفته -->
+  <div class="sec-head"><div class="num gold"><b>📖</b></div><h2>ما تحتاجين معرفته</h2><div class="rule"></div><span class="tagnew">حقلٌ مطوَّر</span></div>
+  <div class="card">
+    <div class="note">حتى لا تنقل المعلمة نصًّا بلا مرجعيّةٍ ظاهرة. المصادر معتمدةٌ في تبويب المراجع نفسه.</div>
+    <div class="aya-block">
+      <div class="aya">﴿إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ لَآيَاتٍ لِّأُولِي الْأَلْبَابِ﴾</div>
+      <div class="aref">آل عمران: ١٩٠</div>
+      <div class="kv"><div><b>معناها</b><span>في خلق السماوات والأرض وتعاقب الليل والنهار دلائلُ بيّنة على وحدانية الله وقدرته، لا ينتفع بها إلّا أصحاب العقول السليمة.</span></div><div><b>أولو الألباب</b><span>أصحاب العقول الذين تفكّروا في مخلوقات الله — وهي الكلمة التي يُبنى عليها معنى اللقاء كلّه.</span></div><div><b>المصدر</b><span>تفسير السعدي · التفسير المختصر.</span></div></div>
+    </div>
+    <div class="hadith"><h4 style="font-family:var(--fd);color:var(--t1);margin-bottom:6px">حديث سجود الشمس</h4><div class="htext">قال النبيُّ ﷺ لأبي ذرٍّ حين غربت الشمس: «أتدري أين تذهب؟» قلتُ: اللهُ ورسولُه أعلم. قال: «فإنّها تذهب حتى تسجد تحت العرش، فتستأذن فيُؤذَن لها…»</div><div class="kv" style="margin-top:8px"><div><b>تخريجه</b><span>أخرجه البخاري (٣١٩٩) من حديث أبي ذرٍّ — وهو في الصحيحين.</span></div><div><b>درجته</b><span>صحيح.</span></div></div></div>
+  </div>
+
+  <!-- الخلفية العلمية -->
+  <div class="sec-head"><div class="num gold"><b>🔬</b></div><h2>الخلفية العلمية المبسّطة</h2><div class="rule"></div><span class="tagnew">حقلٌ مطوَّر</span></div>
+  <div class="card">
+    <div class="note">معرفةٌ للمعلمة، لا مادّةٌ تُلقى في الحلقة — حتى لا تُجيب عن سؤالٍ عارضٍ بخطأ.</div>
+    <ul class="plain">
+      <li><b>لماذا يتعاقب الليل والنهار؟</b> لأنّ الأرض تدور حول نفسها دورةً كاملة كلَّ يوم، فيكون النصف المواجه للشمس نهارًا والآخر ليلًا — بتقدير الله وتسخيره.</li>
+      <li><b>هل تنطفئ الشمس ليلًا؟</b> لا، هي باقيةٌ مضيئة لكنها تغيب عنّا — وهو سؤالٌ يطرحه الأطفال كثيرًا.</li>
+      <li><b>لماذا يتغيّر شكل القمر؟</b> لأنّه يعكس ضوء الشمس فنرى منه بحسب موضعه — تمهيدٌ لدرس «منازل القمر».</li>
+    </ul>
+    <p style="margin-top:12px"><b>الضابط:</b> يبقى الفعل مُسندًا إلى الله «يُولج · سخّر · يأمرها فتُطيع»، فلا يقف الدرس عند السبب الماديّ فينقلب درسُ التوحيد درسَ علوم.</p>
+  </div>
+
+  <!-- الضابط العقدي -->
+  <div class="sec-head"><div class="num"><b>🛡️</b></div><h2>الضابط العقدي وحدّ ما يُقال للطفل</h2><div class="rule"></div><span class="tagnew">حقلٌ مطوَّر</span></div>
+  <div class="aqida">
+    <span class="aqida-lbl">🛡️ ضابطٌ عقديّ</span>
+    <ul class="plain">
+      <li><b>سجود الشمس:</b> يُثبَت كما ورد بلا شرحٍ للكيفية ولا تصويرٍ ولا ربطٍ بحركةٍ حسّية — فهو من الغيب، نؤمن به بلا تكييفٍ ولا تمثيل.</li>
+      <li><b>التوحيد:</b> الشمس والقمر مخلوقان مأموران، لا يُعبدان ولا يُخاف منهما — وتصحيح هذا هو المقصود الأول.</li>
+      <li><b>الصور:</b> بلا ذوات أرواح، والشمس والقمر بلا أعين ولا ملامح.</li>
+      <li><b>حدّ ما يُقال:</b> لا يُفتح تفصيلُ دوران الأرض إلّا إن سأل الطفل، فيُجاب بجملةٍ واحدة ثمّ يُعاد إلى التفكّر؛ والمقصود أن يخرج بجملة: «الله خلق الليل والنهار، والتفكّر عبادة يحبها الله».</li>
+    </ul>
+  </div>
+
+  <!-- ثلاثة أخطاء شائعة -->
+  <div class="sec-head"><div class="num clay"><b>⚠️</b></div><h2>ثلاثة أخطاء شائعة في هذا اللقاء</h2><div class="rule"></div><span class="tagnew">حقلٌ مطوَّر</span></div>
+  <div class="egrid">
+    <div class="mistake"><h4>١ · تحويل الحلقة إلى درس علوم</h4><p>الفيديو والصور جذّابة فينساق الحديث إلى الأرض والدوران، ويغيب المقصود: التفكّر عبادة. <b>علاجها:</b> العودة إلى سؤال التركيز كلّما تشعّب الحديث.</p></div>
+    <div class="mistake"><h4>٢ · تقريب سجود الشمس بالحركة</h4><p>تبسيط الغيب بتمثيلٍ أو حركةٍ باليد خطأٌ عقديّ. <b>علاجها:</b> يُتلى النصّ ويُقال: «نؤمن كما أخبر النبيّ ﷺ، والله أعلم بالكيفيّة».</p></div>
+    <div class="mistake"><h4>٣ · إهمال سؤال التركيز في الإغلاق</h4><p>يُفتح به اللقاء ثمّ يُنسى فلا يُقاس ما قِيس به. <b>علاجها:</b> أوّل سؤال في لعبة الكرة يعود إليه نصًّا.</p></div>
+    <div class="prep"><h4>⏱️ ٣ دقائق تحضير ذاتي</h4><p><b>اقرئي:</b> الآيتين ومعناهما. <b>جرّبي:</b> تشغيل الفيديو والأنشودة قبل الحلقة. <b>احفظي:</b> الجملة الختامية «التفكّر عبادة يحبها الله».</p></div>
+  </div>
+
+</div>
+</body>
+</html>
