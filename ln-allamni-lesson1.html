@@ -544,17 +544,22 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
   </div>
 
   <style>
-  /* القالب المطوّر — طبقةٌ راقيةٌ بسيطة: أبيض/كريميّ + لمسةٌ ذهبيّةٌ خفيفة، بلا فيروزيّ */
-  #ptahdir .card{background:#fff;border-color:#efe7d5;box-shadow:0 1px 2px rgba(20,50,35,.03),0 14px 34px -26px rgba(20,50,35,.22);padding:20px 22px}
-  #ptahdir .info{background:#FCFAF3;border:1px solid #eee5d2;border-inline-start:3px solid var(--gold);color:#6b6456;font-weight:500}
-  #ptahdir .ayah{background:#FCFAF3;border:1px solid #ecd9a8;border-inline-start:4px solid var(--gold);color:var(--t1);text-align:center;font-size:20px;padding:18px 22px;margin:2px 0 14px}
-  #ptahdir .ayah .ref{display:block;margin-top:9px;font-size:12.5px;color:#B0842E;font-weight:700;letter-spacing:.3px}
-  #ptahdir .hadith{background:#fff;border-inline-start:4px solid var(--gold)}
-  #ptahdir .hadith .ref{color:#B0842E}
-  #ptahdir .lbl{color:var(--t1);border-bottom:2px solid #f1e7cf;padding-bottom:3px;display:inline-block}
-  #ptahdir .strat{background:#fff;border:1px solid #efe7d5}
-  #ptahdir .strat .k{background:#FCFAF3;color:#8a6d1e;border:1px solid #ecd9a8}
-  #ptahdir .miniblock{background:#FCFAF3;border:1px solid #eee5d2;border-radius:10px;padding:9px 13px}
+  /* القالب المطوّر — طبقةٌ راقيةٌ بسيطة: أبيض/كريميّ + لمسةُ أخضرِ غرسٍ الغابيّ (بلا فيروزيّ ولا ذهبيّ صارخ) */
+  #ptahdir{--gp:#2C6A4D}                 /* أخضر غرس الأساسيّ للّمسات */
+  #ptahdir .card{background:#fff;border-color:#e9e3d5;box-shadow:0 1px 2px rgba(20,50,35,.03),0 16px 36px -28px rgba(20,50,35,.20);padding:22px 24px;margin-bottom:22px}
+  #ptahdir .sec-head{margin:38px 0 18px}
+  #ptahdir .sec-head.first{margin-top:12px}
+  #ptahdir .info{background:#FBF9F3;border:1px solid #eae3d2;border-inline-start:3px solid var(--gp);color:#5f6a60;font-weight:500;margin-bottom:18px;padding:12px 16px}
+  #ptahdir .ayah{background:#FBF9F3;border:1px solid #e7e0cf;border-inline-start:4px solid var(--gp);color:var(--t1);text-align:center;font-size:20px;padding:20px 24px;margin:2px 0 16px}
+  #ptahdir .ayah .ref{display:block;margin-top:10px;font-size:12.5px;color:var(--gp);font-weight:700;letter-spacing:.3px}
+  #ptahdir .hadith{background:#fff;border-inline-start:4px solid var(--gp)}
+  #ptahdir .hadith .ref{color:var(--gp)}
+  #ptahdir .lbl{color:var(--t1);border-bottom:2px solid #e4ede6;padding-bottom:4px;display:inline-block;margin-bottom:12px}
+  #ptahdir .strat{background:#fff;border:1px solid #eee7d8;padding:11px 14px;margin-bottom:8px}
+  #ptahdir .strat .k{background:#FBF9F3;color:var(--gp);border:1px solid #eae3d2}
+  #ptahdir .miniblock{background:#FBF9F3;border:1px solid #eae3d2;border-radius:10px;padding:10px 14px;margin-top:12px}
+  #ptahdir .steps{line-height:2}
+  #ptahdir .steps li{margin-bottom:4px}
   </style>
 
   <!-- ══════════ 0) التحضير والخلفية ══════════ -->
