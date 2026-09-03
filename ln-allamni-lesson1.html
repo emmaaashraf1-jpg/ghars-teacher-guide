@@ -544,36 +544,38 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
   </div>
 
   <style>
-  /* القالب المطوّر — طبقةٌ راقيةٌ بسيطة: أبيض/كريميّ + لمسةُ أخضرِ غرسٍ الغابيّ (بلا فيروزيّ ولا ذهبيّ صارخ) */
-  #ptahdir{--gp:#2C6A4D}                 /* أخضر غرس الأساسيّ للّمسات */
-  #ptahdir .card{background:#fff;border-color:#e9e3d5;box-shadow:0 1px 2px rgba(20,50,35,.03),0 16px 36px -28px rgba(20,50,35,.20);padding:22px 24px;margin-bottom:22px}
-  #ptahdir .sec-head{margin:38px 0 18px}
-  #ptahdir .sec-head.first{margin-top:12px}
-  #ptahdir .info{background:#FBF9F3;border:1px solid #eae3d2;border-inline-start:3px solid var(--gp);color:#5f6a60;font-weight:500;margin-bottom:18px;padding:12px 16px}
+  /* القالب المطوّر — طبقةٌ راقيةٌ بسيطة معمَّمة على التبويبات كلّها: أبيض/كريميّ + لمسةُ أخضرِ غرسٍ الغابيّ (بلا فيروزيّ ولا ذهبيّ صارخ) */
+  :root{--gp:#2C6A4D}                 /* أخضر غرس الأساسيّ للّمسات */
+  .card{background:#fff;border-color:#e9e3d5;box-shadow:0 1px 2px rgba(20,50,35,.03),0 16px 36px -28px rgba(20,50,35,.20);padding:22px 24px;margin-bottom:22px}
+  .sec-head{margin:38px 0 18px}
+  .sec-head.first{margin-top:12px}
+  .info{background:#FBF9F3;border:1px solid #eae3d2;border-inline-start:3px solid var(--gp);color:#5f6a60;font-weight:500;margin-bottom:18px;padding:12px 16px}
   /* صندوق مميّز للآيات والأحاديث بروح غرس (إطار أخضر + شارة + زخرفة نجميّة خفيفة) */
-  #ptahdir .ayah,#ptahdir .hadith{position:relative;overflow:visible;background:
+  .ayah,.hadith{position:relative;overflow:visible;background:
      radial-gradient(circle at 12% 0%, rgba(44,106,77,.05), transparent 30%),
      radial-gradient(circle at 88% 100%, rgba(44,106,77,.05), transparent 30%),
      #FBF8EF;
      border:1.5px solid #cfe0d3;border-radius:18px 12px 18px 12px/12px 18px 12px 18px;
      box-shadow:0 1px 2px rgba(20,50,35,.04),0 18px 40px -30px rgba(20,50,35,.22);
      padding:28px 26px 20px;margin:16px 0}
-  #ptahdir .ayah{text-align:center;font-size:21px;line-height:2.2;color:var(--t1)}
-  #ptahdir .ayah::before,#ptahdir .hadith::before{position:absolute;top:-12px;inset-inline-start:26px;
+  .ayah{text-align:center;font-size:21px;line-height:2.2;color:var(--t1)}
+  .ayah::before,.hadith::before{position:absolute;top:-12px;inset-inline-start:26px;
      font-family:var(--fd);font-size:12.5px;font-weight:700;color:#fff;background:var(--gp);
      padding:3px 15px;border-radius:999px;box-shadow:0 3px 8px -2px rgba(20,50,35,.35)}
-  #ptahdir .ayah::before{content:"قال اللهُ تعالى"}
-  #ptahdir .hadith::before{content:"حديثٌ شريف"}
-  #ptahdir .ayah::after{content:"";position:absolute;inset-inline-end:20px;top:16px;bottom:16px;width:2px;
+  .ayah::before{content:"قال اللهُ تعالى"}
+  .hadith::before{content:"حديثٌ شريف"}
+  .ayah::after{content:"";position:absolute;inset-inline-end:20px;top:16px;bottom:16px;width:2px;
      background:linear-gradient(var(--gp),transparent);opacity:.25;border-radius:2px}
-  #ptahdir .ayah .ref,#ptahdir .hadith .ref{display:inline-block;margin-top:12px;font-size:12.5px;color:var(--gp);
+  .ayah .ref,.hadith .ref{display:inline-block;margin-top:12px;font-size:12.5px;color:var(--gp);
      font-weight:700;letter-spacing:.3px;background:#eef4ef;border:1px solid #d9e7dd;border-radius:999px;padding:2px 12px}
-  #ptahdir .lbl{color:var(--t1);border-bottom:2px solid #e4ede6;padding-bottom:4px;display:inline-block;margin-bottom:12px}
-  #ptahdir .strat{background:#fff;border:1px solid #eee7d8;padding:11px 14px;margin-bottom:8px}
-  #ptahdir .strat .k{background:#FBF9F3;color:var(--gp);border:1px solid #eae3d2}
-  #ptahdir .miniblock{background:#FBF9F3;border:1px solid #eae3d2;border-radius:10px;padding:10px 14px;margin-top:12px}
-  #ptahdir .steps{line-height:2}
-  #ptahdir .steps li{margin-bottom:4px}
+  .lbl{color:var(--t1);border-bottom:2px solid #e4ede6;padding-bottom:4px;display:inline-block;margin-bottom:12px}
+  .strat{background:#fff;border:1px solid #eee7d8;padding:11px 14px;margin-bottom:8px}
+  .strat .k{background:#FBF9F3;color:var(--gp);border:1px solid #eae3d2}
+  .miniblock{background:#FBF9F3;border:1px solid #eae3d2;border-radius:10px;padding:10px 14px;margin-top:12px}
+  .steps{line-height:2}
+  .steps li{margin-bottom:4px}
+  .card>.lbl.gold{border-color:#e4ede6}   /* تحييد التسطير الذهبيّ الناشز */
+  .miniblock>b{color:var(--gp)}           /* تحييد الفيروزيّ في عناوين المكعّبات */
   </style>
 
   <!-- ══════════ 0) التحضير والخلفية ══════════ -->
@@ -586,7 +588,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
     <div class="card"><div class="lbl">يُجهَّز في المكان</div><ul class="steps"><li>حلقة جلوس واسعة تكفي لتمرير الكرة.</li><li>نافذة يُرى منها ضوء النهار — تُستعمل في التفكّر.</li><li>لوحة عرض لبطاقات الليل والنهار.</li></ul></div>
     <div class="card"><div class="lbl">يُجمع من البيئة</div><ul class="steps"><li>كرة خفيفة ملوّنة للعبة المراجعة.</li><li>أوراق تلوين وألوان — للشمس والقمر بلا أعين.</li></ul></div>
 
-    <div class="sec-head"><div class="num"><i class="gi" data-i="مراجع المعلمة" data-size="22"></i></div><h2>ما تحتاجين معرفته</h2><div class="rule"></div></div>
+    <div class="sec-head"><div class="num"><i class="gi" data-i="مراجع إثرائية للمعلمة" data-size="22"></i></div><h2>ما تحتاجين معرفته</h2><div class="rule"></div></div>
     <div class="info">معرفةٌ للمعلمة تكون بين يديها بمرجعيّةٍ ظاهرة — لا مادّةٌ تُلقى في الحلقة. المصادر معتمدةٌ في «خزانة المعلمة».</div>
     <div class="card">
       <div class="ayah">﴿إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ لَآيَاتٍ لِّأُولِي الْأَلْبَابِ﴾<span class="ref">آل عمران ١٩٠</span></div>
