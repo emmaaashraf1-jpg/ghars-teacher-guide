@@ -1,0 +1,898 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>مفهوم الليل والنهار</title>
+
+
+<style>
+@font-face{font-family:"AlAwwal";src:url("assets/fonts/AlAwwal-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"AlAwwal";src:url("assets/fonts/AlAwwal-Bold.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Saudi";src:url("assets/fonts/Saudi-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Saudi";src:url("assets/fonts/Saudi-Bold.woff2") format("woff2");font-weight:700;font-display:swap}
+:root{
+  --ink:#17352d; --ink-2:#33544a; --muted:#658176; --faint:#8fa79c;
+  --ground:#f4f8f5; --surface:#ffffff; --surface-2:#f2f8f4; --surface-3:#e9f1eb;
+  --line:#d9e5d9; --line-2:#c3d6c8;
+  --green:#17352d; --green-mid:#2c6a4d; --green-soft:#e4f0e8; --on-green:#ffffff;
+  --gold:#6d4a08; --gold-soft:#fff7e6; --gold-line:#e6c378;
+  --clay:#a1512b; --clay-soft:#fbeee6; --clay-line:#e3c3ad;
+  --sky:#2f5e78; --sky-soft:#e5eff4;
+  --shadow:0 1px 2px rgba(16,45,54,.05), 0 10px 30px -16px rgba(16,45,54,.22);
+  --display:"AlAwwal","Amiri","Noto Naskh Arabic",serif;
+  --body:"Saudi","Noto Naskh Arabic",Tahoma,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#e4efe8; --ink-2:#bed0c6; --muted:#93a99e; --faint:#6f857b;
+    --ground:#0e1512; --surface:#161e1a; --surface-2:#1d2621; --surface-3:#243029;
+    --line:#2b3630; --line-2:#3a473f;
+    --green:#8fd0ac; --green-mid:#7cbe9a; --green-soft:#1a2c23; --on-green:#0e1512;
+    --gold:#dcb45f; --gold-soft:#2a2317; --gold-line:#4d3f1e;
+    --clay:#dd9165; --clay-soft:#2c1e17; --clay-line:#4b3325;
+    --sky:#8fbbd4; --sky-soft:#182530;
+    --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 30px -16px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#e4efe8; --ink-2:#bed0c6; --muted:#93a99e; --faint:#6f857b;
+  --ground:#0e1512; --surface:#161e1a; --surface-2:#1d2621; --surface-3:#243029;
+  --line:#2b3630; --line-2:#3a473f;
+  --green:#8fd0ac; --green-mid:#7cbe9a; --green-soft:#1a2c23; --on-green:#0e1512;
+  --gold:#dcb45f; --gold-soft:#2a2317; --gold-line:#4d3f1e;
+  --clay:#dd9165; --clay-soft:#2c1e17; --clay-line:#4b3325;
+  --sky:#8fbbd4; --sky-soft:#182530;
+  --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 30px -16px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+body{margin:0; direction:rtl; text-align:right; background:var(--ground); color:var(--ink);
+  font-family:var(--body); font-size:16px; line-height:1.9; -webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px; margin:0 auto; padding:0 24px}
+
+/* ---------- prototype banner ---------- */
+.proto{background:var(--clay-soft); border-bottom:1px solid var(--clay-line); color:var(--clay)}
+.proto .wrap{padding:11px 24px; font-size:13.5px; display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+.proto b{font-weight:700}
+.proto .pill{background:var(--surface); border:1px solid var(--clay-line); border-radius:999px; padding:1px 10px; font-size:12px; font-weight:600}
+
+/* ---------- head ---------- */
+.head{background:var(--surface); border-bottom:1px solid var(--line)}
+.head .wrap{padding:30px 24px 26px}
+.crumb{font-size:13px; color:var(--muted); margin-bottom:10px}
+h1{font-family:var(--display); font-weight:700; font-size:clamp(34px,5.4vw,50px); line-height:1.2; margin:0 0 12px}
+.idstrip{display:flex; flex-wrap:wrap; gap:6px 22px; font-size:13.5px; color:var(--ink-2);
+  padding:12px 0 0; border-top:1px solid var(--line); margin-top:16px}
+.idstrip b{color:var(--green-mid); font-weight:600}
+
+.focus{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:22px 0 0}
+.fbox{background:var(--surface-2); border:1px solid var(--line); border-radius:12px; padding:16px 18px}
+.fbox .lbl{font-size:11.5px; letter-spacing:.1em; font-weight:700; color:var(--green-mid); margin-bottom:7px}
+.fbox .txt{font-family:var(--display); font-size:19px; line-height:1.75; color:var(--ink)}
+.fbox .hint{font-size:12.5px; color:var(--muted); margin-top:8px; line-height:1.6}
+
+/* quick sheet */
+.qsheet{background:var(--surface); border:1px solid var(--line); border-radius:14px; margin:22px 0 0;
+  padding:20px 22px; box-shadow:var(--shadow)}
+.qsheet .qh{display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding-bottom:12px; margin-bottom:6px; border-bottom:1px solid var(--line)}
+.qsheet .qh h2{font-family:var(--display); font-size:21px; font-weight:700; margin:0}
+.printbtn{margin-inline-start:auto; font-family:var(--body); font-size:12.5px; font-weight:700;
+  background:var(--green); color:var(--on-green); border:0; border-radius:999px; padding:8px 15px; cursor:pointer}
+
+.printbtn .nb{font-size:10.5px; font-weight:600; opacity:.85; margin-inline-start:6px}
+.qstep{display:grid; grid-template-columns:26px 1fr auto; gap:14px; align-items:start; padding:13px 0; border-bottom:1px dashed var(--line)}
+.qstep:last-child{border-bottom:0}
+.qstep .n{font-family:var(--display); font-size:20px; font-weight:700; color:var(--green-mid); text-align:center}
+.qstep h4{margin:0 0 5px; font-size:15.5px; font-weight:600}
+.qstep ul{margin:0; padding-inline-start:19px; font-size:14.5px; color:var(--ink-2)}
+.qstep li{margin-bottom:4px}
+.qstep .min{font-size:12.5px; color:var(--faint); white-space:nowrap; padding-top:4px}
+.famline{background:var(--gold-soft); border:1px solid var(--gold-line); border-radius:10px;
+  padding:11px 15px; margin-top:14px; font-size:14px; color:var(--gold)}
+
+/* ---------- tabs ---------- */
+.tabsbar{position:sticky; top:0; z-index:20; background:var(--surface); border-bottom:1px solid var(--line);
+  box-shadow:0 4px 14px -10px rgba(16,45,54,.3)}
+.tabsbar .wrap{padding:0 24px}
+.tabsrow{display:flex; gap:6px; overflow-x:auto; padding:10px 0; scrollbar-width:thin}
+.grp{display:flex; align-items:center; gap:6px; padding-inline-end:10px; margin-inline-end:4px; border-inline-end:1px solid var(--line)}
+.grp:last-child{border-inline-end:0}
+.grp .gname{font-size:10.5px; font-weight:700; letter-spacing:.06em; padding:3px 9px; border-radius:999px; white-space:nowrap}
+.g-before .gname{background:var(--sky-soft); color:var(--sky)}
+.g-during .gname{background:var(--green-soft); color:var(--green-mid)}
+.g-after .gname{background:var(--gold-soft); color:var(--gold)}
+.g-ref .gname{background:var(--surface-3); color:var(--muted)}
+.tb{font-family:var(--body); font-size:13.5px; font-weight:600; white-space:nowrap; cursor:pointer;
+  background:var(--surface-2); color:var(--ink-2); border:1px solid var(--line); border-radius:999px; padding:7px 14px}
+.tb:hover{background:var(--surface-3)}
+.tb[aria-selected="true"]{background:var(--green); color:var(--on-green); border-color:var(--green)}
+
+.tb .dot{display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--clay); margin-inline-start:6px; vertical-align:middle}
+.tb:focus-visible{outline:2px solid var(--green-mid); outline-offset:2px}
+
+/* ---------- panels ---------- */
+.panel{display:none; padding:34px 0 10px}
+.panel.on{display:block}
+.pnhead{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px}
+.pnhead h2{font-family:var(--display); font-size:clamp(26px,3.4vw,34px); font-weight:700; margin:0}
+.pnhead .tagnew{font-size:11px; font-weight:700; background:var(--clay-soft); color:var(--clay);
+  border:1px solid var(--clay-line); border-radius:999px; padding:2px 10px}
+.pnhead .when{margin-inline-start:auto; font-size:12.5px; color:var(--muted)}
+.pnsub{font-size:15px; color:var(--muted); margin:0 0 22px; max-width:72ch}
+
+.sec{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:22px 24px;
+  margin-bottom:16px; box-shadow:var(--shadow)}
+.sec > h3{font-family:var(--display); font-size:21px; font-weight:700; margin:0 0 6px; color:var(--green-mid)}
+.sec > .note{font-size:13.5px; color:var(--muted); margin:0 0 14px}
+.sec p{font-size:15px; color:var(--ink-2); margin:0 0 12px}
+.sec p:last-child{margin-bottom:0}
+.sec.isnew{border-inline-start:3px solid var(--clay)}
+.sec.isnew > h3{color:var(--clay)}
+
+ul.tick{list-style:none; margin:0; padding:0; font-size:14.5px}
+ul.tick li{display:grid; grid-template-columns:20px 1fr; gap:10px; padding:7px 0; border-bottom:1px dashed var(--line); color:var(--ink-2)}
+ul.tick li:last-child{border-bottom:0}
+ul.tick li::before{content:"☐"; color:var(--faint); font-size:15px}
+ul.plain{margin:0; padding-inline-start:20px; font-size:14.5px; color:var(--ink-2)}
+ul.plain li{margin-bottom:7px}
+ul.plain li b{color:var(--ink); font-weight:600}
+
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.mini{background:var(--surface-2); border:1px solid var(--line); border-radius:11px; padding:15px 17px}
+.mini h4{margin:0 0 8px; font-size:14px; font-weight:700; color:var(--green-mid)}
+.mini.gold{background:var(--gold-soft); border-color:var(--gold-line)}
+.mini.gold h4{color:var(--gold)}
+.mini.clay{background:var(--clay-soft); border-color:var(--clay-line)}
+.mini.clay h4{color:var(--clay)}
+.mini p{font-size:14px; margin:0 0 8px; color:var(--ink-2)}
+.mini p:last-child{margin:0}
+
+.ayah{font-family:var(--display); font-size:21px; line-height:2.1; color:var(--green-mid); margin:0 0 6px}
+.ref{font-size:12.5px; color:var(--muted)}
+.kv{display:grid; gap:10px; font-size:14.5px; margin:0}
+.kv > div{display:grid; grid-template-columns:112px 1fr; gap:12px; align-items:start}
+.kv b{color:var(--muted); font-weight:600; font-size:13px}
+.flag{display:inline-block; font-size:12px; color:var(--clay); background:var(--clay-soft);
+  border:1px dashed var(--clay-line); border-radius:7px; padding:2px 9px; margin-top:6px}
+
+.qa{display:grid; gap:11px}
+.qa .q{border:1px solid var(--line); border-radius:11px; overflow:hidden}
+.qa .qq{background:var(--surface-2); padding:11px 15px; font-weight:600; font-size:15px}
+.qa .aa{padding:11px 15px; font-size:14.5px; background:var(--green-soft); color:var(--ink)}
+.qa .aa::before{content:"الجواب · "; font-size:12px; color:var(--muted); font-weight:600}
+
+.scroll{overflow-x:auto}
+table.rub{border-collapse:collapse; width:100%; min-width:600px; font-size:13.5px}
+table.rub th, table.rub td{border:1px solid var(--line); padding:10px 13px; text-align:right; vertical-align:top}
+table.rub thead th{background:var(--surface-2); font-size:12.5px; color:var(--muted); font-weight:700}
+table.rub td:first-child{font-weight:700; color:var(--ink); width:20%}
+
+.mawqif{border:1px solid var(--line); border-radius:12px; overflow:hidden; margin-bottom:12px}
+.mawqif .mt{background:var(--surface-2); padding:10px 15px; font-weight:700; font-size:14.5px; color:var(--green-mid)}
+.mawqif .mb{padding:13px 15px; font-size:14.5px; color:var(--ink-2); display:grid; gap:8px}
+.mawqif .mb b{color:var(--muted); font-weight:600; font-size:12.5px; display:block}
+.mawqif .resp{background:var(--green-soft); border-radius:9px; padding:10px 13px; color:var(--ink)}
+
+.wa{background:var(--gold-soft); border:1px solid var(--gold-line); border-radius:12px; padding:16px 18px; font-size:14.5px; color:var(--ink)}
+.card-back{background:var(--surface-2); border:1px dashed var(--line-2); border-radius:11px; padding:14px 16px; font-size:14.5px}
+
+details{border:1px solid var(--line); border-radius:11px; margin-bottom:10px; background:var(--surface-2)}
+details summary{cursor:pointer; padding:12px 16px; font-weight:700; font-size:15px; color:var(--green-mid)}
+details summary:focus-visible{outline:2px solid var(--green-mid); outline-offset:2px}
+details[open] summary{border-bottom:1px solid var(--line)}
+details .dc{padding:14px 16px; font-size:14.5px; color:var(--ink-2)}
+
+footer{padding:36px 0 54px; font-size:13px; color:var(--muted)}
+footer .wrap{border-top:1px solid var(--line); padding-top:22px}
+
+@media (max-width:820px){
+  .focus{grid-template-columns:1fr}
+  .grid2{grid-template-columns:1fr}
+  .kv > div{grid-template-columns:1fr; gap:2px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+
+/* ---------- print: ورقة اليوم ---------- */
+@media print{
+  @page{size:A4; margin:14mm}
+  body{background:#fff; color:#000; font-size:11.5pt; line-height:1.6}
+  .proto, .tabsbar, .panel, footer, .printbtn, .idstrip, .crumb{display:none !important}
+  .head, .qsheet, .fbox{border:0; box-shadow:none; background:#fff}
+  .wrap{max-width:none; padding:0}
+  h1{font-size:20pt; margin-bottom:6pt}
+  .focus{grid-template-columns:1fr 1fr; gap:8pt; margin-top:8pt}
+  .fbox{border:1px solid #999; padding:8pt}
+  .fbox .txt{font-size:12pt}
+  .fbox .hint{display:none}
+  .qsheet{margin-top:10pt; padding:0}
+  .qstep{padding:6pt 0}
+  #printqa{display:block !important}
+}
+#printqa{display:none}
+</style>
+
+<header class="head">
+  <div class="wrap">
+    <div class="crumb">علّمني ربي · وحدة الليل والنهار · الفصل الدراسي الثاني</div>
+    <h1>مفهوم الليل والنهار</h1>
+    <div class="idstrip">
+      <span>اللقاء · <b>الأول</b></span>
+      <span>المرحلة · <b>تمهيدي (٥–٦ سنوات)</b></span>
+      <span>المدة · <b>نصف ساعة</b></span>
+      <span>الركن الداعم · <b>أكتشف ما حولي</b></span>
+    </div>
+
+    <div class="focus">
+      <div class="fbox">
+        <div class="lbl">سؤال التركيز</div>
+        <div class="txt">لماذا كان تعاقُبُ الليل والنهار آيةً تدعونا للتفكّر وشكرِ الله؟</div>
+        <div class="hint">بوصلةُ اللقاء: تفتح به المعلمةُ الحوار وتعود إليه عند الغلق. يقيسه سؤالُ التغذية الراجعة الأول ومؤشراتُ النجاح.</div>
+      </div>
+      <div class="fbox">
+        <div class="lbl">جوهر اللقاء</div>
+        <div class="txt">الليل والنهار آيتان من آيات الله، خلقهما بحكمة ورحمة وجعلهما يتعاقبان؛ والتفكّر في مخلوقات الله عبادةٌ قلبية يحبها الله.</div>
+        <div class="hint">لو لم يبقَ من الدرس إلا جملةٌ فهي هذه.</div>
+      </div>
+    </div>
+
+    <div class="qsheet">
+      <div class="qh">
+        <h2>ورقة التدريس السريعة</h2>
+        <button class="printbtn" onclick="window.print()">ورقة اليوم للطباعة <span class="nb">جديد</span></button>
+      </div>
+
+      <div class="qstep">
+        <div class="n">١</div>
+        <div>
+          <h4>تهيئة وبداية اللقاء</h4>
+          <ul>
+            <li>إشارة بدء اللقاء: أنشودة «العلم هو النور الهادي».</li>
+            <li>تذكير الأطفال بقوانين الفصل الخمسة.</li>
+            <li>مراجعة سريعة وافتتاح الوحدة بعرض فيديو التعاقب.</li>
+          </ul>
+        </div>
+        <div class="min">٨ د</div>
+      </div>
+      <div class="qstep">
+        <div class="n">٢</div>
+        <div>
+          <h4>بناء وسير اللقاء</h4>
+          <ul>
+            <li>التفكّر عبادة قلبية يحبها الله ﴿لَآيَاتٍ لِأُولِي الْأَلْبَابِ﴾.</li>
+            <li>تعاقب الليل والنهار رحمة من الله ﴿يُولِجُ اللَّيْلَ فِي النَّهَارِ﴾.</li>
+            <li>الشمس مخلوق النهار والقمر مخلوق الليل، يجريان بأمر الله.</li>
+            <li>سجود الشمس نؤمن به كما ورد + المعنى المركزي + تصحيح فهم الطفل.</li>
+          </ul>
+        </div>
+        <div class="min">١٤ د</div>
+      </div>
+      <div class="qstep">
+        <div class="n">٣</div>
+        <div>
+          <h4>إغلاق وتقويم</h4>
+          <ul>
+            <li>النشاط المصاحب: لعبة تمرير الكرة للمراجعة.</li>
+            <li>أسئلة التغذية الراجعة (بإجاباتها).</li>
+            <li>دعاء كفارة المجلس وختام اللقاء.</li>
+          </ul>
+        </div>
+        <div class="min">٨ د</div>
+      </div>
+
+      <div class="famline">
+        <b>ربط الأسرة:</b> يبحث الطفل مع أسرته عن القمر ليلًا ويقول: «سبحان الله العظيم»، ويشكر الله على نعمة الليل والنهار.
+      </div>
+
+      <div id="printqa" style="margin-top:12pt">
+        <div style="font-weight:700; margin-bottom:6pt">أسئلة التغذية الراجعة بإجاباتها</div>
+        <div style="margin-bottom:5pt"><b>ما الفرق بين الليل والنهار؟</b> — النهار وقت الضوء نعمل فيه ونطلب العلم، والليل وقت الظلام والسكون ننام فيه ونستريح، وكلاهما خلقهما الله بحكمة.</div>
+        <div style="margin-bottom:5pt"><b>من جعل لنا الليل والنهار؟</b> — الله وحده هو الذي خلق الليل والنهار وسخّر الشمس والقمر، فنحمده ونقول: سبحان الله.</div>
+        <div style="margin-bottom:5pt"><b>ماذا نفعل في النهار، وماذا نفعل في الليل؟</b> — في النهار نتعلّم ونعمل وننتفع بضوء الشمس، وفي الليل ننام ونستريح لتسكن أبداننا، وهذا من رحمة الله.</div>
+        <div><b>المعيار:</b> ٣ إجابات صحيحة على الأقل.</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabsbar">
+  <div class="wrap">
+    <div class="tabsrow" role="tablist" aria-label="تبويبات اللقاء">
+      <div class="grp g-before">
+        <span class="gname">قبل اللقاء</span>
+        <button class="tb" role="tab" aria-selected="false" data-p="p1">التحضير والخلفية<span class="dot"></span></button>
+        <button class="tb" role="tab" aria-selected="false" data-p="p2">موقع اللقاء من اليوم</button>
+      </div>
+      <div class="grp g-during">
+        <span class="gname">أثناء اللقاء</span>
+        <button class="tb" role="tab" aria-selected="true" data-p="p3">دليل الدرس كامل</button>
+        <button class="tb" role="tab" aria-selected="false" data-p="p4">المواقف والآداب</button>
+        <button class="tb" role="tab" aria-selected="false" data-p="p5">الأركان التطبيقية<span class="dot"></span></button>
+      </div>
+      <div class="grp g-after">
+        <span class="gname">بعد اللقاء</span>
+        <button class="tb" role="tab" aria-selected="false" data-p="p6">التقويم والحكم<span class="dot"></span></button>
+        <button class="tb" role="tab" aria-selected="false" data-p="p7">العلاج والإثراء<span class="dot"></span></button>
+      </div>
+      <div class="grp g-ref">
+        <span class="gname">حول اللقاء</span>
+        <button class="tb" role="tab" aria-selected="false" data-p="p8">الأسرة<span class="dot"></span></button>
+        <button class="tb" role="tab" aria-selected="false" data-p="p9">خزانة المعلمة</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ===== P1 ===== -->
+<section class="panel" id="p1" role="tabpanel">
+  <div class="pnhead"><h2>التحضير والخلفية</h2><span class="tagnew">تبويب جديد</span><span class="when">تُقرأ ليلة أمس · ٧ دقائق</span></div>
+  <p class="pnsub">كلُّ ما تحتاجه المعلمة قبل أن تدخل الحلقة: ما تُجهّزه بيدها، وما تعرفه في رأسها.</p>
+
+  <div class="sec isnew">
+    <h3>قائمة تجهيز اللقاء</h3>
+    <div class="grid2">
+      <div class="mini">
+        <h4>يُطبع ويُقصّ</h4>
+        <ul class="tick">
+          <li>بطاقات «الليل والنهار» — أربع بطاقات: ليل · نهار · شمس · قمر</li>
+          <li>ملف طباعة ركن «أكتشف ما حولي»: نورٌ وظلام</li>
+          <li>بطاقة العودة إلى البيت (اليوم الأول)</li>
+        </ul>
+      </div>
+      <div class="mini">
+        <h4>يُحمَّل مسبقًا</h4>
+        <ul class="tick">
+          <li>أنشودة «العلم هو النور الهادي» — إشارة بدء اللقاء</li>
+          <li>فيديو/صورة تعاقب الليل والنهار — للعرض</li>
+          <li>صور شروق الشمس وغروبها</li>
+        </ul>
+        <p style="font-size:12.5px; color:var(--muted); margin-top:8px">
+          فيديو الإشارة والأناشيد الحركية مرجعٌ للمعلمة لتضبط النغمة — لا يُعرض على الأطفال.
+        </p>
+      </div>
+      <div class="mini">
+        <h4>يُجهَّز في المكان</h4>
+        <ul class="tick">
+          <li>حلقة جلوس واسعة تكفي لتمرير الكرة</li>
+          <li>نافذة يُرى منها ضوء النهار — يُستعمل في التفكّر</li>
+          <li>لوحة عرض لبطاقات الليل والنهار</li>
+        </ul>
+      </div>
+      <div class="mini">
+        <h4>يُجمع من البيئة</h4>
+        <ul class="tick">
+          <li>كرة خفيفة ملوّنة للعبة المراجعة</li>
+          <li>أوراق تلوين وألوان — للشمس والقمر بلا أعين</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec isnew">
+    <h3>ما تحتاجين معرفته</h3>
+    <div class="note">حتى لا تنقل المعلمة نصًّا بلا مرجعيةٍ ظاهرةٍ أمامها. المصادر هي المعتمدة في تبويب المراجع نفسه.</div>
+
+    <div class="mini" style="margin-bottom:14px">
+      <div class="ayah">﴿إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ لَآيَاتٍ لِّأُولِي الْأَلْبَابِ﴾</div>
+      <div class="ref">آل عمران: ١٩٠</div>
+      <div class="kv" style="margin-top:12px">
+        <div><b>معناها</b><span>في خلق السماوات والأرض وتعاقب الليل والنهار دلائلُ بيّنة على وحدانية الله وقدرته، لا ينتفع بها إلا أصحاب العقول السليمة.</span></div>
+        <div><b>أولو الألباب</b><span>أصحاب العقول الذين انتفعوا بعقولهم فتفكّروا في مخلوقات الله — وهي الكلمة التي يُبنى عليها معنى اللقاء كلّه.</span></div>
+        <div><b>المصدر</b><span>تفسير السعدي · التفسير المختصر — عبر tafsir.app كما في تبويب المراجع.</span></div>
+      </div>
+    </div>
+
+    <div class="mini" style="margin-bottom:14px">
+      <div class="ayah">﴿يُولِجُ اللَّيْلَ فِي النَّهَارِ وَيُولِجُ النَّهَارَ فِي اللَّيْلِ وَسَخَّرَ الشَّمْسَ وَالْقَمَرَ كُلٌّ يَجْرِي لِأَجَلٍ مُّسَمًّى﴾</div>
+      <div class="ref">فاطر: ١٣</div>
+      <div class="kv" style="margin-top:12px">
+        <div><b>الإيلاج</b><span>إدخال أحدهما في الآخر بالزيادة والنقصان، فيطول هذا ويقصر ذاك — وهذا هو التعاقب الذي يراه الطفل.</span></div>
+        <div><b>التسخير</b><span>أن يجعل الله المخلوق يعمل بأمره لمصلحة خلقه؛ فالشمس والقمر مأموران لا فاعلان بأنفسهما.</span></div>
+      </div>
+    </div>
+
+    <div class="mini">
+      <h4>حديث سجود الشمس</h4>
+      <p style="font-family:var(--display); font-size:17px; line-height:2">
+        قال النبيُّ ﷺ لأبي ذرٍّ حين غربت الشمس: «أتدري أين تذهب؟» قلتُ: اللهُ ورسولُه أعلم. قال:
+        «فإنّها تذهب حتى تسجد تحت العرش، فتستأذن فيُؤذَن لها…»
+      </p>
+      <div class="kv" style="margin-top:10px">
+        <div><b>تخريجه</b><span>أخرجه البخاري (٣١٩٩) من حديث أبي ذرٍّ رضي الله عنه — وهو في الصحيحين.</span></div>
+        <div><b>درجته</b><span>صحيح.</span></div>
+      </div>
+      <span class="flag">يُثبَّت رقم مسلم ودرجة الحديث من الدرر السنية قبل النشر.</span>
+    </div>
+  </div>
+
+  <div class="sec isnew">
+    <h3>الخلفية العلمية المبسّطة</h3>
+    <div class="note">حتى لا تُجيب المعلمة عن سؤالٍ عارضٍ من طفلٍ بخطأ. هذه معرفةٌ للمعلمة، لا مادةٌ تُلقى في الحلقة.</div>
+    <ul class="plain">
+      <li><b>لماذا يتعاقب الليل والنهار؟</b> لأن الأرض تدور حول نفسها دورةً كاملة كلَّ يوم، فيكون النصف المواجه للشمس نهارًا والنصف الآخر ليلًا — بتقدير الله وتسخيره.</li>
+      <li><b>هل تنطفئ الشمس ليلًا؟</b> لا. هي باقيةٌ مضيئة، لكنها تغيب عنّا. وهذا سؤالٌ يطرحه الأطفال في هذه السن كثيرًا.</li>
+      <li><b>لماذا يتغيّر شكل القمر؟</b> لأنه لا يضيء بنفسه، بل يعكس ضوء الشمس، فنرى منه بحسب موضعه — وهو تمهيدٌ لدرس «منازل القمر» في اليوم الرابع.</li>
+    </ul>
+    <p style="margin-top:12px"><b>الضابط:</b> يبقى الفعل مُسندًا إلى الله — «يُولج · سخّر · يأمرها فتُطيع» — ولا تقف المعلمة عند السبب المادي فينقلب درسُ التوحيد درسَ علوم.</p>
+  </div>
+
+  <div class="sec isnew">
+    <h3>الضابط العقدي وحدّ ما يُقال للطفل</h3>
+    <ul class="plain">
+      <li><b>سجود الشمس:</b> يُثبَت كما ورد، بلا شرحٍ للكيفية ولا تصويرٍ لها ولا ربطٍ بحركةٍ حسية — فهو من الغيب، نؤمن به بلا تكييفٍ ولا تمثيلٍ ولا تشبيه.</li>
+      <li><b>التوحيد:</b> الشمس والقمر مخلوقان مأموران، لا يُعبدان ولا يُخاف منهما. وتصحيح هذا هو المقصود الأول من اللقاء.</li>
+      <li><b>الصور:</b> بلا ذوات أرواح، والشمس والقمر بلا أعين ولا ملامح.</li>
+      <li><b>حدّ ما يُقال:</b> لا يُفتح مع ابن الخامسة تفصيلُ دوران الأرض إلا إن سأل، فيُجاب بجملةٍ واحدة ثم يُعاد إلى التفكّر. والمقصود أن يخرج الطفل بجملة: «الله خلق الليل والنهار، والتفكّر عبادة يحبها الله».</li>
+    </ul>
+  </div>
+
+  <div class="sec isnew">
+    <h3>ثلاثة أخطاء شائعة في هذا اللقاء</h3>
+    <div class="grid2">
+      <div class="mini clay">
+        <h4>١ · تحويل الحلقة إلى درس علوم</h4>
+        <p>الفيديو والصور جذّابة، فينساق الحديث إلى الأرض والدوران والفصول، ويغيب المقصود: التفكّر عبادة. علاجها: العودة إلى سؤال التركيز كلّما تشعّب الحديث.</p>
+      </div>
+      <div class="mini clay">
+        <h4>٢ · تقريب سجود الشمس بالحركة</h4>
+        <p>محاولة تبسيط الغيب بتمثيلٍ أو حركةٍ باليد — وهذا خطأ عقدي. علاجها: يُتلى النص، ويُقال: «نؤمن كما أخبر النبي ﷺ، والله أعلم بالكيفية».</p>
+      </div>
+      <div class="mini clay">
+        <h4>٣ · إهمال سؤال التركيز في الإغلاق</h4>
+        <p>يُفتح به اللقاء ثم يُنسى، فلا يُقاس ما قِيس به. علاجها: أول سؤال في لعبة الكرة يعود إليه نصًّا.</p>
+      </div>
+      <div class="mini">
+        <h4>٣ دقائق تحضير ذاتي</h4>
+        <p><b>اقرئي:</b> الآيتين ومعناهما أعلاه. <b>جرّبي:</b> تشغيل الفيديو والأنشودة قبل الحلقة. <b>احفظي:</b> الجملة الختامية — «التفكّر عبادة يحبها الله».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== P2 ===== -->
+<section class="panel" id="p2" role="tabpanel">
+  <div class="pnhead"><h2>موقع اللقاء من اليوم</h2><span class="when">قبل · عند تخطيط اليوم</span></div>
+  <p class="pnsub">هو «التكامل اليومي» بلا تغيير في محتواه — نُقل إلى مجموعة «قبل» لأن المعلمة تقرؤه وهي تُخطّط ليومها.</p>
+
+  <div class="sec">
+    <h3>الفكرة الناظمة لليوم</h3>
+    <p style="font-family:var(--display); font-size:20px; color:var(--green-mid)">من ملاحظة تعاقب الليل والنهار إلى عبادة التفكّر.</p>
+    <p><b>سؤال اليوم:</b> من خلق الليل والنهار؟ وكيف يقودني تغيّرهما إلى ذكر الله؟</p>
+    <p><b>هذا اللقاء:</b> علّمني ربي — مفهوم الليل والنهار.</p>
+  </div>
+
+  <div class="sec">
+    <h3>جسور الربط مع بقية اللقاءات</h3>
+    <div class="note">لكل جسر جملةٌ تقولها المعلمة — لا وصفٌ للعلاقة فقط.</div>
+    <div class="grid2">
+      <div class="mini">
+        <h4>كتابي المنير — سورة الفجر</h4>
+        <p>أقسم اللهُ بالليل والنهار ﴿وَاللَّيْلِ إِذَا يَسْرِ﴾؛ فما تفكّره الطفل هنا يزداد رسوخًا حين يسمع الله يُقسم بهما.</p>
+        <p><b>حركة المعلمة:</b> «تذكّرون آيةَ الليل والنهار؟ اسمعوا كيف أقسم اللهُ بها في سورة الفجر».</p>
+      </div>
+      <div class="mini">
+        <h4>أحبك ربي — أسماء الله</h4>
+        <p>مَن الذي يُولِج الليل في النهار؟ اللهُ الخالق القدير؛ فآية الكون تقود إلى معرفة أسمائه وتعظيمه.</p>
+        <p><b>حركة المعلمة:</b> «الذي خلق هذا النظام العظيم هو ربُّنا… ما اسمُه الذي تعلّمناه؟».</p>
+      </div>
+      <div class="mini">
+        <h4>لساني عربي</h4>
+        <p>كلمات اليوم «لَيْل · نَهار · شَمْس · قَمَر» يقرؤها الطفل بالحركات؛ فاللغة أداةٌ لفهم آيات الكون.</p>
+        <p><b>حركة المعلمة:</b> «هذه كلمةُ (نهار)… مَن يقرؤها؟».</p>
+      </div>
+      <div class="mini">
+        <h4>مهاراتي</h4>
+        <p>عدُّ أوقات اليوم وترتيبها (صباح · ظهر · مساء · ليل)، وربطُ النظام العددي بنظام الله المُحكم.</p>
+        <p><b>حركة المعلمة:</b> «كم وقتًا في يومنا؟ رتّبوها كما رتّبها الله».</p>
+      </div>
+      <div class="mini">
+        <h4>أدب واقتداء — الأذكار</h4>
+        <p>تعاقب الليل والنهار دعوةٌ متجدّدة للذكر؛ فيطبّق الطفل المعنى بأذكار الصباح والمساء.</p>
+        <p><b>حركة المعلمة:</b> «كلّما جاء صباحٌ نقول… وكلّما جاء مساءٌ نقول…».</p>
+      </div>
+      <div class="mini">
+        <h4>الأركان والأناشيد</h4>
+        <p>نشيد التفكّر في ركن «أكتشف ما حولي» يُثبّت المعنى باللعب.</p>
+        <p><b>حركة المعلمة:</b> ربطُ نشاط الركن بعبارة اليوم.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== P3 ===== -->
+<section class="panel on" id="p3" role="tabpanel">
+  <div class="pnhead"><h2>دليل الدرس كامل</h2><span class="when">أثناء · مفتوح افتراضيًا</span></div>
+  <p class="pnsub">منقولٌ كما هو من الدليل القائم. الإضافة الوحيدة: تثبيت الإجابات النموذجية وتصحيح فهم الطفل في كل لقاء بلا استثناء.</p>
+
+  <div class="sec">
+    <h3>① مسار بداية اللقاء</h3>
+    <p><b>إشارة بدء اللقاء:</b> «السلام عليكم ورحمة الله وبركاته يا طلاب العلم المباركين. هيا نستمع لنعرف ماذا سيكون لقاؤنا». تُشغّل المعلمة أنشودة «العلم هو النور الهادي» علامةً ثابتة لبدء لقاء علّمني ربي — <b>ولا تُسمّي اللقاء</b>؛ فيتعرّف الأطفال عليه بأنفسهم من إشارته.</p>
+    <p><b>الافتتاح بذكر الله:</b> البسملة والحمدلة والصلاة على النبي ﷺ، ثم «انتباه… انتباه… حان وقتُ العلم»، ثم دعاء طلب العلم: «اللَّهُمَّ عَلِّمْنَا مَا يَنْفَعُنَا، وَانْفَعْنَا بِمَا عَلَّمْتَنَا، وَزِدْنَا عِلْمًا».</p>
+    <p><b>الحزم مع الهدوء:</b> صوتٌ لطيف، وحدودٌ واضحة، وابتسامةٌ محتسبة — دون شدّةٍ تُنفّر ولا فوضى تُشتّت.</p>
+    <p><b>قوانين الفصل الخمسة:</b> أحافظ على نظافة فصلي · أستمع وأنصت · أحفظ لساني ويدي · أجلس جلسة صحيحة · أرفع يدي للمشاركة.</p>
+  </div>
+
+  <div class="sec">
+    <h3>② سير اللقاء</h3>
+    <p><b>اكتشاف الوحدة:</b> تعرض المعلمة فيديو التعاقب، ثم تقود الأطفال إلى الملاحظة: ليل ثم نهار ثم ليل ثم نهار، وتقول: «إذن اسم وحدتنا: <b>الليل والنهار</b>».</p>
+    <div class="mini" style="margin:14px 0">
+      <div class="ayah">﴿إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ لَآيَاتٍ لِّأُولِي الْأَلْبَابِ﴾</div>
+      <div class="ref">آل عمران: ١٩٠</div>
+      <p style="margin-top:10px"><b>سؤال:</b> من هم أولو الألباب؟ — <b>الجواب:</b> هم أصحاب العقول الذين انتفعوا بعقولهم فتفكّروا في مخلوقات الله.</p>
+    </div>
+    <p><b>المشاهدة والتفكّر في التعاقب:</b> «الله خلق لنا ليلًا ونهارًا <b>يتعاقبان</b>. ولو دام الليل وحده أو النهار وحده لاختلّ حال الخلق؛ فالمخلوقات تحتاج الليل للراحة والسكون، وتحتاج النهار للعمل وطلب العلم — فمن رحمة الله جعلهما يتعاقبان».</p>
+    <p><b>تفكّرٌ ومشاهدة:</b> توجّه المعلمة الأطفال إلى ضوء النهار من النافذة: «مَن يأتي بهذا الضوء العظيم كلَّ صباح، ثم يُذهبه ليُقبل الليل؟» فيقولون: «اللهُ»، فنقول: «سبحان الله».</p>
+    <p><b>المخلوقان العظيمان:</b> الشمس تظهر في النهار يأمرها الله فتُشرق، والقمر نراه في الليل. يأمرهما الله فيُطيعان، ويظهران في أوقاتٍ معلومة حدّدها الله رحمةً بعباده.</p>
+    <p><b>سجود الشمس:</b> يُتلى النص كما ورد — <span style="color:var(--clay)">ويُكتفى بإثبات السجود دون شرح الكيفية أو تصويرها أو ربطها بحركة حسية؛ لأن ذلك من الغيب.</span></p>
+  </div>
+
+  <div class="sec">
+    <h3>المعنى المركزي وتصحيح فهم الطفل</h3>
+    <p><b>المعنى المركزي:</b> الليل والنهار آيتان من آيات الله، خلقهما بحكمة ورحمة وجعلهما يتعاقبان؛ والتفكّر في مخلوقات الله كالشمس والقمر عبادةٌ قلبية يحبها الله، تعرّفنا بعظمته وتزيدنا إيمانًا فنشكره ونعظّمه.</p>
+    <p><b>تصحيح فهم الطفل:</b> الشمس والقمر مخلوقان لا يفعلان شيئًا بأنفسهما، بل يجريان بأمر الله وحده ويُطيعانه؛ فلا نعبدهما ولا نخاف الظلام، فالله الذي خلق الليل والنهار هو الذي يحفظنا ويرعانا.</p>
+    <p><b>الجملة الختامية:</b> «تفكّرنا اليوم في مخلوقَين عظيمَين هما الشمس والقمر، والتفكّر عبادة يحبها الله» — يردّدها الأطفال.</p>
+  </div>
+
+  <div class="sec">
+    <h3>③ الإغلاق — أسئلة التغذية الراجعة بإجاباتها</h3>
+    <div class="qa">
+      <div class="q"><div class="qq">ما الفرق بين الليل والنهار؟</div><div class="aa">النهار وقت الضوء نعمل فيه ونطلب العلم، والليل وقت الظلام والسكون ننام فيه ونستريح — وكلاهما خلقهما الله بحكمة.</div></div>
+      <div class="q"><div class="qq">من جعل لنا الليل والنهار؟</div><div class="aa">الله وحده هو الذي خلق الليل والنهار وسخّر الشمس والقمر، فنحمده ونقول: سبحان الله.</div></div>
+      <div class="q"><div class="qq">ماذا نفعل في النهار، وماذا نفعل في الليل؟</div><div class="aa">في النهار نتعلّم ونعمل وننتفع بضوء الشمس، وفي الليل ننام ونستريح لتسكن أبداننا — وهذا من رحمة الله.</div></div>
+    </div>
+    <p style="margin-top:14px; font-size:14px; color:var(--muted)">تختار المعلمة سؤالين أو ثلاثة بحسب وقت الأطفال. <b>المعيار: ٣ إجابات صحيحة على الأقل.</b></p>
+  </div>
+
+  <div class="sec">
+    <h3>النشاط المصاحب — لعبة تمرير الكرة</h3>
+    <p><b>الهدف:</b> أن يراجع الطفل مفاهيم الدرس (الليل والنهار · الشمس والقمر · التفكّر عبادة) في جوٍّ من المتعة وضبط النفس وانتظار الدور.</p>
+    <p><b>الأدوات:</b> كرة خفيفة ملوّنة · بطاقتا «ليل» و«نهار» · صور الشمس والقمر.</p>
+    <ul class="plain">
+      <li>يجلس الأطفال في حلقة، وتُمرّر المعلمة الكرة بلطف مع سؤال.</li>
+      <li>من تصله الكرة يُجيب: «ما اسم وحدتنا؟» «ما الذي نراه في النهار؟» «ما المخلوق الذي نراه في الليل؟».</li>
+      <li>يرفع الطفل بطاقة «ليل» أو «نهار» المناسبة لسؤاله.</li>
+      <li>تختم المعلمة: «التفكّر عبادة يحبها الله — سبحان الله الذي خلق الليل والنهار».</li>
+    </ul>
+    <p style="margin-top:12px"><b>دعاء ختام النشاط:</b> سبحان الله الذي خلق الليل والنهار وسخّر الشمس والقمر، الحمد لله الذي علّمنا وجعلنا من المتفكّرين.</p>
+    <p><b>كفارة المجلس:</b> سبحانك اللهم وبحمدك، أشهد أن لا إله إلا أنت، أستغفرك وأتوب إليك.</p>
+  </div>
+</section>
+
+<!-- ===== P4 ===== -->
+<section class="panel" id="p4" role="tabpanel">
+  <div class="pnhead"><h2>المواقف والآداب</h2><span class="when">أثناء</span></div>
+  <p class="pnsub">منقولٌ حرفيًّا. أقوى عنصرٍ في الدليل ولا نظير له في المرجع المقارَن — لم يُمسّ فيه حرف.</p>
+
+  <div class="sec">
+    <h3>آداب المعلمة والطفل</h3>
+    <div class="grid2">
+      <div class="mini">
+        <h4>آداب المعلمة</h4>
+        <p>تبدأ بالبسملة والحمدلة والدعاء · تنطلق كل فكرة بآية أو حديث · الحزم مع الهدوء، فلا يعلو صوتها على النص الشرعي.</p>
+      </div>
+      <div class="mini">
+        <h4>آداب الطفل</h4>
+        <p>الجلوس في المساحة المخصصة له · الاستماع وعدم المقاطعة · المشاركة بلطف والاستئذان.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>خمسة مواقف متوقّعة</h3>
+
+    <div class="mawqif">
+      <div class="mt">١ · الرضا بالرزق وتوزيع الفرص</div>
+      <div class="mb">
+        <div><b>الموقف</b>قالت طفلة: «أريد الإجابة مرة أخرى!»</div>
+        <div class="resp"><b>الرد المقترح</b>«هذا هو رزقكِ الذي رزقكِ الله إياه، والله سيرزق زميلتكِ أيضًا — كل واحد له نصيبه».</div>
+        <div><b>القيمة</b>الرزق من الله — الرضا بما يُقسَم — البعد عن الحسد. <br><b>ربط بالدرس</b>الشمس والقمر لا يتنافسان ﴿كُلٌّ يَجْرِي لِأَجَلٍ مُّسَمًّى﴾.</div>
+      </div>
+    </div>
+
+    <div class="mawqif">
+      <div class="mt">٢ · التهذيب في القول</div>
+      <div class="mb">
+        <div><b>الموقف</b>قالت طفلة لأخرى: «أنتِ لستِ جميلة!»</div>
+        <div class="resp"><b>الرد المقترح</b>«يا صغيرتي، من كان يؤمن بالله واليوم الآخر فليقل خيرًا أو ليصمت. الله خلق كل إنسان بأجمل صورة».</div>
+        <div><b>القيمة</b>تهذيب اللسان — كفّ الأذى. <br><b>ربط بالدرس</b>الله جمّل الليل بالقمر والنهار بالشمس — كل شيء أحسن الله خلقه.</div>
+      </div>
+    </div>
+
+    <div class="mawqif">
+      <div class="mt">٣ · الرحمة والدعاء للمريض</div>
+      <div class="mb">
+        <div><b>الموقف</b>قالت طفلة بحزن: «أمّي مريضة…»</div>
+        <div class="resp"><b>الرد المقترح</b>«لا بأس عليها، طَهورٌ إن شاء الله. هل دعوتِ لها؟ قولي: اللهم اشفِ أمّي — الدعاء يشفي بإذن الله».</div>
+        <div><b>القيمة</b>الرحمة بالأهل — ربط الطفل بالله في الرجاء. <br><b>ربط بالدرس</b>كما يأمر الله الشمس فتُشرق وتنفع — الله وحده هو الشافي.</div>
+      </div>
+    </div>
+
+    <div class="mawqif">
+      <div class="mt">٤ · تحويل التعجّب إلى تسبيح</div>
+      <div class="mb">
+        <div><b>الموقف</b>قال طفل بتعجّب بعد الفيديو: «كيف تعرف الشمس متى تطلع؟!»</div>
+        <div class="resp"><b>الرد المقترح</b>«ما شاء الله! هذا سؤال أولي الألباب! الشمس لا تعرف بنفسها — الله الكبير العظيم يأمرها فتُطيع. قل معي: سبحان الله!»</div>
+        <div><b>القيمة</b>تعزيز التفكّر عبادةً — تحويل الفضول إلى تسبيح. <br><b>ربط مباشر بالدرس</b>هذا بالضبط ما تعلّمناه.</div>
+      </div>
+    </div>
+
+    <div class="mawqif">
+      <div class="mt">٥ · الانتظار وضبط النفس</div>
+      <div class="mb">
+        <div><b>الموقف</b>طفل يُقاطع زميله أثناء إجابته في لعبة الكرة.</div>
+        <div class="resp"><b>الرد المقترح</b>«الشمس تنتظر وقتها ولا تخرج قبل أوانها — وأنت أيضًا انتظر دورك. جزاك الله خيرًا».</div>
+        <div><b>القيمة</b>ضبط النفس — أدب الإنصات. <br><b>ربط بالدرس</b>﴿كُلٌّ يَجْرِي لِأَجَلٍ مُّسَمًّى﴾ — كل شيء له وقته عند الله.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== P5 ===== -->
+<section class="panel" id="p5" role="tabpanel">
+  <div class="pnhead"><h2>الأركان التطبيقية</h2><span class="tagnew">وسم الموصى به</span><span class="when">أثناء · بعد الحلقة</span></div>
+  <p class="pnsub">نُقل من آخر الشريط إلى قلبه، لأنه جزءٌ من اليوم لا ملحقٌ به.</p>
+
+  <div class="sec">
+    <h3>ضابط وقت الأركان</h3>
+    <p>الأركان مساحاتٌ غنيّة بأدوات التعلّم، مدّتها ٣٠ دقيقة، يلعب فيها الأطفال ويستكشفون الأدوات بحرّية ومرح — لا التزام بآداب مجالس العلم كالمواد الأساسية. وتستقطع المعلمة وقتًا يسيرًا لنشاطٍ تطبيقي سريع على الفكرة المركزية.</p>
+    <p><b>ضابط منهجي:</b> الصور والوسائل لتقريب الفكرة، أما النص الشرعي فيبقى في موضع التلاوة والتعظيم، ولا تُمثَّل صور الغيب.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="sec" style="margin:0; border-inline-start:3px solid var(--green-mid)">
+      <h3>ركن أكتشف ما حولي — «نورٌ وظلام»</h3>
+      <div class="note" style="color:var(--green-mid); font-weight:700">★ الخيار الموصى به لهذا اللقاء</div>
+      <p><b>لماذا هو الموصى به:</b> لأنه يُعيد المعنى المركزي محسوسًا — الضوء والظلام — وهو الأقرب إلى سؤال التركيز، وأدواته أبسط ما يُجهَّز.</p>
+      <p><b>النشاط التطبيقي السريع (٥–٧ د):</b> يُطفأ الضوء ثم يُشعل، ويسأل: «متى نرى؟ ومتى ننام؟»، ثم يضع الطفل بطاقة «شمس» في جهة النور و«قمر» في جهة الظلام، ويقول: «سبحان الله الذي خلق الليل والنهار».</p>
+      <p><b>المخرَج:</b> بطاقة يرفعها الطفل + جملة يردّدها.</p>
+    </div>
+    <div class="sec" style="margin:0">
+      <h3>ركن فنوني الجميلة — «لوحة يتعاقبان»</h3>
+      <div class="note">بديلٌ عند تعذّر الأول أو حين تكون البيئة مهيّأة له</div>
+      <p><b>النشاط:</b> يلوّن الطفل الشمس والقمر (بلا أعين) على ورقة مقسومة نصفين، ويكتب أو تكتب له المعلمة: «سبحان الله».</p>
+      <p><b>المخرَج:</b> ورقة تدخل مخرَج الوحدة «آياتٌ في السماء».</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== P6 ===== -->
+<section class="panel" id="p6" role="tabpanel">
+  <div class="pnhead"><h2>التقويم والحكم</h2><span class="tagnew">سلّم الحكم جديد</span><span class="when">بعد</span></div>
+  <p class="pnsub">التقويم الثلاثي ومؤشرات النجاح كما هي، مضافًا إليها سلّمٌ بثلاثة مستويات يحوّل الحكم من انطباعٍ إلى ملاحظةٍ موصوفة.</p>
+
+  <div class="sec">
+    <h3>التقويم الثلاثي</h3>
+    <div class="grid2">
+      <div class="mini">
+        <h4>◐ التقويم القبلي</h4>
+        <p>ما اسم الوحدة السابقة؟ · متى ننام؟ ومتى نستيقظ؟ · ماذا نرى في الليل؟ وماذا نرى في النهار؟</p>
+      </div>
+      <div class="mini">
+        <h4>◑ التقويم التكويني</h4>
+        <p>متابعة تفاعل الأطفال مع الصور والفيديو · هل القمر يظهر في النهار؟ · ما الذي نراه حين تشرق الشمس؟ · ملاحظة الهدوء والمشاركة.</p>
+      </div>
+      <div class="mini">
+        <h4>● التقويم النهائي — لعبة الكرة</h4>
+        <p>ما اسم وحدتنا؟ · ما العبادة التي يحبها الله وأصحابها أولو الألباب؟ · ما الذي نراه في النهار؟ وما المخلوق الذي نراه في الليل؟</p>
+      </div>
+      <div class="mini gold">
+        <h4>المعيار</h4>
+        <p>ثلاث إجابات صحيحة على الأقل.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec isnew">
+    <h3>ما الذي أبحث عنه؟ — سلّم الحكم</h3>
+    <div class="note">ثلاثة مستويات موصوفة لكل مؤشر. تُملأ بعلامةٍ سريعة في سجلّ ملاحظة الوحدة.</div>
+    <div class="scroll">
+      <table class="rub">
+        <thead><tr><th>المؤشر</th><th>مبتدئ</th><th>نامٍ</th><th>متمكّن</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>المعرفي</td>
+            <td>يفرّق بين الليل والنهار بالصورة فقط.</td>
+            <td>يسمّي الشمس مخلوق النهار والقمر مخلوق الليل.</td>
+            <td>يقول إن الله وحده خلقهما وسخّرهما، ويذكر أن التفكّر عبادة.</td>
+          </tr>
+          <tr>
+            <td>الوجداني</td>
+            <td>يستمع دون تفاعلٍ ظاهر.</td>
+            <td>يقول «سبحان الله» حين تُلقّنه المعلمة.</td>
+            <td>يبادر بـ«سبحان الله» عند رؤية الشمس أو القمر بلا تلقين، أو تظهر ابتسامة إعجابٍ تلقائية.</td>
+          </tr>
+          <tr>
+            <td>السلوكي</td>
+            <td>يحتاج تذكيرًا متكرّرًا لانتظار دوره في اللعبة.</td>
+            <td>ينتظر دوره أغلب الوقت ويرفع يده.</td>
+            <td>ينتظر هادئًا بلا مقاطعة، ويشارك بلطفٍ ويحترم دور زميله.</td>
+          </tr>
+          <tr>
+            <td>الفني</td>
+            <td>يلوّن بلا تمييزٍ بين الشمس والقمر.</td>
+            <td>يلوّن الشمس أو القمر صحيحًا (بلا أعين).</td>
+            <td>يلوّنهما صحيحًا ويربط كلًّا بوقته، ويكتب أو ينطق: سبحان الله.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== P7 ===== -->
+<section class="panel" id="p7" role="tabpanel">
+  <div class="pnhead"><h2>العلاج والإثراء</h2><span class="tagnew">تبويب جديد</span><span class="when">بعد · عند الحاجة</span></div>
+  <p class="pnsub">الطبقة الغائبة اليوم: ماذا تفعل المعلمة حين لا ينجح اللقاء. لا يُعاد الدرس — يُعالَج المؤشر الذي أخفق وحده.</p>
+
+  <div class="sec isnew">
+    <h3>إن لم يتحقّق المؤشر المعرفي</h3>
+    <div class="note">٥–٧ دقائق · في ركن «أكتشف ما حولي» أو في أول ثلاث دقائق من اللقاء التالي</div>
+    <ul class="plain">
+      <li><b>الأدوات:</b> بطاقتان فقط — «شمس» و«قمر». لا تُعرض البطاقات الأربع.</li>
+      <li>تُطفئ المعلمة الضوء لحظةً وتسأل: «الآن ليلٌ أم نهار؟» ثم تُشعله وتُعيد السؤال.</li>
+      <li>تضع بطاقة واحدة أمامه وتسأل: «هذه متى نراها؟» وتنتظر جوابًا واحدًا فقط.</li>
+      <li>تُضيف الثانية بعد أن تثبت الأولى — لا تُعرضان معًا.</li>
+      <li>تختم بجملةٍ واحدة يردّدها: «اللهُ خلق الليل والنهار».</li>
+      <li><b>علامة النجاح:</b> يربط الشمس بالنهار والقمر بالليل، ويسند الخلق إلى الله. ثم يُعاد إلى اللعب الحرّ.</li>
+    </ul>
+  </div>
+
+  <div class="sec isnew">
+    <h3>إن لم يتحقّق المؤشر الوجداني</h3>
+    <div class="note">٣ دقائق · تُنفَّذ في الانتقال بين اللقاءات</div>
+    <ul class="plain">
+      <li>تقف المعلمة مع الطفل عند النافذة وتنظر معه إلى السماء صامتةً لحظة.</li>
+      <li>تقول هي أوّلًا: «سبحان الله…» بصوتٍ هادئ، ثم تنتظر — <b>ولا تطلب منه أن يقول</b>.</li>
+      <li>إن قالها أثنت عليه بلطف: «هذا قول أولي الألباب».</li>
+      <li>تُكرَّر في يومين متتاليين. <b>علامة النجاح:</b> أن يبادر بها مرّةً واحدة بلا تلقين.</li>
+    </ul>
+  </div>
+
+  <div class="sec isnew">
+    <h3>للطفل المتقدّم</h3>
+    <div class="grid2">
+      <div class="mini">
+        <h4>سؤال أعمق</h4>
+        <p>«لو أن اللهَ جعل النهار وحده لا ليل بعده — ماذا يحصل للناس والنبات والحيوان؟» ثم يُربط بقوله تعالى ﴿قُلْ أَرَأَيْتُمْ إِنْ جَعَلَ اللَّهُ عَلَيْكُمُ اللَّيْلَ سَرْمَدًا…﴾.</p>
+      </div>
+      <div class="mini">
+        <h4>دور قيادي</h4>
+        <p>يحمل بطاقتَي «ليل» و«نهار» في لعبة الكرة، ويرفع البطاقة الصحيحة بعد إجابة كل زميل — فيصير مُعينًا لا متلقّيًا.</p>
+      </div>
+      <div class="mini">
+        <h4>ربط بمعنًى سابق</h4>
+        <p>«تعلّمنا اسم الله <b>الخالق</b> — فمن خلق الشمس والقمر؟» فيصل الطفل بين أسماء الله وآيات الكون بنفسه.</p>
+      </div>
+      <div class="mini">
+        <h4>تمهيدٌ لليوم التالي</h4>
+        <p>«غدًا نتعلّم عن الشمس وحدها — ابحث الليلةَ عن شيءٍ واحدٍ تفعله الشمس لنا».</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec isnew">
+    <h3>إن تعذّرت الوسيلة</h3>
+    <ul class="plain">
+      <li><b>لم يعمل فيديو التعاقب:</b> تُستعمل صورتان فقط — سماءٌ نهارية وسماءٌ ليلية — وتُقلَّبان أمام الأطفال بالتناوب مع سؤال: «الآن؟» فالمقصود ملاحظة التعاقب لا الفيديو.</li>
+      <li><b>لم تعمل الأنشودة:</b> تُنشدها المعلمة بنفسها — الإشارة صوتٌ يعرفه الطفل لا ملفٌّ بعينه.</li>
+      <li><b>تعذّرت طباعة البطاقات:</b> تُرسم أربع بطاقات بخطٍّ عريض على ورقٍ عادي: ليل · نهار · شمس · قمر (بلا وجوه). المقصود التسمية لا الصورة.</li>
+      <li><b>لا كرة:</b> تُمرَّر وسادةٌ صغيرة أو كتاب، ويبقى شرط اللعبة: من وصله الدور تكلّم وحده.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== P8 ===== -->
+<section class="panel" id="p8" role="tabpanel">
+  <div class="pnhead"><h2>الأسرة</h2><span class="tagnew">بطاقة العودة جديدة</span><span class="when">قبل وبعد</span></div>
+  <p class="pnsub">عمل ولي الأمر كلُّه في مكانٍ واحد، لأنه يكتنف اللقاء من طرفيه.</p>
+
+  <div class="sec">
+    <h3>تهيئات ولي الأمر قبل اللقاء</h3>
+    <div class="grid2">
+      <div class="mini"><h4>١ · وجدانية</h4><p>قبل النوم: يُحدّث ولي الأمر طفله عن نعمة الليل كوقتٍ للراحة والسكينة، ويقرأ معه أذكار المساء. وعند الاستيقاظ: يذكّره بنعمة النهار ويقرأ معه أذكار الصباح.</p></div>
+      <div class="mini"><h4>٢ · معرفية</h4><p>يفتح مع طفله المصحف على ﴿إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالْأَرْضِ وَاخْتِلَافِ اللَّيْلِ وَالنَّهَارِ﴾ ويقرأها بصوتٍ مؤثّر، ثم يناقشه: «ماذا ترى في السماء ليلًا؟ وماذا ترى نهارًا؟»</p></div>
+      <div class="mini"><h4>٣ · حسّية</h4><p>في الليل: يخرج معه إلى النافذة ليرى القمر أو النجوم. وفي النهار: يُشير معه إلى ضوء الشمس ويقول: «الله يأمر الشمس أن تشرق».</p></div>
+      <div class="mini"><h4>٤ · عملية</h4><p>تجهيز بطاقة مكتوب عليها «ليل» وأخرى «نهار» ليحملها الطفل إلى الصف، أو رسمٌ سريع للشمس والقمر (بلا أعين).</p></div>
+      <div class="mini"><h4>٥ · سلوكية</h4><p>يُدرّب طفله على النوم مبكرًا: «الليل = راحة»، والاستيقاظ بنشاط: «النهار = تعلّم وعمل».</p></div>
+      <div class="mini"><h4>٦ · بالقصص</h4><p>يحكي قصة قصيرة: «طفلٌ ينام ليلًا ليستريح، ثم يستيقظ نهارًا فيذهب ليتعلم ويقول: الحمد لله على نعمة الليل والنهار».</p></div>
+    </div>
+    <p style="margin-top:14px"><b>أسئلة يطرحها على طفله:</b> ما اسم وحدتنا الجديدة؟ · ما المخلوق الذي يضيء النهار؟ وما الذي يضيء الليل؟ · ماذا يعني أن أتفكّر في مخلوقات الله؟ · هل الشمس والقمر يطيعان الله؟ كيف؟ · من هم أولو الألباب؟ هل أنت منهم؟</p>
+  </div>
+
+  <div class="sec">
+    <h3>رسالة ولي الأمر — جاهزة للنسخ</h3>
+    <div class="wa">
+      بسم الله الرحمن الرحيم<br><br>
+      السلام عليكم ورحمة الله وبركاته<br><br>
+      بدأ طفلكم الكريم اليوم وحدة <b>«الليل والنهار»</b> في مادة علّمني ربي. تعلّم أن التفكّر في مخلوقات الله عبادة يحبها الله، وأن الشمس تضيء نهارنا والقمر يضيء ليلنا بأمر الله وحده.<br><br>
+      <b>نشاط بيتي:</b> مساء اليوم ابحثوا معًا عن القمر في السماء وقولوا: «سبحان الله العظيم!»<br><br>
+      جزاكم الله خيرًا على شراكتكم في تربية أبنائكم — فريق نادي غرس القيم
+    </div>
+  </div>
+
+  <div class="sec isnew">
+    <h3>بطاقة العودة إلى البيت</h3>
+    <div class="note">تخرج مع الطفل وتعود في اليوم التالي. اليوم الرسالة تخرج ولا يعود منها شيء.</div>
+    <div class="card-back">
+      <b>بطاقة اليوم الأول — «ماذا رأيتُ في السماء؟»</b><br><br>
+      ابحثوا مع طفلكم عن القمر الليلة، ثم:<br>
+      ☐ ارسموا ما رآه في السماء &nbsp;·&nbsp; ☐ أو اكتبوا كلمةً واحدة قالها<br><br>
+      وأعيدوا البطاقة معه غدًا بإذن الله.
+    </div>
+    <p style="margin-top:14px"><b>وسطرٌ في اللقاء التالي يستثمرها:</b> تسأل المعلمة في مطلع لقاء «الشمس»: «مَن أحضر بطاقته؟ ماذا رأيتم في السماء؟» — فيدخل البيتُ الصفَّ، ويتحوّل ولي الأمر من متلقٍّ إلى مشارك.</p>
+  </div>
+</section>
+
+<!-- ===== P9 ===== -->
+<section class="panel" id="p9" role="tabpanel">
+  <div class="pnhead"><h2>خزانة المعلمة</h2><span class="when">تُقرأ مرّة · مرجع</span></div>
+  <p class="pnsub">دمج ثلاثة تبويبات مرجعية في واحد بأقسامٍ قابلة للطيّ — لا حرف يُحذف، يتغيّر موضعها فقط فلا تزاحم ما يُفتح كلَّ يوم.</p>
+
+  <details open>
+    <summary>القيم والمفاهيم والاستراتيجيات</summary>
+    <div class="dc">
+      <p><b>القيم:</b> العلم · التفكّر · الشكر · التسليم · التوحيد</p>
+      <p><b>المفاهيم:</b> الليل والنهار آيتان من آيات الله · التفكّر عبادة يحبها الله · التوازن رحمة من الله · الشمس والقمر مطيعان لله · الشكر والذكر عند تجدد الأيام</p>
+      <p><b>الاستراتيجيات:</b> التعلم باللعب · الملاحظة والتفكّر · المشاهدة · الحوار · التكرار · التعلم بالفن</p>
+      <p style="margin-top:12px"><b>الأهداف المحدّدة — معرفية:</b> أن يعرف أن الله وحده خلق الليل والنهار وسخّر الشمس والقمر · أن يُدرك أن التفكّر عبادة · أن يُدرك حكمة التعاقب (سكون وعمل).</p>
+      <p><b>وجدانية:</b> أن يشعر بعظمة الله عند رؤية صور الليل والنهار · أن يُعبّر بـ«سبحان الله» تلقائيًا · أن يتذوّق لذة السكينة في ذكر الله.</p>
+      <p><b>مهارية:</b> أن يقول: الله خلق الليل والنهار · أن يعتاد «سبحان الله» عند رؤية الشمس أو القمر · أن يعرف أن الليل للنوم والنهار للتعلم · أن يُجيب على ٣ أسئلة صحيحة · أن يلوّن الشمس أو القمر (بلا أعين) · أن يُردّد: «التفكّر عبادة يحبها الله».</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>الحصيلة اللغوية</summary>
+    <div class="dc">
+      <p><b>المفردات:</b> التفكُّر · أولو الألباب · يتعاقبان · الشمس · القمر · يُولج · سكون · سكينة · تشرق · تغرب · ينتفع</p>
+      <p style="margin-top:10px"><b>المصطلحات:</b></p>
+      <ul class="plain">
+        <li><b>التفكّر:</b> النظر في مخلوقات الله لنعرف عظمته ونزداد إيمانًا — عبادة قلبية يحبها الله.</li>
+        <li><b>آية:</b> علامة من خلق الله تدل على قدرته وعظمته.</li>
+        <li><b>أولو الألباب:</b> أصحاب العقول الذين ينتفعون بعقولهم في التفكّر في خلق الله.</li>
+        <li><b>تسبيح:</b> تعظيم الله وتنزيهه — كل مخلوق يُسبّح الله بطريقةٍ لا نعلمها.</li>
+        <li><b>تسخير:</b> أن يجعل الله المخلوقات تعمل بأمره لمصلحة خلقه ﴿وَسَخَّرَ الشَّمْسَ وَالْقَمَرَ﴾.</li>
+      </ul>
+      <p style="margin-top:10px"><b>كيف تستخدمها المعلمة:</b> تُدرجها في شرحها بلا توقّفٍ مفاجئ · تستعملها في جملةٍ واضحة: «الليل والنهار <b>يتعاقبان</b> — يعني يأتي أحدهما بعد الآخر» · تكرّرها في سياقاتٍ مختلفة · تُثني على من يستعملها.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>مراجع المعلمة</summary>
+    <div class="dc">
+      <p><b>القرآن ومصادر التفسير:</b> آل عمران ١٩٠–١٩١ (السعدي) · النبأ ٩–١١ (المختصر) · القصص ٧١–٧٢ (السعدي) · فصلت ٣٧ (السعدي).</p>
+      <p><b>السنة:</b> حديث سجود الشمس — صحيح البخاري ٣١٩٩ (الدرر السنية) · رياض الصالحين، باب التفكير في عظيم مخلوقات الله · الأدب المفرد.</p>
+      <p><b>مراجع شرعية وتربوية:</b> تربية الأولاد في الإسلام — علوان · آيات الله في الآفاق — محمد العدوي · فقه الأدعية والأذكار — عبد الرزاق البدر · غرس محبة الله في الطفل — مركز دلائل · أسئلة الأطفال الإيمانية — الركف.</p>
+      <p><b>مراجع تربوية حديثة:</b> نشاطات مبتكرة لمرحلة ما قبل المدرسة — سعاد مفلح · التربية بالقرآن — عبد الكريم بكار · الطفولة لعب وتعلم — فؤاد البهي السيد.</p>
+      <p><b>مصادر رقمية:</b> tafsir.app للتفاسير · shamela.ws للكتب · dorar.net للتخريج · Wordwall للمراجعة اللعبية.</p>
+    </div>
+  </details>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    نموذج مقترح لصفحة اللقاء — علّمني ربي · وحدة الليل والنهار · نادي غرس القيم للطفولة.
+    المحتوى القائم منقولٌ من صفحة اللقاء على موقع دليل المعلمة؛ والحقول المعلَّمة «جديد» مقترحةٌ للاعتماد،
+    وصندوق الخلفية الشرعية يمرّ على مراجعةٍ معتمدة قبل النشر.
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tb'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
+  function show(id){
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', t.dataset.p === id ? 'true' : 'false'); });
+    panels.forEach(function(p){ p.classList.toggle('on', p.id === id); });
+    window.scrollTo({top: document.querySelector('.tabsbar').offsetTop - 4, behavior: 'smooth'});
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ show(t.dataset.p); });
+    t.addEventListener('keydown', function(e){
+      var i = tabs.indexOf(t);
+      if(e.key === 'ArrowLeft'){ e.preventDefault(); tabs[(i+1)%tabs.length].focus(); }
+      if(e.key === 'ArrowRight'){ e.preventDefault(); tabs[(i-1+tabs.length)%tabs.length].focus(); }
+    });
+  });
+})();
+</script>
+
+</body></html>
