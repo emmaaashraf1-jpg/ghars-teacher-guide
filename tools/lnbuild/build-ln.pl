@@ -20,7 +20,7 @@ for my $ln (@lines){
   if ($ln =~ /^\@\@(\w+)\r?\n?$/){ $cur=$1; $F{$cur}//=''; }
   elsif (defined $cur){ $F{$cur} .= $ln; }
 }
-my %inline = map {$_=>1} qw(COVER_IMG COVER_BADGE COVER_TITLE COVER_META FOOT);
+my %inline = map {$_=>1} qw(PAGE_TITLE COVER_IMG COVER_BADGE COVER_TITLE COVER_META FOOT);
 for my $k (keys %F){ if($inline{$k}){ $F{$k} =~ s/\r?\n\z//; } }
 
 # تحقّقٌ من الحقول المطلوبة
@@ -30,6 +30,7 @@ my @miss = grep { !defined $F{$_} } @need;
 die "حقولٌ ناقصة في $datf: @miss\n" if @miss;
 
 # ملء الغلاف
+$head =~ s/\{\{PAGE_TITLE\}\}/$F{PAGE_TITLE}/ if defined $F{PAGE_TITLE};
 $head =~ s/\{\{COVER_IMG\}\}/$F{COVER_IMG}/;
 $head =~ s/\{\{COVER_BADGE\}\}/$F{COVER_BADGE}/s;
 $head =~ s/\{\{COVER_TITLE\}\}/$F{COVER_TITLE}/s;

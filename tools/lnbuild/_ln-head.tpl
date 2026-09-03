@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>مفهوم الليل والنهار · علّمني ربي · وحدة الليل والنهار</title>
+<title>{{PAGE_TITLE}}</title>
 <style>
 @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
@@ -77,6 +77,8 @@ table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd
   background:var(--elm-soft);border:1px solid #bfe3e6;border-radius:999px;padding:3px 12px}
 .sec-head .stage.s2{color:#8a6410;background:#F7EECB;border-color:#ebd9a8}
 .sec-head .stage.s3{color:var(--grn);background:#eaf5ee;border-color:#bfe0cd}
+  .src{display:block;margin-top:6px;font-size:12px;line-height:1.6;color:#6b7d72;font-style:italic}
+  .qt{color:#20342b}
 .first{margin-top:6px}
 
 /* ترويسة الدرس — بوصلة اللقاء (سؤال التركيز + جوهر اللقاء) · بنية مستفادة من أدلة هاركورت */
@@ -593,5 +595,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
   .sec-head .stage{color:#5E7268;background:#eef1ee;border-color:#d5ded7}
   .sec-head .stage.s2{color:#9A7326;background:#f6efdd;border-color:#e6d6ae}
   .sec-head .stage.s3{color:var(--grn);background:#eaf5ee;border-color:#bfe0cd}
+  .src{display:block;margin-top:6px;font-size:12px;line-height:1.6;color:#6b7d72;font-style:italic}
+  .qt{color:#20342b}
   </style>
 
