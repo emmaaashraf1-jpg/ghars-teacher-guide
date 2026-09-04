@@ -475,6 +475,10 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
   </div>
 
   <!-- ===== التبويبات ===== -->
+  <!-- ورقة اليوم للطباعة (الطبقة الثانية) -->
+  <div class="dayprint-bar" style="text-align:center;margin:10px 0 0"><button type="button" class="linkbtn" onclick="window.print()" style="cursor:pointer">ورقة اليوم للطباعة</button></div>
+
+
   <div class="tabs">
     <button class="tab" data-p="ptahdir">التحضير والخلفية</button>
     <button class="tab active" data-p="p1">دليل الدرس كامل</button>
@@ -1190,5 +1194,27 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
 </script>
 <!--gq-credit-embed-hide--><script>try{if(window.self!==window.top){var _c=document.querySelector(".gq-dev-credit");if(_c)_c.style.display="none";}}catch(e){}</script>
 <script src="brand/guide-icons.js?v=2"></script>
+<style>
+/* ═══════════ ورقة اليوم للطباعة — الطبقة الثانية (المرحلة د) ═══════════ */
+@media print{
+  @page{size:A4 portrait;margin:12mm}
+  body *{display:none!important}
+  .wrap,#p1{display:block!important}
+  body :has(.lhero),body :has(.quick-sheet),body :has(.card.feedback){display:block!important}
+  .lhero,.quick-sheet,.card.feedback{display:block!important}
+  .lhero *,.quick-sheet *,.card.feedback *{display:revert!important}
+  .cover,.cover-main,.cover-l,.cover-l h1{display:block!important}
+  .cover-photo,.cover-r,.c-badge,.c-meta{display:none!important}
+  .cover{height:auto!important;min-height:0!important;background:none!important;box-shadow:none!important;padding:0!important;margin:0 0 10px!important;border:0!important;position:static!important}
+  .cover-main{padding:0!important;background:none!important;box-shadow:none!important}
+  .cover-l h1{font-family:var(--fd);font-size:16pt;line-height:1.45;color:#000;margin:0 0 10px}
+  .lhero{margin:0 0 10px!important}
+  .quick-sheet,.card.feedback,.lh{break-inside:avoid;box-shadow:none!important;border:1px solid #cbd5cc!important;margin:0 0 10px!important}
+  .wrap{max-width:none!important;margin:0!important;padding:0!important}
+  body{background:#fff!important;color:#000}
+  a[href]:after{content:""!important}
+}
+</style>
+
 </body>
 </html>

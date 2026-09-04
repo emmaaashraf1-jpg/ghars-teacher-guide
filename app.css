@@ -164,3 +164,14 @@
 
 /* استجابة الجهاز اللوحي */
 @media(max-width:900px){ .qglance{grid-template-columns:repeat(2,1fr)} }
+
+/* ═══ ورقة اليوم للطباعة — الطبقة الثانية (تحسين طباعة صفحة الوحدة) ═══ */
+/* كتلةٌ مُكمِّلة لا تمسّ قاعدة الطباعة القائمة أعلاه: حجمُ A4 + فصلُ كلِّ لقاءٍ في ورقة. */
+/* كلُّ لقاءٍ داخل إطاره يطبع «ورقة اليوم» بقواعده الذاتيّة (@media print المحقونة في الدرس). */
+@media print{
+  @page{size:A4 portrait;margin:12mm}
+  .frame-wrap{break-inside:avoid;break-after:page;margin:0!important}
+  .frame-wrap iframe{width:100%!important;height:auto!important;min-height:auto!important}
+  .frame-load{display:none!important}
+  body{background:#fff!important}
+}
