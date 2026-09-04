@@ -520,6 +520,7 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
 
   <!-- ===== التبويبات ===== -->
   <div class="tabs">
+    <button class="tab" data-p="ptahdir">التحضير والخلفية</button>
     <button class="tab active" data-p="p1">دليل الدرس كامل</button>
     <button class="tab" data-p="p2">التكامل اليومي</button>
     <button class="tab" data-p="p3">التقويم</button>
@@ -529,6 +530,84 @@ h2 .gi,h3 .gi{vertical-align:-.18em}
     <button class="tab" data-p="p7">الحصيلة اللغوية</button>
     <button class="tab" data-p="p8">مراجع المعلمة</button>
     <button class="tab gold" data-p="p9">الأركان التطبيقية</button>
+  </div>
+
+  <style>
+  /* القالب المطوّر — طبقةٌ راقيةٌ بسيطة معمَّمة على التبويبات كلّها: أبيض/كريميّ + لمسةُ أخضرِ غرسٍ الغابيّ (بلا فيروزيّ ولا ذهبيّ صارخ) */
+  :root{--gp:#2C6A4D}                 /* أخضر غرس الأساسيّ للّمسات */
+  .card{background:#fff;border-color:#e9e3d5;box-shadow:0 1px 2px rgba(20,50,35,.03),0 16px 36px -28px rgba(20,50,35,.20);padding:22px 24px;margin-bottom:22px}
+  .sec-head{margin:38px 0 18px}
+  .sec-head.first{margin-top:12px}
+  .cg{gap:16px;margin-bottom:22px}       /* راحةٌ للعين: مسافةٌ بعد شبكة البطاقات + فجوةٌ داخليّة أوسع */
+  .info{background:#FBF9F3;border:1px solid #eae3d2;border-inline-start:3px solid var(--gp);color:#5f6a60;font-weight:500;margin-bottom:18px;padding:12px 16px}
+  /* صندوق مميّز للآيات والأحاديث بروح غرس (إطار أخضر + شارة + زخرفة نجميّة خفيفة) */
+  .ayah,.hadith{position:relative;overflow:visible;background:
+     radial-gradient(circle at 12% 0%, rgba(44,106,77,.05), transparent 30%),
+     radial-gradient(circle at 88% 100%, rgba(44,106,77,.05), transparent 30%),
+     #FBF8EF;
+     border:1.5px solid #cfe0d3;border-radius:18px 12px 18px 12px/12px 18px 12px 18px;
+     box-shadow:0 1px 2px rgba(20,50,35,.04),0 18px 40px -30px rgba(20,50,35,.22);
+     padding:28px 26px 20px;margin:16px 0}
+  .ayah{text-align:center;font-size:21px;line-height:2.2;color:var(--t1)}
+  .ayah::before,.hadith::before{position:absolute;top:-12px;inset-inline-start:26px;
+     font-family:var(--fd);font-size:12.5px;font-weight:700;color:#fff;background:var(--gp);
+     padding:3px 15px;border-radius:999px;box-shadow:0 3px 8px -2px rgba(20,50,35,.35)}
+  .ayah::before{content:"قال اللهُ تعالى"}
+  .hadith::before{content:"حديثٌ شريف"}
+  .ayah::after{content:"";position:absolute;inset-inline-end:20px;top:16px;bottom:16px;width:2px;
+     background:linear-gradient(var(--gp),transparent);opacity:.25;border-radius:2px}
+  .ayah .ref,.hadith .ref{display:inline-block;margin-top:12px;font-size:12.5px;color:var(--gp);
+     font-weight:700;letter-spacing:.3px;background:#eef4ef;border:1px solid #d9e7dd;border-radius:999px;padding:2px 12px}
+  .lbl{color:var(--t1);border-bottom:2px solid #e4ede6;padding-bottom:4px;display:inline-block;margin-bottom:12px}
+  .strat{background:#fff;border:1px solid #eee7d8;padding:11px 14px;margin-bottom:8px}
+  .strat .k{background:#FBF9F3;color:var(--gp);border:1px solid #eae3d2}
+  .miniblock{background:#FBF9F3;border:1px solid #eae3d2;border-radius:10px;padding:10px 14px;margin-top:12px}
+  .steps{line-height:2}
+  .steps li{margin-bottom:4px}
+  .card>.lbl.gold{border-color:#e4ede6}   /* تحييد التسطير الذهبيّ الناشز */
+  .miniblock>b{color:var(--gp)}           /* تحييد الفيروزيّ في عناوين المكعّبات */
+  /* بطاقات التقويم — ترميزٌ ثلاثيّ مكبوح بروح غرس: أخضر + أوكر هادئ + رمادي-أخضر (لا فيروزيّ/ذهبيّ صارخ) */
+  .taq.q{border-top-color:#7C8F82}
+  .taq.t{border-top-color:#B0862F}
+  .taq.n{border-top-color:var(--grn)}
+  .taq.q h3{color:#5E7268}
+  .taq.t h3{color:#9A7326}
+  .taq.n h3{color:var(--grn)}
+  .taq.q li::before{background:#7C8F82}
+  .taq.t li::before{background:#B0862F}
+  .taq.n li::before{background:var(--grn)}
+  /* عناوين بطاقات القيم/المفاهيم/التكامل: أخضر غرس بدل الفيروزيّ */
+  .ci .term{color:var(--gp)}
+  /* شارات المراحل — نفس الترميز المكبوح (تهيئة رمادي-أخضر · بناء أوكر هادئ · إغلاق أخضر) */
+  .sec-head .stage{color:#5E7268;background:#eef1ee;border-color:#d5ded7}
+  .sec-head .stage.s2{color:#9A7326;background:#f6efdd;border-color:#e6d6ae}
+  .sec-head .stage.s3{color:var(--grn);background:#eaf5ee;border-color:#bfe0cd}
+  /* سطر عزو المصدر (توثيق التفسير/الشرح) */
+  .src{display:block;margin-top:6px;font-size:12px;line-height:1.6;color:#6b7d72;font-style:italic}
+  .qt{color:#20342b}
+  </style>
+
+  <!-- ══════════ 0) التحضير والخلفية ══════════ -->
+  <div class="panel" id="ptahdir">
+    <div class="info"> كلُّ ما تحتاجه المعلمة قبل أن تدخل الحلقة: ما تُجهّزه بيدها، وما تعرفه في رأسها. تُقرأ ليلةَ أمس — سبعُ دقائق تكفي.</div>
+
+    <div class="sec-head first"><div class="num"><i class="gi" data-i="الوسائل والأدوات" data-size="22"></i></div><h2>قائمة تجهيز اللقاء</h2><div class="rule"></div></div>
+    <div class="card"><div class="lbl">يُطبع ويُجهَّز</div><ul class="steps"><li>لوحةُ الآيات ٣١–٣٦ ﴿إِنَّ لِلْمُتَّقِينَ مَفَازًا ۝ حَدَائِقَ وَأَعْنَابًا…﴾.</li><li>بطاقاتُ نعيم المتّقين: «مفازًا · حدائقُ وأعناب · جزاءً من ربّك».</li><li>لوحةُ التسميع.</li></ul></div>
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="مراجع إثرائية للمعلمة" data-size="22"></i></div><h2>ما تحتاجين معرفته</h2><div class="rule"></div></div>
+    <div class="card"><ul class="steps"><li><b>محورُ اللقاء:</b> جزاءُ المتّقين الفوزُ بالجنّة ونعيمها؛ فنحرصُ على التقوى بالطاعة وترك المعصية.</li><li><b>تفسيرُ ﴿إِنَّ لِلْمُتَّقِينَ مَفَازًا﴾:</b> <span class="qt">«﴿إِنَّ لِلْمُتَّقِينَ مَفَازًا﴾؛ أي: الذين اتقوا سخط ربهم بالتمسك بطاعته والانكفاف عن معصيته؛ فلهم مفاز ومنجى وبعد عن النار.»</span><span class="src">المصدر: تيسير الكريم الرحمن — السعدي، عبر الباحث القرآني.</span></li><li><b>ثمرةُ اللقاء:</b> أن يحبّ الطفلُ أن يكون من المتّقين، فيطيعَ اللهَ ويجتنبَ المعصية.</li></ul></div>
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="بناء المعنى" data-size="22"></i></div><h2>إضاءةٌ تفسيريّة</h2><div class="rule"></div></div>
+    <div class="info">معاني المفردات وكيف تُقرَّب للطفل — تُعينُ المعلمةَ ولا تُلقى كلُّها في الحلقة.</div>
+    <div class="card"><ul class="steps"><li><b>المتّقون:</b> الذين يطيعون اللهَ ويتركون معصيته.</li><li><b>مفازًا:</b> فوزٌ ونجاةٌ ونعيمٌ في الجنّة.</li><li><b>تقريبٌ للطفل:</b> «المتّقي يطيعُ اللهَ فيفوزُ بالجنّة؛ أُحبُّ أن أكون منهم».</li></ul></div>
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="ضابط عقدي وشرعي" data-size="22"></i></div><h2>الضابط العقديّ وحدُّ ما يُقال للطفل</h2><div class="rule"></div></div>
+    <div class="card"><ul class="steps"><li><b>الجنّةُ بالعمل:</b> نرجوها بالتقوى والطاعة، وهي فضلٌ من الله.</li><li><b>التوازنُ:</b> يُحبَّب النعيمُ والتقوى؛ رجاءٌ يحمل على الطاعة.</li><li><b>حدُّ ما يُقال:</b> «أطيعُ اللهَ وأتّقيه لأفوزَ بجنّته».</li></ul></div>
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="تنبيه للمعلمة" data-size="22"></i></div><h2>ثلاثة أخطاء شائعة في هذا اللقاء</h2><div class="rule"></div></div>
+    <div class="card"><div class="lbl">١ · تصويرُ الجنّة تصويرًا مبالغًا</div><ul class="steps"><li><b>الخطأ:</b> الإغراقُ في وصفٍ حسّيٍّ يشغلُ عن التقوى.</li><li><b>العلاج:</b> وصفٌ مُجمَلٌ محبّبٌ يربطُ النعيم بالطاعة.</li></ul></div>
+    <div class="card"><div class="lbl">٢ · الاتّكالُ بلا عمل</div><ul class="steps"><li><b>الخطأ:</b> إيهامُ الطفل أنّ الجنّةَ بالتمنّي.</li><li><b>العلاج:</b> الجنّةُ بالتقوى والطاعة.</li></ul></div>
+    <div class="card"><div class="lbl">٣ · فصلُ الجزاء عن السلوك</div><ul class="steps"><li><b>الخطأ:</b> ذكرُ النعيم دون ربطه بالتقوى.</li><li><b>العلاج:</b> ربطُ الفوز بطاعة الله.</li></ul></div>
   </div>
 
   <!-- ══════════ 1) دليل الدرس ══════════ -->
