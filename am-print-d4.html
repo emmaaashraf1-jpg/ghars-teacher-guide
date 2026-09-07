@@ -35,6 +35,11 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
 .mc svg{width:34px;height:34px;flex:0 0 auto}
 .summary{background:linear-gradient(135deg,#1F4A39,#1E5631);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:16px 0 6px}
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
+.ph{width:100%;height:92px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10.5px;color:#b9ab8c;font-family:var(--fb);text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
 </style>
 </head>
@@ -75,10 +80,10 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> يبحثُ الطفل بالمكبّر عن الأشكال في عيّناتٍ طبيعية آمنة، ويطابقُ كلَّ عيّنةٍ بشكلها، ويقولُ عند كلِّ اكتشاف: «سبحان مَن أبدعها».</div>
   <h2>عيّنةٌ في خلق الله ↔ شكلُها</h2>
   <div class="match">
-    <div class="mc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="11" fill="none" stroke="#C79A3B" stroke-width="3"/><path d="M32 14v-4 M32 54v-4 M14 32h-4 M54 32h-4 M19 19l-3-3 M45 45l3 3 M45 19l3-3 M19 45l-3 3" stroke="#C79A3B" stroke-width="2.5" stroke-linecap="round"/></svg> قرصُ الشمس</div><div class="mc">دائرة</div>
-    <div class="mc"><svg viewBox="0 0 64 64"><path d="M32 14 L48 23 V41 L32 50 L16 41 V23 Z" fill="none" stroke="#8a6a12" stroke-width="3" stroke-linejoin="round"/></svg> خليّةُ النحل</div><div class="mc">سُداسيّ</div>
-    <div class="mc"><svg viewBox="0 0 64 64"><path d="M32 14 C22 30 20 40 20 44 a12 12 0 0 0 24 0 c0 -4 -2 -14 -12 -30z" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-linejoin="round"/></svg> قطرةُ الماء</div><div class="mc">مُنحنية</div>
-    <div class="mc"><svg viewBox="0 0 64 64"><path d="M32 16 L48 48 L16 48 Z" fill="none" stroke="#1E5631" stroke-width="3" stroke-linejoin="round"/><path d="M32 20 V48" stroke="#2C6A4D" stroke-width="2"/></svg> ورقةُ الشجر</div><div class="mc">مُثلّث</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/shams.jpg" alt="قرصُ الشمس" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: شمس</span></div> قرصُ الشمس</div><div class="mc">دائرة</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/khaliyya.jpg" alt="خليّةُ النحل" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: خليّة</span></div> خليّةُ النحل</div><div class="mc">سُداسيّ</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/maa.jpg" alt="قطرةُ الماء" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ماء</span></div> قطرةُ الماء</div><div class="mc">مُنحنية</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/waraqa.jpg" alt="ورقةُ الشجر" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ورقة</span></div> ورقةُ الشجر</div><div class="mc">مُثلّث</div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم الرابع — ركن أكتشف ما حولي</div>
 </div>
@@ -100,7 +105,7 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   </div>
   <h2>٢) بطاقاتُ كلمة-صورة — تُقصّ وتُطابَق</h2>
   <div class="match">
-    <div class="mc"><svg viewBox="0 0 64 64"><path d="M32 12 l6 15 16 1 -12 11 4 16 -14 -9 -14 9 4 -16 -12 -11 16 -1 z" fill="none" stroke="#C79A3B" stroke-width="3" stroke-linejoin="round"/></svg> صورةُ نجمة</div><div class="mc">نَجْم</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/najm.jpg" alt="صورةُ نجمة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: نجمة</span></div> صورةُ نجمة</div><div class="mc">نَجْم</div>
     <div class="mc"><svg viewBox="0 0 64 64"><path d="M40 14 a22 22 0 1 0 8 38 a17 17 0 0 1 -8 -38 z" fill="none" stroke="#C79A3B" stroke-width="3" stroke-linejoin="round"/></svg> صورةُ هلال</div><div class="mc">قَمَر</div>
     <div class="mc"><svg viewBox="0 0 64 64"><path d="M14 40 q10 -14 22 -6 q10 -12 16 2" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-linecap="round"/><path d="M14 48 h38" stroke="#2C6A4D" stroke-width="2.5" stroke-linecap="round"/></svg> صورةُ سماء</div><div class="mc">سَمَاء</div>
     <div class="mc"><svg viewBox="0 0 64 64"><circle cx="26" cy="26" r="12" fill="none" stroke="#8B0000" stroke-width="3"/><line x1="35" y1="35" x2="50" y2="50" stroke="#8B0000" stroke-width="4" stroke-linecap="round"/></svg> أنظرُ وأتفكّر</div><div class="mc">مَن خَلَقها؟</div>

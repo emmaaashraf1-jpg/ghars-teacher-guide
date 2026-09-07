@@ -35,6 +35,11 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
 .mc svg{width:34px;height:34px;flex:0 0 auto}
 .summary{background:linear-gradient(135deg,#1F4A39,#1E5631);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:16px 0 6px}
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
+.ph{width:100%;height:92px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10.5px;color:#b9ab8c;font-family:var(--fb);text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
 </style>
 </head>
@@ -100,9 +105,9 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   </div>
   <h2>بطاقاتُ ملاحظة</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><g fill="none" stroke="#1E2E29" stroke-width="2.5"><ellipse cx="22" cy="34" rx="5" ry="4"/><ellipse cx="33" cy="34" rx="7" ry="5"/><ellipse cx="45" cy="34" rx="6" ry="5"/></g><path d="M27 34 l-7 -6 M29 38 l-7 6 M39 30 l6 -6 M42 38 l6 6" stroke="#8a6a12" stroke-width="1.6" stroke-linecap="round"/><path d="M18 30 l-4 -4 M18 34 l-5 0" stroke="#1E2E29" stroke-width="1.6" stroke-linecap="round"/></svg><div class="t">نملةٌ تتعاون</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/namla.jpg" alt="نملةٌ تتعاون" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: نملة</span></div><div class="t">نملةٌ تتعاون</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><path d="M10 44 q14 -12 28 0 t16 -2" fill="none" stroke="#2C6A4D" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/></svg><div class="t">مسارُ النمل</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><circle cx="26" cy="26" r="12" fill="none" stroke="#8B0000" stroke-width="3"/><line x1="35" y1="35" x2="50" y2="50" stroke="#8B0000" stroke-width="4" stroke-linecap="round"/></svg><div class="t">مكبّري</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/mukabbir.jpg" alt="مكبّري" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: مكبّر</span></div><div class="t">مكبّري</div></div>
   </div>
   <div class="summary"><b>المعنى المركزي المتكامل لليوم الحادي عشر:</b> علّم اللهُ النملَ التعاونَ والنظامَ والادّخار؛ فأتفكّرُ في صنعه — صغيرٌ في خلقه عظيمٌ في تدبيره — وأتعلّمُ التعاونَ وأشكرُ خالقه.</div>
   <div class="foot">دليل معلمة غرس القيم · اليوم الحادي عشر — ركن أكتشف ما حولي · نشاطٌ تكامليٌّ بروح اللعب لا الاختبار</div>

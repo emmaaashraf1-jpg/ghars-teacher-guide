@@ -35,6 +35,11 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
 .mc svg{width:34px;height:34px;flex:0 0 auto}
 .summary{background:linear-gradient(135deg,#1F4A39,#1E5631);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:16px 0 6px}
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
+.ph{width:100%;height:92px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10.5px;color:#b9ab8c;font-family:var(--fb);text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
 </style>
 </head>
@@ -47,15 +52,15 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> يلاحظ الطفل كنوزَ البحر بالمكبّر (صدفةٌ · لؤلؤةٌ · حصاةٌ بحرية · رمل)، ثم يطابقُ كلَّ كنزٍ ببطاقته. وعند كلِّ عجيبةٍ يردّد: «سبحان مَن خلقه».</div>
   <h2>بطاقاتُ كنوزِ البحر — تُقصّ وتُطابَق بالعيّنة الحقيقية</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 50 C16 50 14 28 32 16 C50 28 48 50 32 50 Z" fill="none" stroke="#C79A3B" stroke-width="3" stroke-linejoin="round"/><path d="M32 50 V18 M32 44 l-9 -6 M32 44 l9 -6 M32 34 l-11 -7 M32 34 l11 -7" stroke="#C79A3B" stroke-width="2"/></svg><div class="t">صدفة</div><div class="s">سبحان مَن خلقها</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="13" fill="none" stroke="#0d6e6e" stroke-width="3"/><path d="M27 27 a7 7 0 0 1 6 -4" stroke="#0d6e6e" stroke-width="2" stroke-linecap="round" fill="none"/></svg><div class="t">لؤلؤة</div><div class="s">سبحان مَن خلقها</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="38" rx="18" ry="13" fill="none" stroke="#6B3F22" stroke-width="3"/><path d="M22 36 q6 -6 12 0 M28 44 q5 -4 10 0" stroke="#6B3F22" stroke-width="2"/></svg><div class="t">حصاة بحرية</div><div class="s">سبحان مَن خلقها</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/sadafa.jpg" alt="صدفة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: صدفة</span></div><div class="t">صدفة</div><div class="s">سبحان مَن خلقها</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/luluah.jpg" alt="لؤلؤة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: لؤلؤة</span></div><div class="t">لؤلؤة</div><div class="s">سبحان مَن خلقها</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/hasah.jpg" alt="حصاة بحرية" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: حصاة</span></div><div class="t">حصاة بحرية</div><div class="s">سبحان مَن خلقها</div></div>
   </div>
   <h2>وكنوزٌ أخرى</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M10 44 q8 -8 16 0 t16 0 t16 0" fill="none" stroke="#C79A3B" stroke-width="3" stroke-linecap="round"/><path d="M10 52 q8 -8 16 0 t16 0 t16 0" fill="none" stroke="#e0c27a" stroke-width="2.5" stroke-linecap="round"/></svg><div class="t">رمل الشاطئ</div><div class="s">سبحان مَن خلقه</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 10 l6 12 13 2 -9 9 2 13 -12 -6 -12 6 2 -13 -9 -9 13 -2 z" fill="none" stroke="#2C6A4D" stroke-width="2.5" stroke-linejoin="round"/></svg><div class="t">نجمُ البحر</div><div class="s">سبحان مَن خلقه</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><circle cx="26" cy="26" r="12" fill="none" stroke="#8B0000" stroke-width="3"/><line x1="35" y1="35" x2="50" y2="50" stroke="#8B0000" stroke-width="4" stroke-linecap="round"/></svg><div class="t">مكبّري</div><div class="s">أُلاحظُ وأتفكّر</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/raml.jpg" alt="رمل الشاطئ" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: رمل</span></div><div class="t">رمل الشاطئ</div><div class="s">سبحان مَن خلقه</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/najm-bahr.jpg" alt="نجمُ البحر" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: نجم البحر</span></div><div class="t">نجمُ البحر</div><div class="s">سبحان مَن خلقه</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/mukabbir.jpg" alt="مكبّري" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: مكبّر</span></div><div class="t">مكبّري</div><div class="s">أُلاحظُ وأتفكّر</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم الثاني عشر — ركن أكتشف ما حولي</div>
 </div>
@@ -78,10 +83,10 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   </div>
   <h2>٢) قصاصاتُ البحر — تُلوَّن وتُقصّ وتُلصق حول المشهد</h2>
   <div class="cutrow four">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 48 C18 48 16 28 32 16 C48 28 46 48 32 48 Z" fill="none" stroke="#C79A3B" stroke-width="3" stroke-linejoin="round"/><path d="M32 48 V18 M32 42 l-8 -5 M32 42 l8 -5" stroke="#C79A3B" stroke-width="2"/></svg><div class="t">صدفة</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M8 34 q10 -10 18 0 t18 0 t12 0" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-linecap="round"/><path d="M8 46 q10 -10 18 0 t18 0 t12 0" fill="none" stroke="#2C6A4D" stroke-width="3" stroke-linecap="round"/></svg><div class="t">موجة</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M14 32 C22 20 40 20 46 32 C40 44 22 44 14 32 Z" fill="none" stroke="#1F4A39" stroke-width="3" stroke-linejoin="round"/><path d="M46 32 l8 -7 v14 z" fill="none" stroke="#1F4A39" stroke-width="3" stroke-linejoin="round"/></svg><div class="t">سمكة</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 10 l6 12 13 2 -9 9 2 13 -12 -6 -12 6 2 -13 -9 -9 13 -2 z" fill="none" stroke="#2C6A4D" stroke-width="2.5" stroke-linejoin="round"/></svg><div class="t">نجمُ البحر</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/sadafa.jpg" alt="صدفة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: صدفة</span></div><div class="t">صدفة</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/bahr.jpg" alt="موجة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: بحر</span></div><div class="t">موجة</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/samaka.jpg" alt="سمكة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: سمكة</span></div><div class="t">سمكة</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/najm-bahr.jpg" alt="نجمُ البحر" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: نجم البحر</span></div><div class="t">نجمُ البحر</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم الثاني عشر — ركن فنوني الجميلة</div>
 </div>
@@ -92,9 +97,9 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> يبني الطفل بالمكعبات سفينةً ومرفأً على قاعدةٍ زرقاء (البحر)، ثم <b>يضع البطاقةَ الجاهزة</b> على بنائه ويردّد معناها؛ وتذكّره المعلمةُ أنّ اللهَ سخّر البحرَ لتجري فيه السفن. (لا تلوين هنا — التلوينُ في ركن فنوني.)</div>
   <h2>بطاقاتٌ تُوضع على البناء</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M14 44 C26 32 44 32 52 44 C44 54 22 54 14 44 Z" fill="none" stroke="#1F4A39" stroke-width="3" stroke-linejoin="round"/><path d="M33 32 V14 M33 14 l14 6 -14 6" fill="none" stroke="#0d6e6e" stroke-width="2.5" stroke-linejoin="round"/></svg><div class="t">سفينةٌ تجري بأمر الله</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 52 V20" stroke="#6B3F22" stroke-width="3" stroke-linecap="round"/><path d="M32 20 a5 5 0 1 1 0.1 0" fill="none" stroke="#C79A3B" stroke-width="3"/><path d="M22 26 l-8 6 8 4 M42 26 l8 6 -8 4" fill="none" stroke="#8a6a12" stroke-width="2.5" stroke-linecap="round"/><line x1="20" y1="52" x2="44" y2="52" stroke="#2C6A4D" stroke-width="3" stroke-linecap="round"/></svg><div class="t">منارةٌ تهدي السفن</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M8 30 q10 -10 18 0 t18 0 t12 0" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-linecap="round"/><path d="M8 42 q10 -10 18 0 t18 0 t12 0" fill="none" stroke="#2C6A4D" stroke-width="3" stroke-linecap="round"/></svg><div class="t">بحرٌ سخّره الله</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/safina.jpg" alt="سفينةٌ تجري بأمر الله" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: سفينة</span></div><div class="t">سفينةٌ تجري بأمر الله</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/manara.jpg" alt="منارةٌ تهدي السفن" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: منارة</span></div><div class="t">منارةٌ تهدي السفن</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/bahr.jpg" alt="بحرٌ سخّره الله" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: بحر</span></div><div class="t">بحرٌ سخّره الله</div></div>
   </div>
   <h2>وأتذكّرُ خالقي</h2>
   <div class="cutrow">
@@ -111,10 +116,10 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> تُقصّ البطاقاتُ، ويطابقُ الطفل كلَّ مخلوقٍ بحريٍّ بمنفعته التي جعلها الله فيه. حوارٌ بالصورة بلا كتابة: «مَن جعل في الصدفةِ لؤلؤًا؟».</div>
   <h2>مخلوقٌ ↔ منفعته</h2>
   <div class="match">
-    <div class="mc"><svg viewBox="0 0 64 64"><path d="M14 32 C22 20 40 20 46 32 C40 44 22 44 14 32 Z" fill="none" stroke="#1F4A39" stroke-width="3" stroke-linejoin="round"/><path d="M46 32 l8 -7 v14 z" fill="none" stroke="#1F4A39" stroke-width="3" stroke-linejoin="round"/></svg> السمك</div><div class="mc">نأكلُ من خيره</div>
-    <div class="mc"><svg viewBox="0 0 64 64"><path d="M32 50 C16 50 14 28 32 16 C50 28 48 50 32 50 Z" fill="none" stroke="#C79A3B" stroke-width="3" stroke-linejoin="round"/><path d="M32 50 V18 M32 44 l-9 -6 M32 44 l9 -6" stroke="#C79A3B" stroke-width="2"/></svg> الصدفة</div><div class="mc">نأخذُ منها اللؤلؤ</div>
-    <div class="mc"><svg viewBox="0 0 64 64"><path d="M14 44 C26 32 44 32 52 44 C44 54 22 54 14 44 Z" fill="none" stroke="#1F4A39" stroke-width="3" stroke-linejoin="round"/><path d="M33 32 V16 M33 16 l12 5 -12 5" fill="none" stroke="#0d6e6e" stroke-width="2.5" stroke-linejoin="round"/></svg> السفينة</div><div class="mc">تحملُنا في البحر</div>
-    <div class="mc"><svg viewBox="0 0 64 64"><path d="M10 32 q10 -10 18 0 t18 0 t8 0" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-linecap="round"/><path d="M10 44 q10 -10 18 0 t18 0 t8 0" fill="none" stroke="#2C6A4D" stroke-width="3" stroke-linecap="round"/></svg> البحر</div><div class="mc">رزقٌ وماءٌ سخّره الله</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/samaka.jpg" alt="السمك" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: سمكة</span></div> السمك</div><div class="mc">نأكلُ من خيره</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/sadafa.jpg" alt="الصدفة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: صدفة</span></div> الصدفة</div><div class="mc">نأخذُ منها اللؤلؤ</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/safina.jpg" alt="السفينة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: سفينة</span></div> السفينة</div><div class="mc">تحملُنا في البحر</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/bahr.jpg" alt="البحر" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: بحر</span></div> البحر</div><div class="mc">رزقٌ وماءٌ سخّره الله</div>
   </div>
   <div class="summary"><b>المعنى المركزي المتكامل لليوم الثاني عشر:</b> خلق اللهُ البحارَ وسخّرها؛ فيها السمكُ والرزقُ واللؤلؤ، وتجري فيها السفنُ بأمره؛ فأتفكّرُ في عظيم خلقه وأشكرُ مسخّره.</div>
   <div class="foot">دليل معلمة غرس القيم · اليوم الثاني عشر — ركن أدرك وأستمتع</div>

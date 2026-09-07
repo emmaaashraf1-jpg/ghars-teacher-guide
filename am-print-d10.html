@@ -35,6 +35,11 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
 .mc svg{width:34px;height:34px;flex:0 0 auto}
 .summary{background:linear-gradient(135deg,#1F4A39,#1E5631);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:16px 0 6px}
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
+.ph{width:100%;height:92px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10.5px;color:#b9ab8c;font-family:var(--fb);text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
 </style>
 </head>
@@ -48,8 +53,8 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <h2>بطاقاتٌ سداسية تُوضع على البناء</h2>
   <div class="cutrow">
     <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 8 l18 11 v22 l-18 11 -18 -11 v-22 z" fill="none" stroke="#C79A3B" stroke-width="3" stroke-linejoin="round"/></svg><div class="t">عينٌ سداسية</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M22 10 l10 6 v12 l-10 6 -10 -6 v-12 z" fill="none" stroke="#C79A3B" stroke-width="2.5" stroke-linejoin="round"/><path d="M44 10 l10 6 v12 l-10 6 -10 -6 v-12 z" fill="none" stroke="#8a6a12" stroke-width="2.5" stroke-linejoin="round"/><path d="M33 30 l10 6 v12 l-10 6 -10 -6 v-12 z" fill="none" stroke="#C79A3B" stroke-width="2.5" stroke-linejoin="round"/></svg><div class="t">خليّةٌ متجاورة</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M18 30 C18 20 46 20 46 30 c0 12 -14 22 -14 22 s-14 -10 -14 -22z" fill="none" stroke="#8a6a12" stroke-width="3" stroke-linejoin="round"/><path d="M24 30 h16 M26 36 h12 M29 42 h6" stroke="#C79A3B" stroke-width="2" stroke-linecap="round"/></svg><div class="t">قرصُ العسل</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/khaliyya.jpg" alt="خليّةٌ متجاورة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: خليّة</span></div><div class="t">خليّةٌ متجاورة</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/asal.jpg" alt="قرصُ العسل" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: عسل</span></div><div class="t">قرصُ العسل</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم العاشر — ساحة البناء</div>
 </div>
@@ -61,8 +66,8 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <h2>بطاقاتُ الملاحظة — تُقصّ وتُطابَق بالعيّنة</h2>
   <div class="cutrow">
     <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 10 l16 9 v18 l-16 9 -16 -9 v-18 z" fill="none" stroke="#C79A3B" stroke-width="3" stroke-linejoin="round"/><path d="M32 10 v9 M48 19 l-8 4 M16 19 l8 4 M32 46 v-9 M48 37 l-8 -4 M16 37 l8 -4" stroke="#8a6a12" stroke-width="1.5"/></svg><div class="t">شكلٌ سداسيّ</div><div class="s">سبحان مَن هداها</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M18 28 C18 18 46 18 46 28 c0 12 -14 24 -14 24 s-14 -12 -14 -24z" fill="none" stroke="#8a6a12" stroke-width="3" stroke-linejoin="round"/><path d="M24 28 h16 M26 34 h12 M28 40 h8" stroke="#C79A3B" stroke-width="2" stroke-linecap="round"/></svg><div class="t">قرصُ عسل</div><div class="s">سبحان مَن هداها</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><circle cx="26" cy="26" r="12" fill="none" stroke="#8B0000" stroke-width="3"/><line x1="35" y1="35" x2="50" y2="50" stroke="#8B0000" stroke-width="4" stroke-linecap="round"/></svg><div class="t">مكبّري</div><div class="s">أُلاحظُ وأتفكّر</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/asal.jpg" alt="قرصُ عسل" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: عسل</span></div><div class="t">قرصُ عسل</div><div class="s">سبحان مَن هداها</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/mukabbir.jpg" alt="مكبّري" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: مكبّر</span></div><div class="t">مكبّري</div><div class="s">أُلاحظُ وأتفكّر</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم العاشر — ركن أكتشف ما حولي</div>
 </div>
@@ -73,9 +78,9 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> تُقصّ البطاقاتُ (بصورٍ رمزية بلا ملامح)، ويرتّب الطفل: زهرة ← نحلة ← عسل، ثم يطابقُ النحلةَ بمنتجها. حوارٌ بالصورة: «مَن جعل في العسل شفاءً؟».</div>
   <h2>رتّب: من الزهرة إلى العسل (١ ← ٣)</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="30" r="6" fill="none" stroke="#C79A3B" stroke-width="2.5"/><g fill="none" stroke="#8B0000" stroke-width="2.5"><ellipse cx="32" cy="16" rx="5" ry="8"/><ellipse cx="32" cy="44" rx="5" ry="8"/><ellipse cx="18" cy="30" rx="8" ry="5"/><ellipse cx="46" cy="30" rx="8" ry="5"/></g><path d="M32 50 v10" stroke="#1E5631" stroke-width="2.5"/></svg><div class="t">زهرة</div><div class="s">١</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><ellipse cx="34" cy="34" rx="14" ry="9" fill="none" stroke="#8a6a12" stroke-width="3"/><path d="M28 25 v18 M36 25 v18" stroke="#8a6a12" stroke-width="2"/><path d="M22 28 q-8 -8 -14 -4 q4 8 12 8 M22 40 q-8 8 -14 4 q4 -8 12 -8" fill="none" stroke="#0d6e6e" stroke-width="2" stroke-linejoin="round"/></svg><div class="t">نحلة</div><div class="s">٢</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><rect x="20" y="16" width="24" height="14" rx="3" fill="none" stroke="#8a6a12" stroke-width="3"/><path d="M24 30 v14 q8 8 16 0 v-14" fill="none" stroke="#C79A3B" stroke-width="3" stroke-linejoin="round"/><path d="M32 46 q0 8 4 12" fill="none" stroke="#C79A3B" stroke-width="2.5" stroke-linecap="round"/></svg><div class="t">عسل</div><div class="s">٣</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/zahra.jpg" alt="زهرة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: زهرة</span></div><div class="t">زهرة</div><div class="s">١</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/nahla.jpg" alt="نحلة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: نحلة</span></div><div class="t">نحلة</div><div class="s">٢</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/asal.jpg" alt="عسل" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: عسل</span></div><div class="t">عسل</div><div class="s">٣</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم العاشر — ركن أدرك وأستمتع</div>
 </div>
@@ -99,8 +104,8 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   </div>
   <h2>٢) قرصُ العسل — يُلوَّن ويُقصّ ويُلصق</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M18 26 C18 16 46 16 46 26 c0 13 -14 26 -14 26 s-14 -13 -14 -26z" fill="none" stroke="#8a6a12" stroke-width="3" stroke-linejoin="round"/><path d="M24 26 h16 M26 33 h12 M29 40 h6" stroke="#C79A3B" stroke-width="2" stroke-linecap="round"/></svg><div class="t">قرصُ عسل</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="30" r="6" fill="none" stroke="#C79A3B" stroke-width="2.5"/><g fill="none" stroke="#8B0000" stroke-width="2.5"><ellipse cx="32" cy="16" rx="5" ry="8"/><ellipse cx="32" cy="44" rx="5" ry="8"/><ellipse cx="18" cy="30" rx="8" ry="5"/><ellipse cx="46" cy="30" rx="8" ry="5"/></g></svg><div class="t">زهرة</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/asal.jpg" alt="قرصُ عسل" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: عسل</span></div><div class="t">قرصُ عسل</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/zahra.jpg" alt="زهرة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: زهرة</span></div><div class="t">زهرة</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 8 l16 9 v18 l-16 9 -16 -9 v-18 z" fill="none" stroke="#C79A3B" stroke-width="3" stroke-linejoin="round"/></svg><div class="t">عينٌ سداسية</div></div>
   </div>
   <div class="summary"><b>المعنى المركزي المتكامل لليوم العاشر:</b> أوحى اللهُ للنحلة فبنت بيتها سداسيًّا وصنعت العسلَ شفاءً؛ فأتفكّرُ في هدايتها وأشكرُ خالقها وأحمده على نعمه.</div>

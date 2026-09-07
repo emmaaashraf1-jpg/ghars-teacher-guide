@@ -35,6 +35,11 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
 .mc svg{width:34px;height:34px;flex:0 0 auto}
 .summary{background:linear-gradient(135deg,#1F4A39,#1E5631);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:16px 0 6px}
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
+.ph{width:100%;height:92px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10.5px;color:#b9ab8c;font-family:var(--fb);text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
 </style>
 </head>
@@ -47,10 +52,10 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> تُقصّ بطاقاتُ رحلةِ الخبز، ويرتّبها الطفل من الحبّة إلى الرغيف. حوارٌ بالصورة: «كم يدٍ ونعمةٍ وراء رغيفي؟».</div>
   <h2>رتّب رحلةَ الخبز (١ ← ٤)</h2>
   <div class="cutrow four">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 54 V20" stroke="#C79A3B" stroke-width="3" stroke-linecap="round"/><path d="M32 26 l-7 -5 M32 26 l7 -5 M32 34 l-7 -5 M32 34 l7 -5 M32 42 l-7 -5 M32 42 l7 -5" stroke="#C79A3B" stroke-width="2.5" stroke-linecap="round"/></svg><div class="t">قمح</div><div class="s">١</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/qamh.jpg" alt="قمح" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: قمح</span></div><div class="t">قمح</div><div class="s">١</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="16" fill="none" stroke="#6B3F22" stroke-width="3"/><path d="M32 16 v32 M16 32 h32 M21 21 l22 22 M43 21 l-22 22" stroke="#6B3F22" stroke-width="2"/></svg><div class="t">طحن</div><div class="s">٢</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="36" rx="16" ry="11" fill="none" stroke="#C79A3B" stroke-width="3"/><path d="M22 34 q4 -3 8 0 M34 38 q4 -3 8 0" stroke="#C79A3B" stroke-width="2"/></svg><div class="t">عجين</div><div class="s">٣</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="34" rx="17" ry="12" fill="none" stroke="#8a6a12" stroke-width="3"/><path d="M24 30 l3 3 M32 28 l3 3 M40 30 l3 3 M28 38 l3 3 M36 38 l3 3" stroke="#8a6a12" stroke-width="2" stroke-linecap="round"/></svg><div class="t">رغيف</div><div class="s">٤</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/ajeen.jpg" alt="عجين" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: عجين</span></div><div class="t">عجين</div><div class="s">٣</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/raghif.jpg" alt="رغيف" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: رغيف</span></div><div class="t">رغيف</div><div class="s">٤</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم التاسع — ركن أدرك وأستمتع</div>
 </div>
@@ -61,9 +66,9 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> يلعب الأطفال أدوارَ المخبز بأدواتٍ آمنة (عجن · تشكيل · بيع رغيف). تُقصّ بطاقاتُ الأدوات لتنظيم الركن، مع شكرِ الرزق وعدمِ الإسراف.</div>
   <h2>بطاقاتُ المخبز — تُقصّ للّعب</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="34" rx="16" ry="11" fill="none" stroke="#C79A3B" stroke-width="3"/><path d="M20 34 q6 -4 12 0 M32 38 q6 -4 12 0" stroke="#C79A3B" stroke-width="2"/></svg><div class="t">عجينُ لعب</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/ajeen.jpg" alt="عجينُ لعب" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: عجين</span></div><div class="t">عجينُ لعب</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><rect x="14" y="30" width="36" height="22" rx="3" fill="none" stroke="#6B3F22" stroke-width="3"/><rect x="22" y="36" width="20" height="10" rx="2" fill="none" stroke="#8a6a12" stroke-width="2.5"/><path d="M22 26 h20" stroke="#6B3F22" stroke-width="3" stroke-linecap="round"/></svg><div class="t">فرنٌ لعبيّ</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="14" fill="none" stroke="#C79A3B" stroke-width="3"/><path d="M32 24 v16 M24 32 h16" stroke="#8a6a12" stroke-width="2.5" stroke-linecap="round"/></svg><div class="t">نقودُ لعب</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/nuqud.jpg" alt="نقودُ لعب" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: نقود</span></div><div class="t">نقودُ لعب</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم التاسع — ركن الإيهام ولعب الأدوار</div>
 </div>
@@ -88,10 +93,10 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   </div>
   <h2>٢) رحلةُ الخبز — تُلوَّن وتُقصّ وتُلصق بالترتيب</h2>
   <div class="cutrow four">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 54 V20" stroke="#C79A3B" stroke-width="3"/><path d="M32 26 l-7 -5 M32 26 l7 -5 M32 34 l-7 -5 M32 34 l7 -5" stroke="#C79A3B" stroke-width="2.5"/></svg><div class="t">قمح</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="15" fill="none" stroke="#6B3F22" stroke-width="3"/><path d="M32 17 v30 M17 32 h30" stroke="#6B3F22" stroke-width="2"/></svg><div class="t">طحين</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="34" rx="15" ry="10" fill="none" stroke="#C79A3B" stroke-width="3"/></svg><div class="t">عجين</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="34" rx="16" ry="11" fill="none" stroke="#8a6a12" stroke-width="3"/><path d="M26 30 l3 3 M34 28 l3 3 M30 38 l3 3" stroke="#8a6a12" stroke-width="2" stroke-linecap="round"/></svg><div class="t">رغيف</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/qamh.jpg" alt="قمح" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: قمح</span></div><div class="t">قمح</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/daqiq.jpg" alt="طحين" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: دقيق</span></div><div class="t">طحين</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/ajeen.jpg" alt="عجين" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: عجين</span></div><div class="t">عجين</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/raghif.jpg" alt="رغيف" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: رغيف</span></div><div class="t">رغيف</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم التاسع — ركن فنوني الجميلة</div>
 </div>
@@ -102,9 +107,9 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> تُقرأ القصّةُ المصوّرة بهدوء، ويطابقُ الطفل الكلمةَ بصورتها (بلا كتابة)، ويتحاور عن شكرِ النعمة وعدمِ الاستهانة برغيف.</div>
   <h2>طابِق الكلمةَ بصورتها</h2>
   <div class="match">
-    <div class="mc"><svg viewBox="0 0 64 64"><path d="M32 52 V20" stroke="#C79A3B" stroke-width="3"/><path d="M32 26 l-7 -5 M32 26 l7 -5 M32 36 l-7 -5 M32 36 l7 -5" stroke="#C79A3B" stroke-width="2.5"/></svg> قمح</div><div class="mc">حبٌّ في السنبلة</div>
-    <div class="mc"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="34" rx="16" ry="11" fill="none" stroke="#8a6a12" stroke-width="3"/><path d="M26 30 l3 3 M34 28 l3 3" stroke="#8a6a12" stroke-width="2"/></svg> خبز</div><div class="mc">رغيفٌ نأكله</div>
-    <div class="mc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="15" fill="none" stroke="#6B3F22" stroke-width="3"/><path d="M32 17 v30 M17 32 h30" stroke="#6B3F22" stroke-width="2"/></svg> دقيق</div><div class="mc">طحينٌ أبيض</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/qamh.jpg" alt="قمح" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: قمح</span></div> قمح</div><div class="mc">حبٌّ في السنبلة</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/raghif.jpg" alt="خبز" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: رغيف</span></div> خبز</div><div class="mc">رغيفٌ نأكله</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/daqiq.jpg" alt="دقيق" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: دقيق</span></div> دقيق</div><div class="mc">طحينٌ أبيض</div>
     <div class="mc"><svg viewBox="0 0 64 64"><path d="M32 50 c-9 -6 -15 -12 -15 -20 a7.5 7.5 0 0 1 15 -2 a7.5 7.5 0 0 1 15 2 c0 8 -6 14 -15 20z" fill="none" stroke="#cf6f5f" stroke-width="3"/></svg> شكر</div><div class="mc">أحمدُ الرازق</div>
   </div>
   <div class="summary"><b>المعنى المركزي المتكامل لليوم التاسع:</b> من حبّةِ قمحٍ إلى رغيفٍ نأكله سلسلةُ نعمٍ من الله؛ فأتفكّرُ وأشكرُ ولا أستهينُ برغيفٍ ولا أُسرف.</div>
