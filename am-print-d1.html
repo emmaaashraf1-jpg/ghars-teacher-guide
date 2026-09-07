@@ -35,7 +35,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
 .mc svg{width:34px;height:34px;flex:0 0 auto}
 .summary{background:linear-gradient(135deg,#1F4A39,#1E5631);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:16px 0 6px}
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
-@media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
+/* موضع الصورة الحقيقية (تحلّ محلّ الأيقونة الرمزية) — الصورةُ تملأ الإطار، وإن لم تتوفّر بعدُ ظهر إطارٌ نظيفٌ باسم العنصر */
+.ph{width:100%;height:92px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ph .ph-lbl{position:absolute;inset:0;display:grid;place-items:center;font-size:10.5px;color:#b9ab8c;font-family:var(--fb);text-align:center;padding:2px}
+.mc .ph{width:46px;height:46px;flex:0 0 auto;border-radius:8px;box-shadow:inset 0 0 0 2px #fff}
+.mc .ph .ph-lbl{font-size:0}
+@media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
@@ -47,15 +53,15 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> يلاحظ الطفل العيّناتِ الطبيعية بالمكبّر (ورقة · صدفة · ريشة · حصاة · بذرة)، ثم يطابقُ كلَّ عيّنةٍ ببطاقتها. وعند كلِّ عجيبةٍ يردّد: «سبحان مَن خلقه».</div>
   <h2>بطاقاتُ العيّنات — تُقصّ وتُطابَق بالعيّنة الحقيقية</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 52 C18 44 16 26 32 12 C48 26 46 44 32 52 Z" fill="none" stroke="#1E5631" stroke-width="3" stroke-linejoin="round"/><path d="M32 52 V18" stroke="#2C6A4D" stroke-width="2.5"/><path d="M32 30 l-8 -5 M32 38 l8 -5 M32 24 l7 -5" stroke="#2C6A4D" stroke-width="2"/></svg><div class="t">ورقة</div><div class="s">سبحان مَن خلقها</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 50 C16 50 14 28 32 16 C50 28 48 50 32 50 Z" fill="none" stroke="#C79A3B" stroke-width="3" stroke-linejoin="round"/><path d="M32 50 V18 M32 44 l-9 -6 M32 44 l9 -6 M32 34 l-11 -7 M32 34 l11 -7" stroke="#C79A3B" stroke-width="2"/></svg><div class="t">صدفة</div><div class="s">سبحان مَن خلقها</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M20 50 C24 30 34 18 46 12 C42 26 36 40 24 52 Z" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-linejoin="round"/><path d="M24 46 L40 22" stroke="#0d6e6e" stroke-width="2"/></svg><div class="t">ريشة</div><div class="s">سبحان مَن خلقها</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/waraqa.jpg" alt="ورقة" onerror="this.remove()"/><span class="ph-lbl">صورة: ورقة</span></div><div class="t">ورقة</div><div class="s">سبحان مَن خلقها</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/sadafa.jpg" alt="صدفة" onerror="this.remove()"/><span class="ph-lbl">صورة: صدفة</span></div><div class="t">صدفة</div><div class="s">سبحان مَن خلقها</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/reesha.jpg" alt="ريشة" onerror="this.remove()"/><span class="ph-lbl">صورة: ريشة</span></div><div class="t">ريشة</div><div class="s">سبحان مَن خلقها</div></div>
   </div>
   <h2>وعيّناتٌ أخرى</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="38" rx="18" ry="13" fill="none" stroke="#6B3F22" stroke-width="3"/><path d="M22 36 q6 -6 12 0 M28 44 q5 -4 10 0" stroke="#6B3F22" stroke-width="2"/></svg><div class="t">حصاة</div><div class="s">سبحان مَن خلقها</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 50 C22 46 22 30 32 16 C42 30 42 46 32 50 Z" fill="none" stroke="#2C6A4D" stroke-width="3" stroke-linejoin="round"/><circle cx="32" cy="36" r="4" fill="none" stroke="#1E5631" stroke-width="2.5"/></svg><div class="t">بذرة</div><div class="s">سبحان مَن خلقها</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><circle cx="26" cy="26" r="12" fill="none" stroke="#8B0000" stroke-width="3"/><line x1="35" y1="35" x2="50" y2="50" stroke="#8B0000" stroke-width="4" stroke-linecap="round"/></svg><div class="t">مكبّري</div><div class="s">أُلاحظُ وأتفكّر</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/hasah.jpg" alt="حصاة" onerror="this.remove()"/><span class="ph-lbl">صورة: حصاة</span></div><div class="t">حصاة</div><div class="s">سبحان مَن خلقها</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/bathra.jpg" alt="بذرة" onerror="this.remove()"/><span class="ph-lbl">صورة: بذرة</span></div><div class="t">بذرة</div><div class="s">سبحان مَن خلقها</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/mukabbir.jpg" alt="مكبّري" onerror="this.remove()"/><span class="ph-lbl">صورة: مكبّر</span></div><div class="t">مكبّري</div><div class="s">أُلاحظُ وأتفكّر</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم الأول — ركن أكتشف ما حولي</div>
 </div>
@@ -78,10 +84,10 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   </div>
   <h2>٢) نِعَمُ الخلق — تُلوَّن وتُقصّ وتُلصق حول المشهد</h2>
   <div class="cutrow four">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 12 C24 26 18 34 18 42 a14 14 0 0 0 28 0 c0 -8 -6 -16 -14 -30z" fill="none" stroke="#0d6e6e" stroke-width="3"/></svg><div class="t">الماء</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M28 52 v-16 M28 40 l-9 -6 M28 46 l9 -6" stroke="#6B3F22" stroke-width="3" stroke-linecap="round"/><path d="M28 36 C18 30 20 16 28 12 C36 16 38 30 28 36 Z" fill="none" stroke="#1E5631" stroke-width="3" stroke-linejoin="round"/></svg><div class="t">النبات</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="11" fill="none" stroke="#C79A3B" stroke-width="3"/><path d="M32 12v-4 M32 56v-4 M12 32h-4 M56 32h-4 M18 18l-3-3 M46 46l3 3 M46 18l3-3 M18 46l-3 3" stroke="#C79A3B" stroke-width="2.5" stroke-linecap="round"/></svg><div class="t">النهار</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M44 34 a16 16 0 1 1 -16 -20 a13 13 0 0 0 16 20 z" fill="none" stroke="#1F4A39" stroke-width="3" stroke-linejoin="round"/></svg><div class="t">الليل</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/maa.jpg" alt="الماء" onerror="this.remove()"/><span class="ph-lbl">صورة: ماء</span></div><div class="t">الماء</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/nabat.jpg" alt="النبات" onerror="this.remove()"/><span class="ph-lbl">صورة: نبات</span></div><div class="t">النبات</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/nahar.jpg" alt="النهار" onerror="this.remove()"/><span class="ph-lbl">صورة: نهار</span></div><div class="t">النهار</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/layl.jpg" alt="الليل" onerror="this.remove()"/><span class="ph-lbl">صورة: ليل</span></div><div class="t">الليل</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم الأول — ركن فنوني الجميلة</div>
 </div>
@@ -92,10 +98,10 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> تُقصّ البطاقاتُ، ويطابقُ الطفل كلَّ مخلوقٍ بمنفعته التي جعلها الله فيه. حوارٌ بالصورة بلا كتابة: «مَن جعل في النخلةِ تمرًا؟».</div>
   <h2>مخلوقٌ ↔ منفعته</h2>
   <div class="match">
-    <div class="mc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="11" fill="none" stroke="#C79A3B" stroke-width="3"/><path d="M32 13v-4 M32 55v-4 M13 32h-4 M55 32h-4 M19 19l-3-3 M45 45l3 3 M45 19l3-3 M19 45l-3 3" stroke="#C79A3B" stroke-width="2.5" stroke-linecap="round"/></svg> الشمس</div><div class="mc">تُعطي الضياءَ والدفء</div>
-    <div class="mc"><svg viewBox="0 0 64 64"><path d="M32 12 C24 26 18 34 18 42 a14 14 0 0 0 28 0 c0 -8 -6 -16 -14 -30z" fill="none" stroke="#0d6e6e" stroke-width="3"/></svg> الماء</div><div class="mc">نشربُ ونحيا به</div>
-    <div class="mc"><svg viewBox="0 0 64 64"><path d="M32 54 V30" stroke="#6B3F22" stroke-width="3" stroke-linecap="round"/><path d="M32 30 q-14 -4 -18 -14 q12 0 18 8 q6 -8 18 -8 q-4 10 -18 14z" fill="none" stroke="#1E5631" stroke-width="2.5" stroke-linejoin="round"/></svg> النخلة</div><div class="mc">نأكلُ من تمرها</div>
-    <div class="mc"><svg viewBox="0 0 64 64"><path d="M32 16 l9 5 v11 l-9 5 -9 -5 v-11 z" fill="none" stroke="#C79A3B" stroke-width="3" stroke-linejoin="round"/><path d="M23 43 h18 l-3 6 h-12 z" fill="none" stroke="#8a6a12" stroke-width="2.5" stroke-linejoin="round"/></svg> النحلة</div><div class="mc">نأخذُ منها العسل</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/shams.jpg" alt="الشمس" onerror="this.remove()"/><span class="ph-lbl">صورة: شمس</span></div> الشمس</div><div class="mc">تُعطي الضياءَ والدفء</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/maa.jpg" alt="الماء" onerror="this.remove()"/><span class="ph-lbl">صورة: ماء</span></div> الماء</div><div class="mc">نشربُ ونحيا به</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/nakhla.jpg" alt="النخلة" onerror="this.remove()"/><span class="ph-lbl">صورة: نخلة</span></div> النخلة</div><div class="mc">نأكلُ من تمرها</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/nahla.jpg" alt="النحلة" onerror="this.remove()"/><span class="ph-lbl">صورة: نحلة</span></div> النحلة</div><div class="mc">نأخذُ منها العسل</div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم الأول — ركن أدرك وأستمتع</div>
 </div>
@@ -106,9 +112,9 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> يبني الطفل بالمكعبات الخشبية مظهرًا من خلقِ الله (جبلًا · شجرةً · بيتًا)، ثم <b>يضع البطاقةَ الجاهزة</b> على بنائه ويردّد معناها؛ وتذكّره المعلمةُ أنّ اللهَ خلق كلَّ شيءٍ وأتقنه. (لا تلوين هنا — التلوينُ في ركن فنوني.)</div>
   <h2>بطاقاتٌ تُوضع على البناء</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M8 50 L26 22 L37 40 L46 28 L58 50 Z" fill="none" stroke="#2C6A4D" stroke-width="3" stroke-linejoin="round"/><path d="M26 22 L21 30 L31 30 Z" fill="none" stroke="#1E5631" stroke-width="2.5" stroke-linejoin="round"/></svg><div class="t">جبلٌ خلقه الله</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 54 V32" stroke="#6B3F22" stroke-width="3" stroke-linecap="round"/><path d="M32 34 C20 28 22 12 32 8 C42 12 44 28 32 34 Z" fill="none" stroke="#1E5631" stroke-width="3" stroke-linejoin="round"/></svg><div class="t">شجرةٌ خلقها الله</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><rect x="14" y="32" width="36" height="20" rx="2" fill="none" stroke="#2C6A4D" stroke-width="3"/><path d="M14 32 L32 16 L50 32" fill="none" stroke="#1E5631" stroke-width="3" stroke-linejoin="round"/><rect x="28" y="40" width="8" height="12" fill="none" stroke="#0d6e6e" stroke-width="2.5"/></svg><div class="t">بيتٌ رزقني الله</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/jabal.jpg" alt="جبلٌ خلقه الله" onerror="this.remove()"/><span class="ph-lbl">صورة: جبل</span></div><div class="t">جبلٌ خلقه الله</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/shajara.jpg" alt="شجرةٌ خلقها الله" onerror="this.remove()"/><span class="ph-lbl">صورة: شجرة</span></div><div class="t">شجرةٌ خلقها الله</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/bayt.jpg" alt="بيتٌ رزقني الله" onerror="this.remove()"/><span class="ph-lbl">صورة: بيت</span></div><div class="t">بيتٌ رزقني الله</div></div>
   </div>
   <h2>وأتذكّرُ خالقي</h2>
   <div class="cutrow">
