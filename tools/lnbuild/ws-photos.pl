@@ -15,7 +15,7 @@ for my $r (@rows){
   $r =~ s/\x0D?\x0A\z//; next if $r =~ /^\s*$/;
   my ($label,$fn,$short) = split /\|/, $r, 3;
   next unless defined $short;
-  my $slot = qq{<div class="ph"><img src="$dir/$fn" alt="$label" onerror="this.remove()"/><span class="ph-lbl">صورة: $short</span></div>};
+  my $slot = qq{<div class="ph"><img src="$dir/$fn" alt="$label" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: $short</span></div>};
   # يُستبدل svg الذي يليه مباشرةً هذا العنصرُ (في .pc عبر <div class="t"> أو في .mc بعد مسافة)
   my $n = ($h =~ s{<svg viewBox="0 0 64 64">[^\n]*?</svg>(?=(?:<div class="t">|\x20)\Q$label\E</div>)}{$slot}g);
   if($n){ $done+=$n; } else { push @miss,$label; }

@@ -37,7 +37,8 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
 /* موضع الصورة الحقيقية (تحلّ محلّ الأيقونة الرمزية) — الصورةُ تملأ الإطار، وإن لم تتوفّر بعدُ ظهر إطارٌ نظيفٌ باسم العنصر */
 .ph{width:100%;height:92px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden}
-.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:grid;place-items:center;font-size:10.5px;color:#b9ab8c;font-family:var(--fb);text-align:center;padding:2px}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10.5px;color:#b9ab8c;font-family:var(--fb);text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
 .ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
 .mc .ph{width:46px;height:46px;flex:0 0 auto;border-radius:8px;box-shadow:inset 0 0 0 2px #fff}
 .mc .ph .ph-lbl{font-size:0}
@@ -53,15 +54,15 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> يلاحظ الطفل العيّناتِ الطبيعية بالمكبّر (ورقة · صدفة · ريشة · حصاة · بذرة)، ثم يطابقُ كلَّ عيّنةٍ ببطاقتها. وعند كلِّ عجيبةٍ يردّد: «سبحان مَن خلقه».</div>
   <h2>بطاقاتُ العيّنات — تُقصّ وتُطابَق بالعيّنة الحقيقية</h2>
   <div class="cutrow">
-    <div class="pc"><div class="ph"><img src="units-art/ws-am/waraqa.jpg" alt="ورقة" onerror="this.remove()"/><span class="ph-lbl">صورة: ورقة</span></div><div class="t">ورقة</div><div class="s">سبحان مَن خلقها</div></div>
-    <div class="pc"><div class="ph"><img src="units-art/ws-am/sadafa.jpg" alt="صدفة" onerror="this.remove()"/><span class="ph-lbl">صورة: صدفة</span></div><div class="t">صدفة</div><div class="s">سبحان مَن خلقها</div></div>
-    <div class="pc"><div class="ph"><img src="units-art/ws-am/reesha.jpg" alt="ريشة" onerror="this.remove()"/><span class="ph-lbl">صورة: ريشة</span></div><div class="t">ريشة</div><div class="s">سبحان مَن خلقها</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/waraqa.jpg" alt="ورقة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ورقة</span></div><div class="t">ورقة</div><div class="s">سبحان مَن خلقها</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/sadafa.jpg" alt="صدفة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: صدفة</span></div><div class="t">صدفة</div><div class="s">سبحان مَن خلقها</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/reesha.jpg" alt="ريشة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ريشة</span></div><div class="t">ريشة</div><div class="s">سبحان مَن خلقها</div></div>
   </div>
   <h2>وعيّناتٌ أخرى</h2>
   <div class="cutrow">
-    <div class="pc"><div class="ph"><img src="units-art/ws-am/hasah.jpg" alt="حصاة" onerror="this.remove()"/><span class="ph-lbl">صورة: حصاة</span></div><div class="t">حصاة</div><div class="s">سبحان مَن خلقها</div></div>
-    <div class="pc"><div class="ph"><img src="units-art/ws-am/bathra.jpg" alt="بذرة" onerror="this.remove()"/><span class="ph-lbl">صورة: بذرة</span></div><div class="t">بذرة</div><div class="s">سبحان مَن خلقها</div></div>
-    <div class="pc"><div class="ph"><img src="units-art/ws-am/mukabbir.jpg" alt="مكبّري" onerror="this.remove()"/><span class="ph-lbl">صورة: مكبّر</span></div><div class="t">مكبّري</div><div class="s">أُلاحظُ وأتفكّر</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/hasah.jpg" alt="حصاة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: حصاة</span></div><div class="t">حصاة</div><div class="s">سبحان مَن خلقها</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/bathra.jpg" alt="بذرة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: بذرة</span></div><div class="t">بذرة</div><div class="s">سبحان مَن خلقها</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/mukabbir.jpg" alt="مكبّري" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: مكبّر</span></div><div class="t">مكبّري</div><div class="s">أُلاحظُ وأتفكّر</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم الأول — ركن أكتشف ما حولي</div>
 </div>
@@ -84,10 +85,10 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   </div>
   <h2>٢) نِعَمُ الخلق — تُلوَّن وتُقصّ وتُلصق حول المشهد</h2>
   <div class="cutrow four">
-    <div class="pc"><div class="ph"><img src="units-art/ws-am/maa.jpg" alt="الماء" onerror="this.remove()"/><span class="ph-lbl">صورة: ماء</span></div><div class="t">الماء</div></div>
-    <div class="pc"><div class="ph"><img src="units-art/ws-am/nabat.jpg" alt="النبات" onerror="this.remove()"/><span class="ph-lbl">صورة: نبات</span></div><div class="t">النبات</div></div>
-    <div class="pc"><div class="ph"><img src="units-art/ws-am/nahar.jpg" alt="النهار" onerror="this.remove()"/><span class="ph-lbl">صورة: نهار</span></div><div class="t">النهار</div></div>
-    <div class="pc"><div class="ph"><img src="units-art/ws-am/layl.jpg" alt="الليل" onerror="this.remove()"/><span class="ph-lbl">صورة: ليل</span></div><div class="t">الليل</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/maa.jpg" alt="الماء" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ماء</span></div><div class="t">الماء</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/nabat.jpg" alt="النبات" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: نبات</span></div><div class="t">النبات</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/nahar.jpg" alt="النهار" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: نهار</span></div><div class="t">النهار</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/layl.jpg" alt="الليل" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ليل</span></div><div class="t">الليل</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم الأول — ركن فنوني الجميلة</div>
 </div>
@@ -98,10 +99,10 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> تُقصّ البطاقاتُ، ويطابقُ الطفل كلَّ مخلوقٍ بمنفعته التي جعلها الله فيه. حوارٌ بالصورة بلا كتابة: «مَن جعل في النخلةِ تمرًا؟».</div>
   <h2>مخلوقٌ ↔ منفعته</h2>
   <div class="match">
-    <div class="mc"><div class="ph"><img src="units-art/ws-am/shams.jpg" alt="الشمس" onerror="this.remove()"/><span class="ph-lbl">صورة: شمس</span></div> الشمس</div><div class="mc">تُعطي الضياءَ والدفء</div>
-    <div class="mc"><div class="ph"><img src="units-art/ws-am/maa.jpg" alt="الماء" onerror="this.remove()"/><span class="ph-lbl">صورة: ماء</span></div> الماء</div><div class="mc">نشربُ ونحيا به</div>
-    <div class="mc"><div class="ph"><img src="units-art/ws-am/nakhla.jpg" alt="النخلة" onerror="this.remove()"/><span class="ph-lbl">صورة: نخلة</span></div> النخلة</div><div class="mc">نأكلُ من تمرها</div>
-    <div class="mc"><div class="ph"><img src="units-art/ws-am/nahla.jpg" alt="النحلة" onerror="this.remove()"/><span class="ph-lbl">صورة: نحلة</span></div> النحلة</div><div class="mc">نأخذُ منها العسل</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/shams.jpg" alt="الشمس" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: شمس</span></div> الشمس</div><div class="mc">تُعطي الضياءَ والدفء</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/maa.jpg" alt="الماء" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ماء</span></div> الماء</div><div class="mc">نشربُ ونحيا به</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/nakhla.jpg" alt="النخلة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: نخلة</span></div> النخلة</div><div class="mc">نأكلُ من تمرها</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/nahla.jpg" alt="النحلة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: نحلة</span></div> النحلة</div><div class="mc">نأخذُ منها العسل</div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم الأول — ركن أدرك وأستمتع</div>
 </div>
@@ -112,9 +113,9 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> يبني الطفل بالمكعبات الخشبية مظهرًا من خلقِ الله (جبلًا · شجرةً · بيتًا)، ثم <b>يضع البطاقةَ الجاهزة</b> على بنائه ويردّد معناها؛ وتذكّره المعلمةُ أنّ اللهَ خلق كلَّ شيءٍ وأتقنه. (لا تلوين هنا — التلوينُ في ركن فنوني.)</div>
   <h2>بطاقاتٌ تُوضع على البناء</h2>
   <div class="cutrow">
-    <div class="pc"><div class="ph"><img src="units-art/ws-am/jabal.jpg" alt="جبلٌ خلقه الله" onerror="this.remove()"/><span class="ph-lbl">صورة: جبل</span></div><div class="t">جبلٌ خلقه الله</div></div>
-    <div class="pc"><div class="ph"><img src="units-art/ws-am/shajara.jpg" alt="شجرةٌ خلقها الله" onerror="this.remove()"/><span class="ph-lbl">صورة: شجرة</span></div><div class="t">شجرةٌ خلقها الله</div></div>
-    <div class="pc"><div class="ph"><img src="units-art/ws-am/bayt.jpg" alt="بيتٌ رزقني الله" onerror="this.remove()"/><span class="ph-lbl">صورة: بيت</span></div><div class="t">بيتٌ رزقني الله</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/jabal.jpg" alt="جبلٌ خلقه الله" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: جبل</span></div><div class="t">جبلٌ خلقه الله</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/shajara.jpg" alt="شجرةٌ خلقها الله" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: شجرة</span></div><div class="t">شجرةٌ خلقها الله</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/bayt.jpg" alt="بيتٌ رزقني الله" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: بيت</span></div><div class="t">بيتٌ رزقني الله</div></div>
   </div>
   <h2>وأتذكّرُ خالقي</h2>
   <div class="cutrow">
