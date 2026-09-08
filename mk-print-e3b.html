@@ -31,6 +31,11 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 .card{border:2px dashed #9ab0b6;border-radius:14px;padding:12px 8px;text-align:center;background:#fff;display:flex;flex-direction:column;align-items:center;gap:7px;min-height:104px;justify-content:center}
 .card svg{width:44px;height:44px}
 .card .t{font-weight:700;font-size:13.5px;color:var(--ink);line-height:1.5}
+.ph{width:100%;height:70px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10px;color:#b9ab8c;text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
 </style>
@@ -82,27 +87,27 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
   <h2>بطاقاتُ الأدوات — تُقصّ وتُخلط</h2>
   <div class="cards">
     <div class="card">
-      <svg viewBox="0 0 48 48"><ellipse cx="24" cy="15" rx="7" ry="9" fill="#c9c9cf"/><rect x="22" y="20" width="4" height="20" rx="2" fill="#c9c9cf"/></svg>
+      <div class="ph"><img src="units-art/ws-am/milaaqa.jpg" alt="ملعقة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ملعقة</span></div>
       <div class="t">ملعقة</div>
     </div>
     <div class="card">
-      <svg viewBox="0 0 48 48"><rect x="12" y="20" width="24" height="16" rx="3" fill="#8a99a0"/><rect x="10" y="16" width="28" height="5" rx="2" fill="#6f7d83"/><rect x="6" y="24" width="6" height="4" rx="2" fill="#6f7d83"/><rect x="36" y="24" width="6" height="4" rx="2" fill="#6f7d83"/></svg>
+      <div class="ph"><img src="units-art/ws-am/qidr.jpg" alt="قِدر" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: قِدر</span></div>
       <div class="t">قِدر</div>
     </div>
     <div class="card">
-      <svg viewBox="0 0 48 48"><rect x="8" y="16" width="32" height="18" rx="9" fill="#cf9f7a"/><line x1="14" y1="25" x2="34" y2="25" stroke="#b87f4a" stroke-width="1.5"/></svg>
+      <div class="ph"><img src="units-art/ws-am/wisada.jpg" alt="وِسادة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: وسادة</span></div>
       <div class="t">وِسادة</div>
     </div>
     <div class="card">
-      <svg viewBox="0 0 48 48"><rect x="8" y="17" width="32" height="16" rx="4" fill="#7ba7bd"/><path d="M8 23 h32 M8 28 h32" stroke="#5b86a8" stroke-width="1.5"/></svg>
+      <div class="ph"><img src="units-art/ws-am/lihaf.jpg" alt="لِحاف" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: لحاف</span></div>
       <div class="t">لِحاف</div>
     </div>
     <div class="card">
-      <svg viewBox="0 0 48 48"><rect x="12" y="20" width="24" height="14" rx="6" fill="#8fc0b8"/><ellipse cx="24" cy="18" rx="5" ry="3" fill="#cfeee7"/></svg>
+      <div class="ph"><img src="units-art/ws-am/saboon.jpg" alt="صابون" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: صابون</span></div>
       <div class="t">صابون</div>
     </div>
     <div class="card">
-      <svg viewBox="0 0 48 48"><rect x="14" y="12" width="20" height="26" rx="3" fill="#e0b98f"/><rect x="14" y="12" width="20" height="5" fill="#c99a6a"/><rect x="14" y="33" width="20" height="5" fill="#c99a6a"/></svg>
+      <div class="ph"><img src="units-art/ws-am/minshafa.jpg" alt="منشفة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: منشفة</span></div>
       <div class="t">منشفة</div>
     </div>
   </div>
