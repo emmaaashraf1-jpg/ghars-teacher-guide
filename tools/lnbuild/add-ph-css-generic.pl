@@ -14,7 +14,8 @@ CSS
 for my $file (@ARGV){
   open my $x,'<:raw',$file or die "open $file: $!"; local $/; my $h=<$x>; close $x;
   next unless $h =~ /class="ph"/;            # لا يحوي مواضعَ صور
-  next if $h =~ /\.ph\{[^}]*position:relative/; # القاعدة موجودة
+  next if $h =~ /\.ph\{[^}]*position:relative/; # القاعدة (القديمة) موجودة
+  next if $h =~ /\.ph\{width:fit-content/;      # القاعدة (الاحتضان) موجودة
   unless($h =~ s{(\n\s*)</style>}{$1$css$1</style>}){ print "$file: لم يُعثر على </style>\n"; next; }
   open my $o,'>:raw',$file or die "write $file: $!"; print $o $h; close $o;
   print "$file: أُضيفت قواعد .ph\n";
