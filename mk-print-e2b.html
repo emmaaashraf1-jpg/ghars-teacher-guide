@@ -39,6 +39,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:2px 0 12px;paddin
 .card .t{font-weight:700;font-size:13.5px;color:var(--ink);line-height:1.5}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
+.ph{width:100%;height:82px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden;margin:0 auto}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10px;color:#b9ab8c;text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -74,12 +80,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:2px 0 12px;paddin
 <div class="sheet">
   <h2>بطاقاتُ المساكن — تُقصّ وتُصنَّف</h2>
   <div class="cards">
-    <div class="card"><svg viewBox="0 0 72 48"><path d="M36 8 L60 44 H12 Z" fill="#d8a24a"/><path d="M36 44 V22 L26 44 Z" fill="#7a5a12"/><path d="M36 44 V22 L46 44 Z" fill="#8a6a2a"/></svg><div class="t">خيمة</div></div>
-    <div class="card"><svg viewBox="0 0 72 48"><path d="M14 44 q22 -20 44 0 Z" fill="#4a3b2a"/><path d="M14 44 q22 -20 44 0" fill="none" stroke="#2e2418" stroke-width="2"/><line x1="36" y1="26" x2="36" y2="12" stroke="#8a6a4a" stroke-width="2"/><line x1="30" y1="44" x2="24" y2="30" stroke="#5a4a34" stroke-width="1.5"/><line x1="42" y1="44" x2="48" y2="30" stroke="#5a4a34" stroke-width="1.5"/></svg><div class="t">بيت الشَّعر</div></div>
-    <div class="card"><svg viewBox="0 0 72 48"><rect x="20" y="20" width="32" height="24" rx="2" fill="#c99a6a"/><path d="M16 20 l20 -12 20 12z" fill="#a9772a"/><rect x="32" y="30" width="8" height="14" fill="#7a5a12"/></svg><div class="t">بيت طيني</div></div>
-    <div class="card"><svg viewBox="0 0 72 48"><rect x="26" y="6" width="24" height="38" fill="#0d6e6e"/><g fill="#cfe7e4"><rect x="30" y="12" width="6" height="6"/><rect x="40" y="12" width="6" height="6"/><rect x="30" y="24" width="6" height="6"/><rect x="40" y="24" width="6" height="6"/></g><rect x="34" y="36" width="8" height="8" fill="#eae3c8"/></svg><div class="t">عمارة</div></div>
-    <div class="card"><svg viewBox="0 0 72 48"><rect x="16" y="26" width="40" height="18" fill="#5b86a8"/><path d="M14 26 l22 -14 22 14z" fill="#3d6f8a"/><rect x="32" y="32" width="8" height="12" fill="#eae3c8"/><rect x="21" y="30" width="8" height="7" fill="#cfe7ef"/><rect x="43" y="30" width="8" height="7" fill="#cfe7ef"/></svg><div class="t">فيلا</div></div>
-    <div class="card"><svg viewBox="0 0 72 48"><rect x="22" y="12" width="28" height="32" rx="2" fill="#4d7d93"/><g fill="#cfe7ef"><rect x="27" y="17" width="7" height="7"/><rect x="38" y="17" width="7" height="7"/><rect x="27" y="28" width="7" height="7"/><rect x="38" y="28" width="7" height="7"/></g></svg><div class="t">شقّة</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/khayma.jpg" alt="خيمة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: خيمة</span></div><div class="t">خيمة</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/bayt-shaar.jpg" alt="بيت الشَّعر" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: بيت الشعر</span></div><div class="t">بيت الشَّعر</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/bayt-teeni.jpg" alt="بيت طيني" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: بيت طيني</span></div><div class="t">بيت طيني</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/imara.jpg" alt="عمارة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: عمارة</span></div><div class="t">عمارة</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/villa.jpg" alt="فيلا" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: فيلا</span></div><div class="t">فيلا</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/shiqqa.jpg" alt="شقّة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: شقّة</span></div><div class="t">شقّة</div></div>
   </div>
 
 <div style="background:linear-gradient(135deg,#1F4A39,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:16px 0 6px"><b>الخلاصة:</b> المسكن نعمةٌ من الله على اختلاف أنواعه، تستوجب الشكر. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>

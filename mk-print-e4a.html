@@ -31,6 +31,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 .word{border:2px dashed var(--gold);border-radius:12px;background:var(--cream);color:var(--gold-d);font-family:var(--fd);font-size:17px;font-weight:700;padding:10px 22px}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+.ph{width:100%;height:82px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden;margin:0 auto}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10px;color:#b9ab8c;text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -48,38 +54,17 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 
   <div class="cards">
     <div class="card">
-      <svg class="m" viewBox="0 0 120 120" role="img" aria-label="عُشّ من الأغصان">
-        <rect width="120" height="120" rx="12" fill="#eef4f2"/>
-        <ellipse cx="60" cy="80" rx="44" ry="22" fill="#a9843f"/>
-        <ellipse cx="60" cy="74" rx="34" ry="15" fill="#7a5f2c"/>
-        <g stroke="#6b5326" stroke-width="2" fill="none" opacity=".7">
-          <path d="M22 78 q38 -14 76 0"/><path d="M26 84 q34 -10 68 0"/><path d="M30 70 q30 -8 60 0"/>
-        </g>
-      </svg>
+      <div class="ph"><img src="units-art/ws-am/ush.jpg" alt="عُشّ" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: عُشّ</span></div>
       <div class="nm">عُشّ</div>
       <div class="who">على الشجرة</div>
     </div>
     <div class="card">
-      <svg class="m" viewBox="0 0 120 120" role="img" aria-label="جُحر في الأرض">
-        <rect width="120" height="120" rx="12" fill="#eef4f2"/>
-        <rect x="8" y="82" width="104" height="26" fill="#8a6a34"/>
-        <path d="M14 82 q46 -44 92 0z" fill="#a9843f"/>
-        <ellipse cx="60" cy="82" rx="16" ry="13" fill="#3a2c16"/>
-        <path d="M60 82 q6 12 0 22" stroke="#2b2010" stroke-width="3" fill="none" opacity=".5"/>
-      </svg>
+      <div class="ph"><img src="units-art/ws-am/juhr.jpg" alt="جُحر" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: جُحر</span></div>
       <div class="nm">جُحر</div>
       <div class="who">في الأرض</div>
     </div>
     <div class="card">
-      <svg class="m" viewBox="0 0 120 120" role="img" aria-label="خليّة سداسية">
-        <rect width="120" height="120" rx="12" fill="#eef4f2"/>
-        <g fill="#e0b354" stroke="#a97e1f" stroke-width="2">
-          <polygon points="52,32 68,32 76,46 68,60 52,60 44,46"/>
-          <polygon points="76,46 92,46 100,60 92,74 76,74 68,60"/>
-          <polygon points="28,46 44,46 52,60 44,74 28,74 20,60"/>
-          <polygon points="52,60 68,60 76,74 68,88 52,88 44,74"/>
-        </g>
-      </svg>
+      <div class="ph"><img src="units-art/ws-am/khaliyya.jpg" alt="خليّة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: خليّة</span></div>
       <div class="nm">خليّة</div>
       <div class="who">من الشمع</div>
     </div>

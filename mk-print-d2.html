@@ -38,6 +38,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
 .summary{background:linear-gradient(135deg,#1F4A39,#1E5631);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:16px 0 6px}
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
+.ph{width:100%;height:82px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden;margin:0 auto}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10px;color:#b9ab8c;text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -63,10 +69,10 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> تُقصّ بطاقاتُ السلع والنقود، ويلعبُ الأطفالُ دورَي البائع والمشتري؛ يُسلّمُ ويستأذنُ عند الدخول، ويشتري سِلعَ بيته ويشكر. تنوّعُ النِّعَم من الله المُنعِم.</div>
   <h2>١) سِلعُ بيتي — تُقصّ وتُوضع على رفّ الدكان</h2>
   <div class="cutrow four">
-    <div class="pc"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="34" rx="18" ry="12" fill="none" stroke="#C79A3B" stroke-width="3"/><path d="M18 30 q14 -8 28 0" stroke="#2C6A4D" stroke-width="2"/></svg><div class="t">خبز</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M24 20 h16 v6 l4 24 h-24 l4 -24z" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-linejoin="round"/><path d="M24 32 h16" stroke="#C79A3B" stroke-width="2"/></svg><div class="t">حليب</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 24 c-6 -8 -18 -4 -18 8 c0 12 12 18 18 18 c6 0 18 -6 18 -18 c0 -12 -12 -16 -18 -8z" fill="none" stroke="#cf6f5f" stroke-width="3"/><path d="M32 24 v-6 M32 18 l5 -4" stroke="#2C6A4D" stroke-width="2.5" stroke-linecap="round"/></svg><div class="t">تفاح</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M18 44 h28 l-4 -20 h-20z" fill="none" stroke="#2C6A4D" stroke-width="3" stroke-linejoin="round"/><path d="M26 24 v-4 M38 24 v-4" stroke="#C79A3B" stroke-width="2.5" stroke-linecap="round"/></svg><div class="t">أرزّ</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/raghif.jpg" alt="خبز" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: خبز</span></div><div class="t">خبز</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/haleeb.jpg" alt="حليب" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: حليب</span></div><div class="t">حليب</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/tuffah.jpg" alt="تفاح" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: تفاح</span></div><div class="t">تفاح</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/aruzz.jpg" alt="أرزّ" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: أرزّ</span></div><div class="t">أرزّ</div></div>
   </div>
   <h2>٢) نقودي اللعبية — تُقصّ</h2>
   <div class="cutrow">
@@ -83,8 +89,8 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> تحكي المعلمةُ «قصةَ بيوت»؛ تُقصّ البطاقات، ويرتّبها الطفل ويطابقُ كلَّ مسكنٍ ببيئته أو ساكنه: خيمة · عمارة · كوخ خشبيّ · قصر · غرفةٌ في منارة. تنوّعُ المساكن نعمةٌ وحكمةٌ من الله.</div>
   <h2>مسكنٌ ↔ بيئته</h2>
   <div class="match">
-    <div class="mc"><svg viewBox="0 0 64 64"><path d="M12 48 h40 M32 12 l16 36 M32 12 l-16 36" fill="none" stroke="#C79A3B" stroke-width="3" stroke-linejoin="round"/></svg> خيمةٌ</div><div class="mc">في الصحراء</div>
-    <div class="mc"><svg viewBox="0 0 64 64"><rect x="22" y="10" width="20" height="44" fill="none" stroke="#0d6e6e" stroke-width="3"/><path d="M27 16 h4 M33 16 h4 M27 24 h4 M33 24 h4 M27 32 h4 M33 32 h4 M27 40 h4 M33 40 h4" stroke="#C79A3B" stroke-width="2.5"/></svg> عمارةٌ</div><div class="mc">في المدينة</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/khayma.jpg" alt="خيمةٌ" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: خيمة</span></div> خيمةٌ</div><div class="mc">في الصحراء</div>
+    <div class="mc"><div class="ph"><img src="units-art/ws-am/imara.jpg" alt="عمارةٌ" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: عمارة</span></div> عمارةٌ</div><div class="mc">في المدينة</div>
     <div class="mc"><svg viewBox="0 0 64 64"><rect x="16" y="32" width="32" height="20" fill="none" stroke="#7a5a12" stroke-width="3"/><path d="M14 32 l18 -14 18 14" fill="none" stroke="#1E5631" stroke-width="3" stroke-linejoin="round"/><path d="M16 40 h32 M16 46 h32" stroke="#C79A3B" stroke-width="2"/></svg> كوخٌ خشبيّ</div><div class="mc">في الغابة والجبل</div>
     <div class="mc"><svg viewBox="0 0 64 64"><rect x="14" y="30" width="36" height="22" fill="none" stroke="#2C6A4D" stroke-width="3"/><path d="M14 30 v-8 h6 v8 M50 30 v-8 h-6 v8" fill="none" stroke="#C79A3B" stroke-width="2.5"/><path d="M28 20 h8 v10 h-8z" fill="none" stroke="#0d6e6e" stroke-width="2.5"/><path d="M28 20 l4 -6 4 6" fill="none" stroke="#C79A3B" stroke-width="2.5" stroke-linejoin="round"/></svg> قصرٌ</div><div class="mc">للملوك قديمًا</div>
     <div class="mc"><svg viewBox="0 0 64 64"><path d="M26 52 h12 l-2 -30 h-8z" fill="none" stroke="#2C6A4D" stroke-width="3" stroke-linejoin="round"/><rect x="27" y="14" width="10" height="8" fill="none" stroke="#0d6e6e" stroke-width="2.5"/><g stroke="#C79A3B" stroke-width="2" stroke-linecap="round"><line x1="24" y1="18" x2="20" y2="16"/><line x1="40" y1="18" x2="44" y2="16"/></g></svg> غرفةٌ في منارة</div><div class="mc">عند البحر لإرشاد السفن</div>
@@ -98,9 +104,9 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> يلوّن الطفل أنواعَ المساكن الجاهزة، ثم يقصّها ويلصقها في لوحةٍ جماعية، ويردّد «كلُّها نعمةٌ من الله».</div>
   <h2>ألوّن · أقصّ · ألصق</h2>
   <div class="big">
-    <div class="bc"><svg viewBox="0 0 150 120"><rect x="30" y="60" width="90" height="48" fill="#fff" stroke="#2C6A4D" stroke-width="3"/><path d="M22 60 L75 22 L128 60 Z" fill="#fff" stroke="#1E5631" stroke-width="3" stroke-linejoin="round"/><rect x="62" y="82" width="26" height="26" fill="#fff" stroke="#0d6e6e" stroke-width="3"/><rect x="40" y="72" width="16" height="14" fill="#fff" stroke="#C79A3B" stroke-width="2.5"/></svg><div class="t">بيتٌ</div></div>
-    <div class="bc"><svg viewBox="0 0 150 120"><path d="M20 106 h110 M75 16 L130 106 M75 16 L20 106" fill="#fff" stroke="#C79A3B" stroke-width="3" stroke-linejoin="round"/><path d="M75 60 L95 106 L55 106 Z" fill="#fff" stroke="#0d6e6e" stroke-width="2.5"/></svg><div class="t">خيمةٌ</div></div>
-    <div class="bc"><svg viewBox="0 0 150 120"><rect x="48" y="16" width="54" height="92" fill="#fff" stroke="#2C6A4D" stroke-width="3"/><g stroke="#C79A3B" stroke-width="2.5" fill="#fff"><rect x="56" y="26" width="12" height="12"/><rect x="82" y="26" width="12" height="12"/><rect x="56" y="48" width="12" height="12"/><rect x="82" y="48" width="12" height="12"/><rect x="56" y="70" width="12" height="12"/><rect x="82" y="70" width="12" height="12"/></g><rect x="66" y="92" width="18" height="16" fill="#fff" stroke="#0d6e6e" stroke-width="2.5"/></svg><div class="t">شقّةٌ في عمارة</div></div>
+    <div class="bc"><div class="ph"><img src="units-art/ws-am/bayt.jpg" alt="بيتٌ" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: بيت</span></div><div class="t">بيتٌ</div></div>
+    <div class="bc"><div class="ph"><img src="units-art/ws-am/khayma.jpg" alt="خيمةٌ" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: خيمة</span></div><div class="t">خيمةٌ</div></div>
+    <div class="bc"><div class="ph"><img src="units-art/ws-am/shiqqa.jpg" alt="شقّةٌ في عمارة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: شقّة</span></div><div class="t">شقّةٌ في عمارة</div></div>
   </div>
   <div class="summary"><b>المعنى المركزي المتكامل لليوم الثاني:</b> أنواعُ المساكن نعمةٌ من الله، وجزاءُ المُحسنين خيرٌ ونعيم — <b>تذكيرًا لا رسمًا لجنّةٍ أو نار، صيانةً لهيبة الغيب</b>؛ فأستأذنُ وأُحسنُ وأشكرُ في بيتي.</div>
   <div class="foot">دليل معلمة غرس القيم · اليوم الثاني — ركن فنوني الجميلة · نشاطٌ تكامليٌّ بروح اللعب</div>

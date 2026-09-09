@@ -29,6 +29,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 .card .s{font-size:10.5px;color:var(--gold-d);line-height:1.5}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+.ph{width:100%;height:82px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden;margin:0 auto}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10px;color:#b9ab8c;text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -49,9 +55,9 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
   <div class="cards">
     <div class="card"><svg viewBox="0 0 48 48"><path d="M10 26 l14 -12 14 12 v14 h-28 z" fill="#6a9c78"/><path d="M10 26 l14 -12 14 12" fill="none" stroke="#4f8060" stroke-width="2"/><rect x="20" y="30" width="8" height="10" fill="#e4c877"/></svg><div class="t">المسكن</div><div class="s">نعمةٌ من الرّب</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><path d="M14 16 l10 -4 10 4 -4 8 -3 -1 v13 h-6 v-13 l-3 1 z" fill="#7fb0c9"/></svg><div class="t">اللباس</div><div class="s">نعمةٌ من الرّب</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><ellipse cx="24" cy="30" rx="13" ry="8" fill="#d9a441"/><path d="M11 26 h26 v4 h-26z" fill="#e4c877"/><rect x="19" y="16" width="10" height="8" rx="2" fill="#c98a3a"/></svg><div class="t">الطعام</div><div class="s">نعمةٌ من الرّب</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M8 30 h32 v6 h-32z" fill="#cf8f6f"/><path d="M10 30 v-6 a6 6 0 0 1 6 -6 h16 a6 6 0 0 1 6 6 v6" fill="#eef2f4" stroke="#bcd0d6" stroke-width="2"/><rect x="6" y="34" width="4" height="8" fill="#a8724f"/><rect x="38" y="34" width="4" height="8" fill="#a8724f"/></svg><div class="t">الفراش</div><div class="s">نعمةٌ من الرّب</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M24 8 C16 20 12 26 12 32 a12 12 0 0 0 24 0 c0 -6 -4 -12 -12 -24z" fill="#7fb0c9"/><path d="M20 30 a6 6 0 0 0 6 6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><div class="t">الماء</div><div class="s">نعمةٌ من الرّب</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/sahn.jpg" alt="الطعام" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: طعام</span></div><div class="t">الطعام</div><div class="s">نعمةٌ من الرّب</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/firash.jpg" alt="الفراش" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: فراش</span></div><div class="t">الفراش</div><div class="s">نعمةٌ من الرّب</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/maa.jpg" alt="الماء" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ماء</span></div><div class="t">الماء</div><div class="s">نعمةٌ من الرّب</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><path d="M24 14 c-5 -4 -12 -4 -14 0 v20 c2 -4 9 -4 14 0z" fill="#6a9c78"/><path d="M24 14 c5 -4 12 -4 14 0 v20 c-2 -4 -9 -4 -14 0z" fill="#8fbf9c"/><rect x="23" y="14" width="2" height="20" fill="#4f8060"/></svg><div class="t">العلم والكتاب</div><div class="s">نعمةٌ من الرّب</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><path d="M24 34 c-8 -6 -14 -11 -14 -18 a7 7 0 0 1 14 -2 a7 7 0 0 1 14 2 c0 7 -6 12 -14 18z" fill="#cf6f5f"/></svg><div class="t">الأهل والحبّ</div><div class="s">نعمةٌ من الرّب</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="9" fill="#e0b354"/><g stroke="#C79A3B" stroke-width="3" stroke-linecap="round"><line x1="24" y1="7" x2="24" y2="13"/><line x1="24" y1="35" x2="24" y2="41"/><line x1="7" y1="24" x2="13" y2="24"/><line x1="35" y1="24" x2="41" y2="24"/><line x1="12" y1="12" x2="16" y2="16"/><line x1="32" y1="32" x2="36" y2="36"/><line x1="36" y1="12" x2="32" y2="16"/><line x1="16" y1="32" x2="12" y2="36"/></g></svg><div class="t">الدِّفء والضياء</div><div class="s">نعمةٌ من الرّب</div></div>
