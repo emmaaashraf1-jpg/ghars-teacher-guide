@@ -179,6 +179,11 @@
   .ws-zulm{opacity:var(--wash,1);
     -webkit-mask-image:linear-gradient(to left,transparent 40%,#000 66%);
     mask-image:linear-gradient(to left,transparent 40%,#000 66%)}
+  /* غلالة «بهتان»: ضبابٌ عاجيّ فاتح يغشّى أسفل‑يسار جانب الشيطان فترتفع قتامة العشب وتوضح الكلمات — لا خلفيّة خلف المصطلحات */
+  .ws-mist{position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:
+      radial-gradient(135% 95% at 6% 100%, rgba(243,236,218,.6), rgba(243,236,218,0) 58%),
+      linear-gradient(to left, transparent 48%, rgba(243,236,218,.3) 74%, rgba(243,236,218,.46) 100%)}
 
   /* ===== الوضع الثابت (بلا JS / بلا حركة) — مشهدٌ هادئ وقائمةٌ مقروءة ===== */
   .wscene-stage{padding:clamp(30px,5vw,52px) clamp(16px,4vw,30px)}
@@ -195,7 +200,7 @@
   .whead-other .nm b{color:#22271f;letter-spacing:.2px;
     text-shadow:0 1px 2px rgba(10,14,8,.38)}
   .whead .emb{width:clamp(38px,5vw,54px);height:clamp(38px,5vw,54px);flex:0 0 auto;object-fit:contain}
-  .emb-knot{mix-blend-mode:multiply;opacity:1}
+  .emb-knot{filter:brightness(.3) contrast(1.35) drop-shadow(0 1px 1px rgba(10,14,8,.35));opacity:.95}
 
   .wscene-cmps{position:relative;z-index:3;max-width:720px;margin:0 auto;
     display:flex;flex-direction:column;gap:clamp(18px,2.6vw,26px)}
@@ -545,6 +550,7 @@
           <img class="ws-noor" src="assets/wahy/scene-noor.png?v=1" alt="" loading="lazy" decoding="async">
           <img class="ws-zulm" src="assets/wahy/scene-zulm.png?v=1" alt="" loading="lazy" decoding="async">
         </div>
+        <div class="ws-mist" aria-hidden="true"></div>
 
         <!-- ===== الرؤوس + المقارنات: كتلةٌ واحدة تظهر معًا ===== -->
         <div class="wscene-core">
