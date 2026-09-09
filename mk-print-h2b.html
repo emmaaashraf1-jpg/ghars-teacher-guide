@@ -31,6 +31,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 .arrow{font-size:26px;color:var(--gold);font-weight:700}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
+.ph{width:100%;height:82px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden;margin:0 auto}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10px;color:#b9ab8c;text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -60,7 +66,7 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
       <div class="nm">المساء</div>
     </div>
     <div class="card">
-      <svg class="m" viewBox="0 0 120 120"><rect width="120" height="120" rx="12" fill="#0e2a3a"/><g fill="#fff" opacity=".7"><circle cx="34" cy="34" r="2"/><circle cx="92" cy="30" r="2"/><circle cx="30" cy="86" r="1.6"/><circle cx="96" cy="92" r="1.8"/></g><g fill="#eef0e0"><circle cx="66" cy="60" r="26"/><circle cx="54" cy="54" r="22" fill="#0e2a3a"/></g></svg>
+      <div class="ph"><img src="units-art/ws-am/layl.jpg" alt="الليل" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ليل</span></div>
       <div class="nm">الليل</div>
     </div>
   </div>

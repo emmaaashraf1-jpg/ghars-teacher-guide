@@ -17,6 +17,7 @@ for my $r (@rows){
   $r =~ s/\x0D?\x0A\z//; next if $r =~ /^\s*$/; next if $r =~ /^\s*#/;
   my ($label,$fn,$short) = split /\|/, $r, 3;
   next unless defined $fn && length $fn;
+  next unless -e "$dir/$fn";   # تخطَّ ما لم تصل صورتُه بعد (تسليمٌ تدريجيّ)
   $short = $label unless defined $short && length $short;
   my $slot = qq{<div class="ph"><img src="$dir/$fn" alt="$label" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: $short</span></div>};
   my $n = ($h =~ s{<svg\b[^>]*viewBox="0 0 \d+ \d+"[^>]*>(?:(?!</svg>).)*?</svg>(?=\s*(?:<div class="(?:t|nm)">|\x20)\Q$label\E</div>)}{$slot}gs);

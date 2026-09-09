@@ -31,6 +31,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 .arrow{font-size:24px;color:var(--gold);font-weight:700}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+.ph{width:100%;height:82px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden;margin:0 auto}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10px;color:#b9ab8c;text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -48,23 +54,23 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 
   <div class="cards">
     <div class="card">
-      <svg class="m" viewBox="0 0 120 104"><rect x="34" y="14" width="42" height="76" rx="3" fill="#0d6e6e"/><rect x="37" y="17" width="36" height="70" rx="2" fill="#12857f"/><circle cx="42" cy="54" r="3" fill="#C79A3B"/><g stroke="#C79A3B" stroke-width="3" stroke-linecap="round"><line x1="86" y1="34" x2="98" y2="30"/><line x1="88" y1="46" x2="101" y2="46"/><line x1="86" y1="58" x2="98" y2="62"/></g></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-atrq.jpg" alt="أطرق" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الطرق</span></div>
       <div class="nm">أطرق</div>
     </div>
     <div class="card">
-      <svg class="m" viewBox="0 0 120 104"><path d="M22 22 h76 a5 5 0 0 1 5 5 v34 a5 5 0 0 1 -5 5 h-46 l-16 15 v-15 a5 5 0 0 1 -5 -5 v-34 a5 5 0 0 1 5 -5z" fill="none" stroke="#0d6e6e" stroke-width="3"/><text x="61" y="52" font-family="AlAwwal,serif" font-size="17" font-weight="700" fill="#C79A3B" text-anchor="middle">السلام</text></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-salam.jpg" alt="أسلّم" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: السلام</span></div>
       <div class="nm">أسلّم</div>
     </div>
     <div class="card">
-      <svg class="m" viewBox="0 0 120 104"><rect x="36" y="16" width="40" height="72" rx="3" fill="#0d6e6e"/><rect x="39" y="19" width="34" height="66" rx="2" fill="#12857f"/><text x="94" y="58" font-family="AlAwwal,serif" font-size="34" font-weight="700" fill="#C79A3B" text-anchor="middle">؟</text></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-astadhin.jpg" alt="أستأذن" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الاستئذان</span></div>
       <div class="nm">أستأذن</div>
     </div>
     <div class="card">
-      <svg class="m" viewBox="0 0 120 104"><circle cx="60" cy="52" r="30" fill="#fff" stroke="#0d6e6e" stroke-width="4"/><g fill="#1F4A39"><circle cx="60" cy="28" r="2.4"/><circle cx="84" cy="52" r="2.4"/><circle cx="60" cy="76" r="2.4"/><circle cx="36" cy="52" r="2.4"/></g><line x1="60" y1="52" x2="60" y2="34" stroke="#1F4A39" stroke-width="4" stroke-linecap="round"/><line x1="60" y1="52" x2="74" y2="58" stroke="#C79A3B" stroke-width="4" stroke-linecap="round"/></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-antazir.jpg" alt="أنتظر" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الانتظار</span></div>
       <div class="nm">أنتظر</div>
     </div>
     <div class="card">
-      <svg class="m" viewBox="0 0 120 104"><path d="M78 24 A26 26 0 1 1 52 50" fill="none" stroke="#0d6e6e" stroke-width="6" stroke-linecap="round"/><path d="M52 30 l0 24 l22 -4z" fill="#C79A3B"/></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-arjaa.jpg" alt="أرجع إن لم يُؤذن" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الرجوع</span></div>
       <div class="nm">أرجع إن لم يُؤذن</div>
     </div>
   </div>

@@ -29,6 +29,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:2px 0 12px;paddin
 .card .t{font-weight:700;font-size:14px;color:var(--ink);line-height:1.65}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+.ph{width:100%;height:82px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden;margin:0 auto}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10px;color:#b9ab8c;text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -48,22 +54,22 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:2px 0 12px;paddin
   <h2>بطاقاتُ الآداب — تُقصّ وتُعرض في المجلس</h2>
   <div class="cards">
     <div class="card"><span class="num">١</span>
-      <svg viewBox="0 0 48 48"><path d="M24 8 C30 18 30 26 24 34 C18 26 18 18 24 8 Z" fill="#5b86a8"/><ellipse cx="24" cy="30" rx="7" ry="9" fill="#8fd0c8" opacity=".7"/></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-tahara.jpg" alt="أتطهّرُ قبلَ مجلسِ القرآن" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الطهارة</span></div>
       <div class="t">أتطهّرُ قبلَ مجلسِ القرآن</div></div>
     <div class="card"><span class="num">٢</span>
-      <svg viewBox="0 0 48 48"><rect x="8" y="26" width="32" height="14" rx="7" fill="#8a7bb0"/><rect x="10" y="28" width="28" height="6" rx="3" fill="#a99bd0"/><circle cx="12" cy="33" r="4" fill="#6a5a94"/><circle cx="36" cy="33" r="4" fill="#6a5a94"/></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-julus-adab.jpg" alt="أجلسُ بأدبٍ وسكينة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الجلوس بأدب</span></div>
       <div class="t">أجلسُ بأدبٍ وسكينة</div></div>
     <div class="card"><span class="num">٣</span>
-      <svg viewBox="0 0 48 48"><path d="M24 14 l-14 4 v18 l14 -3 z" fill="#0d6e6e"/><path d="M24 14 l14 4 v18 l-14 -3 z" fill="#12857f"/><line x1="24" y1="14" x2="24" y2="33" stroke="#1F4A39" stroke-width="2"/></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-mushaf.jpg" alt="أمسكُ المصحفَ باحترامٍ وأصونُه" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: المصحف</span></div>
       <div class="t">أمسكُ المصحفَ باحترامٍ وأصونُه</div></div>
     <div class="card"><span class="num">٤</span>
-      <svg viewBox="0 0 48 48"><rect x="12" y="10" width="24" height="28" rx="4" fill="#eef0e0" stroke="#0d6e6e" stroke-width="2"/><g stroke="#c9b98a" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="18" x2="30" y2="18"/><line x1="18" y1="24" x2="30" y2="24"/><line x1="18" y1="30" x2="26" y2="30"/></g></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-insat.jpg" alt="أُنصتُ لمن يرتّلُ ولا أقاطعُه" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الإنصات</span></div>
       <div class="t">أُنصتُ لمن يرتّلُ ولا أقاطعُه</div></div>
     <div class="card"><span class="num">٥</span>
-      <svg viewBox="0 0 48 48"><path d="M24 12 C10 18 10 30 10 36 q14 -6 14 -6 q0 0 14 6 c0 -6 0 -18 -14 -24z" fill="#12857f"/><line x1="24" y1="12" x2="24" y2="30" stroke="#1F4A39" stroke-width="2"/></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-tilawa.jpg" alt="أرتّلُ بصوتٍ هادئٍ جميل" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الترتيل</span></div>
       <div class="t">أرتّلُ بصوتٍ هادئٍ جميل</div></div>
     <div class="card"><span class="num">٦</span>
-      <svg viewBox="0 0 48 48"><rect x="8" y="30" width="32" height="7" rx="2" fill="#C79A3B"/><rect x="14" y="16" width="7" height="14" rx="2" fill="#0d6e6e"/><rect x="23" y="12" width="7" height="18" rx="2" fill="#cf6f5f"/><rect x="31" y="18" width="6" height="12" rx="2" fill="#6a9c78"/></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-mushaf.jpg" alt="أعيدُ المصحفَ إلى مكانِه مرتّبًا" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: المصحف</span></div>
       <div class="t">أعيدُ المصحفَ إلى مكانِه مرتّبًا</div></div>
   </div>
 

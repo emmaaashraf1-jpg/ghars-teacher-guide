@@ -32,6 +32,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 .card .s{font-size:11.5px;color:var(--muted);line-height:1.6}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
+.ph{width:100%;height:82px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden;margin:0 auto}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10px;color:#b9ab8c;text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -72,12 +78,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 <div class="sheet">
   <h2>بطاقاتُ آدابِ مجلس القرآن — تُقصّ وتُعرض</h2>
   <div class="cards">
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M24 8 c-9 0 -13 8 -13 15 0 8 6 13 13 13 s13 -5 13 -13 c0 -7 -4 -15 -13 -15z" fill="none" stroke="#5b86a8" stroke-width="3"/><path d="M14 24 q10 8 20 0" fill="none" stroke="#8fd0c8" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="18" r="3" fill="#8fd0c8"/></svg><div class="t">الطهارةُ والنظافة</div><div class="s">يدايَ نظيفتان</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><rect x="18" y="10" width="12" height="20" rx="6" fill="#6a9c78"/><path d="M14 24 a10 10 0 0 0 20 0" fill="none" stroke="#6a9c78" stroke-width="3"/><line x1="24" y1="34" x2="24" y2="40" stroke="#6a9c78" stroke-width="3"/><path d="M8 18 l-4 -3 M40 18 l4 -3" stroke="#cf6f5f" stroke-width="2.5" stroke-linecap="round"/></svg><div class="t">الإنصاتُ للتلاوة</div><div class="s">أستمع بقلبي</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><rect x="14" y="24" width="20" height="12" rx="3" fill="#8a7bb0"/><rect x="20" y="14" width="8" height="12" rx="3" fill="#a394c9"/><line x1="24" y1="8" x2="24" y2="14" stroke="#6a5a94" stroke-width="3" stroke-linecap="round"/></svg><div class="t">الجلوسُ بأدب</div><div class="s">أجلس معتدلًا</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M24 12 l-14 4 v16 l14 -3 z" fill="#0d6e6e"/><path d="M24 12 l14 4 v16 l-14 -3 z" fill="#12857f"/><line x1="24" y1="12" x2="24" y2="29" stroke="#1F4A39" stroke-width="2.5"/><path d="M18 40 l6 -5 6 5" fill="none" stroke="#C79A3B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="t">صيانةُ المصحف</div><div class="s">أضعه على حامل</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="none" stroke="#8a99a0" stroke-width="3"/><path d="M17 24 q7 6 14 0" fill="none" stroke="#8a99a0" stroke-width="3" stroke-linecap="round"/><line x1="14" y1="14" x2="34" y2="34" stroke="#cf6f5f" stroke-width="3"/></svg><div class="t">تركُ اللغو</div><div class="s">لا أشغل غيري</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M24 40 C10 30 12 18 20 18 c2 0 4 2 4 2 s2 -2 4 -2 c8 0 10 12 -4 22z" fill="#C79A3B"/><path d="M24 12 l1.6 4 4 .6 -3 3 .7 4.2 -3.3 -2 -3.3 2 .7 -4.2 -3 -3 4 -.6z" fill="#e0b354"/></svg><div class="t">تعظيمُ كلام الله</div><div class="s">أُحبّه وأُوقّره</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-tahara.jpg" alt="الطهارةُ والنظافة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الطهارة</span></div><div class="t">الطهارةُ والنظافة</div><div class="s">يدايَ نظيفتان</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-insat.jpg" alt="الإنصاتُ للتلاوة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الإنصات</span></div><div class="t">الإنصاتُ للتلاوة</div><div class="s">أستمع بقلبي</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-julus-adab.jpg" alt="الجلوسُ بأدب" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الجلوس بأدب</span></div><div class="t">الجلوسُ بأدب</div><div class="s">أجلس معتدلًا</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-mushaf.jpg" alt="صيانةُ المصحف" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: المصحف</span></div><div class="t">صيانةُ المصحف</div><div class="s">أضعه على حامل</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-insat.jpg" alt="تركُ اللغو" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الإنصات</span></div><div class="t">تركُ اللغو</div><div class="s">لا أشغل غيري</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-mushaf.jpg" alt="تعظيمُ كلام الله" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: المصحف</span></div><div class="t">تعظيمُ كلام الله</div><div class="s">أُحبّه وأُوقّره</div></div>
   </div>
 
 <div style="background:linear-gradient(135deg,#1F4A39,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:16px 0 6px"><b>الخلاصة:</b> نجعل في مسكننا وقتًا لتلاوة القرآن وتذكّر معانيه، ونجلس لكلام الله بأدبٍ وتعظيم. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>

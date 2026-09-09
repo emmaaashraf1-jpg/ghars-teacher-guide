@@ -38,6 +38,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:2px 0 12px;paddin
 .card .t{font-weight:700;font-size:13.5px;color:var(--ink);line-height:1.5}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
+.ph{width:100%;height:82px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden;margin:0 auto}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10px;color:#b9ab8c;text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -78,12 +84,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:2px 0 12px;paddin
 <div class="sheet">
   <h2>بطاقاتُ أعمالٍ صالحة — تُقصّ وتُلصق في صحيفتي</h2>
   <div class="cards">
-    <div class="card"><svg viewBox="0 0 48 48"><rect x="22" y="8" width="4" height="24" rx="2" fill="#8a6a4a"/><path d="M14 32 h20 l-2 8 h-16 z" fill="#C79A3B"/><g stroke="#8a6a4a" stroke-width="1.4"><line x1="17" y1="34" x2="16" y2="40"/><line x1="24" y1="34" x2="24" y2="40"/><line x1="31" y1="34" x2="32" y2="40"/></g></svg><div class="t">أساعد في ترتيب البيت</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><rect x="10" y="30" width="28" height="8" rx="2" fill="#6a9c78"/><rect x="12" y="20" width="24" height="10" rx="3" fill="#8fbf9a"/><path d="M16 20 l8 -8 8 8z" fill="#0d6e6e"/><rect x="22" y="24" width="4" height="14" fill="#C79A3B"/></svg><div class="t">أحافظ على صلاتي</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><rect x="14" y="10" width="20" height="28" rx="2" fill="#f3ead3" stroke="#C79A3B" stroke-width="2"/><g stroke="#9a7550" stroke-width="2"><line x1="18" y1="18" x2="30" y2="18"/><line x1="18" y1="24" x2="30" y2="24"/><line x1="18" y1="30" x2="26" y2="30"/></g></svg><div class="t">أقول الصدق</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><ellipse cx="24" cy="30" rx="16" ry="7" fill="#e6eef0"/><circle cx="24" cy="26" r="8" fill="#6a9c78"/><circle cx="18" cy="28" r="5" fill="#cf6f5f"/><circle cx="30" cy="29" r="5" fill="#e0b354"/></svg><div class="t">أشارك إخوتي طعامي</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M24 38 C6 24 12 12 20 15 c2 .8 4 3 4 3 s2 -2.2 4 -3 c8 -3 14 9 -4 23z" fill="#cf6f5f"/></svg><div class="t">أبرُّ والديّ وأطيعهما</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><rect x="18" y="30" width="12" height="8" rx="2" fill="#b07d4a"/><rect x="20" y="24" width="8" height="8" rx="2" fill="#8fbf9a"/><path d="M24 24 q-6 -10 0 -14 q6 4 0 14z" fill="#6a9c78"/><line x1="9" y1="18" x2="20" y2="24" stroke="#8fc0d0" stroke-width="2"/></svg><div class="t">أسقي النبات وأرفق بالمخلوقات</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-musaada.jpg" alt="أساعد في ترتيب البيت" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: مساعدة</span></div><div class="t">أساعد في ترتيب البيت</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-salah.jpg" alt="أحافظ على صلاتي" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الصلاة</span></div><div class="t">أحافظ على صلاتي</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-sidq.jpg" alt="أقول الصدق" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الصدق</span></div><div class="t">أقول الصدق</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-musharaka.jpg" alt="أشارك إخوتي طعامي" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: مشاركة</span></div><div class="t">أشارك إخوتي طعامي</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-birr.jpg" alt="أبرُّ والديّ وأطيعهما" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: برّ الوالدين</span></div><div class="t">أبرُّ والديّ وأطيعهما</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-saqy.jpg" alt="أسقي النبات وأرفق بالمخلوقات" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: سقي النبات</span></div><div class="t">أسقي النبات وأرفق بالمخلوقات</div></div>
   </div>
 <div style="background:linear-gradient(135deg,#1F4A39,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:14px 0 6px"><b>الخلاصة:</b> نجعل المسكن موطنًا للطاعة والعمل الصالح؛ وأعمالنا مكتوبةٌ يحفظها الكرام الكاتبون. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>
   <div class="foot">دليل معلمة غرس القيم · نشاط تطبيقي — ركن أقرأ لأتعلم</div>

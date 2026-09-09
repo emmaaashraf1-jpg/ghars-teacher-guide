@@ -39,6 +39,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
 .summary{background:linear-gradient(135deg,#1F4A39,#1E5631);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:16px 0 6px}
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
+.ph{width:100%;height:82px;border-radius:9px;background:#f5f1e8;border:1px solid #e2d7bf;box-shadow:inset 0 0 0 2px #fff;position:relative;overflow:hidden;margin:0 auto}
+.ph .ph-lbl{position:absolute;inset:0;z-index:1;display:none;place-items:center;font-size:10px;color:#b9ab8c;text-align:center;padding:2px}
+.ph.noimg .ph-lbl{display:grid}
+.ph img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;display:block;background:#f5f1e8}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -56,9 +62,9 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   </div>
   <h2>بطاقاتُ تذكيرِ نعمةِ المسكن — تُقصّ ويردّدها الأطفالُ أثناء الأدوار</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="18" ry="8" fill="none" stroke="#C79A3B" stroke-width="3"/><rect x="27" y="22" width="10" height="10" rx="2" fill="none" stroke="#2C6A4D" stroke-width="3"/></svg><div class="t">الحمدُ لله رزقَنا الطعام</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><rect x="16" y="34" width="32" height="18" fill="none" stroke="#2C6A4D" stroke-width="3"/><path d="M16 34 l16 -14 16 14" fill="none" stroke="#1E5631" stroke-width="3" stroke-linejoin="round"/><path d="M32 46 l-4 -4 4 -4 4 4z" fill="none" stroke="#0d6e6e" stroke-width="2.5"/></svg><div class="t">الحمدُ لله نحن آمنون في بيتنا</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 50 c-9 -6 -15 -12 -15 -20 a7.5 7.5 0 0 1 15 -2 a7.5 7.5 0 0 1 15 2 c0 8 -6 14 -15 20z" fill="none" stroke="#cf6f5f" stroke-width="3"/><path d="M26 30 l4 4 8 -8" fill="none" stroke="#1E5631" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="t">الحمدُ لله بصحّةٍ وعافيةٍ نساعدُ عائلتنا</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/felt-family.jpg" alt="الحمدُ لله رزقَنا الطعام" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الحمد</span></div><div class="t">الحمدُ لله رزقَنا الطعام</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/felt-family.jpg" alt="الحمدُ لله نحن آمنون في بيتنا" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الحمد</span></div><div class="t">الحمدُ لله نحن آمنون في بيتنا</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/felt-family.jpg" alt="الحمدُ لله بصحّةٍ وعافيةٍ نساعدُ عائلتنا" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الحمد</span></div><div class="t">الحمدُ لله بصحّةٍ وعافيةٍ نساعدُ عائلتنا</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم الأول — ركن المسكن</div>
 </div>
@@ -69,9 +75,9 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> يبني الطفل مسكنًا بالمكعبات الخشبية بحرّية، ثم <b>يضع بطاقةَ اسمٍ جاهزة</b> على بنائه ويردّد معناها. وتذكّره المعلمةُ <b>شفهيًّا</b> أنّ اللهَ يراه والملائكةَ تكتبُ عملَه — <b>تذكيرًا لا تجسيدًا، صيانةً لهيبة الغيب</b>. (لا تلوين هنا — التلوينُ في ركن فنوني.)</div>
   <h2>بطاقاتٌ تُوضع على البناء</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><rect x="12" y="34" width="40" height="20" rx="2" fill="none" stroke="#2C6A4D" stroke-width="3"/><path d="M12 34 L32 18 L52 34" fill="none" stroke="#1E5631" stroke-width="3" stroke-linejoin="round"/><rect x="28" y="42" width="8" height="12" fill="none" stroke="#0d6e6e" stroke-width="2.5"/></svg><div class="t">بيتي نعمة</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><rect x="16" y="20" width="14" height="14" fill="none" stroke="#C79A3B" stroke-width="3"/><rect x="34" y="20" width="14" height="14" fill="none" stroke="#0d6e6e" stroke-width="3"/><rect x="25" y="36" width="14" height="14" fill="none" stroke="#2C6A4D" stroke-width="3"/></svg><div class="t">أُتقِنُ بنائي</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M22 46 h20 M32 46 v-8" stroke="#2C6A4D" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="26" r="10" fill="none" stroke="#C79A3B" stroke-width="3"/><path d="M27 26 l4 4 6 -7" fill="none" stroke="#1E5631" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="t">أشكرُ ربّي</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/bayt.jpg" alt="بيتي نعمة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: بيت</span></div><div class="t">بيتي نعمة</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/felt-itqan.jpg" alt="أُتقِنُ بنائي" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الإتقان</span></div><div class="t">أُتقِنُ بنائي</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/felt-shukr.jpg" alt="أشكرُ ربّي" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الشكر</span></div><div class="t">أشكرُ ربّي</div></div>
   </div>
   <h2>وأضعُ بطاقةَ اسمِ مالكه</h2>
   <div class="cards">
@@ -100,9 +106,9 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:10px 0 9px;padd
   </div>
   <h2>٢) نِعَمُ بيتي — تُلوَّن وتُقصّ وتُلصق حول البيت</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M8 40 h48 v10 h-48z" fill="none" stroke="#2C6A4D" stroke-width="3"/><path d="M10 40 v-8 a5 5 0 0 1 5 -5 h34 a5 5 0 0 1 5 5 v8" fill="none" stroke="#0d6e6e" stroke-width="3"/><line x1="8" y1="50" x2="8" y2="56" stroke="#2C6A4D" stroke-width="3"/><line x1="56" y1="50" x2="56" y2="56" stroke="#2C6A4D" stroke-width="3"/></svg><div class="t">فِراش</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="20" ry="9" fill="none" stroke="#C79A3B" stroke-width="3"/><path d="M14 38 h36" stroke="#C79A3B" stroke-width="2"/><rect x="27" y="20" width="10" height="10" rx="2" fill="none" stroke="#2C6A4D" stroke-width="3"/></svg><div class="t">طعام</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 48 c-9 -7 -15 -12 -15 -19 a7.5 7.5 0 0 1 15 -2 a7.5 7.5 0 0 1 15 2 c0 7 -6 12 -15 19z" fill="none" stroke="#cf6f5f" stroke-width="3"/><path d="M14 30 l18 -14 18 14" fill="none" stroke="#1E5631" stroke-width="2.5"/></svg><div class="t">أهلي</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/firash.jpg" alt="فِراش" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: فراش</span></div><div class="t">فِراش</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/sahn.jpg" alt="طعام" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: طعام</span></div><div class="t">طعام</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/felt-family.jpg" alt="أهلي" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الأهل</span></div><div class="t">أهلي</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · اليوم الأول — ركن فنوني الجميلة</div>
 </div>
