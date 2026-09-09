@@ -24,7 +24,7 @@ h1,h2,h3,.badge,.plate .val{font-family:var(--fd)}
 .hero .unit-k{font-size:12.5px;letter-spacing:3px;color:var(--gold-d);font-weight:700}
 .hero h1{font-size:34px;color:var(--t1);margin:2px 0 4px;line-height:1.15}
 .hero p{font-size:13px;color:var(--muted);max-width:520px;margin:0 auto}
-.scene{width:100%;max-width:360px;height:auto;display:block;margin:6px auto 0}
+.scene{width:100%;max-width:470px;height:auto;aspect-ratio:2/1;object-fit:cover;display:block;margin:12px auto 2px;border-radius:14px;box-shadow:0 16px 34px -22px rgba(31,74,57,.42);border:1px solid rgba(31,74,57,.10)}
 .body{padding:6px 26px 26px}
 .plate{background:var(--card);border:2px solid var(--gold);border-radius:16px;padding:16px 18px;margin-top:8px;box-shadow:0 4px 14px rgba(217,169,62,.14)}
 .plate .nm{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap}
@@ -69,26 +69,7 @@ tbody tr:nth-child(even){background:#f4f3ea}
     <h1>وحدة الليل والنهار</h1>
     <p>مجموعةُ أعمال الطفل وأوراقه خلال الوحدة — تُجمع هنا لمتابعة تقدّمه، وتُرسل لوليّ الأمر في ختام الوحدة.</p>
     <!-- مشهد الليل والنهار (شمس · هلال · نجوم — بلا ذوات أرواح) -->
-    <svg class="scene" viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="مشهد الليل والنهار">
-      <defs>
-        <linearGradient id="skyLN" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color="#141d4a"/><stop offset="0.5" stop-color="#3a4488"/><stop offset="1" stop-color="#e9d6a6"/>
-        </linearGradient>
-        <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffe9a8"/><stop offset="0.7" stop-color="#D9A93E"/><stop offset="1" stop-color="#D9A93E" stop-opacity="0"/></radialGradient>
-      </defs>
-      <rect x="0" y="0" width="360" height="150" rx="10" fill="url(#skyLN)"/>
-      <!-- نجوم (نقاط، جهة الليل) -->
-      <circle cx="30" cy="30" r="2.4" fill="#f4eccf"/><circle cx="66" cy="52" r="1.8" fill="#f4eccf"/><circle cx="42" cy="72" r="1.6" fill="#f4eccf"/>
-      <circle cx="92" cy="28" r="2" fill="#f4eccf"/><circle cx="120" cy="58" r="1.6" fill="#f4eccf"/><circle cx="150" cy="34" r="1.8" fill="#f4eccf"/>
-      <!-- هلال (جهة الليل) -->
-      <path d="M78 96 a26 26 0 1 1 -0.2 -25 a20 20 0 1 0 0.2 25 z" fill="#f0e4b8"/>
-      <!-- شمس (جهة النهار) -->
-      <circle cx="300" cy="70" r="46" fill="url(#sun)"/>
-      <circle cx="300" cy="70" r="24" fill="#F2C75B" stroke="#D9A93E" stroke-width="2"/>
-      <!-- الأفق -->
-      <path d="M0 122 h360" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
-      <path d="M0 122 q90 -16 180 0 t180 0 V150 H0 Z" fill="#2a336e" opacity=".55"/>
-    </svg>
+    <img class="scene" src="units-art/unit-layl-nahar.jpg?v=13" alt="وحدة الليل والنهار" loading="lazy">
   </div>
 
   <div class="body">

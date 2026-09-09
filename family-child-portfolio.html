@@ -24,7 +24,7 @@ h1,h2,h3,.badge,.plate .val{font-family:var(--fd)}
 .hero .unit-k{font-size:12.5px;letter-spacing:3px;color:var(--gold-d);font-weight:700}
 .hero h1{font-size:34px;color:var(--t1);margin:2px 0 4px;line-height:1.15}
 .hero p{font-size:13px;color:var(--muted);max-width:520px;margin:0 auto}
-.scene{width:100%;max-width:340px;height:auto;display:block;margin:6px auto 0}
+.scene{width:100%;max-width:470px;height:auto;aspect-ratio:2/1;object-fit:cover;display:block;margin:12px auto 2px;border-radius:14px;box-shadow:0 16px 34px -22px rgba(31,74,57,.42);border:1px solid rgba(31,74,57,.10)}
 .body{padding:6px 26px 26px}
 .plate{background:var(--card);border:2px solid var(--gold);border-radius:16px;padding:16px 18px;margin-top:8px;box-shadow:0 4px 14px rgba(199,154,59,.12)}
 .plate .nm{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap}
@@ -69,24 +69,7 @@ tbody tr:nth-child(even){background:#f6f4e6}
     <h1>وحدة العائلة</h1>
     <p>مجموعةُ أعمال الطفل وأوراقه خلال الوحدة — تُجمع هنا لمتابعة تقدّمه، وتُرسل لوليّ الأمر في ختام الوحدة.</p>
     <!-- شجرة العائلة (بلا ذوات أرواح) -->
-    <svg class="scene" viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="شجرة العائلة">
-      <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef6ef"/><stop offset="1" stop-color="#f8f6ea"/></linearGradient>
-        <radialGradient id="leaf" cx="0.4" cy="0.35" r="0.8"><stop offset="0" stop-color="#4fa06a"/><stop offset="1" stop-color="#1E5631"/></radialGradient>
-      </defs>
-      <rect x="0" y="0" width="340" height="150" fill="url(#sky)"/>
-      <line x1="0" y1="132" x2="340" y2="132" stroke="#cbd0b3" stroke-width="2"/>
-      <!-- الجذع والأغصان -->
-      <path d="M164 132 L164 78 M176 132 L176 78" stroke="#6B3F22" stroke-width="9" fill="none" stroke-linecap="round"/>
-      <path d="M170 96 L146 80 M170 90 L196 74" stroke="#6B3F22" stroke-width="6" fill="none" stroke-linecap="round"/>
-      <!-- الأوراق -->
-      <circle cx="170" cy="64" r="40" fill="url(#leaf)"/>
-      <circle cx="132" cy="80" r="24" fill="url(#leaf)"/>
-      <circle cx="208" cy="80" r="24" fill="url(#leaf)"/>
-      <!-- قلب المحبة + ثمار -->
-      <path d="M170 60 c -7 -12 -24 -7 -24 5 c 0 10 15 17 24 24 c 9 -7 24 -14 24 -24 c 0 -12 -17 -17 -24 -5 z" fill="#F8F6EA" opacity=".92"/>
-      <circle cx="146" cy="58" r="4" fill="#C79A3B"/><circle cx="196" cy="58" r="4" fill="#C79A3B"/><circle cx="170" cy="98" r="4" fill="#C79A3B"/>
-    </svg>
+    <img class="scene" src="units-art/unit-family.jpg?v=13" alt="وحدة العائلة" loading="lazy">
   </div>
 
   <div class="body">
