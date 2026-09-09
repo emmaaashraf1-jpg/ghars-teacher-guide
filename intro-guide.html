@@ -4430,6 +4430,9 @@ td,th,dd,dt{font-size:14.5px!important}
 #book #rules .grow-card{display:flex!important;flex-direction:column!important}
 /* تعميم المحاذاة (stretch) على كلّ شبكات البطاقات القياسيّة عبر التبويبات — ضمانُ تساوي البطاقات وتحاذيها في كلّ صفّ (يُستثنى signal-material-grid عمدًا: تفاوتُ الآيات فيه شديد فيُبقى على «هضم المحتوى» تفاديًا للفراغات الكبيرة) */
 #book .page :is(.gp-effects,.centers-brief-grid,.fitness-purpose-grid,.signal-flow-grid,.corner-principles,.song-grid,.assessment-loop,.parent-assessment-grid,.family-grid,.unit-integration,.support-band,.harm-grid,.dl-grid,.pn-grid,.grow-grid){align-items:stretch!important}
-</style>
+/* إصلاح رؤية العناوين: (١) «المخطط الدراسي» — عناوين بطاقات الآداب على شريطٍ غابيّ داكن كانت بخطٍّ غابيّ (مخفيّة) ← أبيض */
+#book #annual-plan .adab-term-card > b{color:#fff!important}
+/* (٢) «المكوّنات» الشريط الجانبيّ — شارة «؟» الذهبيّة كانت تغطّي بداية العنوان (padding 18 < شارة 34) ← تُخفى فيتّضح النصّ */
+#book #components .refs-helper-card::before,#book #components .refs-helper-card::after{display:none!important}
 
 </body></html>
