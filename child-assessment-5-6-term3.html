@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>سجلّ قياس مهارات الطفل ٥–٦ · الفصل الدراسيّ الثالث — غرس القيم</title>
+<style>
+:root{--forest:#1F4A39;--forest2:#2C6A4D;--teal:#0E6E6B;--gold:#C79A3B;--ochre:#8a5d12;--ivory:#FBF9F2;--cream:#F4EDDE;--warm:#F6F1E4;--line:#E9E1D2;--line2:#F0E9DB;--ink:#26302B;--gray:#6C776F;--display:'AlAwwal','Amiri',serif;--body:'Noto Naskh Arabic','Segoe UI',Tahoma,sans-serif;}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);color:var(--ink);background:var(--warm);direction:rtl;line-height:1.7;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.toolbar{position:sticky;top:0;z-index:9;display:flex;gap:10px;justify-content:center;align-items:center;padding:12px;background:rgba(31,74,57,.96);color:#fff;font-family:var(--display);box-shadow:0 6px 18px -10px rgba(0,0,0,.4)}
+.toolbar b{font-size:15px}
+.toolbar button{font-family:var(--display);font-weight:700;font-size:14px;background:var(--gold);color:#3a2a06;border:0;border-radius:999px;padding:8px 20px;cursor:pointer}
+.toolbar button:hover{background:#d8ab4a}
+.wrap{max-width:820px;margin:22px auto;padding:0 14px}
+.sheet{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 50px -34px rgba(31,74,57,.4);padding:clamp(20px,3.4vw,34px);margin:0 auto 26px}
+/* masthead */
+.masthead{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:16px;border-bottom:2px solid var(--forest);margin-bottom:18px}
+.mast-brand{display:flex;align-items:center;gap:12px}
+.mast-brand img{width:52px;height:52px;border-radius:50%;background:#fff;padding:3px;box-shadow:0 3px 10px rgba(31,74,57,.14)}
+.mast-brand b{font-family:var(--display);font-size:18px;color:var(--forest);display:block;line-height:1.2}
+.mast-brand span{font-size:11.5px;color:var(--gray)}
+.mast-title{text-align:left}
+.mast-eyebrow{font-family:var(--display);font-weight:700;font-size:12px;color:var(--ochre);letter-spacing:.02em;display:block}
+.mast-title h1{font-family:var(--display);font-weight:700;font-size:clamp(22px,3vw,30px);color:var(--forest);line-height:1.15;margin-top:3px}
+/* pupil fields */
+.pupil{display:grid;grid-template-columns:1.4fr 1.4fr .8fr;gap:14px;margin-bottom:16px}
+.pupil label{font-family:var(--display);font-weight:700;font-size:13px;color:var(--forest);display:flex;flex-direction:column;gap:7px}
+.pupil label i{display:block;height:1px;border-bottom:1.5px dotted #b9ad8f;margin-top:auto}
+/* legend */
+.legend{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--warm);border:1px solid var(--line);border-radius:10px;padding:9px 14px;margin-bottom:18px}
+.legend .leg-t{font-family:var(--display);font-weight:700;color:var(--forest);font-size:13px}
+.legend em{font-style:normal;font-weight:700;font-size:12px;padding:3px 12px;border-radius:999px;color:#fff}
+.legend .l-1{background:var(--forest2)}.legend .l-2{background:var(--gold);color:#3a2a06}.legend .l-3{background:#b06a4e}
+.legend .leg-note{font-size:11.5px;color:var(--gray);margin-inline-start:auto}
+/* grid tables */
+.grid{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:14px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.grid thead th{background:linear-gradient(180deg,var(--forest2),var(--forest));color:#fff;font-family:var(--display);font-weight:700;padding:9px 12px;font-size:13.5px;text-align:center}
+.grid thead .th-dom{text-align:start;font-size:15px;letter-spacing:.01em}
+.grid .dom-n{display:inline-block;font-size:11px;color:var(--gold);border:1px solid rgba(255,255,255,.35);border-radius:6px;padding:1px 6px;margin-inline-end:9px;vertical-align:middle}
+.grid .th-r{width:74px}
+.grid tbody td{border-bottom:1px solid var(--line2);padding:7px 12px;font-size:12.7px;vertical-align:middle}
+.grid tbody tr:last-child td{border-bottom:0}
+.grid tbody tr:nth-child(even){background:#FBF9F2}
+.grid .c-ind{color:#33403a;line-height:1.55}
+.grid .c-r{text-align:center;border-inline-start:1px solid var(--line2)}
+.grid .c-r i{display:inline-block;width:16px;height:16px;border:1.4px solid #c7bfa8;border-radius:4px}
+/* recommendations + signatures */
+.reco{margin-top:18px;border:1px solid var(--line);border-radius:12px;padding:12px 14px 14px;background:var(--warm)}
+.reco-h{font-family:var(--display);font-weight:700;color:var(--forest);font-size:14px;display:inline-flex;align-items:center;gap:8px}
+.reco-h::before{content:"";width:16px;height:2px;background:var(--gold);border-radius:2px}
+.reco-lines{margin-top:10px;height:74px;background:repeating-linear-gradient(180deg,transparent 0,transparent 23px,#d9cfb8 23px,#d9cfb8 24px)}
+.signs{display:flex;gap:40px;margin-top:22px;padding-top:6px}
+.sign{flex:1;text-align:center}
+.sign i{display:block;border-bottom:1.5px dotted #b9ad8f;height:30px;margin-bottom:6px}
+.sign span{font-family:var(--display);font-weight:700;font-size:12.5px;color:var(--forest)}
+.sheet-foot{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:10px;border-top:1px solid var(--line);font-size:11px;color:var(--gray)}
+.sheet-foot b{font-family:var(--display);color:var(--forest2)}
+@media print{
+  body{background:#fff}
+  .toolbar{display:none}
+  .wrap{margin:0;max-width:none;padding:0}
+  .sheet{box-shadow:none;border:0;border-radius:0;margin:0;padding:12mm 12mm 10mm;page-break-after:always}
+  .sheet:last-child{page-break-after:auto}
+  .grid,.reco,.signs{page-break-inside:avoid}
+  @page{size:A4;margin:0}
+}
+@media(max-width:640px){.pupil{grid-template-columns:1fr}.mast-title{text-align:start}.signs{flex-direction:column;gap:18px}}
+
+</style>
+</head>
+<body>
+<div class="toolbar"><b>سجلّ قياس مهارات الطفل · ٥–٦ سنوات · الفصل الدراسيّ الثالث</b><button onclick="window.print()">طباعة / حفظ PDF</button></div>
+<div class="wrap">
+<section class="sheet">
+<header class="masthead">
+  <div class="mast-brand"><img src="brand/logo-ghars.webp" alt="غرس القيم"><div><b>نادي غرس القيم للطفولة</b><span>المرحلة التمهيديّة · ٥–٦ سنوات</span></div></div>
+  <div class="mast-title"><span class="mast-eyebrow">سجلّ قياس مهارات الطفل</span><h1>الفصل الدراسيّ الثالث</h1></div>
+</header>
+<div class="pupil">
+  <label>اسم الطفل / الطفلة<i></i></label>
+  <label>مقدّمة الرعاية<i></i></label>
+  <label class="pupil-sm">التاريخ<i></i></label>
+</div>
+<div class="legend"><span class="leg-t">مفتاح التقويم</span><em class="l-1">دائمًا</em><em class="l-2">أحيانًا</em><em class="l-3">إطلاقًا</em><span class="leg-note">ضعي علامة (✓) عند التقدير المناسب لكلّ مؤشّر.</span></div>
+<table class="grid">
+<thead><tr><th class="th-dom"><span class="dom-n">٠١</span>المجال المعرفيّ</th><th class="th-r">دائمًا</th><th class="th-r">أحيانًا</th><th class="th-r">إطلاقًا</th></tr></thead>
+<tbody>
+<tr><td class="c-ind">يردّد مع المعلّمة (القرآن – الأذكار – الأحاديث – المنظومة)</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يحفظ مع المعلّمة (القرآن)</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يذكر اسمًا من أسماء الله الحسنى التي تعلّمها</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">القدرة على التحدّث عن أعمالٍ قام بها أو شاهدها</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يذكر المفاهيم الأساسيّة عن دينه وخالقه</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يربط بين الكلمة والمفهوم</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+</tbody></table>
+<table class="grid">
+<thead><tr><th class="th-dom"><span class="dom-n">٠٢</span>المجال اللغويّ</th><th class="th-r">دائمًا</th><th class="th-r">أحيانًا</th><th class="th-r">إطلاقًا</th></tr></thead>
+<tbody>
+<tr><td class="c-ind">مخارج حروفه سليمة</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يتحدّث بطلاقة</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يعبّر عن نفسه بكلماتٍ وجملٍ واضحة</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يجيد استخدام الكلمات في أماكنها</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يسأل ويجيب على الأسئلة البسيطة بجملةٍ كاملة</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يستخدم الجمع والمفرد بطريقةٍ صحيحة</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يتعرّف ويسمّي اسم الحرف</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يتتبّع بإصبعه على الحرف بطريقةٍ صحيحة</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يربط بين شكل الحرف وصوته</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يميّز أشكال الأحرف في مواقعها المختلفة</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يكتب الأحرف بطريقةٍ صحيحة</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">ينسخ الأحرف بطريقةٍ صحيحة</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يكتب الأعداد بطريقةٍ صحيحة</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">ينسخ الأعداد بطريقةٍ صحيحة</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يتهجّى كلماتٍ (بالحركات الثلاثة، السكون، التنوين، الشدّة)</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+</tbody></table>
+<table class="grid">
+<thead><tr><th class="th-dom"><span class="dom-n">٠٣</span>المجال الحركيّ</th><th class="th-r">دائمًا</th><th class="th-r">أحيانًا</th><th class="th-r">إطلاقًا</th></tr></thead>
+<tbody>
+<tr><td class="c-ind">يستطيع القفز</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">ينزل الدرج بتتالي القدمين</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يصعد الدرج بتتالي القدمين</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يستطيع التوازن والدوران</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يمسك القلم بطريقةٍ صحيحة</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">الجري باعتدالٍ بما يناسب عمره</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يجيد التسلّق بين الألعاب</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+</tbody></table>
+<table class="grid">
+<thead><tr><th class="th-dom"><span class="dom-n">٠٤</span>المجال الاجتماعيّ</th><th class="th-r">دائمًا</th><th class="th-r">أحيانًا</th><th class="th-r">إطلاقًا</th></tr></thead>
+<tbody>
+<tr><td class="c-ind">يعبّر عن مشاعره بوضوح</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يتشارك مع أقرانه اللعب</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يُصغي للغير</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يتحاور مع أقرانه</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يُظهر استقلالًا وتوجيهًا لنفسه (يُنهي الأنشطة المختارة دون مساعدةٍ من الآخرين)</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يستخدم آداب الكلام (شكرًا، من فضلك..)</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">المواظبة على الحضور</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يستخدم مهارات الاعتماد على النفس (تناول الطعام – دخول الحمّام – ربط الحذاء)</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">الصحّة العامّة وتناول الوجبة</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">الاهتمام بالنظافة والمظهر العامّ</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يستجيب لتوجيهات المعلّمة</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يذكر المعلومات الأساسيّة عن نفسه</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يشارك ويتفاعل في الصفّ</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يضبط انفعالاته</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يتعامل برفقٍ مع أقرانه</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يبدي رغبةً وقابليّةً للتعلّم</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">مدى الالتزام بالقوانين</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+</tbody></table>
+<table class="grid">
+<thead><tr><th class="th-dom"><span class="dom-n">٠٥</span>المجال الإدراكيّ</th><th class="th-r">دائمًا</th><th class="th-r">أحيانًا</th><th class="th-r">إطلاقًا</th></tr></thead>
+<tbody>
+<tr><td class="c-ind">القدرة على التركيز والإنصات لمدةٍ تتناسب مع عمره</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">القدرة على ملاحظة عنصرٍ أو أكثر</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">القدرة على إيجاد حلولٍ لمشكلةٍ ما</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">القدرة على التصنيف حسب صفةٍ أو أكثر</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">القدرة على المقارنة بالتشابه والاختلاف حسب صفتين أو أكثر (الشكل، اللون، الوزن)</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">معرفة العلاقات الزمنيّة (صباحًا، ظهرًا، قبل، بعد، غدًا..)</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يرتّب الأشياء بتسلسلٍ واحد (اللون – الحجم – الشكل)</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">معرفة العلاقات المكانيّة (أمام، خلف، فوق، تحت، قريب، بعيد..)</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">القدرة على التذكّر (أحداث – أشياء ..)</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يربط بين العدد والمعدود</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يتحكّم بالأشياء بيديه مستخدمًا تآزر حركة اليد والعين (القصّ – اللصق – العجن – الفرد)</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يعدّ من (١) – (٣٠)</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+<tr><td class="c-ind">يجمع ويطرح الأعداد ١–١٠</td><td class="c-r"><i></i></td><td class="c-r"><i></i></td><td class="c-r"><i></i></td></tr>
+</tbody></table>
+<div class="reco"><span class="reco-h">التوصيات والملاحظات</span><div class="reco-lines"></div></div>
+<div class="signs"><div class="sign"><i></i><span>توقيع المعلّمة</span></div><div class="sign"><i></i><span>توقيع المديرة</span></div></div>
+<footer class="sheet-foot"><span>نادي غرس القيم للطفولة</span><b>سجلّ قياس المهارات · الفصل الدراسيّ الثالث</b></footer>
+</section>
+
+</div>
+</body>
+</html>
