@@ -505,17 +505,24 @@ html.hasjs:not(.gq-ready) #u-days{visibility:hidden}
     .wt-img{flex:0 0 235px;max-width:235px;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(20,60,40,.2);align-self:stretch}
     .wt-img img{width:100%;height:100%;object-fit:cover;display:block;min-height:360px}
     .wt-ladder{flex:1 1 330px;display:flex;flex-direction:column;gap:9px;justify-content:space-between}
-    .wt-tier{border-radius:12px;padding:10px 14px;color:#fff;box-shadow:0 4px 11px rgba(20,60,40,.14)}
-    .wt-tier .wt-cap{font-size:11px;font-weight:700;opacity:.9;letter-spacing:.3px}
-    .wt-tier .wt-body{font-size:13.5px;font-weight:700;line-height:1.85;margin-top:2px}
-    .wt-tier.top{background:linear-gradient(120deg,#C79A3B,#b0842c)}
-    .wt-tier.mid{background:linear-gradient(120deg,#2C6A4D,#1E5631)}
-    .wt-tier.trunk{background:linear-gradient(120deg,#8A6D2B,#6b5326)}
-    .wt-tier.roots{background:#eef4ec;color:#1F4A39;box-shadow:none;border:1px dashed #b9cdba}
-    .wt-rootrow{display:flex;flex-wrap:wrap;gap:7px;margin-top:7px}
-    .wt-rootrow b{flex:1 1 28%;background:var(--rc);color:#fff;border-radius:9px 9px 4px 4px;padding:7px 8px;text-align:center;font-size:13px;font-weight:800}
-    .wt-rootrow b small{display:block;font-size:10px;font-weight:600;opacity:.92;margin-top:1px}
-    .wt-blight{display:inline-block;margin-top:8px;background:#f5f2ee;border:1px dashed #b9b0a2;border-radius:20px;padding:4px 13px;font-size:11.5px;font-weight:700;color:#6C776F}
+    .wt-tier{border-radius:12px;padding:11px 15px;border:1px solid transparent}
+    .wt-tier .wt-cap{font-size:11px;font-weight:800;letter-spacing:.2px;margin-bottom:3px}
+    .wt-tier .wt-body{font-size:12.8px;font-weight:600;line-height:1.95}
+    .wt-tier .wt-body b{font-weight:800}
+    .wt-tier.top{background:#faf4e6;border-color:#ecdcae;color:#7a5a12}
+    .wt-tier.top .wt-cap{color:#a07d22}
+    .wt-tier.mid{background:#eef5ea;border-color:#d3e6cf;color:#274b38}
+    .wt-tier.mid .wt-cap{color:#2C6A4D}
+    .wt-tier.mid .wt-body b{color:#1E5631}
+    .wt-tier.trunk{background:#f3edde;border-color:#e3d6b3;color:#665020}
+    .wt-tier.trunk .wt-cap{color:#8A6D2B}
+    .wt-tier.trunk .wt-body b{color:#6b5326}
+    .wt-tier.roots{background:#eef4ec;border-color:#d6e5d4;color:#1F4A39}
+    .wt-tier.roots .wt-cap{color:#5f7360}
+    .wt-rootrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .wt-rootrow b{flex:1 1 28%;background:#fff;border:1px solid #e6efe3;border-top:3px solid var(--rc);border-radius:8px;padding:8px;text-align:center;font-size:12.8px;font-weight:800;color:var(--rc)}
+    .wt-rootrow b small{display:block;font-size:10px;font-weight:600;color:#6C776F;margin-top:2px}
+    .wt-blight{display:inline-block;margin-top:9px;background:#f4f1ec;border:1px dashed #c3bbad;border-radius:20px;padding:4px 13px;font-size:11.5px;font-weight:700;color:#7a7266}
     .wsys-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.07);font-size:13px}
     .wsys-table th{background:#1E5631;color:#fff;font-weight:700;padding:10px 12px;text-align:center;font-size:13px}
     .wsys-table td{padding:11px 13px;border-bottom:1px solid #eef1ec;vertical-align:middle;line-height:1.85}
@@ -533,14 +540,14 @@ html.hasjs:not(.gq-ready) #u-days{visibility:hidden}
     <div class="wsys-tree">
       <div class="wt-img"><img src="assets/manzooma-tree.jpg" alt="شجرةُ منظومة الوحي الراسخة" loading="lazy"/></div>
       <div class="wt-ladder">
-        <div class="wt-tier top"><div class="wt-cap">🌿 الثمرةُ العليا · الغايةُ والثمرة</div><div class="wt-body">🌟 الغاية: معرفةُ الله وعبادتُه · الدار الآخرة &nbsp;•&nbsp; 💚 الثمرة: «يزدادُ إيماني» — حلاوةُ الإيمان</div><span class="wt-blight">🕳️ العدوّ: الغفلةُ والإعراضُ عن آيات الله</span></div>
-        <div class="wt-tier mid"><div class="wt-cap">🍃 الأغصانُ والثمار · المعارفُ المندرجة في الدروس</div><div class="wt-body">أسماء الله · التفكّر في المخلوقات · سورة النبأ · شكر النعم · حديث «احفظ الله يحفظك» · أدب اللباس · الاقتداء بالنبيّ ﷺ</div></div>
-        <div class="wt-tier trunk"><div class="wt-cap">🪵 الساق · القيمُ المتولّدة</div><div class="wt-body">تعظيمُ الله · تعظيمُ القرآن وتوقيرُ النبي · التسليمُ والإحسان</div></div>
-        <div class="wt-tier roots"><div class="wt-cap" style="color:#6b7a68">🌱 الجذورُ الراسخة · أركانُ المنظومة</div>
+        <div class="wt-tier top"><div class="wt-cap">🌿 الثمرةُ العليا · الغايةُ والثمرة</div><div class="wt-body"><b>الغاية:</b> أن يعرف الطفلُ اللهَ فيوحّدَه ويعبدَه وحده؛ والدارُ الآخرة هي المآلُ الحقّ لا الدنيا. &nbsp;•&nbsp; <b>الثمرة:</b> ازديادُ الإيمان بالتفكّر «يزدادُ إيماني» — حلاوةُ الإيمان وسموُّ الوجدان.</div><span class="wt-blight">🕳️ العدوّ: الغفلةُ ونسبةُ الخلق للطبيعة أو الصدفة — وتأليهُ العقل والمادّة (منظومةُ الشيطان)</span></div>
+        <div class="wt-tier mid"><div class="wt-cap">🍃 الأغصانُ والثمار · المعارفُ المندرجة في دروس الوحدة</div><div class="wt-body">أنّ <b>اللهَ خلقَ الإنسانَ</b> وأطوارَه وكرّمه بالعلم والحواسّ — لا الطبيعةَ ولا الصدفة · <b>التفكّرُ في المخلوقات</b> (النبات·النحل·النمل·البحر·الخيل·الإبل) برهانٌ على عظمة الخالق · اسمُ الله (<b>الرب·الصمد·الهادي</b>) · تدبّرُ <b>سورة النبأ</b> · حديثُ «احفظ الله يحفظك».</div></div>
+        <div class="wt-tier trunk"><div class="wt-cap">🪵 الساق · القيمُ المتولّدةُ من الأركان</div><div class="wt-body"><b>تعظيمُ الله</b> الخالق ومحبّتُه وشكرُه · <b>تعظيمُ القرآن</b> وتوقيرُ النبيّ ﷺ · <b>التسليمُ والإحسان</b> عبادةً لله ومعاملةً لخلقه.</div></div>
+        <div class="wt-tier roots"><div class="wt-cap">🌱 الجذورُ الراسخة · أركانُ العقيدة الصحيحة</div>
           <div class="wt-rootrow">
-            <b style="--rc:#1E5631">الإله<small>توحيدٌ ومحبّة</small></b>
-            <b style="--rc:#0E6E6B">الوحي<small>المرجع والمصدر</small></b>
-            <b style="--rc:#8A6D2B">الفعل<small>عبوديّةٌ وسلوك</small></b>
+            <b style="--rc:#1E5631">الإله<small>اللهُ وحده الخالقُ المعبود</small></b>
+            <b style="--rc:#0E6E6B">الوحي<small>الكتابُ والسنّة مصدرُ التلقّي</small></b>
+            <b style="--rc:#8A6D2B">الفعل<small>عبوديّةٌ اختياريّةٌ لله</small></b>
           </div>
         </div>
       </div>
