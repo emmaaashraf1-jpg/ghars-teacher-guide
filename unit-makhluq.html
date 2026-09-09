@@ -501,28 +501,19 @@ html.hasjs:not(.gq-ready) #u-days{visibility:hidden}
     <p class="u-note" style="border-inline-start-color:#1E5631">قراءةٌ تربويّةٌ شرعيّةٌ لمحتوى الوحدة على أركان <b>منظومة الوحي الثلاثة</b>: كيف يتولّد من كلّ ركنٍ <b>قيمةٌ</b> مستهدفة، وتندرج تحتها <b>معارفُ</b> مستخرَجةٌ من دروس الوحدة نفسِها، وتحفُّها <b>المفاهيمُ الكبرى</b> (الغاية · الثمرة · العدوّ). فالبناءُ متكاملٌ كالشجرة: جذورٌ راسخةٌ، فساقٌ من القيم، فثمارٌ من المعارف، وغايةٌ يُطلبها.</p>
 
     <style>
-    .wsys-tree{display:flex;flex-wrap:wrap;gap:16px;align-items:stretch;background:linear-gradient(180deg,#f3f8f2,#eef4ec);border:1px solid #dbe7dc;border-radius:18px;padding:16px;margin:6px 0 16px}
-    .wt-img{flex:0 0 235px;max-width:235px;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(20,60,40,.2);align-self:stretch}
+    .wsys-tree{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;background:#f8faf6;border:1px solid var(--line);border-radius:16px;padding:14px;margin:6px 0 16px}
+    .wt-img{flex:0 0 235px;max-width:235px;border-radius:15px;overflow:hidden;box-shadow:var(--shadow-sm);align-self:stretch}
     .wt-img img{width:100%;height:100%;object-fit:cover;display:block;min-height:360px}
-    .wt-ladder{flex:1 1 330px;display:flex;flex-direction:column;gap:9px;justify-content:space-between}
-    .wt-tier{border-radius:12px;padding:11px 15px;border:1px solid transparent}
-    .wt-tier .wt-cap{font-size:11px;font-weight:800;letter-spacing:.2px;margin-bottom:3px}
-    .wt-tier .wt-body{font-size:12.8px;font-weight:600;line-height:1.95}
-    .wt-tier .wt-body b{font-weight:800}
-    .wt-tier.top{background:#faf4e6;border-color:#ecdcae;color:#7a5a12}
-    .wt-tier.top .wt-cap{color:#a07d22}
-    .wt-tier.mid{background:#eef5ea;border-color:#d3e6cf;color:#274b38}
-    .wt-tier.mid .wt-cap{color:#2C6A4D}
-    .wt-tier.mid .wt-body b{color:#1E5631}
-    .wt-tier.trunk{background:#f3edde;border-color:#e3d6b3;color:#665020}
-    .wt-tier.trunk .wt-cap{color:#8A6D2B}
-    .wt-tier.trunk .wt-body b{color:#6b5326}
-    .wt-tier.roots{background:#eef4ec;border-color:#d6e5d4;color:#1F4A39}
-    .wt-tier.roots .wt-cap{color:#5f7360}
+    .wt-ladder{flex:1 1 330px;display:flex;flex-direction:column;gap:11px;justify-content:space-between}
+    .wt-tier{background:var(--card);border:1px solid var(--line);border-inline-start:5px solid var(--tc,var(--t2));border-radius:14px;padding:12px 16px;box-shadow:var(--shadow-sm)}
+    .wt-tier .wt-cap{font-family:var(--fd);font-size:14.5px;font-weight:700;color:var(--tc,var(--t1));margin-bottom:5px}
+    .wt-tier .wt-body{font-size:13px;color:#41493f;line-height:1.9}
+    .wt-tier .wt-body b{color:var(--tc,var(--t1));font-weight:700}
+    .wt-tier.top{--tc:#B0842C}.wt-tier.mid{--tc:#1E5631}.wt-tier.trunk{--tc:#8A6D2B}.wt-tier.roots{--tc:#2C6A4D}
     .wt-rootrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-    .wt-rootrow b{flex:1 1 28%;background:#fff;border:1px solid #e6efe3;border-top:3px solid var(--rc);border-radius:8px;padding:8px;text-align:center;font-size:12.8px;font-weight:800;color:var(--rc)}
-    .wt-rootrow b small{display:block;font-size:10px;font-weight:600;color:#6C776F;margin-top:2px}
-    .wt-blight{display:inline-block;margin-top:9px;background:#f4f1ec;border:1px dashed #c3bbad;border-radius:20px;padding:4px 13px;font-size:11.5px;font-weight:700;color:#7a7266}
+    .wt-rootrow b{flex:1 1 28%;background:var(--card);border:1px solid var(--line);border-inline-start:4px solid var(--rc);border-radius:11px;padding:8px 11px;text-align:start;font-size:13px;font-weight:700;color:var(--rc)}
+    .wt-rootrow b small{display:block;font-size:10.5px;font-weight:600;color:var(--muted,#6C776F);margin-top:2px}
+    .wt-blight{display:block;margin-top:9px;background:var(--card);border:1px solid var(--line);border-inline-start:4px solid #9aa39a;border-radius:11px;padding:8px 12px;font-size:12px;font-weight:600;color:#6C776F}
     .wsys-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.07);font-size:13px}
     .wsys-table th{background:#1E5631;color:#fff;font-weight:700;padding:10px 12px;text-align:center;font-size:13px}
     .wsys-table td{padding:11px 13px;border-bottom:1px solid #eef1ec;vertical-align:middle;line-height:1.85}
