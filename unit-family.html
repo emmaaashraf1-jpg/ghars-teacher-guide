@@ -863,18 +863,48 @@ html.hasjs:not(.gq-ready) #u-days{visibility:hidden}
 
 <h3 class="u-h3">الأساس الفلسفي: منظومة الوحي مقابل منظومة الشيطان</h3>
     <div class="u-note"><b>الأساس الفلسفي للمنهج:</b> يقوم منهج غرس القيم على <b>منظومة الوحي</b> بوصفها المرجع الأعلى في بناء الإنسان وتنمية وجدانه. وفي المقابل تتبنّى المناهج الإنسانية والعلمانية <b>منظومة الشيطان</b> التي تتمحور حول الإنسان والعقل المجرّد، فتغدو الحرية هي القيمة المطلقة والمتعة هي الغاية. والمنهج لا يرفض العلم الأكاديمي بل يُعيد ربطه بالوحي ليكون العلم خادمًا للإنسان في طريق عبوديته لله؛ فللعلم بوصلة، وللإنسان غاية.</div>
-    <div style="overflow-x:auto">
-    <table class="msys-table">
-      <thead><tr><th class="dim">البُعد</th><th class="wahy">🌙 منظومة الوحي</th><th class="shaytan">⚠️ منظومة الشيطان</th></tr></thead>
-      <tbody>
-        <tr><td class="dim">الإله</td><td class="wahy"><span class="ic">🕌</span><span class="lb">الله</span><span class="sub">الخالق الواحد القهار</span></td><td class="shaytan"><span class="ic">👤</span><span class="lb">الإنسان</span><span class="sub">محور الكون ومقياسه</span></td></tr>
-        <tr><td class="dim">المرجع</td><td class="wahy"><span class="ic">📖</span><span class="lb">الوحي</span><span class="sub">قرآن كريم وسنة نبوية</span></td><td class="shaytan"><span class="ic">🧠</span><span class="lb">العقل</span><span class="sub">العقل المجرّد والمادة</span></td></tr>
-        <tr><td class="dim">القيمة</td><td class="wahy"><span class="ic">☝️</span><span class="lb">التوحيد</span><span class="sub">القيمة المحورية</span></td><td class="shaytan"><span class="ic">🔓</span><span class="lb">الحرية</span><span class="sub">الحرية المطلقة كغاية</span></td></tr>
-        <tr><td class="dim">الفعل</td><td class="wahy"><span class="ic">🤲</span><span class="lb">التسليم</span><span class="sub">العبودية الاختيارية لله</span></td><td class="shaytan"><span class="ic">⚡</span><span class="lb">الطغيان</span><span class="sub">اتباع الهوى والنفس</span></td></tr>
-        <tr><td class="dim">الغاية</td><td class="wahy"><span class="ic">🌟</span><span class="lb">الدار الآخرة</span><span class="sub">الغاية الحقيقية للوجود</span></td><td class="shaytan"><span class="ic">💰</span><span class="lb">الدار الدنيا</span><span class="sub">الدنيا نهاية المطاف</span></td></tr>
-        <tr><td class="dim">الثمرة</td><td class="wahy"><span class="ic">💚</span><span class="lb">حلاوة الإيمان</span><span class="sub">سموّ السلوك واتزان الشخصية</span></td><td class="shaytan"><span class="ic">🕳️</span><span class="lb">المتعة واللذة</span><span class="sub">فراغ الروح وفقدان المعنى</span></td></tr>
-      </tbody>
-    </table>
+    <style>
+    .wsys2{background:linear-gradient(180deg,#f6faf4,#eef4ec);border:1px solid var(--line);border-radius:16px;padding:16px clamp(10px,3vw,22px);margin:12px 0}
+    .w2-heads{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:10px;padding-bottom:10px;border-bottom:1px dashed #d7e3d6;margin-bottom:2px}
+    .w2-head{display:flex;flex-direction:column;gap:1px}
+    .w2-head small{font-size:11px;font-weight:700;letter-spacing:.5px}
+    .w2-head b{font-family:var(--fd);font-size:clamp(15px,3.6vw,19px)}
+    .w2-head.ours{text-align:start}.w2-head.ours small{color:#b0821f}.w2-head.ours b{color:#123020}
+    .w2-head.other{text-align:end}.w2-head.other small{color:#7a7f76;letter-spacing:1.2px}.w2-head.other b{color:#5f645b}
+    .w2-axislbl{font-size:10px;font-weight:700;color:#9aa595;letter-spacing:1px;padding-bottom:4px;text-align:center}
+    .w2-rows{position:relative}
+    .w2-rows::before{content:"";position:absolute;top:8px;bottom:8px;left:50%;width:2px;transform:translateX(-50%);background:linear-gradient(rgba(199,154,59,0),rgba(199,154,59,.6) 12%,rgba(199,154,59,.6) 88%,rgba(199,154,59,0));border-radius:2px}
+    .w2-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;padding:9px 0}
+    .w2-row+.w2-row{border-top:1px solid #e8efe6}
+    .w2-ours{grid-column:1;text-align:start;font-family:var(--fd);font-weight:700;color:#1F4A39;font-size:clamp(15px,4vw,19px)}
+    .w2-axis{grid-column:2;justify-self:center;background:#fff;border:1px solid #ecd9a8;color:#7a5a12;font-size:11.5px;font-weight:700;border-radius:20px;padding:3px 12px;white-space:nowrap;box-shadow:0 1px 4px rgba(180,140,50,.12)}
+    .w2-other{grid-column:3;text-align:end;font-weight:600;color:#8a8f86;font-size:clamp(13px,3.4vw,16px)}
+    .w2-foot{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+    .w2-mal{border-radius:12px;padding:10px 13px}
+    .w2-mal small{display:block;font-size:10.5px;font-weight:700;letter-spacing:.5px;margin-bottom:2px}
+    .w2-mal b{font-size:12.5px;line-height:1.6;font-weight:700}
+    .w2-mal.ours{background:#e7f2e5;border:1px solid #cfe4cd}.w2-mal.ours small{color:#2C6A4D}.w2-mal.ours b{color:#1F4A39}
+    .w2-mal.other{background:#f2f2ef;border:1px solid #e0e0da}.w2-mal.other small{color:#8a8f86}.w2-mal.other b{color:#6b7066}
+    @media(max-width:480px){.w2-axis{font-size:9.5px;padding:2px 8px}.w2-foot{grid-template-columns:1fr}}
+    </style>
+    <div class="wsys2">
+      <div class="w2-heads">
+        <div class="w2-head ours"><small>منهجنا</small><b>منظومة الوحي</b></div>
+        <div class="w2-axislbl">المحور</div>
+        <div class="w2-head other"><small>مناهج أخرى</small><b>منظومة الشيطان</b></div>
+      </div>
+      <div class="w2-rows">
+        <div class="w2-row"><b class="w2-ours">الله</b><span class="w2-axis">الإله</span><b class="w2-other">الإنسان</b></div>
+        <div class="w2-row"><b class="w2-ours">الوحي</b><span class="w2-axis">المرجع والمصدر</span><b class="w2-other">العقل المجرّد</b></div>
+        <div class="w2-row"><b class="w2-ours">التوحيد</b><span class="w2-axis">القيمة المركزيّة</span><b class="w2-other">الحرّية المطلقة</b></div>
+        <div class="w2-row"><b class="w2-ours">التسليمُ لله</b><span class="w2-axis">الفعل</span><b class="w2-other">الطغيانُ واتّباعُ الهوى</b></div>
+        <div class="w2-row"><b class="w2-ours">الدارُ الآخرة</b><span class="w2-axis">الغاية</span><b class="w2-other">الدارُ الدنيا</b></div>
+        <div class="w2-row"><b class="w2-ours">حلاوةُ الإيمان</b><span class="w2-axis">الثمرة</span><b class="w2-other">المتعةُ واللذّة</b></div>
+      </div>
+      <div class="w2-foot">
+        <div class="w2-mal ours"><small>المآل</small><b>تزكيةُ نفسٍ وتقوى قلبٍ وسُموُّ سلوك</b></div>
+        <div class="w2-mal other"><small>المآل</small><b>تمحورٌ حول الذات وعبادةُ الهوى</b></div>
+      </div>
     </div>
     <h3 class="u-h3">منظومةُ الوحي مطبَّقةً على وحدة العائلة</h3>
     <p class="u-note" style="border-inline-start-color:#1E5631">منظومةُ الوحي رؤيةٌ للوجود يتلقّاها العبدُ من ربّه: مصدرُ المعرفة عنده <b>الوحيُ المعصوم</b>، وميزانُ سلوكِه الشرع. وفي وحدة «العائلة» يتعلّم الطفلُ أنّ الوالدين والأهلَ نعمةٌ من الله، وأنّ برَّهم وصلتَهم <b>عبادةٌ قرنها اللهُ بتوحيده</b> ﴿وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا﴾، لا محضَ عاطفةٍ فطريّة. وفيما يلي قراءةُ الوحدة على أركان المنظومة الثلاثة، ممثَّلةً بالشجرة الراسخة.</p>
