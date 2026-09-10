@@ -20,7 +20,7 @@ for my $r (@rows){
   next unless -e "$dir/$fn";   # تخطَّ ما لم تصل صورتُه بعد (تسليمٌ تدريجيّ)
   $short = $label unless defined $short && length $short;
   my $slot = qq{<div class="ph"><img src="$dir/$fn" alt="$label" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: $short</span></div>};
-  my $n = ($h =~ s{<svg\b[^>]*viewBox="0 0 \d+ \d+"[^>]*>(?:(?!</svg>).)*?</svg>(?=\s*(?:<div class="(?:t|nm)">|\x20)\Q$label\E</div>)}{$slot}gs);
+  my $n = ($h =~ s{<svg\b[^>]*viewBox="0 0 \d+ \d+"[^>]*>(?:(?!</svg>).)*?</svg>(?=\s*(?:<div class="(?:t|nm|w)">|\x20)\Q$label\E</div>)}{$slot}gs);
   if($n){ $done+=$n; push @hit,"$label\x{d7}$n"; }
 }
 open my $o,'>:raw',$file or die "write $file: $!"; print $o $h; close $o;

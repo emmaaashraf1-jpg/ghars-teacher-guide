@@ -35,6 +35,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 10px;paddin
 .summary{background:linear-gradient(135deg,#1F4A39,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:16px 0 6px}
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -74,12 +81,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 10px;paddin
 
   <h2>أعمالُ خيرٍ أُحسنُها ولو في الخلوة</h2>
   <div class="deeds">
-    <div class="deed"><svg viewBox="0 0 48 48"><rect x="8" y="26" width="20" height="10" rx="2" fill="#e0b98f"/><rect x="6" y="22" width="24" height="6" rx="3" fill="#cf6f5f"/><rect x="10" y="18" width="7" height="6" rx="2" fill="#a7b3b8"/><rect x="32" y="30" width="10" height="8" rx="2" fill="#8a99a0"/></svg><div class="t">أُرتّب السرير والوسائد</div><div class="box"></div></div>
-    <div class="deed"><svg viewBox="0 0 48 48"><path d="M14 20 h20 l-2 20 a3 3 0 0 1 -3 3 h-10 a3 3 0 0 1 -3 -3 z" fill="#0d6e6e"/><rect x="11" y="16" width="26" height="6" rx="2" fill="#1F4A39"/><g stroke="#8fd0c8" stroke-width="2"><line x1="20" y1="26" x2="19" y2="40"/><line x1="28" y1="26" x2="29" y2="40"/></g></svg><div class="t">أجمع المهملات في السلّة</div><div class="box"></div></div>
-    <div class="deed"><svg viewBox="0 0 48 48"><rect x="10" y="24" width="12" height="14" rx="2" fill="#eaf4f2" stroke="#0d6e6e" stroke-width="2"/><rect x="24" y="24" width="12" height="14" rx="2" fill="#eaf4f2" stroke="#0d6e6e" stroke-width="2"/><path d="M12 24 q4 -8 8 0 M26 24 q4 -8 8 0" fill="none" stroke="#C79A3B" stroke-width="2.5"/></svg><div class="t">أُرتّب أدوات المائدة</div><div class="box"></div></div>
+    <div class="deed"><div class="ph"><img src="units-art/ws-am/felt-tartib-sarir.jpg" alt="أُرتّب السرير والوسائد" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ترتيب السرير</span></div><div class="t">أُرتّب السرير والوسائد</div><div class="box"></div></div>
+    <div class="deed"><div class="ph"><img src="units-art/ws-am/felt-nifayat.jpg" alt="أجمع المهملات في السلّة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: جمع المهملات</span></div><div class="t">أجمع المهملات في السلّة</div><div class="box"></div></div>
+    <div class="deed"><div class="ph"><img src="units-art/ws-am/felt-idad-maida.jpg" alt="أُرتّب أدوات المائدة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: إعداد المائدة</span></div><div class="t">أُرتّب أدوات المائدة</div><div class="box"></div></div>
     <div class="deed"><svg viewBox="0 0 48 48"><rect x="12" y="22" width="24" height="12" rx="3" fill="#0d6e6e"/><rect x="10" y="18" width="12" height="9" rx="3" fill="#cfe7e4"/><rect x="8" y="20" width="4" height="14" fill="#0b5c5c"/><path d="M31 18 q2 -4 0 -7 q-2 3 0 7z" fill="#5b86a8"/></svg><div class="t">أُغلق الماء الزائد</div><div class="box"></div></div>
-    <div class="deed"><svg viewBox="0 0 48 48"><rect x="10" y="14" width="28" height="24" rx="4" fill="#a7b3b8"/><circle cx="24" cy="26" r="9" fill="#eaf4f2"/><circle cx="24" cy="26" r="9" fill="none" stroke="#0d6e6e" stroke-width="2"/><rect x="12" y="16" width="8" height="4" rx="2" fill="#8a99a0"/></svg><div class="t">أُرتّب الملابس في مكانها</div><div class="box"></div></div>
-    <div class="deed"><svg viewBox="0 0 48 48"><path d="M18 40 h12 l-2 -10 h-8 z" fill="#c98a5a"/><rect x="16" y="38" width="16" height="4" rx="1" fill="#a7714a"/><path d="M24 30 c-7 -2 -9 -10 -2 -12 c-1 8 6 4 2 12z" fill="#6a9c78"/><path d="M24 28 c6 -3 10 2 6 8 c-5 -1 -7 -4 -6 -8z" fill="#8fb99a"/></svg><div class="t">أسقي نبتة البيت</div><div class="box"></div></div>
+    <div class="deed"><div class="ph"><img src="units-art/ws-am/felt-tayy-malabis.jpg" alt="أُرتّب الملابس في مكانها" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ترتيب الملابس</span></div><div class="t">أُرتّب الملابس في مكانها</div><div class="box"></div></div>
+    <div class="deed"><div class="ph"><img src="units-art/ws-am/felt-saqy.jpg" alt="أسقي نبتة البيت" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: سقي النبات</span></div><div class="t">أسقي نبتة البيت</div><div class="box"></div></div>
   </div>
 
   <div class="summary"><b>الخلاصة:</b> الله البصير يراني ويرى عملي؛ فأطمئنّ وأعمل ما يحبّه في السرّ والعلن. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>

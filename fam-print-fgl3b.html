@@ -32,6 +32,13 @@ body{font-family:var(--fb);color:var(--ink);background:#eef1ec;padding:18px}
 .mcard .s{font-size:12.5px;color:var(--muted)}
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -64,16 +71,7 @@ body{font-family:var(--fb);color:var(--ink);background:#eef1ec;padding:18px}
 
   <div class="match">
     <div class="mcard">
-      <svg viewBox="0 0 60 60" role="img" aria-label="وردة">
-        <g><circle cx="30" cy="26" r="9" fill="#cf6f5f"/>
-        <ellipse cx="18" cy="24" rx="7" ry="9" fill="#d97f6f" transform="rotate(-30 18 24)"/>
-        <ellipse cx="42" cy="24" rx="7" ry="9" fill="#d97f6f" transform="rotate(30 42 24)"/>
-        <ellipse cx="24" cy="14" rx="7" ry="9" fill="#e08a7a" transform="rotate(-12 24 14)"/>
-        <ellipse cx="36" cy="14" rx="7" ry="9" fill="#e08a7a" transform="rotate(12 36 14)"/>
-        <circle cx="30" cy="22" r="5" fill="#C79A3B"/></g>
-        <rect x="28" y="34" width="4" height="20" rx="2" fill="#6a9c78"/>
-        <path d="M32 42 q10 -4 12 4 q-10 3 -12 -4z" fill="#8fb99a"/>
-      </svg>
+      <div class="ph"><img src="units-art/ws-am/zahra.jpg" alt="وَرْدة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: وردة</span></div>
       <div class="t">وَرْدة</div>
       <div class="s">تبدأ بصوت «وَ»</div>
     </div>

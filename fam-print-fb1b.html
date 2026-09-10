@@ -37,6 +37,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 .card .t{font-weight:700;font-size:13.5px;color:var(--ink);line-height:1.5}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -60,13 +67,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 
   <h2>بطاقاتُ السلوك — تُقصّ وتُخلط</h2>
   <div class="cards">
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M8 30 l16 -7 16 7 -16 6 z" fill="#8a6a4a"/><path d="M24 16 l-13 7 v3 l13 -6 13 6 v-3 z" fill="#0d6e6e"/><path d="M24 16 l13 7 v3 l-13 -6 z" fill="#12857f"/></svg><div class="t">أضعُ المصحفَ على حامل</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M24 8 C16 22 16 30 24 36 C32 30 32 22 24 8 Z" fill="#5b86a8"/></svg><div class="t">أتطهّرُ قبل المسّ</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><rect x="10" y="24" width="28" height="15" rx="3" fill="#0d6e6e"/><path d="M24 12 l-14 12 h28 z" fill="#C79A3B"/></svg><div class="t">أُنصتُ للتلاوة بهدوء</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><rect x="14" y="10" width="20" height="28" rx="3" fill="#12857f"/><rect x="14" y="10" width="20" height="6" rx="3" fill="#0d6e6e"/><g stroke="#cfe7e4" stroke-width="2"><line x1="19" y1="22" x2="29" y2="22"/><line x1="19" y1="28" x2="29" y2="28"/></g></svg><div class="t">أحفظُ المصحفَ نظيفًا</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-mushaf.jpg" alt="أضعُ المصحفَ على حامل" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: صيانة المصحف</span></div><div class="t">أضعُ المصحفَ على حامل</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-tahara.jpg" alt="أتطهّرُ قبل المسّ" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الطهارة</span></div><div class="t">أتطهّرُ قبل المسّ</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-insat.jpg" alt="أُنصتُ للتلاوة بهدوء" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الإنصات</span></div><div class="t">أُنصتُ للتلاوة بهدوء</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-mushaf.jpg" alt="أحفظُ المصحفَ نظيفًا" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: صيانة المصحف</span></div><div class="t">أحفظُ المصحفَ نظيفًا</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><path d="M10 30 h28 l-3 8 h-22 z" fill="#8a99a0"/><path d="M14 30 q10 -12 20 0" fill="none" stroke="#8a99a0" stroke-width="2.5"/><line x1="12" y1="14" x2="36" y2="34" stroke="#cf6f5f" stroke-width="3.5" stroke-linecap="round"/></svg><div class="t">أرمي المصحفَ على الأرض</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><rect x="16" y="9" width="16" height="28" rx="3" fill="#6C776F"/><rect x="19" y="13" width="10" height="16" rx="1.5" fill="#c7d0cf"/><path d="M20 33 q4 4 8 0" fill="none" stroke="#C79A3B" stroke-width="2"/><line x1="12" y1="13" x2="36" y2="35" stroke="#cf6f5f" stroke-width="3.5" stroke-linecap="round"/></svg><div class="t">أنشغلُ بالجوّالِ أثناء التلاوة</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><g stroke="#C79A3B" stroke-width="2.4" stroke-linecap="round"><line x1="24" y1="7" x2="24" y2="13"/><line x1="11" y1="13" x2="15" y2="17"/><line x1="37" y1="13" x2="33" y2="17"/></g><path d="M12 32 l12 -6 12 6 -12 5 z" fill="#0d6e6e"/><path d="M24 22 l-9 5 v2 l9 -4 9 4 v-2 z" fill="#12857f"/></svg><div class="t">أُعظّمُ كلامَ الله بقلبي</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-mushaf.jpg" alt="أُعظّمُ كلامَ الله بقلبي" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: تعظيم القرآن</span></div><div class="t">أُعظّمُ كلامَ الله بقلبي</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><rect x="12" y="20" width="10" height="10" rx="2" fill="#8a99a0" transform="rotate(-10 17 25)"/><rect x="26" y="20" width="10" height="10" rx="2" fill="#a7b3b8" transform="rotate(10 31 25)"/><path d="M24 14 v6" stroke="#cf6f5f" stroke-width="3" stroke-linecap="round"/></svg><div class="t">أعبثُ بأوراقِ المصحف</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><rect x="12" y="12" width="24" height="24" rx="4" fill="#eef6f0" stroke="#5f9070" stroke-width="2.5"/><path d="M18 24 l4 5 8 -10" fill="none" stroke="#5f9070" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="t">أتعهّدُ أدبًا أعملُ به</div></div>
   </div>

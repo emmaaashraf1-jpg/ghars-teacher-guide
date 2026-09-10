@@ -28,6 +28,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 .card .t{font-weight:700;font-size:13.5px;color:var(--ink);line-height:1.5}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -46,12 +53,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 
   <h2>بطاقات المواقف — تُقصّ وتُخلط</h2>
   <div class="cards">
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M24 40 C6 27 10 12 20 14 c3 .6 4 3 4 3 s1 -2.4 4 -3 c10 -2 14 13 -4 26z" fill="#cf6f5f"/><path d="M18 24 h12 M24 18 v12" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg><div class="t">أقول كلمةً طيّبة</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M10 30 l14 -6 14 6 v6 H10 z" fill="#4d7d93"/><rect x="20" y="12" width="8" height="16" rx="2" fill="#C79A3B"/><path d="M18 20 q6 -6 12 0" fill="none" stroke="#0d6e6e" stroke-width="2.4"/></svg><div class="t">أقدّم كوب ماء</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><rect x="10" y="20" width="20" height="16" rx="2" fill="#7fae8b"/><path d="M10 20 l10 -8 10 8" fill="none" stroke="#5f9070" stroke-width="2.4"/><path d="M28 22 h8 v14 h-8" fill="#cf6f5f" opacity=".8"/></svg><div class="t">أساعد في الترتيب</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><rect x="10" y="20" width="28" height="18" rx="3" fill="#C79A3B"/><rect x="10" y="20" width="28" height="7" rx="3" fill="#a97f22"/><rect x="21" y="14" width="6" height="24" fill="#cf6f5f"/><path d="M24 14 c-6 -8 -12 -1 0 0 c12 -1 6 -8 0 0z" fill="#cf6f5f"/></svg><div class="t">أُهدي هديّة</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15" fill="#C79A3B"/><path d="M24 9 a15 15 0 0 1 0 30" fill="#e0b354"/><circle cx="24" cy="24" r="4" fill="#fff"/></svg><div class="t">أُشارك لعبتي</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M10 14 h20 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-12 l-8 6 v-6 a4 4 0 0 1 -4 -4 v-10 a4 4 0 0 1 4 -4z" fill="#7fae8b"/><path d="M22 26 c-6 -5 -3 -10 2 -6 5 -4 8 1 2 6z" fill="#fff"/></svg><div class="t">أُصغي لِمَن يكلّمني</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-salam.jpg" alt="أقول كلمةً طيّبة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الكلمة الطيّبة</span></div><div class="t">أقول كلمةً طيّبة</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-taqdim-taam.jpg" alt="أقدّم كوب ماء" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: تقديم الماء</span></div><div class="t">أقدّم كوب ماء</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-musaada.jpg" alt="أساعد في الترتيب" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: المساعدة</span></div><div class="t">أساعد في الترتيب</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-musharaka.jpg" alt="أُهدي هديّة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الهديّة</span></div><div class="t">أُهدي هديّة</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-musharaka.jpg" alt="أُشارك لعبتي" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: المشاركة</span></div><div class="t">أُشارك لعبتي</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-insat.jpg" alt="أُصغي لِمَن يكلّمني" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الإصغاء</span></div><div class="t">أُصغي لِمَن يكلّمني</div></div>
   </div>
 
 <div style="background:linear-gradient(135deg,#1F4A39,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:18px 0 6px"><b>الخلاصة:</b> حُسنُ التعامل مع أفراد الأسرة عبادةٌ يحبّها الله وتقوّي المحبّة، وخيرُنا خيرُنا لأهله. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>

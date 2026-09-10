@@ -30,6 +30,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:2px 0 12px;paddin
 .khulasa{background:linear-gradient(135deg,#1F4A39,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:18px 0 6px}
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -49,23 +56,23 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:2px 0 12px;paddin
   <h2>بطاقاتُ التفكّر — تُقصّ وتُعرَض</h2>
   <div class="cards">
     <div class="card">
-      <svg class="m" viewBox="0 0 160 96"><rect width="160" height="96" fill="#0e2a3a"/><g fill="#eae3c8"><path d="M80 20 l3.4 9.6 10 .3-8 6.1 2.9 9.7-8.3-5.7-8.3 5.7 2.9-9.7-8-6.1 10-.3z"/><circle cx="34" cy="26" r="2.2"/><circle cx="126" cy="24" r="2.2"/><circle cx="44" cy="66" r="1.8"/><circle cx="120" cy="70" r="1.8"/><circle cx="80" cy="76" r="1.6"/></g></svg>
+      <div class="ph"><img src="units-art/ws-am/najm.jpg" alt="النُّجوم" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: النجوم</span></div>
       <div class="nm">النُّجوم</div><div class="ds">تتناثر وتنكدر بأمر الله</div>
     </div>
     <div class="card">
-      <svg class="m" viewBox="0 0 160 96"><rect width="160" height="96" fill="#12314a"/><circle cx="80" cy="48" r="22" fill="#C79A3B"/><ellipse cx="80" cy="48" rx="38" ry="10" fill="none" stroke="#e0b354" stroke-width="4" transform="rotate(-18 80 48)"/></svg>
+      <div class="ph"><img src="units-art/ws-am/najm.jpg" alt="الكواكب" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الكواكب</span></div>
       <div class="nm">الكواكب</div><div class="ds">مسخّرةٌ بنظامٍ يتغيّر بأمر الله</div>
     </div>
     <div class="card">
-      <svg class="m" viewBox="0 0 160 96"><rect width="160" height="96" fill="#1b5566"/><g fill="none" stroke="#7ec9d6" stroke-width="4" stroke-linecap="round"><path d="M18 58 q14 -12 28 0 t28 0 t28 0 t28 0"/><path d="M18 74 q14 -12 28 0 t28 0 t28 0 t28 0"/></g></svg>
+      <div class="ph"><img src="units-art/ws-am/bahr.jpg" alt="البِحار" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: البحار</span></div>
       <div class="nm">البِحار</div><div class="ds">تُفجَّر وتفيض بأمر الله</div>
     </div>
     <div class="card">
-      <svg class="m" viewBox="0 0 160 96"><rect width="160" height="96" fill="#dfeaf0"/><path d="M0 96 L44 40 L74 74 L104 34 L160 96 Z" fill="#6a8a7a"/><path d="M104 34 L118 51 L92 51 Z" fill="#eaf1ee"/></svg>
+      <div class="ph"><img src="units-art/ws-am/jabal.jpg" alt="الجِبال" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الجبال</span></div>
       <div class="nm">الجِبال</div><div class="ds">تصير كالعِهن يوم القيامة</div>
     </div>
     <div class="card">
-      <svg class="m" viewBox="0 0 160 96"><rect width="160" height="96" fill="#0e2a3a"/><circle cx="80" cy="48" r="24" fill="#C79A3B"/><circle cx="80" cy="48" r="24" fill="none" stroke="#7a5a12" stroke-width="3" stroke-dasharray="4 6"/></svg>
+      <div class="ph"><img src="units-art/ws-am/shams.jpg" alt="الشَّمس" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الشمس</span></div>
       <div class="nm">الشَّمس</div><div class="ds">يُطوى ضياؤها بأمر الله</div>
     </div>
     <div class="card">

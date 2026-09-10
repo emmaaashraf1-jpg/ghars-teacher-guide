@@ -33,6 +33,13 @@ h2.b{color:var(--green);border-color:var(--green)}
 .card .t{font-weight:700;font-size:12.5px;color:var(--ink);line-height:1.5}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -53,16 +60,16 @@ h2.b{color:var(--green);border-color:var(--green)}
   <div class="cards">
     <div class="card mv"><svg viewBox="0 0 48 48"><rect x="12" y="10" width="24" height="30" rx="2" fill="#bcd0d6"/><rect x="12" y="10" width="6" height="30" fill="#8aa6ae"/><circle cx="31" cy="26" r="2.4" fill="#4d7d93"/></svg><div class="t">أدخلُ غرفةَ أخي</div></div>
     <div class="card mv"><svg viewBox="0 0 48 48"><path d="M8 12 h24 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-14 l-8 6 v-6 a4 4 0 0 1 -4 -4 v-12 a4 4 0 0 1 4 -4z" fill="#8aa6ae"/><g stroke="#fff" stroke-width="2.4" stroke-linecap="round"><line x1="14" y1="20" x2="30" y2="20"/><line x1="14" y1="26" x2="26" y2="26"/></g></svg><div class="t">يتحدّثُ جدّي</div></div>
-    <div class="card mv"><svg viewBox="0 0 48 48"><rect x="10" y="22" width="20" height="14" rx="2" fill="#c79a6a"/><path d="M10 22 l10 -7 10 7" fill="none" stroke="#a67a4a" stroke-width="2.4"/><path d="M30 24 h8 v12 h-8" fill="#8aa6ae"/></svg><div class="t">تحملُ أمي أغراضًا</div></div>
+    <div class="card mv"><div class="ph"><img src="units-art/ws-am/felt-musaada.jpg" alt="تحملُ أمي أغراضًا" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: مساعدة الأم</span></div><div class="t">تحملُ أمي أغراضًا</div></div>
     <div class="card mv"><svg viewBox="0 0 48 48"><path d="M12 30 l8 -6 8 6 v6 H12z" fill="#8aa6ae"/><circle cx="34" cy="16" r="7" fill="#cf6f5f"/><path d="M31 16 l2 2 4 -4" fill="none" stroke="#fff" stroke-width="2"/></svg><div class="t">أخطأ أخي عليّ</div></div>
   </div>
 
   <h2 class="b">ثانيًا: بطاقات الآداب</h2>
   <div class="cards">
-    <div class="card ad"><svg viewBox="0 0 48 48"><rect x="14" y="10" width="20" height="30" rx="2" fill="#7fae8b"/><circle cx="18" cy="26" r="2.6" fill="#fff"/><path d="M22 12 v-2 M26 12 v-2" stroke="#5f9070" stroke-width="2.4" stroke-linecap="round"/></svg><div class="t">أستأذنُ وأطرقُ الباب</div></div>
-    <div class="card ad"><svg viewBox="0 0 48 48"><path d="M18 12 c8 0 14 6 14 13 v6 c0 4 -3 7 -7 7" fill="none" stroke="#5f9070" stroke-width="3" stroke-linecap="round"/><path d="M16 20 q-4 5 0 10 q3 3 6 1" fill="#7fae8b"/></svg><div class="t">أُنصتُ ولا أُقاطع</div></div>
-    <div class="card ad"><svg viewBox="0 0 48 48"><path d="M10 30 c4 -8 10 -10 16 -6 M26 24 l6 -2 2 6" fill="none" stroke="#5f9070" stroke-width="3" stroke-linecap="round"/><rect x="8" y="30" width="12" height="8" rx="2" fill="#7fae8b"/></svg><div class="t">أُبادرُ بالمساعدة</div></div>
-    <div class="card ad"><svg viewBox="0 0 48 48"><path d="M24 38 C8 27 12 13 21 15 c2 .5 3 2.5 3 2.5 s1 -2 3 -2.5 c9 -2 13 12 -3 23z" fill="#7fae8b"/></svg><div class="t">أُسامحُ وأعفو</div></div>
+    <div class="card ad"><div class="ph"><img src="units-art/ws-am/felt-atrq.jpg" alt="أستأذنُ وأطرقُ الباب" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الطرق</span></div><div class="t">أستأذنُ وأطرقُ الباب</div></div>
+    <div class="card ad"><div class="ph"><img src="units-art/ws-am/felt-insat.jpg" alt="أُنصتُ ولا أُقاطع" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الإنصات</span></div><div class="t">أُنصتُ ولا أُقاطع</div></div>
+    <div class="card ad"><div class="ph"><img src="units-art/ws-am/felt-musaada.jpg" alt="أُبادرُ بالمساعدة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: المساعدة</span></div><div class="t">أُبادرُ بالمساعدة</div></div>
+    <div class="card ad"><div class="ph"><img src="units-art/ws-am/felt-itithar.jpg" alt="أُسامحُ وأعفو" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: المسامحة</span></div><div class="t">أُسامحُ وأعفو</div></div>
   </div>
 
 <div style="background:linear-gradient(135deg,#1F4A39,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:14px 0 6px"><b>الخلاصة:</b> حُسنُ التعامل مع أفراد الأسرة عبادةٌ يحبّها الله وتقوّي المحبّة، وخيرُنا خيرُنا لأهله. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>

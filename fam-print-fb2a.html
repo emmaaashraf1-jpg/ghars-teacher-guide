@@ -37,6 +37,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 .card .t{font-weight:700;font-size:13.5px;color:var(--ink);line-height:1.5}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -60,15 +67,15 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 
   <h2>بطاقاتُ الأعمال — تُقصّ وتُخلط</h2>
   <div class="cards">
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M14 30 h20 v8 h-20 z" fill="#0d6e6e"/><path d="M18 30 q6 -14 12 0" fill="none" stroke="#0d6e6e" stroke-width="3"/><rect x="22" y="10" width="4" height="8" rx="2" fill="#C79A3B"/></svg><div class="t">أُصلّي في وقتها</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><rect x="14" y="18" width="20" height="16" rx="3" fill="#0d6e6e"/><rect x="21" y="12" width="6" height="10" rx="3" fill="#C79A3B"/><rect x="16" y="24" width="16" height="3" fill="#eae3c8"/></svg><div class="t">أتصدّقُ بما أملك</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M24 38 C8 27 12 14 21 16 c3 .6 3 2 3 2 s0 -1.4 3 -2 c9 -2 13 11 -3 22z" fill="#cf6f5f"/></svg><div class="t">أبَرُّ والديّ</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M10 30 h28 l-3 8 h-22 z" fill="#e0b98f"/><path d="M10 30 l6 -14 h16 l6 14" fill="none" stroke="#8a6a4a" stroke-width="2.5"/><rect x="22" y="20" width="4" height="10" fill="#6a9c78"/></svg><div class="t">أُميطُ الأذى عن الطريق</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><circle cx="18" cy="24" r="8" fill="#5b86a8"/><circle cx="30" cy="24" r="8" fill="#6a9c78"/><path d="M18 24 h12" stroke="#fff" stroke-width="2"/></svg><div class="t">أُساعدُ إخوتي</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M24 10 l4 9 10 1 -7 7 2 10 -9 -5 -9 5 2 -10 -7 -7 10 -1 z" fill="#C79A3B"/></svg><div class="t">أَصدُقُ في كلامي</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-salah.jpg" alt="أُصلّي في وقتها" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الصلاة</span></div><div class="t">أُصلّي في وقتها</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-itaam.jpg" alt="أتصدّقُ بما أملك" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الصدقة</span></div><div class="t">أتصدّقُ بما أملك</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-birr.jpg" alt="أبَرُّ والديّ" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: برّ الوالدين</span></div><div class="t">أبَرُّ والديّ</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-nifayat.jpg" alt="أُميطُ الأذى عن الطريق" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: إماطة الأذى</span></div><div class="t">أُميطُ الأذى عن الطريق</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-musaada.jpg" alt="أُساعدُ إخوتي" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: مساعدة الإخوة</span></div><div class="t">أُساعدُ إخوتي</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-sidq.jpg" alt="أَصدُقُ في كلامي" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الصدق</span></div><div class="t">أَصدُقُ في كلامي</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><rect x="12" y="16" width="24" height="20" rx="3" fill="#8a99a0"/><line x1="16" y1="12" x2="20" y2="20" stroke="#cf6f5f" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="12" x2="28" y2="20" stroke="#cf6f5f" stroke-width="3" stroke-linecap="round"/></svg><div class="t">أُوذي غيري</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><path d="M14 20 l10 -8 10 8 v16 h-20 z" fill="#0d6e6e"/><rect x="20" y="26" width="8" height="10" fill="#eae3c8"/><line x1="12" y1="14" x2="36" y2="36" stroke="#cf6f5f" stroke-width="3.5" stroke-linecap="round"/></svg><div class="t">أُفسدُ ما بنى غيري</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M24 12 c-8 0 -12 6 -12 12 0 8 12 14 12 14 s12 -6 12 -14 c0 -6 -4 -12 -12 -12z" fill="#6a9c78"/><path d="M18 24 l4 4 8 -8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="t">أُحسِنُ إلى جاري</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-musaada.jpg" alt="أُحسِنُ إلى جاري" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: حسن الجوار</span></div><div class="t">أُحسِنُ إلى جاري</div></div>
   </div>
 
 <div style="background:linear-gradient(135deg,#1F4A39,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:16px 0 6px"><b>الخلاصة:</b> تعينني عائلتي على العمل الصالح والاستعداد للآخرة. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>

@@ -28,6 +28,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 .card .t{font-family:var(--fd);font-weight:700;font-size:15px;color:var(--t1);line-height:1.5}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -47,19 +54,19 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
   <h2>بطاقاتُ آدابِ المجلس — تُقصّ وتُرتّب</h2>
   <div class="cards">
     <div class="card">
-      <svg viewBox="0 0 48 48"><path d="M24 8 C15 22 15 30 24 36 C33 30 33 22 24 8 Z" fill="#5b86a8"/><path d="M24 14 C19 22 19 28 24 32" fill="none" stroke="#cfe0e5" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-tahara.jpg" alt="أتطهّرُ قبل الجلوس" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الطهارة</span></div>
       <div class="t">أتطهّرُ قبل الجلوس</div>
     </div>
     <div class="card">
-      <svg viewBox="0 0 48 48"><rect x="8" y="26" width="32" height="12" rx="6" fill="#8a7bb0"/><rect x="11" y="22" width="26" height="8" rx="4" fill="#a99ccb"/><circle cx="12" cy="32" r="3" fill="#6a5a94"/><circle cx="36" cy="32" r="3" fill="#6a5a94"/></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-julus-adab.jpg" alt="أجلسُ بهدوءٍ وأدب" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الجلوس بأدب</span></div>
       <div class="t">أجلسُ بهدوءٍ وأدب</div>
     </div>
     <div class="card">
-      <svg viewBox="0 0 48 48"><rect x="10" y="24" width="28" height="16" rx="3" fill="#0d6e6e"/><path d="M24 12 l-14 12 h28 z" fill="#C79A3B"/><rect x="20" y="30" width="8" height="10" rx="1.5" fill="#eae3c8"/></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-insat.jpg" alt="أُنصتُ ولا أُقاطع" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الإنصات</span></div>
       <div class="t">أُنصتُ ولا أُقاطع</div>
     </div>
     <div class="card">
-      <svg viewBox="0 0 48 48"><path d="M10 30 l14 -6 14 6 -14 6 z" fill="#8a6a4a"/><path d="M24 16 l-11 6 v3 l11 -5 11 5 v-3 z" fill="#0d6e6e"/><path d="M24 16 l11 6 v3 l-11 -5 z" fill="#12857f"/><line x1="24" y1="16" x2="24" y2="30" stroke="#eae3c8" stroke-width="2"/></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-mushaf.jpg" alt="أضعُ المصحفَ على حاملٍ وأصونُه" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: صيانة المصحف</span></div>
       <div class="t">أضعُ المصحفَ على حاملٍ وأصونُه</div>
     </div>
     <div class="card">
@@ -67,7 +74,7 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
       <div class="t">أُبعِدُ ما يَشغَلُني</div>
     </div>
     <div class="card">
-      <svg viewBox="0 0 48 48"><g stroke="#C79A3B" stroke-width="2.4" stroke-linecap="round"><line x1="24" y1="6" x2="24" y2="12"/><line x1="10" y1="12" x2="14" y2="16"/><line x1="38" y1="12" x2="34" y2="16"/></g><path d="M12 30 l12 -6 12 6 -12 5 z" fill="#0d6e6e"/><path d="M24 20 l-9 5 v2 l9 -4 9 4 v-2 z" fill="#12857f"/><line x1="24" y1="20" x2="24" y2="30" stroke="#eae3c8" stroke-width="2"/></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-mushaf.jpg" alt="أُعظّمُ كلامَ الله" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: تعظيم القرآن</span></div>
       <div class="t">أُعظّمُ كلامَ الله</div>
     </div>
   </div>
