@@ -484,46 +484,61 @@ html.hasjs:not(.gq-ready) #u-days{visibility:hidden}
     <h3 class="u-h3">الأساس الفلسفي: منظومة الوحي مقابل منظومة الشيطان</h3>
     <div class="u-note"><b>الأساس الفلسفي للمنهج:</b> يقوم منهج غرس القيم على <b>منظومة الوحي</b> بوصفها المرجع الأعلى في بناء الإنسان وتنمية وجدانه. وفي المقابل تتبنّى المناهج الإنسانية والعلمانية <b>منظومة الشيطان</b> التي تتمحور حول الإنسان والعقل المجرّد، فتغدو الحرية هي القيمة المطلقة والمتعة هي الغاية. والمنهج لا يرفض العلم الأكاديمي بل يُعيد ربطه بالوحي ليكون العلم خادمًا للإنسان في طريق عبوديته لله؛ فللعلم بوصلة، وللإنسان غاية.</div>
     <style>
-    .wsys2{background:linear-gradient(180deg,#f6faf4,#eef4ec);border:1px solid var(--line);border-radius:16px;padding:16px clamp(10px,3vw,22px);margin:12px 0}
-    .w2-heads{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:10px;padding-bottom:10px;border-bottom:1px dashed #d7e3d6;margin-bottom:2px}
-    .w2-head{display:flex;flex-direction:column;gap:1px}
-    .w2-head small{font-size:11px;font-weight:700;letter-spacing:.5px}
-    .w2-head b{font-family:var(--fd);font-size:clamp(15px,3.6vw,19px)}
-    .w2-head.ours{text-align:start}.w2-head.ours small{color:#b0821f}.w2-head.ours b{color:#123020}
-    .w2-head.other{text-align:end}.w2-head.other small{color:#7a7f76;letter-spacing:1.2px}.w2-head.other b{color:#5f645b}
-    .w2-axislbl{font-size:10px;font-weight:700;color:#9aa595;letter-spacing:1px;padding-bottom:4px;text-align:center}
-    .w2-rows{position:relative}
-    .w2-rows::before{content:"";position:absolute;top:8px;bottom:8px;left:50%;width:2px;transform:translateX(-50%);background:linear-gradient(rgba(199,154,59,0),rgba(199,154,59,.6) 12%,rgba(199,154,59,.6) 88%,rgba(199,154,59,0));border-radius:2px}
-    .w2-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;padding:9px 0}
-    .w2-row+.w2-row{border-top:1px solid #e8efe6}
-    .w2-ours{grid-column:1;text-align:start;font-family:var(--fd);font-weight:700;color:#1F4A39;font-size:clamp(15px,4vw,19px)}
-    .w2-axis{grid-column:2;justify-self:center;background:#fff;border:1px solid #ecd9a8;color:#7a5a12;font-size:11.5px;font-weight:700;border-radius:20px;padding:3px 12px;white-space:nowrap;box-shadow:0 1px 4px rgba(180,140,50,.12)}
-    .w2-other{grid-column:3;text-align:end;font-weight:600;color:#8a8f86;font-size:clamp(13px,3.4vw,16px)}
-    .w2-foot{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-    .w2-mal{border-radius:12px;padding:10px 13px}
-    .w2-mal small{display:block;font-size:10.5px;font-weight:700;letter-spacing:.5px;margin-bottom:2px}
-    .w2-mal b{font-size:12.5px;line-height:1.6;font-weight:700}
-    .w2-mal.ours{background:#e7f2e5;border:1px solid #cfe4cd}.w2-mal.ours small{color:#2C6A4D}.w2-mal.ours b{color:#1F4A39}
-    .w2-mal.other{background:#f2f2ef;border:1px solid #e0e0da}.w2-mal.other small{color:#8a8f86}.w2-mal.other b{color:#6b7066}
-    @media(max-width:480px){.w2-axis{font-size:9.5px;padding:2px 8px}.w2-foot{grid-template-columns:1fr}}
+    .wsc-stage{position:relative;border-radius:22px;overflow:hidden;isolation:isolate;background:#F3ECDA;box-shadow:0 24px 60px rgba(20,40,35,.18);padding:clamp(26px,4vw,46px) clamp(14px,3vw,28px);margin:12px 0}
+    .wsc-art{position:absolute;inset:0;overflow:hidden;isolation:isolate;opacity:.6}
+    .wsc-sky{position:absolute;inset:0;background:linear-gradient(175deg,#F1E9D6,#F6F0E1 46%,#ECE3CE)}
+    .wsc-noor,.wsc-zulm{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:132%;min-width:1000px;height:auto}
+    .wsc-zulm{-webkit-mask-image:linear-gradient(to left,transparent 40%,#000 66%);mask-image:linear-gradient(to left,transparent 40%,#000 66%)}
+    .wsc-mist{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(135% 95% at 6% 100%,rgba(243,236,218,.6),rgba(243,236,218,0) 58%),linear-gradient(to left,transparent 48%,rgba(243,236,218,.3) 74%,rgba(243,236,218,.46) 100%)}
+    .wsc-core{position:relative;z-index:3}
+    .wsc-heads{display:flex;justify-content:center;gap:clamp(20px,6vw,64px);flex-wrap:wrap;align-items:center;margin-bottom:clamp(20px,3vw,32px)}
+    .wsc-stage .whead{display:flex;align-items:center;gap:10px}
+    .wsc-stage .whead .nm small{display:block;font-size:10px;font-weight:700;letter-spacing:.4px;line-height:1.5;text-shadow:0 1px 2px rgba(8,20,12,.28)}
+    .wsc-stage .whead .nm b{font-family:var(--fd);font-weight:700;font-size:clamp(16px,2.2vw,22px);line-height:1.2;text-shadow:0 1px 2px rgba(6,20,12,.4)}
+    .wsc-stage .whead.ours .nm{text-align:start}.wsc-stage .whead.ours .nm small{color:#b0821f}.wsc-stage .whead.ours .nm b{color:#123020}
+    .wsc-stage .whead.other .nm{text-align:end}.wsc-stage .whead.other .nm small{color:#5f645b;letter-spacing:1.3px}.wsc-stage .whead.other .nm b{color:#22271f;text-shadow:0 1px 2px rgba(10,14,8,.38)}
+    .wsc-stage .emb{width:clamp(38px,5vw,52px);height:clamp(38px,5vw,52px);flex:0 0 auto;object-fit:contain}
+    .wsc-stage .emb-knot{filter:brightness(.3) contrast(1.35) drop-shadow(0 1px 1px rgba(10,14,8,.35))}
+    .wsc-cmps{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(12px,2vw,18px)}
+    .wsc-stage .wcmp{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(10px,2.4vw,24px);background:rgba(251,249,242,.85);border:1px solid rgba(199,154,59,.2);border-radius:16px;padding:clamp(12px,2vw,17px) clamp(13px,3vw,24px);box-shadow:0 12px 28px rgba(20,40,35,.1)}
+    .wsc-stage .wt{font-family:var(--fd);font-weight:700;line-height:1.24;text-align:center}
+    .wsc-stage .wt-ours{color:#123020;font-size:clamp(19px,3.2vw,30px)}
+    .wsc-stage .wt-other{color:#22271f;font-size:clamp(14px,2.2vw,20px);letter-spacing:.2px}
+    .wsc-stage .wt-axis{position:relative;justify-self:center;white-space:nowrap;font-family:var(--fb);font-size:clamp(9.5px,1.5vw,11px);font-weight:700;letter-spacing:.3px;color:#8a7f5c;background:#FBF6EA;border:1px solid #e7d9ba;border-radius:999px;padding:5px 13px;box-shadow:0 6px 16px rgba(20,40,35,.14)}
+    .wsc-stage .wt-axis::before,.wsc-stage .wt-axis::after{content:"";position:absolute;top:50%;height:2px;width:clamp(12px,3vw,44px)}
+    .wsc-stage .wt-axis::before{right:100%;margin-right:6px;background:linear-gradient(to left,rgba(199,154,59,.8),transparent)}
+    .wsc-stage .wt-axis::after{left:100%;margin-left:6px;background:linear-gradient(to right,rgba(140,144,132,.55),transparent)}
+    .wsc-foot{margin-top:clamp(20px,3vw,32px);display:flex;justify-content:center;gap:clamp(18px,5vw,56px);flex-wrap:wrap;position:relative;z-index:3}
+    .wsc-foot .wf{display:flex;flex-direction:column;gap:3px;text-align:center;max-width:250px}
+    .wsc-foot .wf small{font-size:10.5px;font-weight:700;letter-spacing:.4px}
+    .wsc-foot .wf b{font-family:var(--fd);font-weight:700;font-size:clamp(13px,2vw,17px);line-height:1.45}
+    .wsc-foot .wf.ours small{color:#a5761a}.wsc-foot .wf.ours b{color:#123020}
+    .wsc-foot .wf.other small{color:#6a6f66}.wsc-foot .wf.other b{color:#22271f}
     </style>
-    <div class="wsys2">
-      <div class="w2-heads">
-        <div class="w2-head ours"><small>منهجنا</small><b>منظومة الوحي</b></div>
-        <div class="w2-axislbl">المحور</div>
-        <div class="w2-head other"><small>مناهج أخرى</small><b>منظومة الشيطان</b></div>
+    <div class="wsc-stage">
+      <div class="wsc-art" aria-hidden="true">
+        <div class="wsc-sky"></div>
+        <img class="wsc-noor" src="assets/wahy/scene-noor.png" alt="" loading="lazy" decoding="async">
+        <img class="wsc-zulm" src="assets/wahy/scene-zulm.png" alt="" loading="lazy" decoding="async">
+        <div class="wsc-mist"></div>
       </div>
-      <div class="w2-rows">
-        <div class="w2-row"><b class="w2-ours">الله</b><span class="w2-axis">الإله</span><b class="w2-other">الإنسان</b></div>
-        <div class="w2-row"><b class="w2-ours">الوحي</b><span class="w2-axis">المرجع والمصدر</span><b class="w2-other">العقل المجرّد</b></div>
-        <div class="w2-row"><b class="w2-ours">التوحيد</b><span class="w2-axis">القيمة المركزيّة</span><b class="w2-other">الحرّية المطلقة</b></div>
-        <div class="w2-row"><b class="w2-ours">التسليمُ لله</b><span class="w2-axis">الفعل</span><b class="w2-other">الطغيانُ واتّباعُ الهوى</b></div>
-        <div class="w2-row"><b class="w2-ours">الدارُ الآخرة</b><span class="w2-axis">الغاية</span><b class="w2-other">الدارُ الدنيا</b></div>
-        <div class="w2-row"><b class="w2-ours">حلاوةُ الإيمان</b><span class="w2-axis">الثمرة</span><b class="w2-other">المتعةُ واللذّة</b></div>
-      </div>
-      <div class="w2-foot">
-        <div class="w2-mal ours"><small>المآل</small><b>تزكيةُ نفسٍ وتقوى قلبٍ وسُموُّ سلوك</b></div>
-        <div class="w2-mal other"><small>المآل</small><b>تمحورٌ حول الذات وعبادةُ الهوى</b></div>
+      <div class="wsc-core">
+        <div class="wsc-heads">
+          <div class="whead ours"><img class="emb" src="assets/wahy/book.png" alt="" aria-hidden="true" loading="lazy"><div class="nm"><small>منهجنا</small><b>منظومة الوحي</b></div></div>
+          <div class="whead other"><div class="nm"><small>مناهج أخرى</small><b>منظومة الشيطان</b></div><img class="emb emb-knot" src="assets/wahy/knot.png" alt="" aria-hidden="true" loading="lazy"></div>
+        </div>
+        <div class="wsc-cmps">
+          <article class="wcmp"><b class="wt wt-ours">الله</b><span class="wt-axis">الإله</span><b class="wt wt-other">الإنسان</b></article>
+          <article class="wcmp"><b class="wt wt-ours">الوحي</b><span class="wt-axis">المرجع والمصدر</span><b class="wt wt-other">العقل المجرّد</b></article>
+          <article class="wcmp"><b class="wt wt-ours">التوحيد</b><span class="wt-axis">القيمة المركزيّة</span><b class="wt wt-other">الحرّية المطلقة</b></article>
+          <article class="wcmp"><b class="wt wt-ours">التسليمُ لله</b><span class="wt-axis">الفعل</span><b class="wt wt-other">الطغيانُ واتّباعُ الهوى</b></article>
+          <article class="wcmp"><b class="wt wt-ours">الدارُ الآخرة</b><span class="wt-axis">الغاية</span><b class="wt wt-other">الدارُ الدنيا</b></article>
+          <article class="wcmp"><b class="wt wt-ours">حلاوةُ الإيمان</b><span class="wt-axis">الثمرة</span><b class="wt wt-other">المتعةُ واللذّة</b></article>
+        </div>
+        <div class="wsc-foot">
+          <div class="wf ours"><small>المآل</small><b>تزكيةُ نفسٍ وتقوى قلبٍ وسُموُّ سلوك</b></div>
+          <div class="wf other"><small>المآل</small><b>تمحورٌ حول الذات وعبادةُ الهوى</b></div>
+        </div>
       </div>
     </div>
 
