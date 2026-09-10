@@ -37,6 +37,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 .card .t{font-weight:700;font-size:13px;color:var(--ink);line-height:1.5}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -72,10 +79,10 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
     <span class="lgnd-want">رغبة: أستطيع الاستغناء عنها</span>
   </div>
   <div class="cards">
-    <div class="card"><svg viewBox="0 0 48 48"><ellipse cx="24" cy="26" rx="15" ry="10" fill="#d9a441"/><path d="M9 26 q15 -12 30 0" fill="none" stroke="#b5842a" stroke-width="2"/><circle cx="18" cy="24" r="1.6" fill="#8a6a1e"/><circle cx="28" cy="27" r="1.6" fill="#8a6a1e"/></svg><div class="t">خبز</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M17 14 h14 v6 l-2 20 h-10 l-2 -20 z" fill="#bcd0d6"/><rect x="17" y="20" width="14" height="12" fill="#7fb0c9" opacity=".6"/></svg><div class="t">ماء</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><circle cx="24" cy="28" r="12" fill="#cf6f5f"/><rect x="22" y="12" width="4" height="8" rx="2" fill="#8a6a4a"/><path d="M26 15 q7 -4 9 2 q-7 2 -9 -2z" fill="#8fb99a"/></svg><div class="t">فاكهة</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><path d="M14 18 l10 -4 10 4 -4 6 v14 h-12 v-14 z" fill="#6a9c78"/><path d="M20 14 h8 v4 h-8z" fill="#4f8060"/></svg><div class="t">ملابس</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/raghif.jpg" alt="خبز" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: خبز</span></div><div class="t">خبز</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/maa.jpg" alt="ماء" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ماء</span></div><div class="t">ماء</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/tuffah.jpg" alt="فاكهة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: فاكهة</span></div><div class="t">فاكهة</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/libas.jpg" alt="ملابس" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ملابس</span></div><div class="t">ملابس</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><circle cx="18" cy="20" r="6" fill="#e0a4c0"/><circle cx="30" cy="20" r="6" fill="#d98fb2"/><circle cx="24" cy="30" r="6" fill="#e0a4c0"/><rect x="21" y="12" width="6" height="24" rx="3" fill="#c96f9a" opacity=".3"/></svg><div class="t">كثيرٌ من الحلوى</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><rect x="10" y="18" width="12" height="12" rx="2" fill="#7ba7bd"/><rect x="26" y="14" width="12" height="12" rx="2" fill="#e0b354"/><rect x="18" y="28" width="12" height="12" rx="2" fill="#cf6f5f"/></svg><div class="t">ألعابٌ إضافيةٌ كثيرة</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><rect x="14" y="14" width="8" height="24" rx="4" fill="#d98fb2"/><rect x="26" y="14" width="8" height="24" rx="4" fill="#e0b354"/><rect x="14" y="18" width="8" height="4" fill="#c96f9a" opacity=".5"/><rect x="26" y="18" width="8" height="4" fill="#b5842a" opacity=".5"/></svg><div class="t">عصائرُ زائدة</div></div>

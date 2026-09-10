@@ -40,6 +40,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 10px;paddin
 .piece .nm{font-weight:700;font-size:13px;color:var(--ink);margin-top:4px}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -75,15 +82,7 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 10px;paddin
   <h2>عناصرُ القصّ واللّصق — تُقصّ على الخطّ المتقطّع</h2>
   <div class="cut">
     <div class="piece">
-      <svg viewBox="0 0 88 88" role="img" aria-label="شمس">
-        <g stroke="#e0a92e" stroke-width="4" stroke-linecap="round">
-          <line x1="44" y1="8" x2="44" y2="20"/><line x1="44" y1="68" x2="44" y2="80"/>
-          <line x1="8" y1="44" x2="20" y2="44"/><line x1="68" y1="44" x2="80" y2="44"/>
-          <line x1="18" y1="18" x2="27" y2="27"/><line x1="61" y1="61" x2="70" y2="70"/>
-          <line x1="70" y1="18" x2="61" y2="27"/><line x1="27" y1="61" x2="18" y2="70"/>
-        </g>
-        <circle cx="44" cy="44" r="18" fill="#f4c752" stroke="#e0a92e" stroke-width="3"/>
-      </svg>
+      <div class="ph"><img src="units-art/ws-am/shams.jpg" alt="شمس" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: شمس</span></div>
       <div class="nm">شمس</div>
     </div>
     <div class="piece">
@@ -93,12 +92,7 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 10px;paddin
       <div class="nm">قمر</div>
     </div>
     <div class="piece">
-      <svg viewBox="0 0 88 88" role="img" aria-label="نجمات">
-        <g fill="#f4c752" stroke="#e0a92e" stroke-width="2">
-          <path d="M30 20 l4 9 10 1 -7 7 2 10 -9 -5 -9 5 2 -10 -7 -7 10 -1z"/>
-          <path d="M60 46 l3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1z"/>
-        </g>
-      </svg>
+      <div class="ph"><img src="units-art/ws-am/najm.jpg" alt="نجمات" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: نجمات</span></div>
       <div class="nm">نجمات</div>
     </div>
     <div class="piece">

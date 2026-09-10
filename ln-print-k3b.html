@@ -32,6 +32,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
 .arrow{font-size:24px;color:var(--gold);font-weight:700}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -50,11 +57,11 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
   <h2>بطاقاتُ أعمال يومي — تُقصّ وتُخلط</h2>
   <div class="cards">
     <div class="card">
-      <svg viewBox="0 0 48 48"><line x1="8" y1="36" x2="40" y2="36" stroke="#0d6e6e" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="30" r="9" fill="#C79A3B"/><g stroke="#e0b354" stroke-width="2.6" stroke-linecap="round"><line x1="24" y1="14" x2="24" y2="9"/><line x1="12" y1="20" x2="9" y2="17"/><line x1="36" y1="20" x2="39" y2="17"/></g></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-salah.jpg" alt="الاستيقاظ وصلاةُ الفجر" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: صلاة الفجر</span></div>
       <div class="t">الاستيقاظ وصلاةُ الفجر</div>
     </div>
     <div class="card">
-      <svg viewBox="0 0 48 48"><ellipse cx="24" cy="34" rx="15" ry="5" fill="#bcd0d6"/><path d="M11 30 h26 a13 13 0 0 1 -26 0z" fill="#cfe0e5"/><rect x="30" y="18" width="9" height="12" rx="4" fill="none" stroke="#8a99a0" stroke-width="2.4"/><path d="M20 12 v5 M24 11 v6 M28 12 v5" stroke="#C79A3B" stroke-width="2" stroke-linecap="round"/></svg>
+      <div class="ph"><img src="units-art/ws-am/fatoor.jpg" alt="الإفطار" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: فطور</span></div>
       <div class="t">الإفطار</div>
     </div>
     <div class="card">
@@ -62,11 +69,11 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:6px 0 12px;paddin
       <div class="t">التعلّم في الرَّوضة</div>
     </div>
     <div class="card">
-      <svg viewBox="0 0 48 48"><circle cx="24" cy="26" r="13" fill="none" stroke="#8a99a0" stroke-width="2.6"/><circle cx="24" cy="26" r="7" fill="#6a9c78"/><line x1="10" y1="14" x2="10" y2="30" stroke="#c99a6a" stroke-width="2.4" stroke-linecap="round"/><line x1="38" y1="14" x2="38" y2="30" stroke="#c99a6a" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <div class="ph"><img src="units-art/ws-am/ghadaa.jpg" alt="الغداء" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: غداء</span></div>
       <div class="t">الغداء</div>
     </div>
     <div class="card">
-      <svg viewBox="0 0 48 48"><path d="M24 38 C6 26 10 12 20 14 c3 .6 4 3 4 3 s1 -2.4 4 -3 c10 -2 14 12 -4 24z" fill="#cf6f5f"/></svg>
+      <div class="ph"><img src="units-art/ws-am/felt-musaada.jpg" alt="عملٌ صالحٌ / مساعدة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: المساعدة</span></div>
       <div class="t">عملٌ صالحٌ / مساعدة</div>
     </div>
     <div class="card">

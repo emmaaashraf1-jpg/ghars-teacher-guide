@@ -32,6 +32,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:12px 0 9px;padd
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
 .sum{background:linear-gradient(135deg,#1F4A39,#1E5631);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:14px 0 6px}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -59,14 +66,14 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:12px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> تُقصّ بطاقاتُ المراجعة، ويفرزها الطفل بالعدسة إلى <b>سلّةِ النهار</b> و<b>سلّةِ الليل</b>، ويردّد «آيتان أتفكّرُ فيهما وأشكرُ وأعملُ الصالحات».</div>
   <h2>بطاقاتُ المراجعة — تُقصّ وتُفرَز</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="12" fill="none" stroke="#C79A3B" stroke-width="3"/><g stroke="#C79A3B" stroke-width="3" stroke-linecap="round"><line x1="32" y1="6" x2="32" y2="14"/><line x1="32" y1="50" x2="32" y2="58"/><line x1="6" y1="32" x2="14" y2="32"/><line x1="50" y1="32" x2="58" y2="32"/><line x1="13" y1="13" x2="19" y2="19"/><line x1="45" y1="45" x2="51" y2="51"/><line x1="51" y1="13" x2="45" y2="19"/><line x1="19" y1="45" x2="13" y2="51"/></g></svg><div class="t">الشمس (نهار)</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/shams.jpg" alt="الشمس (نهار)" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الشمس</span></div><div class="t">الشمس (نهار)</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><path d="M42 12 a22 22 0 1 0 10 40 a17 17 0 1 1 -10 -40z" fill="none" stroke="#0d6e6e" stroke-width="3"/></svg><div class="t">القمر (ليل)</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 12 l4 10 11 1 -8 7 3 11 -10 -6 -10 6 3 -11 -8 -7 11 -1z" fill="none" stroke="#C79A3B" stroke-width="2.5" stroke-linejoin="round"/></svg><div class="t">النجوم (ليل)</div></div>
   </div>
   <div class="cutrow" style="margin-top:12px">
-    <div class="pc"><svg viewBox="0 0 64 64"><line x1="24" y1="14" x2="40" y2="46" stroke="#2C6A4D" stroke-width="3"/><path d="M36 40 l14 6 -4 10 -14 -6z" fill="none" stroke="#1E5631" stroke-width="3" stroke-linejoin="round"/></svg><div class="t">عملُ النهار</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/nahar.jpg" alt="عملُ النهار" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: النهار</span></div><div class="t">عملُ النهار</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><path d="M18 30 h28 M18 30 l7 -7 M18 30 l7 7" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 44 a12 12 0 1 1 8 -20" fill="none" stroke="#C79A3B" stroke-width="2.5"/></svg><div class="t">ذكرُ الليل</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><circle cx="28" cy="28" r="13" fill="none" stroke="#0d6e6e" stroke-width="3"/><line x1="38" y1="38" x2="52" y2="52" stroke="#2C6A4D" stroke-width="4" stroke-linecap="round"/></svg><div class="t">أتفكّرُ بالعدسة</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/mukabbir.jpg" alt="أتفكّرُ بالعدسة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: عدسة</span></div><div class="t">أتفكّرُ بالعدسة</div></div>
   </div>
   <div class="baskets"><div class="bk day">☀ سلّةُ النهار</div><div class="bk night">🌙 سلّةُ الليل</div></div>
   <div class="foot">دليل معلمة غرس القيم · نشاط تكاملي — ركن أكتشف · اليوم الخامس</div>
@@ -78,12 +85,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:12px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> تُقصّ بطاقاتُ أعمالِ الليل وأذكاره، ويرتّبها الطفل بالتسلسل (عشاء ← وضوء ← دعاءٌ وأذكار ← نوم) ويطابق كلَّ عملٍ بوقته، ويتحدّث عن الأعمال التي يحبها الله في الليل وحسنِ ختام اليوم بذكره.</div>
   <h2>بطاقاتُ أعمالِ الليل وأذكاره — تُقصّ وتُرتَّب بالتسلسل</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="18" ry="8" fill="none" stroke="#C79A3B" stroke-width="3"/><rect x="27" y="22" width="10" height="10" rx="2" fill="none" stroke="#2C6A4D" stroke-width="3"/></svg><div class="t">١ عشاء</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/ashaa.jpg" alt="١ عشاء" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: عشاء</span></div><div class="t">١ عشاء</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 14 c8 12 12 18 12 24 a12 12 0 0 1 -24 0 c0 -6 4 -12 12 -24z" fill="none" stroke="#0d6e6e" stroke-width="3"/></svg><div class="t">٢ وضوء</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><path d="M18 30 q4 20 14 22 q10 -2 14 -22" fill="none" stroke="#2C6A4D" stroke-width="3" stroke-linecap="round"/><path d="M24 27 v9 M32 25 v11 M40 27 v9" stroke="#0d6e6e" stroke-width="2.5" stroke-linecap="round"/></svg><div class="t">٣ دعاءٌ وأذكار</div></div>
   </div>
   <div class="cutrow" style="margin-top:12px;grid-template-columns:1fr">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M10 42 h44 v8 h-44z" fill="none" stroke="#2C6A4D" stroke-width="3"/><path d="M12 42 v-7 a5 5 0 0 1 5 -5 h30 a5 5 0 0 1 5 5 v7" fill="none" stroke="#0d6e6e" stroke-width="3"/><path d="M40 20 a20 20 0 0 1 -6 12" fill="none" stroke="#0d6e6e" stroke-width="2.5"/></svg><div class="t">٤ نومٌ بذكر</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/felt-nawm.jpg" alt="٤ نومٌ بذكر" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: النوم</span></div><div class="t">٤ نومٌ بذكر</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · نشاط تكاملي — ركن أدرك وأستمتع · اليوم الخامس</div>
 </div>

@@ -28,6 +28,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:14px 0 10px;paddi
 .mcard{background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff;border-radius:12px;padding:13px 16px;font-size:14px;line-height:1.9;text-align:center;margin-top:14px;font-weight:700}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -39,9 +46,9 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:14px 0 10px;paddi
   <h2>بطاقاتُ عاداتِ العافية</h2>
   <div class="cards">
     <div class="card"><svg viewBox="0 0 40 40"><rect x="14" y="16" width="14" height="12" rx="6" fill="#8fd0c8"/><g fill="#5b86a8"><circle cx="12" cy="12" r="2"/><circle cx="20" cy="9" r="2"/><circle cx="28" cy="12" r="2"/></g></svg><div class="t">غَسلُ اليدين</div></div>
-    <div class="card"><svg viewBox="0 0 40 40"><circle cx="20" cy="22" r="12" fill="#6a9c78"/><rect x="18" y="7" width="4" height="8" fill="#8a6a4a"/></svg><div class="t">طعامٌ صحّيّ</div></div>
-    <div class="card"><svg viewBox="0 0 40 40"><path d="M20 8 c8 12 8 18 0 24 c-8 -6 -8 -12 0 -24z" fill="#5b86a8"/></svg><div class="t">شُربُ الماء</div></div>
-    <div class="card"><svg viewBox="0 0 40 40"><rect x="6" y="20" width="28" height="10" rx="3" fill="#0d6e6e"/><rect x="6" y="15" width="11" height="8" rx="3" fill="#cfe7e4"/><path d="M28 12 a7 7 0 0 0 0 12 a5 5 0 0 1 0 -12z" fill="#C79A3B"/></svg><div class="t">النومُ مبكّرًا</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/sahn.jpg" alt="طعامٌ صحّيّ" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: طعام</span></div><div class="t">طعامٌ صحّيّ</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/maa.jpg" alt="شُربُ الماء" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ماء</span></div><div class="t">شُربُ الماء</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/felt-nawm.jpg" alt="النومُ مبكّرًا" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: النوم</span></div><div class="t">النومُ مبكّرًا</div></div>
     <div class="card"><svg viewBox="0 0 40 40"><circle cx="20" cy="12" r="5" fill="#cf6f5f"/><path d="M20 17 v10 M20 20 l-8 4 M20 20 l8 4 M20 27 l-6 7 M20 27 l6 7" stroke="#cf6f5f" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div class="t">الحركةُ والرياضة</div></div>
     <div class="card"><svg viewBox="0 0 40 40"><path d="M12 30 l4 -18 8 0 4 18z" fill="none" stroke="#8fd0c8" stroke-width="3"/><path d="M15 12 q5 -6 10 0" fill="none" stroke="#8fd0c8" stroke-width="3"/></svg><div class="t">النظافة</div></div>
   </div>

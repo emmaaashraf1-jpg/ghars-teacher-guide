@@ -31,6 +31,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:12px 0 9px;padd
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
 .sum{background:linear-gradient(135deg,#1F4A39,#1E5631);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:14px 0 6px}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -42,7 +49,7 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:12px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> تُطبَعُ القوالبُ وتُلصَق على كرتونٍ لتُقصّ وتُستعمل في الرمل؛ يشكّل الطفل <b>منازلَ القمر</b> (هلال ← نصف ← بدر) ويرتّبها، ويردّد «قدّرَه اللهُ منازل»، ويتحدّث عن طمأنينة الليل بذكر الله.</div>
   <h2>قوالبُ منازل القمر — تُقصّ وتُستعمل في الرمل</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M42 10 a24 24 0 1 0 10 44 a18 18 0 1 1 -10 -44z" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-dasharray="4 3"/></svg><div class="t">هلال</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/hilal.jpg" alt="هلال" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: هلال</span></div><div class="t">هلال</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-dasharray="4 3"/><path d="M32 12 a20 20 0 0 1 0 40z" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-dasharray="4 3"/></svg><div class="t">نصف</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20" fill="none" stroke="#C79A3B" stroke-width="3" stroke-dasharray="4 3"/></svg><div class="t">بدر</div></div>
   </div>
@@ -57,7 +64,7 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:12px 0 9px;padd
   <div class="cutrow">
     <div class="pc"><svg viewBox="0 0 64 64"><path d="M10 42 h44 v8 h-44z" fill="none" stroke="#2C6A4D" stroke-width="3"/><path d="M12 42 v-7 a5 5 0 0 1 5 -5 h30 a5 5 0 0 1 5 5 v7" fill="none" stroke="#0d6e6e" stroke-width="3"/></svg><div class="t">آوي بذكرٍ</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><path d="M18 30 h28 M18 30 l7 -7 M18 30 l7 7" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 42 a10 10 0 1 1 8 -16" fill="none" stroke="#C79A3B" stroke-width="2.5"/></svg><div class="t">أدعو ربي</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M42 12 a22 22 0 1 0 10 40 a17 17 0 1 1 -10 -40z" fill="none" stroke="#0d6e6e" stroke-width="3"/></svg><div class="t">سكينةُ الليل</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/layl.jpg" alt="سكينةُ الليل" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الليل</span></div><div class="t">سكينةُ الليل</div></div>
   </div>
   <h2>٢) فاصلُ الكتاب — ألوّنه وقُصّه</h2>
   <div class="zikr"><div class="t">🌙 بذكر الله تطمئنُّ القلوب</div><div class="s">فاصلُ كتابٍ يلوّنه الطفل ويقصّه — بلا كتابة</div></div>
@@ -70,13 +77,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:12px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> يتفكّر الطفل <b>القمرَ</b> آيةً من آيات الله، ثم تُقصّ بطاقاتُ منازله ويرصدها بالعدسة و<b>يرتّبها بالتسلسل</b> (هلال ← نصف ← بدر)، ويميّز القمرَ آيةَ الليل من الشمس آيةِ النهار، ويتحدّث بالتفكّر عن دقّة تقدير الله (<b>العزيز</b>).</div>
   <h2>بطاقاتُ منازل القمر — تُقصّ وتُرتَّب بالتسلسل</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M42 12 a22 22 0 1 0 10 40 a17 17 0 1 1 -10 -40z" fill="none" stroke="#0d6e6e" stroke-width="3"/></svg><div class="t">١ هلال</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/hilal.jpg" alt="١ هلال" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: هلال</span></div><div class="t">١ هلال</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="18" fill="none" stroke="#0d6e6e" stroke-width="3"/><path d="M32 14 a18 18 0 0 1 0 36z" fill="#0d6e6e" fill-opacity="0.12" stroke="#0d6e6e" stroke-width="3"/></svg><div class="t">٢ نصف</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="18" fill="none" stroke="#C79A3B" stroke-width="3"/></svg><div class="t">٣ بدر</div></div>
   </div>
   <div class="cutrow" style="margin-top:12px;grid-template-columns:1fr 1fr">
-    <div class="pc"><svg viewBox="0 0 64 64"><circle cx="28" cy="28" r="13" fill="none" stroke="#0d6e6e" stroke-width="3"/><line x1="38" y1="38" x2="52" y2="52" stroke="#2C6A4D" stroke-width="4" stroke-linecap="round"/></svg><div class="t">أرصدُ بالعدسة</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="11" fill="none" stroke="#C79A3B" stroke-width="3"/><g stroke="#C79A3B" stroke-width="2.5" stroke-linecap="round"><line x1="32" y1="10" x2="32" y2="15"/><line x1="32" y1="49" x2="32" y2="54"/><line x1="10" y1="32" x2="15" y2="32"/><line x1="49" y1="32" x2="54" y2="32"/></g></svg><div class="t">الشمس (نهار)</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/mukabbir.jpg" alt="أرصدُ بالعدسة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: عدسة</span></div><div class="t">أرصدُ بالعدسة</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/shams.jpg" alt="الشمس (نهار)" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الشمس</span></div><div class="t">الشمس (نهار)</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · نشاط تكاملي — ركن أكتشف · اليوم الرابع</div>
 </div>
@@ -87,7 +94,7 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:12px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> يلوّن الطفل <b>منازلَ القمر الجاهزة</b>، ثم يقصّها ويلصقها <b>بالترتيب</b> في شريطٍ، ويردّد «قدّرَه اللهُ منازل». تسمّي المعلمةُ المنازلَ وتربطها بتقدير الله الدقيق.</div>
   <h2>منازلُ القمر — تُلوَّن وتُقصّ وتُرتَّب في شريط</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M42 12 a22 22 0 1 0 10 40 a17 17 0 1 1 -10 -40z" fill="none" stroke="#0d6e6e" stroke-width="3"/></svg><div class="t">هلال</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/hilal.jpg" alt="هلال" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: هلال</span></div><div class="t">هلال</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="18" fill="none" stroke="#0d6e6e" stroke-width="3"/><path d="M32 14 a18 18 0 0 1 0 36z" fill="none" stroke="#0d6e6e" stroke-width="3"/></svg><div class="t">نصف</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="18" fill="none" stroke="#C79A3B" stroke-width="3"/></svg><div class="t">بدر</div></div>
   </div>

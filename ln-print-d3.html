@@ -31,6 +31,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:12px 0 9px;padd
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
 .sum{background:linear-gradient(135deg,#1F4A39,#1E5631);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:14px 0 6px}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -42,8 +49,8 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:12px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> تُقصّ <b>بطاقاتُ الأدوار</b> وتُوزَّع، ويمثّل الأطفال بالدُّمى الخشبية <b>بلا ملامح</b> أعمالًا يحبها الله في النهار؛ نذكّرُ <b>شفهيًّا</b> بنعمة الصباح وباليوم الآخر جزاءً — <b>تذكيرًا لا تجسيدًا، صيانةً لهيبة الغيب</b>.</div>
   <h2>بطاقاتُ الأعمال الصالحة — تُقصّ وتُوزَّع للأدوار</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 50 c-9 -7 -15 -12 -15 -19 a7.5 7.5 0 0 1 15 -2 a7.5 7.5 0 0 1 15 2 c0 7 -6 12 -15 19z" fill="none" stroke="#cf6f5f" stroke-width="3"/></svg><div class="t">برُّ والديّ</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><rect x="16" y="34" width="32" height="18" rx="2" fill="none" stroke="#2C6A4D" stroke-width="3"/><path d="M16 34 l6 -8 h20 l6 8" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-linejoin="round"/></svg><div class="t">أرتّبُ بيتي</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/felt-birr.jpg" alt="برُّ والديّ" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: برّ الوالدين</span></div><div class="t">برُّ والديّ</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/felt-tartib-kutub.jpg" alt="أرتّبُ بيتي" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الترتيب</span></div><div class="t">أرتّبُ بيتي</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="40" rx="18" ry="8" fill="none" stroke="#C79A3B" stroke-width="3"/><rect x="27" y="22" width="10" height="10" rx="2" fill="none" stroke="#2C6A4D" stroke-width="3"/></svg><div class="t">أُطعمُ الجائع</div></div>
   </div>
   <h2>بطاقةُ ذكر الصباح — تُقصّ وتُقرأ بالصورة</h2>
@@ -57,12 +64,12 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:12px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> تُقصّ بطاقاتُ الأعمال، ويرتّبها الطفل ويطابق كلَّ عملٍ بوقته من النهار، ويتحدّث عن أنّ اللهَ يحبّ العملَ الصالح ويجزي عليه في اليوم الآخر <b>(تذكيرًا لا تجسيدًا)</b>.</div>
   <h2>بطاقاتُ الأعمال — تُقصّ وتُرتَّب</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M22 22 h20 v14 a10 10 0 0 1 -20 0z" fill="none" stroke="#0d6e6e" stroke-width="3"/><path d="M42 26 h6 a4 4 0 0 1 0 8 h-6" fill="none" stroke="#0d6e6e" stroke-width="3"/><path d="M27 12 v5 M32 11 v6 M37 12 v5" stroke="#C79A3B" stroke-width="2" stroke-linecap="round"/></svg><div class="t">أُقدّمُ الماء</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/maa.jpg" alt="أُقدّمُ الماء" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ماء</span></div><div class="t">أُقدّمُ الماء</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><line x1="24" y1="14" x2="40" y2="46" stroke="#2C6A4D" stroke-width="3"/><path d="M36 40 l14 6 -4 10 -14 -6z" fill="none" stroke="#1E5631" stroke-width="3" stroke-linejoin="round"/></svg><div class="t">أُميطُ الأذى</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M18 32 h28 M18 32 l8 -8 M18 32 l8 8" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 50 c-6 -4 -10 -8 -10 -13 a5 5 0 0 1 10 -1 a5 5 0 0 1 10 1 c0 5 -4 9 -10 13z" fill="none" stroke="#cf6f5f" stroke-width="2.5"/></svg><div class="t">أُساعدُ غيري</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/felt-musaada.jpg" alt="أُساعدُ غيري" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: المساعدة</span></div><div class="t">أُساعدُ غيري</div></div>
   </div>
   <div class="cutrow" style="margin-top:12px;grid-template-columns:1fr">
-    <div class="pc"><svg viewBox="0 0 64 64"><rect x="14" y="34" width="36" height="16" rx="2" fill="none" stroke="#2C6A4D" stroke-width="3"/><path d="M14 34 l6 -8 h24 l6 8" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-linejoin="round"/><path d="M28 44 h8" stroke="#C79A3B" stroke-width="2.5"/></svg><div class="t">أرتّبُ ألعابي</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/felt-tartib-kutub.jpg" alt="أرتّبُ ألعابي" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الترتيب</span></div><div class="t">أرتّبُ ألعابي</div></div>
   </div>
   <div class="foot">دليل معلمة غرس القيم · نشاط تكاملي — ركن أدرك وأستمتع · اليوم الثالث</div>
 </div>
@@ -74,8 +81,8 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:12px 0 9px;padd
   <h2>١) بطاقاتُ القصة — تُقصّ ويُحكى بها</h2>
   <div class="cutrow">
     <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 18 c-6 -4 -14 -4 -20 0 v28 c6 -4 14 -4 20 0 c6 -4 14 -4 20 0 v-28 c-6 -4 -14 -4 -20 0z" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-linejoin="round"/><line x1="32" y1="18" x2="32" y2="46" stroke="#C79A3B" stroke-width="2.5"/></svg><div class="t">أقرأُ قصّة</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M32 50 c-9 -7 -15 -12 -15 -19 a7.5 7.5 0 0 1 15 -2 a7.5 7.5 0 0 1 15 2 c0 7 -6 12 -15 19z" fill="none" stroke="#cf6f5f" stroke-width="3"/><path d="M24 30 h6 l3 -6 4 12 3 -6 h4" fill="none" stroke="#C79A3B" stroke-width="2.2" stroke-linejoin="round"/></svg><div class="t">أشكرُ النعمة</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="14" fill="none" stroke="#2C6A4D" stroke-width="3"/><path d="M25 33 l4 4 9 -10" fill="none" stroke="#1E5631" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="t">عملٌ صالح</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/felt-shukr.jpg" alt="أشكرُ النعمة" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الشكر</span></div><div class="t">أشكرُ النعمة</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/felt-musaada.jpg" alt="عملٌ صالح" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: عمل صالح</span></div><div class="t">عملٌ صالح</div></div>
   </div>
   <h2>٢) فاصلُ الكتاب — ألوّنه وقُصّه</h2>
   <div class="zikr"><div class="t">☀ نهاري عملٌ وشكر 🌙</div><div class="s">فاصلُ كتابٍ يلوّنه الطفل ويقصّه — بلا كتابة</div></div>
@@ -88,9 +95,9 @@ h2{font-family:var(--fd);color:var(--t1);font-size:15.5px;margin:12px 0 9px;padd
   <div class="prompt"><b>طريقة العمل:</b> يختار الطفل <b>بطاقةَ عملٍ صالحٍ</b> ينوي عمله نهارًا، يلوّنها ويلصقها في لوحة الإحسان الجماعية؛ نتحدّث بالصورة — بلا كتابة. اللهُ يراني ويحبّ عملي ويجزيني <b>(تذكيرًا لا تجسيدًا)</b>.</div>
   <h2>أختارُ عملًا وألوّنه</h2>
   <div class="cutrow">
-    <div class="pc"><svg viewBox="0 0 64 64"><rect x="14" y="30" width="36" height="22" rx="3" fill="none" stroke="#2C6A4D" stroke-width="3"/><path d="M14 30 l6 -8 h24 l6 8" fill="none" stroke="#0d6e6e" stroke-width="3" stroke-linejoin="round"/><circle cx="26" cy="41" r="3" fill="none" stroke="#C79A3B" stroke-width="2.5"/><circle cx="38" cy="41" r="3" fill="none" stroke="#C79A3B" stroke-width="2.5"/></svg><div class="t">أرتّبُ ألعابي</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/felt-tartib-kutub.jpg" alt="أرتّبُ ألعابي" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: الترتيب</span></div><div class="t">أرتّبُ ألعابي</div></div>
     <div class="pc"><svg viewBox="0 0 64 64"><line x1="24" y1="14" x2="40" y2="46" stroke="#2C6A4D" stroke-width="3"/><path d="M36 40 l14 6 -4 10 -14 -6z" fill="none" stroke="#1E5631" stroke-width="3" stroke-linejoin="round"/><g stroke="#C79A3B" stroke-width="2"><line x1="38" y1="44" x2="35" y2="50"/><line x1="42" y1="46" x2="39" y2="52"/></g></svg><div class="t">أُميطُ الأذى</div></div>
-    <div class="pc"><svg viewBox="0 0 64 64"><path d="M22 24 h20 v16 a10 10 0 0 1 -20 0z" fill="none" stroke="#0d6e6e" stroke-width="3"/><path d="M42 28 h6 a4 4 0 0 1 0 8 h-6" fill="none" stroke="#0d6e6e" stroke-width="3"/><path d="M27 16 v4 M32 15 v5 M37 16 v4" stroke="#C79A3B" stroke-width="2" stroke-linecap="round"/></svg><div class="t">أُقدّمُ الماء</div></div>
+    <div class="pc"><div class="ph"><img src="units-art/ws-am/maa.jpg" alt="أُقدّمُ الماء" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: ماء</span></div><div class="t">أُقدّمُ الماء</div></div>
   </div>
   <div class="sum"><b>المعنى المركزي المتكامل لليوم:</b> نهاري وقتُ عملٍ صالحٍ يحبه الله، وأشكرُ نعمةَ الصباح؛ واليومُ الآخرُ حقٌّ أُجزى فيه — أستعدُّ له بالعمل. — <b>للمعلمة:</b> اليومُ الآخرُ والجزاءُ يُغرَسان <b>تذكيرًا لا تجسيدًا</b>، صيانةً لهيبة الغيب.</div>
   <div class="foot">دليل معلمة غرس القيم · نشاط تكاملي — ركن فنوني الجميلة · اليوم الثالث</div>

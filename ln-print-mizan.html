@@ -39,6 +39,13 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:2px 0 12px;paddin
 .card .t{font-weight:700;font-size:13.5px;color:var(--ink);line-height:1.5}
 .foot{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
 @media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0;page-break-after:always}.sheet:last-child{page-break-after:auto}}
+.ph{width:fit-content;max-width:100%;margin:0 auto;border-radius:9px;overflow:hidden;line-height:0;background:#fff;border:1px solid #e2d7bf}
+.ph .ph-lbl{display:none}
+.ph.noimg{width:100%;height:90px;background:#f5f1e8}
+.ph.noimg .ph-lbl{display:grid;place-items:center;height:100%;font-size:10px;color:#b9ab8c;text-align:center;padding:3px;line-height:1.3}
+.ph img{display:block;height:90px;width:auto;max-width:100%;object-fit:contain;background:#fff}
+@media print{.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -83,8 +90,8 @@ h2{font-family:var(--fd);color:var(--t1);font-size:16px;margin:2px 0 12px;paddin
   <h2>بطاقاتُ المواقف — تُقصّ وتُخلط</h2>
   <div class="cards">
     <div class="card"><svg viewBox="0 0 48 48"><rect x="8" y="18" width="32" height="22" rx="3" fill="#cf6f5f"/><rect x="8" y="14" width="32" height="8" rx="2" fill="#b85a4a"/><rect x="21" y="14" width="6" height="26" fill="#C79A3B"/><path d="M24 14 c-6 -8 -14 -2 0 0 c14 -2 6 -8 0 0z" fill="#C79A3B"/></svg><div class="t">تلقّيتُ هديّة</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><circle cx="24" cy="28" r="13" fill="#6a9c78"/><rect x="22" y="9" width="4" height="9" rx="2" fill="#8a6a4a"/><path d="M26 12 q7 -5 9 2 q-7 2 -9 -2z" fill="#8fb99a"/></svg><div class="t">طعامٌ أُحبّه</div></div>
-    <div class="card"><svg viewBox="0 0 48 48"><ellipse cx="24" cy="20" rx="15" ry="9" fill="#bcd0d6"/><circle cx="16" cy="19" r="7" fill="#cfe0e5"/><circle cx="30" cy="18" r="8" fill="#cfe0e5"/><g stroke="#5b86a8" stroke-width="3" stroke-linecap="round"><line x1="16" y1="32" x2="14" y2="39"/><line x1="24" y1="33" x2="22" y2="40"/><line x1="32" y1="32" x2="30" y2="39"/></g></svg><div class="t">نزلَ المطر</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/tuffah.jpg" alt="طعامٌ أُحبّه" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: فاكهة</span></div><div class="t">طعامٌ أُحبّه</div></div>
+    <div class="card"><div class="ph"><img src="units-art/ws-am/matar.jpg" alt="نزلَ المطر" onerror="this.style.display='none';this.closest('.ph').classList.add('noimg')"/><span class="ph-lbl">صورة: المطر</span></div><div class="t">نزلَ المطر</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><path d="M24 38 C6 26 10 12 20 14 c3 .6 4 3 4 3 s1 -2.4 4 -3 c10 -2 14 12 -4 24z" fill="#cf6f5f"/></svg><div class="t">شُفيتُ من المرض</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><path d="M24 14 l-14 4 v16 l14 -3 z" fill="#0d6e6e"/><path d="M24 14 l14 4 v16 l-14 -3 z" fill="#12857f"/><line x1="24" y1="14" x2="24" y2="31" stroke="#1F4A39" stroke-width="2"/></svg><div class="t">تعلّمتُ شيئًا جديدًا</div></div>
     <div class="card"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="#C79A3B"/><path d="M24 10 a14 14 0 0 1 0 28" fill="#e0b354"/><circle cx="24" cy="24" r="4" fill="#fff"/></svg><div class="t">لعبتُ مع أصدقائي</div></div>
