@@ -82,6 +82,25 @@
     padding:8.5px 18px;border-radius:999px;margin-inline-start:8px;transition:transform .3s var(--eio),background .3s,border-color .3s}
   .menu a.cta-ghost::after{display:none}
   .menu a.cta-ghost:hover{background:rgba(23,122,116,.08);border-color:var(--teal);color:var(--teal-deep);transform:translateY(-2px)}
+  /* ===== mega-menu وصفيّ ===== */
+  .mdrop{position:relative}
+  .mtrig{font-family:var(--body);font-size:14.5px;font-weight:600;color:#4a4034;background:none;border:0;cursor:pointer;
+    padding:8px 6px;display:inline-flex;align-items:center;gap:6px;position:relative;transition:color .25s}
+  .mtrig .chev{font-size:9px;transition:transform .3s var(--eio);opacity:.6}
+  .mtrig::after{content:"";position:absolute;bottom:0;right:6px;left:6px;height:2px;background:var(--amber);
+    transform:scaleX(0);transform-origin:right;transition:transform .3s var(--eio)}
+  .mdrop:hover .mtrig,.mdrop.open .mtrig{color:var(--teal-deep)}
+  .mdrop:hover .mtrig::after,.mdrop.open .mtrig::after{transform:scaleX(1)}
+  .mdrop:hover .mtrig .chev,.mdrop.open .mtrig .chev{transform:rotate(180deg)}
+  .mpanel{position:absolute;top:100%;inset-inline-end:0;width:308px;background:var(--surface);
+    border:1px solid var(--line);border-radius:18px;box-shadow:0 26px 56px rgba(58,46,36,.17);padding:10px;
+    display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateY(10px);
+    transition:opacity .28s var(--eo),transform .28s var(--eo),visibility .28s;z-index:80}
+  .mdrop:hover .mpanel,.mdrop:focus-within .mpanel,.mdrop.open .mpanel{opacity:1;visibility:visible;transform:none}
+  .mpanel a{display:block;padding:11px 14px;border-radius:12px;text-decoration:none;transition:background .2s}
+  .mpanel a:hover{background:rgba(23,122,116,.07)}
+  .mpanel a b{display:block;font-family:var(--display);font-weight:700;font-size:17px;color:var(--teal-deep);line-height:1.4}
+  .mpanel a em{display:block;font-style:normal;font-size:12.5px;color:var(--gray);line-height:1.6;margin-top:2px}
   .burger{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--surface);
     cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px}
   .burger span{width:19px;height:2px;background:var(--forest);border-radius:2px;transition:.25s}
@@ -376,6 +395,10 @@
   .feature-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
     -webkit-mask-image:radial-gradient(132% 146% at 50% 48%,#000 64%,rgba(0,0,0,0) 100%);
     mask-image:radial-gradient(132% 146% at 50% 48%,#000 64%,rgba(0,0,0,0) 100%)}
+  /* تراكب البطاقة على القسم التالي (تجاوز حدود الأقسام كالمرجع) */
+  .feat-band{position:relative;z-index:3;padding-bottom:0}
+  #units{position:relative;z-index:1;border-top:0;
+    margin-top:calc(-1 * clamp(36px,6vw,82px));padding-top:clamp(94px,13vw,180px)}
 
   /* ============ Unit collection ============ */
   .chapter{margin-top:clamp(40px,6vw,66px)}
@@ -460,7 +483,14 @@
       border-radius:18px;flex-direction:column;align-items:stretch;gap:4px;padding:12px;
       box-shadow:0 24px 50px rgba(31,74,57,.16);transform:translateY(-12px);opacity:0;pointer-events:none;transition:.25s}
     .menu.open{transform:none;opacity:1;pointer-events:auto}
-    .menu a{padding:12px 16px;font-size:16px}
+    .menu>a{padding:12px 16px;font-size:16px}
+    .mdrop{width:100%}
+    .mtrig{width:100%;justify-content:space-between;padding:12px 16px;font-size:16px}
+    .mpanel{position:static;opacity:1;visibility:visible;transform:none;width:auto;border:0;box-shadow:none;
+      background:rgba(23,122,116,.05);border-radius:12px;margin:0 0 4px;padding:0 8px;max-height:0;overflow:hidden;
+      transition:max-height .35s var(--eo)}
+    .mdrop.open .mpanel{max-height:360px;padding:4px 8px}
+    .mpanel a{padding:10px 12px}.mpanel a b{font-size:15px}
     .menu a.cta,.menu a.cta-ghost{text-align:center;margin-top:4px;margin-inline-start:0}
     .burger{display:flex}
     .hero-grid{grid-template-columns:1fr;gap:36px}
@@ -494,9 +524,30 @@
     </button>
     <nav class="menu" id="menu" aria-label="القائمة الرئيسية">
       <a href="#top">الرئيسية</a>
-      <a href="#philosophy">فلسفة المنهج</a>
-      <a href="#wahy">منظومة الوحي</a>
-      <a href="#gallery">من الميدان</a>
+      <div class="mdrop">
+        <button class="mtrig" type="button" aria-expanded="false">المنهج <span class="chev" aria-hidden="true">▾</span></button>
+        <div class="mpanel">
+          <a href="#philosophy"><b>فلسفة المنهج</b><em>مشروعٌ لإعادة بناء الإنسان من الداخل</em></a>
+          <a href="#wahy"><b>منظومة الوحي</b><em>المرجع الأعلى — في مقابل غيرها</em></a>
+          <a href="#gallery"><b>من الميدان</b><em>لقطاتٌ حقيقيّة من داخل الروضة</em></a>
+        </div>
+      </div>
+      <div class="mdrop">
+        <button class="mtrig" type="button" aria-expanded="false">الوحدات <span class="chev" aria-hidden="true">▾</span></button>
+        <div class="mpanel">
+          <a href="intro-guide.html"><b>الدليل التعريفي</b><em>البوصلة — يُقرأ أوّلًا قبل الوحدات</em></a>
+          <a href="#units"><b>أدلة الوحدات</b><em>١٨ وحدةً تكامليّة على ٣ فصول</em></a>
+          <a href="unit-layl-nahar.html"><b>الوحدة النموذجيّة</b><em>الليل والنهار — نموذجٌ كامل</em></a>
+        </div>
+      </div>
+      <div class="mdrop">
+        <button class="mtrig" type="button" aria-expanded="false">أدوات المعلمة <span class="chev" aria-hidden="true">▾</span></button>
+        <div class="mpanel">
+          <a href="khizanat-almuallima.html"><b>خزانة المعلمة</b><em>مواردُ اللقاء جاهزةً للطباعة</em></a>
+          <a href="namathij-almuallima.html"><b>كرّاسة النماذج</b><em>نماذجُ التطبيق والتقويم</em></a>
+          <a href="fahras-tarbawi.html"><b>الفهارس</b><em>الأحاديث · الآيات · التربويّ</em></a>
+        </div>
+      </div>
       <a class="cta cta-ghost" href="#units">أدلة الوحدات</a>
       <a class="cta" href="intro-guide.html">الدليل التعريفي</a>
     </nav>
@@ -664,7 +715,7 @@
 </section>
 
 <!-- ============ General guide feature ============ -->
-<section class="band">
+<section class="band feat-band">
   <div class="shell">
     <div class="feature reveal">
       <div class="feature-copy">
@@ -783,13 +834,23 @@
 (function(){
   /* mobile menu */
   var burger=document.getElementById('burger'), menu=document.getElementById('menu');
+  var drops=[].slice.call(document.querySelectorAll('.mdrop'));
+  function closeDrops(except){ drops.forEach(function(d){ if(d!==except){ d.classList.remove('open'); var t=d.querySelector('.mtrig'); if(t)t.setAttribute('aria-expanded','false'); } }); }
+  drops.forEach(function(d){
+    var t=d.querySelector('.mtrig');
+    t.addEventListener('click',function(e){ e.stopPropagation(); var was=d.classList.contains('open'); closeDrops(d);
+      d.classList.toggle('open',!was); t.setAttribute('aria-expanded',!was?'true':'false'); });
+  });
   if(burger){
     burger.addEventListener('click',function(){
       var open=menu.classList.toggle('open');
       burger.setAttribute('aria-expanded',open?'true':'false');
+      if(!open) closeDrops();
     });
-    menu.addEventListener('click',function(e){ if(e.target.tagName==='A'){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }});
+    menu.addEventListener('click',function(e){ if(e.target.closest('a')){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); closeDrops(); }});
   }
+  document.addEventListener('click',function(e){ if(!e.target.closest('.mdrop')) closeDrops(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDrops(); });
   /* sticky nav shadow + hero parallax */
   var nav=document.getElementById('nav'), heroImg=document.querySelector('#heroArt img');
   var reduceM=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
