@@ -87,18 +87,22 @@ for my $prefix (sort keys %by_unit) {
     my $head2 = join("", map { my @t=@{$_->{levels}}; join("", map { '<th class="lv">'.esc($_->[0]).'</th>' } @t) } @cards);
 
     my $body = "";
-    for (1..24) {
+    for (1..16) {   # صفوفٌ تسع فصلًا؛ تُبقي الجدولَ والوصفَ معًا في صفحةٍ واحدة عند الطباعة
       $body .= '<tr><td class="cName"></td>'.('<td class="lv"></td>' x 12).'<td class="cNote"></td></tr>'."\n";
     }
 
     my $dayline = $l->{day} ? "اليوم: ".esc($l->{day}) : 'اليوم: __________';
     my $sheet = <<"HTML";
 <section class="sheet">
-  <header class="shead">
-    <div class="sh-r"><span class="sh-unit">سجلّ ملاحظة الوحدة — $uname</span></div>
-    <h2 class="sh-title">@{[ esc($l->{lesson_title}) ]}</h2>
-    <div class="sh-meta"><span>المادّة: @{[ esc($l->{subject}) ]}</span><span>$dayline</span><span>التاريخ: ____ / ____ / ٢٠____ هـ</span></div>
+  <header class="brandbar">
+    <img class="blogo" src="brand/logo-ghars.webp" alt="نادي غرس القيم للطفولة"/>
+    <div class="bmid"><div class="bclub">نادي غرس القيم للطفولة</div><div class="beyebrow">سجلّ ملاحظة الوحدة — $uname</div></div>
+    <div class="bdate">التاريخ: ____ / ____ / ٢٠__ هـ</div>
   </header>
+  <div class="shead">
+    <h2 class="sh-title">@{[ esc($l->{lesson_title}) ]}</h2>
+    <div class="sh-meta"><span>المادّة: @{[ esc($l->{subject}) ]}</span><span>$dayline</span></div>
+  </div>
   <table class="obs">
     <thead><tr>$head1</tr><tr>$head2</tr></thead>
     <tbody>
@@ -110,6 +114,7 @@ $body    </tbody>
   </div>
   <section class="levels">
     <h3>وصفُ المستويات</h3>
+    <div class="lvgrid">
 HTML
     for my $c (@cards) {
       $sheet .= '    <div class="lvblock"><div class="lvind">'.esc($c->{lbl}).'</div>'."\n";
@@ -118,7 +123,7 @@ HTML
       }
       $sheet .= '    </div>'."\n";
     }
-    $sheet .= "  </section>\n</section>\n";
+    $sheet .= "    </div>\n  </section>\n</section>\n";
     push @sheets, $sheet;
   }
 
@@ -132,16 +137,25 @@ HTML
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>سجلّ ملاحظة الوحدة · $uname · غرس القيم</title>
 <style>
+\@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+\@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+\@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+\@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
 :root{--t1:#17352d;--t2:#2C6A4D;--gold:#C79A3B;--ink:#1E2E29;--muted:#6C776F;--line:#D9D0BE;--cream:#F7F2E6;--head:#EAF1EC}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Amiri','Noto Naskh Arabic',serif;color:var(--ink);background:#eef1ec;padding:16px;line-height:1.5}
+body{font-family:'Saudi','Amiri','Noto Naskh Arabic',serif;color:var(--ink);background:#eef1ec;padding:16px;line-height:1.5}
 .intro{max-width:1000px;margin:0 auto 14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px}
-.intro h1{font-size:22px;color:var(--t1);margin-bottom:4px}
+.intro h1{font-family:'AlAwwal',serif;font-size:22px;color:var(--t1);margin-bottom:4px}
 .intro p{font-size:13.5px;color:var(--muted)}
 .sheet{max-width:1180px;margin:0 auto 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px 12px}
-.shead{border-bottom:2px solid var(--t2);padding-bottom:8px;margin-bottom:10px}
-.sh-unit{font-size:13px;color:var(--t2);font-weight:700}
-.sh-title{font-size:19px;color:var(--t1);margin:4px 0 6px}
+.brandbar{display:flex;align-items:center;gap:12px;border-bottom:2px solid var(--gold);padding-bottom:8px;margin-bottom:8px}
+.blogo{width:52px;height:52px;object-fit:contain;flex:none}
+.bmid{flex:1;display:flex;flex-direction:column;gap:1px;min-width:0}
+.bclub{font-family:'AlAwwal',serif;color:var(--t1);font-size:17px;font-weight:700;line-height:1.2}
+.beyebrow{font-family:'Saudi','Amiri',serif;color:var(--t2);font-size:12.5px;font-weight:700}
+.bdate{font-size:12px;color:var(--muted);white-space:nowrap;align-self:flex-start}
+.shead{padding-bottom:6px;margin-bottom:10px}
+.sh-title{font-family:'AlAwwal',serif;font-size:18px;color:var(--t1);margin:0 0 4px}
 .sh-meta{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:13px;color:var(--ink)}
 table.obs{width:100%;border-collapse:collapse;table-layout:fixed}
 table.obs th,table.obs td{border:1px solid var(--line);text-align:center;font-size:11.5px;padding:2px}
@@ -153,20 +167,33 @@ th.cNote,td.cNote{width:150px}
 table.obs tbody td{height:24px}
 td.cName{background:#fcfaf4}
 .sh-foot{margin-top:8px;font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;border-top:1px dashed var(--line);padding-top:6px}
-.levels{margin-top:14px;background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
-.levels h3{font-size:15px;color:var(--t1);margin-bottom:8px}
-.lvblock{margin-bottom:8px}
-.lvind{font-weight:700;color:var(--t2);font-size:13.5px;margin-bottom:2px}
-.lvrow{display:flex;gap:8px;font-size:13px;margin-inline-start:8px}
-.lvt{min-width:56px;color:var(--gold);font-weight:700}
-.lvd{color:var(--ink)}
+.levels{margin-top:14px;background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.levels h3{font-family:'AlAwwal',serif;font-size:15px;color:var(--t1);margin-bottom:10px}
+.lvgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px}
+.lvblock{background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 12px}
+.lvind{font-weight:700;color:var(--t2);font-size:13.5px;margin-bottom:5px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.lvrow{display:grid;grid-template-columns:64px 1fr;gap:8px;font-size:13px;margin-bottom:3px;align-items:baseline}
+.lvt{color:var(--gold);font-weight:700}
+.lvd{color:var(--ink);line-height:1.45}
 \@media print{
   body{background:#fff;padding:0}
   .intro{display:none}
-  .sheet{max-width:none;margin:0;border:0;border-radius:0;padding:6mm 6mm 4mm;break-after:page;page-break-after:always}
+  .sheet{max-width:none;margin:0;border:0;border-radius:0;padding:5mm 6mm 4mm;break-after:page;page-break-after:always;break-inside:avoid}
   .sheet:last-child{break-after:auto;page-break-after:auto}
-  .levels{display:none}
-  table.obs th,table.obs td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .brandbar{-webkit-print-color-adjust:exact;print-color-adjust:exact;break-inside:avoid;padding-bottom:4px;margin-bottom:5px}
+  .blogo{width:40px;height:40px}
+  .bclub{font-size:15px}.beyebrow{font-size:11px}.bdate{font-size:10.5px}
+  .shead{margin-bottom:5px}.sh-title{font-size:15px}.sh-meta{font-size:11px;gap:3px 16px}
+  table.obs th,table.obs td{font-size:10px;padding:1px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  table.obs tbody td{height:20px}
+  table.obs tr,table.obs thead{break-inside:avoid}
+  .sh-foot{font-size:9.5px;margin:5px 0;padding-top:4px}
+  .levels{margin-top:6px;background:#fff;padding:6px 8px;break-inside:avoid}
+  .levels h3{font-size:11.5px;margin-bottom:4px}
+  .lvgrid{gap:5px 14px}
+  .lvblock{padding:5px 8px;break-inside:avoid}
+  .lvind{font-size:11px;margin-bottom:3px;padding-bottom:2px}
+  .lvrow{grid-template-columns:52px 1fr;font-size:9.5px;margin-bottom:1px}
 }
 \@page{size:A4 landscape;margin:8mm}
 </style>
