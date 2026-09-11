@@ -27,12 +27,15 @@
 
   /* ============ Design tokens — هوية غرس (فيروزيّ + بنّيّ دافئ + عاجيّ + لمسات مائيّة) ============ */
   :root{
-    --ivory:#FBF9F2; --cream:#F4EDDE; --paper:#FDFAF2; --surface:#FFFFFF; --surface-2:#FEFCF7;
-    /* الفيروزيّ صار اللون الأساسيّ (لون اسم الشعار) — يُعاد توجيه --forest إليه لتتبعه كلّ العناصر */
-    --forest:#177a74; --forest-2:#22988f; --teal:#177a74; --teal-2:#22988f; --teal-deep:#0f5a55;
-    --brown:#7c4e2c; --brown-deep:#3a2a1c; --blue:#5C7B90;
-    --sage:#8AA48F; --terra:#C57B57; --ochre:#C0922E; --gold:#C79A3B; --amber:#e0a238;
-    --ink:#33291f; --gray:#8a7f70; --line:#EAE2D3; --line-soft:#F0E9DB;
+    --ivory:#FBF9F2; --cream:#F4EBD8; --paper:#FDFAF3; --surface:#FFFFFF; --surface-2:#FEFCF7;
+    /* الفيروزيّ الجوهريّ = اللون الأساسيّ (يُعاد توجيه --forest إليه) */
+    --forest:#157C74; --forest-2:#209B8F; --teal:#157C74; --teal-2:#209B8F; --teal-deep:#0C544D;
+    --brown:#7c4e2c; --brown-deep:#2C2318; --blue:#5C7B90;
+    /* لمسات مائيّة مخفوتة (للأشكال العضويّة فقط) */
+    --sage:#A2BCA1; --terra:#D08457; --lime:#AEC57A; --coral:#DE8A66;
+    /* عائلة عسليّة واحدة للدفء (بدل تعدّد الأصفر) */
+    --ochre:#B07C22; --gold:#D69A33; --amber:#D69A33; --gold-soft:#F1DAA4;
+    --ink:#33291f; --gray:#877C6C; --line:#EAE2D3; --line-soft:#F0E9DB;
     --display:'AlAwwal','Amiri',serif;
     --body:'Noto Naskh Arabic','Segoe UI',Tahoma,sans-serif;
     --maxw:1200px;
@@ -518,7 +521,7 @@
     .ch-head .count{margin-inline-start:0;flex-basis:100%}
   }
   /* ================= DNA layer (بنية المرجع بهوية غرس) ================= */
-  :root{--teal-dark:#0d413f;--gold-soft:#f2d79a}
+  :root{--teal-dark:#0A3B37;--gold-soft:#F1DAA4}
   .blob{position:absolute;pointer-events:none;opacity:.42;z-index:0;will-change:transform;animation:floatb 12s var(--ease) infinite alternate}
   .blob.s2{animation-duration:15s;animation-delay:-4s}
   @keyframes floatb{from{transform:translate(0,0) rotate(0) scale(1)}to{transform:translate(18px,-22px) rotate(9deg) scale(1.06)}}
