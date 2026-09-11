@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>كرّاسة نماذج المعلمة · غرس القيم</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{--t1:#17352d;--t2:#2C6A4D;--gold:#C79A3B;--ink:#1E2E29;--muted:#6C776F;--line:#D9D0BE;--cream:#F7F2E6;--head:#EAF1EC}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Saudi','Amiri','Noto Naskh Arabic',serif;color:var(--ink);background:#eef1ec;padding:16px;line-height:1.5}
+.intro{max-width:900px;margin:0 auto 16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+.intro h1{font-family:'AlAwwal',serif;font-size:23px;color:var(--t1);margin-bottom:4px}
+.intro p{font-size:13.5px;color:var(--muted)}
+.intro ol{margin:8px 22px 0;font-size:13px;color:var(--ink);columns:2;gap:24px}
+.form{max-width:820px;margin:0 auto 22px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px 14px}
+.brandbar{display:flex;align-items:center;gap:12px;border-bottom:2px solid var(--gold);padding-bottom:8px;margin-bottom:10px}
+.blogo{width:48px;height:48px;object-fit:contain;flex:none}
+.bmid{flex:1;display:flex;flex-direction:column;gap:1px;min-width:0}
+.bclub{font-family:'AlAwwal',serif;color:var(--t1);font-size:16px;font-weight:700;line-height:1.2}
+.beyebrow{font-family:'Saudi','Amiri',serif;color:var(--t2);font-size:12.5px;font-weight:700}
+.bdate{font-size:12px;color:var(--muted);white-space:nowrap;align-self:flex-start}
+h2.ft{font-family:'AlAwwal',serif;font-size:18px;color:var(--t1);margin:2px 0 4px}
+.hint{font-size:12.5px;color:var(--muted);margin-bottom:10px}
+table{width:100%;border-collapse:collapse;table-layout:fixed;margin-bottom:8px}
+th,td{border:1px solid var(--line);padding:5px 7px;font-size:12.5px;text-align:right;vertical-align:top}
+thead th{background:var(--head);color:var(--t1);font-weight:700;text-align:center}
+td.day{background:#fcfaf4;font-weight:700;color:var(--t2);text-align:center;width:74px}
+.ck{display:inline-block;width:14px;height:14px;border:1.6px solid var(--t2);border-radius:3px;vertical-align:-2px}
+.fill{border-bottom:1px dotted var(--muted);min-height:20px}
+.blk{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:8px}
+.blk h3{font-family:'AlAwwal',serif;font-size:14px;color:var(--t2);margin-bottom:6px}
+.plan{display:grid;grid-template-columns:52px 1fr;gap:6px;align-items:baseline;margin-bottom:5px;font-size:13px}
+.plan b{color:var(--gold)}
+.plan .fill{height:22px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.qcard{border:1px dashed var(--muted);border-radius:8px;padding:8px 10px;font-size:12px;min-height:78px}
+.qcard div{margin-bottom:6px}
+.link-card{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);border-radius:10px;padding:12px 15px;font-size:13.5px}
+.link-card a{color:var(--t2);font-weight:700;margin-inline-end:12px;white-space:nowrap}
+.ffoot{margin-top:10px;border-top:1px dashed var(--line);padding-top:6px;font-size:11.5px;color:var(--muted);display:flex;gap:6px 20px;flex-wrap:wrap}
+.ffoot b{color:var(--t1)}
+@media print{
+  body{background:#fff;padding:0}
+  .intro{display:none}
+  .form{max-width:none;margin:0;border:0;border-radius:0;padding:8mm 8mm 6mm;break-after:page;page-break-after:always;break-inside:avoid}
+  .form:last-child{break-after:auto;page-break-after:auto}
+  .brandbar{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  th,td,.qcard,.blk,.link-card{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  tr{break-inside:avoid}
+}
+@page{size:A4;margin:10mm}
+</style>
+</head>
+<body>
+<div class="intro">
+  <h1>كرّاسة نماذج المعلمة</h1>
+  <p>ثمانيةُ نماذجَ تُطبع على A4، تفتحها المعلمةُ <b>قبل</b> الأسبوع لا أثناءَه. كلُّها هياكلُ تُملأ بخطّ اليد؛ في ذيل كلّ ورقةٍ سطرا «اسم المورد» و«أين يُستعمل».</p>
+  <ol>
+    <li>ورقة تجهيز الأسبوع</li>
+    <li>خطة اليوم البديلة</li>
+    <li>قائمة تحقّق جاهزية الركن</li>
+    <li>سجلّ ملاحظة الوحدة (رابط)</li>
+    <li>بطاقة ملاحظة سريعة</li>
+    <li>تقرير ختام الوحدة (إلى البيت)</li>
+    <li>استمارة زيارة صفية</li>
+    <li>موارد البيئة المحيطة</li>
+  </ol>
+</div>
+
+<!-- ① ورقة تجهيز الأسبوع -->
+<section class="form">
+  <header class="brandbar"><img class="blogo" src="brand/logo-ghars.webp" alt="نادي غرس القيم للطفولة"/>
+    <div class="bmid"><div class="bclub">نادي غرس القيم للطفولة</div><div class="beyebrow">نموذج ١ · ورقة تجهيز الأسبوع</div></div>
+    <div class="bdate">الأسبوع: ____ /____ /٢٠__ هـ</div></header>
+  <h2 class="ft">ورقة تجهيز الأسبوع</h2>
+  <div class="hint">تُملأ قبل بداية الأسبوع: ما تحتاجينه لكلّ يومٍ، وهل جهّزتِه.</div>
+  <table>
+    <thead><tr><th style="width:74px">اليوم</th><th>اللقاء</th><th>الأدوات المطلوبة</th><th style="width:56px">جاهز</th><th style="width:150px">ملاحظة</th></tr></thead>
+    <tbody>
+      <tr><td class="day" rowspan="2">الأحد</td><td></td><td></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+      <tr><td></td><td></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+      <tr><td class="day" rowspan="2">الاثنين</td><td></td><td></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+      <tr><td></td><td></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+      <tr><td class="day" rowspan="2">الثلاثاء</td><td></td><td></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+      <tr><td></td><td></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+      <tr><td class="day" rowspan="2">الأربعاء</td><td></td><td></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+      <tr><td></td><td></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+      <tr><td class="day" rowspan="2">الخميس</td><td></td><td></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+      <tr><td></td><td></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="ffoot"><span><b>اسم المورد:</b> ورقة تجهيز الأسبوع</span><span><b>أين يُستعمل:</b> قبل الأسبوع · قسم «قبل أن تبدئي» بصفحة الوحدة</span></div>
+</section>
+
+<!-- ② خطة اليوم البديلة -->
+<section class="form">
+  <header class="brandbar"><img class="blogo" src="brand/logo-ghars.webp" alt="نادي غرس القيم للطفولة"/>
+    <div class="bmid"><div class="bclub">نادي غرس القيم للطفولة</div><div class="beyebrow">نموذج ٢ · خطة اليوم البديلة</div></div>
+    <div class="bdate">التاريخ: ____ /____ /٢٠__ هـ</div></header>
+  <h2 class="ft">خطة اليوم البديلة</h2>
+  <div class="hint">ماذا أفعلُ إن اختلّ سيرُ اليوم؟ اكتبي خطّتين لكلّ موقفٍ قبل حدوثه.</div>
+  <div class="blk"><h3>غيابُ الأدوات</h3>
+    <div class="plan"><b>الخطة أ</b><div class="fill"></div></div><div class="plan"><b>الخطة ب</b><div class="fill"></div></div></div>
+  <div class="blk"><h3>ضيقُ الوقت</h3>
+    <div class="plan"><b>الخطة أ</b><div class="fill"></div></div><div class="plan"><b>الخطة ب</b><div class="fill"></div></div></div>
+  <div class="blk"><h3>اضطرابُ المجموعة</h3>
+    <div class="plan"><b>الخطة أ</b><div class="fill"></div></div><div class="plan"><b>الخطة ب</b><div class="fill"></div></div></div>
+  <div class="blk"><h3>غيابُ معلمة</h3>
+    <div class="plan"><b>الخطة أ</b><div class="fill"></div></div><div class="plan"><b>الخطة ب</b><div class="fill"></div></div></div>
+  <div class="ffoot"><span><b>اسم المورد:</b> خطة اليوم البديلة</span><span><b>أين يُستعمل:</b> تُجهَّز مسبقًا وتُرجَع إليها عند الطارئ</span></div>
+</section>
+
+<!-- ③ قائمة تحقّق جاهزية الركن -->
+<section class="form">
+  <header class="brandbar"><img class="blogo" src="brand/logo-ghars.webp" alt="نادي غرس القيم للطفولة"/>
+    <div class="bmid"><div class="bclub">نادي غرس القيم للطفولة</div><div class="beyebrow">نموذج ٣ · قائمة تحقّق جاهزية الركن</div></div>
+    <div class="bdate">الركن: ______________</div></header>
+  <h2 class="ft">قائمة تحقّق جاهزية الركن</h2>
+  <div class="hint">قبل فتح الركن للأطفال: أشّري بندًا بندًا. اكتبي بنودَ التحقّق التي تناسب ركنك.</div>
+  <table>
+    <thead><tr><th style="width:52px">تحقّق</th><th>البند</th><th style="width:180px">ملاحظة</th></tr></thead>
+    <tbody>
+      <tr><td style="text-align:center"><span class="ck"></span></td><td></td><td></td></tr>
+      <tr><td style="text-align:center"><span class="ck"></span></td><td></td><td></td></tr>
+      <tr><td style="text-align:center"><span class="ck"></span></td><td></td><td></td></tr>
+      <tr><td style="text-align:center"><span class="ck"></span></td><td></td><td></td></tr>
+      <tr><td style="text-align:center"><span class="ck"></span></td><td></td><td></td></tr>
+      <tr><td style="text-align:center"><span class="ck"></span></td><td></td><td></td></tr>
+      <tr><td style="text-align:center"><span class="ck"></span></td><td></td><td></td></tr>
+      <tr><td style="text-align:center"><span class="ck"></span></td><td></td><td></td></tr>
+      <tr><td style="text-align:center"><span class="ck"></span></td><td></td><td></td></tr>
+      <tr><td style="text-align:center"><span class="ck"></span></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="ffoot"><span><b>اسم المورد:</b> قائمة تحقّق جاهزية الركن</span><span><b>أين يُستعمل:</b> قبل فتح كلّ ركنٍ · قسم «جهِّزي البيئة»</span></div>
+</section>
+
+<!-- ④ سجلّ ملاحظة الوحدة (رابط) -->
+<section class="form">
+  <header class="brandbar"><img class="blogo" src="brand/logo-ghars.webp" alt="نادي غرس القيم للطفولة"/>
+    <div class="bmid"><div class="bclub">نادي غرس القيم للطفولة</div><div class="beyebrow">نموذج ٤ · سجلّ ملاحظة الوحدة</div></div>
+    <div class="bdate"></div></header>
+  <h2 class="ft">سجلّ ملاحظة الوحدة</h2>
+  <div class="hint">هذا النموذجُ مبنيٌّ ومطبوعٌ جاهزًا لكلّ وحدة — لا يُملأ هنا. افتحي سجلّ وحدتك واطبعي أوراقَها:</div>
+  <div class="link-card">
+    <a href="sijil-makhluq.html" target="_blank" rel="noopener">سجلّ وحدة «أنا مخلوق»</a>
+    <a href="sijil-layl-nahar.html" target="_blank" rel="noopener">سجلّ وحدة «الليل والنهار»</a>
+    <a href="sijil-maskan.html" target="_blank" rel="noopener">سجلّ وحدة «المسكن»</a>
+    <a href="sijil-family.html" target="_blank" rel="noopener">سجلّ وحدة «العائلة»</a>
+  </div>
+  <div class="ffoot"><span><b>اسم المورد:</b> سجلّ ملاحظة الوحدة</span><span><b>أين يُستعمل:</b> أثناء اللقاء وبعده · تُفرَّغ حقولُه في «تقرير ختام الوحدة»</span></div>
+</section>
+
+<!-- ⑤ بطاقة ملاحظة سريعة -->
+<section class="form">
+  <header class="brandbar"><img class="blogo" src="brand/logo-ghars.webp" alt="نادي غرس القيم للطفولة"/>
+    <div class="bmid"><div class="bclub">نادي غرس القيم للطفولة</div><div class="beyebrow">نموذج ٥ · بطاقة ملاحظة سريعة</div></div>
+    <div class="bdate">اليوم: ____ /____</div></header>
+  <h2 class="ft">بطاقة ملاحظة سريعة</h2>
+  <div class="hint">تُقصّ الثمانِ بطاقاتٍ وتُملأ أثناء اللقاء عند ملاحظةٍ عابرة، ثمّ تُنقَل إلى سجلّ الوحدة.</div>
+  <div class="cards">
+    <div class="qcard"><div>الطفل: ______________</div><div>اللقاء: ______________</div><div>الملاحظة: ____________________</div></div>
+    <div class="qcard"><div>الطفل: ______________</div><div>اللقاء: ______________</div><div>الملاحظة: ____________________</div></div>
+    <div class="qcard"><div>الطفل: ______________</div><div>اللقاء: ______________</div><div>الملاحظة: ____________________</div></div>
+    <div class="qcard"><div>الطفل: ______________</div><div>اللقاء: ______________</div><div>الملاحظة: ____________________</div></div>
+    <div class="qcard"><div>الطفل: ______________</div><div>اللقاء: ______________</div><div>الملاحظة: ____________________</div></div>
+    <div class="qcard"><div>الطفل: ______________</div><div>اللقاء: ______________</div><div>الملاحظة: ____________________</div></div>
+    <div class="qcard"><div>الطفل: ______________</div><div>اللقاء: ______________</div><div>الملاحظة: ____________________</div></div>
+    <div class="qcard"><div>الطفل: ______________</div><div>اللقاء: ______________</div><div>الملاحظة: ____________________</div></div>
+  </div>
+  <div class="ffoot"><span><b>اسم المورد:</b> بطاقة ملاحظة سريعة</span><span><b>أين يُستعمل:</b> في اليد أثناء اللقاء · تُفرَّغ في سجلّ الوحدة</span></div>
+</section>
+
+<!-- ⑥ تقرير ختام الوحدة (إلى البيت) -->
+<section class="form">
+  <header class="brandbar"><img class="blogo" src="brand/logo-ghars.webp" alt="نادي غرس القيم للطفولة"/>
+    <div class="bmid"><div class="bclub">نادي غرس القيم للطفولة</div><div class="beyebrow">نموذج ٦ · تقرير ختام الوحدة</div></div>
+    <div class="bdate">التاريخ: ____ /____ /٢٠__ هـ</div></header>
+  <h2 class="ft">تقرير ختام الوحدة — إلى البيت</h2>
+  <div class="hint">يُفرَّغ من سجلّ ملاحظة الوحدة (نموذج ٤) ويُرسَل إلى الأسرة. حقولُه مطابقةٌ لمؤشّرات السجلّ.</div>
+  <table>
+    <tr><td class="day" style="width:90px">الطفل</td><td></td><td class="day" style="width:70px">الوحدة</td><td></td></tr>
+  </table>
+  <table>
+    <thead><tr><th>المؤشّر</th><th style="width:70px">مبتدئ</th><th style="width:70px">نامٍ</th><th style="width:70px">متمكّن</th></tr></thead>
+    <tbody>
+      <tr><td>المؤشّر المعرفيّ</td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td></tr>
+      <tr><td>المؤشّر المهاريّ</td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td></tr>
+      <tr><td>المؤشّر الوجدانيّ</td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td></tr>
+      <tr><td>المؤشّر التطبيقيّ</td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td></tr>
+    </tbody>
+  </table>
+  <table><tr><td class="day" style="width:110px;vertical-align:top">كلمةٌ إلى الأسرة</td><td style="height:70px"></td></tr></table>
+  <div class="ffoot"><span><b>اسم المورد:</b> تقرير ختام الوحدة</span><span><b>أين يُستعمل:</b> نهاية الوحدة · يُرسَل إلى البيت (صياغةُ المستويات بانتظار الاعتماد)</span></div>
+</section>
+
+<!-- ⑦ استمارة زيارة صفية -->
+<section class="form">
+  <header class="brandbar"><img class="blogo" src="brand/logo-ghars.webp" alt="نادي غرس القيم للطفولة"/>
+    <div class="bmid"><div class="bclub">نادي غرس القيم للطفولة</div><div class="beyebrow">نموذج ٧ · استمارة زيارة صفية</div></div>
+    <div class="bdate">التاريخ: ____ /____ /٢٠__ هـ</div></header>
+  <h2 class="ft">استمارة زيارة صفية</h2>
+  <div class="hint">للمشرفة: أشّري المستوى لكلّ محور، واكتبي المحاورَ التي تلاحظينها.</div>
+  <table>
+    <tr><td class="day" style="width:80px">المعلمة</td><td></td><td class="day" style="width:70px">الوحدة</td><td></td></tr>
+  </table>
+  <table>
+    <thead><tr><th>محور الملاحظة</th><th style="width:70px">غير متحقّق</th><th style="width:70px">جزئيّ</th><th style="width:70px">متحقّق</th><th style="width:150px">توصية</th></tr></thead>
+    <tbody>
+      <tr><td></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+      <tr><td></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+      <tr><td></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+      <tr><td></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+      <tr><td></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+      <tr><td></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td style="text-align:center"><span class="ck"></span></td><td></td></tr>
+    </tbody>
+  </table>
+  <table><tr><td class="day" style="width:110px;vertical-align:top">توصيةٌ عامّة</td><td style="height:56px"></td></tr></table>
+  <div class="ffoot"><span><b>اسم المورد:</b> استمارة زيارة صفية</span><span><b>أين يُستعمل:</b> عند زيارة المشرفة للفصل</span></div>
+</section>
+
+<!-- ⑧ موارد البيئة المحيطة -->
+<section class="form">
+  <header class="brandbar"><img class="blogo" src="brand/logo-ghars.webp" alt="نادي غرس القيم للطفولة"/>
+    <div class="bmid"><div class="bclub">نادي غرس القيم للطفولة</div><div class="beyebrow">نموذج ٨ · موارد البيئة المحيطة</div></div>
+    <div class="bdate"></div></header>
+  <h2 class="ft">موارد البيئة المحيطة</h2>
+  <div class="hint">جردُ ما يمكن جلبُه من محيط الروضة بديلًا عن الأدوات المشتراة.</div>
+  <table>
+    <thead><tr><th>المورد</th><th style="width:150px">من أين يُجلَب</th><th>يُغني عن</th><th style="width:130px">ملاحظة</th></tr></thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="ffoot"><span><b>اسم المورد:</b> موارد البيئة المحيطة</span><span><b>أين يُستعمل:</b> عند تجهيز الأدوات · قسم «قبل أن تبدئي»</span></div>
+</section>
+
+</body>
+</html>
