@@ -55,12 +55,12 @@
   .eyebrow::before{content:"";display:inline-block;width:28px;height:1px;background:currentColor;opacity:.5}
 
   /* ============ Header ============ */
-  .nav{position:sticky;top:0;z-index:60;background:rgba(253,250,242,.86);backdrop-filter:blur(14px);
-    border-radius:0 0 26px 26px;transition:background .35s var(--ease),box-shadow .35s var(--ease)}
-  .nav.stuck{background:rgba(253,250,242,.97);box-shadow:0 12px 34px rgba(58,46,36,.12)}
-  .nav-in{max-width:var(--maxw);margin:0 auto;padding:19px clamp(20px,5vw,52px);
-    display:flex;align-items:center;justify-content:space-between;gap:20px;transition:padding .35s var(--ease)}
-  .nav.stuck .nav-in{padding:11px clamp(20px,5vw,52px)}
+  .nav{position:sticky;top:14px;z-index:60;padding:0 clamp(10px,2vw,20px)}
+  .nav-in{max-width:calc(var(--maxw) - 12px);margin:0 auto;padding:13px clamp(16px,2.4vw,26px) 13px 13px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    background:rgba(253,250,242,.93);backdrop-filter:blur(14px);border-radius:100px;
+    box-shadow:0 12px 34px rgba(58,46,36,.13);transition:padding .35s var(--ease),box-shadow .35s var(--ease)}
+  .nav.stuck .nav-in{padding:8px clamp(16px,2.4vw,26px) 8px 8px;box-shadow:0 8px 24px rgba(58,46,36,.16)}
   .brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none}
   .brand img{width:50px;height:50px;border-radius:50%;background:#fff;padding:3px;box-shadow:0 3px 12px rgba(58,46,36,.13);transition:width .35s var(--ease),height .35s var(--ease)}
   .nav.stuck .brand img{width:40px;height:40px}
@@ -445,18 +445,27 @@
   .credit .name{font-family:var(--display);font-size:17px;color:var(--forest-2);text-decoration:none;font-weight:700}
   .credit .name:hover{text-decoration:underline}
   .credit .site{font-size:12.5px;color:var(--teal);text-decoration:none}
-  .foot{background:var(--brown-deep);color:#fff;padding:clamp(54px,7vw,86px) 0 30px}
-  .foot-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:40px;align-items:start}
-  .foot-brand img{width:66px;height:auto;margin-bottom:14px;filter:drop-shadow(0 6px 16px rgba(0,0,0,.35))}
-  .foot h3{font-family:var(--display);font-weight:700;font-size:27px;margin-bottom:12px;color:#fff}
-  .foot .tag{font-size:14.5px;color:rgba(255,255,255,.66);line-height:2.05;max-width:32ch}
-  .fcol .h{font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--amber);margin-bottom:14px}
+  .foot{position:relative;overflow:hidden;background:var(--brown-deep);color:#fff;margin-top:-2px;
+    padding:clamp(78px,10vw,124px) 0 30px;border-radius:50% 50% 0 0 / clamp(46px,6vw,96px) clamp(46px,6vw,96px) 0 0}
+  .foot .fblob{position:absolute;bottom:-70px;inset-inline-start:-50px;width:clamp(300px,36vw,540px);height:clamp(300px,36vw,540px);
+    background:var(--teal-deep);border-radius:46% 54% 43% 57%/52% 44% 56% 48%;opacity:.5;z-index:0;pointer-events:none}
+  .foot .shell{position:relative;z-index:2}
+  .foot-top{display:grid;grid-template-columns:1.25fr 2.75fr;gap:clamp(30px,4vw,56px);padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .foot-brand img{width:60px;height:auto;margin-bottom:16px;filter:drop-shadow(0 6px 16px rgba(0,0,0,.35))}
+  .foot .tag{font-size:14.5px;color:rgba(255,255,255,.72);line-height:1.9;max-width:32ch;margin-bottom:18px}
+  .foot-contact a{display:flex;align-items:center;gap:10px;color:var(--gold);font-size:14.5px;padding:5px 0;text-decoration:none;transition:color .25s}
+  .foot-contact a:hover{color:#fff}
+  .foot-contact .ic{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.09);display:grid;place-items:center;font-size:13px;flex:0 0 auto}
+  .foot-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(26px,3.2vw,42px) clamp(20px,2.5vw,34px)}
+  .fcol .h{font-family:var(--display);font-size:16px;font-weight:700;letter-spacing:.4px;color:#fff;margin-bottom:12px}
   .foot-links{display:flex;flex-direction:column;gap:2px}
-  .foot-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:14.5px;padding:5px 0;
+  .foot-links a{color:rgba(236,225,208,.68);text-decoration:none;font-size:14px;padding:6px 0;
     transition:color .25s,padding-inline-start .25s var(--eio)}
-  .foot-links a:hover{color:var(--amber);padding-inline-start:6px}
-  .foot-base{border-top:1px solid rgba(255,255,255,.13);margin-top:38px;padding-top:22px;display:flex;
-    justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:rgba(255,255,255,.5);line-height:2}
+  .foot-links a:hover{color:var(--gold);padding-inline-start:6px}
+  .foot-base{border-top:1px solid rgba(255,255,255,.12);margin-top:26px;padding-top:22px;display:flex;
+    justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:12.5px;color:rgba(255,255,255,.5)}
+  .foot-legal{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+  .foot-legal a{color:rgba(255,255,255,.5);text-decoration:none;transition:color .25s}.foot-legal a:hover{color:var(--gold)}
 
   /* ============ Motion ============ */
   .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
@@ -508,6 +517,32 @@
     .ch-head{flex-wrap:wrap}
     .ch-head .count{margin-inline-start:0;flex-basis:100%}
   }
+  /* ================= DNA layer (بنية المرجع بهوية غرس) ================= */
+  :root{--teal-dark:#0d413f;--gold-soft:#f2d79a}
+  .blob{position:absolute;pointer-events:none;opacity:.42;z-index:0;will-change:transform;animation:floatb 12s var(--ease) infinite alternate}
+  .blob.s2{animation-duration:15s;animation-delay:-4s}
+  @keyframes floatb{from{transform:translate(0,0) rotate(0) scale(1)}to{transform:translate(18px,-22px) rotate(9deg) scale(1.06)}}
+  @keyframes morph{0%,100%{border-radius:38% 62% 63% 37%/48% 42% 58% 52%}33%{border-radius:56% 44% 47% 53%/44% 54% 46% 56%}66%{border-radius:45% 55% 58% 42%/57% 46% 54% 43%}}
+  .hero{background:linear-gradient(180deg,var(--paper),var(--cream))}
+  .hero .b-a{width:clamp(200px,26vw,340px);height:clamp(200px,26vw,340px);background:var(--amber);border-radius:60% 40% 53% 47%/47% 58% 42% 53%;top:-60px;right:-50px;opacity:.3}
+  .hero .b-b{width:clamp(150px,20vw,240px);height:clamp(150px,20vw,240px);background:var(--sage);border-radius:52% 48% 60% 40%/48% 62% 38% 52%;top:34%;left:-70px;opacity:.4}
+  .hero-art.organic{aspect-ratio:1/1;overflow:hidden;border-radius:38% 62% 63% 37%/48% 42% 58% 52%;box-shadow:0 44px 90px rgba(58,46,36,.24);animation:morph 18s ease-in-out infinite}
+  .hero-art.organic img{width:100%;height:100%;object-fit:cover}
+  .hero-wave{position:absolute;left:0;right:0;bottom:-2px;z-index:2;height:clamp(70px,11vw,150px);background:var(--teal-dark);clip-path:polygon(0 62%,18% 40%,42% 55%,68% 30%,88% 50%,100% 34%,100% 100%,0 100%)}
+  .moment-dark{background:linear-gradient(160deg,var(--teal-deep),var(--teal-dark));color:#fff;position:relative;overflow:hidden;margin-top:-2px;border-top:0}
+  .moment-dark .b-a{width:clamp(180px,24vw,300px);height:clamp(180px,24vw,300px);background:var(--amber);border-radius:56% 44% 47% 53%/52% 47% 53% 48%;top:-70px;right:-50px;opacity:.28}
+  .moment-dark .b-b{width:clamp(140px,18vw,220px);height:clamp(140px,18vw,220px);background:var(--terra);border-radius:44% 56% 60% 40%/54% 44% 56% 46%;bottom:-60px;left:6%;opacity:.32}
+  .moment-dark .shell{position:relative;z-index:3}
+  .moment-dark .eyebrow{color:var(--gold-soft)}.moment-dark .eyebrow::before{background:var(--gold-soft)}
+  .moment-dark .statement{color:#fff}.moment-dark .statement .soft{color:var(--gold-soft)}
+  .moment-dark .lede{color:rgba(255,255,255,.84)}
+  .moment-dark .flow-step .n{color:var(--gold-soft)}
+  .moment-dark .flow-step b{color:#fff}.moment-dark .flow-step em{color:rgba(255,255,255,.72)}
+  .moment-dark .flow-step .dot{background:var(--teal-deep);border-color:var(--gold-soft)}
+  .moment-dark .flow-step:not(:last-child)::after{background:rgba(255,255,255,.22)}
+  @media(prefers-reduced-motion:reduce){.blob,.hero-art.organic{animation:none}}
+  @media(max-width:900px){.foot-top{grid-template-columns:1fr;gap:30px}.foot-cols{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.foot-cols{grid-template-columns:1fr 1fr;gap:22px 16px}}
 </style>
 </head>
 <body>
@@ -559,6 +594,7 @@
 <!-- ============ Hero ============ -->
 <section class="hero">
   <span class="hero-bg" aria-hidden="true"></span>
+  <span class="blob b-a" aria-hidden="true"></span><span class="blob s2 b-b" aria-hidden="true"></span>
   <div class="shell hero-grid">
     <div class="hero-copy reveal">
       <img class="hero-logo" src="brand/logo-ghars.webp" alt="شعار غرس القيم" />
@@ -576,16 +612,16 @@
         <a class="btn btn-ghost" href="intro-guide.html">ابدئي بالدليل العام</a>
       </div>
     </div>
-    <div class="hero-art reveal" id="heroArt">
-      <figure>
-        <img src="units-art/intro-cover-alpha.png?v=1" alt="لوحة مائية حرّة: مرجٌ ودربٌ متعرّج نحو نور الشروق" />
-      </figure>
+    <div class="hero-art organic reveal" id="heroArt">
+      <img src="units-art/intro-cover.jpg?v=1" alt="لوحة مائية حرّة: مرجٌ ودربٌ متعرّج نحو نور الشروق" />
     </div>
   </div>
+  <div class="hero-wave" aria-hidden="true"></div>
 </section>
 
 <!-- ============ Philosophy ============ -->
-<section class="band band-line philo" id="philosophy">
+<section class="band philo moment-dark" id="philosophy">
+  <span class="blob b-a" aria-hidden="true"></span><span class="blob s2 b-b" aria-hidden="true"></span>
   <div class="shell">
     <div class="sec-head reveal" style="margin-bottom:8px">
       <span class="eyebrow">فلسفة غرس القيم</span>
@@ -791,42 +827,27 @@
 
 <!-- ============ Footer ============ -->
 <footer class="foot">
+  <span class="fblob" aria-hidden="true"></span>
   <div class="shell">
-    <div class="foot-grid">
+    <div class="foot-top">
       <div class="foot-brand">
         <img src="brand/logo-ghars.webp" alt="غرس القيم" />
-        <h3>غرس القيم</h3>
-        <p class="tag">منهجٌ متكامل لبناء طفلٍ صالحٍ ومُصلحٍ بقيمه — في مرحلة التمهيدي.</p>
+        <p class="tag">غرس القيم يمنح المعلمة كلّ ما تحتاجه لتغرس القيمة في قلب الطفل، فتُخرِج جيلًا صالحًا ومُصلحًا في مرحلة التمهيديّ.</p>
+        <div class="foot-contact">
+          <a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener"><span class="ic">✦</span>حضارة للاستشارات التربويّة</a>
+          <a href="intro-guide.html"><span class="ic">↗</span>ابدئي بالدليل التعريفي</a>
+        </div>
       </div>
-      <nav class="fcol" aria-label="تصفّح">
-        <div class="h">المنهج</div>
-        <div class="foot-links">
-          <a href="#philosophy">فلسفة المنهج</a>
-          <a href="#wahy">منظومة الوحي</a>
-          <a href="#gallery">من الميدان</a>
-          <a href="#units">أدلة الوحدات</a>
-        </div>
-      </nav>
-      <nav class="fcol" aria-label="أدوات المعلمة">
-        <div class="h">أدوات المعلمة</div>
-        <div class="foot-links">
-          <a href="khizanat-almuallima.html">خزانة المعلمة</a>
-          <a href="namathij-almuallima.html">كرّاسة النماذج</a>
-          <a href="fahras-ahadith.html">فهرس الأحاديث</a>
-          <a href="fahras-ayat.html">فهرس الآيات</a>
-          <a href="fahras-tarbawi.html">الفهرس التربويّ</a>
-        </div>
-      </nav>
-      <nav class="fcol" aria-label="ابدئي">
-        <div class="h">ابدئي</div>
-        <div class="foot-links">
-          <a href="intro-guide.html">الدليل التعريفي</a>
-          <a href="#units">الوحدات المتاحة</a>
-          <a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener">حضارة للاستشارات</a>
-        </div>
-      </nav>
+      <div class="foot-cols">
+        <nav class="fcol" aria-label="المنهج"><div class="h">المنهج</div><div class="foot-links"><a href="#philosophy">فلسفة المنهج</a><a href="#wahy">منظومة الوحي</a><a href="#gallery">من الميدان</a></div></nav>
+        <nav class="fcol" aria-label="الوحدات"><div class="h">الوحدات</div><div class="foot-links"><a href="intro-guide.html">الدليل التعريفي</a><a href="#units">أدلة الوحدات</a><a href="unit-layl-nahar.html">الوحدة النموذجيّة</a></div></nav>
+        <nav class="fcol" aria-label="أدوات المعلمة"><div class="h">أدوات المعلمة</div><div class="foot-links"><a href="khizanat-almuallima.html">خزانة المعلمة</a><a href="namathij-almuallima.html">كرّاسة النماذج</a></div></nav>
+        <nav class="fcol" aria-label="الفهارس"><div class="h">الفهارس</div><div class="foot-links"><a href="fahras-ahadith.html">فهرس الأحاديث</a><a href="fahras-ayat.html">فهرس الآيات</a><a href="fahras-tarbawi.html">الفهرس التربويّ</a></div></nav>
+        <nav class="fcol" aria-label="عن غرس"><div class="h">عن غرس</div><div class="foot-links"><a href="#top">نادي غرس القيم</a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener">حضارة للاستشارات</a></div></nav>
+        <nav class="fcol" aria-label="موارد"><div class="h">موارد</div><div class="foot-links"><a href="#units">الوحدات المتاحة</a><a href="intro-guide.html">التقويم والمتابعة</a></div></nav>
+      </div>
     </div>
-    <div class="foot-base"><span>نادي غرس القيم لضيافة الأطفال · جميع الحقوق محفوظة © ٢٠٢٦</span><span>إعداد وتطوير: حضارة</span></div>
+    <div class="foot-base"><span>نادي غرس القيم لضيافة الأطفال · جميع الحقوق محفوظة © ٢٠٢٦</span><span class="foot-legal"><a href="#">سياسة الاستخدام</a><a href="#">الخصوصيّة</a><span>إعداد وتطوير: حضارة</span></span></div>
   </div>
 </footer>
 
