@@ -543,7 +543,17 @@
   .moment-dark .flow-step b{color:#fff}.moment-dark .flow-step em{color:rgba(255,255,255,.72)}
   .moment-dark .flow-step .dot{background:var(--teal-deep);border-color:var(--gold-soft)}
   .moment-dark .flow-step:not(:last-child)::after{background:rgba(255,255,255,.22)}
-  @media(prefers-reduced-motion:reduce){.blob,.hero-art.organic{animation:none}}
+  /* كلمةٌ محاطة بدائرةٍ يدويّة تُرسَم (بصمة المرجع) */
+  .circled{position:relative;display:inline-block}
+  .circled .w{position:relative;z-index:1}
+  .circled .ring{position:absolute;inset:-14% -7%;overflow:visible;pointer-events:none;z-index:0;transform:rotate(-2.5deg)}
+  .circled .ring ellipse{fill:none;stroke:var(--gold);stroke-width:3.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.05s var(--eio) .8s forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  /* blobs أكبر وأجرأ على القسم الداكن (كالمرجع) */
+  .moment-dark .b-a{width:clamp(220px,30vw,420px);height:clamp(220px,30vw,420px);opacity:.5}
+  .moment-dark .b-b{width:clamp(170px,22vw,300px);height:clamp(170px,22vw,300px);background:var(--terra);opacity:.5}
+  .moment-dark .b-c{position:absolute;width:clamp(150px,20vw,280px);height:clamp(150px,20vw,280px);background:var(--teal-2);border-radius:52% 48% 60% 40%/48% 62% 38% 52%;top:18%;left:32%;opacity:.32;z-index:0;animation:floatb 13s var(--ease) infinite alternate;animation-delay:-2s}
+  @media(prefers-reduced-motion:reduce){.blob,.hero-art.organic,.moment-dark .b-c{animation:none}.circled .ring ellipse{animation:none;stroke-dashoffset:0}}
   @media(max-width:900px){.foot-top{grid-template-columns:1fr;gap:30px}.foot-cols{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.foot-cols{grid-template-columns:1fr 1fr;gap:22px 16px}}
 </style>
@@ -602,7 +612,7 @@
     <div class="hero-copy reveal">
       <img class="hero-logo" src="brand/logo-ghars.webp" alt="شعار غرس القيم" />
       <span class="eyebrow">منهجٌ متكامل لبناء الطفل</span>
-      <h1>غرس <span class="hl">القيم</span></h1>
+      <h1>غرس <span class="hl circled"><span class="w">القيم</span><svg class="ring" viewBox="0 0 100 62" preserveAspectRatio="none" aria-hidden="true" focusable="false"><ellipse cx="50" cy="31" rx="46" ry="26" pathLength="1"/></svg></span></h1>
       <p class="lede">غرسُ القيم الإسلامية في قلوب الأطفال.</p>
       <p>لبناء جيل صالح راسخ في قيمه متزن في سلوكه — في مرحلة التمهيدي (٥–٦ سنوات).</p>
       <ul class="hero-stats">
@@ -624,7 +634,7 @@
 
 <!-- ============ Philosophy ============ -->
 <section class="band philo moment-dark" id="philosophy">
-  <span class="blob b-a" aria-hidden="true"></span><span class="blob s2 b-b" aria-hidden="true"></span>
+  <span class="blob b-a" aria-hidden="true"></span><span class="blob s2 b-b" aria-hidden="true"></span><span class="blob b-c" aria-hidden="true"></span>
   <div class="shell">
     <div class="sec-head reveal" style="margin-bottom:8px">
       <span class="eyebrow">فلسفة غرس القيم</span>
