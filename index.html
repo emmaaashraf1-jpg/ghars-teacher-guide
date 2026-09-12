@@ -146,6 +146,7 @@
   .actions{display:flex;flex-wrap:wrap;gap:14px}
   .hero-left{display:flex;flex-direction:column}
   .hero-actions{justify-content:center;margin-top:clamp(20px,3vw,34px)}
+  .hero-actions .btn{min-width:210px;justify-content:center}
   .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:16px;
     border-radius:999px;padding:14px 28px;transition:transform .18s var(--ease),box-shadow .18s var(--ease),background .2s}
   .btn .ar{transition:transform .2s var(--ease)}
@@ -414,6 +415,10 @@
   .ch-head .idx{font-size:12.5px;color:var(--ochre);font-weight:700;letter-spacing:.2px}
   .ch-head h3{font-family:var(--display);font-weight:700;font-size:clamp(22px,3vw,30px);color:var(--forest)}
   .ch-head .count{margin-inline-start:auto;font-size:13px;color:var(--gray);font-weight:600;white-space:nowrap}
+  .avail-pill{display:inline-flex;align-items:center;gap:9px;margin-top:18px;padding:8px 18px;border-radius:999px;
+    background:var(--surface);border:1px solid var(--line);font-size:13.5px;font-weight:600;color:var(--gray)}
+  .avail-pill b{color:var(--forest);font-family:var(--display);font-weight:700;font-size:17px;line-height:1}
+  .avail-pill .sep{color:var(--gold);font-weight:700}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,32px)}
 
   .card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;
@@ -684,8 +689,8 @@
     <div class="sec-head reveal" style="margin-bottom:8px">
       <span class="eyebrow">فلسفة غرس القيم</span>
     </div>
-    <p class="statement reveal">غرسُ القيم ليس منهجًا، <span class="soft">بل مشروعٌ لإعادة بناء الإنسان من الداخل.</span></p>
-    <p class="lede reveal">لأنّ الطفل لا يُعلَّم القيم بالكلام؛ بل بالموقف، والمشاعر، والممارسة اليومية. منهجٌ يعيد للوحي مرجعيّته، وللعلم بوصلته، وللإنسان غايته.</p>
+    <h2 class="statement reveal">غرسُ القيم ليس منهجًا، <span class="soft">بل مشروعٌ لإعادة بناء الإنسان من الداخل.</span></h2>
+    <p class="lede reveal">لأنّ الطفل لا يُعلَّم القيم بالكلام؛ بل بالموقف، والمشاعر، والممارسة اليوميّة — فتصير القيمةُ خُلُقًا يُعاش في اليوم، لا معلومةً تُحفَظ لِتُنسى.</p>
 
     <div class="flow reveal" aria-label="بنية المنهج">
       <div class="flow-step"><div class="fs-c"><span class="n">٠١</span><div class="dot"></div><b>منظومة الوحي</b><em>المرجع الأعلى في بناء الإنسان</em></div></div>
@@ -838,9 +843,9 @@
       <h2>من كلمات د. هيفاء بن قديم — رحمها الله</h2>
     </div>
     <div class="testi-grid">
-      <figure class="quote reveal"><div class="q">”</div><p>اسألي الله دائمًا أن يوفّقكِ ويسدّدكِ ويبصّركِ في انتقاء: المعلومات، والنصوص، والوسائل، والأنشطة؛ وأن يبارك في كلماتكِ ويبلّغ بها قلوب الأطفال.</p><figcaption><b>د. هيفاء بن قديم</b><span>رحمها الله</span></figcaption></figure>
-      <figure class="quote reveal"><div class="q">”</div><p>اسأليه أن يؤلّف بين قلوب فريق العمل، ويرزقكنّ الرحمة والرأفة وحسن التعاون، ويوفّقكنّ في التخطيط والتنفيذ.</p><figcaption><b>د. هيفاء بن قديم</b><span>رحمها الله</span></figcaption></figure>
-      <figure class="quote reveal"><div class="q">”</div><p>فنجاحُ اللقاء، وبلوغُ معانيه، وانتفاعُ الأطفال به، كلُّه بتوفيق الله وفضله؛ فلا يفترْ لسانُكِ عن الدعاء، ولا تعتمدي على حُسن التخطيط وحده، بل خذي بالأسباب واستعيني بالله.</p><figcaption><b>د. هيفاء بن قديم</b><span>رحمها الله</span></figcaption></figure>
+      <figure class="quote reveal"><div class="q">”</div><p>اسألي الله دائمًا أن يوفّقكِ ويسدّدكِ ويبصّركِ في انتقاء: المعلومات، والنصوص، والوسائل، والأنشطة؛ وأن يبارك في كلماتكِ ويبلّغ بها قلوب الأطفال.</p></figure>
+      <figure class="quote reveal"><div class="q">”</div><p>اسأليه أن يؤلّف بين قلوب فريق العمل، ويرزقكنّ الرحمة والرأفة وحسن التعاون، ويوفّقكنّ في التخطيط والتنفيذ.</p></figure>
+      <figure class="quote reveal"><div class="q">”</div><p>فنجاحُ اللقاء، وبلوغُ معانيه، وانتفاعُ الأطفال به، كلُّه بتوفيق الله وفضله؛ فلا يفترْ لسانُكِ عن الدعاء، ولا تعتمدي على حُسن التخطيط وحده، بل خذي بالأسباب واستعيني بالله.</p></figure>
     </div>
   </div>
 </section>
@@ -869,6 +874,7 @@
       <span class="eyebrow">أدلة الوحدات</span>
       <h2>أدلة الوحدات التكاملية</h2>
       <p>كل وحدةٍ تجربةٌ تربويةٌ متكاملة، مبنيّةٌ على منظومة المنهج.</p>
+      <span class="avail-pill reveal"><b>٤</b> وحداتٍ متاحةٌ الآن<span class="sep">·</span>من <b>١٨</b> تُنشَر تِباعًا</span>
     </div>
 
     <!-- الفصل الأول -->
@@ -929,8 +935,8 @@
         <img src="brand/logo-ghars.webp" alt="غرس القيم" />
         <p class="tag">غرس القيم يمنح المعلمة كلّ ما تحتاجه لتغرس القيمة في قلب الطفل، فتُخرِج جيلًا صالحًا ومُصلحًا في مرحلة التمهيديّ.</p>
         <div class="foot-contact">
-          <a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener"><span class="ic">✦</span>حضارة للاستشارات التربويّة</a>
           <a href="intro-guide.html"><span class="ic">↗</span>ابدئي بالدليل التعريفي</a>
+          <a href="#units"><span class="ic">✦</span>تصفّحي أدلّة الوحدات</a>
         </div>
         <div class="foot-social" aria-label="حسابات التواصل">
           <a href="#" aria-label="إكس"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3l-6.6 7.5L21.8 21h-6l-4.2-5.5L6.6 21H3.5l7-8L2.6 3h6.1l3.8 5L17.5 3zm-1.1 16h1.7L7.7 4.8H5.9L16.4 19z"/></svg></a>
@@ -944,7 +950,7 @@
         <nav class="fcol" aria-label="الوحدات"><div class="h">الوحدات</div><div class="foot-links"><a href="intro-guide.html">الدليل التعريفي</a><a href="#units">أدلة الوحدات</a><a href="unit-layl-nahar.html">الوحدة النموذجيّة</a></div></nav>
         <nav class="fcol" aria-label="أدوات المعلمة"><div class="h">أدوات المعلمة</div><div class="foot-links"><a href="khizanat-almuallima.html">خزانة المعلمة</a><a href="namathij-almuallima.html">كرّاسة النماذج</a></div></nav>
         <nav class="fcol" aria-label="الفهارس"><div class="h">الفهارس</div><div class="foot-links"><a href="fahras-ahadith.html">فهرس الأحاديث</a><a href="fahras-ayat.html">فهرس الآيات</a><a href="fahras-tarbawi.html">الفهرس التربويّ</a></div></nav>
-        <nav class="fcol" aria-label="عن غرس"><div class="h">عن غرس</div><div class="foot-links"><a href="#top">نادي غرس القيم</a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener">حضارة للاستشارات</a></div></nav>
+        <nav class="fcol" aria-label="عن غرس"><div class="h">عن غرس</div><div class="foot-links"><a href="#top">نادي غرس القيم</a><a href="#philosophy">فلسفة المنهج</a></div></nav>
         <nav class="fcol" aria-label="موارد"><div class="h">موارد</div><div class="foot-links"><a href="#units">الوحدات المتاحة</a><a href="intro-guide.html">التقويم والمتابعة</a></div></nav>
       </div>
     </div>
