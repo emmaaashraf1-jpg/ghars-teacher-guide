@@ -112,7 +112,7 @@
   .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
   /* ============ Hero ============ */
-  .hero{position:relative;overflow:hidden;padding:clamp(14px,2.4vw,36px) 0 clamp(44px,7vw,88px)}
+  .hero{position:relative;overflow:hidden;padding:clamp(14px,2.4vw,36px) 0 clamp(120px,15vw,190px)}
   .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
     background:radial-gradient(620px 380px at 86% 4%,rgba(224,162,56,.16),transparent 60%),
       radial-gradient(600px 440px at 4% 96%,rgba(23,122,116,.12),transparent 62%),
@@ -144,6 +144,8 @@
   @keyframes statIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:reduce){.hero-stats li{opacity:1;transform:none;animation:none}}
   .actions{display:flex;flex-wrap:wrap;gap:14px}
+  .hero-left{display:flex;flex-direction:column}
+  .hero-actions{justify-content:center;margin-top:clamp(20px,3vw,34px)}
   .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:16px;
     border-radius:999px;padding:14px 28px;transition:transform .18s var(--ease),box-shadow .18s var(--ease),background .2s}
   .btn .ar{transition:transform .2s var(--ease)}
@@ -506,7 +508,7 @@
     .menu a.cta,.menu a.cta-ghost{text-align:center;margin-top:4px;margin-inline-start:0}
     .burger{display:flex}
     .hero-grid{grid-template-columns:1fr;gap:36px}
-    .hero-art{order:-1;max-width:460px;margin-inline:auto}
+    .hero-left{max-width:460px;margin-inline:auto;width:100%}
     .flow-step{flex:1 1 100%;max-width:none;display:flex;align-items:flex-start;gap:16px;text-align:start;padding:14px 0}
     .flow-step .dot{margin:4px 0 0}
     .flow-step:not(:last-child)::after{display:none}
@@ -655,13 +657,15 @@
         <li><b>٣</b><span>فصول دراسية</span></li>
         <li><b>١٨</b><span>وحدة تكاملية</span></li>
       </ul>
-      <div class="actions">
+    </div>
+    <div class="hero-left">
+      <div class="hero-art organic reveal" id="heroArt">
+        <img src="units-art/intro-cover.jpg?v=1" alt="لوحة مائية حرّة: مرجٌ ودربٌ متعرّج نحو نور الشروق" />
+      </div>
+      <div class="actions hero-actions reveal">
         <a class="btn btn-primary" href="#units">استكشفي المنهج <span class="ar">←</span></a>
         <a class="btn btn-ghost" href="intro-guide.html">ابدئي بالدليل العام</a>
       </div>
-    </div>
-    <div class="hero-art organic reveal" id="heroArt">
-      <img src="units-art/intro-cover.jpg?v=1" alt="لوحة مائية حرّة: مرجٌ ودربٌ متعرّج نحو نور الشروق" />
     </div>
   </div>
   <div class="hero-wave" aria-hidden="true"></div>
