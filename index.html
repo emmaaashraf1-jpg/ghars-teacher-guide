@@ -214,9 +214,9 @@
     padding:clamp(20px,3.4vw,34px) clamp(18px,3.6vw,42px) clamp(22px,3.6vw,36px);overflow:hidden}
   /* الرسمة داخل المنظومة: فجرٌ مائيّ يتوهّج أسفلَ اللوحة (النورُ جهة الوحي) ويذوب صعودًا فتبقى الصفوف العليا صافيةً مقروءة */
   .wtable::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-    background:url("assets/wahy/scene-noor.png") center bottom / cover no-repeat;opacity:.4;
-    -webkit-mask-image:linear-gradient(to top,#000 2%,rgba(0,0,0,.72) 30%,rgba(0,0,0,.26) 62%,transparent 95%);
-    mask-image:linear-gradient(to top,#000 2%,rgba(0,0,0,.72) 30%,rgba(0,0,0,.26) 62%,transparent 95%)}
+    background:url("assets/wahy/scene-noor.png") center bottom / cover no-repeat;opacity:.32;
+    -webkit-mask-image:linear-gradient(to top,rgba(0,0,0,.62) 2%,rgba(0,0,0,.48) 30%,rgba(0,0,0,.14) 62%,transparent 95%);
+    mask-image:linear-gradient(to top,rgba(0,0,0,.62) 2%,rgba(0,0,0,.48) 30%,rgba(0,0,0,.14) 62%,transparent 95%)}
   /* العمود الفقريّ الذهبيّ في الوسط — فوق الرسمة، تحت المحتوى */
   .wtable::before{content:"";position:absolute;left:50%;top:clamp(78px,15%,124px);bottom:clamp(96px,17%,140px);
     width:2px;transform:translateX(-50%);z-index:1;border-radius:2px;
