@@ -553,7 +553,27 @@
   .moment-dark .b-a{width:clamp(220px,30vw,420px);height:clamp(220px,30vw,420px);opacity:.5}
   .moment-dark .b-b{width:clamp(170px,22vw,300px);height:clamp(170px,22vw,300px);background:var(--terra);opacity:.5}
   .moment-dark .b-c{position:absolute;width:clamp(150px,20vw,280px);height:clamp(150px,20vw,280px);background:var(--teal-2);border-radius:52% 48% 60% 40%/48% 62% 38% 52%;top:18%;left:32%;opacity:.32;z-index:0;animation:floatb 13s var(--ease) infinite alternate;animation-delay:-2s}
-  @media(prefers-reduced-motion:reduce){.blob,.hero-art.organic,.moment-dark .b-c{animation:none}.circled .ring ellipse{animation:none;stroke-dashoffset:0}}
+  /* تبديل الكلمة المتحرّك (كالمرجع) */
+  .swap{display:inline-grid;vertical-align:bottom;text-align:center;color:var(--teal)}
+  .swap>span{grid-area:1/1;opacity:0;transform:translateY(13px);white-space:nowrap;transition:opacity .5s var(--eo),transform .5s var(--eo)}
+  .swap>span.on{opacity:1;transform:none}
+  .swap>span.out{opacity:0;transform:translateY(-13px)}
+  /* قسم الشهادات — كتلة عسليّة (كالكتلة الصفراء في المرجع) */
+  .testi{position:relative;overflow:hidden;background:linear-gradient(160deg,#F3D082,#E7B24C)}
+  .testi .b-a{width:clamp(200px,26vw,340px);height:clamp(200px,26vw,340px);background:var(--terra);border-radius:44% 56% 39% 61%/57% 41% 59% 43%;top:-70px;left:-40px;opacity:.4}
+  .testi .b-b{width:clamp(160px,20vw,260px);height:clamp(160px,20vw,260px);background:var(--sage);border-radius:52% 48% 60% 40%/48% 62% 38% 52%;bottom:-60px;right:8%;opacity:.45}
+  .testi .sec-head{max-width:none;text-align:center;margin-inline:auto}
+  .testi .sec-head h2{color:#4a3208}
+  .testi .eyebrow{color:#7a5410}.testi .eyebrow::before{background:#7a5410}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .quote{background:#fff;border-radius:22px;padding:32px 30px 26px;box-shadow:0 26px 54px rgba(120,80,20,.2);margin:0;transition:transform .4s var(--ease),box-shadow .4s}
+  .quote:hover{transform:translateY(-5px);box-shadow:0 34px 64px rgba(120,80,20,.26)}
+  .quote .q{font-family:var(--display);font-size:60px;color:var(--gold);line-height:.4;height:26px;opacity:.55}
+  .quote p{font-size:16px;color:#3d463e;line-height:1.9;margin-bottom:16px}
+  .quote figcaption b{color:var(--teal-deep);font-family:var(--display);font-weight:700;font-size:16px;display:block}
+  .quote figcaption span{font-size:13px;color:var(--gray)}
+  @media(max-width:820px){.testi-grid{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
+  @media(prefers-reduced-motion:reduce){.blob,.hero-art.organic,.moment-dark .b-c{animation:none}.circled .ring ellipse{animation:none;stroke-dashoffset:0}.swap>span{animation:none;opacity:0}.swap>span:first-child{opacity:1;transform:none}}
   @media(max-width:900px){.foot-top{grid-template-columns:1fr;gap:30px}.foot-cols{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.foot-cols{grid-template-columns:1fr 1fr;gap:22px 16px}}
 </style>
@@ -613,7 +633,7 @@
       <img class="hero-logo" src="brand/logo-ghars.webp" alt="شعار غرس القيم" />
       <span class="eyebrow">منهجٌ متكامل لبناء الطفل</span>
       <h1>غرس <span class="hl circled"><span class="w">القيم</span><svg class="ring" viewBox="0 0 100 62" preserveAspectRatio="none" aria-hidden="true" focusable="false"><ellipse cx="50" cy="31" rx="46" ry="26" pathLength="1"/></svg></span></h1>
-      <p class="lede">غرسُ القيم الإسلامية في قلوب الأطفال.</p>
+      <p class="lede">غرسُ القيم الإسلاميّة في <span class="swap" aria-label="قلب الطفل وسلوكه وعلمه وحياته"><span>قلبِ الطفل</span><span>سلوكِه</span><span>علمِه</span><span>حياتِه</span></span></p>
       <p>لبناء جيل صالح راسخ في قيمه متزن في سلوكه — في مرحلة التمهيدي (٥–٦ سنوات).</p>
       <ul class="hero-stats">
         <li><b>تمهيدي</b><span>٥–٦ سنوات</span></li>
@@ -763,6 +783,22 @@
   </div>
 </section>
 
+<!-- ============ Testimonials — كتلة عسليّة ============ -->
+<section class="band testi" id="testi">
+  <span class="blob b-a" aria-hidden="true"></span><span class="blob s2 b-b" aria-hidden="true"></span>
+  <div class="shell">
+    <div class="sec-head reveal">
+      <span class="eyebrow">أصواتٌ من الميدان</span>
+      <h2>ماذا تقول المعلّمات؟</h2>
+    </div>
+    <div class="testi-grid">
+      <figure class="quote reveal"><div class="q">”</div><p>صار الأطفال يميّزون القيمة في موقفهم اليوميّ قبل أن ننطق بها — الفرق ملموسٌ في سلوكهم داخل الأركان.</p><figcaption><b>معلّمة تمهيديّ</b><span>روضة غرس القيم</span></figcaption></figure>
+      <figure class="quote reveal"><div class="q">”</div><p>الدليل لا يعطيني معلومةً فقط؛ يعطيني كلّ ما أحتاجه لأعيش القيمة مع أطفالي في اللقاء.</p><figcaption><b>مشرفة تربويّة</b><span>برنامج غرس</span></figcaption></figure>
+      <figure class="quote reveal"><div class="q">”</div><p>منظومة الوحي منحت المنهج روحًا — يتعلّم الطفل القيمة ومعناها ومصدرها معًا.</p><figcaption><b>معلّمة أولى</b><span>مرحلة التمهيديّ</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <!-- ============ General guide feature ============ -->
 <section class="band feat-band">
   <div class="shell">
@@ -885,6 +921,21 @@
   }
   document.addEventListener('click',function(e){ if(!e.target.closest('.mdrop')) closeDrops(); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDrops(); });
+  /* تبديل الكلمة المتحرّك (مُدار بجافاسكربت — موثوق) */
+  var sw=document.querySelector('.swap');
+  if(sw){
+    var words=[].slice.call(sw.children), si=0;
+    var rmSwap=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(words.length){ words[0].classList.add('on'); }
+    if(!rmSwap && words.length>1){
+      setInterval(function(){
+        var cur=words[si]; cur.classList.remove('on'); cur.classList.add('out');
+        si=(si+1)%words.length;
+        var nx=words[si]; nx.classList.remove('out'); nx.classList.add('on');
+        setTimeout(function(){ cur.classList.remove('out'); },560);
+      },2600);
+    }
+  }
   /* sticky nav shadow + hero parallax */
   var nav=document.getElementById('nav'), heroImg=document.querySelector('#heroArt img');
   var reduceM=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
