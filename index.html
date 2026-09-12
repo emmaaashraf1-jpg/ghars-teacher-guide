@@ -212,11 +212,17 @@
     background:var(--surface);border:1px solid var(--line);border-radius:26px;
     box-shadow:0 30px 68px rgba(20,40,35,.10);
     padding:clamp(20px,3.4vw,34px) clamp(18px,3.6vw,42px) clamp(22px,3.6vw,36px);overflow:hidden}
-  /* الرسمة داخل المنظومة: فجرٌ مائيّ يتوهّج أسفلَ اللوحة (النورُ جهة الوحي) ويذوب صعودًا فتبقى الصفوف العليا صافيةً مقروءة */
+  /* نصفا المشهد الواحد: يلتقيان على الدرب في الوسط (تراكبٌ يسير يخفي الحدَّ تحت العمود الذهبيّ) */
+  .wt-scene{position:absolute;top:0;bottom:0;width:52%;z-index:0;pointer-events:none;
+    background-size:200% auto;background-repeat:no-repeat;
+    -webkit-mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.86) 26%,rgba(0,0,0,.4) 54%,transparent 88%);
+    mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.86) 26%,rgba(0,0,0,.4) 54%,transparent 88%)}
+  /* الوحي: فجرٌ حيّ ظاهر · المقابلة: ضبابٌ يبهت حتى يكاد يتلاشى (معنًى ومعايرة قراءة) */
+  .wt-scene-noor{right:0;background-image:url("assets/wahy/scene-noor.png");background-position:right bottom;opacity:.55}
+  .wt-scene-zulm{left:0;background-image:url("assets/wahy/scene-zulm.png");background-position:left bottom;opacity:.32}
+  /* غلالةٌ عاجيّة رقيقة في وسط اللوحة تُبقي الكلماتِ العليا صافية */
   .wtable::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-    background:url("assets/wahy/scene-noor.png") center bottom / cover no-repeat;opacity:.32;
-    -webkit-mask-image:linear-gradient(to top,rgba(0,0,0,.62) 2%,rgba(0,0,0,.48) 30%,rgba(0,0,0,.14) 62%,transparent 95%);
-    mask-image:linear-gradient(to top,rgba(0,0,0,.62) 2%,rgba(0,0,0,.48) 30%,rgba(0,0,0,.14) 62%,transparent 95%)}
+    background:radial-gradient(125% 62% at 50% 40%,rgba(255,253,248,.5),rgba(255,253,248,0) 72%)}
   /* العمود الفقريّ الذهبيّ في الوسط — فوق الرسمة، تحت المحتوى */
   .wtable::before{content:"";position:absolute;left:50%;top:clamp(78px,15%,124px);bottom:clamp(96px,17%,140px);
     width:2px;transform:translateX(-50%);z-index:1;border-radius:2px;
@@ -232,7 +238,7 @@
   .wsys small{font-size:11px;font-weight:700;letter-spacing:.4px}
   .wsys b{font-family:var(--display);font-weight:700;font-size:clamp(17px,2.5vw,25px);line-height:1.2}
   .wsys-ours{text-align:start}.wsys-ours small{color:var(--ochre)}.wsys-ours b{color:var(--teal-deep)}
-  .wsys-other{text-align:end}.wsys-other small{color:var(--gray)}.wsys-other b{color:#9a9285}
+  .wsys-other{text-align:end}.wsys-other small{color:var(--gray)}.wsys-other b{color:#857c6d}
   .wsys-mid{justify-self:center;width:11px;height:11px;border-radius:50%;background:var(--gold);
     box-shadow:0 0 0 5px rgba(214,154,51,.12)}
 
@@ -241,7 +247,7 @@
   .wrow+.wrow{border-top:1px solid var(--line-soft)}
   .wcell{font-family:var(--display);font-weight:700;line-height:1.3}
   .wcell.ours{text-align:start;color:var(--teal-deep);font-size:clamp(21px,3.2vw,34px)}
-  .wcell.other{text-align:end;color:#9a9285;font-size:clamp(15px,2.1vw,22px)}
+  .wcell.other{text-align:end;color:#857c6d;font-size:clamp(15px,2.1vw,22px)}
   .waxis{justify-self:center;white-space:nowrap;font-family:var(--body);
     font-size:clamp(10px,1.5vw,12px);font-weight:700;letter-spacing:.3px;color:var(--ochre);
     background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 15px;
@@ -254,7 +260,7 @@
   .wm small{font-size:11px;font-weight:700;letter-spacing:.4px}
   .wm b{font-family:var(--display);font-weight:700;font-size:clamp(14px,2vw,18px);line-height:1.5}
   .wm.ours{text-align:start}.wm.ours small{color:var(--ochre)}.wm.ours b{color:var(--teal-deep)}
-  .wm.other{text-align:end}.wm.other small{color:var(--gray)}.wm.other b{color:#9a9285}
+  .wm.other{text-align:end}.wm.other small{color:var(--gray)}.wm.other b{color:#857c6d}
 
   .wahy-note{margin-top:clamp(26px,4vw,44px);text-align:center;font-size:14.5px;color:var(--gray);
     line-height:2.05;max-width:66ch;margin-inline:auto}
@@ -660,6 +666,9 @@
     <p class="wahy-lead reveal">طريقانِ لا ثالثَ لهما: <span class="noor">نورُ الوحي يهدي</span>، وظُلمةُ الهوى تُتيه.</p>
 
     <div class="wtable reveal-group" aria-label="مقارنة منظومة الوحي بالمنظومة المقابلة">
+      <!-- تداخل الرسمة مع المنظومة: مشهدٌ واحد مشقوقٌ نصفين على الدرب — يمينُه فجرٌ حيّ (الوحي)، يسارُه ضبابٌ بارد (المقابلة) -->
+      <span class="wt-scene wt-scene-noor" aria-hidden="true"></span>
+      <span class="wt-scene wt-scene-zulm" aria-hidden="true"></span>
       <!-- رأسا المنظومتين -->
       <div class="wtable-head reveal">
         <div class="wsys wsys-ours"><small>منهجنا</small><b>منظومة الوحي</b></div>
