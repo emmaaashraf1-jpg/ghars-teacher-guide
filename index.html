@@ -204,6 +204,13 @@
 
   /* ===== منظومة الوحي — مقارنةٌ تحريريّة نظيفة بهويّة الصفحة الرئيسية ===== */
   .wahy{position:relative;background:linear-gradient(180deg,var(--ivory),var(--cream))}
+  /* لوحةٌ مائيّة تتصدّر القسم — «الدرب نحو النور» بحوافَّ مبلّلةٍ تذوب في الورق */
+  .wart{max-width:860px;margin:clamp(6px,1.4vw,14px) auto clamp(24px,3.6vw,40px);text-align:center}
+  .wart img{display:block;width:100%;height:auto;
+    filter:drop-shadow(0 20px 40px rgba(20,40,35,.13))}
+  .wart figcaption{margin-top:clamp(6px,1.4vw,14px);font-family:var(--display);font-weight:700;
+    font-size:clamp(18px,2.9vw,28px);line-height:1.5;color:var(--teal-deep);letter-spacing:.2px}
+  .wart figcaption .noor{color:var(--gold)}
   .wtable{position:relative;max-width:780px;margin:clamp(6px,1.5vw,16px) auto 0;
     background:var(--surface);border:1px solid var(--line);border-radius:26px;
     box-shadow:0 30px 68px rgba(20,40,35,.10);
@@ -650,6 +657,11 @@
       <h2>منظومة الوحي — في مقابل غيرها</h2>
       <p>يقوم منهجنا على منظومة الوحي مرجعًا أعلى؛ في مقابل مناهجَ تُقصي الوحي فتجعل الإنسانَ والعقلَ القاصر والحريةَ المطلقة مركزها.</p>
     </div>
+
+    <figure class="wart reveal">
+      <img src="assets/wahy/scene-noor.png?v=2" alt="لوحةٌ مائيّة: دربٌ يتعرّج في مرجٍ نحو نور الشروق" loading="lazy" decoding="async" />
+      <figcaption>طريقانِ لا ثالثَ لهما: <span class="noor">نورُ الوحي يهدي</span>، وظُلمةُ الهوى تُتيه.</figcaption>
+    </figure>
 
     <div class="wtable reveal-group" aria-label="مقارنة منظومة الوحي بالمنظومة المقابلة">
       <!-- رأسا المنظومتين -->
