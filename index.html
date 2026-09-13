@@ -529,6 +529,34 @@
   @media(prefers-reduced-motion:reduce){.blob,.hero-art.organic,.moment-dark .b-c{animation:none}.circled .ring ellipse{animation:none;stroke-dashoffset:0}.swap>span{animation:none;opacity:0}.swap>span:first-child{opacity:1;transform:none}}
   @media(max-width:900px){.foot-top{grid-template-columns:1fr;gap:30px}.foot-cols{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.foot-cols{grid-template-columns:1fr 1fr;gap:22px 16px}}
+  /* ============ زينة طفوليّة خفيفة في خلفية بطاقات الوحدات ============ */
+  /* أشكالٌ توحي بمنهج الطفولة (مكعّبات · نبتة غرسٍ · طائرة ورقيّة · كتاب · شمس) تتبدّل عبر البطاقات */
+  .card-body{position:relative;overflow:hidden}
+  .card-body>*{position:relative;z-index:1}
+  /* هالةٌ لونيّة ناعمة (كرةٌ باهتة) خلف الشكل الطفوليّ */
+  .card-body::before{content:"";position:absolute;inset-inline-end:-34px;bottom:-40px;width:128px;height:128px;border-radius:50%;z-index:0;pointer-events:none;
+    transition:transform .5s var(--ease)}
+  a.card:hover .card-body::before{transform:scale(1.08)}
+  .card:nth-child(5n+1) .card-body::before{background:radial-gradient(circle,rgba(28,130,112,.13),transparent 68%)}
+  .card:nth-child(5n+2) .card-body::before{background:radial-gradient(circle,rgba(176,124,34,.14),transparent 68%)}
+  .card:nth-child(5n+3) .card-body::before{background:radial-gradient(circle,rgba(208,132,87,.14),transparent 68%)}
+  .card:nth-child(5n+4) .card-body::before{background:radial-gradient(circle,rgba(110,158,134,.15),transparent 68%)}
+  .card:nth-child(5n+5) .card-body::before{background:radial-gradient(circle,rgba(214,154,51,.14),transparent 68%)}
+  .card-body::after{content:"";position:absolute;inset-inline-end:-12px;bottom:-14px;width:82px;height:82px;z-index:0;
+    background-repeat:no-repeat;background-position:center;background-size:contain;opacity:.17;pointer-events:none;
+    transition:opacity .4s var(--ease),transform .5s var(--ease);transform:rotate(-6deg)}
+  a.card:hover .card-body::after{opacity:.26;transform:rotate(0) scale(1.06)}
+  /* ١) مكعّبات أطفال — فيروزيّ */
+  .card:nth-child(5n+1) .card-body::after{background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%231C8270' stroke-width='2.6' stroke-linejoin='round'><rect x='5' y='27' width='15' height='15' rx='3'/><rect x='24' y='27' width='15' height='15' rx='3'/><rect x='15' y='9' width='15' height='15' rx='3'/></svg>")}
+  /* ٢) نبتةُ غرسٍ — أوكر (على اسم المنهج) */
+  .card:nth-child(5n+2) .card-body::after{background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23B07C22' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><path d='M24 42V22'/><path d='M24 28c-2-7-9-8-14-7 0 7 7 9 14 7z'/><path d='M24 24c1-7 8-9 13-8 0 7-7 9-13 8z'/><path d='M12 42h24'/></svg>")}
+  /* ٣) طائرة ورقيّة — طينيّ */
+  .card:nth-child(5n+3) .card-body::after{background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23D08457' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><path d='M24 5 39 22 24 41 9 22z'/><path d='M24 41l-3 4 4 3-3 4'/></svg>")}
+  /* ٤) كتاب — مريميّ */
+  .card:nth-child(5n+4) .card-body::after{background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%236E9E86' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><path d='M24 13C19 9 12 9 7 11v25c5-2 12-2 17 2 5-4 12-4 17-2V11c-5-2-12-2-17 2z'/><path d='M24 13v27'/></svg>")}
+  /* ٥) شمس — ذهبيّ */
+  .card:nth-child(5n+5) .card-body::after{background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23D69A33' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><circle cx='24' cy='24' r='8'/><path d='M24 6V2M24 46v-4M6 24H2M46 24h-4M11 11 8 8M40 40l-3-3M37 11l3-3M8 40l3-3'/></svg>")}
+  @media(prefers-reduced-motion:reduce){.card-body::after{transition:none}}
 </style>
 </head>
 <body>
