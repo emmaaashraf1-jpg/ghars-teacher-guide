@@ -95,6 +95,49 @@ h1,h2,h3,.c-badge,.c-unit{font-family:var(--fd)}
 .mc-ws-frame{height:420px;background:#eef2ef}
 .mc-ws-frame iframe{width:100%;height:100%;border:0;display:block;background:#fff}
 </style>
+<style id="ghars-markaz-identity">
+/* Ghars box identity on markaz template (.mc-*) - ASCII only */
+/* fixed: white + thin border + radius14 + soft shadow; type shown by heading color + gold rule */
+.mc-chip{background:#fff!important;border:1px solid #EAE2D3!important}
+.mc-block{background:#fff!important;border:1px solid #EAE2D3!important}
+/* content cards: drop colored top bar */
+.mc-card{background:#fff!important;border:1px solid #EAE2D3!important;border-top:1px solid #EAE2D3!important}
+.mc-card h3{color:#1E5631!important;border-bottom:2px solid #E7C98B!important;padding-bottom:7px!important;margin-bottom:11px!important}
+/* teacher note / prep: white, no gold bar; inner label stays ochre */
+.mc-note{background:#fff!important;border:1px solid #EAE2D3!important;border-inline-start:1px solid #EAE2D3!important;color:#4b463d!important}
+.mc-note strong{color:#B07C22!important}
+/* quran ayah: white + Amiri (reverence) + no shadow */
+.mc-ayah{background:#fff!important;border:1px solid #EFE7D3!important;box-shadow:none!important;font-family:'Amiri','Noto Naskh Arabic',serif!important;color:#1a1a1a!important;line-height:2.1!important}
+.mc-ayah .ref{color:#B07C22!important;font-weight:700!important}
+/* signals card: white header, green title + gold rule instead of gradient banner */
+.mc-sig-head{background:#fff!important;color:#1E5631!important;border-bottom:2px solid #E7C98B!important}
+.mc-sig-head .gi{--gi-ln:#1E5631!important}
+.mc-sig-greet{background:#fff!important;border:1px solid #EAE2D3!important}
+/* answer: light green highlight instead of colored bar */
+.mc-sig-ans{background:rgba(30,86,49,.10)!important;border-inline-start:0!important;color:#15502F!important}
+/* worksheet bar: white like other tools (open button stays colored) */
+.mc-ws-bar{background:#fff!important;border-bottom:1px solid #EAE2D3!important;color:#1E5631!important}
+</style>
+<style id="ghars-wahy-frame">
+/* Revelation boxes family: ayah = gold illuminated frame + rosette; hadith = green twin. Amiri, centered. */
+.ayah,.hadith,.mc-ayah{background:#fff!important;border:1px solid #EAE2D3!important;border-radius:16px!important;padding:30px 26px 24px!important;box-shadow:0 12px 30px rgba(20,40,35,.07)!important;text-align:center!important;position:relative!important;overflow:visible!important;margin:22px 0 16px!important;font-family:'Amiri','Scheherazade New','Noto Naskh Arabic',serif!important;color:#1a1a1a!important;line-height:2.15!important}
+/* gold rosette medallion (top-center) for ayah */
+.ayah::before,.mc-ayah::before{content:"\06DE"!important;position:absolute!important;inset-inline:auto!important;top:-15px!important;bottom:auto!important;right:auto!important;left:50%!important;transform:translateX(-50%)!important;width:34px!important;height:34px!important;padding:0!important;border-radius:50%!important;background:#fff!important;border:1.5px solid #E7C98B!important;color:#B0842C!important;display:grid!important;place-items:center!important;font-size:16px!important;font-family:'Amiri',serif!important;box-shadow:none!important;letter-spacing:0!important}
+/* gold inner frame for ayah (neutralizes the old vertical rule) */
+.ayah::after,.mc-ayah::after{content:""!important;position:absolute!important;inset-inline:auto!important;inset-block:auto!important;top:9px!important;left:9px!important;right:auto!important;bottom:auto!important;width:calc(100% - 18px)!important;height:calc(100% - 18px)!important;background:none!important;opacity:1!important;border:1.5px solid #E7C98B!important;border-radius:11px!important;pointer-events:none!important;transform:none!important}
+/* ayah citation pill: ochre */
+.ayah .ref,.mc-ayah .ref{position:relative!important;display:inline-block!important;margin-top:12px!important;font-family:var(--fb),'Segoe UI',sans-serif!important;font-weight:700!important;font-size:12.5px!important;color:#B07C22!important;background:#fff!important;border:1px solid #EEDFC0!important;border-radius:999px!important;padding:2px 12px!important;letter-spacing:.3px!important}
+/* verse/ayah text sits above the frame */
+.ayah *:not(.ref){position:relative!important}
+/* hadith: green pill label (hadith nabawi) top-center */
+.hadith::before{content:"\062D\062F\064A\062B\064C\0020\0646\0628\0648\064A\0651"!important;position:absolute!important;inset-inline:auto!important;top:-13px!important;bottom:auto!important;right:auto!important;left:50%!important;transform:translateX(-50%)!important;background:#fff!important;border:1.5px solid #BFD8C5!important;color:#1E5631!important;padding:3px 13px!important;border-radius:999px!important;font-family:var(--fd),'Amiri',serif!important;font-size:11.5px!important;font-weight:700!important;box-shadow:none!important;letter-spacing:.2px!important}
+/* hadith green inner frame */
+.hadith::after{content:""!important;position:absolute!important;inset-inline:auto!important;inset-block:auto!important;top:9px!important;left:9px!important;right:auto!important;bottom:auto!important;width:calc(100% - 18px)!important;height:calc(100% - 18px)!important;background:none!important;opacity:1!important;border:1.5px solid #BFD8C5!important;border-radius:11px!important;pointer-events:none!important;transform:none!important}
+.hadith{font-size:20px!important;color:#233333!important}
+.hadith .ref{position:relative!important;display:inline-block!important;margin-top:12px!important;font-family:var(--fb),'Segoe UI',sans-serif!important;font-weight:700!important;font-size:12.5px!important;color:#1E5631!important;background:#fff!important;border:1px solid #EAE2D3!important;border-radius:999px!important;padding:2px 12px!important}
+.hadith>*:not(.ref){position:relative!important}
+</style>
+
 </head>
 <body>
 <div class="wrap">
