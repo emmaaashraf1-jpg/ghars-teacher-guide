@@ -534,11 +534,13 @@
   #units{position:relative;overflow:hidden}
   #units>.shell{position:relative;z-index:2}
   .udeco{position:absolute;z-index:0;pointer-events:none;background-repeat:no-repeat;background-position:center;background-size:contain}
-  /* عنصران يكتنفان العنوان (ظاهران بالكامل) */
-  .ud-blocks{width:clamp(132px,15vw,228px);aspect-ratio:1;top:6%;inset-inline-start:2%;opacity:.9;
+  /* عنصران يكتنفان العنوان من جانبيه بتناظرٍ وعلى الارتفاع نفسه (مرتبطان بالعنوان لا بحواف الصفحة) */
+  .sec-head{position:relative}
+  .ud-blocks{width:clamp(116px,11vw,178px);aspect-ratio:1;top:50%;left:100%;transform:translateY(-50%);margin-left:clamp(4px,2.5vw,44px);opacity:.9;
     background-image:url("assets/decor/01-building-blocks.png?v=1")}
-  .ud-seed{width:clamp(120px,13vw,196px);aspect-ratio:1;top:2%;inset-inline-end:3%;opacity:.85;
+  .ud-seed{width:clamp(108px,10vw,160px);aspect-ratio:1;top:50%;right:100%;transform:translateY(-50%);margin-right:clamp(4px,2.5vw,44px);opacity:.85;
     background-image:url("assets/decor/02-seedling.png?v=1")}
+  @media(max-width:1040px){.ud-blocks,.ud-seed{display:none}}
   /* عناصرُ مائيّة تطفو حرّةً في فراغ ما بين الفصول — ظاهرةٌ بالكامل، بعيدةٌ عن الحواف وعن البطاقات */
   .chapter{position:relative}
   .gdeco{position:absolute;bottom:100%;z-index:0;pointer-events:none;background-repeat:no-repeat;background-position:center;background-size:contain;opacity:.9;width:clamp(104px,12vw,150px);aspect-ratio:1;margin-bottom:clamp(16px,2.4vw,30px)}
@@ -785,14 +787,14 @@
 
 <!-- ============ Unit collection ============ -->
 <section class="band band-line" id="units">
-  <span class="udeco ud-blocks" aria-hidden="true"></span>
-  <span class="udeco ud-seed" aria-hidden="true"></span>
   <div class="shell">
     <div class="sec-head reveal">
+      <span class="udeco ud-seed" aria-hidden="true"></span>
       <span class="eyebrow">أدلة الوحدات</span>
       <h2>أدلة الوحدات التكاملية</h2>
       <p>كل وحدةٍ تجربةٌ تربويةٌ متكاملة، مبنيّةٌ على منظومة المنهج.</p>
       <span class="avail-pill reveal"><b>٤</b> وحداتٍ متاحةٌ الآن<span class="sep">·</span>من <b>١٨</b> تُنشَر تِباعًا</span>
+      <span class="udeco ud-blocks" aria-hidden="true"></span>
     </div>
 
     <!-- الفصل الأول -->
