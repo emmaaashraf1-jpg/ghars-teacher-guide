@@ -4466,6 +4466,22 @@ td,th,dd,dt{font-size:14.5px!important}
   animation:gpMorph 20s ease-in-out infinite!important;margin:0!important;filter:saturate(1.04)!important}
 #book .page .jhero-wash,#book .page .jhero-tags{display:none!important}
 @media(prefers-reduced-motion:reduce){#book .page .jhero::before,#book .page .jhero::after,#book .page .jhero-img{animation:none!important}}
+
+/* ---------- لمسة الأقسام الداكنة (moment-dark): الجُمَل المركزيّة على فيروزيّ داكن ---------- */
+#book .page :is(.wahy-note,.subject-thesis,.central-thread){
+  position:relative!important;overflow:hidden!important;isolation:isolate;
+  background:linear-gradient(160deg,#0F5747,#0A3C31)!important;color:#fff!important;
+  border:0!important;border-radius:22px!important;box-shadow:0 28px 56px -32px rgba(10,60,49,.6)!important;
+  padding:clamp(22px,2.6vw,32px) clamp(24px,2.8vw,38px)!important;font-size:clamp(15px,1.5vw,17.5px)!important;line-height:1.95!important}
+#book .page :is(.wahy-note,.subject-thesis,.central-thread)::before{content:""!important;position:absolute;z-index:0;
+  width:clamp(150px,20vw,250px);height:clamp(150px,20vw,250px);top:-64px;inset-inline-end:-50px;background:var(--u-amber,#D69A33);
+  opacity:.22;border-radius:56% 44% 47% 53%/52% 47% 53% 48%;pointer-events:none;animation:gpFloatb 15s var(--u-e2) infinite alternate}
+#book .page :is(.wahy-note,.subject-thesis,.central-thread)::after{content:""!important;position:absolute;z-index:0;
+  width:clamp(110px,15vw,180px);height:clamp(110px,15vw,180px);bottom:-50px;inset-inline-start:-40px;background:var(--u-sage,#A2BCA1);
+  opacity:.22;border-radius:44% 56% 60% 40%/54% 44% 56% 46%;pointer-events:none}
+#book .page :is(.wahy-note,.subject-thesis,.central-thread) > *{position:relative;z-index:1}
+#book .page :is(.wahy-note,.subject-thesis,.central-thread) b{color:#F1DAA4!important}
+@media(prefers-reduced-motion:reduce){#book .page :is(.wahy-note,.subject-thesis,.central-thread)::before{animation:none!important}}
 </style>
 
 </body></html>
