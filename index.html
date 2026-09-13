@@ -334,7 +334,8 @@
   /* ============ Unit collection ============ */
   .chapter{margin-top:clamp(40px,6vw,66px)}
   .chapter:first-of-type{margin-top:0}
-  .chapter{margin-top:clamp(52px,7vw,84px)}
+  .chapter{margin-top:clamp(128px,15vw,196px)}
+  .chapter:first-of-type{margin-top:0}
   .ch-head{display:flex;align-items:baseline;gap:14px;padding-bottom:18px;margin-bottom:clamp(32px,4.5vw,50px);
     border-bottom:1px solid var(--line)}
   .ch-head .idx{font-size:12.5px;color:var(--ochre);font-weight:700;letter-spacing:.2px}
@@ -538,14 +539,11 @@
     background-image:url("assets/decor/01-building-blocks.png?v=1")}
   .ud-seed{width:clamp(120px,13vw,196px);aspect-ratio:1;top:2%;inset-inline-end:3%;opacity:.85;
     background-image:url("assets/decor/02-seedling.png?v=1")}
-  /* عناصرُ مائيّة تملأ الخلايا الفارغة في شبكة البطاقات — ظاهرةٌ بالكامل بهامشٍ مريح (لا تُقصّ عند الحواف) */
-  .deco-cell{position:relative;background-repeat:no-repeat;background-position:center;background-size:78% auto;opacity:.9;min-height:clamp(150px,20vw,230px)}
-  .dc-kite{background-image:url("assets/decor/03-paper-kite.png?v=1")}
-  .dc-crayons{background-image:url("assets/decor/05-crayons.png?v=1")}
-  .dc-boat{background-image:url("assets/decor/04-paper-boat.png?v=1")}
-  .dc-book{background-image:url("assets/decor/06-open-storybook.png?v=1")}
-  /* الخلايا الفارغة موجودةٌ فقط في تخطيط ٣ أعمدة (فوق 980px) */
-  @media(max-width:980px){.deco-cell{display:none}}
+  /* عناصرُ مائيّة تطفو حرّةً في فراغ ما بين الفصول — ظاهرةٌ بالكامل، بعيدةٌ عن الحواف وعن البطاقات */
+  .chapter{position:relative}
+  .gdeco{position:absolute;bottom:100%;z-index:0;pointer-events:none;background-repeat:no-repeat;background-position:center;background-size:contain;opacity:.9;width:clamp(104px,12vw,150px);aspect-ratio:1;margin-bottom:clamp(16px,2.4vw,30px)}
+  .gd-kite{inset-inline-start:9%;background-image:url("assets/decor/03-paper-kite.png?v=1");rotate:6deg}
+  .gd-boat{inset-inline-end:11%;background-image:url("assets/decor/04-paper-boat.png?v=1")}
 </style>
 </head>
 <body>
@@ -805,13 +803,12 @@
         <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">٢</span><img src="units-art/unit-mumin.jpg?v=13" alt="وحدة أنا مؤمن" loading="lazy"></div><div class="card-body"><h4>أنا مؤمن</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
         <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">٣</span><img src="units-art/unit-kitab-allah.jpg?v=13" alt="وحدة أنا مع كتاب الله" loading="lazy"></div><div class="card-body"><h4>أنا مع كتاب الله</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
         <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">٤</span><img src="units-art/unit-nabi-muhammad.jpg?v=13" alt="وحدة نبيّي محمد ﷺ" loading="lazy"></div><div class="card-body"><h4>نبيّي محمد ﷺ</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
-        <div class="deco-cell dc-kite reveal" aria-hidden="true"></div>
-        <div class="deco-cell dc-crayons reveal" aria-hidden="true"></div>
       </div>
     </div>
 
     <!-- الفصل الثاني -->
     <div class="chapter">
+      <span class="gdeco gd-kite reveal" aria-hidden="true"></span>
       <div class="ch-head reveal"><span class="idx">٠٢</span><h3>الفصل الدراسي الثاني</h3><span class="count">٩ وحدات</span></div>
       <div class="grid">
         <a class="card reveal" href="unit-family.html"><div class="card-art"><span class="card-num">٥</span><img src="units-art/unit-family.jpg?v=13" alt="وحدة العائلة" loading="lazy"></div><div class="card-body"><h4>العائلة</h4><div class="card-foot"><span class="open">افتحي الدليل <span class="ar">←</span></span></div></div></a>
@@ -828,6 +825,7 @@
 
     <!-- الفصل الثالث -->
     <div class="chapter">
+      <span class="gdeco gd-boat reveal" aria-hidden="true"></span>
       <div class="ch-head reveal"><span class="idx">٠٣</span><h3>الفصل الدراسي الثالث</h3><span class="count">٥ وحدات</span></div>
       <div class="grid">
         <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">١٤</span><img src="units-art/unit-ramadan.jpg?v=13" alt="وحدة خير الشهور" loading="lazy"></div><div class="card-body"><h4>خير الشهور</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
@@ -835,7 +833,6 @@
         <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">١٦</span><img src="units-art/unit-past-present.jpg?v=13" alt="وحدة الماضي والحاضر" loading="lazy"></div><div class="card-body"><h4>الماضي والحاضر</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
         <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">١٧</span><img src="units-art/unit-azmina-mubaraka.jpg?v=13" alt="وحدة أزمنة مباركة" loading="lazy"></div><div class="card-body"><h4>أزمنة مباركة</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
         <div class="card upcoming reveal"><div class="card-art"><span class="soon-badge">قريبًا</span><span class="card-num">١٨</span><img src="units-art/unit-abqariyat.jpg?v=13" alt="وحدة عبقريات" loading="lazy"></div><div class="card-body"><h4>عبقريات</h4><div class="card-foot"><span class="muted">قيد الإعداد</span></div></div></div>
-        <div class="deco-cell dc-boat reveal" aria-hidden="true"></div>
       </div>
     </div>
 
