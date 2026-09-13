@@ -529,25 +529,25 @@
   @media(prefers-reduced-motion:reduce){.blob,.hero-art.organic,.moment-dark .b-c{animation:none}.circled .ring ellipse{animation:none;stroke-dashoffset:0}.swap>span{animation:none;opacity:0}.swap>span:first-child{opacity:1;transform:none}}
   @media(max-width:900px){.foot-top{grid-template-columns:1fr;gap:30px}.foot-cols{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.foot-cols{grid-template-columns:1fr 1fr;gap:22px 16px}}
-  /* ============ زينة خلفيّة قسم الوحدات — أشكالٌ طفوليّة كبيرة خلف البطاقات (بدل الكرات المرجعيّة) ============ */
+  /* ============ زينة خلفيّة قسم الوحدات — عناصر مائيّة راقية (بروح التصميم) خلف البطاقات ============ */
   #units{position:relative;overflow:hidden}
   #units>.shell{position:relative;z-index:2}
   .udeco{position:absolute;z-index:0;pointer-events:none;background-repeat:no-repeat;background-position:center;background-size:contain}
-  /* كراتٌ لونيّة ناعمة كبيرة تنزف من الحواف — خلفيّة ملوّنة كالمرجع، موزّعة رأسيًّا */
-  .ud-a{width:clamp(280px,34vw,520px);height:clamp(280px,34vw,520px);top:-90px;inset-inline-start:-120px;border-radius:50%;background:radial-gradient(circle,rgba(214,154,51,.16),transparent 66%)}
-  .ud-c{width:clamp(240px,30vw,460px);height:clamp(240px,30vw,460px);top:42%;inset-inline-start:-190px;border-radius:50%;background:radial-gradient(circle,rgba(110,158,134,.13),transparent 66%)}
-  .ud-b{width:clamp(240px,28vw,420px);height:clamp(240px,28vw,420px);bottom:-80px;inset-inline-end:-100px;border-radius:50%;background:radial-gradient(circle,rgba(28,130,112,.12),transparent 66%)}
-  /* رموزٌ طفوليّة كبيرة تنزف من حواف القسم على ارتفاعاتٍ متدرّجة (مكعّبات · طائرة ورقيّة · نبتةُ غرسٍ · شمس) */
-  .ud-blocks{width:clamp(130px,15vw,210px);height:clamp(130px,15vw,210px);top:4%;inset-inline-end:-16px;opacity:.55;transform:rotate(-4deg);
-    background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='%239FCFC4'><rect x='4' y='34' width='24' height='24' rx='5'/><rect x='36' y='34' width='24' height='24' rx='5'/><rect x='20' y='6' width='24' height='24' rx='5'/></svg>")}
-  .ud-kite{width:clamp(104px,12vw,168px);height:clamp(104px,12vw,168px);top:28%;inset-inline-start:-20px;opacity:.5;transform:rotate(8deg);
-    background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='%23F0C79B'><path d='M32 4 56 30 32 60 8 30z'/></svg>")}
-  .ud-seed{width:clamp(140px,16vw,224px);height:clamp(140px,16vw,224px);top:56%;inset-inline-end:-18px;opacity:.5;
-    background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='%23A9C7AE'><rect x='29' y='30' width='6' height='30' rx='3'/><path d='M32 40C28 26 14 24 4 26c0 14 14 18 28 14z'/><path d='M32 34c2-13 16-16 28-14 0 13-14 17-28 14z'/></svg>")}
-  .ud-sun{width:clamp(104px,12vw,164px);height:clamp(104px,12vw,164px);top:80%;inset-inline-start:-14px;opacity:.45;
-    background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='%23F0D79B'><circle cx='32' cy='32' r='13'/><g stroke='%23F0D79B' stroke-width='5' stroke-linecap='round'><path d='M32 6V1M32 63v-5M6 32H1M63 32h-5M13 13 9 9M55 55l-4-4M51 13l4-4M9 55l4-4'/></g></svg>")}
-  @media(max-width:820px){.ud-kite,.ud-sun{display:none}}
-  @media(prefers-reduced-motion:reduce){.udeco{transition:none}}
+  /* عنصران يكتنفان العنوان (ظاهران بالكامل) */
+  .ud-blocks{width:clamp(132px,15vw,228px);aspect-ratio:1;top:6%;inset-inline-start:2%;opacity:.9;
+    background-image:url("assets/decor/01-building-blocks.png?v=1")}
+  .ud-seed{width:clamp(120px,13vw,196px);aspect-ratio:1;top:2%;inset-inline-end:3%;opacity:.85;
+    background-image:url("assets/decor/02-seedling.png?v=1")}
+  /* عناصر موزّعة رأسيًّا تنزف من حواف القسم بمحاذاة شبكة البطاقات */
+  .ud-kite{width:clamp(120px,14vw,214px);aspect-ratio:1;top:22%;inset-inline-end:-46px;opacity:.7;
+    background-image:url("assets/decor/03-paper-kite.png?v=1")}
+  .ud-crayons{width:clamp(140px,16vw,238px);aspect-ratio:1;top:42%;inset-inline-start:-54px;opacity:.6;
+    background-image:url("assets/decor/05-crayons.png?v=1")}
+  .ud-book{width:clamp(150px,17vw,262px);aspect-ratio:1;top:60%;inset-inline-end:-48px;opacity:.6;
+    background-image:url("assets/decor/06-open-storybook.png?v=1")}
+  .ud-boat{width:clamp(150px,17vw,250px);aspect-ratio:1;top:82%;inset-inline-start:-42px;opacity:.62;
+    background-image:url("assets/decor/04-paper-boat.png?v=1")}
+  @media(max-width:820px){.ud-kite,.ud-crayons,.ud-book{display:none}.ud-boat{opacity:.5}}
 </style>
 </head>
 <body>
@@ -780,13 +780,12 @@
 
 <!-- ============ Unit collection ============ -->
 <section class="band band-line" id="units">
-  <span class="udeco ud-a" aria-hidden="true"></span>
-  <span class="udeco ud-c" aria-hidden="true"></span>
-  <span class="udeco ud-b" aria-hidden="true"></span>
   <span class="udeco ud-blocks" aria-hidden="true"></span>
   <span class="udeco ud-seed" aria-hidden="true"></span>
   <span class="udeco ud-kite" aria-hidden="true"></span>
-  <span class="udeco ud-sun" aria-hidden="true"></span>
+  <span class="udeco ud-crayons" aria-hidden="true"></span>
+  <span class="udeco ud-book" aria-hidden="true"></span>
+  <span class="udeco ud-boat" aria-hidden="true"></span>
   <div class="shell">
     <div class="sec-head reveal">
       <span class="eyebrow">أدلة الوحدات</span>
