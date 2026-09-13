@@ -334,8 +334,9 @@
   /* ============ Unit collection ============ */
   .chapter{margin-top:clamp(40px,6vw,66px)}
   .chapter:first-of-type{margin-top:0}
-  .chapter{margin-top:clamp(150px,17.5vw,240px)}
+  .chapter{margin-top:clamp(56px,7vw,92px)}
   .chapter:first-of-type{margin-top:0}
+  .chapter-boatgap{margin-top:clamp(150px,17.5vw,240px)}
   .ch-head{display:flex;align-items:baseline;gap:14px;padding-bottom:18px;margin-bottom:clamp(32px,4.5vw,50px);
     border-bottom:1px solid var(--line)}
   .ch-head .idx{font-size:12.5px;color:var(--ochre);font-weight:700;letter-spacing:.2px}
@@ -544,7 +545,8 @@
   /* عناصرُ مائيّة تطفو حرّةً في فراغ ما بين الفصول — ظاهرةٌ بالكامل، بعيدةٌ عن الحواف وعن البطاقات */
   .chapter{position:relative}
   .gdeco{position:absolute;bottom:100%;z-index:0;pointer-events:none;background-repeat:no-repeat;background-position:center;background-size:contain;opacity:.9;width:clamp(104px,12vw,150px);aspect-ratio:1;margin-bottom:clamp(16px,2.4vw,30px)}
-  .gd-kite{left:0;right:0;margin-inline:auto;width:clamp(130px,14.5vw,186px);margin-bottom:clamp(34px,4vw,50px);background-image:url("assets/decor/03-paper-kite.png?v=1");rotate:-5deg}
+  /* الطائرة: مرتبطةٌ بالفصل الأول، مرفوعةٌ لتحاذي بطاقة «نبيّي محمد» في الصفّ الثاني (الخليّة الوسطى الفارغة) */
+  .gd-kite{top:auto;bottom:clamp(38px,4.3vw,74px);left:0;right:0;margin-inline:auto;margin-bottom:0;width:clamp(130px,14.5vw,186px);background-image:url("assets/decor/03-paper-kite.png?v=1");rotate:-5deg}
   .gd-boat{left:0;right:0;margin-inline:auto;margin-bottom:clamp(28px,3.4vw,44px);background-image:url("assets/decor/04-paper-boat.png?v=1")}
 </style>
 </head>
@@ -799,6 +801,7 @@
 
     <!-- الفصل الأول -->
     <div class="chapter">
+      <span class="gdeco gd-kite" aria-hidden="true"></span>
       <div class="ch-head reveal"><span class="idx">٠١</span><h3>الفصل الدراسي الأول</h3><span class="count">٤ وحدات</span></div>
       <div class="grid">
         <a class="card reveal" href="unit-makhluq.html"><div class="card-art"><span class="card-num">١</span><img src="units-art/unit-makhlouq.jpg?v=13" alt="وحدة أنا مخلوقٌ كرّمني الله" loading="lazy"></div><div class="card-body"><h4>أنا مخلوقٌ كرّمني الله</h4><div class="card-foot"><span class="open">افتحي الدليل <span class="ar">←</span></span></div></div></a>
@@ -810,7 +813,6 @@
 
     <!-- الفصل الثاني -->
     <div class="chapter">
-      <span class="gdeco gd-kite" aria-hidden="true"></span>
       <div class="ch-head reveal"><span class="idx">٠٢</span><h3>الفصل الدراسي الثاني</h3><span class="count">٩ وحدات</span></div>
       <div class="grid">
         <a class="card reveal" href="unit-family.html"><div class="card-art"><span class="card-num">٥</span><img src="units-art/unit-family.jpg?v=13" alt="وحدة العائلة" loading="lazy"></div><div class="card-body"><h4>العائلة</h4><div class="card-foot"><span class="open">افتحي الدليل <span class="ar">←</span></span></div></div></a>
@@ -826,7 +828,7 @@
     </div>
 
     <!-- الفصل الثالث -->
-    <div class="chapter">
+    <div class="chapter chapter-boatgap">
       <span class="gdeco gd-boat" aria-hidden="true"></span>
       <div class="ch-head reveal"><span class="idx">٠٣</span><h3>الفصل الدراسي الثالث</h3><span class="count">٥ وحدات</span></div>
       <div class="grid">
