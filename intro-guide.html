@@ -4530,7 +4530,7 @@ td,th,dd,dt{font-size:14.5px!important}
 <style id="gp-circled-word">
 .gp-circled{position:relative;display:inline-block}
 .gp-circled .gp-cw{position:relative;z-index:1}
-.gp-circled .gp-ring{position:absolute;inset:-20% -13%;overflow:visible;pointer-events:none;z-index:0;transform:rotate(-2deg)}
+.gp-circled .gp-ring{position:absolute;left:-0.16em;top:-0.24em;width:calc(100% + 0.32em);height:calc(100% + 0.48em);aspect-ratio:auto;overflow:visible;pointer-events:none;z-index:0;transform:rotate(-2.5deg)}
 .gp-circled .gp-ring ellipse{fill:none;stroke:#D69A33;stroke-width:2.6;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1;animation:gpDraw 1.15s cubic-bezier(.645,.045,.355,1) .55s forwards}
 @keyframes gpDraw{to{stroke-dashoffset:0}}
 @media(prefers-reduced-motion:reduce){.gp-circled .gp-ring ellipse{animation:none;stroke-dashoffset:0}}
@@ -4543,7 +4543,7 @@ td,th,dd,dt{font-size:14.5px!important}
     var parts=txt.split(/\s+/); if(parts.length<1) return;
     var last=parts.pop(); var rest=parts.join(' ');
     var esc=function(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');};
-    t.innerHTML=(rest?esc(rest)+' ':'')+'<span class="gp-circled"><span class="gp-cw">'+esc(last)+'</span><svg class="gp-ring" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="50" cy="50" rx="47" ry="39" pathLength="1"></ellipse></svg></span>';
+    t.innerHTML=(rest?esc(rest)+' ':'')+'<span class="gp-circled"><span class="gp-cw">'+esc(last)+'</span><svg class="gp-ring" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="50" cy="50" rx="48" ry="44" pathLength="1"></ellipse></svg></span>';
   }
   function run(){ document.querySelectorAll('.jhero-title').forEach(ring); }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',run); else run();
