@@ -4550,4 +4550,20 @@ td,th,dd,dt{font-size:14.5px!important}
 })();
 </script>
 
+<style id="gp-waves-blobs">
+/* موجةٌ مائلة على قمّة الأقسام الفيروزيّة الداكنة (كالرئيسيّة moment-dark) */
+#book .page :is(.wahy-note,.subject-thesis,.central-thread){
+  clip-path:polygon(0 13px,14% 2px,36% 11px,60% 1px,83% 10px,100% 2px,100% 100%,0 100%)!important;
+  border-radius:0!important;padding-top:clamp(30px,3.6vw,44px)!important}
+/* أشكالٌ مائيّة عائمة في مساحة المحتوى (لا البطل وحده) */
+#book .page .page-body{position:relative;isolation:isolate}
+#book .page .page-body::before{content:"";position:absolute;z-index:0;top:7%;inset-inline-start:-74px;
+  width:clamp(150px,16vw,230px);height:clamp(150px,16vw,230px);background:#A2BCA1;opacity:.13;
+  border-radius:52% 48% 60% 40%/48% 62% 38% 52%;pointer-events:none;animation:gpFloatb 18s var(--u-e2,ease) infinite alternate}
+#book .page .page-body::after{content:"";position:absolute;z-index:0;bottom:14%;inset-inline-end:-62px;
+  width:clamp(130px,14vw,200px);height:clamp(130px,14vw,200px);background:#D69A33;opacity:.09;
+  border-radius:60% 40% 53% 47%/47% 58% 42% 53%;pointer-events:none;animation:gpFloatb 21s var(--u-e2,ease) -5s infinite alternate}
+#book .page .page-main,#book .page .page-aside{position:relative;z-index:1}
+</style>
+
 </body></html>
