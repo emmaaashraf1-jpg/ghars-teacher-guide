@@ -769,7 +769,7 @@ body{background:radial-gradient(1150px 500px at 84% -12%,#EFF4EC 0,transparent 5
   .wahy-cmp [style*="#FFE0D4"]{background:#F6EFEC!important}
   .wahy-cmp [style*="color:#B02020"]{color:#8a726b!important}
 </style>
-<div class="gq-platform-crumb"><a href="index.html">منصّة غرس القيم</a><span>›</span>الدليل العام<span>›</span>الدليل التعريفي والتشغيلي</div>
+<div class="gq-platform-crumb"><a class="gqh-brand" href="index.html"><img src="brand/logo-ghars.webp" alt="" width="44" height="44"><span class="gqh-name"><b>غرس القيم</b><small>الدليل التعريفيّ والتشغيليّ</small></span></a><a class="gqh-cta" href="index.html"><span>الصفحة الرئيسيّة</span><span class="gqh-ar">←</span></a></div>
 <main class="book" id="book">
 <div class="topline"></div>
 <template id="__bundler_thumbnail" data-bg-color="#1C8270">
@@ -4482,6 +4482,27 @@ td,th,dd,dt{font-size:14.5px!important}
 #book .page :is(.wahy-note,.subject-thesis,.central-thread) > *{position:relative;z-index:1}
 #book .page :is(.wahy-note,.subject-thesis,.central-thread) b{color:#F1DAA4!important}
 @media(prefers-reduced-motion:reduce){#book .page :is(.wahy-note,.subject-thesis,.central-thread)::before{animation:none!important}}
+</style>
+
+<style id="gp-pill-header">
+/* الهيدر الحبّة العائم — بنمط الرئيسيّة */
+.gq-platform-crumb{display:flex!important;align-items:center;justify-content:space-between;gap:16px;
+  position:sticky!important;top:12px;z-index:70;background:rgba(253,250,242,.93)!important;
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  max-width:calc(1200px - 12px)!important;margin:12px auto 4px!important;padding:10px 12px 10px 22px!important;
+  border-radius:100px!important;box-shadow:0 12px 34px rgba(58,46,36,.13)!important;
+  font-family:'Noto Naskh Arabic','Segoe UI',Tahoma,sans-serif!important;text-align:start!important;letter-spacing:0!important;color:#4a4034!important}
+.gq-platform-crumb .gqh-brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:inherit!important}
+.gq-platform-crumb .gqh-brand img{width:44px;height:44px;border-radius:50%;background:#fff;padding:3px;box-shadow:0 3px 12px rgba(58,46,36,.13);flex:0 0 auto;filter:none!important}
+.gq-platform-crumb .gqh-name b{font-family:'AlAwwal','Amiri',serif;font-size:21px;color:#0F5747!important;line-height:1;display:block;letter-spacing:.3px;text-decoration:none}
+.gq-platform-crumb .gqh-name small{display:block;font-size:11px;color:#877C6C!important;font-weight:400;margin-top:3px}
+.gq-platform-crumb .gqh-cta{display:inline-flex;align-items:center;gap:8px;text-decoration:none!important;
+  background:#1C8270!important;color:#fff!important;padding:10px 20px;border-radius:999px;font-size:14px;font-weight:700;
+  box-shadow:0 8px 20px rgba(23,122,116,.24);transition:transform .3s,background .3s,box-shadow .3s;white-space:nowrap}
+.gq-platform-crumb .gqh-cta:hover{background:#2AA187!important;transform:translateY(-2px);box-shadow:0 14px 28px rgba(23,122,116,.32)}
+.gq-platform-crumb .gqh-cta .gqh-ar{transition:transform .2s;opacity:1!important}
+.gq-platform-crumb .gqh-cta:hover .gqh-ar{transform:translateX(-4px)}
+@media(max-width:600px){.gq-platform-crumb .gqh-name small{display:none}.gq-platform-crumb{padding:8px 8px 8px 14px!important;top:8px}.gq-platform-crumb .gqh-cta{padding:8px 15px;font-size:13px}}
 </style>
 
 </body></html>
