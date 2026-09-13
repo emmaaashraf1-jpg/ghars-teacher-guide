@@ -4436,4 +4436,36 @@ td,th,dd,dt{font-size:14.5px!important}
 /* (٢) «المكوّنات» الشريط الجانبيّ — شارة «؟» الذهبيّة كانت تغطّي بداية العنوان (padding 18 < شارة 34) ← تُخفى فيتّضح النصّ */
 #book #components .refs-helper-card::before,#book #components .refs-helper-card::after{display:none!important}
 
+<style id="gp-dna">
+/* ============================================================
+   توقيعات DNA للرئيسيّة الجديدة على بطل الدليل:
+   عمودان (نصّ + صورة عضويّة متحرّكة) · أرضيّة ورقيّة · أشكال عائمة
+   ============================================================ */
+:root{--u-paper:#FDFAF3;--u-cream:#F4EBD8;--u-amber:#D69A33;--u-sage:#A2BCA1;--u-e2:cubic-bezier(.22,.61,.36,1)}
+@keyframes gpMorph{0%,100%{border-radius:38% 62% 63% 37%/48% 42% 58% 52%}33%{border-radius:56% 44% 47% 53%/44% 54% 46% 56%}66%{border-radius:45% 55% 58% 42%/57% 46% 54% 43%}}
+@keyframes gpFloatb{from{transform:translate(0,0) rotate(0) scale(1)}to{transform:translate(16px,-20px) rotate(8deg) scale(1.06)}}
+
+#book .page .jhero{position:relative!important;isolation:isolate;display:grid!important;grid-template-columns:1fr!important;
+  gap:clamp(18px,3vw,32px)!important;align-items:center!important;
+  background:linear-gradient(180deg,var(--u-paper),var(--u-cream))!important;border-radius:28px!important;overflow:hidden!important;
+  padding:clamp(26px,4.5vw,52px) clamp(24px,4vw,48px)!important;margin:0 0 clamp(30px,4vw,46px)!important;min-height:0!important;height:auto!important}
+@media(min-width:820px){#book .page .jhero{grid-template-columns:1fr 1.02fr!important}}
+/* شكلان مائيّان عائمان (عسليّ + ساج) */
+#book .page .jhero::before{content:"";position:absolute;z-index:0;width:clamp(170px,22vw,300px);height:clamp(170px,22vw,300px);
+  top:-58px;inset-inline-end:-46px;background:var(--u-amber);opacity:.22;border-radius:60% 40% 53% 47%/47% 58% 42% 53%;
+  animation:gpFloatb 13s var(--u-e2) infinite alternate;pointer-events:none}
+#book .page .jhero::after{content:"";position:absolute;z-index:0;width:clamp(140px,18vw,230px);height:clamp(140px,18vw,230px);
+  bottom:-46px;inset-inline-start:-54px;background:var(--u-sage);opacity:.30;border-radius:52% 48% 60% 40%/48% 62% 38% 52%;
+  animation:gpFloatb 16s var(--u-e2) -4s infinite alternate;pointer-events:none}
+/* النصّ يمينًا فوق الأشكال */
+#book .page .jhero-copy{position:relative!important;z-index:2!important;order:1!important;margin:0!important;padding:0!important;max-width:none!important}
+/* الصورة عضويّة متحرّكة يسارًا */
+#book .page .jhero-img{position:relative!important;z-index:1!important;order:2!important;display:block!important;width:100%!important;height:auto!important;
+  aspect-ratio:1/1!important;object-fit:cover!important;object-position:50% 42%!important;
+  border-radius:38% 62% 63% 37%/48% 42% 58% 52%!important;box-shadow:0 40px 84px -30px rgba(58,46,36,.34)!important;
+  animation:gpMorph 20s ease-in-out infinite!important;margin:0!important;filter:saturate(1.04)!important}
+#book .page .jhero-wash,#book .page .jhero-tags{display:none!important}
+@media(prefers-reduced-motion:reduce){#book .page .jhero::before,#book .page .jhero::after,#book .page .jhero-img{animation:none!important}}
+</style>
+
 </body></html>
