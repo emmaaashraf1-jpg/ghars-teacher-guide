@@ -4560,4 +4560,23 @@ td,th,dd,dt{font-size:14.5px!important}
 </style>
 
 
+<style id="gp-rhythm">
+/* ============================================================
+   إيقاعٌ احترافيّ داخل بنية الدليل (لا بانداتٍ كاملة العرض):
+   رؤوسٌ موسَّطة كبيرة + تنفّسٌ رأسيّ واسع مدروس — كإحساس الرئيسيّة
+   ============================================================ */
+/* توسيط رؤوس الأقسام (كالرئيسيّة sec-head) */
+#book .page .gp-sechead{max-width:660px!important;margin-inline:auto!important;text-align:center!important}
+#book .page .gp-sechead .gp-eyebrow{justify-content:center!important}
+#book .page .gp-sechead h2{font-size:clamp(27px,2.9vw,40px)!important;line-height:1.16!important;margin:0 auto 10px!important;text-wrap:balance}
+#book .page .gp-sechead p{margin-inline:auto!important;max-width:600px!important}
+/* رؤوس التبويبات القديمة تُوسَّط بالأسلوب نفسه */
+#book .page :is(.dl-group-title-x,.song-section-title,.rules-title){text-align:center!important;justify-content:center!important}
+/* تنفّسٌ واسع بين الأقسام (المسافة فوق كلّ رأسِ قسم عدا الأوّل) */
+#book .page .page-main > .gp-sechead:not(:first-child),
+#book .page .page-main > :is(.dl-group-title-x,.song-section-title,.rules-title):not(:first-child){
+  margin-top:clamp(46px,5.5vw,80px)!important}
+#book .page .gp-sechead{margin-bottom:clamp(22px,2.6vw,36px)!important}
+</style>
+
 </body></html>
