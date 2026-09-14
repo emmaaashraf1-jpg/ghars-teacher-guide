@@ -4584,6 +4584,9 @@ td,th,dd,dt{font-size:14.5px!important}
 #book .page .page-main > .gp-band > .gp-sechead .gp-eyebrow{justify-content:center!important}
 #book .page .page-main > .gp-band > .gp-sechead h2{font-size:clamp(28px,3.2vw,42px)!important;line-height:1.15!important;margin:0 0 10px!important}
 #book .page .page-main > .gp-band > .gp-sechead p{margin-inline:auto!important;max-width:600px!important}
+/* توسيط الرؤوس القديمة (التغذية/الأناشيد/الآداب) بالإيقاع نفسه */
+#book .page .page-main > .gp-band > :is(.dl-group-title-x,.song-section-title,.rules-title){text-align:center!important;justify-content:center!important;align-items:center!important;margin-inline:auto!important;margin-bottom:clamp(22px,3vw,42px)!important}
+#book .page .page-main > .gp-band > :is(.dl-group-title-x,.song-section-title,.rules-title) :is(h2,h3,h4,b,strong){margin-inline:auto!important}
 </style>
 <script id="gp-bands-js">
 (function(){
@@ -4591,9 +4594,10 @@ td,th,dd,dt{font-size:14.5px!important}
     var main=page.querySelector('.page-main'); if(!main) return;
     if(main.querySelector(':scope > .gp-band')) return; // already wrapped
     var hasAside=!!page.querySelector('.page-aside');
+    var HEAD='.gp-sechead,.dl-group-title-x,.song-section-title,.rules-title';
     var kids=[].slice.call(main.children), band=null, idx=0;
     kids.forEach(function(c){
-      if(c.classList.contains('gp-sechead')){
+      if(c.matches&&c.matches(HEAD)){
         band=document.createElement('div');
         band.className='gp-band '+((idx%2)?'gp-band-alt':'gp-band-base')+(hasAside?' gp-has-aside':'');
         idx++; main.insertBefore(band,c);
