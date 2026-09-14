@@ -4570,18 +4570,20 @@ td,th,dd,dt{font-size:14.5px!important}
 <style id="gp-bands">
 /* ============================================================
    نظام «الباندات» بإيقاع الرئيسيّة: رؤوسٌ موسَّطة + تنفّسٌ واسع +
-   أرضيّاتٌ متناوبة كاملة العرض (خلف العمودين) — برهانٌ على #components
+   أرضيّاتٌ متناوبة كاملة العرض (خلف العمودين) — معمَّمٌ على كلّ التبويبات
    ============================================================ */
-#book #components .gp-band{position:relative;padding:clamp(48px,6vw,86px) 0;margin:0}
-#book #components .gp-band:first-of-type{padding-top:clamp(18px,2.6vw,32px)}
-#book #components .gp-band > *{margin-top:0!important;margin-bottom:0!important}
-#book #components .gp-band-alt::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;inset-inline-start:0;inset-inline-end:0;background:linear-gradient(180deg,#F6EEDD,#F1E5CF)}
-@media(min-width:901px){#book #components .gp-band-alt.gp-has-aside::before{inset-inline-end:calc(-1 * (44px + 300px))}}
+#book .page .page-main > .gp-band{position:relative;padding:clamp(46px,5.6vw,82px) 0;margin:0}
+#book .page .page-main > .gp-band:first-of-type{padding-top:clamp(16px,2.4vw,30px)}
+/* تصفير الطرفين فقط لئلّا يتضاعف التباعد؛ تبقى فجوات الكتل الداخليّة */
+#book .page .page-main > .gp-band > :first-child{margin-top:0!important}
+#book .page .page-main > .gp-band > :last-child{margin-bottom:0!important}
+#book .page .page-main > .gp-band-alt::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;inset-inline-start:0;inset-inline-end:0;background:linear-gradient(180deg,#F6EEDD,#F1E5CF)}
+@media(min-width:901px){#book .page .page-main > .gp-band-alt.gp-has-aside::before{inset-inline-end:calc(-1 * (44px + 300px))}}
 /* رأس القسم موسَّطٌ كالرئيسيّة */
-#book #components .gp-band > .gp-sechead{max-width:640px!important;margin:0 auto clamp(26px,3.4vw,46px)!important;text-align:center!important}
-#book #components .gp-band > .gp-sechead .gp-eyebrow{justify-content:center!important}
-#book #components .gp-band > .gp-sechead h2{font-size:clamp(28px,3.2vw,42px)!important;line-height:1.15!important;margin:0 0 10px!important}
-#book #components .gp-band > .gp-sechead p{margin-inline:auto!important;max-width:600px!important}
+#book .page .page-main > .gp-band > .gp-sechead{max-width:640px!important;margin:0 auto clamp(24px,3.2vw,44px)!important;text-align:center!important}
+#book .page .page-main > .gp-band > .gp-sechead .gp-eyebrow{justify-content:center!important}
+#book .page .page-main > .gp-band > .gp-sechead h2{font-size:clamp(28px,3.2vw,42px)!important;line-height:1.15!important;margin:0 0 10px!important}
+#book .page .page-main > .gp-band > .gp-sechead p{margin-inline:auto!important;max-width:600px!important}
 </style>
 <script id="gp-bands-js">
 (function(){
@@ -4599,7 +4601,7 @@ td,th,dd,dt{font-size:14.5px!important}
       if(band) band.appendChild(c);
     });
   }
-  function run(){ var p=document.querySelector('#components'); if(p) wrap(p); }
+  function run(){ [].forEach.call(document.querySelectorAll('#book .page'),wrap); }
   if(document.readyState!=='loading') run(); else document.addEventListener('DOMContentLoaded',run);
 })();
 </script>
