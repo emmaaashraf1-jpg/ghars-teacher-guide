@@ -1053,7 +1053,7 @@
   var root=document.documentElement;
   var mq=function(q){ return window.matchMedia && window.matchMedia(q).matches; };
   var reduce=mq('(prefers-reduced-motion: reduce)');
-  var fine=mq('(pointer:fine)');
+  var fine=mq('(any-pointer:fine)');   /* أوسع: يشمل حواسيب اللمس التي لها فأرة/لوحة لمس، ويستبعد الهواتف */
   var isDesktop=mq('(min-width:900px)');
   if(reduce) return;   /* نحترم تقليل الحركة: تبقى حركة CSS الأساسيّة وحدها */
 
@@ -1149,10 +1149,10 @@
         c.fillStyle=g; c.beginPath(); c.arc(size/2,size/2,size/2,0,7); c.fill(); return s; }
       var pal=[[236,196,120],[247,230,190],[214,154,51],[128,186,158]];
       var moteS=pal.map(function(p){ return soft(60,p,0.85); });
-      var bloomS=[ soft(260,[236,196,120],0.22), soft(320,[128,186,158],0.15), soft(230,[247,230,190],0.20) ];
+      var bloomS=[ soft(260,[236,196,120],0.20), soft(320,[128,186,158],0.14), soft(230,[247,230,190],0.18) ];
 
-      var motes=[]; for(var i=0;i<20;i++){ motes.push({ x:Math.random(), y:Math.random(), r:rnd(4,12),
-        sp:rnd(0.6,1.6), sway:rnd(0.2,0.7), ph:rnd(0,6.28), depth:rnd(0.4,1), col:(Math.random()*moteS.length)|0, a:rnd(0.12,0.28) }); }
+      var motes=[]; for(var i=0;i<24;i++){ motes.push({ x:Math.random(), y:Math.random(), r:rnd(4,12),
+        sp:rnd(0.7,1.8), sway:rnd(0.2,0.7), ph:rnd(0,6.28), depth:rnd(0.4,1), col:(Math.random()*moteS.length)|0, a:rnd(0.14,0.3) }); }
       var blooms=[]; for(var b=0;b<3;b++){ blooms.push({ x:rnd(0.25,0.75), y:rnd(0.3,0.7), s:rnd(0.85,1.25), ph:rnd(0,6.28), sp:rnd(0.14,0.26), sprite:bloomS[b] }); }
 
       var mx=0.5,my=0.4,tmx=0.5,tmy=0.4;
@@ -1173,12 +1173,12 @@
         ctx.globalCompositeOperation='lighter';
         var sunX=W*(0.5+px*0.04), sunY=H*(0.34+py*0.04), pulse=0.5+Math.sin(t*0.5)*0.5, sunR=Math.min(W,H)*(0.5+pulse*0.08);
         var sg=ctx.createRadialGradient(sunX,sunY,0,sunX,sunY,sunR);
-        sg.addColorStop(0,'rgba(255,233,182,'+(0.11+pulse*0.05)+')');
+        sg.addColorStop(0,'rgba(255,233,182,'+(0.11+pulse*0.055)+')');
         sg.addColorStop(0.45,'rgba(245,206,142,'+(0.05+pulse*0.03)+')');
         sg.addColorStop(1,'rgba(245,206,142,0)');
         ctx.fillStyle=sg; ctx.beginPath(); ctx.arc(sunX,sunY,sunR,0,7); ctx.fill();
         /* ٣) بذورٌ/ذرّاتُ نورٍ تطفو صعودًا */
-        for(var m=0;m<motes.length;m++){ var o=motes[m]; o.y-=o.sp*0.0006; if(o.y<-0.06){ o.y=1.06; o.x=Math.random(); }
+        for(var m=0;m<motes.length;m++){ var o=motes[m]; o.y-=o.sp*0.0009; if(o.y<-0.06){ o.y=1.06; o.x=Math.random(); }
           var X=(o.x+Math.sin(t*o.sway+o.ph)*0.02)*W+px*38*o.depth, Y=o.y*H+py*28*o.depth,
           rr=o.r*(0.85+Math.sin(t*o.sway+o.ph)*0.15)*2.2;
           ctx.globalAlpha=o.a*(0.55+0.45*Math.sin(t*0.8+o.ph)); ctx.drawImage(moteS[o.col], X-rr, Y-rr, rr*2, rr*2); }
