@@ -227,7 +227,7 @@
     background:linear-gradient(to left,transparent 30%,rgba(9,12,9,.5) 56%,rgba(5,8,5,.9) 100%)}
   /* العمود الفقريّ الذهبيّ في الوسط (الدرب) — فوق الرسمة، تحت المحتوى */
   .wtable::before{content:"";position:absolute;left:50%;top:clamp(50px,11%,84px);bottom:clamp(60px,12%,92px);
-    width:2px;transform:translateX(-50%);z-index:1;border-radius:2px;
+    width:2px;transform:translateX(-50%) scaleY(var(--wspine,1));transform-origin:top center;z-index:1;border-radius:2px;
     background:linear-gradient(180deg,transparent,rgba(242,198,112,.82) 12%,rgba(242,198,112,.82) 88%,transparent)}
 
   .wtable-head,.wrow,.wtable-foot{position:relative;z-index:2;
@@ -267,6 +267,8 @@
   .wahy-note{margin-top:clamp(26px,4vw,44px);text-align:center;font-size:14.5px;color:var(--gray);
     line-height:2.05;max-width:66ch;margin-inline:auto}
   .wahy-note b{color:var(--teal-deep);font-weight:700}
+  /* على سطح المكتب يتولّى GSAP دخولَ منظومة الوحي (الفجر يشرق · الدرب يُرسَم · التقابلات تَرِد)؛ نُبطِل كشف الـCSS هنا تفاديًا للازدواج */
+  html.gsap-on #wahy .reveal{opacity:1;transform:none;transition:none}
 
   /* استجابة الهاتف */
   @media(max-width:600px){
@@ -1114,6 +1116,32 @@
         return function(){ bound.forEach(function(t){ t[0].removeEventListener('mousemove',t[1]);
           t[0].removeEventListener('mouseleave',t[2]); gsap.set(t[0],{x:0,y:0}); }); };
       });
+
+      /* ---- منظومة الوحي: دخولٌ مُتقنٌ على الدرب (مرّةً واحدة عند الظهور، بلا سحبٍ متحرّك) ---- */
+      (function(){
+        var wt=document.querySelector('#wahy .wtable'); if(!wt) return;
+        /* حالات البدء */
+        gsap.set('#wahy .sec-head, #wahy .wahy-lead',{autoAlpha:0, y:22});
+        gsap.set(wt,{autoAlpha:0, y:26, '--wspine':0});
+        gsap.set('#wahy .wt-scene',{opacity:.5});
+        gsap.set('#wahy .wtable-head, #wahy .wtable-foot, #wahy .wahy-note',{autoAlpha:0, y:16});
+        gsap.set('#wahy .wrow',{autoAlpha:0, y:20});
+        gsap.set('#wahy .waxis',{scale:.55, transformOrigin:'center center'});
+        var tl=gsap.timeline({ scrollTrigger:{ trigger:'#wahy', start:'top 72%', once:true } });
+        tl.to('#wahy .sec-head',{autoAlpha:1,y:0,duration:.7,ease:'power3.out'})
+          .to('#wahy .wahy-lead',{autoAlpha:1,y:0,duration:.6,ease:'power3.out'},'-=.42')
+          .to(wt,{autoAlpha:1,y:0,duration:.7,ease:'power3.out'},'-=.3')
+          .to('#wahy .wt-scene',{opacity:.82,duration:1.15,ease:'sine.out'},'<')      /* الفجر يشرق */
+          .to(wt,{'--wspine':1,duration:1.0,ease:'power2.inOut'},'<.12')               /* الدربُ الذهبيّ يُرسَم */
+          .to('#wahy .wtable-head',{autoAlpha:1,y:0,duration:.5,ease:'power2.out'},'-=.72')
+          .to('#wahy .wrow',{autoAlpha:1,y:0,duration:.5,stagger:.11,ease:'power2.out'},'-=.34')
+          .to('#wahy .waxis',{scale:1,duration:.42,stagger:.11,ease:'back.out(2)'},'<') /* الخرزات تنعقد على الدرب */
+          .to('#wahy .wtable-foot',{autoAlpha:1,y:0,duration:.55,ease:'power2.out'},'-=.18')
+          .to('#wahy .wahy-note',{autoAlpha:1,y:0,duration:.6,ease:'power2.out'},'-=.3');
+        /* نبضةُ العقدة الوسطى (نقطة التمحور بين المنظومتين) — هادئةٌ مستمرّة */
+        var mid=document.querySelector('#wahy .wsys-mid');
+        if(mid) gsap.to(mid,{ scale:1.16, boxShadow:'0 0 0 9px rgba(214,154,51,.05)', duration:1.9, repeat:-1, yoyo:true, ease:'sine.inOut' });
+      })();
 
       window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
     }
