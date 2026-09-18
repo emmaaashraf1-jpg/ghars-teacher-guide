@@ -269,6 +269,17 @@
   .wahy-note b{color:var(--teal-deep);font-weight:700}
   /* على سطح المكتب يتولّى GSAP دخولَ منظومة الوحي (الفجر يشرق · الدرب يُرسَم · التقابلات تَرِد)؛ نُبطِل كشف الـCSS هنا تفاديًا للازدواج */
   html.gsap-on #wahy .reveal{opacity:1;transform:none;transition:none}
+  /* نورٌ يسري في «الدرب» الذهبيّ — وهجٌ يهبط باستمرار (تُحرّكه GSAP؛ مخفيٌّ افتراضيًّا ودون سطح المكتب) */
+  .wt-flow{position:absolute;left:50%;top:14%;width:32px;height:32px;transform:translate(-50%,-50%);z-index:1;
+    pointer-events:none;border-radius:50%;opacity:0;filter:blur(1px);mix-blend-mode:screen;
+    background:radial-gradient(circle,rgba(255,252,240,1),rgba(255,224,150,.7) 38%,rgba(242,198,112,0) 72%)}
+  @media(max-width:600px){.wt-flow{display:none}}
+  /* تفاعلٌ عند المرور: يبرز طرفُ «الوحي» وتتوهّج خرزةُ المحور */
+  .wrow .wcell.ours,.wrow .waxis{transition:transform .28s var(--ease),text-shadow .28s var(--ease),box-shadow .28s var(--ease),border-color .28s var(--ease),color .28s var(--ease)}
+  .wrow:hover .wcell.ours{transform:scale(1.045);text-shadow:0 1px 14px rgba(255,240,190,.95),0 1px 3px rgba(255,255,255,.6)}
+  .wrow:hover .waxis{border-color:var(--gold);color:#8a5e12;
+    box-shadow:0 6px 18px rgba(214,154,51,.4),0 0 0 3px rgba(214,154,51,.14)}
+  @media(prefers-reduced-motion:reduce){.wt-flow{display:none}.wrow .wcell.ours,.wrow .waxis{transition:none}}
 
   /* استجابة الهاتف */
   @media(max-width:600px){
@@ -729,6 +740,7 @@
       <!-- تداخل الرسمة مع المنظومة: مشهدٌ واحد مشقوقٌ نصفين على الدرب — يمينُه فجرٌ حيّ (الوحي)، يسارُه ضبابٌ بارد (المقابلة) -->
       <span class="wt-scene" aria-hidden="true"></span>
       <span class="wt-dark" aria-hidden="true"></span>
+      <span class="wt-flow" aria-hidden="true"></span><!-- نورٌ يسري في الدرب (تُحرّكه GSAP على سطح المكتب) -->
       <!-- رأسا المنظومتين -->
       <div class="wtable-head reveal">
         <div class="wsys wsys-ours"><small>منهجنا</small><b>منظومة الوحي</b></div>
@@ -1141,6 +1153,15 @@
         /* نبضةُ العقدة الوسطى (نقطة التمحور بين المنظومتين) — هادئةٌ مستمرّة */
         var mid=document.querySelector('#wahy .wsys-mid');
         if(mid) gsap.to(mid,{ scale:1.16, boxShadow:'0 0 0 9px rgba(214,154,51,.05)', duration:1.9, repeat:-1, yoyo:true, ease:'sine.inOut' });
+        /* نورٌ يسري في «الدرب» باستمرار — هدى الوحي ينساب في الطريق */
+        var flow=document.querySelector('#wahy .wt-flow');
+        if(flow){ gsap.set(flow,{top:'14%',opacity:0});
+          gsap.timeline({repeat:-1, repeatDelay:1.2, delay:1.4})
+            .to(flow,{opacity:.85,duration:.55,ease:'sine.in'})
+            .to(flow,{top:'86%',duration:2.6,ease:'sine.inOut'},'<')
+            .to(flow,{opacity:0,duration:.55,ease:'sine.out'},'-=.55'); }
+        /* الفجرُ يتنفّس برفقٍ باستمرار (شدّةُ ضوء اللوحة تعلو وتخفت) */
+        gsap.to('#wahy .wt-scene',{ filter:'brightness(1.11)', duration:2.8, repeat:-1, yoyo:true, ease:'sine.inOut' });
       })();
 
       window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
