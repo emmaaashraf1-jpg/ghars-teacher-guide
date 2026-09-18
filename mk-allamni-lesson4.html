@@ -577,9 +577,9 @@ h3,h4,.h,.story .h,.adab .h,.corner .h,.side-title,.qs-head,.actbar,.par .h,.ref
 h3,h4,.taq h3,.cardblue h3,.cardblue h4,.cardblue .lbl,.cardgold h3,.cardgold h4,.cardgold .lbl,.flow-card.law .lbl,.flow-card.law h3,.flow-card.law h4,.flow-card.belief .lbl,.flow-card.sig .lbl,.flow-card.rev .lbl,.adab .h,.adab .h h4,.corner .h,.corner .h h4,.story .h,.story .h h4,.central>b,.qs-head,.qs-head *,.actbar,.actbar *{color:var(--sc-deep)!important}
 /* keep cover headings white (over image) */
 .cover h1,.cover h2,.cover h3,.cover h4,.cover .ttl{color:#fff!important}
-/* unified icons -> material (override the inline --ic-t carried on each svg) */
-.gi svg,.gi .gi-svg{--ic-t:var(--sc)!important}
-.gi{color:var(--sc)!important;--ic-t:var(--sc)!important}
+/* unified icons -> clean single-hue material: soft fill (--ic-t) + material line (--gi-ln). fixes the leftover teal line fallback var(--gi-ln,#00575C) */
+.gi svg,.gi .gi-svg{--ic-t:var(--sc-soft)!important;--gi-ln:var(--sc)!important}
+.gi{color:var(--sc)!important;--ic-t:var(--sc-soft)!important;--gi-ln:var(--sc)!important}
 .qs-n{background:var(--sc)!important}
 .qs-min{color:var(--sc)!important}
 /* lesson tabs -> material color (were --elm/green); deep shade for filled active = readable on all materials */
@@ -600,12 +600,12 @@ b.k{background:var(--sc-soft)!important;color:var(--sc-deep)!important}
 /* numbering + activity header + markers fully material */
 .sec-head .num,.num{background:var(--sc)!important;border-color:var(--sc)!important;color:#fff!important}
 .sec-head .num .gi,.num .gi{color:#fff!important}
-.sec-head .num .gi svg,.num .gi svg,.num .gi .gi-svg{--ic-t:#fff!important}
+.sec-head .num .gi svg,.num .gi svg,.num .gi .gi-svg{--ic-t:#fff!important;--gi-ln:#fff!important}
 .actful>ol>li::before{background:var(--sc)!important;color:#fff!important}
 .steps li::before{color:var(--sc)!important}
 .actbar{background:var(--sc-deep)!important;border-color:var(--sc-deep)!important}
 .actbar,.actbar *{color:#fff!important}
-.actbar .gi svg,.actbar .gi .gi-svg{--ic-t:#fff!important}
+.actbar .gi svg,.actbar .gi .gi-svg{--ic-t:#fff!important;--gi-ln:#fff!important}
 </style>
 
 </head>
