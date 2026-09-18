@@ -573,6 +573,25 @@ b.k{background:rgba(30,86,49,.10)!important;padding:2px 10px!important;border-ra
 .hadith .ref{position:relative!important;display:inline-block!important;margin-top:12px!important;font-family:var(--fb),'Segoe UI',sans-serif!important;font-weight:700!important;font-size:12.5px!important;color:#1E5631!important;background:#fff!important;border:1px solid #EAE2D3!important;border-radius:999px!important;padding:2px 12px!important}
 .hadith>*:not(.ref){position:relative!important}
 </style>
+<style id="ghars-subject-accent">
+/* subject color drives accents (icon/eyebrow/heading/underline/highlight). ayah+hadith+dua stay brand. ASCII only. */
+:root{--sc:#10796B;--sc-soft:#E2F1EE;--sc-deep:#0A5348}
+/* underline under titles -> material color */
+h3,h4,.h,.story .h,.adab .h,.corner .h,.side-title,.qs-head,.actbar,.par .h,.refblock .h{border-bottom-color:var(--sc)!important}
+/* heading + label text -> material deep */
+h3,h4,.taq h3,.cardblue h3,.cardblue h4,.cardblue .lbl,.cardgold h3,.cardgold h4,.cardgold .lbl,.flow-card.law .lbl,.flow-card.law h3,.flow-card.law h4,.flow-card.belief .lbl,.flow-card.sig .lbl,.flow-card.rev .lbl,.adab .h,.adab .h h4,.corner .h,.corner .h h4,.story .h,.story .h h4,.central>b,.qs-head,.qs-head *,.actbar,.actbar *{color:var(--sc-deep)!important}
+/* keep cover headings white (over image) */
+.cover h1,.cover h2,.cover h3,.cover h4,.cover .ttl{color:#fff!important}
+/* unified icons -> material */
+.gi,.taq .gi,.cardblue .gi,.cardgold .gi,.flow-card.law .gi,.cardpurple .gi{--ic-t:var(--sc)!important}
+.qs-n{background:var(--sc)!important}
+.qs-min{color:var(--sc)!important}
+/* general highlights -> material soft/deep (activity-option distinct colors are left as-is) */
+b.k{background:var(--sc-soft)!important;color:var(--sc-deep)!important}
+.qa .a{background:var(--sc-soft)!important;color:var(--sc-deep)!important}
+.dua .copy-btn,.central .copy-btn{color:var(--sc-deep)!important}
+</style>
+
 </head>
 <body>
 <div class="wrap">
