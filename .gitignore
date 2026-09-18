@@ -2,3 +2,22 @@
 _preview-*.html
 _review-index.html
 tools/lnbuild/orig/
+
+# ===== أمان: منع رفع الأسرار وملفات الإعدادات الحساسة =====
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.keystore
+id_rsa
+id_rsa.*
+*.secret
+secrets.*
+credentials.*
+*.credentials
+config.local.*
+.DS_Store
+Thumbs.db
