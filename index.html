@@ -267,6 +267,18 @@
   .wahy-note{margin-top:clamp(26px,4vw,44px);text-align:center;font-size:14.5px;color:var(--gray);
     line-height:2.05;max-width:66ch;margin-inline:auto}
   .wahy-note b{color:var(--teal-deep);font-weight:700}
+  /* «نورٌ يسري في الدرب» — وهجٌ يهبط في العمود الذهبيّ باستمرار (CSS خالص؛ لا يُخفي شيئًا) */
+  .wt-flow{position:absolute;left:50%;top:12%;width:30px;height:30px;transform:translate(-50%,-50%);z-index:1;pointer-events:none;
+    border-radius:50%;filter:blur(1px);mix-blend-mode:screen;
+    background:radial-gradient(circle,rgba(255,252,240,1),rgba(255,224,150,.7) 38%,rgba(242,198,112,0) 72%);
+    animation:flowDown 4.4s ease-in-out infinite}
+  @keyframes flowDown{0%{top:12%;opacity:0}8%{opacity:.95}46%{top:88%;opacity:.95}56%{top:88%;opacity:0}100%{top:12%;opacity:0}}
+  /* تفاعلٌ عند المرور: يبرز طرفُ «الوحي» وتتوهّج خرزةُ المحور */
+  .wrow .wcell.ours,.wrow .waxis{transition:transform .3s var(--eio),text-shadow .3s var(--eio),box-shadow .3s var(--eio),border-color .3s var(--eio),color .3s var(--eio)}
+  .wrow:hover .wcell.ours{transform:scale(1.045);text-shadow:0 1px 14px rgba(255,240,190,.95),0 1px 3px rgba(255,255,255,.6)}
+  .wrow:hover .waxis{border-color:var(--gold);color:#8a5e12;box-shadow:0 6px 18px rgba(214,154,51,.4),0 0 0 3px rgba(214,154,51,.14)}
+  @media(max-width:600px){.wt-flow{display:none}}
+  @media(prefers-reduced-motion:reduce){.wt-flow{display:none}.wrow .wcell.ours,.wrow .waxis{transition:none}}
 
   /* استجابة الهاتف */
   @media(max-width:600px){
@@ -727,6 +739,7 @@
       <!-- تداخل الرسمة مع المنظومة: مشهدٌ واحد مشقوقٌ نصفين على الدرب — يمينُه فجرٌ حيّ (الوحي)، يسارُه ضبابٌ بارد (المقابلة) -->
       <span class="wt-scene" aria-hidden="true"></span>
       <span class="wt-dark" aria-hidden="true"></span>
+      <span class="wt-flow" aria-hidden="true"></span><!-- نورٌ يسري في الدرب (CSS خالص) -->
       <!-- رأسا المنظومتين -->
       <div class="wtable-head reveal">
         <div class="wsys wsys-ours"><small>منهجنا</small><b>منظومة الوحي</b></div>
