@@ -582,14 +582,26 @@ h3,h4,.h,.story .h,.adab .h,.corner .h,.side-title,.qs-head,.actbar,.par .h,.ref
 h3,h4,.taq h3,.cardblue h3,.cardblue h4,.cardblue .lbl,.cardgold h3,.cardgold h4,.cardgold .lbl,.flow-card.law .lbl,.flow-card.law h3,.flow-card.law h4,.flow-card.belief .lbl,.flow-card.sig .lbl,.flow-card.rev .lbl,.adab .h,.adab .h h4,.corner .h,.corner .h h4,.story .h,.story .h h4,.central>b,.qs-head,.qs-head *,.actbar,.actbar *{color:var(--sc-deep)!important}
 /* keep cover headings white (over image) */
 .cover h1,.cover h2,.cover h3,.cover h4,.cover .ttl{color:#fff!important}
-/* unified icons -> material */
-.gi,.taq .gi,.cardblue .gi,.cardgold .gi,.flow-card.law .gi,.cardpurple .gi{--ic-t:var(--sc)!important}
+/* unified icons -> material (override the inline --ic-t carried on each svg) */
+.gi svg,.gi .gi-svg{--ic-t:var(--sc)!important}
+.gi{color:var(--sc)!important;--ic-t:var(--sc)!important}
 .qs-n{background:var(--sc)!important}
 .qs-min{color:var(--sc)!important}
+/* lesson tabs -> material color (were --elm/green); deep shade for filled active = readable on all materials */
+.tab.active,.tab.gold.active{background:var(--sc-deep)!important;border-color:var(--sc-deep)!important;color:#fff!important}
+.tab:hover{background:#fff!important;border-color:var(--sc)!important;color:var(--sc-deep)!important}
+.tab.gold:not(.active){background:#fff!important;border-color:var(--sc)!important;color:var(--sc-deep)!important}
+/* cover badge -> material color (was gold) */
+.c-badge{background:var(--sc-deep)!important;color:#fff!important}
 /* general highlights -> material soft/deep (activity-option distinct colors are left as-is) */
 b.k{background:var(--sc-soft)!important;color:var(--sc-deep)!important}
 .qa .a{background:var(--sc-soft)!important;color:var(--sc-deep)!important}
 .dua .copy-btn,.central .copy-btn{color:var(--sc-deep)!important}
+/* accompanying activity (actful) -> material (heading h3 already routed above) */
+.actful .opt b{background:var(--sc-deep)!important;color:#fff!important}
+.actful .cap,.actful .miniblock>b,.actscene .scene-lbl{color:var(--sc-deep)!important}
+/* kaffara/closing dua box -> material deep (dark scrim keeps cream/gold text readable); gold seal stays */
+.dua{background:linear-gradient(150deg,rgba(0,0,0,.10),rgba(0,0,0,.34)),var(--sc-deep)!important}
 </style>
 
 </head>
