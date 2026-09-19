@@ -349,6 +349,19 @@ html.hasjs:not(.gq-ready) #u-days{visibility:hidden}
 .u-lvkey{background:#fff;border:1px solid #EAE2D3;border-radius:10px;padding:9px 13px;font-size:12.5px;margin:8px 0;display:flex;flex-wrap:wrap;gap:4px 16px}
 .u-lvkey b{color:#17352d}
 </style>
+<style>
+/* التوزيع الأسبوعيّ للأركان (خريطة الأركان) */
+.ark-week{display:grid;gap:10px;margin:8px 0 6px}
+.ark-day{background:#fff;border:1px solid #EAE2D3;border-radius:14px;padding:11px 13px;border-inline-start:5px solid var(--dc,#A83A63)}
+.ark-dh{display:flex;align-items:baseline;gap:9px;margin-bottom:8px;flex-wrap:wrap}
+.ark-dn{font-family:var(--fd,Georgia,serif);font-weight:800;color:#2b3b34;font-size:15px}
+.ark-dt{color:#7c8a80;font-size:12.5px;font-weight:600}
+.ark-cs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:8px}
+.ark-chip{display:inline-flex;align-items:center;gap:6px;background:color-mix(in srgb,var(--ac,#7c8a80) 12%,#fff);border:1px solid color-mix(in srgb,var(--ac,#7c8a80) 38%,#fff);color:var(--ac,#5a6a62);border-radius:999px;padding:4px 11px 4px 9px;font-size:12.5px;font-weight:800}
+.ark-chip .gi{flex:none}
+.ark-act{margin:0;font-size:12.5px;line-height:1.85;color:#4a5a52}
+.ark-act b{color:#2b3b34}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -1298,7 +1311,7 @@ html.hasjs:not(.gq-ready) #u-days{visibility:hidden}
     <header class="mpv-hero"><div class="mpv-star"></div>
       <div class="mpv-kicker">اللعب الحرّ · التطبيق</div>
       <h2>خريطة الأركان — وحدة المسكن</h2>
-      <p>أركانُ المسكن مساحاتُ لعبٍ حرّ بأدواتٍ تعليمية (٣٠ دقيقة). لكثرة الأعداد تُفتَح <b>٤ أركانٍ متوازية</b> كلَّ يوم، تُوزَّع عليها المجموعات وتتناوب بينها في الفترتين؛ ولكلِّ ركنٍ لمسةٌ تطبيقية خفيفة على فكرة اليوم.</p>
+      <p>أركانُ المسكن مساحاتُ لعبٍ حرّ بأدواتٍ تعليمية (٣٠ دقيقة). <b>كلَّ يومٍ ركنٌ أو ركنان</b> مرتبطان بدرس اليوم، وعبر الأسبوع نمرّ على <b>الأركان الثمانية</b> جميعها. لكثرة الأعداد قد تُفتَح مجموعتان في الركنين معًا وتتناوبان في الفترتين؛ ولكلِّ ركنٍ لمسةٌ تطبيقية خفيفة على فكرة اليوم.</p>
       <div class="mpv-rule"></div>
     </header>
 
@@ -1308,6 +1321,15 @@ html.hasjs:not(.gq-ready) #u-days{visibility:hidden}
 
     <a class="mpv-btn" href="mk-arkan-tatbiqiyya.html" target="_blank" rel="noopener"><span class="ic">🧩</span><span>الصفحة الكاملة: <b>الأركان التطبيقية لوحدة المسكن</b> — لكلّ درسٍ ركنان بأدواتٍ ورسومٍ وأهدافٍ وملفِّ طباعةٍ جاهز، مع لوحة الأركان الثمانية وروتين تنفيذها ↗</span></a>
 
+    <div class="mpv-leslbl" style="padding:12px 4px 2px">التوزيع الأسبوعيّ للأركان — نمرّ على الأركان الثمانية خلال الأسبوع</div>
+    <div class="ark-week">
+      <div class="ark-day" style="--dc:#4A3B34"><div class="ark-dh"><span class="ark-dn">اليوم الأول</span><span class="ark-dt">مفهوم المسكن</span></div><div class="ark-cs"><span class="ark-chip" style="--ac:#4A3B34"><i class="gi" data-i="ركن المسكن" data-size="15" style="--ic-t:#4A3B34"></i>المسكن</span><span class="ark-chip" style="--ac:#8A6BA8"><i class="gi" data-i="ركن فنوني الجميلة" data-size="15" style="--ic-t:#8A6BA8"></i>فنوني</span></div><p class="ark-act">يلعب أدوارًا في بيت الدُّمى ويرتّب غُرَفه ويسمّيها · يلوّن بيتًا جاهزًا ويلصق نوافذه وبابه.</p></div>
+      <div class="ark-day" style="--dc:#C25A38"><div class="ark-dh"><span class="ark-dn">اليوم الثاني</span><span class="ark-dt">أنواع المساكن</span></div><div class="ark-cs"><span class="ark-chip" style="--ac:#C25A38"><i class="gi" data-i="ساحة البناء" data-size="15" style="--ic-t:#C25A38"></i>البناء</span><span class="ark-chip" style="--ac:#CE9A3A"><i class="gi" data-i="ركن الدكان" data-size="15" style="--ic-t:#CE9A3A"></i>الدكان</span></div><p class="ark-act">يبني بالمكعّبات بيتًا وخيمةً وبرجًا · «سوق موادّ البناء» يشتري طوبًا ونوافذَ لبيته (عدٌّ ومطابقة).</p></div>
+      <div class="ark-day" style="--dc:#3D5A96"><div class="ark-dh"><span class="ark-dn">اليوم الثالث</span><span class="ark-dt">أجزاء المسكن وآدابها</span></div><div class="ark-cs"><span class="ark-chip" style="--ac:#3D5A96"><i class="gi" data-i="ركن أدرك وأستمتع" data-size="15" style="--ic-t:#3D5A96"></i>أدرك وأستمتع</span><span class="ark-chip" style="--ac:#5C8A34"><i class="gi" data-i="ركن أقرأ لأتعلم" data-size="15" style="--ic-t:#5C8A34"></i>أقرأ لأتعلّم</span></div><p class="ark-act">بزل «أجزاء البيت» يركّب الغُرَف في أماكنها · يتصفّح قصّةً مصوّرة عن آداب البيت والاستئذان.</p></div>
+      <div class="ark-day" style="--dc:#178A78"><div class="ark-dh"><span class="ark-dn">اليوم الرابع</span><span class="ark-dt">هداية المخلوقات</span></div><div class="ark-cs"><span class="ark-chip" style="--ac:#178A78"><i class="gi" data-i="ركن أكتشف ما حولي" data-size="15" style="--ic-t:#178A78"></i>أكتشف ما حولي</span><span class="ark-chip" style="--ac:#A79B84"><i class="gi" data-i="ركن الرمل" data-size="15" style="--ic-t:#A79B84"></i>الرمل</span></div><p class="ark-act">يطابق كلَّ مخلوقٍ بمسكنه ببطاقاتٍ مصوّرة · يبني جُحرَ النملة وعُشًّا في الرمل.</p></div>
+      <div class="ark-day" style="--dc:#A83A63"><div class="ark-dh"><span class="ark-dn">اليوم الخامس</span><span class="ark-dt">المراجعة والختام</span></div><div class="ark-cs"><span class="ark-chip free" style="--ac:#7c8a80">🔁 لعبٌ حرّ</span></div><p class="ark-act">يختار الطفل ركنه المفضّل من أركان الأسبوع — مراجعةٌ واحتفاءٌ بما تعلّم.</p></div>
+    </div>
+
     <div class="mpv-leslbl" style="padding:2px 4px 2px">أنواع الأركان اليومية — لكلٍّ لونُه</div>
     <div class="mpv-grid">
       <div class="mpv-gcard" style="--dc:#4E93AE"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic"><i class="gi" data-i="ركن المسكن" data-size="16" style="--ic-t:#4A3B34"></i></span>ركن المسكن</div><p><b>اللعب الحرّ:</b> بيتُ الدُّمى بغُرَفه، مطبخٌ وأثاثٌ ومائدةٌ لعبيّة، دُمى خشبية بلا ملامح — لعبُ أدوارٍ أسريّ وترتيبُ الغُرَف.</p><p><b>اللمسة:</b> يختارُ بطاقةً جاهزة ويضعها في البيت، ويردّدون الحمدَ على نعمة المسكن.</p></div></div>
@@ -1316,6 +1338,8 @@ html.hasjs:not(.gq-ready) #u-days{visibility:hidden}
       <div class="mpv-gcard" style="--dc:#10796B"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic"><i class="gi" data-i="ركن أدرك وأستمتع" data-size="16" style="--ic-t:#3D5A96"></i></span>أدرك وأستمتع</div><p><b>اللعب الحرّ:</b> بطاقاتُ مطابقةٍ وذاكرة، لوحةُ تسلسل، معداد وأشكالٌ هندسية — ألعابٌ إدراكية.</p><p><b>اللمسة:</b> يطابقُ ويرتّبُ بطاقاتٍ جاهزة (اسمٌ ↔ معناه · غرفةٌ ↔ استعمالها) بلا كتابة.</p></div></div>
       <div class="mpv-gcard" style="--dc:#B47A26"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic"><i class="gi" data-i="ركن أقرأ لأتعلم" data-size="16" style="--ic-t:#5C8A34"></i></span>أقرأ لأتعلّم</div><p><b>اللعب الحرّ:</b> قصصٌ مصوّرة وكتبٌ علمية، بطاقاتُ حروفٍ ومطابقةِ كلمة-صورة، مصاحفُ تُصان في حواملها.</p><p><b>اللمسة:</b> يستمعُ ويتصفّحُ بهدوء ويربطُ حرفَ اليوم بكلمةِ المسكن.</p></div></div>
       <div class="mpv-gcard" style="--dc:#8B0000"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic"><i class="gi" data-i="ركن أكتشف ما حولي" data-size="16" style="--ic-t:#178A78"></i></span>أكتشف ما حولي</div><p><b>اللعب الحرّ:</b> عدساتٌ ومكبّرات، مغناطيسٌ وبوصلة، كشّاف وأدواتُ قياس — ملاحظةٌ وتجريبٌ حسّيّ.</p><p><b>اللمسة:</b> يلاحظُ ويجرّبُ بهدوء عناصرَ فكرةِ اليوم، ويتعجّبُ من صنع الله بلا كتابة.</p></div></div>
+      <div class="mpv-gcard" style="--dc:#CE9A3A"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic"><i class="gi" data-i="ركن الدكان" data-size="16" style="--ic-t:#CE9A3A"></i></span>الدكان</div><p><b>اللعب الحرّ:</b> رفوفٌ وبضائعُ لعبية، سلّةٌ ونقودٌ ورقية، ميزانٌ وصندوق — بيعٌ وشراءٌ ولعبُ أدوار.</p><p><b>اللمسة:</b> يشتري «موادَّ بيته» ويعدُّ القطعَ ويطابقُ الأثمانَ بلا كتابة.</p></div></div>
+      <div class="mpv-gcard" style="--dc:#A79B84"><div class="mpv-top"></div><div class="mpv-gin"><div class="mpv-gh"><span class="ic"><i class="gi" data-i="ركن الرمل" data-size="16" style="--ic-t:#A79B84"></i></span>الرمل</div><p><b>اللعب الحرّ:</b> حوضُ رملٍ وأدواتُ حفرٍ وقوالبُ ومجسّماتٌ صغيرة — بناءٌ حسّيّ حرّ.</p><p><b>اللمسة:</b> يبني مسكنًا أو جُحرًا في الرمل ويتحدّثُ عنه، ويتعجّبُ من هداية الله للمخلوقات.</p></div></div>
     </div>
 
     <div class="mpv-leslbl" style="padding:12px 4px 2px">روتين تنفيذ الركن — تسلسلٌ موحّد</div>
