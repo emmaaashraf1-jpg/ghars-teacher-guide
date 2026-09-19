@@ -38,10 +38,10 @@
 .tico{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;vertical-align:-3px}
 .utab .tico,.subtab .tico,.daytab .tico{margin-inline-end:6px}
 
-/* ===== تثبيت أشرطة التبويبات ===== */
-.unitnav{position:sticky;top:52px;z-index:40}
-.daytabs{top:112px!important}
-.subtabs{position:sticky;top:170px;z-index:30;background:var(--card)}
+/* ===== أشرطة التبويبات: الشريط الرئيسي (الوحدة) غير لاصق ليمرّ مع المحتوى ويتيح مساحةً أوسع ===== */
+.unitnav{position:static}
+.daytabs{top:8px!important}
+.subtabs{position:sticky;top:64px;z-index:30;background:var(--card)}
 @media(max-width:760px){ .unitnav,.daytabs,.subtabs{position:static} }
 
 /* ===== شريط التقدّم + علامات الإنجاز ===== */
