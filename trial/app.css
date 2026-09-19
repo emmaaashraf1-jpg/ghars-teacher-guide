@@ -38,11 +38,8 @@
 .tico{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;vertical-align:-3px}
 .utab .tico,.subtab .tico,.daytab .tico{margin-inline-end:6px}
 
-/* ===== أشرطة التبويبات: الشريط الرئيسي (الوحدة) غير لاصق ليمرّ مع المحتوى ويتيح مساحةً أوسع ===== */
-.unitnav{position:static}
-.daytabs{top:8px!important}
-.subtabs{position:sticky;top:64px;z-index:30;background:var(--card)}
-@media(max-width:760px){ .unitnav,.daytabs,.subtabs{position:static} }
+/* ===== أشرطة التبويبات العلويّة كلّها غير لاصقة: تمرّ مع المحتوى وتتيح مساحةً أوسع (يُستثنى شريط مسار اليوم الجانبيّ .seq) ===== */
+.unitnav,.daytabs,.subtabs:not(.seq){position:static!important}
 
 /* ===== شريط التقدّم + علامات الإنجاز ===== */
 .progstrip{max-width:1180px;margin:0 auto;padding:10px 18px 0}
