@@ -172,3 +172,66 @@
   .frame-load{display:none!important}
   body{background:#fff!important}
 }
+
+/* ===================================================================
+   مكوّن بطاقة نشاط الركن المطوَّر (.gact) — هوية غرس، موحّد لكل الأركان
+   يُشغَّل بـ style="--rc:LON;--rc-soft:LIN" على .gact
+   =================================================================== */
+.gact{position:relative;background:var(--card,#fff);border:1px solid var(--line,#E9E1D2);border-radius:22px;
+  box-shadow:0 18px 40px -26px rgba(30,46,41,.45);overflow:hidden;margin-bottom:10px;font-size:13px}
+.gact::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:7px;z-index:2;
+  background:linear-gradient(var(--rc,#2C7A4B),color-mix(in srgb,var(--rc,#2C7A4B) 55%,#fff))}
+.gact-head{display:flex;gap:15px;align-items:center;padding:17px 22px 16px;position:relative;
+  background:linear-gradient(135deg,var(--rc-soft,#eef3ef),color-mix(in srgb,var(--rc-soft,#eef3ef) 45%,#fff) 72%)}
+.gact-emb{flex:0 0 auto;width:72px;height:72px;border-radius:50%;background:#fff;
+  border:2px solid color-mix(in srgb,var(--rc,#2C7A4B) 40%,#fff);display:grid;place-items:center;
+  box-shadow:0 8px 20px -10px rgba(30,46,41,.4)}
+.gact-emb .gi-svg,.gact-emb svg{width:42px;height:42px}
+.gact-htx{flex:1;min-width:0}
+.gact-eye{font-family:var(--fd);font-weight:700;color:var(--rc,#2C7A4B);font-size:13px;letter-spacing:.3px;
+  display:flex;align-items:center;gap:6px;margin-bottom:2px}
+.gact-eye::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rc,#2C7A4B);flex:0 0 auto}
+.gact-title{font-family:var(--fd);font-weight:700;color:#2a241f;font-size:20px;line-height:1.4;margin:0}
+.gact-sub{color:#6f6356;font-size:12.5px;margin-top:2px}
+.gact-time{position:absolute;top:14px;inset-inline-end:16px;font-size:11.5px;font-weight:700;color:var(--rc,#2C7A4B);
+  background:#fff;border:1px solid color-mix(in srgb,var(--rc,#2C7A4B) 25%,#fff);border-radius:999px;padding:3px 11px;white-space:nowrap}
+.gact-body{padding:16px 18px 18px}
+.gact .chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-weight:700;font-size:12.5px;
+  color:var(--rc,#2C7A4B);background:color-mix(in srgb,var(--rc,#2C7A4B) 11%,#fff);
+  border:1px solid color-mix(in srgb,var(--rc,#2C7A4B) 22%,#fff);border-radius:999px;padding:3px 12px;margin-bottom:9px}
+.gact .sec{margin-bottom:15px}
+.gact .sec:last-child{margin-bottom:0}
+.gact .soft{background:#fff;border:1px solid var(--line,#E9E1D2);border-radius:14px;padding:11px 14px;font-size:12.5px;line-height:1.85;color:#3a4a44}
+.gact .idea b{color:var(--rc,#2C7A4B)}
+.gact .tools{display:flex;gap:9px;overflow-x:auto;padding-bottom:4px}
+.gact .tool{flex:0 0 auto;width:92px;text-align:center}
+.gact .tool img{width:92px;height:68px;object-fit:cover;border-radius:11px;border:1px solid var(--line,#E9E1D2);box-shadow:0 5px 14px -9px rgba(30,46,41,.5)}
+.gact .tool span{display:block;font-size:11px;color:#5f6f67;margin-top:3px}
+.gact .tools-note{font-size:11.5px;color:#6f7f77;margin-top:7px}
+.gact .flow{position:relative;margin:0;padding:0;list-style:none}
+.gact .flow li{position:relative;padding:0 46px 15px 4px;min-height:34px;font-size:12.5px;line-height:1.95;color:#3a4a44}
+.gact .flow li:last-child{padding-bottom:2px}
+.gact .flow li::before{content:attr(data-n);position:absolute;inset-inline-start:0;top:0;width:32px;height:32px;
+  border-radius:50%;background:var(--rc,#2C7A4B);color:#fff;font-family:var(--fd);font-weight:700;font-size:15px;
+  display:grid;place-items:center;box-shadow:0 5px 13px -6px var(--rc,#2C7A4B)}
+.gact .flow li::after{content:"";position:absolute;inset-inline-start:15px;top:33px;bottom:2px;width:2px;background:color-mix(in srgb,var(--rc,#2C7A4B) 28%,#fff)}
+.gact .flow li:last-child::after{display:none}
+.gact .flow b{color:var(--rc,#2C7A4B)}
+.gact .flow .ph{font-family:var(--fd);font-weight:700;color:#2a241f}
+.gact .ayah{position:relative;background:#FCF7E8;border:1px solid #E7D7A8;border-radius:14px;padding:13px 16px;box-shadow:inset 0 0 0 1px #fff}
+.gact .ayah::before{content:"\06DE";position:absolute;top:8px;inset-inline-end:12px;color:#D7B968;font-size:17px}
+.gact .ayah .lbl{font-family:var(--fd);font-weight:700;color:#8a6a12;font-size:12px;margin-bottom:3px}
+.gact .ayah .txt{font-family:var(--fd);font-size:15.5px;color:#5b4a1e;line-height:2}
+.gact .ayah .src{font-size:11px;color:#9a8450;margin-top:2px}
+.gact .eval{display:flex;flex-direction:column;gap:6px}
+.gact .eval>div{display:flex;gap:7px;font-size:12px;line-height:1.7}
+.gact .eval i{flex:0 0 auto;width:7px;height:7px;border-radius:50%;margin-top:7px}
+.gact-foot{display:flex;gap:11px;align-items:stretch;margin-top:16px;flex-wrap:wrap}
+.gact-foot .rules-th{flex:1;min-width:150px;border:1px solid var(--line,#E9E1D2);border-radius:12px;overflow:hidden;position:relative;text-decoration:none}
+.gact-foot .rules-th img{display:block;width:100%;height:100%;object-fit:cover}
+.gact-foot .rules-th span{position:absolute;inset-inline-start:8px;top:8px;background:rgba(255,255,255,.92);color:var(--rc,#2C7A4B);font-family:var(--fd);font-weight:700;font-size:11px;border-radius:7px;padding:2px 8px}
+.gact-foot .print-b{flex:0 0 auto;display:flex;align-items:center;gap:8px;background:var(--rc,#2C7A4B);color:#fff;border-radius:12px;padding:10px 18px;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:13.5px;box-shadow:0 8px 18px -10px var(--rc,#2C7A4B)}
+.gact .sort{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gact .sort>div{border-radius:13px;padding:11px;text-align:center}
+.gact .sort .yes{background:#F0F7F0;border:1px solid #CFE3D0}
+.gact .sort .no{background:#FAF5EC;border:1px dashed #D9CBB4}
