@@ -235,3 +235,10 @@
 .gact .sort>div{border-radius:13px;padding:11px;text-align:center}
 .gact .sort .yes{background:#F0F7F0;border:1px solid #CFE3D0}
 .gact .sort .no{background:#FAF5EC;border:1px dashed #D9CBB4}
+
+/* ===== ملاءمة خفيفة لبطاقات أركان «أنا مخلوق» التكاملية (.amc) ===== */
+.amc{position:relative;padding-inline-start:16px!important;border-color:color-mix(in srgb,var(--rc,#2C7A4B) 26%,#EAE2D3)!important}
+.amc::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:5px;border-radius:0 3px 3px 0;
+  background:linear-gradient(var(--rc,#2C7A4B),color-mix(in srgb,var(--rc,#2C7A4B) 55%,#fff))}
+.amc-t{background:color-mix(in srgb,var(--rc,#2C7A4B) 9%,#fff)!important;border:1px solid color-mix(in srgb,var(--rc,#2C7A4B) 18%,#fff);
+  border-radius:9px;padding:6px 9px!important;color:var(--rc,#2C7A4B)!important}
