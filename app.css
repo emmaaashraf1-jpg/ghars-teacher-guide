@@ -302,3 +302,7 @@
 .gact .rtop .rules-th{display:block;width:100%;min-width:0;border:1px solid var(--rc,#2C7A4B);border-radius:12px;overflow:hidden;position:relative;text-decoration:none}
 .gact .rtop .rules-th img{width:100%;height:auto;display:block}
 .gact .rtop .rules-th span{position:absolute;top:8px;inset-inline-start:8px;background:var(--rc,#2C7A4B);color:#fff;font-family:var(--fd);font-weight:700;font-size:12.5px;border-radius:8px;padding:3px 11px}
+
+/* ===== وسم «قوانين الركن — تُقرأ أولًا» سطرًا فوق البطاقة (لا تراكبًا) ===== */
+.amc2 .rfirst .rlabel,.gact .rtop .rlabel{display:flex;align-items:center;gap:7px;font-family:var(--fd);font-weight:700;font-size:14px;color:var(--rc,#2C7A4B);margin-bottom:7px}
+.amc2 .rfirst .rlabel::before,.gact .rtop .rlabel::before{content:"";flex:0 0 auto;width:10px;height:10px;border-radius:50%;background:var(--rc,#2C7A4B)}
