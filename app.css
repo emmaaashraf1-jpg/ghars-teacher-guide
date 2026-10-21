@@ -242,3 +242,63 @@
   background:linear-gradient(var(--rc,#2C7A4B),color-mix(in srgb,var(--rc,#2C7A4B) 55%,#fff))}
 .amc-t{background:color-mix(in srgb,var(--rc,#2C7A4B) 9%,#fff)!important;border:1px solid color-mix(in srgb,var(--rc,#2C7A4B) 18%,#fff);
   border-radius:9px;padding:6px 9px!important;color:var(--rc,#2C7A4B)!important}
+
+/* ===================================================================
+   بطاقة ركن «أنا مخلوق» المحسَّنة (.amc2) + رأس لوحة الأركان العامّ (.panel-head)
+   خطٌّ أكبر · رمز الركن في دائرة · القوانين المصمَّمة تُقرأ أولًا · آية بإطار شمسيّ
+   =================================================================== */
+.panel-head{background:linear-gradient(135deg,#eef4ef,#f7f3ea);border:1px solid #E3DCCB;border-radius:16px;padding:15px 18px;margin:0 0 16px}
+.panel-head h3{font-family:var(--fd);color:#1F4A39;font-size:19px;margin:0 0 7px}
+.panel-head .ph-p{font-size:14.5px;line-height:1.95;color:#3a4a44;margin:0 0 10px}
+.panel-head .ph-p b{color:#1E5631}
+.panel-head .manz{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #E7D7A8;border-radius:12px;padding:10px 13px;font-size:14.5px;line-height:1.85;color:#5b4a1e}
+.panel-head .manz .mn{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:#C79A3B;color:#fff;font-weight:700;font-size:16px;display:grid;place-items:center}
+.panel-head .manz b{color:#8a6a12}
+
+.amc2{position:relative;background:#fff;border:1px solid color-mix(in srgb,var(--rc,#2C7A4B) 26%,#EAE2D3);border-radius:16px;padding:14px 16px;overflow:hidden;box-shadow:0 12px 30px -22px rgba(30,46,41,.5)}
+.amc2::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:6px;background:linear-gradient(var(--rc,#2C7A4B),color-mix(in srgb,var(--rc,#2C7A4B) 55%,#fff))}
+.amc2 .head{display:flex;align-items:center;gap:11px;background:color-mix(in srgb,var(--rc,#2C7A4B) 8%,#fff);border:1px solid color-mix(in srgb,var(--rc,#2C7A4B) 16%,#fff);border-radius:12px;padding:9px 12px;margin-bottom:12px}
+.amc2 .emb{flex:0 0 auto;width:48px;height:48px;border-radius:50%;background:#fff;border:2px solid color-mix(in srgb,var(--rc,#2C7A4B) 38%,#fff);display:grid;place-items:center;box-shadow:0 6px 15px -9px rgba(30,46,41,.4)}
+.amc2 .emb .gi-svg,.amc2 .emb svg{width:28px;height:28px}
+.amc2 .corner{font-family:var(--fd);font-weight:700;color:var(--rc,#2C7A4B);font-size:15.5px;margin-bottom:2px}
+.amc2 .ttl{font-family:var(--fd);font-weight:700;color:#2a241f;font-size:18px;line-height:1.5}
+.amc2 .rfirst{margin-bottom:13px}
+.amc2 .rfirst .rules{display:block;border:1px solid var(--rc,#2C7A4B);border-radius:12px;overflow:hidden;position:relative;text-decoration:none}
+.amc2 .rfirst .rules img{width:100%;display:block}
+.amc2 .rfirst .cap{position:absolute;top:8px;inset-inline-start:8px;background:var(--rc,#2C7A4B);color:#fff;font-family:var(--fd);font-weight:700;font-size:13px;border-radius:8px;padding:3px 11px}
+.amc2 .hero{width:100%;height:auto;border-radius:12px;border:1px solid #EAE2D3;margin:0 0 12px;display:block}
+.amc2 .desc{font-size:16px;line-height:2;color:#3a4a44;margin-bottom:12px}
+.amc2 .desc b{color:var(--rc,#2C7A4B)}
+.amc2 .meta{font-size:15px;line-height:2;color:#3a4a44}
+.amc2 .meta>div{margin-bottom:7px}
+.amc2 .depth{border-top:1px dashed #E4D9C4;margin-top:13px;padding-top:12px}
+.amc2 .sayr{font-size:15px;line-height:2.05;margin-bottom:11px}
+.amc2 .sayr b{color:var(--rc,#2C7A4B)}
+.amc2 .ayah{position:relative;background:#FCF7E8;border:1px solid #E7D7A8;border-radius:11px;padding:11px 14px;margin-bottom:11px}
+.amc2 .ayah::before{content:"\06DE";position:absolute;top:8px;inset-inline-end:12px;color:#D7B968;font-size:18px}
+.amc2 .ayah .al{font-family:var(--fd);font-weight:700;color:#8a6a12;font-size:14px;margin-bottom:3px}
+.amc2 .ayah .q{font-family:var(--fd);font-size:18px;color:#5b4a1e;line-height:2.1}
+.amc2 .eval{font-size:14.5px;line-height:1.95;display:flex;flex-direction:column;gap:6px}
+.amc2 .foot{margin-top:13px}
+.amc2 .print{display:inline-flex;align-items:center;gap:7px;background:var(--rc,#2C7A4B);color:#fff;border-radius:11px;padding:8px 18px;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:14.5px}
+
+/* ===== تكبير خطوط .gact + شريط المنظومة + القوانين تُقرأ أولًا ===== */
+.gact{font-size:14px}
+.gact .soft{font-size:14px;line-height:1.95}
+.gact .idea{font-size:14.5px}
+.gact .chip{font-size:13.5px}
+.gact-sub{font-size:13.5px}
+.gact .flow li{font-size:14px;line-height:2}
+.gact .flow .ph{font-size:14.5px}
+.gact .ayah .txt{font-size:17px;line-height:2.1}
+.gact .ayah .lbl{font-size:13px}
+.gact .eval>div{font-size:13.5px;line-height:1.85}
+.gact .tools-note{font-size:12.5px}
+.gact .tool span{font-size:12px}
+.gact .gmanz{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #E7D7A8;border-radius:12px;padding:10px 13px;margin-bottom:13px;font-size:13.5px;line-height:1.85;color:#5b4a1e}
+.gact .gmanz .mn{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:#C79A3B;color:#fff;font-weight:700;display:grid;place-items:center}
+.gact .gmanz b{color:#8a6a12}
+.gact .rtop{margin-bottom:14px}
+.gact .rtop .rules-th{display:block;width:100%;min-width:0;border:1px solid var(--rc,#2C7A4B);border-radius:12px;overflow:hidden;position:relative;text-decoration:none}
+.gact .rtop .rules-th img{width:100%;height:auto;display:block}
+.gact .rtop .rules-th span{position:absolute;top:8px;inset-inline-start:8px;background:var(--rc,#2C7A4B);color:#fff;font-family:var(--fd);font-weight:700;font-size:12.5px;border-radius:8px;padding:3px 11px}
