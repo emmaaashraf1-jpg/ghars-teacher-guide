@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ورقة طباعة · سراجًا وهّاجًا · وحدة الليل والنهار</title>
+<title>ورقة طباعة · مشهدُ النهار المشمس · وحدة الليل والنهار</title>
 <style>
 @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400}
 @font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700}
@@ -22,15 +22,12 @@ body{font-family:var(--fb);color:var(--ink);background:#eef1ec;padding:18px}
 .hd .logo{width:60px;height:60px;object-fit:contain;flex:0 0 auto}
 .fields{display:flex;gap:22px;font-size:14px;color:var(--t1);font-weight:700;margin:12px 0 4px}
 .fields .f{flex:1;border-bottom:2px dotted var(--line);padding-bottom:4px}
-.prompt{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);border-radius:12px;padding:11px 15px;font-size:13.5px;line-height:1.9;color:var(--gold-d);margin:8px 0 8px}
-.sun-wrap{display:grid;place-items:center;padding:2px 0}
-.sun-wrap svg{width:100%;max-width:430px;height:auto}
-.say{text-align:center;font-family:var(--fd);color:var(--gold-d);font-size:20px;margin:6px 0 12px}
-.box{border:2px solid var(--line);border-radius:14px;padding:12px 16px;background:#fbfaf5}
-.box h3{font-family:var(--fd);color:var(--t1);font-size:16px;margin-bottom:10px}
-.box .ln{border-bottom:2px dotted var(--line);height:26px;margin-bottom:12px}
+.prompt{background:var(--cream);border:1px solid #ecd9a8;border-inline-start:5px solid var(--gold);border-radius:12px;padding:11px 15px;font-size:13.5px;line-height:1.9;color:var(--gold-d);margin:8px 0 10px}
+.scene{display:grid;place-items:center;padding:2px 0}
+.scene svg{width:100%;max-width:560px;height:auto;border:2px solid var(--line);border-radius:16px;background:#fff}
+.say{text-align:center;font-family:var(--fd);color:var(--gold-d);font-size:21px;margin:12px 0 6px}
 .foot{margin-top:12px;text-align:center;font-size:12px;color:var(--muted)}
-@media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}}
+@media print{body{background:#fff;padding:0}.tip{display:none}.sheet{box-shadow:none;margin:0;max-width:none;border-radius:0}.scene svg{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
@@ -39,8 +36,8 @@ body{font-family:var(--fb);color:var(--ink);background:#eef1ec;padding:18px}
 <div class="sheet">
   <div class="hd">
     <div>
-      <h1>سِراجًا وَهّاجًا</h1>
-      <div class="sub">وحدة الليل والنهار · علّمني ربي — الشمس · ركن فنوني الجميلة</div>
+      <h1>مشهدُ النهار المشمس — ألوّنه</h1>
+      <div class="sub">وحدة الليل والنهار · علّمني ربي — الشمس والنهار · ركن فنوني الجميلة</div>
     </div>
     <img class="logo" src="brand/logo-ghars.webp" alt="شعار غرس القيم"/>
   </div>
@@ -50,45 +47,49 @@ body{font-family:var(--fb);color:var(--ink);background:#eef1ec;padding:18px}
     <div class="f">التاريخ: ………………</div>
   </div>
 
-  <div class="prompt"><b>طريقة العمل:</b> يلوّنُ الطفل قرصَ الشمس وأشعّتها المخطّطة بألوان الدفء (ذهبيّ، برتقاليّ، أصفر)، ويُمكنه لصقُ خيوطِ الصوف على الأشعّة لتبرز. ثم يذكرُ من منافع الشمس ما يعرف. نختم: جعل الله الشمسَ سِراجًا وهّاجًا يُنيرُ النهار وينفعُ الخلق.</div>
+  <div class="prompt"><b>طريقة العمل:</b> يلوّنُ الطفلُ مشهدَ النهار: <b>الشمسَ</b> بألوان الدفء (ذهبيّ · برتقاليّ)، و<b>السُّحبَ</b> بالأزرق الفاتح، و<b>النبتةَ</b> التي تنمو بضياء الشمس بالأخضر. ثم يذكرُ ماذا نفعلُ في النهار بضوء الشمس. نختم: جعل اللهُ النهارَ مَعاشًا نعملُ فيه ونسعى بضياء الشمس — نعمةٌ نشكرها.</div>
 
-  <div class="sun-wrap">
-    <svg viewBox="0 0 430 300" role="img" aria-label="قالب شمس كبير بأشعّة مخطّطة للتلوين">
-      <!-- rays: striped triangles to color -->
-      <g fill="#fff" stroke="#e0a92e" stroke-width="2.5">
-        <g id="rays">
-          <polygon points="215,10 200,70 230,70"/>
-          <polygon points="420,150 360,135 360,165"/>
-          <polygon points="10,150 70,135 70,165"/>
-          <polygon points="215,290 200,230 230,230"/>
-          <polygon points="360,40 318,84 340,106"/>
-          <polygon points="70,40 112,84 90,106"/>
-          <polygon points="360,260 318,216 340,194"/>
-          <polygon points="70,260 112,216 90,194"/>
+  <div class="scene">
+    <svg viewBox="0 0 560 320" role="img" aria-label="مشهدُ نهارٍ مشمس للتلوين: شمسٌ وسحبٌ ونبتةٌ تنمو">
+      <!-- الشمس -->
+      <g stroke="#e0a92e" stroke-width="3" stroke-linecap="round" fill="none">
+        <line x1="470" y1="18" x2="470" y2="36"/><line x1="470" y1="104" x2="470" y2="122"/>
+        <line x1="418" y1="70" x2="436" y2="70"/><line x1="504" y1="70" x2="522" y2="70"/>
+        <line x1="433" y1="33" x2="446" y2="46"/><line x1="494" y1="94" x2="507" y2="107"/>
+        <line x1="507" y1="33" x2="494" y2="46"/><line x1="446" y1="94" x2="433" y2="107"/>
+      </g>
+      <circle cx="470" cy="70" r="34" fill="#fff" stroke="#e0a92e" stroke-width="3.5"/>
+      <circle cx="470" cy="70" r="24" fill="none" stroke="#f0cf7c" stroke-width="2" stroke-dasharray="4 6"/>
+      <!-- سحابة كبيرة -->
+      <path d="M96 96 a24 24 0 0 1 46 -10 a20 20 0 0 1 30 6 a18 18 0 0 1 -4 36 h-66 a20 20 0 0 1 -6 -38z" fill="#fff" stroke="#7ba1b2" stroke-width="2.6" stroke-linejoin="round"/>
+      <!-- سحابة صغيرة -->
+      <path d="M232 70 a16 16 0 0 1 30 -6 a13 13 0 0 1 10 24 h-42 a13 13 0 0 1 2 -18z" fill="#fff" stroke="#7ba1b2" stroke-width="2.4" stroke-linejoin="round"/>
+      <!-- الأرض -->
+      <path d="M0 250 q150 -34 290 -8 q150 28 270 -8 L560 320 L0 320 Z" fill="#fff" stroke="#6a9a52" stroke-width="3" stroke-linejoin="round"/>
+      <!-- النبتة تنمو -->
+      <path d="M268 268 q-3 -42 2 -76" fill="none" stroke="#5f9070" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M270 226 q-30 -4 -40 -26 q28 -3 40 16z" fill="#fff" stroke="#5f9070" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M270 210 q30 -8 42 -28 q-28 -1 -42 18z" fill="#fff" stroke="#5f9070" stroke-width="2.6" stroke-linejoin="round"/>
+      <g>
+        <circle cx="270" cy="188" r="15" fill="#fff" stroke="#e0a92e" stroke-width="2.6"/>
+        <g fill="#fff" stroke="#e0a92e" stroke-width="2.4">
+          <ellipse cx="270" cy="166" rx="9" ry="14"/><ellipse cx="292" cy="188" rx="14" ry="9"/>
+          <ellipse cx="270" cy="210" rx="9" ry="14"/><ellipse cx="248" cy="188" rx="14" ry="9"/>
         </g>
+        <circle cx="270" cy="188" r="15" fill="#fff" stroke="#e0a92e" stroke-width="2.6"/>
       </g>
-      <!-- inner stripes on rays -->
-      <g stroke="#f0cf7c" stroke-width="1.6">
-        <line x1="215" y1="24" x2="215" y2="66"/><line x1="405" y1="150" x2="366" y2="150"/>
-        <line x1="25" y1="150" x2="64" y2="150"/><line x1="215" y1="276" x2="215" y2="234"/>
+      <!-- عشبٌ صغير -->
+      <g stroke="#6a9a52" stroke-width="2.4" stroke-linecap="round" fill="none">
+        <path d="M150 266 q-3 -14 -1 -22 M156 266 q2 -12 6 -20 M162 266 q6 -10 12 -14"/>
+        <path d="M398 262 q-3 -14 -1 -22 M404 262 q2 -12 6 -20 M410 262 q6 -10 12 -14"/>
       </g>
-      <!-- disc -->
-      <circle cx="215" cy="150" r="70" fill="#fbe9b0" stroke="#e0a92e" stroke-width="4"/>
-      <circle cx="215" cy="150" r="52" fill="none" stroke="#f0cf7c" stroke-width="2" stroke-dasharray="4 6"/>
-      <text x="215" y="158" font-family="Saudi,sans-serif" font-size="14" fill="#c9a94e" text-anchor="middle">لوّنّي القرص</text>
     </svg>
   </div>
 
-  <div class="say">«سِراجًا وَهّاجًا»</div>
+  <div class="say">«وَجَعَلْنَا النَّهَارَ مَعَاشًا»</div>
 
-  <div class="box">
-    <h3>منافعُ الشمس أذكرها:</h3>
-    <div class="ln"></div>
-    <div class="ln"></div>
-  </div>
-
-<div style="background:linear-gradient(135deg,#1F4A39,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:14px 0 6px"><b>الخلاصة:</b> الشمس سراجٌ وهّاج مسخّرة بأمر الله؛ نشكر نعمتها. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استقلال الطفل دون تحويله إلى اختبار.</div>
-  <div class="foot">دليل معلمة غرس القيم · نشاط تطبيقي — ركن فنوني الجميلة 🎨</div>
+  <div style="background:linear-gradient(135deg,#1F4A39,#0d6e6e);color:#fff;border-radius:12px;padding:13px 16px;font-size:13px;line-height:1.85;text-align:center;margin:14px 0 6px"><b>الخلاصة:</b> جعل اللهُ النهارَ بضياء الشمس وقتًا للعمل والسعي ونموِّ الزرع؛ نعمةٌ نشكرُ اللهَ عليها. — <b>للمعلمة:</b> نشاطٌ تطبيقيٌّ بعد الدرس لمجموعةٍ صغيرة (٤–٦)، وثّقي استمتاعَ الطفل دون تحويله إلى اختبار.</div>
+  <div class="foot">دليل معلمة غرس القيم · نشاط تطبيقي — ركن فنوني الجميلة</div>
 </div>
 </body>
 </html>
