@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>بطاقات العرض — أنا مخلوق · علّمني ربي · مراحل خلق الإنسان</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#14402E;--t2:#1E5631;--gold:#C79A3B;--ink:#1E2E29;--muted:#6C776F;--line:#d8cdb5;--soft:#f3f7f1}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#e7ece4;padding:20px;line-height:1.6}
+.head{max-width:1000px;margin:0 auto 16px;text-align:center}
+.head h1{font-family:var(--fd);color:var(--t1);font-size:24px}
+.head p{color:var(--muted);font-size:13.5px;margin-top:4px}
+.note{max-width:1000px;margin:0 auto 18px;background:#fff;border:1px solid var(--line);border-inline-start:4px solid var(--gold);border-radius:12px;padding:10px 14px;font-size:13px;color:#6b5a2a;text-align:center;line-height:1.95}
+.sheet{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fcard{background:#fff;border:2px solid var(--t2);border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(20,50,35,.12);break-inside:avoid;display:flex;flex-direction:column}
+.fcard .pic{position:relative;aspect-ratio:4/3;background:#fff;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.fcard .pic img{width:100%;height:100%;object-fit:contain;display:block}
+.fcard .num{position:absolute;top:10px;inset-inline-start:10px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:var(--t2);color:#fff;font-family:var(--fd);font-size:17px;font-weight:700;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.fcard .sub{background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff;font-family:var(--fd);font-size:15px;text-align:center;padding:9px 12px;line-height:1.8}
+.printbtn{display:block;margin:20px auto 6px;background:var(--t2);color:#fff;border:0;border-radius:999px;padding:10px 26px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
+@media print{
+  body{background:#fff;padding:0}
+  .head p,.note,.printbtn{display:none}
+  .sheet{gap:8mm;max-width:100%}
+  .fcard{box-shadow:none;border:1.5px dashed #9bb0a0}
+  .fcard .pic{aspect-ratio:auto;height:82mm}
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <h1>بطاقات العرض — أنا مخلوق · علّمني ربي · مراحل خلق الإنسان</h1>
+  <p>بطاقاتٌ تعرضها المعلمة على الأطفال وتُرتَّب بالتتابع · اطبعيها ثمّ قُصّيها على الخطّ المتقطّع (بطاقتان في الصفحة)</p>
+</div>
+<div class="note">﴿ثُمَّ خَلَقْنَا النُّطْفَةَ عَلَقَةً فَخَلَقْنَا الْعَلَقَةَ مُضْغَةً فَخَلَقْنَا الْمُضْغَةَ عِظَامًا فَكَسَوْنَا الْعِظَامَ لَحْمًا ثُمَّ أَنشَأْنَاهُ خَلْقًا آخَرَ فَتَبَارَكَ اللَّهُ أَحْسَنُ الْخَالِقِينَ﴾ [المؤمنون ١٤]</div>
+<div class="sheet">
+
+  <div class="fcard">
+    <div class="pic"><span class="num">١</span><img src="assets/cards/am-a2-1-nutfa.jpg" alt="نُطفَة"/></div>
+    <div class="sub">نُطفَة — أوّلُ الخلق من ماءٍ مهين</div>
+  </div>
+
+  <div class="fcard">
+    <div class="pic"><span class="num">٢</span><img src="assets/cards/am-a2-2-alaqa.jpg" alt="عَلَقة"/></div>
+    <div class="sub">عَلَقة — ﴿فَخَلَقْنَا النُّطْفَةَ عَلَقَةً﴾</div>
+  </div>
+
+  <div class="fcard">
+    <div class="pic"><span class="num">٣</span><img src="assets/cards/am-a2-3-mudgha.jpg" alt="مُضغَة"/></div>
+    <div class="sub">مُضغَة — ﴿فَخَلَقْنَا الْعَلَقَةَ مُضْغَةً﴾</div>
+  </div>
+
+  <div class="fcard">
+    <div class="pic"><span class="num">٤</span><img src="assets/cards/am-a2-4-idham.jpg" alt="عِظام"/></div>
+    <div class="sub">عِظام — ﴿فَخَلَقْنَا الْمُضْغَةَ عِظَامًا﴾</div>
+  </div>
+
+  <div class="fcard">
+    <div class="pic"><span class="num">٥</span><img src="assets/cards/am-a2-5-lahm.jpg" alt="كُسِيت العظام لحمًا"/></div>
+    <div class="sub">كُسِيت العظامُ لحمًا — ﴿فَكَسَوْنَا الْعِظَامَ لَحْمًا﴾</div>
+  </div>
+
+  <div class="fcard">
+    <div class="pic"><span class="num">٦</span><img src="assets/cards/am-a2-6-tifl.jpg" alt="طِفل"/></div>
+    <div class="sub">طِفل — ﴿ثُمَّ أَنشَأْنَاهُ خَلْقًا آخَرَ﴾</div>
+  </div>
+
+</div>
+<button class="printbtn" onclick="window.print()">🖨️ طباعة البطاقات</button>
+</body>
+</html>
