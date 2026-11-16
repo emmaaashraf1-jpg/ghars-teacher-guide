@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>بطاقات العرض — أنا مخلوق · علّمني ربي · التفكّر في النمل</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --t1:#14402E;--t2:#1E5631;--gold:#C79A3B;--ink:#1E2E29;--muted:#6C776F;--line:#d8cdb5;--soft:#f3f7f1}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#e7ece4;padding:20px;line-height:1.6}
+.head{max-width:1000px;margin:0 auto 16px;text-align:center}
+.head h1{font-family:var(--fd);color:var(--t1);font-size:24px}
+.head p{color:var(--muted);font-size:13.5px;margin-top:4px}
+.note{max-width:1000px;margin:0 auto 18px;background:#fff;border:1px solid var(--line);border-inline-start:4px solid var(--gold);border-radius:12px;padding:10px 14px;font-size:13px;color:#6b5a2a;text-align:center;line-height:1.95}
+.sheet{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fcard{background:#fff;border:2px solid var(--t2);border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(20,50,35,.12);break-inside:avoid;display:flex;flex-direction:column}
+.fcard .pic{position:relative;aspect-ratio:4/3;background:var(--soft);overflow:hidden}
+.fcard .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.fcard .corner-badge{position:absolute;top:10px;inset-inline-start:10px;background:rgba(20,64,46,.86);color:#fff;font-family:var(--fd);font-size:12.5px;padding:3px 12px;border-radius:999px}
+.fcard .lbl{background:linear-gradient(135deg,var(--t1),var(--t2));color:#fff;font-family:var(--fd);font-weight:700;font-size:25px;text-align:center;padding:12px 10px}
+.fcard .sub{background:#fff;color:var(--muted);font-size:12.5px;text-align:center;padding:7px 12px 11px;border-top:1px solid var(--line);line-height:1.7}
+.printbtn{display:block;margin:20px auto 6px;background:var(--t2);color:#fff;border:0;border-radius:999px;padding:10px 26px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
+@media print{
+  body{background:#fff;padding:0}
+  .head p,.note,.printbtn{display:none}
+  .sheet{gap:8mm;max-width:100%}
+  .fcard{box-shadow:none;border:1.5px dashed #9bb0a0}
+  .fcard .pic{aspect-ratio:auto;height:80mm}
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <h1>بطاقات العرض — أنا مخلوق · علّمني ربي · التفكّر في النمل</h1>
+  <p>نعرضها ونتفكّر: من هدى النملةَ الصغيرة؟ سبحان الله · اطبعيها ثمّ قُصّيها على الخطّ المتقطّع (بطاقتان في الصفحة)</p>
+</div>
+<div class="note">سبحان الله الهادي الذي هدى النملةَ الصغيرة وعلّمها تدبيرَ أمورها — ﴿حَتَّىٰ إِذَا أَتَوْا عَلَىٰ وَادِ النَّمْلِ قَالَتْ نَمْلَةٌ يَا أَيُّهَا النَّمْلُ ادْخُلُوا مَسَاكِنَكُمْ﴾ [النمل ١٨].</div>
+<div class="sheet">
+
+  <div class="fcard">
+    <div class="pic"><span class="corner-badge">النملة</span><img src="units-art/ws-am/namla.jpg" alt="النملة"/></div>
+    <div class="lbl">النَّملة</div>
+    <div class="sub">حشرةٌ صغيرة خلقها اللهُ بديعةً، منظّمةً نشيطةً تحبّ العمل</div>
+  </div>
+
+  <div class="fcard">
+    <div class="pic"><span class="corner-badge">التعاون</span><img src="units-art/makhluq-activities/majmuaat-amal.jpg" alt="مجموعات العمل"/></div>
+    <div class="lbl">مجموعاتُ العمل</div>
+    <div class="sub">تعمل في مجموعاتٍ متعاونة: حراسةٌ ونظافةٌ وجمعٌ للطعام</div>
+  </div>
+
+  <div class="fcard">
+    <div class="pic"><span class="corner-badge">المدينة</span><img src="units-art/makhluq-activities/qaryat-naml.jpg" alt="قرية النمل"/></div>
+    <div class="lbl">قريةُ النمل</div>
+    <div class="sub">تبني مدينةً تحت الأرض بأنفاقٍ وحجراتٍ وطرقات — بهداية الله</div>
+  </div>
+
+  <div class="fcard">
+    <div class="pic"><span class="corner-badge">الأنواع</span><img src="units-art/makhluq-activities/anwaa-naml.jpg" alt="أنواع النمل"/></div>
+    <div class="lbl">أنواعُ النمل</div>
+    <div class="sub">أنواعٌ شتّى خلقها اللهُ وأتقن صنعها — فسبحان مَن هداها</div>
+  </div>
+
+</div>
+<button class="printbtn" onclick="window.print()">🖨️ طباعة البطاقات</button>
+</body>
+</html>
