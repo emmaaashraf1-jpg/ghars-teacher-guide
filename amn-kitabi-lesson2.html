@@ -955,6 +955,26 @@ html{scrollbar-width:thin;scrollbar-color:#c3b89d transparent}
    فيكادان يختمان معًا، وكلّ البطاقات تبقى مقروءةً (بلا لصقٍ يُخفي السفليّة) */
 .les{grid-template-columns:minmax(240px,1fr) 1.5fr !important;align-items:start !important}
 </style>
+<style id="ghars-fix5">
+/* «وقفة التدبّر» شريطٌ كامل العرض أسفل العمودين (JS ينقلها خارج عمود المتن):
+   نصُّها عمودٌ مُوسَّطٌ بمقاسٍ مريح، فلا تبدو مترامية */
+.les + .story{margin-top:var(--sp-4,22px) !important}
+.story .h{max-width:860px;margin-inline:auto}
+.story .b{max-width:860px;margin-inline:auto}
+</style>
+<script id="ghars-layout">
+(function(){
+  function run(){
+    try{
+      document.querySelectorAll('.les').forEach(function(les){
+        var story=les.querySelector('.story');
+        if(story){ les.parentNode.insertBefore(story, les.nextSibling); }
+      });
+    }catch(e){}
+  }
+  if(document.readyState!=='loading') run(); else document.addEventListener('DOMContentLoaded',run);
+})();
+</script>
 
 <!--GHARS-SKIN-END-->
 </head>

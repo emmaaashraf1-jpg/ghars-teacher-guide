@@ -596,6 +596,374 @@ b.k{background:var(--sc-soft)!important;color:var(--sc-deep)!important}
 .step::before{width:11px!important;height:11px!important;border-width:2px!important;border-color:var(--sc)!important;background:#fff!important;inset-inline-start:-22px!important;top:18px!important;box-shadow:0 0 0 3px #fff!important}
 </style>
 
+<!--GHARS-SKIN-START-->
+<style id="ghars-skin">
+/* ════════════════════════════════════════════════════════════════
+   غرس — طبقة التصميم النظيفة (إعادة بناء من الصفر).
+   تتبع لون المادّة var(--sc)/--sc-deep/--sc-soft، فلا يتضارب لون.
+   القاعدة الحديديّة (لحلّ انهيار التباين):
+     • نصّ المتن  = حبرٌ غامق var(--ink) دائمًا.
+     • العناوين/الوسوم = var(--sc-deep) (غامقٌ مقروء على أيّ سطحٍ فاتح).
+     • لون المادّة var(--sc) = للأيقونات والحدود والتعبئة ذات النصّ الأبيض فقط
+       — لا يُستعمل أبدًا نصًّا صغيرًا على سطحٍ ملوّن.
+     • بلا color-mix · بلا تدرّج في الشارات · بلا أعمدة جانبيّة ملوّنة · زوايا منتظمة.
+   ════════════════════════════════════════════════════════════════ */
+
+:root{
+  --gold:#C79A3B;
+  --ink:#2C2318 !important;
+  --muted:#6E6554 !important;
+  --line:#D7CDB6 !important;        /* حدٌّ دافئٌ مرئيٌّ فعلًا يُعرّف البطاقة */
+  --card:#FFFDF8 !important;
+  --r:16px;
+  --shadow-sm:0 4px 16px rgba(30,45,30,.07) !important;
+  --shadow:0 14px 32px rgba(30,45,30,.11) !important;
+}
+/* درجةٌ افتراضيّةٌ آمنة (أولويّة صفريّة :where) لأيّ درسٍ لا يعرّف --sc، فلا ينكسر؛
+   وأيّ :root{--sc} خاصٌّ بالمادّة يتفوّق عليها تلقائيًّا فلا تطغى على ألوان الموادّ */
+:where(html){--sc:#1E5631;--sc-deep:#12401F;--sc-soft:#E7F0EA}
+
+/* ── عرضٌ أوسع + خطٌّ أكبر وأريح (المعلمة حسّاسة لصغر الخطّ) ── */
+.wrap{max-width:1060px !important}
+.panel{font-size:17px}
+.panel p,.panel li,.panel td,.panel .mini,.panel .opt,.panel .step,.panel .lh-t,.panel .lh-foot{
+  font-size:16.5px !important;line-height:2.0 !important;color:var(--ink) !important}
+
+/* ── زوايا منتظمة بدل المتموّجة (أبرز تلميح «ذكاء») ── */
+.cover,.lhero .lh,.card,.flow-card,.tab,.quick-sheet,.qs-phase,.taq,.law-grid>div,
+.cardblue,.cardgold,.cardpurple,.actful,.corner,.adab,.refblock,.story,.feedback,.msg,
+.par,.dua,.greet,.info,.central,.cue,.faith,.bc-embed,.gq-belief-quran-audio,.gq-surah-audio,
+figure img,.step-media img,video{border-radius:var(--r) !important}
+/* تسوية الزوايا المتموّجة المكتوبة سطرًا */
+[style*="9px 18px"],[style*="8px 13px"],[style*="8px 15px"],[style*="9px 13px"]{border-radius:14px !important}
+
+/* ── إزالة الأعمدة الجانبيّة/العلويّة الملوّنة → حدٌّ رفيعٌ كامل ── */
+.flow-card,.gq-belief-quran-audio,.gq-surah-audio,
+[style*="border-inline-start:5px"],[style*="border-inline-start:4px"],[style*="border-inline-start:3px"],
+[style*="border-right:6px"],[style*="border-right:5px"],[style*="border-right:4px"],[style*="border-right:3px"],
+[style*="border-top:3px"],[style*="border-top:4px"],[style*="border-top:5px"],[style*="border-top:6px"]{
+  border-width:1px !important;border-style:solid !important;border-color:var(--line) !important}
+
+/* ── الغلاف: ترويسةٌ تحريريّة (عنوانٌ كبير + خيطٌ ذهبيّ + شارةٌ عاجيّة بلون المادّة) ── */
+.cover{border-radius:24px !important;min-height:270px !important;box-shadow:0 24px 58px rgba(24,45,32,.26) !important}
+.cover-main{padding:34px 36px !important}
+.cover h1{font-family:var(--fd) !important;font-size:clamp(30px,4.4vw,46px) !important;line-height:1.32 !important;letter-spacing:-.4px !important;margin-bottom:14px !important}
+.cover h1::after{content:"";display:block;width:64px;height:3px;border-radius:3px;margin-top:16px;background:linear-gradient(90deg,#E7B64A,rgba(231,182,74,0))}
+.c-badge{transform:none !important;border-radius:999px !important;background:rgba(251,249,242,.95) !important;color:var(--sc-deep) !important;font-size:12.5px !important;letter-spacing:.3px;padding:7px 16px !important;box-shadow:0 6px 16px rgba(24,45,32,.2) !important}
+.c-meta{color:#eef6f0 !important;font-size:14.5px !important}
+.c-dur{color:var(--sc-deep) !important;background:rgba(251,249,242,.95) !important;border-radius:999px !important;padding:5px 14px !important;font-weight:700}
+
+/* ── رؤوس الأقسام: إيقاعٌ أوسع + عنوانٌ تحريريّ + أيقونةٌ مباشرة بلون المادّة ── */
+.sec-head{margin:48px 0 18px !important;gap:13px !important}
+.panel>.sec-head:first-of-type{margin-top:14px !important}
+.sec-head .num,.sec-head .num.grn,.sec-head .num.gold{background:transparent !important;border:0 !important;box-shadow:none !important;width:auto !important;height:auto !important;border-radius:0 !important}
+.sec-head .num .gi,.sec-head .num .gi svg,.sec-head .num .gi .gi-svg{--ic-t:var(--sc-soft) !important;--gi-ln:var(--sc) !important;color:var(--sc) !important;width:28px !important;height:28px !important}
+.sec-head h2{font-family:var(--fd) !important;font-size:clamp(22px,2.7vw,27px) !important;color:var(--sc-deep) !important;letter-spacing:-.01em !important}
+.sec-head .rule{border-top:1px solid var(--line) !important}
+.sec-head .stage{border-radius:999px !important;background:var(--sc-soft) !important;color:var(--sc-deep) !important}
+
+/* ── التبويبات: ألسنة ملفٍّ دافئة متّصلة باللوحة، النشط أبيضُ بنصٍّ بلون المادّة ── */
+.tabs{position:sticky;top:0;z-index:40;background:rgba(251,249,242,.92) !important;backdrop-filter:blur(8px) !important;
+  border:0 !important;border-bottom:1px solid var(--line) !important;border-radius:0 !important;box-shadow:none !important;
+  display:flex !important;flex-wrap:nowrap !important;overflow-x:auto;overflow-y:hidden;gap:3px !important;
+  padding:6px 8px 0 !important;margin:18px 0 26px !important;scrollbar-width:thin;scrollbar-color:#d4ccb9 transparent}
+.tabs::-webkit-scrollbar{height:6px}.tabs::-webkit-scrollbar-thumb{background:#d4ccb9;border-radius:999px}
+.tab{flex:none !important;white-space:nowrap !important;background:transparent !important;border:1px solid transparent !important;
+  border-bottom:0 !important;border-radius:11px 11px 0 0 !important;color:#5f6a63 !important;box-shadow:none !important;
+  padding:10px 16px !important;font-size:13.5px !important;font-weight:700 !important;position:relative;top:1px;transition:.18s}
+.tab:hover{background:rgba(255,255,255,.6) !important;color:var(--sc-deep) !important;border-color:transparent !important}
+.tab.active,.tab.gold.active{background:#fff !important;color:var(--sc-deep) !important;border-color:var(--line) !important;box-shadow:0 -1px 10px rgba(24,45,32,.06) !important}
+.tab.gold:not(.active){background:transparent !important;color:#9a7420 !important;border-color:transparent !important}
+
+/* ── بطاقاتٌ دافئة بظلٍّ ناعمٍ وحدٍّ مرئيّ (لا سطحيّة، لا سيَلان) ── */
+.card,.flow-card,.quick-sheet,.refblock,.taq,.msg,.feedback,.par,.story,.corner,.adab,
+.cardblue,.cardgold,.law-grid>div{
+  border:1px solid var(--line) !important;box-shadow:var(--shadow-sm) !important;background:var(--card) !important}
+
+/* ── ترويسة الدرس (lhero): بطلُ اللقاء — نصٌّ غامقٌ مقروء (إصلاح التباين الأساس) ── */
+.lhero{gap:16px !important;margin:10px 0 26px !important}
+.lhero .lh{border:1px solid var(--line) !important;box-shadow:var(--shadow) !important;padding:20px 22px !important}
+.lhero .lh.focus{background:var(--sc-soft) !important}
+.lhero .lh.key{background:#FBF5E6 !important}
+.lhero .lh-lbl{color:var(--sc-deep) !important;font-weight:800 !important}
+.lhero .key .lh-lbl{color:#8a6410 !important}
+.lhero .lh-q{font-family:var(--fd) !important;font-size:19px !important;line-height:1.85 !important;color:var(--ink) !important}
+.lhero .lh-t{color:var(--ink) !important}
+.lhero .lh-foot{color:var(--muted) !important}
+.lhero .lh-foot b{color:var(--sc-deep) !important}
+
+/* ── صناديق التمييز العامّة → سطحٌ واحدٌ ناعمٌ بلون المادّة + نصٌّ غامق ── */
+.greet,.info,.central,.cue,.faith,
+[style*="background:linear-gradient(135deg,#EFFAF4"],[style*="background:#EAF5EE"],[style*="background:#eaf5ee"]{
+  background:var(--sc-soft) !important;border-color:var(--line) !important;color:var(--ink) !important}
+.greet,.greet strong,.greet b,.central,.central b,.info{color:var(--ink) !important}
+
+/* ── الألوان المُقحَمة (خارج درجة المادّة) → تُردّ إلى درجة المادّة ── */
+[style*="color:#b8860b"],[style*="color:#B8860B"],[style*="color:#7a5cc0"],[style*="color:#7A5CC0"],
+[style*="color:#2D7A4B"],[style*="color:#2d7a4b"],[style*="color:#286A54"],[style*="color:#286a54"],
+[style*="color:#1b5e34"],[style*="color:#1B5E34"]{color:var(--sc-deep) !important}
+[style*="background:#286A54"],[style*="background:#286a54"],[style*="background:#2D7A4B"],[style*="background:#2d7a4b"]{
+  background:var(--sc) !important;color:#fff !important}
+
+/* ── أزرارٌ بروح الرئيسية: حبّةٌ بلون المادّة ترتفع عند المرور (والذهبيّ يبقى ذهبيًّا) ── */
+.panel a[style*="999px"],.panel .printbtn,.panel .copy-btn,.panel .linkbtn,
+.panel .kitabi-hijri-actions button{
+  background:var(--sc) !important;color:#fff !important;border:0 !important;border-radius:999px !important;
+  font-weight:700 !important;box-shadow:0 8px 20px rgba(30,45,30,.2) !important;transition:transform .2s,box-shadow .2s !important}
+.panel a[style*="999px"]:hover,.panel .printbtn:hover,.panel .copy-btn:hover,.panel .linkbtn:hover{
+  transform:translateY(-2px) !important;box-shadow:0 14px 26px rgba(30,45,30,.28) !important}
+.panel a[style*="999px"][style*="var(--gold)"],.panel a[style*="999px"][style*="#C79A3B"],.panel a[style*="999px"][style*="#gold"]{
+  background:var(--gold) !important;color:#3a2a06 !important}
+
+/* ── توحيد الوسوم متعدّدة الألوان → حبّةٌ واحدة بلون المادّة الناعم ── */
+.panel .tag,.panel .tag.s,.panel .tag.v,.panel .rbadge,.panel .rbadge.d,.panel .rbadge.p,.panel .rbadge.q,
+.panel .chip.v{background:var(--sc-soft) !important;color:var(--sc-deep) !important;border:1px solid var(--line) !important;border-radius:999px !important}
+.panel .obj .n,.panel .obj .n.o,.panel .obj .n.g,.panel .obj .n.p{background:var(--sc) !important;color:#fff !important}
+
+/* أداة التاريخ: هلالٌ ذهبيّ رفيع */
+.panel .kitabi-hijri-moon{background:transparent !important;border:2px solid #C79A3B !important}
+
+/* ── ورقة التدريس السريعة: ترويسةٌ صلبة بلون المادّة الغامق بنصٍّ أبيض + مراحلُ نظيفة ── */
+.quick-sheet{border:1px solid var(--line) !important;border-radius:var(--r) !important;background:var(--card) !important;overflow:hidden !important}
+.quick-sheet .qs-head{background:var(--sc-deep) !important;color:#fff !important;border-radius:0 !important;border-bottom:0 !important}
+.quick-sheet .qs-head *{color:#fff !important}
+.quick-sheet .qs-phase{border:1px solid var(--line) !important;background:#fff !important;border-radius:12px !important}
+.quick-sheet .qs-home{background:var(--sc-soft) !important;color:var(--ink) !important;border-radius:12px !important}
+.quick-sheet .qs-note{color:var(--muted) !important}
+.quick-sheet .qs-n{border-radius:9px !important}
+.quick-sheet .qs-min{background:#fff !important;color:var(--sc-deep) !important;border:1px solid var(--line) !important}
+
+/* الترويسات الصلبة الملوّنة (شريط النشاط/عنوانه) يبقى نصُّها أبيض فلا يختفي */
+.card.actful>h3,.card.actful>h3 *,.actbar,.actbar *{color:#fff !important}
+</style>
+<!-- ===== طبقة الحركة: Lenis + GSAP/ScrollTrigger (نفس إصدارات الرئيسيّة) ===== -->
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+  html.lenis,html.lenis body{height:auto}
+  html.lenis{scroll-behavior:auto !important}
+  .reveal-ms{will-change:transform,opacity}
+</style>
+<script id="ghars-lesson-motion">
+window.addEventListener('load',function(){
+  try{
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var lenis=null;
+    if(window.Lenis && !reduce){
+      lenis=new Lenis({duration:1.05,easing:function(t){return 1-Math.pow(1-t,3)}});
+      function raf(t){lenis.raf(t);requestAnimationFrame(raf)} requestAnimationFrame(raf);
+      document.documentElement.classList.add('lenis');
+    }
+    if(window.gsap && window.ScrollTrigger && !reduce){
+      gsap.registerPlugin(ScrollTrigger);
+      if(lenis){ lenis.on('scroll', ScrollTrigger.update); }
+      var sel='.panel.active .lhero .lh, .panel.active .sec-head, .panel.active .card, .panel.active .flow-card, .panel.active .step, .panel.active .quick-sheet, .panel.active .story, .panel.active table.voc';
+      var items=document.querySelectorAll(sel);
+      items.forEach(function(el){el.classList.add('reveal-ms')});
+      gsap.set(items,{opacity:0,y:18});
+      ScrollTrigger.batch(items,{start:'top 90%',once:true,onEnter:function(batch){
+        gsap.to(batch,{opacity:1,y:0,duration:.55,stagger:.05,ease:'power2.out'});
+      }});
+      ScrollTrigger.refresh();
+      /* failsafe: اكشف أيّ عنصرٍ بقي مخفيًّا بعد ثانيتين */
+      setTimeout(function(){ items.forEach(function(el){ if(getComputedStyle(el).opacity==='0'){ gsap.set(el,{opacity:1,y:0}); } }); },2200);
+    }
+  }catch(e){}
+});
+</script>
+<script id="ghars-contrast-guard">
+(function(){
+  function parse(c){var m=c&&c.match(/[\d.]+/g);if(!m)return null;return m.map(Number);}
+  function rl(c){var a=c.slice(0,3).map(function(v){v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)});return .2126*a[0]+.7152*a[1]+.0722*a[2];}
+  function mix(c){ if(c.length<4||c[3]>=1)return c.slice(0,3); var a=c[3],b=[250,247,239];return[0,1,2].map(function(i){return Math.round(c[i]*a+b[i]*(1-a));});}
+  function effBg(el){var e=el;while(e&&e.nodeType===1){var b=parse(getComputedStyle(e).backgroundColor);if(b&&(b.length<4||b[3]>0))return mix(b);e=e.parentElement;}return [250,247,239];}
+  function contrast(f,b){var lf=rl(f),lb=rl(b);return (Math.max(lf,lb)+.05)/(Math.min(lf,lb)+.05);}
+  function guard(){
+    try{
+      var all=document.querySelectorAll('.panel *');
+      for(var i=0;i<all.length;i++){var el=all[i];
+        var hasText=false,cn=el.childNodes;for(var j=0;j<cn.length;j++){if(cn[j].nodeType===3&&cn[j].textContent.trim().length>1){hasText=true;break;}}
+        if(!hasText)continue;
+        var cs=getComputedStyle(el);
+        var fg=parse(cs.color);if(!fg)continue;var bg=effBg(el);
+        if(contrast(fg,bg)<4.5){var best=contrast([30,46,41],bg)>=contrast([255,255,255],bg)?'#1b2e29':'#ffffff';el.style.setProperty('color',best,'important');}
+      }
+    }catch(e){}
+  }
+  window.addEventListener('load',function(){ setTimeout(guard,300); });
+  document.addEventListener('click',function(e){ if(e.target&&e.target.classList&&e.target.classList.contains('tab')){ setTimeout(guard,60); } });
+})();
+</script>
+<style id="ghars-variant">
+/* ===== الاتجاه (ج): عميق قويّ — تباينٌ عالٍ وتسلسلٌ واضح (بطاقاتٌ بيضاء تبرز على كريميٍّ أعمق) ===== */
+:root{
+  --line:#CBBE9C !important;        /* حدٌّ أقوى */
+  --card:#FFFFFF !important;        /* بطاقاتٌ بيضاء ناصعة تبرز */
+  --shadow-sm:0 6px 20px rgba(25,40,28,.10) !important;
+  --shadow:0 18px 40px rgba(25,40,28,.14) !important;
+}
+body{background-color:#ECE3CE !important}
+/* عناوينُ أكبر وأبرز */
+.sec-head h2{font-size:clamp(24px,3vw,30px) !important;font-weight:800 !important}
+.cover h1{font-size:clamp(32px,4.8vw,50px) !important}
+/* رقم القسم: حبّةٌ خضراءُ غامقةٌ مملوءة بنصٍّ أبيض */
+.sec-head .num{background:var(--sc-deep) !important;border-radius:13px !important;width:44px !important;height:44px !important;display:grid !important;place-items:center !important;box-shadow:0 6px 16px rgba(25,40,28,.2) !important}
+.sec-head .num .gi,.sec-head .num .gi svg,.sec-head .num .gi .gi-svg{color:#fff !important;--gi-ln:#fff !important;--ic-t:var(--sc) !important;width:22px !important;height:22px !important}
+/* بطاقة التركيز بتظليلٍ أوضح */
+.lhero .lh.focus{background:#E0ECE3 !important}
+/* التبويب النشط مملوءٌ أخضرَ غامقًا (أقوى) */
+.tab.active,.tab.gold.active{background:var(--sc-deep) !important;color:#fff !important;border-color:var(--sc-deep) !important;box-shadow:0 6px 16px rgba(25,40,28,.18) !important}
+.tab.active{top:0 !important}
+</style>
+<style id="ghars-pro">
+/* ════════════════════════════════════════════════════════════════
+   طبقة الإتقان الاحترافيّ (impeccable + taste-skill) فوق الاتجاه (ج).
+   مبدأ: مسافاتٌ مدروسةٌ على شبكة ٨px · سلّمٌ خطّيٌّ متناسب · حبرٌ وتباينٌ
+   محسوبان (WCAG AA) · تفاصيلُ نهائيّةٌ لا يلحظها إلّا المحترف.
+   لا يمسّ البنية ولا المحتوى ولا قاعدة التباين الحديديّة.
+   ════════════════════════════════════════════════════════════════ */
+:root{
+  /* سلّم مسافاتٍ ثماني — إيقاعٌ واحدٌ يحكم الصفحة كلّها */
+  --sp-1:8px; --sp-2:12px; --sp-3:16px; --sp-4:22px; --sp-5:32px; --sp-6:48px; --sp-7:68px;
+  /* حبرٌ أدفأ أعمق قليلًا → تباينٌ ممتاز على البطاقات البيضاء */
+  --ink:#241E18 !important; --muted:#6B6253 !important;
+}
+
+/* ── إيقاعٌ عموديٌّ موحّد (تنفّسٌ مدروسٌ بين الأقسام والبطاقات) ── */
+.panel{padding-top:var(--sp-2) !important}
+.sec-head{margin:var(--sp-7) 0 var(--sp-4) !important;gap:14px !important}
+.panel>.sec-head:first-of-type{margin-top:var(--sp-3) !important}
+.lhero{gap:var(--sp-3) !important;margin:var(--sp-2) 0 var(--sp-5) !important}
+.flow-card,.story,.quick-sheet{margin-bottom:var(--sp-4) !important}
+.les{gap:var(--sp-4) !important}
+.side .card{margin-bottom:var(--sp-3) !important}
+
+/* ── حشوٌ مدروسٌ موحّدٌ للبطاقات ── */
+.flow-card,.story,.corner,.adab,.refblock{padding:var(--sp-4) !important}
+.side .card{padding:18px 18px !important}
+.lhero .lh{padding:var(--sp-4) !important}
+.quick-sheet .qs-phase{padding:16px 18px !important}
+
+/* ── سلّمٌ خطّيٌّ متناسب (modular ≈ 1.25) بخطّ العرض AlAwwal للعناوين ── */
+.cover h1{font-size:clamp(32px,4.6vw,48px) !important;line-height:1.3 !important;margin-bottom:14px !important}
+.sec-head h2{font-size:clamp(23px,2.8vw,29px) !important;line-height:1.35 !important}
+.flow-card h3,.story .h{font-size:19px !important;line-height:1.5 !important;margin-bottom:12px !important}
+.lhero .lh-q{font-size:20px !important;line-height:1.78 !important;margin:6px 0 10px !important}
+.lhero .lh-lbl{font-size:13px !important;letter-spacing:.3px !important;margin-bottom:6px !important}
+.panel p,.panel li{font-size:16.5px !important;line-height:1.95 !important}
+.panel p{margin-bottom:var(--sp-2) !important}
+.panel p:last-child{margin-bottom:0 !important}
+.card .lbl{font-size:13px !important;letter-spacing:.3px !important;margin-bottom:10px !important}
+
+/* ── تفاصيلُ نهائيّة: تركيزُ لوحة المفاتيح + انتقالاتٌ ناعمة + اتّساقُ زوايا ── */
+.tab:focus-visible,.panel a:focus-visible,.panel button:focus-visible{outline:2px solid var(--sc) !important;outline-offset:2px !important;border-radius:7px !important}
+.panel a,.panel button,.tab{transition:color .18s,background .18s,transform .18s,box-shadow .18s !important}
+.lhero .lh,.card,.flow-card,.quick-sheet,.story,.corner,.adab{border-radius:16px !important}
+.quick-sheet .qs-phase,.quick-sheet .qs-home{border-radius:12px !important}
+
+/* ── فاصلُ القسم خيطٌ شعريٌّ هادئ (لا ثقيل) ── */
+.sec-head .rule{border-top:1px solid var(--line) !important;opacity:.85 !important}
+
+/* ── اللمسة الذهبيّة الهويّتيّة محصورةٌ (خيط الغلاف + إطار الآية) لا تُبعثر ── */
+.cover h1::after{height:3px !important;width:60px !important}
+</style>
+<style id="ghars-fixes">
+/* تنسيقُ أصناف الأعمدة الثلاثة ضمن لوحةٍ متناسقة (أخضر/ذهبيّ/حجريّ) ومطابقة WCAG AA */
+.actgrid>div:nth-child(1) .t{background:var(--sc-soft) !important;color:var(--sc-deep) !important}
+.actgrid>div:nth-child(2) .t{background:#F6ECD3 !important;color:#6E4710 !important}
+.actgrid>div:nth-child(3) .t{background:#ECEAE0 !important;color:#49453A !important}
+/* إزالة التركوازيّ الدخيل من روابط/أزرار الأركان → درجة المادّة */
+[style*="color:#0d6e6e"],[style*="color:#0D6E6E"],[style*="color:#0e6e6b"],[style*="color:#0E6E6B"]{color:var(--sc-deep) !important}
+[style*="background:#eef6f4"],[style*="background:#EEF6F4"],[style*="background:#eef6f6"]{background:var(--sc-soft) !important}
+</style>
+<style id="ghars-fixes2">.wa-head{background:var(--sc-deep) !important}.wa-head .nm,.wa-head .st{color:#fff !important}</style>
+<style id="ghars-pro2">
+/* ════════ طبقة المبادئ العلميّة (craft-floor + colorize) ════════ */
+
+/* 1) مقاسُ السطر القرائيّ 66–72 محرفًا */
+.flow-card p,.flow-card li,.story .b,.story .b p,.step,.greet,.central,.info,.belief p,.rev p{max-width:72ch}
+.lhero .lh-q,.lhero .lh-t,.lhero .lh-foot{max-width:60ch}
+
+/* 2) نصٌّ ثانويٌّ مشتقٌّ من درجة المادّة (لا رماديّ باهت) */
+:root{--muted:#5B6957 !important}
+
+/* 3) سطوحُ المتصفّح مثمّنةٌ بالهويّة */
+::selection{background:var(--sc-soft);color:var(--sc-deep)}
+.wrap,.wrap *{caret-color:var(--sc)}
+html{scrollbar-width:thin;scrollbar-color:#c3b89d transparent}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-thumb{background:#c9bfa6;border-radius:999px;border:3px solid #F3EADB;background-clip:content-box}
+::-webkit-scrollbar-thumb:hover{background:var(--sc)}
+.panel a{text-underline-offset:3px;text-decoration-thickness:1.5px}
+.panel td,.bc-fact .v,.qs-min,.c-dur{font-variant-numeric:tabular-nums}
+
+/* 4) عناوينُ متّزنة + سبكٌ محكم */
+.cover h1,.sec-head h2,.flow-card h3,.story .h,.lhero .lh-q{text-wrap:balance}
+.cover h1{letter-spacing:-.02em !important}
+.sec-head h2{letter-spacing:-.012em !important}
+
+/* 5) نظامُ ارتفاعٍ متدرّج: بطاقاتٌ رئيسةٌ مرتفعة · عمودٌ مسطّح */
+.flow-card,.lhero .lh,.quick-sheet,.story{box-shadow:0 10px 30px rgba(25,40,28,.08) !important;border:1px solid #E6DCC6 !important}
+.side .card{box-shadow:none !important;border:1px solid #E6DCC6 !important;background:#FFFDF8 !important}
+
+/* 6) لا إطارٌ داخل إطار — الصناديق الداخليّة تُفصَل بالفراغ لا بحدٍّ ثانٍ */
+.side .card [style*="background:"],.card .objgrid>div{border:0 !important;box-shadow:none !important}
+</style>
+<style id="ghars-fix3">
+/* ═══ (1) بطاقة علوم السورة: توحيدُ كلّ الأخضر على درجة المادّة + تسطيحُ التدرّج + لابلٌ نظيف ═══ */
+.bc-embed .bc-arch{background:var(--sc-soft) !important;border:1.5px solid var(--sc) !important}
+.bc-embed .bc-fact+.bc-fact{border-top:1px dashed var(--line) !important}
+.bc-embed .bc-fact .l{color:var(--sc-deep) !important}
+.bc-embed .bc-fact .v,.bc-embed .bc-brand b,.bc-embed .bc-title,.bc-embed .bc-kicker,
+.bc-embed .bc-axis b,.ulum-mini .um-name,.ulum-mini .um-facts{color:var(--sc-deep) !important}
+.bc-embed .bc-fact .v small{color:var(--muted) !important}
+/* بطاقات العناوين المتدرّجة → تعبئةٌ صلبةٌ بلون المادّة الغامق (نصٌّ أبيض مريح) */
+[style*="linear-gradient(135deg,#1b5e34,#2D7A4B)"]{background:var(--sc-deep) !important;border-color:var(--sc-deep) !important}
+[style*="2px dashed #2D7A4B"]{border-color:var(--sc) !important}
+[style*="2px solid #1E5631"]{border-color:var(--sc-deep) !important}
+[style*="color:#1b5e34"],[style*="color:#9a7d33"],[style*="color:#8a6410"]{color:var(--sc-deep) !important}
+
+/* ═══ (2)+(3) صناديق الهدف/الأدوات/التهيئة: عناوينُ تحريريّةٌ نظيفة — بلا شريطٍ ملوّن ولا أيقونةٍ زخرفيّة، ═══
+   بلا لصقٍ (display:block) وبمسافةٍ مريحةٍ أسفل العنوان */
+.card.actful .row2 .miniblock{border:1px solid var(--line) !important;padding:16px 18px !important}
+.card.actful .row2 .miniblock::before{display:none !important}
+.card.actful .row2 .miniblock,.card.actful>.miniblock{position:relative}
+.miniblock>b,.card.actful .row2 .miniblock>b,.card.actful>.miniblock>b{
+  display:block !important;color:var(--sc-deep) !important;background:none !important;border:0 !important;
+  padding:0 !important;margin:0 0 9px !important;font-family:var(--fd) !important;font-weight:700 !important;font-size:15.5px !important;letter-spacing:.2px !important}
+.card.actful>.miniblock>b::before{display:none !important}
+</style>
+<style id="ghars-fix4">
+/* (٢) زرّ الصعود وشريط التقدّم بلون المادّة (كانا var(--elm) أخضر ثابتًا) */
+.gq-top{background:var(--sc) !important}
+.gq-progress{background:linear-gradient(90deg,var(--gold),var(--sc)) !important}
+/* (١) توازن عمودَي «حول الدرس / سير اللقاء»: تقريبُ العرضين يقرّب ارتفاعهما
+   فيكادان يختمان معًا، وكلّ البطاقات تبقى مقروءةً (بلا لصقٍ يُخفي السفليّة) */
+.les{grid-template-columns:minmax(240px,1fr) 1.5fr !important;align-items:start !important}
+</style>
+<style id="ghars-fix5">
+/* «وقفة التدبّر» شريطٌ كامل العرض أسفل العمودين (JS ينقلها خارج عمود المتن):
+   نصُّها عمودٌ مُوسَّطٌ بمقاسٍ مريح، فلا تبدو مترامية */
+.les + .story{margin-top:var(--sp-4,22px) !important}
+.story .h{max-width:860px;margin-inline:auto}
+.story .b{max-width:860px;margin-inline:auto}
+</style>
+<script id="ghars-layout">
+(function(){
+  function run(){
+    try{
+      document.querySelectorAll('.les').forEach(function(les){
+        var story=les.querySelector('.story');
+        if(story){ les.parentNode.insertBefore(story, les.nextSibling); }
+      });
+    }catch(e){}
+  }
+  if(document.readyState!=='loading') run(); else document.addEventListener('DOMContentLoaded',run);
+})();
+</script>
+
+<!--GHARS-SKIN-END-->
 </head>
 <body>
 <div class="wrap">
@@ -809,7 +1177,7 @@ b.k{background:var(--sc-soft)!important;color:var(--sc-deep)!important}
             <div class="obj"><span class="n" style="background:#C79A3B;color:#fff">١</span><span class="t">أن يتعرّف الطفلُ على الحديث الشريف بأنّه كلامُ النبيّ ﷺ الذي نقله أصحابه، ويعظّمَ هديَه.</span></div>
             <div class="obj"><span class="n" style="background:#C79A3B;color:#fff">٢</span><span class="t">أن يحبَّ النبيَّ ﷺ ويقتديَ به، ويوقّرَ الصحابةَ رواةَ حديثه.</span></div>
           </div>
-          <div class="lbl" style="margin-bottom:8px">أهداف التعلّم المحدّدة <small style="color:var(--muted);font-weight:400">(صياغة إجرائية قابلة للملاحظة والقياس)</small></div>
+          <div class="lbl" style="margin-bottom:8px">أهداف التعلّم المحدّدة</div>
           <div class="objgrid" style="grid-template-columns:repeat(3,1fr)">
             <div>
               <div class="lbl">معرفية</div>
