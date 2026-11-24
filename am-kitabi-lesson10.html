@@ -975,6 +975,37 @@ html{scrollbar-width:thin;scrollbar-color:#c3b89d transparent}
   if(document.readyState!=='loading') run(); else document.addEventListener('DOMContentLoaded',run);
 })();
 </script>
+<style id="ghars-balancer-css">
+.ghars-extra{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:22px}
+.ghars-extra > .card{margin:0 !important}
+</style>
+<script id="ghars-balancer">
+(function(){
+  function balance(){
+    try{
+      document.querySelectorAll('.les').forEach(function(les){
+        var side=les.querySelector('.side'), main=les.querySelector('.mainflow');
+        if(!side||!main) return;
+        var holder=null, guard=0;
+        while(side.offsetHeight > main.offsetHeight + 80 && side.children.length > 4 && guard++ < 6){
+          if(!holder){ holder=document.createElement('div'); holder.className='ghars-extra'; les.parentNode.insertBefore(holder, les.nextSibling); }
+          holder.insertBefore(side.lastElementChild, holder.firstChild);
+        }
+      });
+    }catch(e){}
+  }
+  if(document.readyState!=='loading') setTimeout(balance,60); else document.addEventListener('DOMContentLoaded',function(){setTimeout(balance,60);});
+})();
+</script>
+<style id="ghars-fix6">
+/* تحسين المواد الفاتحة: كلّ تعبئةٍ نصُّها أبيض تُبنى على --sc-deep (الدرجة الغامقة) فيُقرأ الأبيض على كلّ الدرجات */
+.panel .obj .n,.panel .obj .n.o,.panel .obj .n.g,.panel .obj .n.p{background:var(--sc-deep) !important}
+.qs-n{background:var(--sc-deep) !important}
+.gq-top{background:var(--sc-deep) !important}
+.panel a[style*="999px"],.panel .printbtn,.panel .copy-btn,.panel .linkbtn,.panel .kitabi-hijri-actions button{background:var(--sc-deep) !important}
+.panel a[style*="999px"][style*="var(--gold)"],.panel a[style*="999px"][style*="#C79A3B"]{background:var(--gold) !important;color:#3a2a06 !important}
+[style*="background:#286A54"],[style*="background:#286a54"],[style*="background:#2D7A4B"],[style*="background:#2d7a4b"]{background:var(--sc-deep) !important}
+</style>
 
 <!--GHARS-SKIN-END-->
 </head>
