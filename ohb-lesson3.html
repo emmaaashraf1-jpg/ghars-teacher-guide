@@ -782,8 +782,9 @@ window.addEventListener('load',function(){
   function contrast(f,b){var lf=rl(f),lb=rl(b);return (Math.max(lf,lb)+.05)/(Math.min(lf,lb)+.05);}
   function guard(){
     try{
-      var all=document.querySelectorAll('.panel *');
+      var all=document.querySelectorAll('.wrap *');
       for(var i=0;i<all.length;i++){var el=all[i];
+        if(el.closest('.cover')||el.closest('.tabs'))continue;
         var hasText=false,cn=el.childNodes;for(var j=0;j<cn.length;j++){if(cn[j].nodeType===3&&cn[j].textContent.trim().length>1){hasText=true;break;}}
         if(!hasText)continue;
         var cs=getComputedStyle(el);
