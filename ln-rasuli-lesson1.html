@@ -996,6 +996,7 @@ html{scrollbar-width:thin;scrollbar-color:#c3b89d transparent}
 (function(){
   function balance(){
     try{
+      if(window.matchMedia('(max-width:760px)').matches) return; /* الجوّال: عمودٌ واحد، لا موازنة */
       document.querySelectorAll('.les').forEach(function(les){
         var side=les.querySelector('.side'), main=les.querySelector('.mainflow');
         if(!side||!main) return;
@@ -1018,6 +1019,40 @@ html{scrollbar-width:thin;scrollbar-color:#c3b89d transparent}
 .panel a[style*="999px"],.panel .printbtn,.panel .copy-btn,.panel .linkbtn,.panel .kitabi-hijri-actions button{background:var(--sc-deep) !important}
 .panel a[style*="999px"][style*="var(--gold)"],.panel a[style*="999px"][style*="#C79A3B"]{background:var(--gold) !important;color:#3a2a06 !important}
 [style*="background:#286A54"],[style*="background:#286a54"],[style*="background:#2D7A4B"],[style*="background:#2d7a4b"]{background:var(--sc-deep) !important}
+</style>
+<style id="ghars-mobile">
+/* ===== نسخة الجوّال ===== ضبطٌ مدروس لئلّا يفيض المحتوى أو يتكدّس */
+/* شبكةٌ ذكيّة: عمودان على اللوحيّ، عمودٌ واحد على الهاتف */
+@media (max-width: 860px){
+  .les{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) !important}
+}
+@media (max-width: 760px){
+  /* حبسُ أيّ زخرفةٍ فائضة (علامات مائيّة .wm) دون كسر الألسنة اللاصقة: clip لا hidden */
+  html,body{overflow-x:clip}
+  /* عمودٌ واحد: سير اللقاء أوّلًا ثمّ حول الدرس تحته بكامل العرض */
+  .les{grid-template-columns:1fr !important;gap:var(--sp-4) !important}
+  .mainflow,.side{min-width:0 !important}
+  .les > .mainflow{order:0 !important}   /* سير اللقاء أعلى */
+  .les > .side{order:1 !important}       /* حول الدرس تحته */
+  .les > .story{order:2 !important}      /* وقفة التدبّر آخرًا إن بقيت داخل الشبكة */
+  .ghars-extra{grid-template-columns:1fr !important}
+  /* لا وسيطٍ يتجاوز عرض الشاشة */
+  .wrap img,.wrap svg,.wrap video,.wrap canvas,.wrap table,.wrap pre,.wrap iframe{max-width:100% !important;height:auto}
+  .bc-embed,.ulum-flow,.flow{overflow:hidden}        /* حبس العلامة المائيّة في حاوِيتها */
+  /* الألسنة: تمريرٌ أفقيّ مريحٌ ناعم (٩ تبويبات) */
+  .tabs{scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs > *{scroll-snap-align:start;flex:0 0 auto}
+  /* إراحة الحشو الجانبيّ للبطاقات على الشاشة الضيّقة */
+  .wrap{padding-inline:14px !important}
+  .flow-card,.card,.story .b,.lhero{padding-inline:clamp(14px,4vw,20px)}
+}
+/* الهواتف الصغيرة: تهدئة العنوان الكبير والغلاف */
+@media (max-width: 480px){
+  .cover{min-height:230px !important}
+  .cover h1,.cover-main h1,.cov-title{font-size:clamp(23px,7vw,28px) !important;line-height:1.28 !important}
+  .lhero .lh-t{font-size:clamp(17px,5vw,20px) !important}
+}
 </style>
 
 <!--GHARS-SKIN-END-->
@@ -1926,5 +1961,18 @@ body{font-size:18px}
   apply();
 })();
 </script>
+<style id="refero-a11y">
+/* تحسينات قرائية (مراجعة refero-design) — سلّم مقروئية بلا مساس بالهويّة */
+/* 1) حجاب نصّي موضعيّ أعلى الغلاف وأسفله فقط؛ يبقى وسط اللوحة المائية صافيًا */
+.cover-photo::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(16,40,28,.46) 0%, rgba(16,40,28,.14) 22%,
+    rgba(16,40,28,0) 42%, rgba(16,40,28,0) 60%,
+    rgba(16,40,28,.40) 84%, rgba(16,40,28,.56) 100%)}
+.cover-main{text-shadow:0 1px 3px rgba(10,28,18,.55)}
+/* 2) تلاشٍ على حافّة فيض شريط التبويبات (يسار في RTL) ليُشعر بإمكان التمرير */
+.tabs{-webkit-mask-image:linear-gradient(to left,#000 calc(100% - 36px),transparent);
+              mask-image:linear-gradient(to left,#000 calc(100% - 36px),transparent)}
+</style>
 </body>
 </html>

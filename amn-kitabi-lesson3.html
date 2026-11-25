@@ -789,13 +789,14 @@ window.addEventListener('load',function(){
 (function(){
   function parse(c){var m=c&&c.match(/[\d.]+/g);if(!m)return null;return m.map(Number);}
   function rl(c){var a=c.slice(0,3).map(function(v){v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)});return .2126*a[0]+.7152*a[1]+.0722*a[2];}
-  function mix(c){ if(c.length<4||c[3]>=1)return c.slice(0,3); var a=c[3],b=[250,247,239];return[0,1,2].map(function(i){return Math.round(c[i]*a+b[i]*(1-a));});}
-  function effBg(el){var e=el;while(e&&e.nodeType===1){var b=parse(getComputedStyle(e).backgroundColor);if(b&&(b.length<4||b[3]>0))return mix(b);e=e.parentElement;}return [250,247,239];}
+  function mix(c){ if(c.length<4||c[3]>=1)return c.slice(0,3); var a=c[3],b=[236,227,206];return[0,1,2].map(function(i){return Math.round(c[i]*a+b[i]*(1-a));});}
+  function effBg(el){var e=el;while(e&&e.nodeType===1){var b=parse(getComputedStyle(e).backgroundColor);if(b&&(b.length<4||b[3]>0))return mix(b);e=e.parentElement;}return [236,227,206];}
   function contrast(f,b){var lf=rl(f),lb=rl(b);return (Math.max(lf,lb)+.05)/(Math.min(lf,lb)+.05);}
   function guard(){
     try{
-      var all=document.querySelectorAll('.panel *');
+      var all=document.querySelectorAll('.wrap *');
       for(var i=0;i<all.length;i++){var el=all[i];
+        if(el.closest('.cover')||el.closest('.tabs'))continue;
         var hasText=false,cn=el.childNodes;for(var j=0;j<cn.length;j++){if(cn[j].nodeType===3&&cn[j].textContent.trim().length>1){hasText=true;break;}}
         if(!hasText)continue;
         var cs=getComputedStyle(el);
@@ -975,6 +976,72 @@ html{scrollbar-width:thin;scrollbar-color:#c3b89d transparent}
   if(document.readyState!=='loading') run(); else document.addEventListener('DOMContentLoaded',run);
 })();
 </script>
+<style id="ghars-balancer-css">
+.ghars-extra{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:22px}
+.ghars-extra > .card{margin:0 !important}
+</style>
+<script id="ghars-balancer">
+(function(){
+  function balance(){
+    try{
+      if(window.matchMedia('(max-width:760px)').matches) return; /* الجوّال: عمودٌ واحد، لا موازنة */
+      document.querySelectorAll('.les').forEach(function(les){
+        var side=les.querySelector('.side'), main=les.querySelector('.mainflow');
+        if(!side||!main) return;
+        var holder=null, guard=0;
+        while(side.offsetHeight > main.offsetHeight + 80 && side.children.length > 4 && guard++ < 6){
+          if(!holder){ holder=document.createElement('div'); holder.className='ghars-extra'; les.parentNode.insertBefore(holder, les.nextSibling); }
+          holder.insertBefore(side.lastElementChild, holder.firstChild);
+        }
+      });
+    }catch(e){}
+  }
+  if(document.readyState!=='loading') setTimeout(balance,60); else document.addEventListener('DOMContentLoaded',function(){setTimeout(balance,60);});
+})();
+</script>
+<style id="ghars-fix6">
+/* تحسين المواد الفاتحة: كلّ تعبئةٍ نصُّها أبيض تُبنى على --sc-deep (الدرجة الغامقة) فيُقرأ الأبيض على كلّ الدرجات */
+.panel .obj .n,.panel .obj .n.o,.panel .obj .n.g,.panel .obj .n.p{background:var(--sc-deep) !important}
+.qs-n{background:var(--sc-deep) !important}
+.gq-top{background:var(--sc-deep) !important}
+.panel a[style*="999px"],.panel .printbtn,.panel .copy-btn,.panel .linkbtn,.panel .kitabi-hijri-actions button{background:var(--sc-deep) !important}
+.panel a[style*="999px"][style*="var(--gold)"],.panel a[style*="999px"][style*="#C79A3B"]{background:var(--gold) !important;color:#3a2a06 !important}
+[style*="background:#286A54"],[style*="background:#286a54"],[style*="background:#2D7A4B"],[style*="background:#2d7a4b"]{background:var(--sc-deep) !important}
+</style>
+<style id="ghars-mobile">
+/* ===== نسخة الجوّال ===== ضبطٌ مدروس لئلّا يفيض المحتوى أو يتكدّس */
+/* شبكةٌ ذكيّة: عمودان على اللوحيّ، عمودٌ واحد على الهاتف */
+@media (max-width: 860px){
+  .les{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) !important}
+}
+@media (max-width: 760px){
+  /* حبسُ أيّ زخرفةٍ فائضة (علامات مائيّة .wm) دون كسر الألسنة اللاصقة: clip لا hidden */
+  html,body{overflow-x:clip}
+  /* عمودٌ واحد: سير اللقاء أوّلًا ثمّ حول الدرس تحته بكامل العرض */
+  .les{grid-template-columns:1fr !important;gap:var(--sp-4) !important}
+  .mainflow,.side{min-width:0 !important}
+  .les > .mainflow{order:0 !important}   /* سير اللقاء أعلى */
+  .les > .side{order:1 !important}       /* حول الدرس تحته */
+  .les > .story{order:2 !important}      /* وقفة التدبّر آخرًا إن بقيت داخل الشبكة */
+  .ghars-extra{grid-template-columns:1fr !important}
+  /* لا وسيطٍ يتجاوز عرض الشاشة */
+  .wrap img,.wrap svg,.wrap video,.wrap canvas,.wrap table,.wrap pre,.wrap iframe{max-width:100% !important;height:auto}
+  .bc-embed,.ulum-flow,.flow{overflow:hidden}        /* حبس العلامة المائيّة في حاوِيتها */
+  /* الألسنة: تمريرٌ أفقيّ مريحٌ ناعم (٩ تبويبات) */
+  .tabs{scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs > *{scroll-snap-align:start;flex:0 0 auto}
+  /* إراحة الحشو الجانبيّ للبطاقات على الشاشة الضيّقة */
+  .wrap{padding-inline:14px !important}
+  .flow-card,.card,.story .b,.lhero{padding-inline:clamp(14px,4vw,20px)}
+}
+/* الهواتف الصغيرة: تهدئة العنوان الكبير والغلاف */
+@media (max-width: 480px){
+  .cover{min-height:230px !important}
+  .cover h1,.cover-main h1,.cov-title{font-size:clamp(23px,7vw,28px) !important;line-height:1.28 !important}
+  .lhero .lh-t{font-size:clamp(17px,5vw,20px) !important}
+}
+</style>
 
 <!--GHARS-SKIN-END-->
 </head>
@@ -1966,5 +2033,18 @@ body{font-size:18px}
   apply();
 })();
 </script>
+<style id="refero-a11y">
+/* تحسينات قرائية (مراجعة refero-design) — سلّم مقروئية بلا مساس بالهويّة */
+/* 1) حجاب نصّي موضعيّ أعلى الغلاف وأسفله فقط؛ يبقى وسط اللوحة المائية صافيًا */
+.cover-photo::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(16,40,28,.46) 0%, rgba(16,40,28,.14) 22%,
+    rgba(16,40,28,0) 42%, rgba(16,40,28,0) 60%,
+    rgba(16,40,28,.40) 84%, rgba(16,40,28,.56) 100%)}
+.cover-main{text-shadow:0 1px 3px rgba(10,28,18,.55)}
+/* 2) تلاشٍ على حافّة فيض شريط التبويبات (يسار في RTL) ليُشعر بإمكان التمرير */
+.tabs{-webkit-mask-image:linear-gradient(to left,#000 calc(100% - 36px),transparent);
+              mask-image:linear-gradient(to left,#000 calc(100% - 36px),transparent)}
+</style>
 </body>
 </html>

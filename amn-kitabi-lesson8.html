@@ -1018,9 +1018,12 @@ html{scrollbar-width:thin;scrollbar-color:#c3b89d transparent}
 @media (max-width: 760px){
   /* حبسُ أيّ زخرفةٍ فائضة (علامات مائيّة .wm) دون كسر الألسنة اللاصقة: clip لا hidden */
   html,body{overflow-x:clip}
-  /* عمودٌ واحد: سير اللقاء ثمّ حول الدرس تحته بكامل العرض */
+  /* عمودٌ واحد: سير اللقاء أوّلًا ثمّ حول الدرس تحته بكامل العرض */
   .les{grid-template-columns:1fr !important;gap:var(--sp-4) !important}
   .mainflow,.side{min-width:0 !important}
+  .les > .mainflow{order:0 !important}   /* سير اللقاء أعلى */
+  .les > .side{order:1 !important}       /* حول الدرس تحته */
+  .les > .story{order:2 !important}      /* وقفة التدبّر آخرًا إن بقيت داخل الشبكة */
   .ghars-extra{grid-template-columns:1fr !important}
   /* لا وسيطٍ يتجاوز عرض الشاشة */
   .wrap img,.wrap svg,.wrap video,.wrap canvas,.wrap table,.wrap pre,.wrap iframe{max-width:100% !important;height:auto}
@@ -2038,5 +2041,18 @@ body{font-size:18px}
   apply();
 })();
 </script>
+<style id="refero-a11y">
+/* تحسينات قرائية (مراجعة refero-design) — سلّم مقروئية بلا مساس بالهويّة */
+/* 1) حجاب نصّي موضعيّ أعلى الغلاف وأسفله فقط؛ يبقى وسط اللوحة المائية صافيًا */
+.cover-photo::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(16,40,28,.46) 0%, rgba(16,40,28,.14) 22%,
+    rgba(16,40,28,0) 42%, rgba(16,40,28,0) 60%,
+    rgba(16,40,28,.40) 84%, rgba(16,40,28,.56) 100%)}
+.cover-main{text-shadow:0 1px 3px rgba(10,28,18,.55)}
+/* 2) تلاشٍ على حافّة فيض شريط التبويبات (يسار في RTL) ليُشعر بإمكان التمرير */
+.tabs{-webkit-mask-image:linear-gradient(to left,#000 calc(100% - 36px),transparent);
+              mask-image:linear-gradient(to left,#000 calc(100% - 36px),transparent)}
+</style>
 </body>
 </html>
