@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ورقة طباعة — ركن أقرأ لأتعلّم · فرز الأعمال الصالحة · أنا مؤمن · علّمني ربي</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;--sc:#10796B;--ink:#1E2E29;--muted:#6C776F;--line:#d8cdb5;--soft:#f3f7f1}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#e7ece4;padding:20px;line-height:1.7}
+.pg{max-width:800px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 30px;box-shadow:0 8px 22px rgba(20,50,35,.10)}
+.ph{display:flex;align-items:center;gap:12px;border-bottom:2px solid var(--sc);padding-bottom:12px;margin-bottom:6px}
+.ph img{width:46px;height:46px;object-fit:contain}
+.ph .pt{flex:1}
+.ph .pt .eb{color:var(--muted);font-size:12.5px}
+.ph .pt h1{font-family:var(--fd);color:var(--sc);font-size:22px;line-height:1.3}
+.ph .nm{font-size:12px;color:var(--muted);text-align:left}
+.lead{font-family:var(--fd);font-size:15px;color:#34433d;margin:12px 0 16px;background:var(--soft);border-inline-start:4px solid var(--sc);border-radius:9px;padding:9px 13px}
+.ws{margin-top:6px}
+.qrow{margin-bottom:14px} .qrow .q{font-family:var(--fd);font-size:16px;color:#1E2E29;margin-bottom:6px}
+.aline{border-bottom:2px dotted #b9b09a;height:26px}
+.chk{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:16px;margin-bottom:11px}
+.chk .box{width:22px;height:22px;border:2px solid var(--sc);border-radius:5px;flex:0 0 auto}
+.drawbox{margin-top:14px;border:2px dashed #b9b09a;border-radius:12px;height:150px;display:grid;place-items:center;color:var(--muted);font-family:var(--fd)}
+.orow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:8px}
+.obox{flex:1;min-width:90px;height:90px;border:2px solid var(--sc);border-radius:12px;position:relative;background:#fcfdfb}
+.obox .onum{position:absolute;top:4px;inset-inline-start:8px;font-family:var(--fd);color:var(--sc);font-size:18px;font-weight:700}
+.cut-label{text-align:center;color:var(--muted);font-size:12.5px;margin:12px 0 8px}
+.chiprow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.chip{border:1.5px dashed #9bb0a0;border-radius:10px;padding:10px 16px;font-family:var(--fd);font-size:16px;color:#14402E;background:#fff}
+.mcols{display:flex;gap:10px;align-items:stretch} .mcol{flex:1;display:flex;flex-direction:column;gap:12px}
+.mgap{width:40px} .mhd{text-align:center;font-family:var(--fd);color:var(--sc);font-weight:700;font-size:14px;margin-bottom:2px}
+.mbox{border:2px solid var(--sc);border-radius:12px;padding:16px 10px;text-align:center;font-family:var(--fd);font-size:17px;color:#14402E;background:#fcfdfb}
+.basket{border:2.5px solid var(--sc);border-radius:16px;overflow:hidden}
+.bk-lbl{background:var(--sc);color:#fff;text-align:center;font-family:var(--fd);font-weight:700;font-size:18px;padding:9px}
+.bk-area{height:180px;background:#fcfdfb}
+.artframe{position:relative;border:3px double var(--sc);border-radius:18px;min-height:360px;display:grid;place-items:center;background:#fffdf6}
+.art-big{font-family:var(--fd);font-size:34px;color:var(--sc);text-align:center;padding:0 20px}
+.art-note{position:absolute;bottom:14px;color:var(--muted);font-family:var(--fd)}
+.art-corner{position:absolute;width:30px;height:30px;border:3px solid var(--sc)}
+.art-corner.tl{top:12px;inset-inline-start:12px;border-right:0;border-bottom:0}
+.art-corner.tr{top:12px;inset-inline-end:12px;border-left:0;border-bottom:0}
+.art-corner.bl{bottom:12px;inset-inline-start:12px;border-right:0;border-top:0}
+.art-corner.br{bottom:12px;inset-inline-end:12px;border-left:0;border-top:0}
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.acell{border:2px solid var(--sc);border-radius:12px;padding:10px;text-align:center}
+.acn{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--sc);color:#fff;font-family:var(--fd);font-size:15px}
+.act{display:block;font-family:var(--fd);font-size:16px;color:#14402E;margin:5px 0 8px}
+.acarea{height:70px;border:1.5px dashed #b9b09a;border-radius:9px}
+.printbtn{display:block;margin:20px auto 0;background:var(--sc);color:#fff;border:0;border-radius:999px;padding:10px 26px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
+@media print{body{background:#fff;padding:0} .pg{box-shadow:none;border:0;max-width:100%} .printbtn{display:none} @page{size:A4 portrait;margin:12mm}}
+</style>
+</head>
+<body>
+<div class="pg">
+  <div class="ph">
+    <img src="brand/logo-ghars.webp" alt="نادي غرس القيم"/>
+    <div class="pt"><div class="eb">أنا مؤمن · علّمني ربي · الإيمان باليوم الآخر</div><h1>ركن أقرأ لأتعلّم · فرز الأعمال الصالحة</h1></div>
+    <div class="nm">الاسم: ______<br/>التاريخ: ___ / ___</div>
+  </div>
+  <div class="lead">قُصَّ بطاقاتِ الأعمال، وألصقها في سلّة «يُحبّها الله» لتفوزَ بالجنّة.</div>
+  <div class="ws"><div class="basket"><div class="bk-lbl">يُحبّها الله</div><div class="bk-area"></div></div><div class="cut-label">✂ قُصَّ البطاقاتِ وألصقها داخل السلّة</div><div class="chiprow"><div class="chip">إماطة الأذى</div><div class="chip">صدقة</div><div class="chip">مساعدة</div><div class="chip">كلمة طيّبة</div><div class="chip">ذِكر الله</div></div></div>
+  <button class="printbtn" onclick="window.print()">🖨️ طباعة الورقة</button>
+</div>
+</body>
+</html>
