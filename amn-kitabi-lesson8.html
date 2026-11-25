@@ -985,6 +985,7 @@ html{scrollbar-width:thin;scrollbar-color:#c3b89d transparent}
 (function(){
   function balance(){
     try{
+      if(window.matchMedia('(max-width:760px)').matches) return; /* الجوّال: عمودٌ واحد، لا موازنة */
       document.querySelectorAll('.les').forEach(function(les){
         var side=les.querySelector('.side'), main=les.querySelector('.mainflow');
         if(!side||!main) return;
@@ -1007,6 +1008,37 @@ html{scrollbar-width:thin;scrollbar-color:#c3b89d transparent}
 .panel a[style*="999px"],.panel .printbtn,.panel .copy-btn,.panel .linkbtn,.panel .kitabi-hijri-actions button{background:var(--sc-deep) !important}
 .panel a[style*="999px"][style*="var(--gold)"],.panel a[style*="999px"][style*="#C79A3B"]{background:var(--gold) !important;color:#3a2a06 !important}
 [style*="background:#286A54"],[style*="background:#286a54"],[style*="background:#2D7A4B"],[style*="background:#2d7a4b"]{background:var(--sc-deep) !important}
+</style>
+<style id="ghars-mobile">
+/* ===== نسخة الجوّال ===== ضبطٌ مدروس لئلّا يفيض المحتوى أو يتكدّس */
+/* شبكةٌ ذكيّة: عمودان على اللوحيّ، عمودٌ واحد على الهاتف */
+@media (max-width: 860px){
+  .les{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) !important}
+}
+@media (max-width: 760px){
+  /* حبسُ أيّ زخرفةٍ فائضة (علامات مائيّة .wm) دون كسر الألسنة اللاصقة: clip لا hidden */
+  html,body{overflow-x:clip}
+  /* عمودٌ واحد: سير اللقاء ثمّ حول الدرس تحته بكامل العرض */
+  .les{grid-template-columns:1fr !important;gap:var(--sp-4) !important}
+  .mainflow,.side{min-width:0 !important}
+  .ghars-extra{grid-template-columns:1fr !important}
+  /* لا وسيطٍ يتجاوز عرض الشاشة */
+  .wrap img,.wrap svg,.wrap video,.wrap canvas,.wrap table,.wrap pre,.wrap iframe{max-width:100% !important;height:auto}
+  .bc-embed,.ulum-flow,.flow{overflow:hidden}        /* حبس العلامة المائيّة في حاوِيتها */
+  /* الألسنة: تمريرٌ أفقيّ مريحٌ ناعم (٩ تبويبات) */
+  .tabs{scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs > *{scroll-snap-align:start;flex:0 0 auto}
+  /* إراحة الحشو الجانبيّ للبطاقات على الشاشة الضيّقة */
+  .wrap{padding-inline:14px !important}
+  .flow-card,.card,.story .b,.lhero{padding-inline:clamp(14px,4vw,20px)}
+}
+/* الهواتف الصغيرة: تهدئة العنوان الكبير والغلاف */
+@media (max-width: 480px){
+  .cover{min-height:230px !important}
+  .cover h1,.cover-main h1,.cov-title{font-size:clamp(23px,7vw,28px) !important;line-height:1.28 !important}
+  .lhero .lh-t{font-size:clamp(17px,5vw,20px) !important}
+}
 </style>
 
 <!--GHARS-SKIN-END-->
@@ -1335,7 +1367,7 @@ html{scrollbar-width:thin;scrollbar-color:#c3b89d transparent}
           <!-- لوحة السورة -->
     <div style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow-sm);margin:0 0 16px">
       <div style="background:#fff;color:#1E5631;padding:11px 16px;font-family:var(--fd);font-weight:700;font-size:15px;border-bottom:2px solid #E7C98B">لوحة السورة — سورة النازعات · السورة كاملة · الآيات ١–٤٦</div>
-      <a href="units-art/naziat-boards/naziat-1-46.png" target="_blank" rel="noopener" style="display:block" title="اضغطي لعرض اللوحة بالحجم الكامل للطباعة"><img src="units-art/naziat-boards/naziat-1-46.png" alt="لوحة سورة النازعات — السورة كاملة · الآيات ١–٤٦" style="display:block;width:100%;height:auto"/></a>
+      <a href="units-art/naziat-boards/naziat-34-41.png" target="_blank" rel="noopener" style="display:block" title="اضغطي لعرض اللوحة بالحجم الكامل للطباعة"><img src="units-art/naziat-boards/naziat-34-41.png" alt="لوحة سورة النازعات — السورة كاملة · الآيات ١–٤٦" style="display:block;width:100%;height:auto"/></a>
       <div style="padding:9px 16px;font-size:13px;color:var(--muted);background:#fff">تُطبَع مكبّرةً ومغلّفةً وتُعرَض للأطفال كلوحةٍ حقيقيّة أثناء التلاوة والتدبّر · اضغطي الصورة لفتحها بالحجم الكامل للطباعة.</div>
     </div>
           <!-- تلاوة تحت اللوحة -->
@@ -1356,7 +1388,7 @@ html{scrollbar-width:thin;scrollbar-color:#c3b89d transparent}
           <div class="step"><b class="k">المعنى المركزي:</b> في الآيات ٣٤–٤١ يُخبرنا اللهُ أنّ القيامةَ الكبرى آتية، يتذكّر فيها الإنسانُ عمله، ثمّ يصير الناسُ فريقين: مَن طغى وآثر الدنيا فمأواه النار، ومَن خاف ربَّه ونهى نفسَه عن الهوى فمأواه الجنّة؛ فنختار طريقَ أهل الجنّة بطاعة الله.</div>
           <div class="bc-embed ulum-flow" id="ulumFlowCard"><svg class="wm" preserveAspectRatio="xMidYMid slice" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="bcStars" width="58" height="58" patternUnits="userSpaceOnUse"><g fill="#2D7A4B" opacity="0.06"><rect x="16" y="16" width="24" height="24" rx="2"/><rect x="16" y="16" width="24" height="24" rx="2" transform="rotate(45 28 28)"/></g></pattern></defs><rect width="100%" height="100%" fill="url(#bcStars)"/></svg><div class="bc-top"><div class="bc-brand"><img src="brand/logo-ghars.webp" alt="نادي غرس القيم"/><b>كتابي المنير</b></div><div class="bc-badge">بطاقةُ علوم السورة</div></div><div class="bc-grid"><div class="bc-side"><div class="bc-arch"><div class="bc-fact"><div class="l">عددُ الآيات</div><div class="v">٤٦ <small>آية</small></div></div><div class="bc-fact"><div class="l">التنزيل</div><div class="v">مكّيّة</div></div><div class="bc-fact"><div class="l">الجزء</div><div class="v">عَمَّ <small>(الثلاثون)</small></div></div></div></div><div class="bc-main"><div class="bc-kicker">عُلومُ السُّورة</div><div class="bc-title">سُورةُ النَّازعات</div><div class="bc-quote">”</div><div class="bc-verses"><div class="bc-vrow"><div class="t">أوّلُ آية</div><div class="a"><span class="qv">﴿وَالنَّازِعَاتِ غَرْقًا﴾</span></div></div><div class="bc-vrow"><div class="t">آخِرُ آية</div><div class="a"><span class="qv">﴿...إِلَّا عَشِيَّةً أَوْ ضُحَاهَا﴾</span></div></div></div><div class="bc-axis">محورُها: <b>القسمُ بالملائكة وأعمالها · إثباتُ البعث واليوم الآخر · قصّةُ موسى مع فرعون · جزاءُ الطاغي والخاشي</b></div></div></div></div>
           <div class="step"><b class="k"> تصحيح فهم الطفل:</b> الجنّةُ والنارُ غيبٌ لا نراهما الآن، نؤمن بهما كما أخبر اللهُ؛ ونغرس في الطفل <b>الموازنةَ والترغيب</b> لا التخويفَ المُرعِب: اللهُ رحيمٌ كريم، أعدّ الجنّةَ لمن أطاعه، والنارَ لمن طغى وأصرّ؛ ونحن نحبّ اللهَ ونطيعه لنكون من أهل الجنّة.</div>
-          <div class="step"><b class="k">المرحلة الثانية — التثبيت:</b> تستمع المجموعةُ إلى الآيات ٣٤–٤١ من قارئٍ متقن، ويردّدون خلفه، وتُشير المعلمةُ إلى كلّ آيةٍ على اللوحة مع تذكّر معناها.<div class="step-media" style="max-width:680px"><img src="units-art/naziat-boards/naziat-1-46.png" alt="لوحة سورة النازعات — آيات ١ إلى ٤٦"/><div class="cap"> لوحة السورة التي تعرضها المعلمة — يُشار على أوّل آية وآخر آية</div></div>
+          <div class="step"><b class="k">المرحلة الثانية — التثبيت:</b> تستمع المجموعةُ إلى الآيات ٣٤–٤١ من قارئٍ متقن، ويردّدون خلفه، وتُشير المعلمةُ إلى كلّ آيةٍ على اللوحة مع تذكّر معناها.<div class="step-media" style="max-width:680px"><img src="units-art/naziat-boards/naziat-34-41.png" alt="لوحة سورة النازعات — آيات ١ إلى ٤٦"/><div class="cap"> لوحة السورة التي تعرضها المعلمة — يُشار على أوّل آية وآخر آية</div></div>
             <div class="gq-surah-audio" style="margin:10px auto 0;max-width:680px;background:#fff;border:1px solid #EAE2D3;border-radius:14px;padding:12px 14px;text-align:right;box-shadow:var(--shadow-sm)"><div style="display:flex;align-items:center;gap:9px;margin-bottom:8px;color:#1b5e34;font-size:13px;font-weight:900;line-height:1.7"><span style="width:34px;height:34px;border-radius:14px;background:#1E5631;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:0 0 auto">▶</span><span>تلاوة السورة — المصحف المعلّم (يردّد خلفه الأطفال · السورة كاملة)</span></div><audio controls preload="none" style="width:100%;height:42px;display:block"><source src="assets/naziat_minshawi_muallim.mp3" type="audio/mpeg"/>المتصفح لا يدعم تشغيل الصوت.</audio></div></div>
           <div class="step"><b class="k">ربطٌ وتثبيت:</b> تسأل المعلمةُ: إلى كم فريقٍ يصير الناسُ يومَ القيامة؟ فيذكر الأطفالُ (فريقان · أهلُ الجنّة وأهلُ النار)، <b>وتربط ذلك بركن الإيمان باليوم الآخر</b>: نؤمن بالجزاء، ونختار طاعةَ الله لنكون من أهل الجنّة.</div>
           <div class="step"><b class="k">تكرار السماع:</b> تُكرّر المعلمةُ سماعَ الآيات ٣٤–٤١ قبل الانتقال إلى التغذية الراجعة، ليألف الأطفالُ نغمَها ومعناها.</div>
@@ -1422,7 +1454,7 @@ html{scrollbar-width:thin;scrollbar-color:#c3b89d transparent}
 </style>
     <div class="gallery">
             <div class="gitem gitem-ulum" data-enlarge="ulumFlowCard" title="اضغط لتكبير بطاقة علوم السورة"><div class="imgwrap" style="height:180px;padding:0"><div class="ulum-mini"><span class="um-badge">علوم السورة</span><span class="um-name">سُورةُ النَّازعات</span><span class="um-facts">٤٦ آية · مكّيّة · جزء عمّ</span></div></div><div class="cap">بطاقة علوم السورة<small>تُراجَع سريعًا قبل المعاني</small></div></div>
-      <div class="gitem"><div class="imgwrap" style="height:230px"><img src="units-art/naziat-boards/naziat-1-46.png" alt="لوحة الآيات المقرَّرة" loading="lazy"/></div><div class="cap">لوحة الآيات المقرَّرة<small>كامل السورة · تُعرَض كبيرةً أمام الأطفال</small></div></div>
+      <div class="gitem"><div class="imgwrap" style="height:230px"><img src="units-art/naziat-boards/naziat-34-41.png" alt="لوحة الآيات المقرَّرة" loading="lazy"/></div><div class="cap">لوحة الآيات المقرَّرة<small>كامل السورة · تُعرَض كبيرةً أمام الأطفال</small></div></div>
       <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;font-size:46px;background:#fff"><svg viewBox="0 0 120 120" width="84" height="84" role="img" aria-label="تشغيل الصوت للاستماع" style="filter:drop-shadow(0 4px 10px rgba(20,50,35,.22))"><defs><linearGradient id="ghAudioGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--t1)"/><stop offset="1" stop-color="var(--elm)"/></linearGradient></defs><circle cx="60" cy="60" r="52" fill="url(#ghAudioGrad)"/><path d="M40 51h10l15-12v42L50 69H40z" fill="#fff"/><path d="M74 47a18 18 0 0 1 0 26" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M81 40a28 28 0 0 1 0 40" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".65"/></svg></div><div class="cap">تسجيل تلاوة السورة<small>من قارئ متقن للاستماع</small></div></div>
     </div>
     <a href="surah-ulum-naziat-cards.html" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;justify-content:center;max-width:1000px;margin:10px auto 0;padding:11px 16px;background:var(--t1);color:#fff;border-radius:14px;text-decoration:none;font-weight:700;font-size:13.5px"><i class="gi" data-i="طباعة / PDF" data-size="20"></i> بطاقاتُ علوم السورة والمطابقة جاهزةً للطباعة — اطبعيها وقُصّيها للنشاط ↗</a>
@@ -1897,7 +1929,7 @@ html{scrollbar-width:thin;scrollbar-color:#c3b89d transparent}
         <div class="cfield"><b>مناسب للفئة العمرية</b><p>إشارةٌ ومطابقةٌ قصيرة، مع طفلٍ أو مجموعةٍ صغيرة في كل دورة.</p></div>
         <div class="cfield"><b>المخرج</b><p>إشارةٌ صحيحة لأوّل آيةٍ وآخرها + وضعُ بطاقة الرقم الصحيحة.</p></div>
         <div class="cfield"><b>نموذج تطبيقي للركن</b>
-          <div class="gallery" style="margin-top:6px"><div class="gitem"><div class="imgwrap" style="height:200px"><img src="units-art/naziat-boards/naziat-1-46.png" alt="لوحة سورة النازعات للإشارة إلى أوّل آية وآخر آية" loading="lazy"/></div><div class="cap">لوحة السورة<small>يشير الطفل إلى أوّل آية وآخرها</small></div></div></div>
+          <div class="gallery" style="margin-top:6px"><div class="gitem"><div class="imgwrap" style="height:200px"><img src="units-art/naziat-boards/naziat-34-41.png" alt="لوحة سورة النازعات للإشارة إلى أوّل آية وآخر آية" loading="lazy"/></div><div class="cap">لوحة السورة<small>يشير الطفل إلى أوّل آية وآخرها</small></div></div></div>
         </div>
         <div class="faith">الجملة الختامية: الحمد لله الذي علّمني علوم كتابه وعظّم قلبي بكلامه.</div>
       </div>
