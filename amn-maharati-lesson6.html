@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>الأشكال ثلاثية الأبعاد · مهاراتي · وحدة أنا مؤمن</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{
+  --fd:'AlAwwal','Noto Naskh Arabic',serif;   /* خط العناوين */
+  --fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif; /* خط المتن */
+  --t1:#1F4A39; --t2:#1E5631; --grn:#1E5631;
+  --gold:#C79A3B; --gold2:#C8A200; --cream:#F4EDDE;
+  --ink:#1E2E29; --muted:#565f58;
+  --elm:#1E5631; --elm-soft:#E4F1F0;
+  --line:transparent; --card:radial-gradient(85% 120% at 88% 6%, rgba(44,106,77,.10), transparent 62%), radial-gradient(95% 110% at 6% 96%, rgba(199,154,59,.09), transparent 58%), #FFFDF7;
+  --shadow:0 8px 26px rgba(20,50,35,.08);
+  --shadow-sm:0 3px 12px rgba(20,50,35,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:var(--fb);
+  color:var(--ink);line-height:1.95;font-size:16.5px;
+  background:
+    radial-gradient(1200px 520px at 82% -12%,#eef6f4 0,transparent 60%),
+    linear-gradient(#FBF9F2,#F4EDDE);
+}
+.wrap{max-width:1020px;margin:0 auto;padding:20px 16px 60px}
+b,strong{font-weight:700}
+/* العناوين فقط بخط AlAwwal */
+.cover h1,.c-badge,.c-unit,.sec-head h2,.flow-card h3,.lbl,.taq h3,.ci .term,
+.adab .h,.par .h,.corner .h h4,.story .h,.refblock .h,.dua .x,.dua .l,
+table.voc th,.actbar,.msg .l,.feedback h3,.chero p+.caution{font-family:var(--fd)}
+
+/* ===== الغلاف ===== */
+.cover{position:relative;overflow:hidden;border-radius:14px;color:#fff;box-shadow:var(--shadow);min-height:200px}
+.cover-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.cover::before{content:"";position:absolute;inset:0;z-index:1;opacity:.78;
+  background:linear-gradient(135deg,rgba(31,74,57,.91),rgba(46,106,77,.78) 52%,rgba(46,106,77,.87))}
+.cover::after{content:"";position:absolute;inset:0;z-index:1;opacity:.07;pointer-events:none;
+  background:radial-gradient(circle at 88% 18%,#fff 0 2px,transparent 3px) 0 0/34px 34px}
+.cover-main{position:relative;z-index:2;padding:28px 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cover-l{flex:1 1 60%;min-width:240px}
+.cover-r{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.c-badge{display:inline-block;background:var(--gold);color:#3a2a06;border-radius:14px;transform:rotate(-.6deg);padding:6px 15px;font-weight:700;font-size:15px;margin-bottom:12px}
+.cover h1{font-size:33px;line-height:1.42;font-weight:700;margin-bottom:10px;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+.c-meta{font-size:15px;color:#fbe6e6;line-height:1.9}
+.c-unit{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:14px;
+  padding:12px 16px;font-weight:700;font-size:16px;line-height:1.6}
+.c-dur{color:#eec4c4;font-size:14.5px}
+
+/* ===== شريط التبويبات ===== */
+.tabs{position:sticky;top:0;z-index:40;display:flex;flex-wrap:wrap;gap:8px;
+  margin:16px 0 24px;padding:10px;background:rgba(255,251,242,.94);backdrop-filter:blur(6px);
+  border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 14px rgba(20,50,35,.05)}
+.tab{background:#fff;border:1px solid var(--line);color:var(--t2);border-radius:14px;
+  padding:8px 15px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s}
+.tab:hover{background:#fff;border-color:var(--elm);color:var(--elm)}
+.tab.active{background:var(--elm);border-color:var(--elm);color:#fff;box-shadow:0 4px 12px rgba(46,106,77,.28)}
+.tab.gold{background:var(--gold);border-color:var(--gold);color:#3a2a06}
+.tab.gold.active{background:var(--gold2);border-color:var(--gold2);color:#241a00}
+
+/* ===== نظام اللوحات ===== */
+.panel{display:none;animation:fade .25s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ===== مكوّنات ===== */
+.sec-head{display:flex;align-items:center;gap:12px;margin:26px 0 15px}
+.sec-head .num{flex:none;width:38px;height:38px;border-radius:14px;display:grid;place-items:center;
+  background:var(--elm);color:#fff;font-size:18px;box-shadow:0 4px 12px rgba(46,106,77,.28)}
+.sec-head .num.grn{background:var(--grn)}.sec-head .num.gold{background:var(--gold);color:#3a2a06}
+.sec-head h2{font-size:22px;color:var(--t1);font-weight:700}
+.sec-head .rule{flex:1;height:0;border-top:2px dashed rgba(176,132,46,.6)}
+.sec-head .stage{flex:none;font-family:var(--fd);font-weight:700;font-size:13.5px;color:#08636b;
+  background:#fff;border:1px solid #bfe3e6;border-radius:999px;padding:3px 12px}
+.sec-head .stage.s2{color:#8a6410;background:#fff;border-color:#EAE2D3}
+.sec-head .stage.s3{color:var(--grn);background:#fff;border-color:#bfe0cd}
+.first{margin-top:6px}
+
+/* ترويسة الدرس — بوصلة اللقاء (سؤال التركيز + جوهر اللقاء) · بنية مستفادة من أدلة هاركورت */
+.lhero{display:grid;grid-template-columns:1fr 1.35fr;gap:14px;margin:8px 0 20px}
+@media(max-width:760px){.lhero{grid-template-columns:1fr}}
+.lhero .lh{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 18px;box-shadow:var(--shadow-sm)}
+.lhero .lh.focus{}
+.lhero .lh.key{background:#fff}
+.lhero .lh-lbl{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-weight:700;font-size:15px;margin-bottom:8px}
+.lhero .focus .lh-lbl{color:var(--elm)}
+.lhero .key .lh-lbl{color:#8a6410}
+.lhero .lh-q{font-size:18px;line-height:1.85;color:var(--t1);font-weight:700;font-family:var(--fd)}
+.lhero .lh-t{font-size:15.5px;line-height:1.95}
+.lhero .lh-foot{margin-top:9px;font-size:13.5px;line-height:1.7;color:var(--muted)}
+.lhero .lh-foot b{color:var(--t2)}
+
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow-sm)}
+.grid{display:grid;gap:15px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){.g2,.g3{grid-template-columns:1fr}.cover h1{font-size:27px}}
+.lbl{color:var(--t1);font-weight:700;font-size:16px;border-bottom:2px solid var(--gold);display:inline-block;padding-bottom:3px;margin-bottom:12px}
+
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border-radius:999px;padding:6px 13px;font-size:15px;border:1px solid var(--line);background:#fff}
+.chip.v{background:#fff;border-color:#EAE2D3;color:#8a6410}
+.chip.c{background:#fff;border-color:#EAE2D3;color:#4a0d0d}
+
+/* مسار البدء */
+.flow-card{border-radius:14px;padding:15px 18px;margin-bottom:12px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.flow-card.sig{}
+.flow-card.law{}
+.flow-card.rev{}
+.flow-card.belief{}
+.flow-card.belief h3{color:var(--t1);font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.belief-text{background:#fff;border:1px solid #EAE2D3;border-radius:14px;padding:13px 16px;color:#4a0d0d;font-size:16px;line-height:2;font-weight:600}
+.flow-card h3{font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.flow-card.sig h3{color:var(--elm)}.flow-card.law h3{color:#8a6410}.flow-card.rev h3{color:var(--grn)}
+.greet{background:#fff;border-radius:10px;padding:10px 14px;color:#4a0d0d;font-weight:700;margin-bottom:10px}
+.linkbtn{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(180deg,#FFFDF7,#F6EFDD);color:#1F4A39;border:2px solid #B0842E;border-radius:999px;padding:11px 22px;font-weight:800;font-size:15px;line-height:1.5;text-decoration:none;margin:10px 0;box-shadow:0 2px 7px rgba(20,50,35,.05);transition:transform .18s ease,box-shadow .18s ease}.linkbtn:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(20,50,35,.07)}
+.law-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+@media(max-width:600px){.law-grid{grid-template-columns:1fr}}
+.law-grid > div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 13px;font-size:15px}
+.law-grid small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+
+/* الشريط الجانبي/الأهداف */
+.two{display:grid;grid-template-columns:.9fr 1.4fr;gap:16px;align-items:start}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.obj{margin-bottom:8px;display:flex;gap:9px;align-items:flex-start}
+.obj .n{flex:none;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;color:#fff;font-size:13.5px;background:var(--elm)}
+.obj .n.o{background:var(--gold);color:#3a2a06}.obj .n.g{background:var(--grn)}.obj .n.p{background:#7a5cc0}
+.obj span.t{font-size:15.5px;line-height:1.8}
+.mini{font-size:15px;line-height:1.8;color:var(--ink)}
+.mini .src{color:var(--muted);font-size:13.5px}
+
+/* سير اللقاء */
+.flow{position:relative;padding-inline-start:26px}
+.flow::before{content:"";position:absolute;inset-inline-start:8px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--elm),var(--gold))}
+.step{position:relative;margin-bottom:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 17px;box-shadow:var(--shadow-sm)}
+.step::before{content:"";position:absolute;inset-inline-start:-24px;top:17px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--elm)}
+.step b.k{color:var(--elm)}
+
+.story{background:#fff;border:1px solid #EAE2D3;border-radius:14px;padding:0;overflow:hidden;box-shadow:var(--shadow-sm);margin-top:6px}
+.story .h{background:linear-gradient(90deg,var(--gold),#b98a2a);color:#fff;padding:11px 18px;font-weight:700;font-size:16px}
+.story .h span{font-weight:400;opacity:.9;font-size:13.5px}
+.story .b{padding:14px 18px}
+.story .b p{margin-bottom:8px}
+
+/* التغذية الراجعة */
+.feedback{}
+.feedback h3{color:var(--grn);font-size:16px;margin-bottom:8px}
+.feedback ol{margin-inline-start:20px;font-size:16px;line-height:2}
+.note{color:var(--muted);font-size:14.5px;margin-top:8px}
+
+/* اختيارات الأنشطة */
+.actbar{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#3a2a06;border-radius:14px 14px 0 0;font-weight:700;padding:11px;text-align:center;margin-top:8px}
+.actgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;overflow:hidden}
+@media(max-width:600px){.actgrid{grid-template-columns:1fr}}
+.actgrid > div{padding:13px 16px;border:1px solid #EAE2D3;font-size:15px;line-height:1.85}
+.actgrid .t{color:var(--t1);font-weight:700;display:block;margin-bottom:5px}
+.actgrid .bd{color:var(--elm);font-weight:700}
+
+/* كفارة */
+.dua{text-align:center;background:linear-gradient(135deg,var(--t1),var(--grn));color:#fff;border-radius:14px;padding:24px;box-shadow:var(--shadow);margin-top:16px}
+.dua .l{color:var(--gold);font-size:15px;letter-spacing:.5px;margin-bottom:6px}
+.dua .x{font-size:21px;line-height:2}
+
+/* info bar */
+.info{background:#fff;border:1px solid #EAE2D3;color:#4a0d0d;border-radius:14px;padding:11px 15px;font-size:15.5px;font-weight:600;margin-bottom:14px}
+
+/* التقويم */
+.taq{}
+.taq.t{border-top-color:var(--gold2)}.taq.n{border-top-color:var(--grn)}
+.taq h3{font-size:16px;font-weight:700;margin-bottom:10px}
+.taq.q h3{color:var(--elm)}.taq.t h3{color:#b0851a}.taq.n h3{color:var(--grn)}
+.taq ul{list-style:none}
+.taq li{display:flex;gap:8px;align-items:flex-start;margin-bottom:7px;font-size:15.5px;line-height:1.8}
+.taq li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:9px}
+
+/* con-grid (قيم/مفاهيم/مؤشرات) */
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.cg{grid-template-columns:1fr}}
+.ci{background:#fff;border:1px solid var(--line);border-radius:14px;padding:11px 14px}
+.ci .term{color:var(--elm);font-weight:700;font-size:15.5px;margin-bottom:3px}
+.ci .def{font-size:15px;line-height:1.8}
+.steps{list-style:none;margin-top:6px}
+.steps li{display:flex;gap:9px;margin-bottom:7px;font-size:15.5px;line-height:1.85}
+.steps li::before{content:"•";color:var(--gold);font-weight:900;font-size:18px;line-height:1.2}
+.cardgold{}
+.cardpurple{}
+.cardblue{}
+.card > .lbl.gold{border-color:var(--gold)}
+
+/* الآداب */
+.adab{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:14px;background:#fff}
+.adab .h{background:linear-gradient(90deg,var(--elm),#1F4A39);color:#fff;padding:11px 16px;font-weight:700;font-size:16px}
+.adab .b{padding:14px 16px}
+.adab .row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:15.5px;line-height:1.8}
+.tag{flex:none;border-radius:8px;font-weight:700;font-size:13.5px;padding:3px 11px;color:#fff}
+.tag.s{background:#c46b2e}.tag.r{background:var(--t2)}.tag.v{background:var(--grn)}
+.adab .link{background:#fff;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;font-size:15px;padding:8px 12px;margin-top:6px}
+
+/* تحضيرات ولي الأمر */
+.par{margin-bottom:12px}
+.par .h{color:var(--t1);font-weight:700;font-size:16.5px;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.hs{display:flex;gap:9px;align-items:flex-start;margin-bottom:6px;font-size:15.5px;line-height:1.8}
+.hs .n{flex:none;width:22px;height:22px;border-radius:50%;background:var(--elm);color:#fff;display:grid;place-items:center;font-size:13.5px}
+.after{background:#fff;border:1px solid #EAE2D3;border-radius:9px;padding:6px 12px;margin-top:5px;font-size:14.5px;color:#6e1414;font-style:italic}
+.pq{background:#fff;border-radius:10px;color:#4a0d0d;padding:8px 12px;margin:5px 0;font-size:15px;font-weight:600}
+.msg{font-size:15.5px;line-height:1.95}
+.msg .l{color:var(--grn);font-weight:700;margin-bottom:6px}
+
+/* الحصيلة */
+table.voc{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:4px}
+table.voc th{background:var(--elm);color:#fff;font-size:15px;padding:10px 12px;text-align:start}
+table.voc td{font-size:15px;line-height:1.8;padding:10px 12px;border-top:1px solid var(--line)}
+table.voc .w{color:var(--elm);font-weight:700}
+
+/* المراجع */
+.refblock{margin-bottom:14px}
+.refblock .h{color:var(--t1);font-weight:700;font-size:16px;margin-bottom:4px}
+.refblock .sub{color:var(--muted);font-size:14.5px;margin-bottom:8px}
+.refitem{display:flex;gap:10px;align-items:flex-start;border-bottom:1px dashed var(--line);padding:10px 0}
+.rbadge{flex:none;border-radius:999px;font-size:12.5px;font-weight:700;padding:3px 10px;color:#fff}
+.rbadge.q{background:var(--grn)}.rbadge.t{background:var(--t2)}.rbadge.p{background:#7a5cc0}.rbadge.d{background:#546e7a}
+.refitem .tt{font-size:15.5px;font-weight:700}
+.refitem .dd{color:var(--muted);font-size:14.5px}
+.reflink{color:var(--t2);font-size:14.5px;text-decoration:underline;margin-inline-end:8px}
+
+/* الأركان */
+.chero h2{margin-bottom:6px}
+.chero p{color:var(--muted);font-size:15.5px}
+.caution{background:#fff;border:1px dashed #ebd9a8;border-radius:14px;padding:11px 15px;color:#8a6410;font-size:15px;margin:12px 0}
+.corner{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);margin-bottom:16px;background:#fff}
+.corner .h{padding:13px 18px;color:#fff;display:flex;justify-content:space-between;align-items:center}
+.corner .h .k{background:rgba(255,255,255,.2);border-radius:999px;padding:4px 13px;font-size:14.5px}
+.corner .h h4{font-size:17px}
+.corner .b{padding:16px 18px}
+.cfield{margin-bottom:10px}
+.cfield b{color:var(--elm);font-size:15px;display:block;margin-bottom:2px}
+.cfield p,.cfield li{font-size:15px;line-height:1.8}
+.cfield ol{margin-inline-start:20px}
+.faith{background:#fff;border:1px dashed #ebd9a8;border-radius:10px;color:#8a6410;padding:10px 14px;margin-top:8px;font-size:15px}
+
+.foot{text-align:center;color:var(--muted);font-size:14.5px;margin-top:34px}
+/* ==== إثراء الدليل ==== */
+.sig-video{margin:10px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#4a0d0d}
+.sig-video video{display:block;width:100%;max-height:300px;background:#000}
+.sig-video .cap{background:#fff;color:#4a0d0d;font-size:13.5px;padding:8px 12px}
+.plan-wrap{overflow-x:auto}
+table.plan{border-collapse:separate;border-spacing:0;width:100%;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+table.plan th{background:var(--t2);color:#fff;font-size:14.5px;padding:9px 12px;text-align:start}
+table.plan td{font-size:14.5px;padding:9px 12px;border-top:1px solid var(--line);line-height:1.7}
+table.plan td:first-child{font-weight:700;color:var(--t1);white-space:nowrap}
+table.plan td.z{color:var(--gold2);font-weight:700;white-space:nowrap;text-align:center}
+table.plan tr.tot td{background:#fff;font-weight:700;color:#8a6410}
+.central{background:#fff;color:#1E2E29;border:1px solid #EAE2D3;border-radius:14px;padding:14px 18px;margin:6px 0 2px;box-shadow:var(--shadow-sm)}
+.central b{color:#ffe9b8;display:block;margin-bottom:3px}
+.cues{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.cue{border:2px dashed #cdbf9e;background:#fff;border-radius:14px;padding:14px;text-align:center}
+.cue .ic{font-size:30px;display:block;margin-bottom:6px}
+.cue .t{font-weight:700;color:var(--t1);font-size:14.5px;display:block}
+.cue .d{color:var(--muted);font-size:13px;display:block;margin-top:2px}
+.cue .tag{display:inline-block;margin-top:7px;background:#fff;color:#4a0d0d;border-radius:999px;padding:2px 10px;font-size:12px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.gitem{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:var(--shadow-sm)}
+.gitem .imgwrap{background:#fff;height:180px;overflow:hidden}
+.gitem img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.gitem .cap{padding:9px 12px;font-size:14px;font-weight:700;color:var(--t1);text-align:center}
+.gitem .cap small{display:block;color:var(--muted);font-weight:400;font-size:12.5px;margin-top:2px}
+.step-media{margin:9px auto 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;max-width:330px;box-shadow:var(--shadow-sm)}
+.step-media img{display:block;width:100%;height:auto}
+.step-media .cap{background:#fff;color:#4a0d0d;font-size:12.5px;padding:5px 10px;text-align:center}
+.actful{margin-top:8px}
+.actful h3{color:#8a6410;font-size:17px;margin-bottom:10px}
+.actful .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px}
+@media(max-width:600px){.actful .row2{grid-template-columns:1fr}}
+.miniblock b{color:var(--elm);display:block;margin-bottom:3px;font-size:14.5px}
+.actful ol{margin-inline-start:20px;font-size:15px;line-height:1.95}
+.actful .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px;margin-top:8px}
+.actful .opt{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;line-height:1.7}
+.actful .opt b{color:var(--t2)}
+ol.qa{list-style:none;margin-inline-start:0}
+ol.qa li{margin-bottom:12px}
+ol.qa .q{font-weight:700;color:var(--t1);font-size:15.5px}
+ol.qa .a{display:block;margin-top:3px;background:#fff;border-radius:8px;padding:7px 12px;font-size:14.5px;color:#6e1414;line-height:1.8}
+ol.qa .a::before{content:"الإجابة النموذجية: ";font-weight:700;color:var(--grn)}
+.strat{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 13px;margin-bottom:8px}
+.strat .k{flex:none;background:#fff;color:#4a0d0d;border-radius:8px;padding:4px 11px;font-size:13.5px;font-weight:700;white-space:nowrap}
+.strat .v{font-size:14.5px;line-height:1.8}
+.means{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.means .m{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;}
+.means .m.s2{border-top-color:var(--gold2)}.means .m.s3{border-top-color:var(--grn)}.means .m.s4{border-top-color:#7a5cc0}
+.means .m h4{color:var(--t1);font-size:15px;margin-bottom:6px}
+.means .m .i{font-size:13.5px;line-height:1.7;color:var(--ink);display:block;padding-inline-start:12px;position:relative}
+.means .m .i::before{content:"•";color:var(--gold);position:absolute;inset-inline-start:0}
+/* تخطيط: شريط «حول الدرس» جانبي مصغّر + سير اللقاء أوسع */
+.les{display:grid;grid-template-columns:minmax(190px,0.72fr) 1.9fr;gap:16px;align-items:start;margin-top:6px}
+.objgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:600px){.objgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.objgrid{grid-template-columns:1fr}}
+.objgrid .lbl{font-size:13px;margin-bottom:8px;padding-bottom:2px}
+.objgrid .obj{margin-bottom:5px;gap:7px}
+.objgrid .obj .n{width:19px;height:19px;font-size:11.5px;border-radius:6px}
+.objgrid .obj span.t{font-size:13.5px;line-height:1.6}
+@media(max-width:560px){.les{grid-template-columns:1fr}}
+.side .card{padding:12px 14px;margin-bottom:12px}
+.side .card:last-child{margin-bottom:0}
+.side .lbl{font-size:14px;margin-bottom:9px}
+.side .chip{font-size:12.5px;padding:5px 10px}
+.side .mini{font-size:13.5px}
+.side .mini .src{font-size:12px}
+.side-title{font-family:var(--fd);font-weight:700;color:#4a0d0d;font-size:15px;background:#fff;border:1px solid #EAE2D3;border-radius:10px;padding:7px 12px;margin-bottom:12px;text-align:center}
+/* أهداف اللقاء داخل الشريط الجانبي: عمود واحد يمنع الفيضان */
+.side .objgrid{grid-template-columns:1fr!important;gap:10px}
+.side .objgrid>div{min-width:0}
+.side .objgrid .obj span.t{font-size:13px;line-height:1.7;word-break:break-word}
+/* ورقة التدريس السريعة (٣ مراحل · خطوات مرجعية) */
+.quick-sheet{margin:16px 0;background:linear-gradient(180deg,#fffdf8,#fdf4f4);border:1px solid rgba(31,74,57,.20);border-radius:14px;box-shadow:var(--shadow-sm);overflow:hidden}
+.quick-sheet .qs-head{background:linear-gradient(90deg,var(--t1),var(--t2));color:#fff;padding:12px 16px;font-family:var(--fd);font-weight:700;font-size:15.5px}
+.quick-sheet .qs-phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;padding:14px}
+.quick-sheet .qs-phase{background:#fff;border:1px solid rgba(31,74,57,.14);border-radius:14px;padding:11px 13px}
+.quick-sheet .qs-ph-h{display:flex;align-items:center;gap:7px;color:var(--t1);font-family:var(--fd);font-weight:700;font-size:14px;margin-bottom:8px;flex-wrap:wrap}
+.quick-sheet .qs-n{width:26px;height:26px;border-radius:8px;background:var(--t2);color:#fff;display:grid;place-items:center;font-size:14px;flex:0 0 auto}
+.quick-sheet .qs-min{margin-inline-start:auto;background:#fff;color:var(--t2);border-radius:999px;padding:2px 10px;font-size:11.5px;font-weight:700}
+.quick-sheet .qs-phase ul{margin:0;padding-inline-start:18px}
+.quick-sheet .qs-phase li{font-size:12.5px;line-height:1.8;margin-bottom:4px}
+.quick-sheet .qs-phase li::marker{color:var(--t2)}
+.quick-sheet .qs-home{margin:0 14px;background:#fff;border:1px solid #EAE2D3;border-radius:14px;padding:9px 12px;font-size:12.5px;color:#7a5a10;line-height:1.75}
+.quick-sheet .qs-note{margin:12px 14px 14px;padding:9px 12px;border-radius:14px;background:#fff;border:1px dashed rgba(31,74,57,.35);color:var(--muted);font-size:12px;line-height:1.75}
+.mainflow .sec-head{margin-top:0}
+.mainflow .flow{padding-inline-start:24px}
+/* ==== تحسينات حديثة هادئة + شعار ==== */
+.gq-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:120;background:linear-gradient(90deg,var(--gold),var(--elm));transition:width .12s ease-out}
+.gq-top{position:fixed;bottom:22px;inset-inline-start:22px;width:46px;height:46px;border-radius:50%;background:var(--elm);color:#fff;border:0;cursor:pointer;display:grid;place-items:center;font-size:22px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(8px);transition:.25s;z-index:110}
+.gq-top.show{opacity:1;pointer-events:auto;transform:none}
+.gq-lb{position:fixed;inset:0;background:rgba(74,13,13,.88);display:none;place-items:center;z-index:200;padding:26px;cursor:zoom-out}
+.gq-lb.open{display:grid}
+.gq-lb figure{margin:0;text-align:center;max-width:96vw}
+.gq-lb img{max-width:96vw;max-height:86vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.5);background:#fff}
+.gq-lb .cap{color:#fff;font-size:15px;margin-top:10px;font-family:var(--fd)}
+.gq-lb .close{position:absolute;top:16px;inset-inline-start:18px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:20px;cursor:pointer}
+.gitem img,.step-media img{cursor:zoom-in}
+.gitem .imgwrap{position:relative}
+.gitem .imgwrap:has(img)::after{content:"";position:absolute;bottom:6px;inset-inline-end:6px;width:30px;height:30px;background:url('brand/seedling.webp') center/contain no-repeat;opacity:.9;filter:drop-shadow(0 1px 2px rgba(0,0,0,.25));pointer-events:none}
+.copy-btn{margin-inline-start:8px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);color:inherit;border-radius:8px;padding:3px 10px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:var(--fb);vertical-align:middle}
+.copy-btn:hover{background:rgba(255,255,255,.3)}
+.copy-btn.copied{background:#b23a3a;border-color:#b23a3a;color:#fff}
+
+/* تطوير-النشاط: تخطيط صندوق النشاط المصاحب */
+.actful .miniblock{margin-top:15px}
+.actful .row2 .miniblock{margin-top:0}
+.actful .miniblock>b{display:block;color:var(--t1);font-size:14px;font-weight:700;padding:6px 13px;margin-bottom:9px;border-radius:0 9px 9px 0;background:linear-gradient(90deg,rgba(199,154,59,.16),rgba(199,154,59,.03))}
+.actful ol{margin-top:2px;padding-inline-start:8px}
+.actful ol li{margin-bottom:6px}
+.actful .opts{margin-top:2px}
+
+/* ===== توحيد أيقونات الدليل (الخيار أ) ===== */
+.sec-head .num{background:#fff!important;border:1px solid #EAE2D3;color:#1F4A39!important;box-shadow:none!important}
+.sec-head .num .gi-svg,.sec-head .num .gi{width:22px;height:22px}
+h2 .gi,h3 .gi{vertical-align:-.18em}
+</style>
+<style id="wa-msg-css">
+.wa-wrap{margin:8px 0 2px}
+.wa{max-width:440px;margin:0 auto;border-radius:14px;overflow:hidden;box-shadow:0 12px 34px rgba(0,0,0,.18);background:#fff;direction:rtl}
+.wa-head{background:#128C7E;color:#fff;display:flex;align-items:center;gap:10px;padding:9px 12px}
+.wa-head .bk{font-size:22px;line-height:1;opacity:.9}
+.wa-head .av{width:40px;height:40px;border-radius:50%;background:#fff;overflow:hidden;display:grid;place-items:center;flex:none}
+.wa-head .av img{width:34px;height:34px;object-fit:contain}
+.wa-head .who{flex:1;min-width:0}
+.wa-head .nm{font-family:var(--fd);font-weight:700;font-size:15.5px;line-height:1.2}
+.wa-head .st{font-size:11.5px;opacity:.85;margin-top:1px}
+.wa-head .ics{display:flex;gap:15px;align-items:center;opacity:.92}
+.wa-head .ics svg{width:19px;height:19px;fill:#fff}
+.wa-body{background:#fff;background-image:radial-gradient(rgba(0,0,0,.028) 1px,transparent 1px);background-size:18px 18px;padding:16px 12px 12px;display:flex;flex-direction:column}
+.wa-day{align-self:center;background:#fff;color:#5a7a68;font-size:11px;border-radius:8px;padding:3px 12px;margin-bottom:12px;box-shadow:0 1px 1px rgba(0,0,0,.05)}
+.wa-bub{position:relative;background:#DCF8C6;border-radius:14px 12px 12px 4px;padding:8px 12px 6px;max-width:90%;margin-inline-end:auto;box-shadow:0 1px 1.5px rgba(0,0,0,.13)}
+.wa-bub::after{content:"";position:absolute;top:0;inset-inline-start:-7px;width:0;height:0;border:7px solid transparent;border-top-color:#DCF8C6;}
+.wa-text{font-family:var(--fb);font-size:14px;line-height:1.95;color:#0b1f14;white-space:pre-wrap}
+.wa-text strong{font-weight:700;color:#075E54}
+.wa-text em{font-style:italic;color:#1a3a2a}
+.wa-meta{display:flex;align-items:center;gap:4px;justify-content:flex-start;margin-top:4px}
+.wa-meta .t{font-size:11px;color:#5a7768}
+.wa-meta .ck{width:17px;height:11px}
+.wa-foot{background:#fff;padding:8px 10px;display:flex;gap:8px;align-items:center}
+.wa-foot .inp{flex:1;background:#fff;border-radius:22px;padding:9px 15px;color:#9aa5a0;font-size:13px;box-shadow:0 1px 1px rgba(0,0,0,.06)}
+.wa-send{flex:none;background:#128C7E;border-radius:50%;width:44px;height:44px;display:grid;place-items:center;box-shadow:0 2px 6px rgba(18,140,126,.4)}
+.wa-send svg{width:20px;height:20px;fill:#fff}
+.wa-copybar{max-width:440px;margin:10px auto 0;display:flex;justify-content:center}
+.copy-btn.wa-copy{background:#128C7E;border:0;color:#fff;border-radius:999px;padding:9px 20px;font-family:var(--fb);font-weight:700;font-size:13px;cursor:pointer;display:inline-flex;gap:7px;align-items:center;vertical-align:middle;margin:0}
+.copy-btn.wa-copy:hover{background:#0f7568}
+.copy-btn.wa-copy.copied{background:#2e9e5b}
+.wa-hint{max-width:440px;margin:8px auto 0;text-align:center;color:#6b7a72;font-size:12px;line-height:1.75}
+.wa-hint code{background:#fff;border-radius:4px;padding:0 4px;font-size:11.5px;color:#075E54}
+</style>
+<style id="voc-web-css">
+.voc-web{position:relative;container-type:inline-size;max-width:680px;margin:2px auto 6px;background:transparent}
+.voc-web>img{display:block;width:100%;height:auto;aspect-ratio:1448/1086}
+.voc-web .vw{position:absolute;transform:translate(-50%,-50%);text-align:center;font-family:var(--fd,'AlAwwal',serif);color:#3a2f22;white-space:nowrap;line-height:1;z-index:2;animation:vwfade .7s ease both}
+.voc-web .vw::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:-1;border-radius:50%;
+  width:max(4.4em,calc(100% + 1.7em));height:max(1.7em,calc(100% + 1em));
+  background:radial-gradient(ellipse,#F3EBD6 0%,#F3EBD6 52%,rgba(243,235,214,.55) 70%,rgba(243,235,214,0) 82%)}
+.voc-web .vw.center{font-weight:700;font-size:clamp(21px,4.5cqw,33px)}
+.voc-web .vw.center::before{width:max(5em,calc(100% + 1.8em));height:max(2em,calc(100% + 1.1em))}
+.voc-web .vw.branch{font-size:clamp(13px,2.95cqw,19px)}
+@keyframes vwfade{from{opacity:0;transform:translate(-50%,-46%)}to{opacity:1;transform:translate(-50%,-50%)}}
+@media (prefers-reduced-motion:reduce){.voc-web .vw{animation:none}}
+</style>
+<style id="actful-v2">
+.card.actful{padding:0;overflow:hidden;border:1px solid #EAE2D3;border-radius:14px;
+  background:linear-gradient(180deg,#fffdf9,#fbf6ec);box-shadow:0 14px 34px rgba(20,64,46,.10)}
+.card.actful>h3{margin:0;background:linear-gradient(120deg,#1F4A39,#0E6E6B);color:#fff;font-family:var(--fd);
+  font-weight:700;font-size:18.5px;line-height:1.4;padding:15px 56px 15px 20px;position:relative}
+.card.actful>h3::before{content:"";position:absolute;inset-inline-start:17px;top:50%;transform:translateY(-50%);
+  width:26px;height:26px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 9h2.5a1.8 1.8 0 1 1 3.5 0H13V6.5a1.8 1.8 0 1 1 0-3.5'/%3E%3Cpath d='M13 3h4a1 1 0 0 1 1 1v4h1.5a1.8 1.8 0 1 1 0 3.5H18v4a1 1 0 0 1-1 1h-4'/%3E%3Cpath d='M13 20a1.8 1.8 0 1 1-3.5 0H6a1 1 0 0 1-1-1v-4H3.5a1.8 1.8 0 1 1 0-3.5H5V9'/%3E%3C/svg%3E") center/contain no-repeat}
+.card.actful>h3::after{content:"نشاطٌ تطبيقيّ";position:absolute;inset-inline-end:15px;top:50%;transform:translateY(-50%);
+  font-family:var(--fb);font-size:11px;font-weight:700;color:#fff;background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.42);border-radius:999px;padding:3px 11px;white-space:nowrap}
+.card.actful>*:not(h3){margin-inline:20px}
+
+/* الهدف / الأدوات */
+.card.actful .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 20px 4px}
+@media(max-width:600px){.card.actful .row2{grid-template-columns:1fr}}
+.card.actful .row2 .miniblock{background:#fff;border:1px solid #EAE2D3;border-radius:14px;
+  padding:12px 14px 13px;padding-inline-start:46px;box-shadow:0 3px 10px rgba(20,64,46,.05);position:relative;
+  font-size:14.5px;line-height:1.8;color:var(--ink)}
+.card.actful .row2 .miniblock:first-child{}
+.card.actful .row2 .miniblock:last-child{}
+.card.actful .row2 .miniblock::before{content:"";position:absolute;inset-inline-start:13px;top:13px;width:23px;height:23px}
+.card.actful .row2 .miniblock:first-child::before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232C6A4D' stroke-width='1.8'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Ccircle cx='12' cy='12' r='1.5' fill='%232C6A4D'/%3E%3C/svg%3E") center/contain no-repeat}
+.card.actful .row2 .miniblock:last-child::before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B8862B' stroke-width='1.8' stroke-linejoin='round'%3E%3Cpath d='M3 8l9-5 9 5v8l-9 5-9-5z'/%3E%3Cpath d='M3 8l9 5 9-5'/%3E%3Cpath d='M12 13v8'/%3E%3C/svg%3E") center/contain no-repeat}
+.card.actful .row2 .miniblock>b{display:block;font-family:var(--fd);font-weight:700;color:var(--t1);font-size:15px;margin-bottom:4px;background:none;border:0;padding:0}
+
+/* عناوين الأقسام (miniblock خارج row2) */
+.card.actful>.miniblock{margin-top:17px}
+.card.actful>.miniblock>b{display:inline-flex;align-items:center;gap:8px;background:none;border:0;padding:0;margin:0 0 10px;
+  color:var(--t1);font-family:var(--fd);font-weight:700;font-size:16px}
+.card.actful>.miniblock>b::before{content:"";width:5px;height:19px;border-radius:3px;
+  background:linear-gradient(var(--gold),var(--gold2));display:inline-block}
+
+/* خطوات التنفيذ — بطاقات مرقّمة */
+.card.actful>ol{list-style:none;counter-reset:step;margin:4px 20px 0;padding:0}
+.card.actful>ol>li{counter-increment:step;position:relative;background:#fff;border:1px solid #EAE2D3;border-radius:14px;
+  padding:13px 15px;padding-inline-start:54px;margin-bottom:9px;font-size:14.5px;line-height:1.8;color:var(--ink);box-shadow:0 2px 8px rgba(20,64,46,.04)}
+.card.actful>ol>li::before{content:counter(step);position:absolute;inset-inline-start:11px;top:50%;transform:translateY(-50%);
+  width:31px;height:31px;border-radius:50%;background:linear-gradient(135deg,#2C6A4D,#0E6E6B);color:#fff;
+  font-family:var(--fd);font-weight:700;font-size:15.5px;display:grid;place-items:center;box-shadow:0 3px 9px rgba(14,110,107,.32)}
+
+/* أسئلة / اختيارات — رقائق */
+.card.actful .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:2px 20px 0}
+.card.actful .opt{background:#fff;border:1px solid #EAE2D3;border-radius:14px;padding:11px 13px;font-size:14px;line-height:1.75;color:var(--ink)}
+.card.actful .opt b{display:inline-block;color:#fff;background:var(--t2);border-radius:7px;padding:1px 9px;font-size:12.5px;margin-bottom:3px}
+
+/* صور النشاط (معرض مصغّر) */
+.card.actful .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:2px 20px 0}
+.card.actful .gitem{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.card.actful .imgwrap{height:120px;background:linear-gradient(135deg,#F4EDDE,#e9f2ee);display:grid;place-items:center;overflow:hidden}
+.card.actful .imgwrap img{width:100%;height:100%;object-fit:cover}
+.card.actful .cap{padding:8px 10px;font-size:12.5px;color:var(--t1);font-weight:700;line-height:1.5}
+.card.actful .cap small{display:block;color:var(--muted);font-weight:400;font-size:11.5px;margin-top:2px}
+
+/* دعاء الختام */
+.card.actful .central{margin:16px 20px 20px;background:linear-gradient(135deg,#1F4A39,#0E6E6B);color:#fff;
+  border-radius:14px;padding:15px 18px;padding-inline-start:52px;position:relative;box-shadow:0 8px 20px rgba(14,110,107,.22)}
+.card.actful .central::before{content:"";position:absolute;inset-inline-start:16px;top:50%;transform:translateY(-50%);
+  width:24px;height:24px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe9b8' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20c0-8 5-14 16-15-1 10-7 15-16 15z'/%3E%3Cpath d='M4 20c3-6 7-9 12-10'/%3E%3C/svg%3E") center/contain no-repeat}
+.card.actful .central b{color:#ffe9b8;display:block;margin-bottom:3px;font-family:var(--fd)}
+
+/* اختيارات إضافية */
+.actbar{background:linear-gradient(120deg,var(--gold),var(--gold2));color:#3a2a06;border-radius:14px;font-weight:700;
+  font-family:var(--fd);padding:12px;text-align:center;margin-top:18px;font-size:15px;box-shadow:0 6px 16px rgba(199,154,59,.22)}
+.actgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+@media(max-width:600px){.actgrid{grid-template-columns:1fr}}
+.actgrid>div{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:12px 15px;font-size:14px;line-height:1.8;box-shadow:0 3px 10px rgba(20,64,46,.04)}
+.actgrid .t{color:var(--t1);font-family:var(--fd);font-weight:700;display:block;margin-bottom:6px;font-size:14.5px}
+.actgrid .bd{color:var(--elm);font-weight:700}
+</style>
+
+<style id="actscene-css">
+.card.actful>.actscene{margin-inline:0;padding:14px 18px 8px;text-align:center}
+.actscene .scene-lbl{font-family:var(--fb);font-size:11.5px;font-weight:700;color:var(--gold);letter-spacing:.3px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+.actscene .scene-lbl::before,.actscene .scene-lbl::after{content:"";height:1px;width:34px;background:linear-gradient(90deg,transparent,rgba(199,154,59,.6))}
+.actscene .scene-lbl::after{background:linear-gradient(90deg,rgba(199,154,59,.6),transparent)}
+.actscene svg{width:100%;max-width:440px;height:auto;display:block;margin:0 auto;border-radius:14px}
+</style>
+<style id="ghars-box-identity">
+.dua,.central{background:#fff!important;color:#1E2E29!important;border:1px solid #EAE2D3!important;box-shadow:0 12px 26px rgba(20,40,35,.06)!important;border-radius:14px!important}
+.dua .copy-btn,.central .copy-btn{background:#EEF4F1!important;border:1px solid #EAE2D3!important;color:#1E5631!important}
+.quick-sheet,.kitabi-hijri-tool{background:#fff!important;border:1px solid #EAE2D3!important;border-radius:14px!important}
+.kitabi-hijri-prompt{background:#fff!important}
+.taq h3{color:#1E5631}
+.cardblue h3,.cardblue h4,.cardblue .lbl{color:#1E5631}
+.cardgold h3,.cardgold h4{color:#B0842C}
+.cardgold .lbl{color:#B0842C;border-color:#EABF7A}
+.cardpurple h3,.cardpurple h4,.cardpurple .lbl{color:#7A5CC0;border-color:#C9B8EA}
+.flow-card.law .lbl,.flow-card.law h3,.flow-card.law h4{color:#B0842C}
+.flow-card.belief .lbl,.flow-card.sig .lbl,.flow-card.rev .lbl{color:#1E5631}
+.taq .gi,.cardblue .gi{--ic-t:#1E5631}
+.cardgold .gi,.flow-card.law .gi{--ic-t:#B0842C}
+.cardpurple .gi{--ic-t:#7A5CC0}
+.story .h,.adab .h,.corner .h{background:#fff!important;border-bottom:1px solid #EAE2D3!important}
+.adab .h,.adab .h h4,.corner .h,.corner .h h4{color:#1E5631!important}
+.story .h,.story .h h4{color:#B0842C!important}
+.qs-head,.actbar,.kitabi-hijri-top{background:#fff!important;border-bottom:1px solid #EAE2D3!important}
+.qs-head,.qs-head *{color:#1E5631!important}
+.actbar,.actbar *{color:#B0842C!important}
+.actful .imgwrap{background:#F7F4ED!important}
+.actful .miniblock>b{background:transparent!important}
+h3,h4{border-bottom:2px solid #E7C98B!important;padding-bottom:7px!important;margin-bottom:11px!important}
+.cover h3,.cover h4,.wa h3,.wa h4,.wa-head *,.central h4:only-child{border-bottom:0!important;padding-bottom:0!important}
+.h,.story .h,.adab .h,.corner .h,.side-title,.qs-head,.actbar,.par .h,.refblock .h{border-bottom:2px solid #E7C98B!important;padding-bottom:7px!important;margin-bottom:9px!important}
+.wa-head,.wa-head *{border-bottom:0!important;padding-bottom:0!important}
+b.k{background:rgba(30,86,49,.10)!important;padding:2px 10px!important;border-radius:7px!important}
+.qa .a{background:rgba(30,86,49,.10)!important;color:#15502F!important;padding:1px 9px!important;border-radius:6px!important}
+.central>b{color:#1E5631!important}
+.actgrid .t{display:inline-block!important;padding:3px 11px!important;border-radius:8px!important;margin-bottom:7px!important;font-weight:700!important;border-bottom:0!important}
+.actgrid>div:nth-child(1) .t{background:rgba(30,86,49,.12)!important;color:#1E5631!important}
+.actgrid>div:nth-child(2) .t{background:rgba(176,132,44,.17)!important;color:#8A5A12!important}
+.actgrid>div:nth-child(3) .t{background:rgba(14,110,107,.14)!important;color:#0E6E6B!important}
+.actgrid>div:nth-child(4) .t{background:rgba(122,92,192,.14)!important;color:#5A3F9A!important}
+.dua{background:linear-gradient(150deg,#0F5747,#123f27)!important;border:1px solid rgba(214,154,51,.5)!important;text-align:center!important;box-shadow:0 16px 34px rgba(15,45,32,.28)!important;padding:22px!important;border-radius:16px!important}
+.dua .seal{color:#D69A33;font-size:20px;margin-bottom:7px;letter-spacing:2px}
+.dua .l{color:#E7C98B!important;font-family:var(--fd)!important;border-bottom:0!important;letter-spacing:1px}
+.dua .x{font-family:'Amiri','Noto Naskh Arabic',serif!important;font-size:20px!important;line-height:2!important;color:#F6EFDD!important}
+.hadith{background:#fff!important;box-shadow:none!important;font-family:'Amiri','Noto Naskh Arabic',serif!important;border:1px solid #EAE2D3!important}
+.hadith::before{color:#8A6410!important;background:transparent!important;padding:0!important;font-family:var(--fd)!important;display:block;font-size:12px;font-weight:700;margin-bottom:6px;letter-spacing:.5px}
+.hadith .ref{font-family:var(--fb)!important}
+.acards-lead{background:#fff!important;border:1px solid #EAE2D3!important}
+</style>
+<style id="ghars-wahy-frame">
+/* Revelation boxes family: ayah = gold illuminated frame + rosette; hadith = green twin. Amiri, centered. */
+.ayah,.hadith,.mc-ayah{background:#fff!important;border:1px solid #EAE2D3!important;border-radius:16px!important;padding:30px 26px 24px!important;box-shadow:0 12px 30px rgba(20,40,35,.07)!important;text-align:center!important;position:relative!important;overflow:visible!important;margin:22px 0 16px!important;font-family:'Amiri','Scheherazade New','Noto Naskh Arabic',serif!important;color:#1a1a1a!important;line-height:2.15!important}
+/* gold rosette medallion (top-center) for ayah */
+.ayah::before,.mc-ayah::before{content:"\06DE"!important;position:absolute!important;inset-inline:auto!important;top:-15px!important;bottom:auto!important;right:auto!important;left:50%!important;transform:translateX(-50%)!important;width:34px!important;height:34px!important;padding:0!important;border-radius:50%!important;background:#fff!important;border:1.5px solid #E7C98B!important;color:#B0842C!important;display:grid!important;place-items:center!important;font-size:16px!important;font-family:'Amiri',serif!important;box-shadow:none!important;letter-spacing:0!important}
+/* gold inner frame for ayah (neutralizes the old vertical rule) */
+.ayah::after,.mc-ayah::after{content:""!important;position:absolute!important;inset-inline:auto!important;inset-block:auto!important;top:9px!important;left:9px!important;right:auto!important;bottom:auto!important;width:calc(100% - 18px)!important;height:calc(100% - 18px)!important;background:none!important;opacity:1!important;border:1.5px solid #E7C98B!important;border-radius:11px!important;pointer-events:none!important;transform:none!important}
+/* ayah citation pill: ochre */
+.ayah .ref,.mc-ayah .ref{position:relative!important;display:inline-block!important;margin-top:12px!important;font-family:var(--fb),'Segoe UI',sans-serif!important;font-weight:700!important;font-size:12.5px!important;color:#B07C22!important;background:#fff!important;border:1px solid #EEDFC0!important;border-radius:999px!important;padding:2px 12px!important;letter-spacing:.3px!important}
+/* verse/ayah text sits above the frame */
+.ayah *:not(.ref){position:relative!important}
+/* hadith: green pill label «حديثٌ نبويّ» (top-center) */
+.hadith::before{content:"\062D\062F\064A\062B\064C\0020\0646\0628\0648\064A\0651"!important;position:absolute!important;inset-inline:auto!important;top:-13px!important;bottom:auto!important;right:auto!important;left:50%!important;transform:translateX(-50%)!important;background:#fff!important;border:1.5px solid #BFD8C5!important;color:#1E5631!important;padding:3px 13px!important;border-radius:999px!important;font-family:var(--fd),'Amiri',serif!important;font-size:11.5px!important;font-weight:700!important;box-shadow:none!important;letter-spacing:.2px!important}
+/* hadith green inner frame */
+.hadith::after{content:""!important;position:absolute!important;inset-inline:auto!important;inset-block:auto!important;top:9px!important;left:9px!important;right:auto!important;bottom:auto!important;width:calc(100% - 18px)!important;height:calc(100% - 18px)!important;background:none!important;opacity:1!important;border:1.5px solid #BFD8C5!important;border-radius:11px!important;pointer-events:none!important;transform:none!important}
+.hadith{font-size:20px!important;color:#233333!important}
+.hadith .ref{position:relative!important;display:inline-block!important;margin-top:12px!important;font-family:var(--fb),'Segoe UI',sans-serif!important;font-weight:700!important;font-size:12.5px!important;color:#1E5631!important;background:#fff!important;border:1px solid #EAE2D3!important;border-radius:999px!important;padding:2px 12px!important}
+.hadith>*:not(.ref){position:relative!important}
+</style>
+<style id="ghars-subject-accent">
+/* subject color drives accents (icon/eyebrow/heading/underline/highlight). ayah+hadith+dua stay brand. ASCII only. */
+:root{--sc:#BE6530;--sc-soft:#F7E9DE;--sc-deep:#8A461B}
+/* underline under titles -> material color */
+h3,h4,.h,.story .h,.adab .h,.corner .h,.side-title,.qs-head,.actbar,.par .h,.refblock .h{border-bottom-color:var(--sc)!important}
+/* heading + label text -> material deep */
+h3,h4,.taq h3,.cardblue h3,.cardblue h4,.cardblue .lbl,.cardgold h3,.cardgold h4,.cardgold .lbl,.flow-card.law .lbl,.flow-card.law h3,.flow-card.law h4,.flow-card.belief .lbl,.flow-card.sig .lbl,.flow-card.rev .lbl,.adab .h,.adab .h h4,.corner .h,.corner .h h4,.story .h,.story .h h4,.central>b,.qs-head,.qs-head *,.actbar,.actbar *{color:var(--sc-deep)!important}
+/* keep cover headings white (over image) */
+.cover h1,.cover h2,.cover h3,.cover h4,.cover .ttl{color:#fff!important}
+/* unified icons -> clean single-hue material: soft fill (--ic-t) + material line (--gi-ln). fixes the leftover teal line fallback var(--gi-ln,#00575C) */
+.gi svg,.gi .gi-svg{--ic-t:var(--sc-soft)!important;--gi-ln:var(--sc)!important}
+.gi{color:var(--sc)!important;--ic-t:var(--sc-soft)!important;--gi-ln:var(--sc)!important}
+.qs-n{background:var(--sc)!important}
+.qs-min{color:var(--sc)!important}
+/* lesson tabs -> material color (were --elm/green); deep shade for filled active = readable on all materials */
+.tab.active,.tab.gold.active{background:var(--sc-deep)!important;border-color:var(--sc-deep)!important;color:#fff!important}
+.tab:hover{background:#fff!important;border-color:var(--sc)!important;color:var(--sc-deep)!important}
+.tab.gold:not(.active){background:#fff!important;border-color:var(--sc)!important;color:var(--sc-deep)!important}
+/* cover badge -> material color (was gold) */
+.c-badge{background:var(--sc-deep)!important;color:#fff!important}
+/* cover: material-tinted color layer over the unit-card image (deep-weighted for white-text legibility on all materials) */
+.cover{position:relative!important}
+.cover::before{content:""!important;position:absolute!important;inset:0!important;z-index:1!important;background:linear-gradient(120deg,var(--sc-deep) 12%,var(--sc) 95%)!important;opacity:.35!important;pointer-events:none!important}
+.cover-main{position:relative!important;z-index:2!important}
+/* general highlights -> material soft/deep (activity-option distinct colors are left as-is) */
+b.k{background:var(--sc-soft)!important;color:var(--sc-deep)!important}
+.qa .a{background:var(--sc-soft)!important;color:var(--sc-deep)!important}
+.dua .copy-btn,.central .copy-btn{color:var(--sc-deep)!important}
+/* accompanying activity (actful) -> material (heading h3 already routed above) */
+.actful .opt b{background:var(--sc-deep)!important;color:#fff!important}
+.actful .cap,.actful .miniblock>b,.actscene .scene-lbl{color:var(--sc-deep)!important}
+/* kaffara/closing dua box -> material deep (dark scrim keeps cream/gold text readable); gold seal stays */
+.dua{background:linear-gradient(150deg,rgba(0,0,0,.10),rgba(0,0,0,.34)),var(--sc-deep)!important}
+/* numbering + activity header + markers fully material */
+.sec-head .num,.num{background:var(--sc)!important;border-color:var(--sc)!important;color:#fff!important}
+.sec-head .num .gi,.num .gi{color:#fff!important}
+.sec-head .num .gi svg,.num .gi svg,.num .gi .gi-svg{--ic-t:#fff!important;--gi-ln:#fff!important}
+.actful>ol>li::before{background:var(--sc)!important;color:#fff!important}
+.steps li::before{color:var(--sc)!important}
+.actbar{background:var(--sc-deep)!important;border-color:var(--sc-deep)!important}
+.actbar,.actbar *{color:#fff!important}
+.actbar .gi svg,.actbar .gi .gi-svg{--ic-t:#fff!important;--gi-ln:#fff!important}
+/* activity title header band (.card.actful>h3): was green/teal gradient -> material; text stays white so it never disappears */
+.card.actful>h3{background:var(--sc-deep)!important;color:#fff!important;border-bottom-color:var(--sc-deep)!important}
+.card.actful>h3 .gi svg,.card.actful>h3 .gi .gi-svg{--ic-t:#fff!important;--gi-ln:#fff!important}
+/* lesson-flow timeline: side line -> material gradient; dots smaller + cleaner + material ring */
+.flow::before{background:linear-gradient(var(--sc),var(--sc-deep))!important;width:2px!important}
+.step::before{width:11px!important;height:11px!important;border-width:2px!important;border-color:var(--sc)!important;background:#fff!important;inset-inline-start:-22px!important;top:18px!important;box-shadow:0 0 0 3px #fff!important}
+</style>
+
+<!--GHARS-SKIN-START-->
+<style id="ghars-skin">
+/* ════════════════════════════════════════════════════════════════
+   غرس — طبقة التصميم النظيفة (إعادة بناء من الصفر).
+   تتبع لون المادّة var(--sc)/--sc-deep/--sc-soft، فلا يتضارب لون.
+   القاعدة الحديديّة (لحلّ انهيار التباين):
+     • نصّ المتن  = حبرٌ غامق var(--ink) دائمًا.
+     • العناوين/الوسوم = var(--sc-deep) (غامقٌ مقروء على أيّ سطحٍ فاتح).
+     • لون المادّة var(--sc) = للأيقونات والحدود والتعبئة ذات النصّ الأبيض فقط
+       — لا يُستعمل أبدًا نصًّا صغيرًا على سطحٍ ملوّن.
+     • بلا color-mix · بلا تدرّج في الشارات · بلا أعمدة جانبيّة ملوّنة · زوايا منتظمة.
+   ════════════════════════════════════════════════════════════════ */
+
+:root{
+  --gold:#C79A3B;
+  --ink:#2C2318 !important;
+  --muted:#6E6554 !important;
+  --line:#D7CDB6 !important;        /* حدٌّ دافئٌ مرئيٌّ فعلًا يُعرّف البطاقة */
+  --card:#FFFDF8 !important;
+  --r:16px;
+  --shadow-sm:0 4px 16px rgba(30,45,30,.07) !important;
+  --shadow:0 14px 32px rgba(30,45,30,.11) !important;
+}
+/* درجةٌ افتراضيّةٌ آمنة (أولويّة صفريّة :where) لأيّ درسٍ لا يعرّف --sc، فلا ينكسر؛
+   وأيّ :root{--sc} خاصٌّ بالمادّة يتفوّق عليها تلقائيًّا فلا تطغى على ألوان الموادّ */
+:where(html){--sc:#1E5631;--sc-deep:#12401F;--sc-soft:#E7F0EA}
+
+/* ── عرضٌ أوسع + خطٌّ أكبر وأريح (المعلمة حسّاسة لصغر الخطّ) ── */
+.wrap{max-width:1060px !important}
+.panel{font-size:17px}
+.panel p,.panel li,.panel td,.panel .mini,.panel .opt,.panel .step,.panel .lh-t,.panel .lh-foot{
+  font-size:16.5px !important;line-height:2.0 !important;color:var(--ink) !important}
+
+/* ── زوايا منتظمة بدل المتموّجة (أبرز تلميح «ذكاء») ── */
+.cover,.lhero .lh,.card,.flow-card,.tab,.quick-sheet,.qs-phase,.taq,.law-grid>div,
+.cardblue,.cardgold,.cardpurple,.actful,.corner,.adab,.refblock,.story,.feedback,.msg,
+.par,.dua,.greet,.info,.central,.cue,.faith,.bc-embed,.gq-belief-quran-audio,.gq-surah-audio,
+figure img,.step-media img,video{border-radius:var(--r) !important}
+/* تسوية الزوايا المتموّجة المكتوبة سطرًا */
+[style*="9px 18px"],[style*="8px 13px"],[style*="8px 15px"],[style*="9px 13px"]{border-radius:14px !important}
+
+/* ── إزالة الأعمدة الجانبيّة/العلويّة الملوّنة → حدٌّ رفيعٌ كامل ── */
+.flow-card,.gq-belief-quran-audio,.gq-surah-audio,
+[style*="border-inline-start:5px"],[style*="border-inline-start:4px"],[style*="border-inline-start:3px"],
+[style*="border-right:6px"],[style*="border-right:5px"],[style*="border-right:4px"],[style*="border-right:3px"],
+[style*="border-top:3px"],[style*="border-top:4px"],[style*="border-top:5px"],[style*="border-top:6px"]{
+  border-width:1px !important;border-style:solid !important;border-color:var(--line) !important}
+
+/* ── الغلاف: ترويسةٌ تحريريّة (عنوانٌ كبير + خيطٌ ذهبيّ + شارةٌ عاجيّة بلون المادّة) ── */
+.cover{border-radius:24px !important;min-height:270px !important;box-shadow:0 24px 58px rgba(24,45,32,.26) !important}
+.cover-main{padding:34px 36px !important}
+.cover h1{font-family:var(--fd) !important;font-size:clamp(30px,4.4vw,46px) !important;line-height:1.32 !important;letter-spacing:-.4px !important;margin-bottom:14px !important}
+.cover h1::after{content:"";display:block;width:64px;height:3px;border-radius:3px;margin-top:16px;background:linear-gradient(90deg,#E7B64A,rgba(231,182,74,0))}
+.c-badge{transform:none !important;border-radius:999px !important;background:rgba(251,249,242,.95) !important;color:var(--sc-deep) !important;font-size:12.5px !important;letter-spacing:.3px;padding:7px 16px !important;box-shadow:0 6px 16px rgba(24,45,32,.2) !important}
+.c-meta{color:#eef6f0 !important;font-size:14.5px !important}
+.c-dur{color:var(--sc-deep) !important;background:rgba(251,249,242,.95) !important;border-radius:999px !important;padding:5px 14px !important;font-weight:700}
+
+/* ── رؤوس الأقسام: إيقاعٌ أوسع + عنوانٌ تحريريّ + أيقونةٌ مباشرة بلون المادّة ── */
+.sec-head{margin:48px 0 18px !important;gap:13px !important}
+.panel>.sec-head:first-of-type{margin-top:14px !important}
+.sec-head .num,.sec-head .num.grn,.sec-head .num.gold{background:transparent !important;border:0 !important;box-shadow:none !important;width:auto !important;height:auto !important;border-radius:0 !important}
+.sec-head .num .gi,.sec-head .num .gi svg,.sec-head .num .gi .gi-svg{--ic-t:var(--sc-soft) !important;--gi-ln:var(--sc) !important;color:var(--sc) !important;width:28px !important;height:28px !important}
+.sec-head h2{font-family:var(--fd) !important;font-size:clamp(22px,2.7vw,27px) !important;color:var(--sc-deep) !important;letter-spacing:-.01em !important}
+.sec-head .rule{border-top:1px solid var(--line) !important}
+.sec-head .stage{border-radius:999px !important;background:var(--sc-soft) !important;color:var(--sc-deep) !important}
+
+/* ── التبويبات: ألسنة ملفٍّ دافئة متّصلة باللوحة، النشط أبيضُ بنصٍّ بلون المادّة ── */
+.tabs{position:sticky;top:0;z-index:40;background:rgba(251,249,242,.92) !important;backdrop-filter:blur(8px) !important;
+  border:0 !important;border-bottom:1px solid var(--line) !important;border-radius:0 !important;box-shadow:none !important;
+  display:flex !important;flex-wrap:nowrap !important;overflow-x:auto;overflow-y:hidden;gap:3px !important;
+  padding:6px 8px 0 !important;margin:18px 0 26px !important;scrollbar-width:thin;scrollbar-color:#d4ccb9 transparent}
+.tabs::-webkit-scrollbar{height:6px}.tabs::-webkit-scrollbar-thumb{background:#d4ccb9;border-radius:999px}
+.tab{flex:none !important;white-space:nowrap !important;background:transparent !important;border:1px solid transparent !important;
+  border-bottom:0 !important;border-radius:11px 11px 0 0 !important;color:#5f6a63 !important;box-shadow:none !important;
+  padding:10px 16px !important;font-size:13.5px !important;font-weight:700 !important;position:relative;top:1px;transition:.18s}
+.tab:hover{background:rgba(255,255,255,.6) !important;color:var(--sc-deep) !important;border-color:transparent !important}
+.tab.active,.tab.gold.active{background:#fff !important;color:var(--sc-deep) !important;border-color:var(--line) !important;box-shadow:0 -1px 10px rgba(24,45,32,.06) !important}
+.tab.gold:not(.active){background:transparent !important;color:#9a7420 !important;border-color:transparent !important}
+
+/* ── بطاقاتٌ دافئة بظلٍّ ناعمٍ وحدٍّ مرئيّ (لا سطحيّة، لا سيَلان) ── */
+.card,.flow-card,.quick-sheet,.refblock,.taq,.msg,.feedback,.par,.story,.corner,.adab,
+.cardblue,.cardgold,.law-grid>div{
+  border:1px solid var(--line) !important;box-shadow:var(--shadow-sm) !important;background:var(--card) !important}
+
+/* ── ترويسة الدرس (lhero): بطلُ اللقاء — نصٌّ غامقٌ مقروء (إصلاح التباين الأساس) ── */
+.lhero{gap:16px !important;margin:10px 0 26px !important}
+.lhero .lh{border:1px solid var(--line) !important;box-shadow:var(--shadow) !important;padding:20px 22px !important}
+.lhero .lh.focus{background:var(--sc-soft) !important}
+.lhero .lh.key{background:#FBF5E6 !important}
+.lhero .lh-lbl{color:var(--sc-deep) !important;font-weight:800 !important}
+.lhero .key .lh-lbl{color:#8a6410 !important}
+.lhero .lh-q{font-family:var(--fd) !important;font-size:19px !important;line-height:1.85 !important;color:var(--ink) !important}
+.lhero .lh-t{color:var(--ink) !important}
+.lhero .lh-foot{color:var(--muted) !important}
+.lhero .lh-foot b{color:var(--sc-deep) !important}
+
+/* ── صناديق التمييز العامّة → سطحٌ واحدٌ ناعمٌ بلون المادّة + نصٌّ غامق ── */
+.greet,.info,.central,.cue,.faith,
+[style*="background:linear-gradient(135deg,#EFFAF4"],[style*="background:#EAF5EE"],[style*="background:#eaf5ee"]{
+  background:var(--sc-soft) !important;border-color:var(--line) !important;color:var(--ink) !important}
+.greet,.greet strong,.greet b,.central,.central b,.info{color:var(--ink) !important}
+
+/* ── الألوان المُقحَمة (خارج درجة المادّة) → تُردّ إلى درجة المادّة ── */
+[style*="color:#b8860b"],[style*="color:#B8860B"],[style*="color:#7a5cc0"],[style*="color:#7A5CC0"],
+[style*="color:#2D7A4B"],[style*="color:#2d7a4b"],[style*="color:#286A54"],[style*="color:#286a54"],
+[style*="color:#1b5e34"],[style*="color:#1B5E34"]{color:var(--sc-deep) !important}
+[style*="background:#286A54"],[style*="background:#286a54"],[style*="background:#2D7A4B"],[style*="background:#2d7a4b"]{
+  background:var(--sc) !important;color:#fff !important}
+
+/* ── أزرارٌ بروح الرئيسية: حبّةٌ بلون المادّة ترتفع عند المرور (والذهبيّ يبقى ذهبيًّا) ── */
+.panel a[style*="999px"],.panel .printbtn,.panel .copy-btn,.panel .linkbtn,
+.panel .kitabi-hijri-actions button{
+  background:var(--sc) !important;color:#fff !important;border:0 !important;border-radius:999px !important;
+  font-weight:700 !important;box-shadow:0 8px 20px rgba(30,45,30,.2) !important;transition:transform .2s,box-shadow .2s !important}
+.panel a[style*="999px"]:hover,.panel .printbtn:hover,.panel .copy-btn:hover,.panel .linkbtn:hover{
+  transform:translateY(-2px) !important;box-shadow:0 14px 26px rgba(30,45,30,.28) !important}
+.panel a[style*="999px"][style*="var(--gold)"],.panel a[style*="999px"][style*="#C79A3B"],.panel a[style*="999px"][style*="#gold"]{
+  background:var(--gold) !important;color:#3a2a06 !important}
+
+/* ── توحيد الوسوم متعدّدة الألوان → حبّةٌ واحدة بلون المادّة الناعم ── */
+.panel .tag,.panel .tag.s,.panel .tag.v,.panel .rbadge,.panel .rbadge.d,.panel .rbadge.p,.panel .rbadge.q,
+.panel .chip.v{background:var(--sc-soft) !important;color:var(--sc-deep) !important;border:1px solid var(--line) !important;border-radius:999px !important}
+.panel .obj .n,.panel .obj .n.o,.panel .obj .n.g,.panel .obj .n.p{background:var(--sc) !important;color:#fff !important}
+
+/* أداة التاريخ: هلالٌ ذهبيّ رفيع */
+.panel .kitabi-hijri-moon{background:transparent !important;border:2px solid #C79A3B !important}
+
+/* ── ورقة التدريس السريعة: ترويسةٌ صلبة بلون المادّة الغامق بنصٍّ أبيض + مراحلُ نظيفة ── */
+.quick-sheet{border:1px solid var(--line) !important;border-radius:var(--r) !important;background:var(--card) !important;overflow:hidden !important}
+.quick-sheet .qs-head{background:var(--sc-deep) !important;color:#fff !important;border-radius:0 !important;border-bottom:0 !important}
+.quick-sheet .qs-head *{color:#fff !important}
+.quick-sheet .qs-phase{border:1px solid var(--line) !important;background:#fff !important;border-radius:12px !important}
+.quick-sheet .qs-home{background:var(--sc-soft) !important;color:var(--ink) !important;border-radius:12px !important}
+.quick-sheet .qs-note{color:var(--muted) !important}
+.quick-sheet .qs-n{border-radius:9px !important}
+.quick-sheet .qs-min{background:#fff !important;color:var(--sc-deep) !important;border:1px solid var(--line) !important}
+
+/* الترويسات الصلبة الملوّنة (شريط النشاط/عنوانه) يبقى نصُّها أبيض فلا يختفي */
+.card.actful>h3,.card.actful>h3 *,.actbar,.actbar *{color:#fff !important}
+</style>
+<!-- ===== طبقة الحركة: Lenis + GSAP/ScrollTrigger (نفس إصدارات الرئيسيّة) ===== -->
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+  html.lenis,html.lenis body{height:auto}
+  html.lenis{scroll-behavior:auto !important}
+  .reveal-ms{will-change:transform,opacity}
+</style>
+<script id="ghars-lesson-motion">
+window.addEventListener('load',function(){
+  try{
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var lenis=null;
+    if(window.Lenis && !reduce){
+      lenis=new Lenis({duration:1.05,easing:function(t){return 1-Math.pow(1-t,3)}});
+      function raf(t){lenis.raf(t);requestAnimationFrame(raf)} requestAnimationFrame(raf);
+      document.documentElement.classList.add('lenis');
+    }
+    if(window.gsap && window.ScrollTrigger && !reduce){
+      gsap.registerPlugin(ScrollTrigger);
+      if(lenis){ lenis.on('scroll', ScrollTrigger.update); }
+      var sel='.panel.active .lhero .lh, .panel.active .sec-head, .panel.active .card, .panel.active .flow-card, .panel.active .step, .panel.active .quick-sheet, .panel.active .story, .panel.active table.voc';
+      var items=document.querySelectorAll(sel);
+      items.forEach(function(el){el.classList.add('reveal-ms')});
+      gsap.set(items,{opacity:0,y:18});
+      ScrollTrigger.batch(items,{start:'top 90%',once:true,onEnter:function(batch){
+        gsap.to(batch,{opacity:1,y:0,duration:.55,stagger:.05,ease:'power2.out'});
+      }});
+      ScrollTrigger.refresh();
+      /* failsafe: اكشف أيّ عنصرٍ بقي مخفيًّا بعد ثانيتين */
+      setTimeout(function(){ items.forEach(function(el){ if(getComputedStyle(el).opacity==='0'){ gsap.set(el,{opacity:1,y:0}); } }); },2200);
+    }
+  }catch(e){}
+});
+</script>
+<script id="ghars-contrast-guard">
+(function(){
+  function parse(c){var m=c&&c.match(/[\d.]+/g);if(!m)return null;return m.map(Number);}
+  function rl(c){var a=c.slice(0,3).map(function(v){v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)});return .2126*a[0]+.7152*a[1]+.0722*a[2];}
+  function mix(c){ if(c.length<4||c[3]>=1)return c.slice(0,3); var a=c[3],b=[236,227,206];return[0,1,2].map(function(i){return Math.round(c[i]*a+b[i]*(1-a));});}
+  function effBg(el){var e=el;while(e&&e.nodeType===1){var b=parse(getComputedStyle(e).backgroundColor);if(b&&(b.length<4||b[3]>0))return mix(b);e=e.parentElement;}return [236,227,206];}
+  function contrast(f,b){var lf=rl(f),lb=rl(b);return (Math.max(lf,lb)+.05)/(Math.min(lf,lb)+.05);}
+  function guard(){
+    try{
+      var all=document.querySelectorAll('.wrap *');
+      for(var i=0;i<all.length;i++){var el=all[i];
+        if(el.closest('.cover')||el.closest('.tabs'))continue;
+        var hasText=false,cn=el.childNodes;for(var j=0;j<cn.length;j++){if(cn[j].nodeType===3&&cn[j].textContent.trim().length>1){hasText=true;break;}}
+        if(!hasText)continue;
+        var cs=getComputedStyle(el);
+        var fg=parse(cs.color);if(!fg)continue;var bg=effBg(el);
+        if(contrast(fg,bg)<4.5){var best=contrast([30,46,41],bg)>=contrast([255,255,255],bg)?'#1b2e29':'#ffffff';el.style.setProperty('color',best,'important');}
+      }
+    }catch(e){}
+  }
+  window.addEventListener('load',function(){ setTimeout(guard,300); });
+  document.addEventListener('click',function(e){ if(e.target&&e.target.classList&&e.target.classList.contains('tab')){ setTimeout(guard,60); } });
+})();
+</script>
+<style id="ghars-variant">
+/* ===== الاتجاه (ج): عميق قويّ — تباينٌ عالٍ وتسلسلٌ واضح (بطاقاتٌ بيضاء تبرز على كريميٍّ أعمق) ===== */
+:root{
+  --line:#CBBE9C !important;        /* حدٌّ أقوى */
+  --card:#FFFFFF !important;        /* بطاقاتٌ بيضاء ناصعة تبرز */
+  --shadow-sm:0 6px 20px rgba(25,40,28,.10) !important;
+  --shadow:0 18px 40px rgba(25,40,28,.14) !important;
+}
+body{background-color:#ECE3CE !important}
+/* عناوينُ أكبر وأبرز */
+.sec-head h2{font-size:clamp(24px,3vw,30px) !important;font-weight:800 !important}
+.cover h1{font-size:clamp(32px,4.8vw,50px) !important}
+/* رقم القسم: حبّةٌ خضراءُ غامقةٌ مملوءة بنصٍّ أبيض */
+.sec-head .num{background:var(--sc-deep) !important;border-radius:13px !important;width:44px !important;height:44px !important;display:grid !important;place-items:center !important;box-shadow:0 6px 16px rgba(25,40,28,.2) !important}
+.sec-head .num .gi,.sec-head .num .gi svg,.sec-head .num .gi .gi-svg{color:#fff !important;--gi-ln:#fff !important;--ic-t:var(--sc) !important;width:22px !important;height:22px !important}
+/* بطاقة التركيز بتظليلٍ أوضح */
+.lhero .lh.focus{background:#E0ECE3 !important}
+/* التبويب النشط مملوءٌ أخضرَ غامقًا (أقوى) */
+.tab.active,.tab.gold.active{background:var(--sc-deep) !important;color:#fff !important;border-color:var(--sc-deep) !important;box-shadow:0 6px 16px rgba(25,40,28,.18) !important}
+.tab.active{top:0 !important}
+</style>
+<style id="ghars-pro">
+/* ════════════════════════════════════════════════════════════════
+   طبقة الإتقان الاحترافيّ (impeccable + taste-skill) فوق الاتجاه (ج).
+   مبدأ: مسافاتٌ مدروسةٌ على شبكة ٨px · سلّمٌ خطّيٌّ متناسب · حبرٌ وتباينٌ
+   محسوبان (WCAG AA) · تفاصيلُ نهائيّةٌ لا يلحظها إلّا المحترف.
+   لا يمسّ البنية ولا المحتوى ولا قاعدة التباين الحديديّة.
+   ════════════════════════════════════════════════════════════════ */
+:root{
+  /* سلّم مسافاتٍ ثماني — إيقاعٌ واحدٌ يحكم الصفحة كلّها */
+  --sp-1:8px; --sp-2:12px; --sp-3:16px; --sp-4:22px; --sp-5:32px; --sp-6:48px; --sp-7:68px;
+  /* حبرٌ أدفأ أعمق قليلًا → تباينٌ ممتاز على البطاقات البيضاء */
+  --ink:#241E18 !important; --muted:#6B6253 !important;
+}
+
+/* ── إيقاعٌ عموديٌّ موحّد (تنفّسٌ مدروسٌ بين الأقسام والبطاقات) ── */
+.panel{padding-top:var(--sp-2) !important}
+.sec-head{margin:var(--sp-7) 0 var(--sp-4) !important;gap:14px !important}
+.panel>.sec-head:first-of-type{margin-top:var(--sp-3) !important}
+.lhero{gap:var(--sp-3) !important;margin:var(--sp-2) 0 var(--sp-5) !important}
+.flow-card,.story,.quick-sheet{margin-bottom:var(--sp-4) !important}
+.les{gap:var(--sp-4) !important}
+.side .card{margin-bottom:var(--sp-3) !important}
+
+/* ── حشوٌ مدروسٌ موحّدٌ للبطاقات ── */
+.flow-card,.story,.corner,.adab,.refblock{padding:var(--sp-4) !important}
+.side .card{padding:18px 18px !important}
+.lhero .lh{padding:var(--sp-4) !important}
+.quick-sheet .qs-phase{padding:16px 18px !important}
+
+/* ── سلّمٌ خطّيٌّ متناسب (modular ≈ 1.25) بخطّ العرض AlAwwal للعناوين ── */
+.cover h1{font-size:clamp(32px,4.6vw,48px) !important;line-height:1.3 !important;margin-bottom:14px !important}
+.sec-head h2{font-size:clamp(23px,2.8vw,29px) !important;line-height:1.35 !important}
+.flow-card h3,.story .h{font-size:19px !important;line-height:1.5 !important;margin-bottom:12px !important}
+.lhero .lh-q{font-size:20px !important;line-height:1.78 !important;margin:6px 0 10px !important}
+.lhero .lh-lbl{font-size:13px !important;letter-spacing:.3px !important;margin-bottom:6px !important}
+.panel p,.panel li{font-size:16.5px !important;line-height:1.95 !important}
+.panel p{margin-bottom:var(--sp-2) !important}
+.panel p:last-child{margin-bottom:0 !important}
+.card .lbl{font-size:13px !important;letter-spacing:.3px !important;margin-bottom:10px !important}
+
+/* ── تفاصيلُ نهائيّة: تركيزُ لوحة المفاتيح + انتقالاتٌ ناعمة + اتّساقُ زوايا ── */
+.tab:focus-visible,.panel a:focus-visible,.panel button:focus-visible{outline:2px solid var(--sc) !important;outline-offset:2px !important;border-radius:7px !important}
+.panel a,.panel button,.tab{transition:color .18s,background .18s,transform .18s,box-shadow .18s !important}
+.lhero .lh,.card,.flow-card,.quick-sheet,.story,.corner,.adab{border-radius:16px !important}
+.quick-sheet .qs-phase,.quick-sheet .qs-home{border-radius:12px !important}
+
+/* ── فاصلُ القسم خيطٌ شعريٌّ هادئ (لا ثقيل) ── */
+.sec-head .rule{border-top:1px solid var(--line) !important;opacity:.85 !important}
+
+/* ── اللمسة الذهبيّة الهويّتيّة محصورةٌ (خيط الغلاف + إطار الآية) لا تُبعثر ── */
+.cover h1::after{height:3px !important;width:60px !important}
+</style>
+<style id="ghars-fixes">
+/* تنسيقُ أصناف الأعمدة الثلاثة ضمن لوحةٍ متناسقة (أخضر/ذهبيّ/حجريّ) ومطابقة WCAG AA */
+.actgrid>div:nth-child(1) .t{background:var(--sc-soft) !important;color:var(--sc-deep) !important}
+.actgrid>div:nth-child(2) .t{background:#F6ECD3 !important;color:#6E4710 !important}
+.actgrid>div:nth-child(3) .t{background:#ECEAE0 !important;color:#49453A !important}
+/* إزالة التركوازيّ الدخيل من روابط/أزرار الأركان → درجة المادّة */
+[style*="color:#0d6e6e"],[style*="color:#0D6E6E"],[style*="color:#0e6e6b"],[style*="color:#0E6E6B"]{color:var(--sc-deep) !important}
+[style*="background:#eef6f4"],[style*="background:#EEF6F4"],[style*="background:#eef6f6"]{background:var(--sc-soft) !important}
+</style>
+<style id="ghars-fixes2">.wa-head{background:var(--sc-deep) !important}.wa-head .nm,.wa-head .st{color:#fff !important}</style>
+<style id="ghars-pro2">
+/* ════════ طبقة المبادئ العلميّة (craft-floor + colorize) ════════ */
+
+/* 1) مقاسُ السطر القرائيّ 66–72 محرفًا */
+.flow-card p,.flow-card li,.story .b,.story .b p,.step,.greet,.central,.info,.belief p,.rev p{max-width:72ch}
+.lhero .lh-q,.lhero .lh-t,.lhero .lh-foot{max-width:60ch}
+
+/* 2) نصٌّ ثانويٌّ مشتقٌّ من درجة المادّة (لا رماديّ باهت) */
+:root{--muted:#5B6957 !important}
+
+/* 3) سطوحُ المتصفّح مثمّنةٌ بالهويّة */
+::selection{background:var(--sc-soft);color:var(--sc-deep)}
+.wrap,.wrap *{caret-color:var(--sc)}
+html{scrollbar-width:thin;scrollbar-color:#c3b89d transparent}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-thumb{background:#c9bfa6;border-radius:999px;border:3px solid #F3EADB;background-clip:content-box}
+::-webkit-scrollbar-thumb:hover{background:var(--sc)}
+.panel a{text-underline-offset:3px;text-decoration-thickness:1.5px}
+.panel td,.bc-fact .v,.qs-min,.c-dur{font-variant-numeric:tabular-nums}
+
+/* 4) عناوينُ متّزنة + سبكٌ محكم */
+.cover h1,.sec-head h2,.flow-card h3,.story .h,.lhero .lh-q{text-wrap:balance}
+.cover h1{letter-spacing:-.02em !important}
+.sec-head h2{letter-spacing:-.012em !important}
+
+/* 5) نظامُ ارتفاعٍ متدرّج: بطاقاتٌ رئيسةٌ مرتفعة · عمودٌ مسطّح */
+.flow-card,.lhero .lh,.quick-sheet,.story{box-shadow:0 10px 30px rgba(25,40,28,.08) !important;border:1px solid #E6DCC6 !important}
+.side .card{box-shadow:none !important;border:1px solid #E6DCC6 !important;background:#FFFDF8 !important}
+
+/* 6) لا إطارٌ داخل إطار — الصناديق الداخليّة تُفصَل بالفراغ لا بحدٍّ ثانٍ */
+.side .card [style*="background:"],.card .objgrid>div{border:0 !important;box-shadow:none !important}
+</style>
+<style id="ghars-fix3">
+/* ═══ (1) بطاقة علوم السورة: توحيدُ كلّ الأخضر على درجة المادّة + تسطيحُ التدرّج + لابلٌ نظيف ═══ */
+.bc-embed .bc-arch{background:var(--sc-soft) !important;border:1.5px solid var(--sc) !important}
+.bc-embed .bc-fact+.bc-fact{border-top:1px dashed var(--line) !important}
+.bc-embed .bc-fact .l{color:var(--sc-deep) !important}
+.bc-embed .bc-fact .v,.bc-embed .bc-brand b,.bc-embed .bc-title,.bc-embed .bc-kicker,
+.bc-embed .bc-axis b,.ulum-mini .um-name,.ulum-mini .um-facts{color:var(--sc-deep) !important}
+.bc-embed .bc-fact .v small{color:var(--muted) !important}
+/* بطاقات العناوين المتدرّجة → تعبئةٌ صلبةٌ بلون المادّة الغامق (نصٌّ أبيض مريح) */
+[style*="linear-gradient(135deg,#1b5e34,#2D7A4B)"]{background:var(--sc-deep) !important;border-color:var(--sc-deep) !important}
+[style*="2px dashed #2D7A4B"]{border-color:var(--sc) !important}
+[style*="2px solid #1E5631"]{border-color:var(--sc-deep) !important}
+[style*="color:#1b5e34"],[style*="color:#9a7d33"],[style*="color:#8a6410"]{color:var(--sc-deep) !important}
+
+/* ═══ (2)+(3) صناديق الهدف/الأدوات/التهيئة: عناوينُ تحريريّةٌ نظيفة — بلا شريطٍ ملوّن ولا أيقونةٍ زخرفيّة، ═══
+   بلا لصقٍ (display:block) وبمسافةٍ مريحةٍ أسفل العنوان */
+.card.actful .row2 .miniblock{border:1px solid var(--line) !important;padding:16px 18px !important}
+.card.actful .row2 .miniblock::before{display:none !important}
+.card.actful .row2 .miniblock,.card.actful>.miniblock{position:relative}
+.miniblock>b,.card.actful .row2 .miniblock>b,.card.actful>.miniblock>b{
+  display:block !important;color:var(--sc-deep) !important;background:none !important;border:0 !important;
+  padding:0 !important;margin:0 0 9px !important;font-family:var(--fd) !important;font-weight:700 !important;font-size:15.5px !important;letter-spacing:.2px !important}
+.card.actful>.miniblock>b::before{display:none !important}
+</style>
+<style id="ghars-fix4">
+/* (٢) زرّ الصعود وشريط التقدّم بلون المادّة (كانا var(--elm) أخضر ثابتًا) */
+.gq-top{background:var(--sc) !important}
+.gq-progress{background:linear-gradient(90deg,var(--gold),var(--sc)) !important}
+/* (١) توازن عمودَي «حول الدرس / سير اللقاء»: تقريبُ العرضين يقرّب ارتفاعهما
+   فيكادان يختمان معًا، وكلّ البطاقات تبقى مقروءةً (بلا لصقٍ يُخفي السفليّة) */
+.les{grid-template-columns:minmax(240px,1fr) 1.5fr !important;align-items:start !important}
+</style>
+<style id="ghars-fix5">
+/* «وقفة التدبّر» شريطٌ كامل العرض أسفل العمودين (JS ينقلها خارج عمود المتن):
+   نصُّها عمودٌ مُوسَّطٌ بمقاسٍ مريح، فلا تبدو مترامية */
+.les + .story{margin-top:var(--sp-4,22px) !important}
+.story .h{max-width:860px;margin-inline:auto}
+.story .b{max-width:860px;margin-inline:auto}
+</style>
+<script id="ghars-layout">
+(function(){
+  function run(){
+    try{
+      document.querySelectorAll('.les').forEach(function(les){
+        var story=les.querySelector('.story');
+        if(story){ les.parentNode.insertBefore(story, les.nextSibling); }
+      });
+    }catch(e){}
+  }
+  if(document.readyState!=='loading') run(); else document.addEventListener('DOMContentLoaded',run);
+})();
+</script>
+<style id="ghars-balancer-css">
+.ghars-extra{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:22px}
+.ghars-extra > .card{margin:0 !important}
+</style>
+<script id="ghars-balancer">
+(function(){
+  function balance(){
+    try{
+      document.querySelectorAll('.les').forEach(function(les){
+        var side=les.querySelector('.side'), main=les.querySelector('.mainflow');
+        if(!side||!main) return;
+        var holder=null, guard=0;
+        while(side.offsetHeight > main.offsetHeight + 80 && side.children.length > 4 && guard++ < 6){
+          if(!holder){ holder=document.createElement('div'); holder.className='ghars-extra'; les.parentNode.insertBefore(holder, les.nextSibling); }
+          holder.insertBefore(side.lastElementChild, holder.firstChild);
+        }
+      });
+    }catch(e){}
+  }
+  if(document.readyState!=='loading') setTimeout(balance,60); else document.addEventListener('DOMContentLoaded',function(){setTimeout(balance,60);});
+})();
+</script>
+<style id="ghars-fix6">
+/* تحسين المواد الفاتحة: كلّ تعبئةٍ نصُّها أبيض تُبنى على --sc-deep (الدرجة الغامقة) فيُقرأ الأبيض على كلّ الدرجات */
+.panel .obj .n,.panel .obj .n.o,.panel .obj .n.g,.panel .obj .n.p{background:var(--sc-deep) !important}
+.qs-n{background:var(--sc-deep) !important}
+.gq-top{background:var(--sc-deep) !important}
+.panel a[style*="999px"],.panel .printbtn,.panel .copy-btn,.panel .linkbtn,.panel .kitabi-hijri-actions button{background:var(--sc-deep) !important}
+.panel a[style*="999px"][style*="var(--gold)"],.panel a[style*="999px"][style*="#C79A3B"]{background:var(--gold) !important;color:#3a2a06 !important}
+[style*="background:#286A54"],[style*="background:#286a54"],[style*="background:#2D7A4B"],[style*="background:#2d7a4b"]{background:var(--sc-deep) !important}
+</style>
+
+<!--GHARS-SKIN-END-->
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== الغلاف ===== -->
+  <div class="cover">
+    <div class="cover-photo" style="background-image:url('units-art/unit-mumin.jpg?v=1')"></div>
+    <div class="cover-main">
+      <div class="cover-l">
+        <span class="c-badge">مادة: مهاراتي · مجلس الأرقام والمفاهيم</span>
+        <h1>وحدة أنا مؤمن — اللقاء السادس<br/>الأشكال ثلاثية الأبعاد</h1>
+        <div class="c-meta">المرحلة: تمهيدي (5–6 سنوات) · المجلس: لقاء مهاراتي — مجلس الأرقام والمفاهيم · اليوم: السادس</div>
+      </div>
+      <div class="cover-r">
+        <div class="c-unit" style="background:#fff;padding:8px 10px;display:grid;place-items:center"><img src="brand/logo-ghars.webp" alt="شعار نادي غرس القيم للطفولة" style="display:block;width:88px;height:88px;object-fit:contain"/></div>
+        <div class="c-dur">المدة: نصف ساعة</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== التبويبات ===== -->
+  <!-- ورقة اليوم للطباعة (الطبقة الثانية) -->
+  <div class="dayprint-bar" style="text-align:center;margin:10px 0 0"><button type="button" class="linkbtn" onclick="window.print()" style="cursor:pointer">ورقة اليوم للطباعة</button></div>
+
+
+  <div class="tabs">
+    <button class="tab" data-p="ptahdir">التحضير والخلفية</button>
+    <button class="tab active" data-p="p1">دليل الدرس كامل</button>
+    <button class="tab" data-p="p2">التكامل اليومي</button>
+    <button class="tab" data-p="p3">التقويم</button>
+    <button class="tab" data-p="pilaj">العلاج والإثراء</button>
+    <button class="tab" data-p="p4">الآداب الصفية</button>
+    <button class="tab" data-p="p5">تحضيرات ولي الأمر</button>
+    <button class="tab" data-p="p6">القيم والمفاهيم والاستراتيجيات</button>
+    <button class="tab" data-p="p7">الحصيلة اللغوية</button>
+    <button class="tab" data-p="p8">مراجع المعلمة</button>
+    <button class="tab gold" data-p="p9">الأركان التطبيقية</button>
+  </div>
+
+  <style>
+  /* القالب المطوّر — طبقةٌ راقيةٌ بسيطة معمَّمة على التبويبات كلّها: أبيض/كريميّ + لمسةُ أخضرِ غرسٍ الغابيّ (بلا فيروزيّ ولا ذهبيّ صارخ) */
+  :root{--gp:#2C6A4D}                 /* أخضر غرس الأساسيّ للّمسات */
+  .card{background:#fff;border-color:#EAE2D3;box-shadow:0 1px 2px rgba(20,50,35,.03),0 16px 36px -28px rgba(20,50,35,.20);padding:22px 24px;margin-bottom:22px}
+  .sec-head{margin:38px 0 18px}
+  .sec-head.first{margin-top:12px}
+  .cg{gap:16px;margin-bottom:22px}       /* راحةٌ للعين: مسافةٌ بعد شبكة البطاقات + فجوةٌ داخليّة أوسع */
+  .info{background:#fff;border:1px solid #EAE2D3;color:#5f6a60;font-weight:500;margin-bottom:18px;padding:12px 16px}
+  /* صندوق مميّز للآيات والأحاديث بروح غرس (إطار أخضر + شارة + زخرفة نجميّة خفيفة) */
+  .ayah,.hadith{position:relative;overflow:visible;background:
+     radial-gradient(circle at 12% 0%, rgba(44,106,77,.05), transparent 30%),
+     radial-gradient(circle at 88% 100%, rgba(44,106,77,.05), transparent 30%),
+     #FBF8EF;
+     border:1.5px solid #cfe0d3;border-radius:14px;
+     box-shadow:0 1px 2px rgba(20,50,35,.04),0 18px 40px -30px rgba(20,50,35,.22);
+     padding:28px 26px 20px;margin:16px 0}
+  .ayah{text-align:center;font-size:21px;line-height:2.2;color:var(--t1)}
+  .ayah::before,.hadith::before{position:absolute;top:-12px;inset-inline-start:26px;
+     font-family:var(--fd);font-size:12.5px;font-weight:700;color:#fff;background:var(--gp);
+     padding:3px 15px;border-radius:999px;box-shadow:0 3px 8px -2px rgba(20,50,35,.35)}
+  .ayah::before{content:"قال اللهُ تعالى"}
+  .hadith::before{content:"حديثٌ شريف"}
+  .ayah::after{content:"";position:absolute;inset-inline-end:20px;top:16px;bottom:16px;width:2px;
+     background:linear-gradient(var(--gp),transparent);opacity:.25;border-radius:2px}
+  .ayah .ref,.hadith .ref{display:inline-block;margin-top:12px;font-size:12.5px;color:var(--gp);
+     font-weight:700;letter-spacing:.3px;background:#fff;border:1px solid #EAE2D3;border-radius:999px;padding:2px 12px}
+  .lbl{color:var(--t1);border-bottom:2px solid #e4ede6;padding-bottom:4px;display:inline-block;margin-bottom:12px}
+  .strat{background:#fff;border:1px solid #EAE2D3;padding:11px 14px;margin-bottom:8px}
+  .strat .k{background:#fff;color:var(--gp);border:1px solid #EAE2D3}
+  .miniblock{background:#fff;border:1px solid #EAE2D3;border-radius:10px;padding:10px 14px;margin-top:12px}
+  .steps{line-height:2}
+  .steps li{margin-bottom:4px}
+  .card>.lbl.gold{border-color:#EAE2D3}   /* تحييد التسطير الذهبيّ الناشز */
+  .miniblock>b{color:var(--gp)}           /* تحييد الفيروزيّ في عناوين المكعّبات */
+  /* بطاقات التقويم — ترميزٌ ثلاثيّ مكبوح بروح غرس: أخضر + أوكر هادئ + رمادي-أخضر (لا فيروزيّ/ذهبيّ صارخ) */
+  .taq.q{border-top-color:#7C8F82}
+  .taq.t{border-top-color:#B0862F}
+  .taq.n{border-top-color:var(--grn)}
+  .taq.q h3{color:#5E7268}
+  .taq.t h3{color:#9A7326}
+  .taq.n h3{color:var(--grn)}
+  .taq.q li::before{background:#7C8F82}
+  .taq.t li::before{background:#B0862F}
+  .taq.n li::before{background:var(--grn)}
+  /* عناوين بطاقات القيم/المفاهيم/التكامل: أخضر غرس بدل الفيروزيّ */
+  .ci .term{color:var(--gp)}
+  /* شارات المراحل — نفس الترميز المكبوح (تهيئة رمادي-أخضر · بناء أوكر هادئ · إغلاق أخضر) */
+  .sec-head .stage{color:#5E7268;background:#fff;border-color:#EAE2D3}
+  .sec-head .stage.s2{color:#9A7326;background:#fff;border-color:#EAE2D3}
+  .sec-head .stage.s3{color:var(--grn);background:#fff;border-color:#bfe0cd}
+  /* سطر عزو المصدر (توثيق التفسير/الشرح) */
+  .src{display:block;margin-top:6px;font-size:12px;line-height:1.6;color:#6b7d72;font-style:italic}#ptahdir .steps li{flex-wrap:wrap;min-width:0}#ptahdir .steps li>.qt{flex:1 1 100%;margin-top:3px;display:block}#ptahdir .steps li>.src{flex:1 1 100%}
+  .qt{color:#20342b}
+  </style>
+
+  <!-- ══════════ 0) التحضير والخلفية ══════════ -->
+  <div class="panel" id="ptahdir">
+    <div class="info"> كلُّ ما تحتاجه المعلمة قبل أن تدخل الحلقة: ما تُجهّزه بيدها، وما تعرفه في رأسها. تُقرأ ليلةَ أمس — سبعُ دقائق تكفي.</div>
+
+    <div class="sec-head first"><div class="num"><i class="gi" data-i="الوسائل والأدوات" data-size="22"></i></div><h2>قائمة تجهيز اللقاء</h2><div class="rule"></div></div>
+    <div class="card"><div class="lbl">يُطبع ويُقصّ ويُغلَّف</div><ul class="steps"><li>مجسّماتُ الأشكال ثلاثية الأبعاد (كرةٌ · مكعّبٌ · هرمٌ · مخروط) بألوانٍ متمايزة.</li><li>بطاقاتُ صورٍ لأشياءَ من البيئة تُطابِق كلَّ شكل، ولوحةُ فرزٍ رباعيّة.</li><li>قطعُ تركيبٍ (قلعةُ الأشكال) لبناءٍ حرٍّ بالأشكال ثلاثية الأبعاد.</li></ul></div>
+    <div class="card"><div class="lbl">أدوات النشاط المصاحب</div><ul class="steps"><li>موادُّ النشاط المصاحب وأدواتُه: قصاصات أشكالٍ (كرات · مكعّبات · مخاريط · أهرام) · ورق مقوّى · لاصق. <span class="src" style="display:inline">(مفصّلةٌ في تبويب «النشاط»)</span></li></ul></div>
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="مراجع إثرائية للمعلمة" data-size="22"></i></div><h2>ما تحتاجين معرفته</h2><div class="rule"></div></div>
+    <div class="card"><ul class="steps"><li><b>محورُ اللقاء:</b> تمييزُ الأشكال ثلاثية الأبعاد (الكرة · المكعّب · الهرم · المخروط) بخصائصها المحسوسة، وفرزُها ومطابقتُها بالبيئة.</li><li><b>خصائصُ محسوسة:</b> الكرةُ مستديرةٌ لا زوايا لها، والمكعّبُ له ستّةُ أوجهٍ مستوية، والهرمُ له قاعدةٌ ورأسٌ مدبّب، والمخروطُ له قاعدةٌ مستديرةٌ ورأسٌ مدبّب — تُدرَك باللمس.</li><li><b>الغاية:</b> ملاحظةُ الأشكال في المخلوقات تفتحُ عينَ الطفل على بديع خلق الله وإتقانه.</li></ul></div>
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="بناء المعنى" data-size="22"></i></div><h2>إضاءةٌ رياضيّة</h2><div class="rule"></div></div>
+    <div class="info">كيف تُثبّت المعلمةُ الأشكالَ الأربعة بطريقةٍ صحيحة — لا معلوماتٌ تُلقى في الحلقة.</div>
+    <div class="card"><ul class="steps"><li><b>الحسُّ قبل الاسم:</b> يتتبّعُ أوجهَ كلّ مجسّمٍ ويلمس رؤوسه قبل تسميته.</li><li><b>الفرزُ والمطابقة:</b> يصنّفُ الأشكالَ ويطابقُها بأشياءَ من محيطه.</li><li><b>البناءُ الحرّ:</b> يبني بالأشكال (قلعة) فيترسّخُ تمييزُها باللعب.</li></ul></div>
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="ضابط عقدي وشرعي" data-size="22"></i></div><h2>الضابط العقديّ والتربويّ</h2><div class="rule"></div></div>
+    <div class="card"><ul class="steps"><li><b>بديعُ خلق الله:</b> إتقانُ الأشكال والصور في المخلوقات من حكمة الله؛ نغرسُ تعظيمَه.<span class="src">الدليل: ﴿صُنْعَ اللَّهِ الَّذِي أَتْقَنَ كُلَّ شَيْءٍ﴾ [النمل ٨٨].</span></li><li><b>شكرُ نعمة العقل:</b> نعمةُ الإدراك تُشكَر بتأمّل خلق الله والانتفاع به.<span class="src">الدليل: ﴿وَجَعَلَ لَكُمُ السَّمْعَ وَالْأَبْصَارَ وَالْأَفْئِدَةَ لَعَلَّكُمْ تَشْكُرُونَ﴾ [النحل ٧٨]. المرجع: تيسير الكريم الرحمن للسعدي، ص٤٤٥.</span></li><li><b>لا رسمَ لذوات الأرواح:</b> الأمثلةُ أشكالٌ وأشياءُ لا صورُ ذوات أرواح بوجوهها.<span class="src">الدليل: «إنَّ أشدَّ الناسِ عذابًا يومَ القيامةِ المصوِّرون» [متّفق عليه، عن ابن مسعود].</span></li></ul></div>
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="تنبيه للمعلمة" data-size="22"></i></div><h2>ثلاثة أخطاء شائعة في هذا اللقاء</h2><div class="rule"></div></div>
+    <div class="card"><div class="lbl">١ · التعريفُ المجرّد</div><ul class="steps"><li><b>الخطأ:</b> حفظُ أسماء الأشكال دون لمسٍ لأوجهها ورؤوسها.</li><li><b>العلاج:</b> الحسُّ والخصائصُ أوّلًا.</li></ul></div>
+    <div class="card"><div class="lbl">٢ · الخلطُ بين المكعّب والهرم</div><ul class="steps"><li><b>الخطأ:</b> إهمالُ الفرق (المكعّبُ أوجهه مستوية والهرمُ له رأسٌ مدبّب).</li><li><b>العلاج:</b> مقارنةٌ محسوسةٌ للأطوال.</li></ul></div>
+    <div class="card"><div class="lbl">٣ · فصلُ الشكل عن البيئة</div><ul class="steps"><li><b>الخطأ:</b> عرضُ الأشكال دون ربطها بأشياءَ حوله.</li><li><b>العلاج:</b> مطابقةُ كلّ شكلٍ بالمحيط.</li></ul></div>
+  </div>
+
+  <!-- ══════════ 1) دليل الدرس ══════════ -->
+  <div class="panel active" id="p1">
+
+    <!-- ترويسة الدرس: بوصلة اللقاء — سؤالٌ يفتح، وفكرةٌ تبقى -->
+    <div class="lhero">
+      <div class="lh focus">
+        <div class="lh-lbl"><i class="gi" data-i="سؤال اليوم" data-size="20"></i> سؤال التركيز</div>
+        <div class="lh-q">ما الأشكال ثلاثية الأبعاد، وأين أجدها من حولي؟</div>
+        <div class="lh-foot">بوصلةُ اللقاء: تفتح به المعلمةُ الحوار وتعود إليه عند الغلق. <b>يقيسه</b> سؤالُ التغذية الراجعة الأول ومؤشراتُ النجاح.</div>
+      </div>
+      <div class="lh key">
+        <div class="lh-lbl"><i class="gi" data-i="الهدف" data-size="20"></i> جوهر اللقاء</div>
+        <div class="lh-t">الكرة والمكعّب والمخروط والهرم أشكالٌ أساسيّةٌ خلقها الله لنا لنميّز بها الأشياء وننتفع منها، وأنا أتحرّاها فيما حولي بشدّة الملاحظة.</div>
+        <div class="lh-foot">تظهر موسّعةً في «المعنى المركزي» بسير اللقاء؛ لو لم يبقَ من الدرس إلا جملةٌ فهي هذه.</div>
+      </div>
+    </div>
+
+    
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="مسار بداية اللقاء" data-size="22"></i></div><h2>مسار بداية اللقاء</h2><span class="stage">① تهيئة</span><div class="rule"></div></div>
+    <div class="flow-card sig">
+      <h3><i class="gi" data-i="إشارات اللقاءات" data-size="20"></i> إشارة بدء اللقاء — مهاراتي</h3>
+      <div class="greet">السلام عليكم ورحمة الله وبركاته يا طلاب العلم المباركين. <strong>نستمع الآن إلى إشارة بدء اللقاء لنعرف ماذا سيكون لقاؤنا.</strong></div>
+      <p><strong>منهجية الإشارة:</strong> تبدأ المعلمة بتحية الإسلام، ثم تدعو الأطفال للاستماع <strong>دون أن تُسمّي اللقاء</strong>؛ فيستمعون إلى <strong>إشارة مهاراتي</strong> ويتعرّفون على لقائهم بأنفسهم — فيرتبط كلّ لقاء بإشارته في أذهانهم — ثم <strong>تؤكّد المعلمة:</strong> «نعم، لقاؤنا الآن هو لقاء مهاراتي، نتعلّم فيه الأعداد والمفاهيم الرياضية بالملاحظة والتجربة».</p>
+      <p style="margin-top:8px"><strong>آية الإشارة:</strong> ﴿إِنَّ عِدَّةَ الشُّهُورِ عِندَ اللَّهِ اثْنَا عَشَرَ شَهْرًا فِي كِتَابِ اللَّهِ﴾ [التوبة: ٣٦]. <strong>المعنى الميسّر:</strong> ذكر الله في الآية عدد الشهور، والأعداد تعيننا على عدّ الأشياء وترتيبها وضبطها.</p>
+      <div class="sig-video"><video controls preload="metadata" src="assets/video_033_b6b8486b75ca59fc.mp4">متصفحك لا يدعم تشغيل الفيديو.</video><div class="cap">▶ فيديو إشارة بدء لقاء مهاراتي — تستعين به المعلمة ولا تجعله بديلًا عن الحوار والمحسوس</div></div>
+      <div class="greet"><strong>جواب الإشارة:</strong> «لقاؤنا مهاراتي، نتعلم فيه الأعداد والمفاهيم الرياضية بالملاحظة والتجربة».</div>
+    </div>
+    <div class="flow-card" style="">
+      <h3><i class="gi" data-i="دعاء" data-size="20"></i> افتتاح اللقاء بذكر الله</h3>
+      <p>تبدأ المعلمةُ بـ<strong>البسملة والحمدلة</strong> والصلاةِ على النبيّ ﷺ، ثمّ تفتتح لقاء مهاراتي بذكرِ الله وطلبِ العون على الفهمِ والإتقان، وتُردّد لجذب انتباه الأطفال: «انتباه… انتباه… حان وقتُ مهاراتِنا»، فيتهيّؤون للإنصات.</p>
+      <p style="margin-top:10px;font-size:14.5px;color:var(--muted)"><strong>الحزمُ مع الهدوء:</strong> تُدير المعلمةُ اللقاءَ بحزمٍ هادئ — صوتٌ لطيفٌ، وحدودٌ واضحة، وابتسامةٌ محتسبة — دون شدّةٍ تُنفّر ولا فوضى تُشتّت.</p>
+    </div>
+    <div class="flow-card law">
+      <h3><i class="gi" data-i="الآداب الصفية والقوانين" data-size="20"></i> قوانين الفصل</h3>
+      <div class="law-grid">
+        <div><b><i class="gi" data-i="نظافة" data-size="20"></i> أحافظ على نظافة فصلي</b><small>إماطة الأذى عن الطريق صدقة.</small></div>
+        <div><b><i class="gi" data-i="إنصات" data-size="20"></i> أستمع وأنصت</b><small>فلا أقاطع الآخرين.</small></div>
+        <div><b><i class="gi" data-i="حفظ اللسان واليد" data-size="20"></i> أحفظ لساني ويدي</b><small>المسلم من سلم المسلمون من لسانه ويده.</small></div>
+        <div><b><i class="gi" data-i="جلوس مؤدَّب" data-size="20"></i> أجلس جلسة صحيحة</b><small>في المساحة المخصصة لي.</small></div>
+        <div><b><i class="gi" data-i="رفع اليد" data-size="20"></i> أرفع يدي للمشاركة</b><small>السؤال للجميع والإجابة لمن تختاره المعلمة.</small></div>
+      </div>
+    </div>
+    <div class="flow-card rev">
+      <h3><i class="gi" data-i="استدعاء السابق" data-size="20"></i> مراجعة سريعة</h3>
+      <p>تعرض المعلمةُ الأشكالَ لتذكّر مفهوم اللقاء الرابع وتسأل: «ما هذه الأشكال؟»، وتذكّرهم أنّ الله الحكيم خلق لكلّ شيءٍ شكلًا مميّزًا. ثمّ نسأل: «لماذا نتعلّم الأرقام والمفاهيم؟» ونُجمِلها في خمسٍ: لأعدّ · لأعرف وقتي · لأعرف عدد الصلوات وركعاتها · لأعرف عمري · لأحسب مشترياتي. واليوم نتعرّف على الأشكال ثلاثية الأبعاد الأساسية ونتحرّاها من حولنا.</p>
+    </div>
+
+    <div class="les">
+      <aside class="side">
+        <div class="side-title"> حول الدرس</div>
+        <div class="card">
+          <div class="lbl">أهداف اللقاء</div>
+          <div style="background:#fff;border-radius:14px;padding:11px 14px;margin-bottom:12px">
+            <div class="lbl" style="margin-bottom:6px">أهداف عامة</div>
+            <div class="obj"><span class="n" style="background:#C79A3B;color:#fff">١</span><span class="t">أن يسمّي الطفلُ الأشكالَ الأربعة ويلاحظَها فيما حوله، متفكّرًا في جمال خلق الله الحكيم.</span></div>
+            <div class="obj"><span class="n" style="background:#C79A3B;color:#fff">٢</span><span class="t">أن يتحرّى الأشكالَ في محيطه بالملاحظة، ويشيرَ إلى أمثلةٍ منها بالمحسوس.</span></div>
+          </div>
+          <div class="lbl" style="margin-bottom:8px">أهداف التعلّم المحدّدة</div>
+          <div class="objgrid" style="grid-template-columns:repeat(3,1fr)">
+            <div>
+              <div class="lbl">معرفية</div>
+              <div class="obj"><span class="n">١</span><span class="t">أن يسمّي الأشكال ثلاثية الأبعاد: الكرة والمكعّب والمخروط والهرم</span></div>
+            </div>
+            <div>
+              <div class="lbl">وجدانية قيمية</div>
+              <div class="obj"><span class="n o">١</span><span class="t">أن يعظّم الطفل الله الحكيم ويتفكّر في جمال خلقه</span></div>
+              <div class="obj"><span class="n o">٢</span><span class="t">أن يشكر نعمة البصر والملاحظة</span></div>
+            </div>
+            <div>
+              <div class="lbl">مهارية تطبيقية</div>
+              <div class="obj"><span class="n g">١</span><span class="t">أن يلاحظ الأشكال من حوله ويشير إليها بشدّة الملاحظة</span></div>
+              <div class="obj"><span class="n g">٢</span><span class="t">أن يعمل ضمن مجموعته ويلتزم بشكلها في التحرّي</span></div>
+              <div class="obj"><span class="n g">٣</span><span class="t">أن يذكر مثالًا واحدًا وجده في الجولة الميدانيّة</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="lbl">القيم والمفاهيم والاستراتيجيات</div>
+          <div style="font-size:12.6px;line-height:1.95">
+            <div style="margin-bottom:5px"><b style="color:#b8860b">القيم:</b> تعظيم الله الحكيم والتفكّر في جمال خلقه · شكر نعمة البصر والملاحظة · التعاون في المجموعة · الهدوء وحسن الأدب في الجولة</div>
+            <div style="margin-bottom:5px"><b style="color:#7a5cc0">المفاهيم:</b> الكرة · المكعّب والمخروط · الهرم · أهمّية الأشكال</div>
+            <div><b style="color:#2D7A4B">الاستراتيجيات:</b> لعبة البحث والتحرّي · العمل في مجموعاتٍ أربع · الجولة الميدانيّة · العرض والمراجعة بالبطاقات · التسمية مع تعظيم الخالق</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="lbl">المفردات</div>
+          <div class="chips">
+            <span class="chip c">كرة</span><span class="chip c">مكعّب</span><span class="chip c">مخروط</span><span class="chip c">هرم</span><span class="chip c">التحرّي</span><span class="chip c">المحقّق</span><span class="chip c">مكبّر</span>
+          </div>
+        </div>
+        <div class="card" style="background:#fff">
+          <div class="lbl" style="color:#8a6a12"> المثير</div>
+          <div class="mini" style="background:#fff;border-radius:0 8px 8px 0;padding:6px 10px;margin-bottom:5px;font-size:12.7px;line-height:1.75"><b style="color:#8a6a12">النوع:</b> بصريّ حسّيّ (بطاقاتُ الأشكال ومكبّرها) · <b style="color:#8a6a12">الوظيفة:</b> جذبُ الانتباه ودفعُ الطفل للتفاعل، بلعبة تحرٍّ هادئةٍ تجعله يتساءل: أين نجد هذه الأشكال من حولنا؟</div>
+                    <div class="mini"> بطاقات الأشكال ثلاثية الأبعاد (كرة · مكعّب · مخروط · هرم) ومكبّر الأشكال</div>
+          <div class="mini" style="margin-top:6px"> «ما هذه الأشكال؟ وأين نجدها من حولنا؟»</div>
+          <div class="mini" style="margin-top:6px;color:var(--muted,#565f58)">نتحرّى الأشكالَ في خلق الله وفيما صنعه الناس بشدّة الملاحظة.</div>
+        </div>
+        <div class="card">
+          <div class="lbl">الوسائل والأدوات</div>
+                    <div class="mini"> بطاقات/صور الأشكال ثلاثية الأبعاد (تُعرض في المراجعة)</div>
+          <div class="mini"> مكبّر الأشكال (أداةٌ لكلّ مجموعةٍ تبحث بها)</div>
+          <div class="mini"> بيئة المدرسة ميدانًا للبحث (الأبواب · النوافذ · الساعات · اللوحات)</div>
+          <div class="mini"> بطاقات المجموعات الأربع (عليها شكلُ ما تتحرّى عنه)</div>
+        </div>
+        <div class="card">
+          <div class="lbl">تنبيه منهجي</div>
+                    <div class="mini">يُتمّ هذا اللقاءُ مفهومَ الأشكال بالانتقال من العامّ إلى تسمية الأشكال ثلاثية الأبعاد؛ ويُوظَّف بصرُ الطفل وملاحظتُه ممّا كرّمه الله به في التحرّي عنها، مع أدب الجولة في المدرسة. ولا تُرسَم ذواتُ الأرواح. <span class="src">التسمية مع تعظيم الخالق</span></div>
+        </div>
+        <div class="card">
+          <div class="lbl">ترابط المواد</div>
+          <div class="chips">
+            <span class="chip v">علّمني ربي</span><span class="chip v">كتابي المنير</span><span class="chip v">لساني</span><span class="chip v">أحبك ربي</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="mainflow">
+    <div class="quick-sheet">
+      <div class="qs-head"> ورقة التدريس السريعة — خطوات اللقاء أثناء الدرس</div>
+      <div class="qs-phases">
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">①</span> بداية اللقاء <span class="qs-min">٩ د</span></div>
+                      <li>إشارة بدء اللقاء: إشارة مهاراتي وآية عدّة الشهور، ثم جواب الإشارة.</li>
+            <li>آداب اللقاء: تذكير الأطفال بقوانين الفصل الخمسة.</li>            <li>مراجعة مفهوم اللقاء الرابع (الأشكال) والتذكير بفوائد تعلّم الأرقام.</li>
+        </div>
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">②</span> بناء وسير اللقاء <span class="qs-min">١٣ د</span></div>
+                      <li>عرض الأشكال وتسميتها: كرة · مكعّب · مخروط · هرم.</li>
+            <li>تذكيرهم بأنّ الله الحكيم خلق لنا الأشكال الهندسية وأهمّيتها.</li>
+            <li>«لولا اختلاف الأشكال لتشابه كلّ شيءٍ ولذهب جماله».</li>
+        </div>
+        <div class="qs-phase">
+          <div class="qs-ph-h"><span class="qs-n">③</span> إغلاق وتقويم <span class="qs-min">٨ د</span></div>
+                      <li>لعبة البحث والتحرّي في أربع مجموعاتٍ بمكبّر الأشكال، وجولةٌ ميدانيّة في المدرسة.</li>
+            <li>أسئلة التقويم: سمِّ الأشكال ثلاثية الأبعاد · ماذا وجدت مجموعتك؟</li>
+            <li>التنبيه على شدّة الملاحظة، ودعاء كفارة المجلس وختام اللقاء.</li>
+        </div>
+      </div>
+      <div class="qs-home"> <strong>ربط الأسرة:</strong> يلعب وليُّ الأمر مع طفله لعبة التحرّي في البيت: ابحث عن شيءٍ شكله كرة، ثم مكعّب، ثم مخروط، ثم هرم، ويثني عليه إن كان شديد الملاحظة. بلا تكليفٍ كتابيّ.</div>
+      <div class="qs-note">ورقةٌ مرجعية سريعة أثناء الدرس — الخطوات فقط دون الأهداف والزيادات؛ والنصّ الكامل في تبويب «دليل الدرس كامل».</div>
+    </div>
+
+        <div class="sec-head first"><div class="num"><i class="gi" data-i="سير اللقاء" data-size="22"></i></div><h2>سير اللقاء</h2><span class="stage s2">② سير وإغلاق</span><div class="rule"></div></div>
+                <div class="flow">          <div class="step"><b class="k">المراجعة والتسمية:</b> تعرض المعلمةُ الأشكالَ لتذكّر المفهوم وتسأل: ما هذه الأشكال؟ فيسمّونها: كرة · مكعّب · مخروط · هرم.</div>
+          <div class="step"><b class="k">التذكير بالمفهوم:</b> هي الأشكال الهندسية؛ خلقها الله الحكيم ليكون لكلّ شيءٍ شكلٌ مميّز، حتى نفرّق ونميّز بين الأشياء ونستخدمها وننتفع منها.</div>
+          <div class="step"><b class="k">جمال الاختلاف:</b> لولا اختلافُ الأشكال لكان كلُّ شيءٍ يشبه بعضه، ولذهب جمالُ الأشياء من حولنا.</div>
+          <div class="step"><b class="k">لعبة البحث والتحرّي:</b> توزّع المعلمةُ الأطفالَ أربعَ مجموعات، كلُّ مجموعةٍ تمثّل شكلًا (الكرة · المكعّب · المخروط · الهرم)، ومع كلٍّ مكبّرُ الأشكال.</div>
+          <div class="step"><b class="k">الجولة الميدانيّة:</b> نأخذ جولةً في المدرسة نبحث بالمكبّر عن الأشكال من حولنا (الأبواب · النوافذ · الساعات · اللوحات).</div>
+          <div class="step"><b class="k">شدّة الملاحظة:</b> تنبّههم المعلمةُ أنّ المحقّق شديدُ الملاحظة حتى يجد ما يتحرّى عنه، وتذكّرهم بأدب الجولة والهدوء.</div>
+          <div class="step"><b class="k">المعنى المركزي:</b> الكرة والمكعّب والمخروط والهرم أشكالٌ من حولي في كلّ مكان، أراها بعينٍ شديدة الملاحظة وأحمد الله على جمال خلقه.</div>
+          <div class="step"><b class="k"> تصحيح فهم الطفل:</b> المقصودُ تسميةُ الأشكال ثلاثية الأبعاد وملاحظتُها فيما حولنا، لا حفظُ تعريفاتها الدقيقة؛ ويُربَط ذلك بشكر نعمة البصر وتعظيمِ الحكيم، مع أدب الجولة في المدرسة.</div>
+          <div class="step"><b class="k">التمهيد للقادم:</b> «بإذن الله في اللقاء القادم نتعرّف على الأشكال الهندسية أكثر».</div>
+          <div class="step"><b class="k">جملة اللقاء الختامية:</b> الأشكالُ من حولي في كلّ مكان، أراها بعينٍ شديدة الملاحظة، وأحمد الله على جمال خلقه.</div></div>
+        <div class="story">
+
+                    <div class="h"> وقفة تربوية: المحقّقُ شديدُ الملاحظة <span>(تربطها المعلمة بشكر نعمة البصر وتعظيم الخالق)</span></div>
+          <div class="b">
+            <p>يُتمّ هذا اللقاءُ مفهومَ الأشكال الذي بدأه اللقاء الرابع، فينتقل الطفلُ من المفهوم العامّ إلى تسمية الأشكال ثلاثية الأبعاد. ويستعمل فيه بصرَه وملاحظتَه ممّا كرّمه الله به، فيتحرّى الأشكالَ في خلق الله وفيما صنعه الناس منها — وهو معنى وحدة «أنا مؤمن».</p>
+            <p><strong>تنبيه منهجي:</strong> تُدار الجولةُ الميدانيّة بأدبٍ وهدوءٍ داخل المدرسة، ويُغرَس التعاونُ في المجموعة وأداءُ الدور. ويُربَط اختلافُ الأشكال بحكمة الله وجمال خلقه، ولا تُرسَم ذواتُ الأرواح.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-head"><div class="num grn"><i class="gi" data-i="التغذية الراجعة" data-size="22"></i></div><h2>الإغلاق — التغذية الراجعة</h2><span class="stage s3">③ إغلاق</span><div class="rule"></div></div>
+    <div class="card feedback">
+      <h3><i class="gi" data-i="التغذية الراجعة" data-size="20"></i> أسئلة التغذية الراجعة (مع الإجابات النموذجية)</h3>
+      <ol class="qa">
+        <li><span class="q">سمِّ الأشكالَ الأربعة.</span><span class="a">الكرةُ · المكعّبُ · المخروطُ · الهرم.</span></li>
+        <li><span class="q">اذكر مثالًا وجدتَه لشكلٍ من حولك.</span><span class="a">يذكر مثالًا من الجولة يطابق شكلًا (نافذةٌ مخروطة · ساعةٌ دائريّة).</span></li>
+        <li><span class="q">مَن أتقن خلقَ هذه الأشكال؟</span><span class="a">اللهُ الحكيم.</span></li>
+      </ol>
+      <div class="note">تختار المعلمة سؤالين أو ثلاثة بحسب وقت الأطفال، وتُرشد الطفلَ إلى الإجابة برفق. المعيار: يسمّي ثلاثةً من الأشكال ثلاثية الأبعاد، ويذكر مثالًا وجده في الجولة.</div>
+    </div>
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="الوسائل والأدوات" data-size="22"></i></div><h2>أدوات اللقاء المعروضة</h2><div class="rule"></div></div>
+        <div class="gallery">
+            <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;background:#fff"><svg width="88" height="88" viewBox="0 0 100 100"><circle cx="50" cy="50" r="34" fill="none" stroke="var(--elm)" stroke-width="6"/></svg></div><div class="cap">الكرة<small>مستديرة لا زوايا لها</small></div></div>
+      <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;background:#fff"><svg width="88" height="88" viewBox="0 0 100 100"><rect x="24" y="24" width="52" height="52" rx="4" fill="none" stroke="var(--gold)" stroke-width="6"/></svg></div><div class="cap">المكعّب<small>ستّةُ أوجهٍ مستوية</small></div></div>
+      <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;background:#fff"><svg width="88" height="88" viewBox="0 0 100 100"><rect x="16" y="34" width="68" height="32" rx="4" fill="none" stroke="var(--elm)" stroke-width="6"/></svg></div><div class="cap">المخروط<small>قاعدةٌ مستديرة ورأسٌ مدبّب</small></div></div>
+      <div class="gitem"><div class="imgwrap" style="display:grid;place-items:center;background:#fff"><svg width="88" height="88" viewBox="0 0 100 100"><path d="M50 20 L80 76 L20 76 Z" fill="none" stroke="var(--t1)" stroke-width="6" stroke-linejoin="round"/></svg></div><div class="cap">الهرم<small>قاعدةٌ ورأسٌ مدبّب</small></div></div>
+    </div>
+
+    <div class="sec-head"><div class="num gold">
+<i class="gi" data-i="النشاط المصاحب" data-size="22"></i></div><h2>النشاط المصاحب</h2><div class="rule"></div></div>
+            <div class="card actful">
+      <h3>قلعة الأشكال</h3><figure class="actful-impl" style="margin:6px auto 15px;max-width:560px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fbfdfb;box-shadow:0 4px 14px rgba(20,50,35,.07)"><figcaption style="background:var(--elm-soft,#eef3e2);color:#2e3a16;font-family:var(--fd,'AlAwwal'),serif;font-weight:700;font-size:13.5px;padding:8px 13px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:7px"><i class="gi" data-i="النشاط المصاحب" data-size="16"></i> آليّةُ التنفيذ بلمحة &#8212; هكذا يُهيَّأ النشاط</figcaption><img src="assets/cards/amn-maharati-lesson6-actful.jpg" alt="آلية تنفيذ النشاط المصاحب" loading="lazy" style="display:block;width:100%;height:auto"/></figure>
+      <div class="row2">
+        <div class="miniblock"><b>الهدف</b>أن يبني الطفلُ قلعةً من أشكالٍ هندسيّة، فيميّز كلّ شكلٍ ويستعمله في موضعه.</div>
+        <div class="miniblock"><b>الأدوات</b>قصاصات أشكالٍ (كرات · مكعّبات · مخاريط · أهرام) · ورق مقوّى · لاصق.</div>
+      </div>
+      <div class="miniblock"><b>التهيئة</b>يُنفَّذ النشاطُ في مركز الرياضيات (ركن الفنون) بعد اللقاء.</div>
+      <div class="miniblock" style="margin-top:8px"><b>خطوات التنفيذ</b></div>
+      <ol>
+        <li>يختار الطفلُ الأشكالَ التي يحتاجها لبناء قلعته.</li>
+        <li>يلصقها: المخاريط للأبراج، والأهرام للأسقف، والمكعّبات للنوافذ، والكرات للزينة.</li>
+        <li>يسمّي أشكالَ قلعته للمعلمة بعد إتمامها.</li>
+      </ol>
+      <div class="miniblock" style="margin-top:8px"><b>أسئلة أثناء النشاط (التغذية الراجعة)</b></div>
+      <div class="opts">
+        <div class="opt">سمِّ الأشكال ثلاثية الأبعاد.</div>
+        <div class="opt">ماذا وجدت مجموعتك في جولة التحرّي؟</div>
+        <div class="opt">لماذا يجب أن يكون المحقّق شديد الملاحظة؟</div>
+        <div class="opt">أيّ شكلٍ استعملتَ للأسقف؟ (الهرم)</div>
+      </div>
+      <div class="miniblock" style="margin-top:10px"><b>اختيارات المعلمة حسب حاجة الطفل</b></div>
+      <div class="opts">
+        <div class="opt"><b>البطيء:</b> يستعمل شكلين ويسمّيهما ثم يتدرّج.</div>
+        <div class="opt"><b>السريع:</b> يبني قلعةً بالأشكال ثلاثية الأبعاد ويسمّي مواضعها.</div>
+        <div class="opt"><b>كثير الحركة:</b> يقود جولةَ التحرّي بهدوءٍ وأدب.</div>
+      </div>
+      <div class="central" style="margin-top:12px;background:linear-gradient(135deg,#1F4A39,#0E6E6B)"><b> جملة ختامية للنشاط</b>بالأشكال أبني وأزيّن، والحمد لله على جمال خلقه.</div>
+    </div>
+
+    <div class="actbar">
+ اختيارات الأنشطة الإضافية</div>
+    <div class="actgrid">
+            <div><span class="t">تلبية الاحتياجات الفردية</span><span class="bd">البطيء:</span> يستعمل شكلين ويسمّيهما ثم يتدرّج. <span class="bd">الخجول:</span> «أحسنت» عند أوّل تسميةٍ صحيحة لشكل. <span class="bd">النشيط:</span> يقود جولةَ التحرّي بهدوء.</div>
+      <div><span class="t">الربط بالمواد الأخرى</span><span class="bd">علّمني ربي:</span> تنوّع خلق الله وجماله. <span class="bd">أحبك ربي:</span> شكر نعمة البصر والملاحظة. <span class="bd">لساني:</span> نطق أسماء الأشكال بوضوح.</div>
+      <div><span class="t">التوسيع والإثراء</span><span class="bd">بيتي:</span> لعبة التحرّي عن الأشكال في البيت. <span class="bd">فني:</span> قلعة الأشكال بالقصّ واللصق (بلا صور ذوات أرواح).</div>
+      <div><span class="t">اقتراحات للتكرار</span> مراجعة الأشكال ثلاثية الأبعاد والتحرّي عنها ٣ دقائق في مطلع اللقاء التالي قبل الدرس الجديد.</div>
+    </div>
+
+    <div class="dua">
+      <div class="seal">۞</div>
+      <div class="l">كفارة المجلس · خاتمة اللقاء</div>
+      <div class="x">سبحانك اللهم وبحمدك، أشهد أن لا إله إلا أنت، أستغفرك وأتوب إليك.</div>
+    </div>
+  </div>
+
+  <!-- ══════════ 2) التكامل اليومي ══════════ -->
+  <div class="panel" id="p2">
+    <div class="sec-head first"><div class="num"><i class="gi" data-i="التكامل اليومي" data-size="22"></i></div><h2>العلاقة التكاملية لهذا اللقاء</h2><div class="rule"></div></div>
+    <div class="card cardblue">
+            <div class="mini" style="font-size:16px"><b style="color:var(--t1)">الفكرة الناظمة للوحدة:</b> كرّمني الله بالبصر والملاحظة، وخلق الأشكالَ مختلفةً بحكمته؛ فأتحرّاها فيما حولي وأحمده على جمال خلقه.</div>
+      <div class="mini" style="font-size:16px;margin-top:8px"><b style="color:var(--t1)">سؤال اليوم:</b> ما الأشكال ثلاثية الأبعاد الأساسية؟ وأين أجدها من حولي؟</div>
+      <div class="mini" style="font-size:16px;margin-top:8px"><b style="color:var(--t1)">هذا اللقاء:</b> مهاراتي — الأشكال ثلاثية الأبعاد.</div>
+    </div>
+    <div class="sec-head"><div class="num" style="background:var(--elm)"><i class="gi" data-i="التكامل اليومي" data-size="22"></i></div><h2>كيف يتكامل هذا اللقاء مع بقية دروس اليوم والوحدة؟</h2><div class="rule"></div></div>
+    <p class="mini" style="font-size:15px;margin-bottom:10px">يُتمّ هذا اللقاءُ مفهومَ الأشكال بالانتقال من العامّ إلى تسمية الأشكال ثلاثية الأبعاد؛ ويستعمل الطفلُ بصرَه وملاحظتَه ممّا كرّمه الله به. وهذه جسورُ الربط:</p>
+    <div class="cg">
+            <div class="ci"><div class="term"><i class="gi" data-i="علّمني ربي" data-size="18"></i> علّمني ربي — تنوّع الخلق</div><div class="def">تنوّعُ الأشكال آيةٌ على حكمة الله وجمال خلقه. <b>حركةُ المعلمة:</b> «انظروا جمال خلق الله في الأشكال».</div></div>
+      <div class="ci"><div class="term"><i class="gi" data-i="أحبك ربي" data-size="18"></i> أحبّك ربي — نعمة البصر</div><div class="def">بالبصر والملاحظة نتحرّى الأشكال، وهو نعمةٌ نشكر الله عليها. <b>حركةُ المعلمة:</b> «الحمد لله الذي جعل لي عينين ألاحظ بهما».</div></div>
+      <div class="ci"><div class="term"><i class="gi" data-i="لساني عربي" data-size="18"></i> لساني عربي — تسمية الأشكال</div><div class="def">نطقُ أسماء الأشكال بوضوح. <b>حركةُ المعلمة:</b> «سمِّ الشكلَ الذي وجدتَه».</div></div>
+      <div class="ci"><div class="term"><i class="gi" data-i="أدب واقتداء" data-size="18"></i> أدب واقتداء — أدب الجولة</div><div class="def">الهدوءُ والأدبُ أثناء الجولة في المدرسة والتعاونُ في المجموعة. <b>حركةُ المعلمة:</b> «نتحرّى بهدوءٍ وأدب».</div></div>
+      <div class="ci"><div class="term"><i class="gi" data-i="أركان" data-size="18"></i> الأركان والمراكز</div><div class="def">في الفنون قلعةُ الأشكال، وفي الإدراك تصنيفُ الأشكال. <b>حركةُ المعلمة:</b> ربطُ الأشكال بألعاب الأركان.</div></div>
+    </div>
+    <div class="card" style="margin-top:15px">
+      <div class="lbl">فكرة للربط السريع</div>
+      <p class="mini" style="font-size:15.5px">اسألي: كيف يخدم هذا اللقاء معنى الوحدة؟ يتحرّى الطفلُ الأشكالَ ببصره الذي كرّمه الله به، فيتعظّم الله الحكيم ويحمده على جمال خلقه.</p>
+    </div>
+  </div>
+
+  <!-- ══════════ 3) التقويم ══════════ -->
+  <div class="panel" id="p3">
+    <div class="info"> التقويم في منهج غرس القيم ثلاثي المراحل — يرصد الطفل قبل الدرس وأثناءه وبعده.</div>
+    <div class="grid g3">
+      <div class="card taq q"><h3><i class="gi" data-i="التقويم القبلي" data-size="20"></i> التقويم القبلي</h3><ul>
+                <li>ما اسم الشكل المستدير الذي لا زوايا له؟</li><li>أرِني شيئًا في الفصل شكله مخروط؟</li><li>ماذا في أعلى الهرم؟</li>
+      </ul></div>
+      <div class="card taq t"><h3><i class="gi" data-i="التقويم التكويني" data-size="20"></i> التقويم التكويني</h3><ul>
+                <li>تسمية الأشكال ثلاثية الأبعاد عند عرضها في المراجعة</li><li>التزام الطفل بمجموعته وبالشكل الذي تتحرّاه</li>
+        <li>دقّة البحث في الجولة الميدانيّة واستعمال المكبّر</li><li>التنبّه لآداب الجولة في المدرسة والهدوء أثناءها</li>
+      </ul></div>
+      <div class="card taq n"><h3><i class="gi" data-i="التقويم النهائي" data-size="20"></i> التقويم النهائي</h3><ul>
+                <li>سمِّ الأشكال ثلاثية الأبعاد · ماذا وجدت مجموعتك؟ · لماذا يكون المحقّق شديد الملاحظة؟</li>
+        <li>يلاحظ الأشكال من حوله ويشير إليها</li><li><b>المعيار: يسمّي ثلاثةً من الأشكال ثلاثية الأبعاد، ويذكر مثالًا وجده في الجولة</b></li>
+      </ul></div>
+    </div>
+    <div class="sec-head"><div class="num grn"><i class="gi" data-i="مؤشر النجاح والتقويم" data-size="22"></i></div><h2>مؤشرات النجاح</h2><div class="rule"></div></div>
+    <div class="cg">
+            <div class="ci"><div class="term">المؤشر المعرفي</div><div class="def">يسمّي الأشكال ثلاثية الأبعاد: الكرة والمكعّب والمخروط والهرم.</div></div>
+      <div class="ci"><div class="term">المؤشر المهاري</div><div class="def">يلاحظ الأشكال من حوله ويشير إليها بشدّة الملاحظة.</div></div>
+      <div class="ci"><div class="term">المؤشر الوجداني</div><div class="def">يعظّم الله الحكيم ويشكر نعمة البصر.</div></div>
+      <div class="ci"><div class="term">المؤشر التطبيقي</div><div class="def">يعمل ضمن مجموعته ويذكر مثالًا وجده في الجولة.</div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 3ب) العلاج والإثراء ══════════ -->
+  <div class="panel" id="pilaj">
+    <div class="info"> ماذا تفعل المعلمة بعد أن تقرأ مؤشّرات النجاح: كيف تحكم، وماذا تصنع لمن لم يبلغ، ولمن تجاوز، وإن تعذّرت الوسيلة. لا يُعاد الدرس — يُعالَج المؤشّر الذي أخفق وحدَه.</div>
+
+    <div class="sec-head first"><div class="num grn"><i class="gi" data-i="مؤشر النجاح والتقويم" data-size="22"></i></div><h2>ما الذي أبحث عنه؟ — سلّم الحكم</h2><div class="rule"></div></div>
+    <div class="info">ثلاثة مستويات موصوفة لكلّ مؤشّر، فيتحوّل الحكم من «تحقّق / لم يتحقّق» إلى ملاحظةٍ موصوفة. تُملأ بعلامةٍ سريعة في <a class="reflink" href="sijil-amn.html" target="_blank" rel="noopener">سجلّ ملاحظة الوحدة</a>.</div>
+
+    <div class="card"><div class="lbl">المؤشّر المعرفيّ</div><div class="cg">
+      <div class="ci"><div class="term">مبتدئ</div><div class="def">يسمّي شكلًا واحدًا.</div></div>
+      <div class="ci"><div class="term">نامٍ</div><div class="def">يسمّي ثلاثةً من الأشكال ثلاثية الأبعاد.</div></div>
+      <div class="ci"><div class="term">متمكّن</div><div class="def">يسمّي الكرةَ والمكعّبَ والمخروطَ والهرم.</div></div>
+    </div></div>
+
+    <div class="card"><div class="lbl">المؤشّر المهاريّ</div><div class="cg">
+      <div class="ci"><div class="term">مبتدئ</div><div class="def">يلاحظ شكلًا في محيطه بمساعدة.</div></div>
+      <div class="ci"><div class="term">نامٍ</div><div class="def">يلاحظ الأشكالَ من حوله ويشير إليها.</div></div>
+      <div class="ci"><div class="term">متمكّن</div><div class="def">يلاحظ الأشكالَ من حوله ويشير إليها ويسمّي كلَّ واحدٍ باسمه.</div></div>
+    </div></div>
+
+    <div class="card"><div class="lbl">المؤشّر الوجدانيّ</div><div class="cg">
+      <div class="ci"><div class="term">مبتدئ</div><div class="def">يلعب بالأشكال دون ربطٍ بالخالق.</div></div>
+      <div class="ci"><div class="term">نامٍ</div><div class="def">يعظّم اللهَ الحكيم عند التذكير ويشكر نعمة البصر.</div></div>
+      <div class="ci"><div class="term">متمكّن</div><div class="def">يعظّم اللهَ الحكيم الذي أتقن الأشكال، ويشكره على نعمة البصر.</div></div>
+    </div></div>
+
+    <div class="card"><div class="lbl">المؤشّر التطبيقيّ</div><div class="cg">
+      <div class="ci"><div class="term">مبتدئ</div><div class="def">يشارك في المجموعة دون إسهام.</div></div>
+      <div class="ci"><div class="term">نامٍ</div><div class="def">يعمل ضمن مجموعته ويضع شكلًا في القلعة.</div></div>
+      <div class="ci"><div class="term">متمكّن</div><div class="def">يعمل ضمن مجموعته، ويذكر مثالًا على كلّ شكلٍ من محيطه.</div></div>
+    </div></div>
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="تنبيه للمعلمة" data-size="22"></i></div><h2>إن لم يتحقّق المؤشّر</h2><div class="rule"></div></div>
+    <div class="info">نشاطٌ قصير مربوطٌ بالمؤشّر الذي أخفق تحديدًا لا بالدرس عمومًا — يُنفَّذ في الركن أو في أوّل ثلاث دقائق من اللقاء التالي.</div>
+
+    <div class="card"><div class="lbl">المعرفيّ · ٥ دقائق في مركز الرياضيات</div><ul class="steps">
+      <li><b>الأدوات:</b> أربعُ قصاصاتٍ بالأشكال ثلاثية الأبعاد فقط.</li>
+      <li>ترفع المعلمة كلَّ شكلٍ وتسمّيه: «كرة · مكعّب · مخروط · هرم»، ويردّد.</li>
+      <li>تسأل: «أين المكعّب؟ أين الهرم؟» ويشير.</li>
+      <li>تطلب منه أن يذكر شيئًا في الغرفة يشبه كلَّ شكل.</li>
+      <li><b>علامة النجاح:</b> يسمّي الأشكالَ الأربعة ويشير إلى مثالٍ لكلٍّ. ثمّ يُعاد إلى اللعب الحرّ.</li>
+    </ul></div>
+
+    <div class="card"><div class="lbl">الوجدانيّ · ٣ دقائق في الانتقال بين اللقاءات</div><ul class="steps">
+      <li>تسأل المعلمة: «مَن خلق هذه الأشكالَ الجميلةَ وأتقنها؟» وتنتظر: «اللهُ الحكيم».</li>
+      <li>تقول: «سبحان الله، وبأيّ نعمةٍ نراها؟ بنعمة البصر».</li>
+      <li>تُثني على مَن يعظّم اللهَ في جمال خلقه ويشكر بصره.</li>
+      <li><b>علامة النجاح:</b> أن يعظّم اللهَ الحكيم أو يشكر بصره مرّةً بلا تلقين.</li>
+    </ul></div>
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="الاستراتيجيات التعليمية" data-size="22"></i></div><h2>للطفل المتقدّم</h2><div class="rule"></div></div>
+    <div class="cg">
+      <div class="ci"><div class="term">سؤالٌ أعمق</div><div class="def">«لماذا نوّع اللهُ أشكالَ الأشياء؟ وكيف ننتفع بها؟» فتُقرّب حكمةَ الله في التنويع ونفعَه للإنسان.</div></div>
+      <div class="ci"><div class="term">دورٌ قياديّ</div><div class="def">يكون «مهندسَ القلعة»: يوزّع الأشكالَ على مجموعته ويسمّي كلَّ شكلٍ يضعه.</div></div>
+      <div class="ci"><div class="term">ربطٌ بمعنًى سابق</div><div class="def">«عرفنا الأشكالَ والأعدادَ في وحدتنا؛ فمن أتقن كلَّ ذلك؟» فيجمع تعلّمَه تحت عظمة الله الحكيم.</div></div>
+      <div class="ci"><div class="term">تمهيدٌ لليوم التالي</div><div class="def">«نُكمل رحلتنا في التعرّف إلى نعم الله من حولنا».</div></div>
+    </div>
+
+    <div class="sec-head"><div class="num"><i class="gi" data-i="الوسائل والأدوات" data-size="22"></i></div><h2>إن تعذّرت الوسيلة</h2><div class="rule"></div></div>
+    <div class="card"><ul class="steps">
+      <li><b>تعذّرت مكعّباتُ القلعة:</b> تُقصّ الأشكالُ من ورقٍ أو تُرسم على السبّورة وتُرتّب؛ المقصود تمييزُ الأشكال لا المكعّبات.</li>
+      <li><b>تعذّرت القصاصاتُ:</b> يُشار إلى مجسّمات الغرفة (الصندوقُ مكعّب · الكرةُ كرة · قمعُ البوظة مخروط)؛ المقصود ربطُ المجسّم بمحيطه.</li>
+      <li><b>تعذّرت الأدواتُ كلُّها:</b> تُرسم الأشكالُ بالإصبع في الهواء وتُسمّى؛ المقصود إدراكُ الأشكال ثلاثية الأبعاد.</li>
+    </ul></div>
+  </div>
+
+  <!-- ══════════ 4) الآداب الصفية ══════════ -->
+  <div class="panel" id="p4">
+    <div class="info"> الآداب الصفية لحظات تربوية ذهبية — تبدأ المعلمة كل فكرة بآية أو نص حديث، ولا يعلو صوتها على النص الشرعي. الحزم مع الهدوء دائمًا.</div>
+    <div class="card cardblue" style="margin-bottom:14px">
+      <div class="lbl">آداب المعلمة — مقدمة الرعاية</div>
+      <ul class="steps">
+        <li>تبدأ بالبسملة والحمدلة والدعاء: «اللهم علّمنا ما ينفعنا وانفعنا بما علّمتنا».</li>
+        <li>تنطلق كل فكرة بآية أو نص حديث شريف.</li>
+        <li>الحزم مع الهدوء — فلا يعلو صوت المعلمة على النص الشرعي.</li>
+      </ul>
+      <div class="lbl" style="margin-top:12px;font-size:15px">آداب الطفل في مجلس الأرقام</div>
+      <ul class="steps">
+        <li>أجلس بسكينة وأنصت لشرح المعلمة.</li><li>أنتظر دوري في العدّ واستعمال الوسائل، ولا أخطف القطع.</li><li>أطلب المساعدة بأدبٍ دون حرج، وأحافظ على أدوات العدّ.</li>
+      </ul>
+    </div>
+        <div class="adab"><div class="h">١ · أدب الجولة في المدرسة</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>ركض طفل وأحدث فوضى أثناء جولة التحرّي.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«نتحرّى بهدوءٍ وأدبٍ في مدرستنا، ونحترم مساحاتها؛ فالأدبُ جمالٌ وأمان. امشِ برفقٍ وابحث بعينك».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>الأدب — الهدوء في التنقّل.</span></div>
+      <div class="link">ربط بالدرس: الجولةُ الميدانيّة تحتاج أدبًا وهدوءًا.</div>
+    </div></div>
+    <div class="adab"><div class="h">٢ · التعاون في المجموعة وأداء الدور</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>انفرد طفل عن مجموعته ولم يشاركها التحرّي.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«نعمل مع مجموعتنا ونتعاون في البحث عن شكلنا؛ فالتعاونُ يجمعنا. هيّا ابحثوا معًا بالمكبّر».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>التعاون — أداء الدور.</span></div>
+      <div class="link">ربط بالدرس: أربعُ مجموعاتٍ لكلٍّ شكلها في التحرّي.</div>
+    </div></div>
+    <div class="adab"><div class="h">٣ · شكر نعمة البصر والملاحظة</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>وجد طفل شكلًا فرحًا بملاحظته.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«الحمد لله الذي جعل لك عينين تلاحظ بهما وتتحرّى؛ فنشكره على نعمة البصر. أحسنت أيّها المحقّق».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>شكر النعمة — حمد الله.</span></div>
+      <div class="link">ربط بالدرس: نتحرّى الأشكالَ بالبصر الذي كرّمنا الله به.</div>
+    </div></div>
+    <div class="adab"><div class="h">٤ · تعظيم الله الحكيم والتفكّر</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>تعجّب طفل من كثرة الأشكال حوله.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«سبحان الله الحكيم الذي خلق الأشكالَ مختلفةً بجمال؛ لولا اختلافُها لتشابه كلُّ شيء. نتفكّر فنعظّمه».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>تعظيم الخالق — التفكّر.</span></div>
+      <div class="link">ربط بالدرس: اختلافُ الأشكال من حكمة الله.</div>
+    </div></div>
+    <div class="adab"><div class="h">٥ · المحافظة على الأدوات</div><div class="b">
+      <div class="row"><span class="tag s">الموقف</span><span>عبث طفل بمكبّر الأشكال أو ألقاه.</span></div>
+      <div class="row"><span class="tag r">الرد المقترح</span><span>«نحافظ على أدوات تعلّمنا ونستعملها برفق؛ فالمحافظةُ عليها من حسن الأدب. أمسك المكبّرَ بلطف».</span></div>
+      <div class="row"><span class="tag v">القيمة</span><span>المحافظة على الأدوات.</span></div>
+      <div class="link">ربط بالدرس: مكبّرُ الأشكال أداةُ التحرّي.</div>
+    </div></div>
+  </div>
+
+  <!-- ══════════ 5) تحضيرات ولي الأمر ══════════ -->
+  <div class="panel" id="p5">
+    <div class="info"> القيمة تترسّخ حين تُعاش في البيت كما تُتعلَّم في الفصل — هذه التهيئات يُطبّقها ولي الأمر قبل الدرس وبعده.</div>
+        <div class="card par"><div class="h"> ١ · تهيئة وجدانية</div>
+      <div class="hs"><span class="n">أ</span><span>يُحدّث وليُّ الأمر طفلَه أنّ الله الحكيم خلق الأشكالَ مختلفةً بجمال، فنتفكّر ونعظّمه.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يقول له: «سبحان الله الذي أبدع خلق كلّ شيء».</span></div>
+      <div class="after">← يربط الأشكال بتعظيم الخالق.</div>
+    </div>
+    <div class="card par"><div class="h"> ٢ · تهيئة معرفية</div>
+      <div class="hs"><span class="n">أ</span><span>يذكّره بالأشكال ثلاثية الأبعاد: كرة · مكعّب · مخروط · هرم.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يسأله: «ما اسم الشكل المستدير الذي لا زوايا له؟».</span></div>
+      <div class="after">← يرسّخ أسماء الأشكال قبل الصف.</div>
+    </div>
+    <div class="card par"><div class="h"> ٣ · تهيئة بالتحرّي</div>
+      <div class="hs"><span class="n">أ</span><span>يلعب معه لعبة التحرّي: ابحث عن شيءٍ دائريّ، ثم مكعّب، ثم مخروط، ثم هرم.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يثني عليه إن كان شديد الملاحظة.</span></div>
+      <div class="after">← يعيش الطفل التحرّي عن الأشكال في بيته.</div>
+    </div>
+    <div class="card par"><div class="h"> ٤ · تهيئة بالشكر</div>
+      <div class="hs"><span class="n">أ</span><span>يذكّره أنّ البصر نعمةٌ نلاحظ بها الأشكال ونرى جمال الخلق.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يساعده على قول: الحمد لله على نعمة البصر.</span></div>
+      <div class="after">← يربط البصر بشكر الله.</div>
+    </div>
+    <div class="card par"><div class="h"> ٥ · تهيئة بالتعاون</div>
+      <div class="hs"><span class="n">أ</span><span>يشجّعه على التعاون وأداء دوره حين يعمل ضمن مجموعة.</span></div>
+      <div class="hs"><span class="n">ب</span><span>يذكّره بأدب الهدوء أثناء الحركة.</span></div>
+      <div class="after">← يغرس التعاون وأدب الجولة.</div>
+    </div>
+    <div class="card par"><div class="h"> ٦ · تهيئة تعاونية أسرية</div>
+      <p class="mini" style="font-size:15.5px">تلاحظ الأسرةُ تحرّي الطفل للأشكال وتسميتَه لها وتقول: «أحسنت، بارك الله فيك»، مع تجنّب المقارنة بغيره أو إطالة التمرين حتى الملل.</p>
+      <div class="after">← يزرع التعاون الأسري والثقة في وجدان الطفل.</div>
+    </div>
+    <div class="card par"><div class="h"> أسئلة تطرحها على طفلك</div>
+            <div class="pq">ما الأشكال ثلاثية الأبعاد الأساسية؟</div>
+      <div class="pq">ما اسم الشكل المستدير الذي لا زوايا له؟ (الكرة)</div>
+      <div class="pq">دلّني على شيءٍ دائريٍّ وآخر هرمٍ في البيت.</div>
+      <div class="pq">ماذا في أعلى الهرم؟ (رأسٌ مدبّب)</div>
+      <div class="pq">من الذي خلق الأشكالَ مختلفةً بجمال؟ (الله الحكيم)</div>
+    </div>
+        <div class="sec-head"><div class="num"><i class="gi" data-i="تحضيرات ولي الأمر" data-size="22"></i></div><h2>بطاقة العودة من البيت</h2><div class="rule"></div></div>
+    <div class="card">
+      <div class="info">مهمّةٌ صغيرةٌ تخرج مع الطفل إلى البيت وتعود معه في اللقاء التالي، فتصل تعلّمَ اليوم بالغد وتُشرك الأسرة.</div>
+      <ul class="steps">
+        <li><b>ما يفعله في البيت:</b> يجمع أشياءَ بأشكالٍ مختلفة ويرتّبها في مجموعاتٍ بحسب الشكل.</li>
+        <li><b>ما يعود به:</b> يذكر لزملائه شكلين رتّبهما، ومَن أتقن خلقَ الأشكال.</li>
+        <li><b>استثمارها في افتتاح الغد:</b> تسأل المعلمةُ: «أيَّ أشكالٍ رتّبتَ في بيتك؟ ومَن أبدع خلقها؟».</li>
+      </ul>
+    </div>
+    <div class="wa-wrap">
+      <div class="wa">
+        <div class="wa-head">
+          <span class="bk">‹</span>
+          <span class="av"><img src="brand/logo-ghars.webp" alt="غرس"/></span>
+          <div class="who"><div class="nm">أولياء أمور الفصل</div><div class="st">غرس القيم · دليل المعلمة</div></div>
+          <span class="ics"><svg viewBox="0 0 24 24"><path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11z"/></svg><svg viewBox="0 0 24 24"><path d="M20 15.5c-1.2 0-2.5-.2-3.6-.6a1 1 0 0 0-1 .2l-2.2 2.2a15 15 0 0 1-6.6-6.6l2.2-2.2a1 1 0 0 0 .2-1C8.7 6.5 8.5 5.2 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg></span>
+        </div>
+        <div class="wa-body">
+          <span class="wa-day">اليوم</span>
+          <div class="wa-bub">
+            <div class="wa-text">بسم الله الرحمن الرحيم 🌿
+السلام عليكم ورحمة الله وبركاته
+
+📖 تعرّف أبناؤكم اليوم بحمد الله على <strong>الأشكال ثلاثية الأبعاد</strong>: الكرة والمكعّب والمخروط والهرم، وخرجوا في جولة تحرٍّ بمكبّر الأشكال يبحثون عنها في المدرسة.
+
+🏡 <strong>نشاط بيتي:</strong> اطلبوا من طفلكم أن يكون محقّقًا شديد الملاحظة، فيدلّكم على شيءٍ دائريٍّ وآخر هرمٍ في البيت. من غير واجبٍ كتابيّ.
+
+💚 جزاكم الله خيرًا، ونسأل الله أن يبارك في أبنائنا وأن ينفعهم بما تعلّموا — <strong>فريق نادي غرس القيم</strong></div>
+            <div class="wa-meta"><span class="t">٨:٣٠ ص</span><svg class="ck" viewBox="0 0 17 11" fill="none" stroke="#53BDEB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6l3.2 3.4L11 2"/><path d="M6.2 9.4L6.7 8.8 16 1"/></svg></div>
+          </div>
+        </div>
+        <div class="wa-foot">
+          <span class="inp">اكتب رسالة…</span>
+          <span class="wa-send" title="رسالة لولي الأمر"><svg viewBox="0 0 24 24"><path d="M3 20.5v-6l8-2.5-8-2.5v-6l19 8.5z"/></svg></span>
+        </div>
+      </div>
+      <div class="wa-copybar"><button class="copy-btn wa-copy" data-copy=".wa-text">📋 نسخ الرسالة لإرسالها</button></div>
+      <div class="wa-hint">انسخي الرسالة وأرسليها عبر واتساب أو تيليجرام — يُنسّق الغامق <code>*هكذا*</code> والمائل <code>_هكذا_</code> تلقائيًا عند اللصق.</div>
+    </div>
+  </div>
+
+  <!-- ══════════ 6) القيم والمفاهيم ══════════ -->
+  <div class="panel" id="p6">
+    <div class="sec-head first"><div class="num gold"><i class="gi" data-i="القيم الأساسية" data-size="22"></i></div><h2>القيم الأساسية للدرس</h2><div class="rule"></div></div>
+    <div class="cg">
+            <div class="ci"><div class="term">تعظيم الله الحكيم والتفكّر في جمال خلقه</div><div class="def">التفكّرُ في اختلاف الأشكال ورؤيةُ جمال خلق الله.</div></div>
+      <div class="ci"><div class="term">شكر نعمة البصر والملاحظة</div><div class="def">حمدُ الله على العين التي نلاحظ بها ونتحرّى.</div></div>
+      <div class="ci"><div class="term">التعاون في المجموعة</div><div class="def">التعاونُ وأداءُ الدور في التحرّي.</div></div>
+      <div class="ci"><div class="term">الهدوء وحسن الأدب في الجولة</div><div class="def">أدبُ الحركة والهدوء داخل المدرسة.</div></div>
+    </div>
+    <div class="card" style="margin-bottom:16px">
+      <div class="lbl"> كيف تغرس المعلمة القيم أثناء الدرس؟</div>
+      <ul class="steps">
+                <li>تربط اختلافَ الأشكال بحكمة الله وجمال خلقه، فتغرس تعظيمَ الخالق.</li>
+        <li>تذكّر بنعمة البصر التي نتحرّى بها، فتغرس الشكر.</li>
+        <li>تنظّم العملَ في مجموعاتٍ متعاونة، فتغرس التعاونَ وأداء الدور.</li>
+        <li>تنبّه على أدب الجولة والهدوء، وتشجّع كلَّ طفلٍ بلا مقارنة.</li>
+      </ul>
+    </div>
+    <div class="sec-head"><div class="num p" style="background:#7a5cc0"><i class="gi" data-i="المفاهيم الأساسية" data-size="22"></i></div><h2>المفاهيم الأساسية</h2><div class="rule"></div></div>
+    <div class="cg">
+            <div class="ci"><div class="term">الكرة</div><div class="def">شكلٌ مستديرٌ لا زوايا له.</div></div>
+      <div class="ci"><div class="term">المكعّب والمخروط</div><div class="def">المكعّبُ له ستّةُ أوجهٍ مستوية؛ والمخروطُ له قاعدةٌ مستديرةٌ ورأسٌ مدبّب.</div></div>
+      <div class="ci"><div class="term">الهرم</div><div class="def">مجسّمٌ له قاعدةٌ ورأسٌ مدبّب من فوق.</div></div>
+      <div class="ci"><div class="term">أهمّية الأشكال</div><div class="def">التفريقُ والتمييزُ بين الأشياء، واستخدامها والانتفاع منها.</div></div>
+    </div>
+    <div class="sec-head"><div class="num"><i class="gi" data-i="الاستراتيجيات التعليمية" data-size="22"></i></div><h2>الاستراتيجيات التعليمية</h2><div class="rule"></div></div>
+    <div class="card">
+            <div class="strat"><span class="k">لعبة البحث والتحرّي</span><span class="v">البحثُ عن الأشكال بالمكبّر في المدرسة.</span></div>
+      <div class="strat"><span class="k">العمل في مجموعاتٍ أربع</span><span class="v">كلُّ مجموعةٍ تمثّل شكلًا.</span></div>
+      <div class="strat"><span class="k">الجولة الميدانيّة</span><span class="v">التحرّي في بيئة المدرسة.</span></div>
+      <div class="strat"><span class="k">العرض والمراجعة بالبطاقات</span><span class="v">تسميةُ الأشكال ثلاثية الأبعاد.</span></div>
+      <div class="strat"><span class="k">التسمية مع تعظيم الخالق</span><span class="v">ربطُ الأشكال بجمال خلق الله.</span></div>
+    </div>
+    <div class="sec-head"><div class="num gold"><i class="gi" data-i="الاستراتيجيات التعليمية" data-size="22"></i></div><h2>الأساليب العشرة</h2><div class="rule"></div></div>
+    <div class="cg">
+            <div class="ci"><div class="term">١ · اللعب</div><div class="def">لعبةُ البحث والتحرّي بمكبّر الأشكال.</div></div>
+      <div class="ci"><div class="term">٢ · التعلّم التعاونيّ</div><div class="def">أربعُ مجموعاتٍ لكلٍّ منها شكلها.</div></div>
+      <div class="ci"><div class="term">٣ · الوسيلة الحسّية</div><div class="def">بطاقاتُ الأشكال ومكبّرُ الأشكال.</div></div>
+      <div class="ci"><div class="term">٤ · الاكتشاف</div><div class="def">البحثُ عن الأشكال في بيئة المدرسة.</div></div>
+      <div class="ci"><div class="term">٥ · السؤال</div><div class="def">«ما هذه الأشكال؟» و«ماذا وجدتم؟».</div></div>
+      <div class="ci"><div class="term">٦ · الربط بالواقع</div><div class="def">أشكالٌ في أبواب المدرسة ونوافذها ولوحاتها.</div></div>
+      <div class="ci"><div class="term">٧ · التعزيز</div><div class="def">الثناءُ على المحقّق شديد الملاحظة.</div></div>
+      <div class="ci"><div class="term">٨ · العمل الفنّيّ</div><div class="def">قلعةُ الأشكال بالقصّ واللصق.</div></div>
+      <div class="ci"><div class="term">٩ · المحاكاة</div><div class="def">تقليدُ المعلمة في تسمية الأشكال.</div></div>
+      <div class="ci"><div class="term">١٠ · التكرار</div><div class="def">إعادةُ تسمية الأشكال في مواقفَ متنوّعة.</div></div>
+    </div>
+    <div class="sec-head"><div class="num grn"><i class="gi" data-i="الوسائل والأدوات" data-size="22"></i></div><h2>الوسائل</h2><div class="rule"></div></div>
+    <div class="means">
+            <div class="m"><h4>مرئية</h4><span class="i">بطاقات/صور الأشكال ثلاثية الأبعاد</span><span class="i">مكبّر الأشكال وبطاقات المجموعات</span><span class="i">بيئة المدرسة ميدانًا للبحث</span></div>
+      <div class="m s2"><h4>سمعية</h4><span class="i">إشارة المادة: آية عدّة الشهور [التوبة: ٣٦]</span><span class="i">تسمية الأشكال بصوت المعلمة الواضح</span></div>
+      <div class="m s3"><h4>عملية (Hands-on)</h4><span class="i">جولة التحرّي بالمكبّر في المدرسة</span><span class="i">قلعة الأشكال بالقصّ واللصق</span><span class="i">تصنيف الأشكال في الإدراك</span></div>
+      <div class="m s4"><h4>قيمية (شرعية)</h4><span class="i">تعظيم الله الحكيم والتفكّر في جمال خلقه</span><span class="i">شكر نعمة البصر والملاحظة</span><span class="i">التعاون وأدب الجولة</span></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 7) الحصيلة اللغوية ══════════ -->
+  <div class="panel" id="p7">
+    <div class="info"> الحصيلة اللغوية تُعزّز الفهم وتُنمّي القدرة على التعبير — تُستخدَم بشكل طبيعي أثناء الدرس.</div>
+    <div class="voc-web">
+      <img src="assets/voc-web-book.png" alt="شبكة كلمات الحصيلة" loading="lazy"/>
+            <img src="assets/voc-web-book.png" alt="شبكة كلمات الحصيلة" loading="lazy"/>
+      <span class="vw center" style="left:50%;top:59%">كرة</span>
+      <span class="vw branch" style="left:31%;top:19.3%">مكعّب</span>
+      <span class="vw branch" style="left:58%;top:27.4%">مخروط</span>
+      <span class="vw branch" style="left:74%;top:31.3%">هرم</span>
+      <span class="vw branch" style="left:28%;top:34.3%">التحرّي</span>
+      <span class="vw branch" style="left:72.5%;top:45.1%">المحقّق</span>
+      <span class="vw branch" style="left:26%;top:46.5%">مكبّر</span>
+    </div>
+    <div class="card"><div class="lbl">الكلمات الأساسية في الدرس</div>
+      <table class="voc"><thead><tr><th style="width:22%">الكلمة</th><th>بيان المعنى</th></tr></thead><tbody>
+                <tr><td><span class="w">كرة</span></td><td>شكلٌ مستديرٌ لا زوايا فيه.</td></tr>
+        <tr><td><span class="w">مكعّب</span></td><td>مجسّمٌ له ستّةُ أوجهٍ مستوية.</td></tr>
+        <tr><td><span class="w">مخروط</span></td><td>مجسّمٌ له قاعدةٌ مستديرة ورأسٌ مدبّب.</td></tr>
+        <tr><td><span class="w">هرم</span></td><td>مجسّمٌ له قاعدةٌ ورأسٌ مدبّب.</td></tr>
+        <tr><td><span class="w">التحرّي · المحقّق</span></td><td>التحرّي: البحثُ الدقيق. المحقّق: الباحثُ الذي يفتّش بدقّةٍ وانتباه.</td></tr>
+        <tr><td><span class="w">مكبّر</span></td><td>أداةٌ تُري الشيءَ أكبر ممّا هو.</td></tr>
+      </tbody></table>
+    </div>
+    <div class="card cardgold" style="margin-top:15px"><div class="lbl gold"> كيف تستخدم المعلمة هذه الحصيلة؟</div>
+      <ul class="steps">
+        <li>تُدرج الكلمات بشكل طبيعي في شرحها دون توقف مفاجئ.</li>
+        <li>تستخدم الكلمة في جملة واضحة: «أضع <strong>المعدود</strong> أمام <strong>الرقم</strong> فأطابق بينهما».</li>
+        <li>تكرّر الكلمات في سياقات مختلفة لتثبيتها.</li>
+        <li>تُشجّع الأطفال على استخدامها وتثني عليهم.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════ 8) المراجع ══════════ -->
+  <div class="panel" id="p8">
+        <div class="card refblock">
+      <div class="h"> الآيات وضبطها</div>
+      <div class="sub">مصدر لضبط نصّ الآية ومعناها قبل اللقاء</div>
+      <div class="refitem"><span class="rbadge q">قرآن</span><div><div class="tt">Quran.com — سورة التوبة، الآية ٣٦</div><div class="dd">﴿إِنَّ عِدَّةَ الشُّهُورِ عِندَ اللَّهِ اثْنَا عَشَرَ شَهْرًا فِي كِتَابِ اللَّهِ﴾ — آية مدخل لقاء «مهاراتي».</div><a class="reflink" href="https://quran.com/9/36" target="_blank" rel="noopener noreferrer">quran.com/9/36</a></div></div>
+    </div>
+    <div class="card refblock">
+      <div class="h"> مواد الوحدة المعتمدة</div>
+      <div class="refitem"><span class="rbadge t">تحضير</span><div><div class="tt">تحضير مهاراتي «الأرقام ٣ ٤ · الأشكال الهندسية»</div><div class="dd">إعداد المعلمة حنان هشام — معتمد في مكتبة الدليل.</div></div></div>
+      <div class="refitem"><span class="rbadge t">جدول</span><div><div class="tt">جدول تحضيرات مركز الرياضيات للتمهيدي</div><div class="dd">للنشاط المصاحب «قلعة الأشكال».</div></div></div>
+    </div>
+    <div class="card refblock">
+      <div class="h"> مراجع تربوية</div>
+      <div class="refitem"><span class="rbadge p">تربية</span><div><div class="tt">التعلّم بالاكتشاف والجولات الميدانيّة لأطفال الروضة</div><div class="dd">تحرّي الأشكال في البيئة بشدّة الملاحظة.</div></div></div>
+      <div class="refitem"><span class="rbadge p">تربية</span><div><div class="tt">ربط الأشكال الهندسية بجمال خلق الله</div><div class="dd">تنوّع الأشكال آيةٌ على حكمة الخالق.</div></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 9) الأركان ══════════ -->
+  <div class="panel" id="p9">
+    <div class="sec-head first chero"><div class="num gold"><i class="gi" data-i="أركان" data-size="22"></i></div><h2>وقت الأركان التطبيقية</h2><div class="rule"></div></div>
+    <div class="chero"><p style="margin-bottom:6px">الأركان مساحاتٌ غنيّة بأدوات التعلّم، مدّتها ٣٠ دقيقة، يلعب فيها الأطفال ويستكشفون الأدوات <strong>بحرّية ومرح</strong>. وتستقطع المعلمة وقتًا يسيرًا لتنفيذ <strong>نشاط تطبيقي سريع على الفكرة المركزية للدرس</strong>: أتحرّى الأشكال ثلاثية الأبعاد فيما حولي. ولكلّ لقاءٍ <strong>ركنان تطبيقيّان (أ/ب)</strong> يُختاران من أركان اليوم الثمانية (المكتبة · الفنون · الإدراك · الاكتشاف · الرمل · الدكّان · البناء · المسكن).</p></div>
+    <div class="caution"><strong>الخصوصية العقدية والتربوية:</strong> تحرّي الأشكال وسيلةٌ لتعظيم الله الحكيم وشكرِ نعمة البصر؛ وتُدار الجولةُ بأدبٍ وهدوءٍ داخل المدرسة، ولا تُرسَم ذواتُ الأرواح، ويُشجَّع كلُّ طفلٍ بحسب طاقته من غير مقارنة.</div>
+
+    <div class="info" style="margin-top:8px"><b>الموصى به اليوم:</b> ركنُ «قلعة الأشكال» — لأنّه يجسّد تمييزَ الأشكال ثلاثية الأبعاد وتوظيفَها بالبناء؛ و«صنّف الشكل» بديلٌ جاهز. والاختيارُ للمعلمة بحسب جاهزية البيئة.</div>
+        <div class="corner">
+      <div class="h" style="background:linear-gradient(90deg,#1F4A39,#0E6E6B)"><h4>قلعة الأشكال</h4><span class="k"> الركن (أ) — الفنون</span><span style="display:inline-block;margin-inline-start:8px;background:#fff;color:#1F4A39;border-radius:999px;padding:2px 11px;font-size:12.5px;font-weight:700;vertical-align:middle">الركن الموصى به</span></div>
+      <div class="b">
+        <div class="cfield"><b>الأدوات والوسائل التعليمية</b><p>قصاصات أشكالٍ هندسيّة · ورق مقوّى · لاصق · ألوان.</p></div>
+        <div class="cfield"><b>قوانين الركن</b><p>البقاء في مساحة الركن · استخدام الألوان واللاصق بنظافة · انتظار الدور · إعادة الأدوات إلى مكانها.</p></div>
+        <div class="cfield"><b>اللعب الحرّ في الركن</b><p>يجرّب الأطفالُ القصَّ واللصقَ والتلوينَ بحرّية ومرح.</p></div>
+        <div class="cfield"><b>النشاط التطبيقي السريع</b><p><em>تستقطع المعلمة نحو ٥–٧ دقائق لتطبيق سريع على الفكرة المركزية: <strong>بالأشكال أبني وأزيّن.</strong></em></p><ol>
+          <li>يبني الطفلُ قلعةً من الأشكال الهندسيّة.</li>
+          <li>يسمّي كلَّ شكلٍ استعمله وموضعه (الهرم للسقف …).</li>
+          <li>يختم بقول: «بالأشكال أبني وأزيّن، والحمد لله على جمال خلقه».</li>
+        </ol></div>
+        <div class="cfield"><b>هدف الركن</b><p>أن يميّز الطفلُ الأشكالَ ويستعملها في موضعها.</p></div>
+        <div class="cfield"><b>دور المعلمة</b><p>تُتيح العملَ الحرّ أولًا، ثم تسأل عن أسماء الأشكال وتشجّع بلا إطالة.</p></div>
+        <div class="cfield"><b>خصوصية عقدية وتربوية</b><p>البناءُ بالأشكال لتثبيتها؛ لا رسمَ لذوات الأرواح، ولا مقارنة.</p></div>
+        <div class="cfield"><b>مناسب للفئة العمرية</b><p>خطوات قصيرة محسوسة، مع مجموعةٍ صغيرة وإشراف.</p></div>
+        <div class="cfield"><b>المخرج</b><p>قلعةٌ من أشكالٍ هندسيّةٍ يسمّيها الطفل.</p></div>
+        <div class="faith">الجملة الختامية: بالأشكال أبني وأزيّن، والحمد لله على جمال خلقه.</div>
+      </div>
+    </div>
+
+    <div class="corner">
+      <div class="h" style="background:linear-gradient(90deg,#0E6E6B,#2b8f8f)"><h4>صنّف الشكل</h4><span class="k"> الركن (ب) — الإدراك</span><span style="display:inline-block;margin-inline-start:8px;background:rgba(255,255,255,.20);color:#fff;border:1px solid rgba(255,255,255,.55);border-radius:999px;padding:2px 11px;font-size:12.5px;font-weight:700;vertical-align:middle">بديلٌ جاهز</span></div>
+      <div class="b">
+        <div class="cfield"><b>الأدوات والوسائل التعليمية</b><p>بطاقات الأشكال ثلاثية الأبعاد · صور أشياء من حولنا · مكبّر الأشكال.</p></div>
+        <div class="cfield"><b>قوانين الركن</b><p>البقاء في مساحة الركن · المحافظة على البطاقات والمكبّر · انتظار الدور · إعادة كلّ وسيلة إلى مكانها.</p></div>
+        <div class="cfield"><b>اللعب الحرّ في الركن</b><p>يتصفّح الأطفالُ صورَ الأشياء ويسمّون أشكالها بحرّية ومرح.</p></div>
+        <div class="cfield"><b>النشاط التطبيقي السريع</b><p><em>تستقطع المعلمة دقائق يسيرة لتطبيق سريع على الفكرة المركزية: <strong>أميّز الشكل فأعرف الشيء.</strong></em></p><ol>
+          <li>يضع الطفلُ كلَّ صورةٍ تحت بطاقة شكلها (كرة · مكعّب · مخروط · هرم).</li>
+          <li>يستعين بالمكبّر عند الحاجة.</li>
+          <li>يختم بقول: «أميّز الشكل فأعرف الشيء وأنتفع به».</li>
+        </ol></div>
+        <div class="cfield"><b>هدف الركن</b><p>أن يصنّف الطفلُ صورَ الأشياء بحسب شكلها.</p></div>
+        <div class="cfield"><b>دور المعلمة</b><p>تُتيح اللعبَ الحرّ، ثم تشرف على التصنيف وتشجّع بلا إطالة.</p></div>
+        <div class="cfield"><b>خصوصية عقدية وتربوية</b><p>التصنيفُ لتثبيت تمييز الأشكال؛ بلا مقارنةٍ بين الأطفال.</p></div>
+        <div class="cfield"><b>مناسب للفئة العمرية</b><p>خطوات قصيرة محسوسة، مع مجموعةٍ صغيرة وإشراف.</p></div>
+        <div class="cfield"><b>المخرج</b><p>صورٌ مصنّفةٌ تحت بطاقات أشكالها.</p></div>
+        <div class="faith">الجملة الختامية: أميّز الشكل فأعرف الشيء وأنتفع به.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:4px;background:#fff;border:1px solid #EAE2D3;border-radius:14px;padding:11px 14px"><b style="color:var(--elm);font-size:15px;display:block;margin-bottom:3px"> المركز التطبيقي في تبويب مركز الرياضيات</b><p style="font-size:15px;line-height:1.8;margin:0;color:#063a3e">التطبيق الموسّع (٣٠ دقيقة: تتبّع الأرقام وتمثيلها بالصلصال) مادّة مستقلّة في تبويب <strong>«مركز الرياضيات»</strong> ضمن الوحدة، مكمّلة لهذين الركنين لا بديلة عنهما.</p></div>
+</div>
+
+  <div class="foot">وحدة أنا مؤمن · مهاراتي · اللقاء السادس — الأشكال ثلاثية الأبعاد · نادي غرس القيم لضيافة الأطفال</div>
+  <div class="gq-dev-credit" style="margin:22px auto 0;max-width:540px;padding:18px 16px 4px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center"><span style="font-size:11.5px;color:var(--muted);letter-spacing:.3px">إعداد وتطوير وإخراج دليل المعلمة</span><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="display:inline-block;line-height:0"><img src="brand/hadarah-logo.png" alt="شركة حضارة للاستشارات التربوية والتعليمية" style="width:104px;height:auto;display:block"/></a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-family:var(--fd);font-size:14.5px;color:#1e5631;text-decoration:none;font-weight:700">شركة حضارة للاستشارات التربوية والتعليمية</a><a href="https://www.hadarah-consulting.com/" target="_blank" rel="noopener" style="font-size:11.5px;color:var(--elm,#0E6E6B);text-decoration:none">www.hadarah-consulting.com</a></div>
+</div>
+
+<script>
+(function(){
+  var doc=document, root=doc.documentElement, body=doc.body;
+  var pb=doc.createElement('div'); pb.className='gq-progress'; body.appendChild(pb);
+  var top=doc.createElement('button'); top.className='gq-top'; top.setAttribute('aria-label','العودة للأعلى'); top.textContent='↑'; body.appendChild(top);
+  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  function onScroll(){ var sc=window.pageYOffset||root.scrollTop, max=(root.scrollHeight-root.clientHeight)||1; pb.style.width=Math.min(100,sc/max*100)+'%'; if(sc>320){top.classList.add('show');}else{top.classList.remove('show');} }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var lb=doc.createElement('div'); lb.className='gq-lb'; lb.innerHTML='<button class="close" aria-label="اغلاق">✕</button><figure><img alt=""/><figcaption class="cap"></figcaption></figure>'; body.appendChild(lb);
+  var lbImg=lb.querySelector('img'), lbCap=lb.querySelector('.cap');
+  function closeLb(){lb.classList.remove('open'); lbImg.removeAttribute('src');}
+  lb.addEventListener('click',function(e){ if(e.target===lb||e.target.classList.contains('close')) closeLb(); });
+  doc.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLb(); });
+  doc.querySelectorAll('.gitem img, .step-media img').forEach(function(im){
+    im.addEventListener('click',function(){ var cap='', box=im.closest('.gitem')||im.closest('.step-media'); if(box){var c=box.querySelector('.cap'); if(c) cap=c.textContent;} lbImg.src=im.currentSrc||im.src; lbCap.textContent=cap; lb.classList.add('open'); });
+  });
+  var tabs=[].slice.call(doc.querySelectorAll('.tab'));
+  var KEY='gq-amn-mah-tab-'+(doc.title||'l');
+  function activate(btn,save,scroll){ tabs.forEach(function(t){t.classList.remove('active');}); doc.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');}); btn.classList.add('active'); var p=doc.getElementById(btn.dataset.p); if(p) p.classList.add('active'); if(save){ try{localStorage.setItem(KEY,btn.dataset.p);}catch(e){} } if(scroll){ window.scrollTo({top:0,behavior:'smooth'}); } }
+  tabs.forEach(function(btn,i){ btn.setAttribute('tabindex','0'); btn.addEventListener('click',function(){ activate(btn,true,true); }); btn.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ e.preventDefault(); var dir=(e.key==='ArrowLeft')?1:-1, ni=(i+dir+tabs.length)%tabs.length; tabs[ni].focus(); activate(tabs[ni],true,false); } }); });
+  try{ var saved=localStorage.getItem(KEY); if(saved){ var b=doc.querySelector('.tab[data-p="'+saved+'"]'); if(b) activate(b,false,false); } }catch(e){}
+  function fallback(txt,cb){ var ta=doc.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0'; body.appendChild(ta); ta.select(); try{doc.execCommand('copy');}catch(e){} body.removeChild(ta); cb(); }
+  doc.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){ var target=doc.querySelector(btn.getAttribute('data-copy')); if(!target) return; var clone=target.cloneNode(true); clone.querySelectorAll('.l,.copy-btn').forEach(function(n){n.remove();}); clone.querySelectorAll('strong').forEach(function(n){n.textContent='*'+n.textContent+'*';}); clone.querySelectorAll('em').forEach(function(n){n.textContent='_'+n.textContent+'_';}); var txt=(clone.innerText||clone.textContent||'').replace(/\n{3,}/g,'\n\n').trim(); function done(){ var o=btn.getAttribute('data-lbl'); if(!o){o=btn.textContent; btn.setAttribute('data-lbl',o);} btn.textContent='✓ نُسخ'; btn.classList.add('copied'); setTimeout(function(){ btn.textContent=o; btn.classList.remove('copied'); },1500); } if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done).catch(function(){fallback(txt,done);}); } else { fallback(txt,done); } });
+  });
+})();
+</script>
+<!--gq-credit-embed-hide--><script>try{if(window.self!==window.top){var _c=document.querySelector(".gq-dev-credit");if(_c)_c.style.display="none";}}catch(e){}</script>
+<script src="brand/guide-icons.js?v=3"></script>
+<script id="gq-lb-iframe-fix">
+(function(){if(window.self===window.top)return;var lb=document.querySelector('.gq-lb');if(!lb)return;function pos(){if(!lb.classList.contains('open'))return;try{var fr=window.frameElement;if(!fr)return;var t=window.top,r=fr.getBoundingClientRect(),vh=t.innerHeight,off=Math.max(0,-r.top);lb.style.position='absolute';lb.style.top=off+'px';lb.style.bottom='auto';lb.style.left='0';lb.style.right='0';lb.style.width='100%';lb.style.height=vh+'px';}catch(e){}}var mo=new MutationObserver(function(){if(lb.classList.contains('open'))pos();});mo.observe(lb,{attributes:true,attributeFilter:['class']});})();
+</script>
+<style>
+/* ═══════════ ورقة اليوم للطباعة — الطبقة الثانية (المرحلة د) ═══════════ */
+@media print{
+  @page{size:A4 portrait;margin:12mm}
+  body *{display:none!important}
+  .wrap,#p1{display:block!important}
+  body :has(.lhero),body :has(.quick-sheet),body :has(.card.feedback){display:block!important}
+  .lhero,.quick-sheet,.card.feedback{display:block!important}
+  .lhero *,.quick-sheet *,.card.feedback *{display:revert!important}
+  .cover,.cover-main,.cover-l,.cover-l h1{display:block!important}
+  .cover-photo,.cover-r,.c-badge,.c-meta{display:none!important}
+  .cover{height:auto!important;min-height:0!important;background:none!important;box-shadow:none!important;padding:0!important;margin:0 0 10px!important;border:0!important;position:static!important}
+  .cover-main{padding:0!important;background:none!important;box-shadow:none!important}
+  .cover-l h1{font-family:var(--fd);font-size:16pt;line-height:1.45;color:#000;margin:0 0 10px}
+  .lhero{margin:0 0 10px!important}
+  .quick-sheet,.card.feedback,.lh{break-inside:avoid;box-shadow:none!important;border:1px solid #EAE2D3!important;margin:0 0 10px!important}
+  .wrap{max-width:none!important;margin:0!important;padding:0!important}
+  body{background:#fff!important;color:#000}
+  a[href]:after{content:""!important}
+}
+</style>
+
+<style id="lesson-size">
+/* ===== رفع حجم القراءة داخل الدرس (الخطّ الأساسيّ أكبر + أرضيّة للعناصر الصغيرة) ===== */
+body{font-size:18px}
+.step,.steps li,.ci .def,.mini,.taq li,.obj span.t,table.voc td,.strat .v,.adab .row,.cfield p,.cfield li,.hs,.qapair,.lh-t,.def,ol.qa .q,.flow-card p,.greet,.law-grid>div,.lh-foot,.means .m .i,.refitem .tt{font-size:16px}
+.side .mini,.side .chip,.chip,.src,.refitem .dd,.note,.objgrid .obj span.t,ol.qa .a,.obj .n{font-size:14.5px}
+.lhero .lh-q{font-size:19px}
+/* الآيات والأحاديث تبقى بإطار الوحي (Amiri) كما هي */
+</style>
+<style id="zoom-ui">
+#zc{position:fixed;inset-inline-end:16px;bottom:18px;z-index:120;display:flex;align-items:center;background:#fff;border:1px solid #e3dccb;border-radius:999px;box-shadow:0 8px 22px rgba(20,50,35,.16);overflow:hidden;font-family:var(--fb,'Saudi',sans-serif)}
+#zc button{border:0;background:#fff;color:#1F4A39;width:42px;height:42px;font-size:21px;font-weight:800;cursor:pointer;line-height:1;transition:.12s}
+#zc button:hover{background:#eef3ef}
+#zc button:active{background:#dfeae2}
+#zc .zl{font-size:12px;color:#5f6a60;padding:0 9px;min-width:50px;text-align:center;font-weight:700;border-inline:1px solid #eee4d3}
+#zc .zt{font-size:11px;color:#8a7a52;padding-inline-start:12px;padding-inline-end:4px;font-weight:700;white-space:nowrap}
+@media(max-width:540px){#zc .zt{display:none}}
+@media print{#zc{display:none!important}}
+</style>
+<script id="zoom-js">
+(function(){
+  var KEY='ghars-lesson-zoom', wrap=document.querySelector('.wrap')||document.body;
+  var steps=[0.9,1.0,1.1,1.2,1.3], i=1;
+  try{var s=localStorage.getItem(KEY); if(s!==null){var k=steps.indexOf(parseFloat(s)); if(k>=0)i=k;}}catch(e){}
+  function apply(){ try{wrap.style.zoom=steps[i];}catch(e){} var l=document.getElementById('zl'); if(l)l.textContent=Math.round(steps[i]*100)+'%'; try{localStorage.setItem(KEY,steps[i]);}catch(e){} }
+  var c=document.createElement('div'); c.id='zc';
+  c.innerHTML='<span class="zt">حجم الخطّ</span><button id="zmn" type="button" aria-label="تصغير الخطّ" title="تصغير">&#8722;</button><span class="zl" id="zl">100%</span><button id="zpl" type="button" aria-label="تكبير الخطّ" title="تكبير">+</button>';
+  document.body.appendChild(c);
+  document.getElementById('zmn').onclick=function(){ if(i>0){i--;apply();} };
+  document.getElementById('zpl').onclick=function(){ if(i<steps.length-1){i++;apply();} };
+  apply();
+})();
+</script>
+</body>
+</html>
