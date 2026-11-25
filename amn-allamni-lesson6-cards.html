@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>بطاقات — أعمالٌ تُوصّلني إلى الجنّة · أنا مؤمن · علّمني ربي</title>
+<style>
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'AlAwwal';src:url('assets/fonts/AlAwwal-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Saudi';src:url('assets/fonts/Saudi-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+:root{--fd:'AlAwwal','Noto Naskh Arabic',serif;--fb:'Saudi','Noto Naskh Arabic',Tahoma,sans-serif;
+  --sc:#10796B;--ink:#1E2E29;--muted:#6C776F;--line:#d8cdb5;--soft:#f3f7f1;--gold:#C79A3B}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--ink);background:#e7ece4;padding:20px;line-height:1.6}
+.head{max-width:1000px;margin:0 auto 14px;text-align:center}
+.head h1{font-family:var(--fd);color:var(--sc);font-size:24px}
+.head p{color:var(--muted);font-size:13.5px;margin-top:4px}
+.note{max-width:1000px;margin:0 auto 18px;background:#fff;border:1px solid var(--line);border-inline-start:4px solid var(--gold);border-radius:12px;padding:10px 14px;font-size:13.5px;color:#5c4a1e;text-align:center;font-family:var(--fd)}
+.sheet{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.wc{background:#fff;border:2px solid var(--sc);border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(20,50,35,.10);break-inside:avoid;min-height:150px;display:flex;flex-direction:column}
+.wc-top{background:var(--soft);color:var(--sc);font-family:var(--fd);font-weight:700;font-size:15px;text-align:center;padding:8px 10px;border-bottom:1px solid var(--line)}
+.wc-main{flex:1;display:grid;place-items:center;text-align:center;font-family:var(--fd);font-weight:700;color:#14402E;font-size:30px;padding:20px 14px;line-height:1.5}
+.wc.num .wc-top{font-size:30px;background:var(--sc);color:#fff}
+.printbtn{display:block;margin:22px auto 6px;background:var(--sc);color:#fff;border:0;border-radius:999px;padding:10px 26px;font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer}
+@media print{
+  body{background:#fff;padding:0}
+  .head p,.note,.printbtn{display:none}
+  .sheet{gap:8mm;max-width:100%}
+  .wc{box-shadow:none;border:1.5px dashed #9bb0a0}
+}
+</style>
+</head>
+<body>
+<div class="head">
+  <h1>بطاقات أعمالٌ تُوصّلني إلى الجنّة</h1>
+  <p>أنا مؤمن · علّمني ربي · بطاقات جمع الحسنات — يجمعها الطفلُ في «كنز الحسنات» ليفوزَ بالجنّة.</p>
+</div>
+
+<div class="sheet">
+  <div class="wc"><div class="wc-top">عمل</div><div class="wc-main">صلاة</div></div>
+  <div class="wc"><div class="wc-top">عمل</div><div class="wc-main">صدقة</div></div>
+  <div class="wc"><div class="wc-top">عمل</div><div class="wc-main">برّ الوالدين</div></div>
+  <div class="wc"><div class="wc-top">عمل</div><div class="wc-main">صدق</div></div>
+  <div class="wc"><div class="wc-top">عمل</div><div class="wc-main">رحمة</div></div>
+</div>
+<button class="printbtn" onclick="window.print()">🖨️ طباعة البطاقات</button>
+</body>
+</html>
